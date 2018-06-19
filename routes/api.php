@@ -28,7 +28,7 @@ Route::group(['prefix' => 'auth'], function ($router) {
 		$jie=DB::table('users')->insert([
 				'id' => '3',
 				'name' =>'phojie',
-				'email' =>'emee@y.com',
+				'email' =>'phoj@y.com',
 				'password' => bcrypt('jiengpinas')
 			]);
 			
