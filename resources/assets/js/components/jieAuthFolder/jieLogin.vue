@@ -84,10 +84,9 @@ export default {
       password: '',
     authUser: null,
     form: {
-      email: 'jie@y.com',
-      password: 'jiengpinas'
+      email: '',
+      password: ''
     }
-
    }),
    methods: {	
     logout () {
