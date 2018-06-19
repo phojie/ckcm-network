@@ -106,12 +106,12 @@ export default {
       this.$store.dispatch('login');
       login(this.$data.form) 
         .then((res) => {
-               vm.jieLoading = false
-          console.log(res);
-          this.$store.commit("loginSuccess", res);
-          this.$router.push({
-            path: '/'
-          });
+				vm.jieLoading = false
+			console.log(res);
+			this.$store.commit("loginSuccess", res);
+			this.$router.push({
+			path: '/'
+			});
         })
         .catch((error) => {
                vm.jieLoading = false 
@@ -134,17 +134,16 @@ export default {
     
    },
    computed: {
-  
-    codeidErrors() {
-      const errors = []
-      if (!this.$v.codeid.$dirty)
-        return errors
-      !this.$v.codeid.required && errors.push('It is Required! -__-')
-        return errors
-      },
-      Login(){
-         return this.authUser
-      }
+      codeidErrors() {
+         const errors = []
+         if (!this.$v.codeid.$dirty)
+            return errors
+         !this.$v.codeid.required && errors.push('It is Required! -__-')
+            return errors
+         },
+         Login(){
+            return this.authUser
+         }
   },
   validations: {
     codeid: {
