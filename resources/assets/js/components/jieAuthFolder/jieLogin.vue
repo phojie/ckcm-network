@@ -76,17 +76,15 @@ import { login } from '../../ckcmHelpers/auth';
 export default {
    data: () => ({
       login: true,
-    jieLoading: false,
-    jieDark: false,
-    jieVisibility: false,
-    codeid: null,
-    email: '',
-      password: '',
-    authUser: null,
-    form: {
-      email: '',
-      password: ''
-    }
+		jieLoading: false,
+		jieDark: false,
+		jieVisibility: false,
+		codeid: null,
+		authUser: null,
+		form: {
+			email: '',
+			password: ''
+		}
    }),
    methods: {	
     logout () {

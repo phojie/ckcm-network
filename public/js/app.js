@@ -12132,7 +12132,7 @@ function withParams(paramsOrClosure, maybeValidator) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export login */
+/* harmony export (immutable) */ __webpack_exports__["b"] = login;
 /* harmony export (immutable) */ __webpack_exports__["a"] = getLocalUser;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
@@ -35398,16 +35398,179 @@ exports = module.exports = __webpack_require__(5)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* xs */\n@media only screen and (max-width: 600px) {\n.testflex[data-v-6751829a] {\r\n    background-color: red\n}\n}\r\n/* sm */\n@media only screen and (max-width: 960px) and (min-width: 600px) {\n.testflex[data-v-6751829a] {\r\n    background-color:rebeccapurple\n}\n}\r\n/* md */\n@media only screen and (max-width: 1264px) and (min-width: 960px){\n.testflex[data-v-6751829a] {\r\n    background-color: green\n}\n.jieQueriesTitleFonts[data-v-6751829a] {\r\n    font-size: 15px !important;\r\n    /* color: red */\n}\r\n\r\n  /* from vuetify .edited */\n.input-group--text-field input[data-v-6751829a], .input-group--text-field textarea[data-v-6751829a] {\r\n    font-size:210px !important;\r\n    color: red !important;\n}\n}\r\n/* lg  desktopsize */\n@media only screen and (max-width: 1904px) and (min-width: 1264px) {\n.testflex[data-v-6751829a] {\r\n    background-color:blue\n}\n.jieQueriesTitleFonts[data-v-6751829a] {\r\n      font-size: 14px !important;\r\n      /* color: red */\n}\r\n\r\n   /* from vuetify .edited */\n.input-group--text-field input[data-v-6751829a], .input-group--text-field textarea[data-v-6751829a] {\r\n      font-size:10px !important;\r\n      color: red\n}\n}\r\n/* xl */\n@media only screen and (min-width: 1904px) {\n.testflex[data-v-6751829a]{\r\n    background-color: yellow\n}\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* xs */\n@media only screen and (max-width: 600px) {\n.testflex[data-v-6751829a] {\r\n    background-color: red\n}\n}\r\n/* sm */\n@media only screen and (max-width: 960px) and (min-width: 600px) {\n.testflex[data-v-6751829a] {\r\n    background-color:rebeccapurple\n}\n}\r\n/* md */\n@media only screen and (max-width: 1264px) and (min-width: 960px){\n.testflex[data-v-6751829a] {\r\n    background-color: green\n}\n.jieQueriesTitleFonts[data-v-6751829a] {\r\n    font-size: 15px !important;\r\n    /* color: red */\n}\r\n\r\n  /* from vuetify .edited */\n.input-group--text-field input[data-v-6751829a], .input-group--text-field textarea[data-v-6751829a] {\r\n    font-size:210px !important;\r\n    color: red !important;\n}\n}\r\n/* lg  desktopsize */\n@media only screen and (max-width: 1904px) and (min-width: 1264px) {\n.testflex[data-v-6751829a] {\r\n    background-color:blue\n}\n.jieQueriesTitleFonts[data-v-6751829a] {\r\n      font-size: 14px !important;\r\n      /* color: red */\n}\r\n\r\n   /* from vuetify .edited */\n.input-group--text-field input[data-v-6751829a], .input-group--text-field textarea[data-v-6751829a] {\r\n      font-size:10px !important;\r\n      color: red\n}\n}\r\n/* xl */\n@media only screen and (min-width: 1904px) {\n.testflex[data-v-6751829a]{\r\n    background-color: yellow\n}\n}\r\n\r\n", ""]);
 
 // exports
 
 
 /***/ }),
 /* 92 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed: SyntaxError: C:/Users/Develop_hereJie/God/jienetwork/resources/assets/js/components/jieAuthFolder/jieLogin.vue: Unexpected token, expected , (90:4)\n\n\u001b[0m \u001b[90m 88 | \u001b[39m      password\u001b[33m:\u001b[39m \u001b[32m''\u001b[39m\n \u001b[90m 89 | \u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 90 | \u001b[39m   })\u001b[33m,\u001b[39m\n \u001b[90m    | \u001b[39m    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 91 | \u001b[39m   methods\u001b[33m:\u001b[39m {\t\n \u001b[90m 92 | \u001b[39m    logout () {\n \u001b[90m 93 | \u001b[39m      firebase\u001b[33m.\u001b[39mauth()\u001b[33m.\u001b[39msignOut()\u001b[0m\n");
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ckcmHelpers_auth__ = __webpack_require__(17);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      login: true,
+      jieLoading: false,
+      jieDark: false,
+      jieVisibility: false,
+      codeid: null,
+      authUser: null,
+      form: {
+        email: '',
+        password: ''
+      }
+    };
+  },
+  methods: {
+    logout: function logout() {
+      firebase.auth().signOut().then(function () {
+        console.log('succ. log');
+      }).catch(function (error) {
+        console.log('already logout');
+      });
+    },
+    testerFunction: function testerFunction() {
+      alert('tested');
+    },
+    AuthCodeID: function AuthCodeID() {
+      var _this = this;
+
+      this.jieLoading = true;
+      var vm = this;
+      alert('i am trying to login you');
+      this.$store.dispatch('login');
+      Object(__WEBPACK_IMPORTED_MODULE_1__ckcmHelpers_auth__["b" /* login */])(this.$data.form).then(function (res) {
+        vm.jieLoading = false;
+        console.log(res);
+        _this.$store.commit("loginSuccess", res);
+        _this.$router.push({
+          path: '/'
+        });
+      }).catch(function (error) {
+        vm.jieLoading = false;
+        alert(error);
+      });
+      // firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+      //    .then(function() {
+      //       vm.jieLoading = false
+      //       console.log('success')
+      //    })
+      //    .catch(function(error) {
+      //       // Handle Errors here.
+      //       vm.jieLoading = false
+      //       var errorCode = error.code;
+      //       var errorMessage = error.message;
+      //       console.log(errorMessage)
+      //       // ...   
+      // });
+    }
+  },
+  computed: {
+    codeidErrors: function codeidErrors() {
+      var errors = [];
+      if (!this.$v.codeid.$dirty) return errors;
+      !this.$v.codeid.required && errors.push('It is Required! -__-');
+      return errors;
+    },
+    Login: function Login() {
+      return this.authUser;
+    }
+  },
+  validations: {
+    codeid: {
+      required: __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__["required"]
+    }
+  },
+  mounted: function mounted() {},
+  created: function created() {
+    var _this2 = this;
+
+    firebase.auth().onAuthStateChanged(function (user) {
+      _this2.authUser = user;
+    });
+  }
+});
 
 /***/ }),
 /* 93 */
