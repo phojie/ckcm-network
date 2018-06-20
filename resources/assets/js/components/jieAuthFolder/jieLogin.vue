@@ -38,7 +38,7 @@
 									<v-text-field
 										:type="jieVisibility ? 'text' : 'password'" :prepend-icon="jieVisibility ? 'visibility' : 'visibility_off'" 
 										:prepend-icon-cb="() => ( jieVisibility = !jieVisibility)"
-										v-model="form.password" label="Enter your desire password"
+										v-model="form.password" label="Enter your password"
 										clearable counter="12" :disabled="jieLoading"
 									>
 									</v-text-field>
@@ -82,8 +82,8 @@ export default {
 		codeid: null,
 		authUser: null,
 		form: {
-			email: '',
-			password: ''
+			email: 'phoj@y.com',
+			password: 'jiengpinas'
 		}
    }),
    methods: {	

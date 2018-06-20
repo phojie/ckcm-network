@@ -35497,8 +35497,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       codeid: null,
       authUser: null,
       form: {
-        email: '',
-        password: ''
+        email: 'phoj@y.com',
+        password: 'jiengpinas'
       }
     };
   },
@@ -35703,7 +35703,7 @@ var render = function() {
                                       "prepend-icon-cb": function() {
                                         return (_vm.jieVisibility = !_vm.jieVisibility)
                                       },
-                                      label: "Enter your desire password",
+                                      label: "Enter your password",
                                       clearable: "",
                                       counter: "12",
                                       disabled: _vm.jieLoading
