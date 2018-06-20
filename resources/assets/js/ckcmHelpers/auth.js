@@ -3,8 +3,7 @@ import axios from 'axios'
 export function login(credentials) {
    return new Promise((res, rej) =>{
 		let ckcmcode =  Math.random().toString(36).substring(2, 15) + "I love you God" + Math.random().toString(36).substring(2, 15);
-      // axios.post(`/api/auth/Ckcm-network-api/${ckcmcode}/login`, credentials)  
-      axios.post(`/api/auth/login`, credentials)  
+      axios.post(`/api/auth/Ckcm-network-api/${ckcmcode}/login`, credentials)  
          .then((response) =>{
             res(response.data);
          })

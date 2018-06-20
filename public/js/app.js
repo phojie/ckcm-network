@@ -12141,8 +12141,7 @@ function withParams(paramsOrClosure, maybeValidator) {
 function login(credentials) {
    return new Promise(function (res, rej) {
       var ckcmcode = Math.random().toString(36).substring(2, 15) + "I love you God" + Math.random().toString(36).substring(2, 15);
-      // axios.post(`/api/auth/Ckcm-network-api/${ckcmcode}/login`, credentials)  
-      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post("/api/auth/login", credentials).then(function (response) {
+      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post("/api/auth/Ckcm-network-api/" + ckcmcode + "/login", credentials).then(function (response) {
          res(response.data);
       }).catch(function (error) {
          rej(error);
@@ -12212,11 +12211,11 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_8_vuex
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyAcYoRTQ4nmID5XjHbPXz543yG5ozz1bFM",
-    authDomain: "christ-the-king-network.firebaseapp.com",
-    databaseURL: "https://christ-the-king-network.firebaseio.com",
-    projectId: "christ-the-king-network",
-    storageBucket: "christ-the-king-network.appspot.com",
-    messagingSenderId: "631685789688"
+    authDomain: "christ-the-king-network.firebaseapp.com"
+    //  databaseURL: "https://christ-the-king-network.firebaseio.com",
+    //  projectId: "christ-the-king-network",
+    //  storageBucket: "christ-the-king-network.appspot.com",
+    //  messagingSenderId: "631685789688"
 };
 firebase.initializeApp(config);
 

@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\DB;
 // Route::group(['middleware' => 'api','prefix' => 'auth'], function ($router) {
 Route::group(['prefix' => 'auth'], function ($router) {
 
-   // Route::post('Ckcm-network-api/{any}/login', 'AuthController@login')->where('any', '.*');
+   Route::post('Ckcm-network-api/{any}/login', 'AuthController@login')->where('any', '.*');
 	Route::post('login', 'AuthController@login');
 	Route::post('logout', 'AuthController@logout');
 	Route::post('refresh', 'AuthController@refresh');

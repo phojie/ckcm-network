@@ -23,10 +23,10 @@ Vue.use(Vuex);
 const config = {
     apiKey: "AIzaSyAcYoRTQ4nmID5XjHbPXz543yG5ozz1bFM",
     authDomain: "christ-the-king-network.firebaseapp.com",
-    databaseURL: "https://christ-the-king-network.firebaseio.com",
-    projectId: "christ-the-king-network",
-    storageBucket: "christ-the-king-network.appspot.com",
-    messagingSenderId: "631685789688"
+   //  databaseURL: "https://christ-the-king-network.firebaseio.com",
+   //  projectId: "christ-the-king-network",
+   //  storageBucket: "christ-the-king-network.appspot.com",
+   //  messagingSenderId: "631685789688"
 };
 firebase.initializeApp(config);
 
