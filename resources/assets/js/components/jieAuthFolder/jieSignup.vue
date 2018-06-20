@@ -31,14 +31,14 @@
 
 									<v-text-field
 										type="text" prepend-icon="email" clearable
-										v-model="email" label="Enter your email"
+										v-model="rform.email" label="Enter your email"
 										:disabled="jieLoading"
 									>
 									</v-text-field>
 									<v-text-field
 										:type="jieVisibility ? 'text' : 'password'" :prepend-icon="jieVisibility ? 'visibility' : 'visibility_off'" 
 										:prepend-icon-cb="() => ( jieVisibility = !jieVisibility)"
-										v-model="password" label="Enter your desire password"
+										v-model="rform.password" label="Enter your desire password"
 										clearable counter="12" :disabled="jieLoading"
 									>
 									</v-text-field>
@@ -69,9 +69,12 @@ export default {
 		jieLoading: false,
 		jieDark: false,
 		jieVisibility: false,
-		codeid: '',
-		email: '',
-		password: ''
+      codeid: '',
+      rform: {
+         email: '',
+         password: ''
+      }
+		
 		// error: false
    }),
    methods: {
@@ -81,10 +84,10 @@ export default {
 		},
 		AuthCodeID () {
 			this.jieLoading = true
-			let vm = this
-			alert('i am trying to login you')
+         let vm = this
+			alert('i am trying to register you' + this.$data.rform.email)
 			let ckcmcode =  Math.random().toString(36).substring(2, 15) + "I love you God" + Math.random().toString(36).substring(2, 15);
-			axios.get(`/api/auth/Ckcm-network-api/${ckcmcode}/register`)  
+			axios.post(`api/auth/Ckcm-network-api/${ckcmcode}/register`, this.rform)  
 				.then((response) => {
 					console.log(response.data.msg);
 				})

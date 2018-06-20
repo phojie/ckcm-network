@@ -34,19 +34,13 @@ class AuthController extends Controller
 		return $this->respondWithToken($token);
 	}
 
-	public function register(){
-		// $credentials = request([
-		// 	'email',
-		// 	'password'
-		// ]);
-		return
-		User::create([
-			name => 'phojie2',
-			email => 'j@y.com',
-			password => bcrypt('jiengpinas')
-		]);
-
-
+	public function register(Request $request){
+      $credentials = $request->only('emai','password');
+      User::create([
+         'id' => '131',
+         'name' => $request->email,
+         'password' => bcrypt($request->password) ,
+      ]);
 	}
 
 	/**

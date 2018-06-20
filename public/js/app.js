@@ -34332,7 +34332,7 @@ exports = module.exports = __webpack_require__(5)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* xs */\n@media only screen and (max-width: 600px) {\n.testflex[data-v-618e8492] {\r\n\t\t\tbackground-color: red\n}\n}\r\n/* sm */\n@media only screen and (max-width: 960px) and (min-width: 600px) {\n.testflex[data-v-618e8492] {\r\n\t\tbackground-color:rebeccapurple\n}\n}\r\n/* md */\n@media only screen and (max-width: 1264px) and (min-width: 960px){\n.testflex[data-v-618e8492] {\r\n\t\tbackground-color: green\n}\n.jieQueriesTitleFonts[data-v-618e8492] {\r\n\t\tfont-size: 15px !important;\r\n\t\t/* color: red */\n}\r\n\r\n\t/* from vuetify .edited */\n.input-group--text-field input[data-v-618e8492], .input-group--text-field textarea[data-v-618e8492] {\r\n\t\tfont-size:210px !important;\r\n\t\tcolor: red !important;\n}\n}\r\n/* lg  desktopsize */\n@media only screen and (max-width: 1904px) and (min-width: 1264px) {\n.testflex[data-v-618e8492] {\r\n\t\tbackground-color:blue\n}\n.jieQueriesTitleFonts[data-v-618e8492] {\r\n      font-size: 14px !important;\r\n      /* color: red */\n}\r\n\r\n   /* from vuetify .edited */\n.input-group--text-field input[data-v-618e8492], .input-group--text-field textarea[data-v-618e8492] {\r\n      font-size:10px !important;\r\n      color: red\n}\n}\r\n/* xl */\n@media only screen and (min-width: 1904px) {\n.testflex[data-v-618e8492]{\r\n\t\t\tbackground-color: yellow\n}\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* xs */\n@media only screen and (max-width: 600px) {\n.testflex[data-v-618e8492] {\r\n\t\t\tbackground-color: red\n}\n}\r\n/* sm */\n@media only screen and (max-width: 960px) and (min-width: 600px) {\n.testflex[data-v-618e8492] {\r\n\t\tbackground-color:rebeccapurple\n}\n}\r\n/* md */\n@media only screen and (max-width: 1264px) and (min-width: 960px){\n.testflex[data-v-618e8492] {\r\n\t\tbackground-color: green\n}\n.jieQueriesTitleFonts[data-v-618e8492] {\r\n\t\tfont-size: 15px !important;\r\n\t\t/* color: red */\n}\r\n\r\n\t/* from vuetify .edited */\n.input-group--text-field input[data-v-618e8492], .input-group--text-field textarea[data-v-618e8492] {\r\n\t\tfont-size:210px !important;\r\n\t\tcolor: red !important;\n}\n}\r\n/* lg  desktopsize */\n@media only screen and (max-width: 1904px) and (min-width: 1264px) {\n.testflex[data-v-618e8492] {\r\n\t\tbackground-color:blue\n}\n.jieQueriesTitleFonts[data-v-618e8492] {\r\n      font-size: 14px !important;\r\n      /* color: red */\n}\r\n\r\n   /* from vuetify .edited */\n.input-group--text-field input[data-v-618e8492], .input-group--text-field textarea[data-v-618e8492] {\r\n      font-size:10px !important;\r\n      color: red\n}\n}\r\n/* xl */\n@media only screen and (min-width: 1904px) {\n.testflex[data-v-618e8492]{\r\n\t\t\tbackground-color: yellow\n}\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -34451,10 +34451,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			jieDark: false,
 			jieVisibility: false,
 			codeid: '',
-			email: '',
-			password: ''
-			// error: false
-		};
+			rform: {
+				email: '',
+				password: ''
+
+				// error: false
+			} };
 	},
 	methods: {
 		testerFunction: function testerFunction() {
@@ -34463,9 +34465,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		AuthCodeID: function AuthCodeID() {
 			this.jieLoading = true;
 			var vm = this;
-			alert('i am trying to login you');
+			alert('i am trying to register you' + this.$data.rform.email);
 			var ckcmcode = Math.random().toString(36).substring(2, 15) + "I love you God" + Math.random().toString(36).substring(2, 15);
-			axios.get('/api/auth/Ckcm-network-api/' + ckcmcode + '/register').then(function (response) {
+			axios.post('api/auth/Ckcm-network-api/' + ckcmcode + '/register', this.rform).then(function (response) {
 				console.log(response.data.msg);
 			}).catch(function (error) {
 				console.log(error);
@@ -35216,11 +35218,11 @@ var render = function() {
                                       disabled: _vm.jieLoading
                                     },
                                     model: {
-                                      value: _vm.email,
+                                      value: _vm.rform.email,
                                       callback: function($$v) {
-                                        _vm.email = $$v
+                                        _vm.$set(_vm.rform, "email", $$v)
                                       },
-                                      expression: "email"
+                                      expression: "rform.email"
                                     }
                                   }),
                                   _vm._v(" "),
@@ -35241,11 +35243,11 @@ var render = function() {
                                       disabled: _vm.jieLoading
                                     },
                                     model: {
-                                      value: _vm.password,
+                                      value: _vm.rform.password,
                                       callback: function($$v) {
-                                        _vm.password = $$v
+                                        _vm.$set(_vm.rform, "password", $$v)
                                       },
-                                      expression: "password"
+                                      expression: "rform.password"
                                     }
                                   }),
                                   _vm._v(" "),

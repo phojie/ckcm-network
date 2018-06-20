@@ -20,37 +20,16 @@ use Illuminate\Support\Facades\DB;
 Route::group(['prefix' => 'auth'], function ($router) {
 
    Route::post('Ckcm-network-api/{any}/login', 'AuthController@login')->where('any', '.*');
-	Route::post('login', 'AuthController@login');
+	// Route::post('login', 'AuthController@login');
 	Route::post('logout', 'AuthController@logout');
 	Route::post('refresh', 'AuthController@refresh');
-	Route::post('me', 'AuthController@me');
-
-	Route::get('Ckcm-network-api/{any}/register', function (){
-		$jie=User::create([
-         'id' => '1',
-         'name' => 'phoj',
-         'email' => 'j@y.com',
-         'password' => bcrypt('jiengpinas')
-      ]);
-			
-		if($jie) {
-			return response()->json([
-				'msg' => 'success'
-			]);
-		} elseif(!$jie) {
-			return response()->json([
-				'msg' => 'fail'
-			]);
-		} else{
-			return response()->json([
-				'msg' => 'out of the way'
-			]);
-		}
-
-   })->where('any', '.*');
+   Route::post('me', 'AuthController@me');
+   Route::post('Ckcm-network-api/{any}/register', 'AuthRegisterController@register')->where('any', '.*');
+   
    
 });
-
+   
+   
 	Route::group(['prefix' => 'jwt'], function() {
-		//
+		//s
 	});
