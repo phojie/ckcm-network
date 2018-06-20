@@ -14,7 +14,6 @@
 		<link rel="shortcut icon"  href="fav.png" />
 
 		<!--upscript-->
-		<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
 
 	</head>
 	<body>
@@ -23,6 +22,7 @@
 		</div>
 	</body>
 		<!-- script -->
+   <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
 	<script src="{{ asset('js/app.js') }}"></script>
 
 </html>

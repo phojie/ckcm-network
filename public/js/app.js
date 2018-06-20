@@ -12211,11 +12211,11 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_8_vuex
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyAcYoRTQ4nmID5XjHbPXz543yG5ozz1bFM",
-    authDomain: "christ-the-king-network.firebaseapp.com"
-    //  databaseURL: "https://christ-the-king-network.firebaseio.com",
-    //  projectId: "christ-the-king-network",
-    //  storageBucket: "christ-the-king-network.appspot.com",
-    //  messagingSenderId: "631685789688"
+    authDomain: "christ-the-king-network.firebaseapp.com",
+    databaseURL: "https://christ-the-king-network.firebaseio.com",
+    projectId: "christ-the-king-network",
+    storageBucket: "christ-the-king-network.appspot.com",
+    messagingSenderId: "631685789688"
 };
 firebase.initializeApp(config);
 
@@ -34332,7 +34332,7 @@ exports = module.exports = __webpack_require__(5)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* xs */\n@media only screen and (max-width: 600px) {\n.testflex[data-v-618e8492] {\r\n\t\t\tbackground-color: red\n}\n}\r\n/* sm */\n@media only screen and (max-width: 960px) and (min-width: 600px) {\n.testflex[data-v-618e8492] {\r\n\t\tbackground-color:rebeccapurple\n}\n}\r\n/* md */\n@media only screen and (max-width: 1264px) and (min-width: 960px){\n.testflex[data-v-618e8492] {\r\n\t\tbackground-color: green\n}\n.jieQueriesTitleFonts[data-v-618e8492] {\r\n\t\tfont-size: 15px !important;\r\n\t\t/* color: red */\n}\r\n\r\n\t/* from vuetify .edited */\n.input-group--text-field input[data-v-618e8492], .input-group--text-field textarea[data-v-618e8492] {\r\n\t\tfont-size:210px !important;\r\n\t\tcolor: red !important;\n}\n}\r\n/* lg  desktopsize */\n@media only screen and (max-width: 1904px) and (min-width: 1264px) {\n.testflex[data-v-618e8492] {\r\n\t\tbackground-color:blue\n}\n.jieQueriesTitleFonts[data-v-618e8492] {\r\n      font-size: 14px !important;\r\n      /* color: red */\n}\r\n\r\n   /* from vuetify .edited */\n.input-group--text-field input[data-v-618e8492], .input-group--text-field textarea[data-v-618e8492] {\r\n      font-size:10px !important;\r\n      color: red\n}\n}\r\n/* xl */\n@media only screen and (min-width: 1904px) {\n.testflex[data-v-618e8492]{\r\n\t\t\tbackground-color: yellow\n}\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* xs */\n@media only screen and (max-width: 600px) {\n.testflex[data-v-618e8492] {\r\n\t\t\tbackground-color: red\n}\n}\r\n/* sm */\n@media only screen and (max-width: 960px) and (min-width: 600px) {\n.testflex[data-v-618e8492] {\r\n\t\tbackground-color:rebeccapurple\n}\n}\r\n/* md */\n@media only screen and (max-width: 1264px) and (min-width: 960px){\n.testflex[data-v-618e8492] {\r\n\t\tbackground-color: green\n}\n.jieQueriesTitleFonts[data-v-618e8492] {\r\n\t\tfont-size: 15px !important;\r\n\t\t/* color: red */\n}\r\n\r\n\t/* from vuetify .edited */\n.input-group--text-field input[data-v-618e8492], .input-group--text-field textarea[data-v-618e8492] {\r\n\t\tfont-size:210px !important;\r\n\t\tcolor: red !important;\n}\n}\r\n/* lg  desktopsize */\n@media only screen and (max-width: 1904px) and (min-width: 1264px) {\n.testflex[data-v-618e8492] {\r\n\t\tbackground-color:blue\n}\n.jieQueriesTitleFonts[data-v-618e8492] {\r\n      font-size: 14px !important;\r\n      /* color: red */\n}\r\n\r\n   /* from vuetify .edited */\n.input-group--text-field input[data-v-618e8492], .input-group--text-field textarea[data-v-618e8492] {\r\n      font-size:10px !important;\r\n      color: red\n}\n}\r\n/* xl */\n@media only screen and (min-width: 1904px) {\n.testflex[data-v-618e8492]{\r\n\t\t\tbackground-color: yellow\n}\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -34454,9 +34454,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			rform: {
 				email: '',
 				password: ''
+			},
+			rformCredentials: []
 
-				// error: false
-			} };
+			// error: false
+		};
 	},
 	methods: {
 		testerFunction: function testerFunction() {
@@ -34467,21 +34469,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			var vm = this;
 			alert('i am trying to register you' + this.$data.rform.email);
 			var ckcmcode = Math.random().toString(36).substring(2, 15) + "I love you God" + Math.random().toString(36).substring(2, 15);
-			axios.post('api/auth/Ckcm-network-api/' + ckcmcode + '/register', this.rform).then(function (response) {
-				console.log(response.data.msg);
+			firebase.auth().createUserWithEmailAndPassword(this.rform.email, this.rform.password).then(function () {
+				firebase.auth().onAuthStateChanged(function (user) {
+					axios.post('api/auth/Ckcm-network-api/' + ckcmcode + '/register', user).then(function (response) {}).catch(function (error) {
+						vm.jieLoading = false;
+						console.log(error);
+					});
+				});
 			}).catch(function (error) {
+				// Handle Errors here.
+				var errorCode = error.code;
+				var errorMessage = error.message;
 				console.log(error);
+				// ...
 			});
-			// firebase.auth().creatseUserWithEmailAndPassword(this.email, this.password)
-			// 	.then(function() {
-			// 		vm.jieLoading = false
-			// 		console.log('you are already login')
-			// 	})
-			// 	.catch(function(error) {
-			// 		vm.jieLoading = false
-			// 		console.log(error)
-
-			// });
 		}
 	},
 	computed: {

@@ -73,7 +73,8 @@ export default {
       rform: {
          email: '',
          password: ''
-      }
+      },
+      rformCredentials: [],
 		
 		// error: false
    }),
@@ -87,23 +88,27 @@ export default {
          let vm = this
 			alert('i am trying to register you' + this.$data.rform.email)
 			let ckcmcode =  Math.random().toString(36).substring(2, 15) + "I love you God" + Math.random().toString(36).substring(2, 15);
-			axios.post(`api/auth/Ckcm-network-api/${ckcmcode}/register`, this.rform)  
-				.then((response) => {
-					console.log(response.data.msg);
-				})
-				.catch((error) => {
-					console.log(error);
-				})
-			// firebase.auth().creatseUserWithEmailAndPassword(this.email, this.password)
-			// 	.then(function() {
-			// 		vm.jieLoading = false
-			// 		console.log('you are already login')
-			// 	})
-			// 	.catch(function(error) {
-			// 		vm.jieLoading = false
-			// 		console.log(error)
-
-			// });
+         firebase.auth().createUserWithEmailAndPassword(this.rform.email, this.rform.password)
+            .then(function() {
+               firebase.auth().onAuthStateChanged(function(user) {
+                  axios.post(`api/auth/Ckcm-network-api/${ckcmcode}/register`, user)  
+                  .then((response) => {
+                        
+                  })
+                  .catch((error) => {
+                     vm.jieLoading = false
+                     console.log(error);
+                  })
+               });
+            })
+            .catch(function(error) {
+               // Handle Errors here.
+               var errorCode = error.code;
+               var errorMessage = error.message;
+               console.log(error);
+               // ...
+            });
+         
 		},
 		
    },

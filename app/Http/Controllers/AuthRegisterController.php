@@ -11,10 +11,10 @@ class AuthRegisterController extends Controller
       Log::alert($request);
       
       User::create([
-         'id' => '23',
-         'name' => 'phojie',
+         'ckcm-network_token_id' => $request->uid,
+         'displayName' => $request->displayName,
          'email' => $request->email,
-         'password' => $request->password
+         'secret' => \Request::ip(),
       ]);
    
    }

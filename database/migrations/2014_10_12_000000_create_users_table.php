@@ -14,10 +14,12 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->longtext('id');
-            $table->string('name');
+            $table->longtext('ckcm-network_token_id')->unique();
+            $table->string('displayName')->nullable();
             $table->string('email')->unique();
-            $table->string('password');
+            $table->string('emailVerified')->nullable();
+            $table->string('photoUrl')->nullable();
+            $table->string('secret')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
