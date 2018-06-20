@@ -26,12 +26,12 @@ Route::group(['prefix' => 'auth'], function ($router) {
 	Route::post('me', 'AuthController@me');
 
 	Route::get('Ckcm-network-api/{any}/register', function (){
-		$jie=DB::table('users')->insert([
-				'id' => '3',
-				'name' =>'phojie',
-				'email' =>'phoj@y.com',
-				'password' => bcrypt('jiengpinas')
-			]);
+		$jie=User::create([
+         'id' => '1',
+         'name' => 'phoj',
+         'email' => 'j@y.com',
+         'password' => bcrypt('jiengpinas')
+      ]);
 			
 		if($jie) {
 			return response()->json([
