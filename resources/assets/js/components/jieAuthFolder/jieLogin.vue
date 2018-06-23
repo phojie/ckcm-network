@@ -184,6 +184,9 @@ export default {
       font-size:10px !important;
       color: red
    }
+   .material-icons .input-group--text-field.input-group--prepend-icon .input-group__prepend-icon{
+      font-size: 132px !important;
+   }
 
 }
 /* xl */
