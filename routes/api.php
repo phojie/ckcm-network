@@ -24,7 +24,9 @@ Route::group(['prefix' => 'auth'], function ($router) {
 	Route::post('logout', 'AuthController@logout');
 	Route::post('refresh', 'AuthController@refresh');
    Route::post('me', 'AuthController@me');
-   Route::post('Ckcm-network-api/{any}/register', 'AuthRegisterController@register')->where('any', '.*');
+   Route::post('Ckcm-network-api/{any}/register', 'AuthRegisterController@registerUser')->where('any', '.*');
+   Route::post('Ckcm-network-api/{any}/updateinfo', 'AuthRegisterController@updateInfo')->where('any', '.*');
+   Route::post('Ckcm-network-api/{any}/deleteinfo', 'AuthRegisterController@deleteInfo')->where('any', '.*');
    
    
 });

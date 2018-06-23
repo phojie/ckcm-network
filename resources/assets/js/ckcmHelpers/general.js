@@ -5,7 +5,11 @@ export function initialize(store, router) {
 
       if(requiresAuth && !currentUser) {
          next('/login');
+         //kng wla pa ka login 
       } else if(to.path == '/login' && currentUser) {
+         next('/');
+         // kng nka login mo dretso sa "/"
+      } else if(to.path == '/signup' && currentUser) {
          next('/');
       } else {
          next();
@@ -13,7 +17,7 @@ export function initialize(store, router) {
    });
    
    axios.interceptors.response.use(null, (error) => {
-      if (error.response.status == 401) {
+      if (error.response.status == 401 && !currentUser) {
          alert("please relogin");
          // store.commit('logout');
          router.push('/login');
@@ -23,5 +27,5 @@ export function initialize(store, router) {
          return Promise.reject(error);
       });
 
-   // axios.defaults.headers.common["Authorization"] = `Bearer ${store.getters.currentUser.token}`
+   // axios.defaults.headers.common["Authorization"] = `Bearer ${store.getters.accountLoginData.token}`
 }

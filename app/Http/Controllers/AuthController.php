@@ -25,22 +25,14 @@ class AuthController extends Controller
 	 */
 	public function login()
 	{
+      
 		$credentials = request(['email', 'password']);
-
+      
 		if (! $token = auth('api')->attempt($credentials)) {
 			return response()->json(['error' => 'Unauthorized, Stop! jie can caught you!'], 401);
 		}
 
 		return $this->respondWithToken($token);
-	}
-
-	public function register(Request $request){
-      $credentials = $request->only('emai','password');
-      User::create([
-         'id' => '131',
-         'name' => $request->email,
-         'password' => bcrypt($request->password) ,
-      ]);
 	}
 
 	/**

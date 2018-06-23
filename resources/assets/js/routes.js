@@ -7,7 +7,7 @@ export const routes = [
       path:'/',
       component: jieHome,
       meta: {
-         requiresAuth: true
+         requiresAuth: true,
       }
    },
    {

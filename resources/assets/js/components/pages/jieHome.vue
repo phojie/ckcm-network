@@ -1,6 +1,6 @@
 <template>
    <div>
-      {{mydata}}
+      <br>
       <router-link to="/werew">Get Lost</router-link>
       <v-btn small color="error" @click="logout">logout</v-btn>
       
@@ -8,20 +8,21 @@
 </template>
 
 <script>
-export default {
+export default {  
    data: () => ({
 
    }),
    computed: {
-      mydata() {
-         return this.$store.getters.accountLoginData;
-      }
    },
    methods: {
       logout(){
          this.$store.commit('logout');
          this.$router.push('/login');
       }
+   },
+   created() {
+      
    }
+   
 }
 </script>

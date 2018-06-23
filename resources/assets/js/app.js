@@ -2,7 +2,7 @@
  * depen.
  */
 require('./bootstrap');
-import 'material-design-icons-iconfont/dist/material-design-icons.css'
+// import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import {routes} from './routes';
@@ -12,6 +12,8 @@ import Vuetify from 'vuetify';
 import StoreJieData from './store'
 import Vuex from 'vuex';
 import {initialize} from './ckcmHelpers/general';
+import VueProgressBar from 'vue-progressbar'
+
 /**
  * Functions
  */
@@ -19,6 +21,20 @@ Vue.use(Vuetify);
 Vue.use(Vuelidate)
 Vue.use(VueRouter);
 Vue.use(Vuex);
+Vue.use(VueProgressBar, {
+  color: 'green',
+  failedColor: 'red',
+  thickness: '6px',
+  transition: {
+    speed: '0.2s',
+    opacity: '0.6s',
+    termination: 300
+  },
+  autoRevert: true,
+  location: 'top',
+  inverse: false,
+  autoFinish: false
+})
 // Initialize Firebase
 const config = {
     apiKey: "AIzaSyAcYoRTQ4nmID5XjHbPXz543yG5ozz1bFM",

@@ -27,6 +27,7 @@
         "material-design-icons-iconfont": "^3.0.3",
         "rupture": "^0.7.1",
         "validate.js": "^0.12.0",
+        "vue-progressbar": "^0.7.5",
         "vue-router": "^3.0.1",
         "vuelidate": "^0.7.4",
         "vuetify": "^1.0.19",

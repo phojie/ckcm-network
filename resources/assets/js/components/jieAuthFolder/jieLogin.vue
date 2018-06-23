@@ -48,17 +48,8 @@
 										:loading="jieLoading" type="submit"
 									>
 										Submit
-
                            </v-btn>
-                           
-                           <!-- <v-btn color="info" small to="/signup">Signup</v-btn>
-                           <v-btn color="error" small @click="logout">Logout</v-btn> -->
-
                         </v-form>
-
-                        <!-- <ul color="red">
-                           <li >{{Login}}</li>
-                        </ul> -->
                      </v-card-text>
 
                   </v-card>
@@ -79,58 +70,48 @@ export default {
 		jieLoading: false,
 		jieDark: false,
 		jieVisibility: false,
-		codeid: null,
-		authUser: null,
+      codeid: null,
+      authUser: null,
 		form: {
-			email: 'phoj@y.com',
-			password: 'jiengpinas'
+			email: '',
+			password: ''
 		}
    }),
    methods: {	
-    logout () {
-      firebase.auth().signOut()
-        .then(function() {
-          console.log('succ. log');
-        })
-        .catch(function(error) {
-          console.log('already logout')
-        });
-    },
-    testerFunction () {
+   testerFunction () {
       alert('tested')
-    },
-    AuthCodeID () {
-      this.jieLoading = true
-      let vm = this
-      alert('i am trying to login you')
-      this.$store.dispatch('login');
-      login(this.$data.form) 
-        .then((res) => {
-				vm.jieLoading = false
-			console.log(res);
-			this.$store.commit("loginSuccess", res);
-			this.$router.push({
-			path: '/'
-			});
-        })
-        .catch((error) => {
-               vm.jieLoading = false 
-          alert(error);
-        });
-         // firebase.auth().signInWithEmailAndPassword(this.email, this.password)
-         //    .then(function() {
-         //       vm.jieLoading = false
-         //       console.log('success')
-         //    })
-         //    .catch(function(error) {
-         //       // Handle Errors here.
-         //       vm.jieLoading = false
-         //       var errorCode = error.code;
-         //       var errorMessage = error.message;
-         //       console.log(errorMessage)
-         //       // ...   
-         // });
-    },
+   },
+   getFdetails() {
+      const user = firebase.auth().currentUser;
+      this.$store.commit("firebaseSuccess", user)
+   },
+   AuthCodeID () {
+   this.$Progress.start()
+   this.jieLoading = true
+   let vm = this
+   this.$store.dispatch('login');
+   login(this.$data.form) 
+      .then((res) => {
+         vm.$store.commit("loginSuccess", res);
+         firebase.auth().signInWithEmailAndPassword(vm.form.email, vm.form.password)
+            .then((response) =>{
+               vm.getFdetails()
+               vm.jieLoading = false
+               vm.$Progress.finish()
+               vm.$router.push({ path: '/'});
+            })
+            .catch((error) =>{
+               this.$Progress.fail()
+               console.log(error)
+            })
+      })
+      .catch((error) => {
+         this.$Progress.fail()
+         vm.jieLoading = false 
+         vm.form.password = ''
+         // console.log(error)
+      });
+   },
     
    },
    computed: {
@@ -141,22 +122,18 @@ export default {
          !this.$v.codeid.required && errors.push('It is Required! -__-')
             return errors
          },
-         Login(){
-            return this.authUser
-         }
-  },
-  validations: {
-    codeid: {
-      required
-    }
-  },
-  mounted() {
-    
+   },
+   validations: {
+      codeid: {
+         required
+      }
+   },
+   mounted() {
+      
    },
    created() {
-      firebase.auth().onAuthStateChanged(user =>  { this.authUser = user })
-   }
 
+   }
 }
 </script>
 

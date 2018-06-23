@@ -6,15 +6,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Christ the King Network</title>
 		<!-- Fonts -->
-
 		<!-- Styles -->
 		{{--  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">  --}}
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
-		<link href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="shortcut icon"  href="fav.png" />
-
 		<!--upscript-->
-
 	</head>
 	<body>
 		<div id="jie">
@@ -22,7 +19,9 @@
 		</div>
 	</body>
 		<!-- script -->
-   <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>
 	<script src="{{ asset('js/app.js') }}"></script>
+
 
 </html>

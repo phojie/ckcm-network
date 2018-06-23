@@ -49,8 +49,7 @@
 									>
 										Submit
 									</v-btn>
-                           <v-btn color="info" small to="/login">Already have Account ?</v-btn>
-									
+                           <!-- <v-btn color="info" small to="/login">Already have Account ?</v-btn> -->
                         </v-form>
                      </v-card-text>
 
@@ -63,6 +62,7 @@
 </template>
 
 <script>
+import { login, getLocalUser } from '../../ckcmHelpers/auth';
 import { required } from 'vuelidate/lib/validators'
 export default {
    data: () => ({
@@ -72,45 +72,97 @@ export default {
       codeid: '',
       rform: {
          email: '',
-         password: ''
+         password: '',
+         secret: '',
       },
-      rformCredentials: [],
 		
 		// error: false
    }),
    methods: {
-		
 		testerFunction () {
 			alert('testesd')
-		},
+      },
+      getFdetails() {
+         const user = firebase.auth().currentUser;
+         this.$store.commit("firebaseSuccess", user)
+      },
+      loginAuth() {
+         this.$Progress.start()
+         let vm = this
+         this.$store.dispatch('login');
+         login(this.$data.rform) 
+         .then((res) => {
+            vm.$store.commit("loginSuccess", res);
+            firebase.auth().signInWithEmailAndPassword(vm.rform.email, vm.rform.password)
+               .then((response) =>{
+                  firebase.auth().onAuthStateChanged(function(user) {
+                     vm.getFdetails()
+                     vm.$store.commit("firebaseSuccess", user)
+                     vm.rform.email=''
+                     vm.rform.password= ''
+                     vm.rform.secret= ''
+                     vm.jieLoading = false
+                     vm.$Progress.finish()
+                     vm.$router.push({
+                     path: '/'
+                     });
+                  })
+               })
+               .catch((error) =>{
+                  this.$Progress.fail()
+                  console.log(error)
+               })
+         })
+         .catch((error) => {
+            this.$Progress.fail()
+            vm.jieLoading = false 
+            // console.log(error)
+         });
+      },
 		AuthCodeID () {
 			this.jieLoading = true
          let vm = this
-			alert('i am trying to register you' + this.$data.rform.email)
 			let ckcmcode =  Math.random().toString(36).substring(2, 15) + "I love you God" + Math.random().toString(36).substring(2, 15);
-         firebase.auth().createUserWithEmailAndPassword(this.rform.email, this.rform.password)
-            .then(function() {
-               firebase.auth().onAuthStateChanged(function(user) {
-                  axios.post(`api/auth/Ckcm-network-api/${ckcmcode}/register`, user)  
-                  .then((response) => {
-                        
+         this.rform.secret = ckcmcode
+         axios.post(`api/auth/Ckcm-network-api/${ckcmcode}/register`, this.rform)  
+            .then((response) => {
+               firebase.auth().createUserWithEmailAndPassword(vm.rform.email, vm.rform.password)
+                  .then(function() {
+                     firebase.auth().onAuthStateChanged(function(user) {
+                        axios.post(`api/auth/Ckcm-network-api/${ckcmcode}/updateinfo`, user)  
+                           .then((response) => {
+                              vm.loginAuth();
+                           })
+                           .catch((error) => {
+                              vm.$Progress.fail()
+                              vm.jieLoading = false
+                              vm.rform.password= ''
+                              vm.rform.secret= ''
+                           })
+                     })
                   })
-                  .catch((error) => {
-                     vm.jieLoading = false
-                     console.log(error);
+                  .catch(function(error) {
+                     // Handle Errors here.
+                     axios.post(`api/auth/Ckcm-network-api/${ckcmcode}/deleteinfo`, vm.rform)  
+                        .catch((error) => {
+                           // console.log(error())
+                        })
+                     vm.$Progress.fail();
+                     vm.jieLoading = false;
+                     var errorCode = error.code;
+                     var errorMessage = error.message;
+                     vm.rform.password= ''
+                     vm.rform.secret= ''
                   })
-               });
             })
-            .catch(function(error) {
-               // Handle Errors here.
-               var errorCode = error.code;
-               var errorMessage = error.message;
+            .catch((error) => {
+               vm.$Progress.fail()
+               vm.jieLoading = false
                console.log(error);
-               // ...
-            });
-         
+               vm.rform.password= ''
+               vm.rform.secret= ''
+            })
 		},
-		
    },
    computed: {
 		codeidErrors() {

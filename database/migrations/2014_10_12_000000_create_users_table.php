@@ -15,6 +15,7 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->longtext('ckcm-network_token_id')->unique();
+            $table->string('password');
             $table->string('displayName')->nullable();
             $table->string('email')->unique();
             $table->string('emailVerified')->nullable();
