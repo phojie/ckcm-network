@@ -81,10 +81,6 @@ export default {
    testerFunction () {
       alert('tested')
    },
-   getFdetails() {
-      const user = firebase.auth().currentUser;
-      this.$store.commit("firebaseSuccess", user)
-   },
    AuthCodeID () {
    this.$Progress.start()
    this.jieLoading = true
@@ -95,7 +91,7 @@ export default {
          vm.$store.commit("loginSuccess", res);
          firebase.auth().signInWithEmailAndPassword(vm.form.email, vm.form.password)
             .then((response) =>{
-               vm.getFdetails()
+               vm.$store.dispatch("loginFirebase")
                vm.jieLoading = false
                vm.$Progress.finish()
                vm.$router.push({ path: '/'});
@@ -184,8 +180,8 @@ export default {
       font-size:10px !important;
       color: red
    }
-   .material-icons .input-group--text-field.input-group--prepend-icon .input-group__prepend-icon{
-      font-size: 132px !important;
+   .material-icons {
+      font-size: 13px !important;
    }
 
 }

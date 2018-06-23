@@ -33816,7 +33816,7 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* xs */\n@media only screen and (max-width: 600px) {\n.testflex[data-v-618e8492] {\r\n\t\t\tbackground-color: red\n}\n}\r\n/* sm */\n@media only screen and (max-width: 960px) and (min-width: 600px) {\n.testflex[data-v-618e8492] {\r\n\t\tbackground-color:rebeccapurple\n}\n}\r\n/* md */\n@media only screen and (max-width: 1264px) and (min-width: 960px){\n.testflex[data-v-618e8492] {\r\n\t\tbackground-color: green\n}\n.jieQueriesTitleFonts[data-v-618e8492] {\r\n\t\tfont-size: 15px !important;\r\n\t\t/* color: red */\n}\r\n\r\n\t/* from vuetify .edited */\n.input-group--text-field input[data-v-618e8492], .input-group--text-field textarea[data-v-618e8492] {\r\n\t\tfont-size:210px !important;\r\n\t\tcolor: red !important;\n}\n}\r\n/* lg  desktopsize */\n@media only screen and (max-width: 1904px) and (min-width: 1264px) {\n.testflex[data-v-618e8492] {\r\n\t\tbackground-color:blue\n}\n.jieQueriesTitleFonts[data-v-618e8492] {\r\n      font-size: 14px !important;\r\n      /* color: red */\n}\r\n\r\n   /* from vuetify .edited */\n.input-group--text-field input[data-v-618e8492], .input-group--text-field textarea[data-v-618e8492] {\r\n      font-size:10px !important;\r\n      color: red\n}\n}\r\n/* xl */\n@media only screen and (min-width: 1904px) {\n.testflex[data-v-618e8492]{\r\n\t\t\tbackground-color: yellow\n}\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* xs */\n@media only screen and (max-width: 600px) {\n.testflex[data-v-618e8492] {\r\n\t\t\tbackground-color: red\n}\n}\r\n/* sm */\n@media only screen and (max-width: 960px) and (min-width: 600px) {\n.testflex[data-v-618e8492] {\r\n\t\tbackground-color:rebeccapurple\n}\n}\r\n/* md */\n@media only screen and (max-width: 1264px) and (min-width: 960px){\n.testflex[data-v-618e8492] {\r\n\t\tbackground-color: green\n}\n.jieQueriesTitleFonts[data-v-618e8492] {\r\n\t\tfont-size: 15px !important;\r\n\t\t/* color: red */\n}\r\n\r\n\t/* from vuetify .edited */\n.input-group--text-field input[data-v-618e8492], .input-group--text-field textarea[data-v-618e8492] {\r\n\t\tfont-size:210px !important;\r\n\t\tcolor: red !important;\n}\n}\r\n/* lg  desktopsize */\n@media only screen and (max-width: 1904px) and (min-width: 1264px) {\n.testflex[data-v-618e8492] {\r\n\t\tbackground-color:blue\n}\n.jieQueriesTitleFonts[data-v-618e8492] {\r\n      font-size: 14px !important;\r\n      /* color: red */\n}\r\n\r\n   /* from vuetify .edited */\n.input-group--text-field input[data-v-618e8492], .input-group--text-field textarea[data-v-618e8492] {\r\n      font-size:10px !important;\r\n      color: red\n}\n}\r\n/* xl */\n@media only screen and (min-width: 1904px) {\n.testflex[data-v-618e8492]{\r\n\t\t\tbackground-color: yellow\n}\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -33949,10 +33949,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       testerFunction: function testerFunction() {
          alert('testesd');
       },
-      getFdetails: function getFdetails() {
-         var user = firebase.auth().currentUser;
-         this.$store.commit("firebaseSuccess", user);
-      },
       loginAuth: function loginAuth() {
          var _this = this;
 
@@ -33962,17 +33958,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          Object(__WEBPACK_IMPORTED_MODULE_0__ckcmHelpers_auth__["c" /* login */])(this.$data.rform).then(function (res) {
             vm.$store.commit("loginSuccess", res);
             firebase.auth().signInWithEmailAndPassword(vm.rform.email, vm.rform.password).then(function (response) {
-               firebase.auth().onAuthStateChanged(function (user) {
-                  vm.getFdetails();
-                  vm.$store.commit("firebaseSuccess", user);
-                  vm.rform.email = '';
-                  vm.rform.password = '';
-                  vm.rform.secret = '';
-                  vm.jieLoading = false;
-                  vm.$Progress.finish();
-                  vm.$router.push({
-                     path: '/'
-                  });
+               vm.$store.dispatch("loginFirebase");
+               vm.rform.email = '';
+               vm.rform.password = '';
+               vm.rform.secret = '';
+               vm.jieLoading = false;
+               vm.$Progress.finish();
+               vm.$router.push({
+                  path: '/'
                });
             }).catch(function (error) {
                _this.$Progress.fail();
@@ -34926,7 +34919,7 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* xs */\n@media only screen and (max-width: 600px) {\n.testflex[data-v-6751829a] {\r\n    background-color: red\n}\n}\r\n/* sm */\n@media only screen and (max-width: 960px) and (min-width: 600px) {\n.testflex[data-v-6751829a] {\r\n    background-color:rebeccapurple\n}\n}\r\n/* md */\n@media only screen and (max-width: 1264px) and (min-width: 960px){\n.testflex[data-v-6751829a] {\r\n    background-color: green\n}\n.jieQueriesTitleFonts[data-v-6751829a] {\r\n    font-size: 15px !important;\r\n    /* color: red */\n}\r\n\r\n  /* from vuetify .edited */\n.input-group--text-field input[data-v-6751829a], .input-group--text-field textarea[data-v-6751829a] {\r\n    font-size:210px !important;\r\n    color: red !important;\n}\n}\r\n/* lg  desktopsize */\n@media only screen and (max-width: 1904px) and (min-width: 1264px) {\n.testflex[data-v-6751829a] {\r\n    background-color:blue\n}\n.jieQueriesTitleFonts[data-v-6751829a] {\r\n      font-size: 14px !important;\r\n      /* color: red */\n}\r\n\r\n   /* from vuetify .edited */\n.input-group--text-field input[data-v-6751829a], .input-group--text-field textarea[data-v-6751829a] {\r\n      font-size:10px !important;\r\n      color: red\n}\n.material-icons .input-group--text-field.input-group--prepend-icon .input-group__prepend-icon[data-v-6751829a]{\r\n      font-size: 132px !important;\n}\n}\r\n/* xl */\n@media only screen and (min-width: 1904px) {\n.testflex[data-v-6751829a]{\r\n    background-color: yellow\n}\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* xs */\n@media only screen and (max-width: 600px) {\n.testflex[data-v-6751829a] {\r\n    background-color: red\n}\n}\r\n/* sm */\n@media only screen and (max-width: 960px) and (min-width: 600px) {\n.testflex[data-v-6751829a] {\r\n    background-color:rebeccapurple\n}\n}\r\n/* md */\n@media only screen and (max-width: 1264px) and (min-width: 960px){\n.testflex[data-v-6751829a] {\r\n    background-color: green\n}\n.jieQueriesTitleFonts[data-v-6751829a] {\r\n    font-size: 15px !important;\r\n    /* color: red */\n}\r\n\r\n  /* from vuetify .edited */\n.input-group--text-field input[data-v-6751829a], .input-group--text-field textarea[data-v-6751829a] {\r\n    font-size:210px !important;\r\n    color: red !important;\n}\n}\r\n/* lg  desktopsize */\n@media only screen and (max-width: 1904px) and (min-width: 1264px) {\n.testflex[data-v-6751829a] {\r\n    background-color:blue\n}\n.jieQueriesTitleFonts[data-v-6751829a] {\r\n      font-size: 14px !important;\r\n      /* color: red */\n}\r\n\r\n   /* from vuetify .edited */\n.input-group--text-field input[data-v-6751829a], .input-group--text-field textarea[data-v-6751829a] {\r\n      font-size:10px !important;\r\n      color: red\n}\n.material-icons[data-v-6751829a] {\r\n      font-size: 13px !important;\n}\n}\r\n/* xl */\n@media only screen and (min-width: 1904px) {\n.testflex[data-v-6751829a]{\r\n    background-color: yellow\n}\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -35025,10 +35018,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       testerFunction: function testerFunction() {
          alert('tested');
       },
-      getFdetails: function getFdetails() {
-         var user = firebase.auth().currentUser;
-         this.$store.commit("firebaseSuccess", user);
-      },
       AuthCodeID: function AuthCodeID() {
          var _this = this;
 
@@ -35039,7 +35028,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          Object(__WEBPACK_IMPORTED_MODULE_1__ckcmHelpers_auth__["c" /* login */])(this.$data.form).then(function (res) {
             vm.$store.commit("loginSuccess", res);
             firebase.auth().signInWithEmailAndPassword(vm.form.email, vm.form.password).then(function (response) {
-               vm.getFdetails();
+               vm.$store.dispatch("loginFirebase");
                vm.jieLoading = false;
                vm.$Progress.finish();
                vm.$router.push({ path: '/' });
@@ -35338,8 +35327,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 
 
@@ -35357,8 +35344,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       jiePagesLayout: __WEBPACK_IMPORTED_MODULE_1__jieLayoutsFolder_jiePagesLayout_vue___default.a
    },
    mounted: function mounted() {
-      //  [App.vue specific] When App.vue is finish loading finish the progress bar
-      // firebase.auth().onAuthStateChanged(user => { this.authUser = user })
       this.$Progress.finish();
    },
 
@@ -35367,7 +35352,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          return this.$store.getters.fdetails;
       },
       logindata: function logindata() {
-         return this.$store.getters.accountLoginData;
+         if (this.$store.state.accountLoginData) {
+            return this.$store.getters.accountLoginData;
+         }
       }
    },
    created: function created() {
@@ -35546,18 +35533,13 @@ var render = function() {
       _c("router-view"),
       _vm._v(" "),
       _c("br"),
-      _vm._v(" "),
-      _vm.logindata
-        ? _c("p", [
-            _vm._v(
-              "\r\n      " +
-                _vm._s(_vm.logindata) +
-                "\r\n      " +
-                _vm._s(_vm.firebaseData.fdetailsload.email) +
-                "\r\n   "
-            )
-          ])
-        : _vm._e()
+      _vm._v(
+        "\r\n      " +
+          _vm._s(_vm.logindata) +
+          "\r\n      " +
+          _vm._s(_vm.firebaseData) +
+          "\r\n   "
+      )
     ],
     1
   )
@@ -54163,6 +54145,10 @@ var fdetails = Object(__WEBPACK_IMPORTED_MODULE_0__ckcmHelpers_auth__["b" /* get
    actions: {
       login: function login(context) {
          context.commit("login"); //calling the mutation login
+      },
+      loginFirebase: function loginFirebase(context) {
+         var user = firebase.auth().currentUser;
+         context.commit("firebaseSuccess", user);
       }
    }
 });

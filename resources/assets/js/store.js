@@ -68,5 +68,9 @@ export default {
       login(context) {
          context.commit("login"); //calling the mutation login
       },
+      loginFirebase(context) {
+         const user = firebase.auth().currentUser;
+         context.commit("firebaseSuccess", user)
+      }
    }
 }

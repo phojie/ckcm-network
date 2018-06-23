@@ -82,10 +82,6 @@ export default {
 		testerFunction () {
 			alert('testesd')
       },
-      getFdetails() {
-         const user = firebase.auth().currentUser;
-         this.$store.commit("firebaseSuccess", user)
-      },
       loginAuth() {
          this.$Progress.start()
          let vm = this
@@ -95,18 +91,15 @@ export default {
             vm.$store.commit("loginSuccess", res);
             firebase.auth().signInWithEmailAndPassword(vm.rform.email, vm.rform.password)
                .then((response) =>{
-                  firebase.auth().onAuthStateChanged(function(user) {
-                     vm.getFdetails()
-                     vm.$store.commit("firebaseSuccess", user)
-                     vm.rform.email=''
-                     vm.rform.password= ''
-                     vm.rform.secret= ''
-                     vm.jieLoading = false
-                     vm.$Progress.finish()
-                     vm.$router.push({
+                  vm.$store.dispatch("loginFirebase")
+                  vm.rform.email=''
+                  vm.rform.password= ''
+                  vm.rform.secret= ''
+                  vm.jieLoading = false
+                  vm.$Progress.finish()
+                  vm.$router.push({
                      path: '/'
-                     });
-                  })
+                  });
                })
                .catch((error) =>{
                   this.$Progress.fail()

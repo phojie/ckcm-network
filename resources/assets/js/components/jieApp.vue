@@ -3,10 +3,8 @@
    <vue-progress-bar></vue-progress-bar>
    <router-view></router-view>
    <br>
-   <p v-if="logindata">
       {{logindata}}
-      {{firebaseData.fdetailsload.email}}
-   </p>
+      {{firebaseData}}
    <!-- <jieLanding v-if="!login"></jieLanding>
 	<jiePagesLayout v-else></jiePagesLayout> -->
 </div>
@@ -29,17 +27,16 @@ export default {
 		jiePagesLayout,
 	},
 	mounted () {
-      //  [App.vue specific] When App.vue is finish loading finish the progress bar
-      // firebase.auth().onAuthStateChanged(user => { this.authUser = user })
       this.$Progress.finish()
-
    },
    computed: {
       firebaseData() {
          return this.$store.getters.fdetails
       },
       logindata() {
-         return this.$store.getters.accountLoginData
+         if(this.$store.state.accountLoginData) {
+            return this.$store.getters.accountLoginData
+         }
       }
    },
    created () {
