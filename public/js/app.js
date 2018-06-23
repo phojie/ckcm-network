@@ -54130,6 +54130,7 @@ var fdetails = Object(__WEBPACK_IMPORTED_MODULE_0__ckcmHelpers_auth__["b" /* get
          localStorage.removeItem("user");
          localStorage.removeItem("fdetails");
          state.isIn = false;
+         state.fdetails = null;
          state.accountLoginData = null;
          firebase.auth().signOut().then(function () {
             // Sign-out successful.

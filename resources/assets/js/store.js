@@ -50,6 +50,7 @@ export default {
          localStorage.removeItem("user");
          localStorage.removeItem("fdetails");
          state.isIn = false;
+         state.fdetails = null ;
          state.accountLoginData = null;
          firebase.auth().signOut().then(function() {
             // Sign-out successful.
