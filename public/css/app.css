@@ -1,26 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Aref+Ruqaa);html {
-  color: #212121;
-  font: 900 16px/24px Roboto, sans-serif;
-  font-style: normal;
-  -webkit-font-variant-ligatures: normal;
-          font-variant-ligatures: normal;
-  font-variant-caps: normal;
-  font-variant-numeric: normal;
-  font-variant-east-asian: normal;
-  font-weight: 400;
-  font-stretch: normal;
-  font-size: 16px;
-  line-height: 24px;
-  font-family: Roboto, sans-serif;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  margin: 0;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-       text-size-adjust: 100%;
-}
-@-webkit-keyframes shake {
+@import url(https://fonts.googleapis.com/css?family=Aref+Ruqaa);@-webkit-keyframes shake {
   59% {
     margin-left: 0;
   }
@@ -12397,4 +12375,8 @@ table.table tfoot tr td {
   .tooltip .tooltip__content {
     padding: 10px 16px;
   }
+}
+html {
+  overflow-y: auto;
+  font-family: 'Aref Ruqaa', serif !important;
 }

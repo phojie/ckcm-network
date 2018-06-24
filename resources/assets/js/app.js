@@ -17,14 +17,27 @@ import VueProgressBar from 'vue-progressbar'
 /**
  * Functions
  */
+Vue.use(Vuetify, {
+   theme: {
+      primary: '#84B833',
+      secondary: '#424242',
+      accent: '#82B1FF',
+      error: '#FF5252',
+      info: '#2196F3',
+      success: '#4CAF50',
+      warning: '#FFC107',
+      primaryColortext: '#757575',
+      secondaryColortext: '#414141'
+   }
+ })
 Vue.use(Vuetify);
 Vue.use(Vuelidate)
 Vue.use(VueRouter);
 Vue.use(Vuex);
 Vue.use(VueProgressBar, {
-  color: 'green',
+  color: '#84B833',
   failedColor: 'red',
-  thickness: '6px',
+  thickness: '3px',
   transition: {
     speed: '0.2s',
     opacity: '0.6s',

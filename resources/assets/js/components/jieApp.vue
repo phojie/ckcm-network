@@ -1,30 +1,16 @@
 <template>
 <div>
    <vue-progress-bar></vue-progress-bar>
-   <router-view></router-view>
-   <br>
-      <!-- {{logindata}}
-      {{firebaseData}} -->
-   <jieLanding v-if="!logindata"></jieLanding>
-	<!-- <jiePagesLayout v-else></jiePagesLayout> -->
+   <router-view ></router-view>
 </div>
- 
 </template>
-
 <script>
-import jieLanding from './jieLandingFolder/jieLanding.vue';
-import jiePagesLayout from './jieLayoutsFolder/jiePagesLayout.vue';
-
 export default {
 	data() {
 		return {
          login: false,
          authUser: null,
 		}
-	},
-	components:{
-		jieLanding,
-		jiePagesLayout,
 	},
 	mounted () {
       this.$Progress.finish()

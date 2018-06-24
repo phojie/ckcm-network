@@ -3,7 +3,7 @@
       <br>
       <router-link to="/werew">Get Lost</router-link>
       <v-btn small color="error" @click="logout">logout</v-btn>
-      
+      <router-view></router-view>
    </div>
 </template>
 
@@ -16,8 +16,9 @@ export default {
    },
    methods: {
       logout(){
+         const ckcmcode = Math.random().toString(36).substring(2, 15)  + Math.random().toString(36).substring(2, 15)  + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
          this.$store.commit('logout');
-         this.$router.push('/login');
+         this.$router.push(`/?stype=lo&jlou=jie_ckcm-code=${ckcmcode}-AfcXyKTxpz7sQ68VmX5mkDW-v78XPvqoICwwqRFwSZgox8TG0GBDSY0Cd9F9pxUwnqr_c2aOJL4xk0WPhFml466P75gCuUkm2Lkm7ZaR2obLnw&smuh=2724&lh=Ac-yQn60G1vPxGhw`);
       }
    },
    created() {
