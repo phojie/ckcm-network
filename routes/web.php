@@ -3,13 +3,14 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\User;
 
+
 Route::get('{any}', function () {
     return view('jie network.application');
 })->where('any', '.*');
 
-// Route::get('/signup', function() {
-//    return view('jie network.application');
-// });
+
+// Route::get('/', 'mailController@send');
+
 
 
 // Route::post('Ckcm-network-api/{any}/register', function(Request $request){

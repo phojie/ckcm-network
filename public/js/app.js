@@ -34919,7 +34919,7 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* xs */\n@media only screen and (max-width: 600px) {\n.testflex[data-v-6751829a] {\r\n    background-color: red\n}\n}\r\n/* sm */\n@media only screen and (max-width: 960px) and (min-width: 600px) {\n.testflex[data-v-6751829a] {\r\n    background-color:rebeccapurple\n}\n}\r\n/* md */\n@media only screen and (max-width: 1264px) and (min-width: 960px){\n.testflex[data-v-6751829a] {\r\n    background-color: green\n}\n.jieQueriesTitleFonts[data-v-6751829a] {\r\n    font-size: 15px !important;\r\n    /* color: red */\n}\r\n\r\n  /* from vuetify .edited */\n.input-group--text-field input[data-v-6751829a], .input-group--text-field textarea[data-v-6751829a] {\r\n    font-size:210px !important;\r\n    color: red !important;\n}\n}\r\n/* lg  desktopsize */\n@media only screen and (max-width: 1904px) and (min-width: 1264px) {\n.testflex[data-v-6751829a] {\r\n    background-color:blue\n}\n.jieQueriesTitleFonts[data-v-6751829a] {\r\n      font-size: 14px !important;\r\n      /* color: red */\n}\r\n\r\n   /* from vuetify .edited */\n.input-group--text-field input[data-v-6751829a], .input-group--text-field textarea[data-v-6751829a] {\r\n      font-size:10px !important;\r\n      color: red\n}\n.material-icons[data-v-6751829a] {\r\n      font-size: 13px !important;\n}\n}\r\n/* xl */\n@media only screen and (min-width: 1904px) {\n.testflex[data-v-6751829a]{\r\n    background-color: yellow\n}\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* xs */\n@media only screen and (max-width: 600px) {\n.testflex[data-v-6751829a] {\r\n    background-color: red\n}\n}\r\n/* sm */\n@media only screen and (max-width: 960px) and (min-width: 600px) {\n.testflex[data-v-6751829a] {\r\n    background-color:rebeccapurple\n}\n}\r\n/* md */\n@media only screen and (max-width: 1264px) and (min-width: 960px){\n.testflex[data-v-6751829a] {\r\n    background-color: green\n}\n.jieQueriesTitleFonts[data-v-6751829a] {\r\n    font-size: 15px !important;\r\n    /* color: red */\n}\r\n\r\n  /* from vuetify .edited */\n.input-group--text-field input[data-v-6751829a], .input-group--text-field textarea[data-v-6751829a] {\r\n    font-size:210px !important;\r\n    color: red !important;\n}\n}\r\n/* lg  desktopsize */\n@media only screen and (max-width: 1904px) and (min-width: 1264px) {\n.testflex[data-v-6751829a] {\r\n    background-color:blue\n}\n.jieQueriesTitleFonts[data-v-6751829a] {\r\n      font-size: 14px !important;\r\n      /* color: red */\n}\r\n\r\n   /* from vuetify .edited */\n.input-group--text-field input[data-v-6751829a], .input-group--text-field textarea[data-v-6751829a] {\r\n      font-size:10px !important;\r\n      color: red\n}\n.material-icons .input-group .input-group__append-icon[data-v-6751829a], .input-group .input-group__prepend-icon[data-v-6751829a] {\r\n      font-size: 13px !important;\n}\n.input-group .input-group__append-icon[data-v-6751829a], .input-group .input-group__prepend-icon[data-v-6751829a] {\r\n      font-size: 4px !important;\n}\n}\r\n/* xl */\n@media only screen and (min-width: 1904px) {\n.testflex[data-v-6751829a]{\r\n    background-color: yellow\n}\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -35078,7 +35078,10 @@ var render = function() {
         [
           _c(
             "v-container",
-            { attrs: { fluid: "", "fill-height": "" } },
+            {
+              staticClass: "testflex",
+              attrs: { fluid: "", "fill-height": "" }
+            },
             [
               _c(
                 "v-layout",
@@ -35533,13 +35536,8 @@ var render = function() {
       _c("router-view"),
       _vm._v(" "),
       _c("br"),
-      _vm._v(
-        "\r\n      " +
-          _vm._s(_vm.logindata) +
-          "\r\n      " +
-          _vm._s(_vm.firebaseData) +
-          "\r\n   "
-      )
+      _vm._v(" "),
+      !_vm.logindata ? _c("jieLanding") : _vm._e()
     ],
     1
   )
@@ -55111,9 +55109,10 @@ function initialize(store, router) {
          return record.meta.requiresAuth;
       });
       var currentUser = store.state.accountLoginData;
+      var ckcmcode = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
 
       if (requiresAuth && !currentUser) {
-         next('/login');
+         next('/login?stype=lo&jlou=jie_' + ckcmcode + '-AfcXyKTxpz7sQ68VmX5mkDW-v78XPvqoICwwqRFwSZgox8TG0GBDSY0Cd9F9pxUwnqr_c2aOJL4xk0WPhFml466P75gCuUkm2Lkm7ZaR2obLnw&smuh=2724&lh=Ac-yQn60G1vPxGhw');
          //kng wla pa ka login 
       } else if (to.path == '/login' && currentUser) {
          next('/');

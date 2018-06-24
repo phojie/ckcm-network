@@ -53,10 +53,10 @@ export default {
          state.fdetails = null ;
          state.accountLoginData = null;
          firebase.auth().signOut().then(function() {
-            // Sign-out successful.
-          }).catch(function(error) {
-            // An error happened.
-          });
+         // Sign-out successful.
+         }).catch(function(error) {
+         // An error happened.
+         });
       },
       login(state) {
          state.loading = true;

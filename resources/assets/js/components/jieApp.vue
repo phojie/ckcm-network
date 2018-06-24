@@ -3,10 +3,10 @@
    <vue-progress-bar></vue-progress-bar>
    <router-view></router-view>
    <br>
-      {{logindata}}
-      {{firebaseData}}
-   <!-- <jieLanding v-if="!login"></jieLanding>
-	<jiePagesLayout v-else></jiePagesLayout> -->
+      <!-- {{logindata}}
+      {{firebaseData}} -->
+   <jieLanding v-if="!logindata"></jieLanding>
+	<!-- <jiePagesLayout v-else></jiePagesLayout> -->
 </div>
  
 </template>

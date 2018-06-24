@@ -1,7 +1,7 @@
 <template>
    <v-app :dark="jieDark">
       <v-content>
-         <v-container fluid fill-height >
+         <v-container class="testflex" fluid fill-height >
             <v-layout align-center justify-center>
                <v-flex xs12 sm8 md4>
                   <v-card class="elevation-24">
@@ -162,6 +162,7 @@ export default {
     font-size:210px !important;
     color: red !important;
   }
+  
 
 }
 /* lg  desktopsize */
@@ -180,8 +181,11 @@ export default {
       font-size:10px !important;
       color: red
    }
-   .material-icons {
+   .material-icons .input-group .input-group__append-icon, .input-group .input-group__prepend-icon {
       font-size: 13px !important;
+   }
+   .input-group .input-group__append-icon, .input-group .input-group__prepend-icon {
+      font-size: 4px !important;
    }
 
 }
