@@ -2,6 +2,7 @@
    <div>   
       <jieLanding v-if="!logindata"></jieLanding>
       <jieHome v-else></jieHome>
+      <!-- <jieLanding></jieLanding> -->
    </div>
 </template>
 
@@ -18,7 +19,7 @@ export default {
    },
    computed: {
       logindata() {
-         return this.$store.getters.isIn
+         return this.$store.getters.fdetails
       }
    },
 }

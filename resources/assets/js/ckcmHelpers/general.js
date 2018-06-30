@@ -2,12 +2,13 @@ export function initialize(store, router) {
    router.beforeEach((to, from, next) => {
       const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
       const currentUser = store.state.accountLoginData;
+      const fdetails = store.state.fdetails;
 		const ckcmcode =    Math.random().toString(36).substring(2, 15)  + Math.random().toString(36).substring(2, 15)  + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
 
       if(requiresAuth && !currentUser) {
          next(`/login?stype=lo&jlou=jie_${ckcmcode}-AfcXyKTxpz7sQ68VmX5mkDW-v78XPvqoICwwqRFwSZgox8TG0GBDSY0Cd9F9pxUwnqr_c2aOJL4xk0WPhFml466P75gCuUkm2Lkm7ZaR2obLnw&smuh=2724&lh=Ac-yQn60G1vPxGhw`);
          //kng wla pa ka login 
-      } else if(to.path == '/login' && currentUser) {
+      } else if(to.path == '/login' && fdetails) {
          next('/');
          // kng nka login mo dretso sa "/"
       } else if(to.path == '/signup' && currentUser) {

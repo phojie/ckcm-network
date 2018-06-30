@@ -2,7 +2,7 @@
  * depen.
  */
 require('./bootstrap');
-// import 'material-design-icons-iconfont/dist/material-design-icons.css'
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import {routes} from './routes';
@@ -17,17 +17,20 @@ import VueProgressBar from 'vue-progressbar'
 /**
  * Functions
  */
+// iconfont: 'fa4', // 'md' || 'mdi' || 'fa' || 'fa4'
 Vue.use(Vuetify, {
    theme: {
-      primary: '#84B833',
-      secondary: '#424242',
-      accent: '#82B1FF',
+      primary: '#512DA8',
+      secondary: '#4E5B04',
+      accent: '#F4E2D1',
       error: '#FF5252',
-      info: '#2196F3',
-      success: '#4CAF50',
-      warning: '#FFC107',
+      info: '#A44F1A',
+      success: '#512DA8',
+      warning: '#820333',
       primaryColortext: '#757575',
-      secondaryColortext: '#414141'
+      secondaryColortext: '#414141',
+      mycolor1: '#151126',
+      mycolor2: '#0065ff' //blue
    }
  })
 Vue.use(Vuetify);
@@ -35,18 +38,18 @@ Vue.use(Vuelidate)
 Vue.use(VueRouter);
 Vue.use(Vuex);
 Vue.use(VueProgressBar, {
-  color: '#84B833',
-  failedColor: 'red',
-  thickness: '3px',
-  transition: {
-    speed: '0.2s',
-    opacity: '0.6s',
-    termination: 300
-  },
-  autoRevert: true,
-  location: 'top',
-  inverse: false,
-  autoFinish: false
+   color: '#512DA8',
+   failedColor: '#820333',
+   thickness: '3px',
+   transition: {
+      speed: '0.5s',
+      opacity: '0.6s',
+      termination: 300
+   },
+   autoRevert: true,
+   location: 'top',
+   inverse: false,
+   autoFinish: false
 })
 // Initialize Firebase
 const config = {
@@ -62,6 +65,12 @@ firebase.initializeApp(config);
 
 const router = new VueRouter({
     routes,
+   //  methods: {
+   //    clicked: function(e) {
+   //       console.log('prevented!')
+   //       e.preventDefault()
+   //    }
+   //  },
     mode: 'history'
 });
 

@@ -1,18 +1,26 @@
 <template>
    <div>
+      <img height="40" circle :src="logindata.fdetailsload.photoURL" alt="">
+      {{ logindata.fdetailsload.photoURL}}
       <br>
       <router-link to="/werew">Get Lost</router-link>
       <v-btn small color="error" @click="logout">logout</v-btn>
-      <router-view></router-view>
+      {{logindata}}
+      <!-- <router-view></router-view> -->
    </div>
 </template>
 
 <script>
 export default {  
    data: () => ({
+      img: null
 
    }),
    computed: {
+      logindata() {
+         this.img =this.$store.getters.fdetails.photoURL
+         return this.$store.getters.fdetails
+      }
    },
    methods: {
       logout(){
@@ -23,7 +31,7 @@ export default {
    },
    created() {
       
-   }
+   },
    
 }
 </script>

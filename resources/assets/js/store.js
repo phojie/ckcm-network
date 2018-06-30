@@ -10,6 +10,7 @@ export default {
       isIn: !!user,
       loading: false,
       auth_error: null,
+      
    },
    getters: {
       isLoading(state) {
@@ -61,11 +62,21 @@ export default {
       login(state) {
          state.loading = true;
          state.auth_error = null;
+      },
+      jieLoaderOn(state) {
+         state.loading = true;
+      },
+      jieLoaderOff(state) {
+         state.loading = false;
       }
-
-
    },
    actions: {
+      jieLoaderOn(context) {
+         context.commit("jieLoaderOn");
+      },
+      jieLoaderOff(context) {
+         context.commit("jieLoaderOff");
+      },
       login(context) {
          context.commit("login"); //calling the mutation login
       },

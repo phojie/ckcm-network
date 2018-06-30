@@ -1,11 +1,16 @@
 <template>
-<div>
-   <vue-progress-bar></vue-progress-bar>
-   <router-view ></router-view>
-</div>
+   <div>
+      <vue-progress-bar></vue-progress-bar>
+      <!-- <authPage></authPage> -->
+      <router-view ></router-view>
+   </div>
 </template>
 <script>
+import authPage from './pages/authPage.vue';
 export default {
+   components: {
+      authPage
+   },
 	data() {
 		return {
          login: false,
