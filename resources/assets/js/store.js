@@ -1,8 +1,8 @@
 import { getLocalUser } from "./ckcmHelpers/auth";
 import { getLocalfdetails } from "./ckcmHelpers/auth";
+import Axios from "axios";
 const user = getLocalUser();
 const fdetails = getLocalfdetails();
-
 export default {
    state: {
       accountLoginData: user,
@@ -24,9 +24,6 @@ export default {
       },
       authError(state) {
          return state.auth_error;
-      },
-      accountLoginData(state) {
-         return state.accountLoginData;
       },
       fdetails(state) {
          return state.fdetails;
@@ -83,6 +80,6 @@ export default {
       loginFirebase(context) {
          const user = firebase.auth().currentUser;
          context.commit("firebaseSuccess", user)
-      }
+      },
    }
 }

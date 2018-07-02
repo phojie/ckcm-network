@@ -6,9 +6,10 @@ export function initialize(store, router) {
 		const ckcmcode =    Math.random().toString(36).substring(2, 15)  + Math.random().toString(36).substring(2, 15)  + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
 
       if(requiresAuth && !currentUser) {
-         next(`/login?stype=lo&jlou=jie_${ckcmcode}-AfcXyKTxpz7sQ68VmX5mkDW-v78XPvqoICwwqRFwSZgox8TG0GBDSY0Cd9F9pxUwnqr_c2aOJL4xk0WPhFml466P75gCuUkm2Lkm7ZaR2obLnw&smuh=2724&lh=Ac-yQn60G1vPxGhw`);
+         next(`/auth?stype=lo&jlou=jie_${ckcmcode}-AfcXyKTxpz7sQ68VmX5mkDW-v78XPvqoICwwqRFwSZgox8TG0GBDSY0Cd9F9pxUwnqr_c2aOJL4xk0WPhFml466P75gCuUkm2Lkm7ZaR2obLnw&smuh=2724&lh=Ac-yQn60G1vPxGhw`);
+         // next('/auth')
          //kng wla pa ka login 
-      } else if(to.path == '/login' && fdetails) {
+      } else if(to.path == '/auth' && currentUser) {
          next('/');
          // kng nka login mo dretso sa "/"
       } else if(to.path == '/signup' && currentUser) {
@@ -22,10 +23,9 @@ export function initialize(store, router) {
       if (error.response.status == 401 && !currentUser) {
          alert("please relogin");
          // store.commit('logout');
-         router.push('/login');
+         router.push('/auth');
          // mo logout ni sya after 60min of afk
       }
-
          return Promise.reject(error);
       });
 

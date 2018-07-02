@@ -10,13 +10,22 @@ export function login(credentials) {
          .catch((error) =>{
             rej(error);
          })
-      // firebase.auth().signInWithEmailAndPassword(email, password)
-      //    .then((response) =>{
-      //       res(response.data);
-      //    })
-      //    .catch((error) =>{
-      //       rej(error);
-      //    })
+   })
+}
+export function signUp(credentials) {
+   return new Promise((res, rej) => {
+      let ckcmcode2 =  Math.random().toString(36).substring(2, 15) + "I love you God" + Math.random().toString(36).substring(2, 15);
+         // const ckcmcode =    Math.random().toString(36).substring(2, 15)  + Math.random().toString(36).substring(2, 15)  + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+      axios.post(`api/auth/Ckcm-network-api/${ckcmcode2}/register`, credentials)
+         .then((response) => {
+            res(response.data.jie);
+         })
+         .catch((error) => {
+            rej(error);
+            const userData = firebase.auth().currentUser;
+            userData.delete()
+            axios.post(`api/auth/Ckcm-network-api/${ckcmcode2}/deleteinfo`, userData)
+         })
    })
 }
 

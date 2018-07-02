@@ -1,0 +1,38 @@
+.material-icons  {
+   font-size: 23px !important;
+}
+.alwaysSignCHECK .material-icons {
+   margin-left: 5px !important;
+   font-size: 17px !important;
+   margin-top: 9.5px !important;
+   /* height: 40px !important; */
+}
+.alwaysSignCHECK label  {
+   margin-top: 3px !important;
+   font-size: 14px !important;
+}
+.txt13 {
+   font-size:13px !important;
+}
+.textDefault {
+   text-transform: none !important;
+}
+.textfm1 {
+   font-family: 'Overlock', cursive;
+}
+
+.jieLandingBg {
+   background-image: url("/imgs/proto-background-nuanced.svg");
+   background-position: center;
+   background-size: cover;
+}
+.jieLandingBg2 {
+   background-image: url("/imgs/background-pricing-existing.svg");
+   background-position: center;
+   background-size: cover;
+}
+.jieSvgBg1 {
+   background-image: url("/imgs/background-main-light.svg");
+   background-position: center;
+   background-size: cover;
+}

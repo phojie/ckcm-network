@@ -1,24 +1,23 @@
-import jieHome from './components/pages/jieHome.vue';
 import authPage from './components/pages/authPage.vue';
 import jie404 from './components/pages/jie404.vue';
 import jieSignup from './components/jieAuthFolder/jieSignup.vue';
 import jieLogin from './components/jieAuthFolder/jieLogin.vue';
-import usesCases from './components/jieLandingFolder/page1.vue';
-import authView from './components/jieLandingFolder/jieAuth.vue';
+import jieUserHome from './components/jieUserFolder/jieHome.vue';
 export const routes = [
    {
-      path:'/',
+      path:'/auth',
       component: authPage,
    },
    {
-      path: '/usecases',
-      component: usesCases
-      // meta: {
-      //    requiresAuth: true,
-      // }
+      path: '/',
+      component: jieUserHome,
+      meta: {
+         requiresAuth: true,
+      }
    },
    {
       path:'/signup',
+      name: 'signup',
       component: jieSignup
    },
    {
@@ -28,6 +27,19 @@ export const routes = [
 
    {  
       path: "*",
-      component: jie404
+      component: jie404,
+      meta: {
+         title: 'Home Page - Example App',
+         metaTags: [
+           {
+             name: 'description',
+             content: 'The home page of our example app.'
+           },
+           {
+             property: 'og:description',
+             content: 'The home page of our example app.'
+           }
+         ]
+       }
    }
 ]

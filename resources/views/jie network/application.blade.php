@@ -9,15 +9,8 @@
 		<!-- Styles -->
 		{{--  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">  --}}
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
-      <link rel="stylesheet" href="{{ asset('css/jie.css') }}">
+      <link rel="stylesheet" type="text/css" href="{{ asset('css/jie.css') }}">
       <link rel="manifest" href="{{ asset('manifest.json') }}">
-      <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Rokkitt" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=ABeeZee" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Overlock" rel="stylesheet">
 		{{--  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  --}}
 		<link rel="shortcut icon"  href="fav.png" />

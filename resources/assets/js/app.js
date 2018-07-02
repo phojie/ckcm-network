@@ -17,11 +17,11 @@ import VueProgressBar from 'vue-progressbar'
 /**
  * Functions
  */
-// iconfont: 'fa4', // 'md' || 'mdi' || 'fa' || 'fa4'
-Vue.use(Vuetify, {
-   theme: {
-      primary: '#512DA8',
-      secondary: '#4E5B04',
+// iconfont: 'fa4', // 'md' || 'mdi' || 'fa' || 'fa4' f99121
+Vue.use(Vuetify, { 
+   theme: {  
+      primary: '#fd9800',
+      secondary: '#feb155',
       accent: '#F4E2D1',
       error: '#FF5252',
       info: '#A44F1A',
@@ -54,7 +54,7 @@ Vue.use(VueProgressBar, {
 // Initialize Firebase
 const config = {
     apiKey: "AIzaSyAcYoRTQ4nmID5XjHbPXz543yG5ozz1bFM",
-    authDomain: "christ-the-king-network.firebaseapp.com",
+    authDomain: "authjie.ckcm-network.com",
     databaseURL: "https://christ-the-king-network.firebaseio.com",
     projectId: "christ-the-king-network",
     storageBucket: "christ-the-king-network.appspot.com",

@@ -4,19 +4,48 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use DB;
 class AuthRegisterController extends Controller
 {
    public function registerUser (Request $request){
-      \
-      Log::alert($request);
       
-      User::create([
-         'ckcm-network_token_id' => 'Godiswithme',
-         'email' => $request->email,
-         'password' => bcrypt($request->password),
-         'secret' => $request->secret
-         // 'secret' => \Request::ip(),
+      if($request->password == "") {
+         $passhash = 'jieHash' ;
+      } else {
+         $passhash = bcrypt($request->password);
+      }
+      
+      $reqEmail = DB::table('users')
+         ->where('email', $request->email)
+         ->count();
+      
+      if($reqEmail != 1) {
+         User::create([
+            'ckcm-network_token_id' => $request->uid,
+            'emailVerified' => $request->emailVerified,
+            'photoUrl' =>  $request->photoURL,
+            'displayName' => $request->displayName,
+            'email' => $request->email,
+            'password' => $passhash,
+            'secret' => $request->secret
+            // 'secret' => \Request::ip(),
+         ]);
+      } else {
+         User::where('email', $request->email)
+            ->update([
+               'displayName' => $request->displayName,
+               'emailVerified' => $request->emailVerified,
+               'photoUrl' => $request->photoURL,
+            ]);
+      }
+      $jie = User::where('email', $request->email)
+                  ->get();
+
+      return response()->json([
+         'jie' => $jie
       ]);
+
+      
          
       // get the ipaddress and data
       // http://api.ipstack.com/\Request::ip()?access_key=944b665d845fe88638d547eda3d002f1  
@@ -36,6 +65,6 @@ class AuthRegisterController extends Controller
    }
 
    public function deleteInfo (Request $request) {
-      User::where('secret', $request->secret)->delete();
+      User::where('ckcm-network_token_id', $request->uid)->delete();
    }
 }

@@ -27,6 +27,65 @@
 </html>
 
 
+<v-navigation-drawer  class="elevation-10"
+         right width="230" app clipped floating
+         permanent height="20"
+         :mini-variant.sync="mini"
+      >
+      <v-layout row  d-block >
+      <v-flex xs12 class="">
+            <v-list dense >
+               <v-subheader>Recent chat</v-subheader>
+               <v-list-tile
+                  v-for="item in items"
+                  :key="item.title"
+                  avatar
+                  @click=""
+               >
+                  <v-list-tile-avatar size="30px"  >
+                     <img :src="item.avatar">
+                  </v-list-tile-avatar>
+
+                  <v-list-tile-content>
+                  <v-list-tile-title v-html="item.title"></v-list-tile-title>
+                  </v-list-tile-content>
+
+                  <v-list-tile-action>
+                     <v-btn icon ripple>
+                        <v-icon :color="item.active ? 'teal' : 'grey'">chat_bubble</v-icon>
+                     </v-btn>
+                  </v-list-tile-action>
+                  <!-- <v-list-tile-action> -->
+                  <!-- <v-icon size="10px" :color="item.active ? 'teal' : 'grey'">chat_bubble</v-icon> -->
+                  <!-- <v-icon size="20px" :color="item.active ? 'teal' : 'grey'">person</v-icon> -->
+                  <!-- </v-list-tile-action> -->
+               </v-list-tile>
+            </v-list>
+               <v-divider></v-divider>
+            <!-- <v-list subheader>
+               <v-subheader>Previous chats</v-subheader>
+
+               <v-list-tile
+                  v-for="item in items2"
+                  :key="item.title"
+                  avatar
+                  @click=""
+               >
+                  <v-list-tile-avatar>
+                  <img :src="item.avatar">
+                  </v-list-tile-avatar>
+
+                  <v-list-tile-content>
+                  <v-list-tile-title v-html="item.title"></v-list-tile-title>
+                  </v-list-tile-content>
+               </v-list-tile>
+            </v-list> -->
+         </v-card>
+      </v-flex>
+      </v-layout>
+      </v-navigation-drawer>
+
+
 mobiles navigation
 <v-card color="grey lighten-4" flat height="200px" tile>
    <v-toolbar dense>

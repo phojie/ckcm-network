@@ -1,7 +1,7 @@
 <template>
    <div>
-      <img height="40" circle :src="logindata.fdetailsload.photoURL" alt="">
-      {{ logindata.fdetailsload.photoURL}}
+      <!-- <img height="40" circle :src="logindata.fdetailsload.photoURL" alt=""> -->
+      <!-- {{ logindata.fdetailsload.photoURL}} -->
       <br>
       <router-link to="/werew">Get Lost</router-link>
       <v-btn small color="error" @click="logout">logout</v-btn>
@@ -13,12 +13,10 @@
 <script>
 export default {  
    data: () => ({
-      img: null
 
    }),
    computed: {
       logindata() {
-         this.img =this.$store.getters.fdetails.photoURL
          return this.$store.getters.fdetails
       }
    },
@@ -29,8 +27,12 @@ export default {
          this.$router.push(`/?stype=lo&jlou=jie_ckcm-code=${ckcmcode}-AfcXyKTxpz7sQ68VmX5mkDW-v78XPvqoICwwqRFwSZgox8TG0GBDSY0Cd9F9pxUwnqr_c2aOJL4xk0WPhFml466P75gCuUkm2Lkm7ZaR2obLnw&smuh=2724&lh=Ac-yQn60G1vPxGhw`);
       }
    },
+   mouted() {
+      this.$Progress.finish();
+   },
    created() {
-      
+      // this.$Progress.finish();
+
    },
    
 }
