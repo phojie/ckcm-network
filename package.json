@@ -24,8 +24,11 @@
         "vue": "^2.5.7"
     },
     "dependencies": {
+        "@mdi/svg": "^2.4.85",
+        "animate.css": "^3.6.1",
         "material-design-icons-iconfont": "^3.0.3",
         "rupture": "^0.7.1",
+        "v-hotkey": "^0.2.3",
         "validate.js": "^0.12.0",
         "vue-progressbar": "^0.7.5",
         "vue-router": "^3.0.1",

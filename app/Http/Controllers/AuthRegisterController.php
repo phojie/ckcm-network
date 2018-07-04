@@ -10,9 +10,11 @@ class AuthRegisterController extends Controller
    public function registerUser (Request $request){
       
       if($request->password == "") {
-         $passhash = 'jieHash' ;
+         $passhash = 'jiejie' ;
+         $type= "false";
       } else {
          $passhash = bcrypt($request->password);
+         $type= "true";
       }
       
       $reqEmail = DB::table('users')
@@ -27,7 +29,7 @@ class AuthRegisterController extends Controller
             'displayName' => $request->displayName,
             'email' => $request->email,
             'password' => $passhash,
-            'secret' => $request->secret
+            'secret' => $type
             // 'secret' => \Request::ip(),
          ]);
       } else {
@@ -38,12 +40,15 @@ class AuthRegisterController extends Controller
                'photoUrl' => $request->photoURL,
             ]);
       }
-      $jie = User::where('email', $request->email)
-                  ->get();
 
-      return response()->json([
-         'jie' => $jie
-      ]);
+      $jie = User::where('email', $request->email)
+            ->get();
+      
+      \Log::alert($jie);
+      
+      // return response()->json([
+      //    'jie' => [{"password":$passhash,"email":$request->email}]
+      // ]);
 
       
          

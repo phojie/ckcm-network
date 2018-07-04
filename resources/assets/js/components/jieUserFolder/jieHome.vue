@@ -17,7 +17,7 @@ export default {
    }),
    computed: {
       logindata() {
-         return this.$store.getters.fdetails
+         return this.$store.getters.accountLoginData
       }
    },
    methods: {
@@ -28,7 +28,6 @@ export default {
       }
    },
    mouted() {
-      this.$Progress.finish();
    },
    created() {
       // this.$Progress.finish();

@@ -2,7 +2,8 @@
  * depen.
  */
 require('./bootstrap');
-import 'material-design-icons-iconfont/dist/material-design-icons.css'
+// import 'animate.css/animate.min.css';
+// import 'material-design-icons-iconfont/dist/material-design-icons.css';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import {routes} from './routes';
@@ -33,10 +34,14 @@ Vue.use(Vuetify, {
       mycolor2: '#0065ff' //blue
    }
  })
+
+import VueHotkey from 'v-hotkey'
+Vue.use(VueHotkey)
 Vue.use(Vuetify);
 Vue.use(Vuelidate)
 Vue.use(VueRouter);
 Vue.use(Vuex);
+
 Vue.use(VueProgressBar, {
    color: '#512DA8',
    failedColor: '#820333',
@@ -65,18 +70,12 @@ firebase.initializeApp(config);
 
 const router = new VueRouter({
     routes,
-   //  methods: {
-   //    clicked: function(e) {
-   //       console.log('prevented!')
-   //       e.preventDefault()
-   //    }
-   //  },
     mode: 'history'
 });
 
 const store = new Vuex.Store(StoreJieData);
 
-initialize(store, router); //iyang ge usa para mka sulod ang store ug ang router
+initialize(store, router ); //iyang ge usa para mka sulod ang store ug ang router
 
 /**
  * App.
@@ -87,6 +86,6 @@ const jie = new Vue({
     router,
     store,
     components:{
-        jieApp
+        jieApp,
     }
 });

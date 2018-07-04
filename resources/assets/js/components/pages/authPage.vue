@@ -108,7 +108,7 @@
                                           :disabled="jieLoading"
                                           v-model="checkbox" :ripple="false"
                                           label="Stay signed in"
-                                          color="primary" class=" textfm1 alwaysSignCHECK"
+                                          color="grey" class=" textfm1 alwaysSignCHECK"
                                        ></v-checkbox>
                                        <v-spacer></v-spacer>
                                        <a v-show="!jieLoading" class="blue--text mt-2 mr-4 textfm1" @click="passwordReset = true" > Forgot password?</a>
@@ -120,10 +120,10 @@
                                        </v-btn> -->
                                  </v-layout>
                                        <v-progress-linear style="margin-top:-1px" class="deep-purple lighten-5" height="1" :indeterminate="jieLoading"></v-progress-linear>
-                                    <v-layout row >
+                                    <v-layout row wrap>
                                        
-                                       <v-btn :disabled="jieLoading"  @click="loginWithGoogle" style="font-size:11px !important; font-weight:bold; font-family: 'Roboto', sans-serif;"  class="block white grey--text  textDefault" > <v-avatar size="16px" class="mr-2" >  <img src="/imgs/google.svg" alt=""></v-avatar>Sign in with Google</v-btn>
-                                       <v-btn :disabled="jieLoading"  @click="loginWithFacebook" style="background-color:#3b5998;font-size:11px !important; font-weight:bold; font-family: 'Roboto', sans-serif;" class="block white--text textDefault" > <v-avatar tile size="16px" class="mr-2" >  <img src="/imgs/facebook.svg" alt=""></v-avatar>Sign in with Facebook</v-btn>
+                                       <v-btn :disabled="jieLoading"  @click="loginWithGoogle" style="font-size:9px !important; font-weight:bold; font-family: 'Roboto', sans-serif;"  class=" white grey--text  textDefault" > <v-avatar size="16px" class="mr-2" >  <img src="/imgs/google.svg" alt=""></v-avatar>Sign in with Google</v-btn>
+                                       <v-btn :disabled="jieLoading"  @click="loginWithFacebook" style="background-color:#3b5998;font-size:9px !important; font-weight:bold; font-family: 'Roboto', sans-serif;" class=" white--text textDefault" > <v-avatar tile size="16px" class="mr-2" >  <img src="/imgs/facebook.svg" alt=""></v-avatar>Sign in with Facebook</v-btn>
                                   </v-layout>
                                  </v-form>
                               </v-container>
@@ -169,6 +169,35 @@
          </v-btn>
       </v-snackbar>
       <!-- snackbar alert area-->
+
+      <!-- logout snackbar alert area -->
+      <v-snackbar
+         v-model="successLogout"
+         :bottom="y === 'bottom'"
+         :left="x === 'left'"
+         :multi-line="mode === 'multi-line'"
+         :right="x === 'right'"
+         :timeout="timeout"
+         :top="y === 'top'"
+         :vertical="mode === 'vertical'"
+      >
+         <span class="caption textfm1">
+         <v-avatar
+            tile size="15"
+            class="mr-2" 
+            style="margin-top:-7px"
+         >
+            <v-icon class="primary--text">thumb_up</v-icon>
+         </v-avatar>
+         Successfully logout, You can always visit here anytime :)</span>
+         <!-- <v-btn
+         color="primary" class="textfm1 body-2"
+         flat 
+         @click="snackbar = false"
+         >
+         Close
+         </v-btn> -->
+      </v-snackbar>
    </v-card>
 </v-app>
 </template>
@@ -218,21 +247,27 @@ export default {
             'display': 'popup'
          });
          firebase.auth().signInWithPopup(provider).then(function(result) {
-            
             // This gives you a Facebook Access Token. You can use it to access the Facebook API.
             const token = result.credential.accessToken;
             // The signed-in user info.
             const user = result.user;
             // vm.$store.dispatch("registerUser")
             signUp(user)
+               vm.$Progress.start()
                .then((res) => {
-                  vm.$router.push({ path : '/'})
-                  vm.$store.commit("loginSuccess", res);
-                  vm.$store.dispatch("jieLoaderOff")
-                  vm.$store.dispatch("loginFirebase")
-               
+                  vm.form.password='jiejie';
+                  vm.form.email=res;
+                  login(vm.$data.form)  
+                     .then((res) => {
+                     vm.$store.commit("loginSuccess", res);
+                     vm.$store.dispatch("loginFirebase")
+                     vm.$store.dispatch("jieLoaderOff")
+                     vm.$Progress.finish()
+                     vm.$router.push({ path : '/'})
+                     })
                })
                .catch((err) => {
+                  vm.$Progress.fail()
                   vm.textalert="Something is wrong with your connection"
                })
          // ...
@@ -247,10 +282,13 @@ export default {
             vm.alertAva = "/imgs/facebook.svg"
             if(errorMessage == "The popup has been closed by the user before finalizing the operation.") {
                vm.textalert="Facebook login canceled"
-            } else if(errorMessage) {
+            } else if (errorMessage == "A network error (such as timeout, interrupted connection or unreachable host) has occurred."){
+               vm.textalert = "Something is wrong with your connection :'( "
+            } else  {
                vm.textalert = errorMessage // 'Facebook email already used ' + 
             }
             vm.snackbar = true
+            vm.$Progress.fail()
             vm.$store.dispatch("jieLoaderOff")
             // ...
          });
@@ -262,9 +300,7 @@ export default {
          const provider = new firebase.auth.GoogleAuthProvider();
          // firebase.auth().signInWithRedirect(provider);
          firebase.auth().signInWithPopup(provider).then(function(result) {
-               vm.$router.push({ path : '/'})
-               vm.$store.dispatch("jieLoaderOff")
-               vm.$store.dispatch("loginFirebase")
+            vm.$Progress.start()
             // This gives you a Google Access Token. You can use it to access the Google API.
             const token = result.credential.accessToken;
             // The signed-in user info.
@@ -272,12 +308,22 @@ export default {
             // vm.$store.dispatch("registerUser")
             signUp(user)
                .then((res) => {
-                  console.log(res)
-                  vm.$store.commit("loginSuccess", res);
+                  vm.form.password='jiejie';
+                  vm.form.email=res;
+                  login(vm.$data.form)  
+                     .then((res) => {
+                     vm.$store.commit("loginSuccess", res);
+                     vm.$store.dispatch("loginFirebase")
+                     vm.$Progress.finish()
+                     vm.$store.dispatch("jieLoaderOff")
+                     vm.$router.push({ path : '/'})
+                     })
+
                })
                .catch((err) => {
+                  vm.$Progress.fail()
+                  vm.$store.dispatch("jieLoaderOff")
                   vm.textalert="Something is wrong with your connection"
-                  
                })
             // ...
          }).catch(function(error) {
@@ -295,6 +341,7 @@ export default {
                vm.textalert = errorMessage
             }
             vm.snackbar = true
+            vm.$Progress.fail()
             vm.$store.dispatch("jieLoaderOff")
             console.log(errorMessage)
             // ...
@@ -317,12 +364,13 @@ export default {
          }
       },
       AuthUser() {
-         // this.$Progress.start()
+         this.$Progress.start()
          this.$store.dispatch("jieLoaderOn");
          let vm = this;
          this.$store.dispatch('login');
          login(this.$data.form) 
             .then((res) => {
+               vm.$Progress.finish();
                vm.$store.commit("loginSuccess", res);
                vm.$router.push({ path: '/'});
                firebase.auth().signInWithEmailAndPassword(vm.form.email, vm.form.password)
@@ -331,11 +379,11 @@ export default {
                      vm.$store.dispatch("loginFirebase")
                   })
                   .catch((error) =>{
-                     console.log(error)
+                     vm.$Progress.fail()
+                     // console.log(error)
                      vm.$store.dispatch("jieLoaderOff")
                      vm.accountError=true
-                     vm.$store.dispatch("jieLoaderOff")
-                     this.$nextTick(() => this.$refs.password.focus());
+                     vm.$nextTick(() => this.$refs.password.focus());
                   })
             })
             .catch((error) => {
@@ -350,6 +398,9 @@ export default {
       }
    },
    computed: {
+      successLogout() {
+         return this.$store.state.alertLogoutDone
+      },
       jieLoading () {
          return this.$store.getters.isLoading
       },
@@ -391,6 +442,8 @@ export default {
    mounted() {
       console.clear()
    },
+   created() {
+   }
    
 }
 </script>

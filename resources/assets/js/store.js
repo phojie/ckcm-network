@@ -10,7 +10,7 @@ export default {
       isIn: !!user,
       loading: false,
       auth_error: null,
-      
+      alertLogoutDone: false,
    },
    getters: {
       isLoading(state) {
@@ -27,7 +27,7 @@ export default {
       },
       fdetails(state) {
          return state.fdetails;
-      }
+      },
    },
    mutations: {
       firebaseSuccess(state, fdetailsload) {
@@ -35,10 +35,11 @@ export default {
          localStorage.setItem("fdetails", JSON.stringify(state.fdetails));
       },
       loginSuccess(state, payload) {
+         state.alertLogoutDone = false
          state.auth_error = null;
          state.isIn = true;
          state.loading = false;
-         state.accountLoginData = Object.assign({}, payload.user, {
+         state.accountLoginData = Object.assign({}, payload, {
                token: payload.access_token
          });
          localStorage.setItem("user", JSON.stringify(state.accountLoginData));
@@ -50,6 +51,7 @@ export default {
          state.isIn = false;
          state.fdetails = null ;
          state.accountLoginData = null;
+         state.alertLogoutDone = true
          firebase.auth().signOut().then(function() {
          // Sign-out successful.
          }).catch(function(error) {
@@ -65,9 +67,16 @@ export default {
       },
       jieLoaderOff(state) {
          state.loading = false;
-      }
+      },
+      alertLogoutDone(state) {
+         state.alertLogoutDone = false;
+      },
+
    },
    actions: {
+      alertLogoutDone(context) {
+         context.commit("alertLogoutDone");
+      },
       jieLoaderOn(context) {
          context.commit("jieLoaderOn");
       },
