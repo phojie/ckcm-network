@@ -19,7 +19,6 @@
 	</head>
 	<body>
 		<div id="jie">
-      dsdsds
 			<jie-app></jie-app>
 		</div>
 	</body>
