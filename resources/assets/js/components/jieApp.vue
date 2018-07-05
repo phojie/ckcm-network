@@ -2,7 +2,7 @@
    <div>
       <vue-progress-bar></vue-progress-bar>
       <!-- <authPage></authPage> -->
-      <jieUserLayouts v-if="loginTrueUser &&  loginTrueFB"></jieUserLayouts>
+      <jieUserLayouts v-if="loginTrueUser"></jieUserLayouts>
       <router-view v-else></router-view>
    </div>
 </template>

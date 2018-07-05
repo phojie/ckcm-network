@@ -37902,9 +37902,7 @@ var render = function() {
     [
       _c("vue-progress-bar"),
       _vm._v(" "),
-      _vm.loginTrueUser && _vm.loginTrueFB
-        ? _c("jieUserLayouts")
-        : _c("router-view")
+      _vm.loginTrueUser ? _c("jieUserLayouts") : _c("router-view")
     ],
     1
   )
