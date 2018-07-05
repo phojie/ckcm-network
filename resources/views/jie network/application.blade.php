@@ -19,7 +19,6 @@
 	</head>
 	<body>
 		<div id="jie">
-      testing
 			<jie-app></jie-app>
 		</div>
 	</body>
