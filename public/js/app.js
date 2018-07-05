@@ -35672,7 +35672,7 @@ var render = function() {
                         },
                         [
                           _vm._v(
-                            "\r\n               Join us today.\r\n            "
+                            "\r\n               Join us today\r\n            "
                           )
                         ]
                       ),

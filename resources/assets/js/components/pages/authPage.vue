@@ -12,7 +12,7 @@
       <v-flex class="hidden-sm-and-down" md7 lg6 >
          <v-tabs  show-arrows="" color="transparent" v-model="landingTabs" :hide-slider="sliderToogle"  grow slider-color="secondary " left>
             <v-tab href="#signup"  @click="() => (sliderToogle =! true, loginToogle =! false)" class=" textDefault textfm1 txt13"  :ripple="false" >
-               Join us today.
+               Join us today
             </v-tab>
             <v-tab href="#cases" @click="() => (sliderToogle =! true, loginToogle =! false)"  class="textDefault textfm1  txt13"  :ripple="false" >
                Use cases
