@@ -243,30 +243,31 @@ export default {
          this.$store.dispatch("jieLoaderOn")
          let vm = this
          const provider = new firebase.auth.FacebookAuthProvider();
-         provider.setCustomParameters({
-            'display': 'popup'
-         });
-         firebase.auth().signInWithPopup(provider).then(function(result) {
+         firebase.auth().signInWithPopup(provider)
+         .then(function(result) {
+            vm.$Progress.start()
             // This gives you a Facebook Access Token. You can use it to access the Facebook API.
             const token = result.credential.accessToken;
             // The signed-in user info.
             const user = result.user;
             // vm.$store.dispatch("registerUser")
             signUp(user)
-               vm.$Progress.start()
                .then((res) => {
                   vm.form.password='jiejie';
                   vm.form.email=res;
                   login(vm.$data.form)  
                      .then((res) => {
-                     vm.$store.commit("loginSuccess", res);
-                     vm.$store.dispatch("loginFirebase")
-                     vm.$store.dispatch("jieLoaderOff")
-                     vm.$Progress.finish()
-                     vm.$router.push({ path : '/'})
+                        vm.$store.commit("loginSuccess", res);
+                        vm.$store.dispatch("loginFirebase")
+                        vm.$store.dispatch("jieLoaderOff")
+                        vm.$Progress.finish()
+                        vm.$router.push({ path : '/'})
+                     })
+                     .catch((err) => {
+                        alert(err)
                      })
                })
-               .catch((err) => {
+               .catch((rej) => {
                   vm.$Progress.fail()
                   vm.textalert="Something is wrong with your connection"
                })
@@ -399,7 +400,7 @@ export default {
    },
    computed: {
       successLogout() {
-         return this.$store.state.alertLogoutDone
+         return this.$store.getters.alertLogoutDone
       },
       jieLoading () {
          return this.$store.getters.isLoading

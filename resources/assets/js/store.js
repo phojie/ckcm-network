@@ -8,6 +8,7 @@ export default {
       accountLoginData: user,
       fdetails: fdetails,
       isIn: !!user,
+      isFB: !!fdetails,
       loading: false,
       auth_error: null,
       alertLogoutDone: false,
@@ -19,6 +20,9 @@ export default {
       isIn(state) {
          return state.isIn;
       },
+      isFB(state) {
+         return state.isFB;
+      },
       accountLoginData(state) {
          return state.accountLoginData;
       },
@@ -28,6 +32,10 @@ export default {
       fdetails(state) {
          return state.fdetails;
       },
+      alertLogoutDone(state) {
+         return state.alertLogoutDone;
+      }
+      
    },
    mutations: {
       firebaseSuccess(state, fdetailsload) {

@@ -34365,7 +34365,7 @@ exports = module.exports = __webpack_require__(7)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -34661,17 +34661,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          this.$store.dispatch("jieLoaderOn");
          var vm = this;
          var provider = new firebase.auth.FacebookAuthProvider();
-         provider.setCustomParameters({
-            'display': 'popup'
-         });
          firebase.auth().signInWithPopup(provider).then(function (result) {
+            vm.$Progress.start();
             // This gives you a Facebook Access Token. You can use it to access the Facebook API.
             var token = result.credential.accessToken;
             // The signed-in user info.
             var user = result.user;
             // vm.$store.dispatch("registerUser")
-            Object(__WEBPACK_IMPORTED_MODULE_2__ckcmHelpers_auth__["d" /* signUp */])(user);
-            vm.$Progress.start().then(function (res) {
+            Object(__WEBPACK_IMPORTED_MODULE_2__ckcmHelpers_auth__["d" /* signUp */])(user).then(function (res) {
                vm.form.password = 'jiejie';
                vm.form.email = res;
                Object(__WEBPACK_IMPORTED_MODULE_2__ckcmHelpers_auth__["c" /* login */])(vm.$data.form).then(function (res) {
@@ -34680,8 +34677,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                   vm.$store.dispatch("jieLoaderOff");
                   vm.$Progress.finish();
                   vm.$router.push({ path: '/' });
+               }).catch(function (err) {
+                  alert(err);
                });
-            }).catch(function (err) {
+            }).catch(function (rej) {
                vm.$Progress.fail();
                vm.textalert = "Something is wrong with your connection";
             });
@@ -34811,7 +34810,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
    },
    computed: {
       successLogout: function successLogout() {
-         return this.$store.state.alertLogoutDone;
+         return this.$store.getters.alertLogoutDone;
       },
       jieLoading: function jieLoading() {
          return this.$store.getters.isLoading;
@@ -37536,8 +37535,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       return {};
    },
    computed: {
-      loginTrue: function loginTrue() {
-         return this.$store.state.isIn;
+      loginTrueUser: function loginTrueUser() {
+         return this.$store.getters.isIn;
+      },
+      loginTrueFB: function loginTrueFB() {
+         return this.$store.getters.isFB;
       }
    },
    components: {
@@ -37626,7 +37628,6 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
 //
 //
 //
@@ -37825,7 +37826,7 @@ var render = function() {
                 [
                   _c(
                     "v-list-tile",
-                    { key: _vm.index, on: { click: function($event) {} } },
+                    { on: { click: function($event) {} } },
                     [
                       _c(
                         "v-list-tile-title",
@@ -37901,7 +37902,9 @@ var render = function() {
     [
       _c("vue-progress-bar"),
       _vm._v(" "),
-      _vm.loginTrue ? _c("jieUserLayouts") : _c("router-view")
+      _vm.loginTrueUser && _vm.loginTrueFB
+        ? _c("jieUserLayouts")
+        : _c("router-view")
     ],
     1
   )
@@ -55610,6 +55613,7 @@ var fdetails = Object(__WEBPACK_IMPORTED_MODULE_0__ckcmHelpers_auth__["b" /* get
       accountLoginData: user,
       fdetails: fdetails,
       isIn: !!user,
+      isFB: !!fdetails,
       loading: false,
       auth_error: null,
       alertLogoutDone: false
@@ -55621,6 +55625,9 @@ var fdetails = Object(__WEBPACK_IMPORTED_MODULE_0__ckcmHelpers_auth__["b" /* get
       isIn: function isIn(state) {
          return state.isIn;
       },
+      isFB: function isFB(state) {
+         return state.isFB;
+      },
       accountLoginData: function accountLoginData(state) {
          return state.accountLoginData;
       },
@@ -55629,6 +55636,9 @@ var fdetails = Object(__WEBPACK_IMPORTED_MODULE_0__ckcmHelpers_auth__["b" /* get
       },
       fdetails: function fdetails(state) {
          return state.fdetails;
+      },
+      alertLogoutDone: function alertLogoutDone(state) {
+         return state.alertLogoutDone;
       }
    },
    mutations: {

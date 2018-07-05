@@ -2,7 +2,7 @@
    <div>
       <vue-progress-bar></vue-progress-bar>
       <!-- <authPage></authPage> -->
-      <jieUserLayouts v-if="loginTrue"></jieUserLayouts>
+      <jieUserLayouts v-if="loginTrueUser &&  loginTrueFB"></jieUserLayouts>
       <router-view v-else></router-view>
    </div>
 </template>
@@ -12,8 +12,11 @@ export default {
    data: () => ({
    }),
    computed: {
-      loginTrue () {
-         return this.$store.state.isIn;
+      loginTrueUser () {
+         return this.$store.getters.isIn;
+      },
+      loginTrueFB () {
+         return this.$store.getters.isFB;
       }
    },
    components: {

@@ -12377,6 +12377,6 @@ table.table tfoot tr td {
   }
 }
 html {
-  overflow-y: hidden;
+  overflow-y: auto;
   font-family: 'Aref Ruqaa', serif !important;
 }

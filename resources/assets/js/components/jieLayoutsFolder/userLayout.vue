@@ -30,7 +30,6 @@
             <v-list dense>
                <!-- v-for="(item, index) in items" -->
                <v-list-tile 
-                  :key="index"
                   @click=""
                >
                   <v-list-tile-title class="textfm1" @click="logout">
