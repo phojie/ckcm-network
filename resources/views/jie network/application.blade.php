@@ -20,6 +20,7 @@
 	<body>
    sdfsdfsdfsdfsd
 		<div id="jie">
+      sdfsdf
 			<jie-app></jie-app>
 		</div>
 	</body>
