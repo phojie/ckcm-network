@@ -10,12 +10,12 @@
          </v-text-field> -->
          <v-divider vertical inset ></v-divider>
          <v-btn small style="margin-right:-5px !important;" icon>
-            <v-icon style="font-size:17px !important">apps</v-icon>
+            <v-icon style="font-size:17px !important">mdi-apps</v-icon>
          </v-btn>
          <v-btn small style="margin-right:12px !important;" icon>
             <v-badge color="red" >
                <span slot="badge" class="textfm1" style="font-size:10px">2</span>
-               <v-icon style="font-size:17px !important">notifications</v-icon>
+               <v-icon style="font-size:17px !important">mdi-bell-outline</v-icon>
             </v-badge>
          </v-btn>
          <v-menu offset-y>
@@ -26,7 +26,7 @@
                   <img :src="userData.photoUrl" alt="">
                </v-avatar>
                <div class="mr-2 white--text caption textDefault textfm1"> Hello, {{userData.displayName}}</div> 
-                  <v-icon style="font-size:15px !important" color="primary">menu</v-icon>
+                  <v-icon style="font-size:15px !important" color="primary">mdi-menu</v-icon>
             </v-btn>
                <div class="" style="
                            margin-left:149.5px;
@@ -41,9 +41,7 @@
                <v-list-tile @click=""
                >
                   <v-list-tile-title class="textfm1" @click="logout">
-                     <i class="mdi mdi-icon "> 
-                     <v-icon small >logout-variant</v-icon>
-                     </i>
+                     <v-icon small >mdi-logout</v-icon>
                      Logout   
                   </v-list-tile-title>
                </v-list-tile>
@@ -55,12 +53,12 @@
       <v-content >
          <v-container class="" app fluid>
             <v-layout>
-               <v-flex class="md2 ">
+               <v-flex class="blue md2 ">
                   <v-card class="" height="500px">
                      <v-list dense class="textfm1">
                         <v-list-tile>
                         <v-list-tile-action>
-                           <v-icon>home</v-icon>
+                           <v-icon>mdi-home</v-icon>
                         </v-list-tile-action>
                         <v-list-tile-title>Home</v-list-tile-title>
                         </v-list-tile>
@@ -69,60 +67,30 @@
                         prepend-icon="account_circle"
                         value="true"
                         >
-                        <v-list-tile slot="activator">
-                           <v-list-tile-title>Users</v-list-tile-title>
-                        </v-list-tile>
-
-                        <v-list-group
-                           no-action
-                           sub-group
-                           value="true"
-                        >
                            <v-list-tile slot="activator">
-                              <v-list-tile-title>Admin</v-list-tile-title>
+                              <v-list-tile-title>Users</v-list-tile-title>
                            </v-list-tile>
 
-                           <v-list-tile
-                              v-for="(admin, i) in admins"
-                              :key="i"
-                              @click="null"
+                           <v-list-group
+                              no-action
+                              sub-group
+                              value="true"
                            >
-                              <v-list-tile-title v-text="admin[0]"></v-list-tile-title>
-                              <v-list-tile-action>
-                              <v-icon v-text="admin[1]"></v-icon>
-                              </v-list-tile-action>
-                           </v-list-tile>
-                        </v-list-group>
+                              <v-list-tile slot="activator">
+                                 <v-list-tile-title>Admin</v-list-tile-title>
+                              </v-list-tile>
 
-                        <v-list-group
-                           sub-group
-                           no-action
-                        >
-                           <v-list-tile slot="activator">
-                              <v-list-tile-title>Actions</v-list-tile-title>
-                           </v-list-tile>
-
-                           <v-list-tile
-                              v-for="(crud, i) in cruds"
-                              :key="i"
-                              @click="null"
-                           >
-                              <v-list-tile-title v-text="crud[0]"></v-list-tile-title>
-                              <v-list-tile-action>
-                              <v-icon v-text="crud[1]"></v-icon>
-                              </v-list-tile-action>
-                           </v-list-tile>
-                        </v-list-group>
+                           </v-list-group>
                         </v-list-group>
                      </v-list>
                   </v-card>
                   <!-- <router-view></router-view> -->
                </v-flex>
-               <v-flex class="md6">
-                  <v-card class="" height="700px">
+               <v-flex class=" md6">
+                  <v-card class="green" height="700px">
                   </v-card>
                </v-flex>
-               <v-flex class="4">
+               <v-flex class=" md4">
                   <v-card class="" height="500px">
                   </v-card>
                </v-flex>

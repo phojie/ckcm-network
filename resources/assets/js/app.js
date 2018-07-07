@@ -14,11 +14,14 @@ import StoreJieData from './store'
 import Vuex from 'vuex';
 import {initialize} from './ckcmHelpers/general';
 import VueProgressBar from 'vue-progressbar'
+import '@mdi/font/css/materialdesignicons.css';
+
+// notusing
+import VueHotkey from 'v-hotkey'
 
 /**
  * Functions
  */
-// iconfont: 'fa4', // 'md' || 'mdi' || 'fa' || 'fa4' f99121
 Vue.use(Vuetify, { 
    theme: {  
       primary: '#fd9800',
@@ -34,8 +37,8 @@ Vue.use(Vuetify, {
       mycolor2: '#0065ff' //blue
    }
  })
+//  iconfont: 'mdi', // 'md' || 'mdi' || 'fa' || 'fa4' f99121
 
-import VueHotkey from 'v-hotkey'
 Vue.use(VueHotkey)
 Vue.use(Vuetify);
 Vue.use(Vuelidate)

@@ -179,7 +179,7 @@
 
       <!-- logout snackbar alert area -->
       <v-snackbar
-         v-model="successLogout"
+         :value="successLogout"
          :bottom="y === 'bottom'"
          :left="x === 'left'"
          :multi-line="mode === 'multi-line'"
@@ -411,7 +411,7 @@ export default {
    },
    computed: {
       successLogout() {
-         return this.$store.state.alertLogoutDone
+         return this.$store.getters.alertLogoutDone
       },
       jieLoading () {
          return this.$store.getters.isLoading
