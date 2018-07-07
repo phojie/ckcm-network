@@ -47,7 +47,7 @@ Vue.use(VueProgressBar, {
    failedColor: '#820333',
    thickness: '3px',
    transition: {
-      speed: '0.5s',
+      speed: '1.5s',
       opacity: '0.6s',
       termination: 300
    },

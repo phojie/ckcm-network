@@ -12,8 +12,7 @@
       <link rel="stylesheet" type="text/css" href="{{ asset('css/jie.css') }}">
       <link rel="manifest" href="{{ asset('manifest.json') }}">
       <link href="https://fonts.googleapis.com/css?family=Overlock" rel="stylesheet">
-      
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		{{--  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  --}}
 		<link rel="shortcut icon"  href="fav.png" />
 		<!--upscript-->      
 	</head>

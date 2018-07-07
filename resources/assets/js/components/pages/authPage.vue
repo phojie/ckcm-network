@@ -4,23 +4,25 @@
    <v-toolbar dense class="elevation-2" dark color="transparent">
       <v-toolbar-side-icon class="hidden-md-and-up"></v-toolbar-side-icon>
       <v-toolbar-title class="primaryColortext--text subheading mx-5 ">
-         <!-- Ckcm -->
-         <v-avatar color="" title="true" size="50" style="margin-top:70px" class=" text--primary">
+         <span class="subheading white--text">Christ the King Network</span>
+         <!-- <v-avatar color="" title="true" size="50" style="margin-top:70px" class=" text--primary"> -->
             <!-- <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 72 72"><path d="M67.812 16.141a26.246 26.246 0 0 1-7.519 2.06 13.134 13.134 0 0 0 5.756-7.244 26.127 26.127 0 0 1-8.313 3.176A13.075 13.075 0 0 0 48.182 10c-7.229 0-13.092 5.861-13.092 13.093 0 1.026.118 2.021.338 2.981-10.885-.548-20.528-5.757-26.987-13.679a13.048 13.048 0 0 0-1.771 6.581c0 4.542 2.312 8.551 5.824 10.898a13.048 13.048 0 0 1-5.93-1.638c-.002.055-.002.11-.002.162 0 6.345 4.513 11.638 10.504 12.84a13.177 13.177 0 0 1-3.449.457c-.846 0-1.667-.078-2.465-.231 1.667 5.2 6.499 8.986 12.23 9.09a26.276 26.276 0 0 1-16.26 5.606A26.21 26.21 0 0 1 4 55.976a37.036 37.036 0 0 0 20.067 5.882c24.083 0 37.251-19.949 37.251-37.249 0-.566-.014-1.134-.039-1.694a26.597 26.597 0 0 0 6.533-6.774z"></path></svg> -->
-         </v-avatar>
+         <!-- </v-avatar> -->
       </v-toolbar-title>
+      <v-spacer></v-spacer>
       <v-flex class="hidden-sm-and-down" md7 lg6 >
          <v-tabs  show-arrows="" color="transparent" v-model="landingTabs" :hide-slider="sliderToogle"  grow slider-color="secondary " left>
-            <v-tab href="#signup"  @click="() => (sliderToogle =! true, loginToogle =! false)" class=" textDefault textfm1 txt13"  :ripple="false" >
+           
+            <v-tab href="#login"  @click="() => (sliderToogle =! true, loginToogle =! false)" class=" textDefault textfm1 txt13"  :ripple="false" >
                Join us today
             </v-tab>
-            <v-tab href="#cases" @click="() => (sliderToogle =! true, loginToogle =! false)"  class="textDefault textfm1  txt13"  :ripple="false" >
+            <v-tab disabled href="#cases" @click="() => (sliderToogle =! true, loginToogle =! false)"  class="textDefault textfm1  txt13"  :ripple="false" >
                Use cases
             </v-tab>
-            <v-tab href="#about" @click="() => (sliderToogle =! true, loginToogle =! false)" class="textDefault textfm1 txt13" :ripple="false" >
+            <v-tab disabled href="#about" @click="() => (sliderToogle =! true, loginToogle =! false)" class="textDefault textfm1 txt13" :ripple="false" >
                About
             </v-tab>
-            <v-tab href="#features" @click="() => (sliderToogle =! true, loginToogle =! false)" class="textDefault textfm1 txt13" :ripple="false" >
+            <v-tab disabled href="#features" @click="() => (sliderToogle =! true, loginToogle =! false)" class="textDefault textfm1 txt13" :ripple="false" >
                Features
             </v-tab>
             <v-tab disabled @click="() => (sliderToogle =! true, loginToogle =! false)" class="mr-5 textDefault textfm1 txt13" :ripple="false" >
@@ -29,34 +31,20 @@
             </v-tab>
          </v-tabs>
       </v-flex>
-      <v-btn @click="loginTab" v-if="loginToogle"  color="primary" small round  class="hidden-sm-and-down textDefault  textfm1 text-xs-center">
-         Login
+      
+      <v-btn color="red darken-4" small round  class="hidden-sm-and-down textDefault  textfm1 text-xs-center">
+         <!-- @click="loginTab"  -->
+         Enroll now
       </v-btn>
       <v-spacer></v-spacer>
-      <v-btn @click="loginTab"  color="primary" small round  class="hidden-md-and-up textDefault  textfm1 text-xs-center">
-         Login
+      <v-btn color="red darken-4" small round  class="hidden-md-and-up textDefault  textfm1 text-xs-center">
+         Enroll now
       </v-btn>
    </v-toolbar>
       <div class=" mt-5">
          <v-content slot="extension">
             <v-container  >
                <v-tabs-items v-model="landingTabs">
-                  <v-tab-item id="signup">
-                     <v-card class="jieLandingBg2 white" height="500">
-                        <v-container>
-
-                        </v-container>
-                     </v-card>
-                  </v-tab-item>
-                  <v-tab-item id="cases">
-                        <v-card-text > page 3</v-card-text>
-                  </v-tab-item>
-                  <v-tab-item id="about">
-                        <v-card-text > page 4</v-card-text>
-                  </v-tab-item>
-                  <v-tab-item id="features">
-                        <v-card-text > page 5</v-card-text>
-                  </v-tab-item>
                   <!-- Landing and Login Area -->
                   <v-tab-item id="login">
                      <v-layout class="mt-5" row wrap>
@@ -71,11 +59,12 @@
                                  <v-btn @click="passwordReset = false">Return</v-btn>
                               </v-card-text>
                            </v-card>
-                           <v-card v-show="!passwordReset" class=" jieSvgBg1" >
-                              <v-card-text class="" >
-                                 <div class="headline">Sign in to continue</div>
-                              </v-card-text>
-                              <v-container >
+                           <v-card v-show="!passwordReset" class="jieSvgBg1" >
+                              <v-card-title class="headline" >
+                                 Sign in to continue
+                                 <!-- <div class="headline">Sign in to continue</div> -->
+                              </v-card-title>
+                              <v-container style="margin-top:-10px">
                                  <v-form @submit.prevent="AuthCodeID">
                                     <v-text-field
                                        type="text" prepend-icon="person" clearable
@@ -119,11 +108,12 @@
                                           Forgot Password
                                        </v-btn> -->
                                  </v-layout>
-                                       <v-progress-linear style="margin-top:-1px" class="deep-purple lighten-5" height="1" :indeterminate="jieLoading"></v-progress-linear>
+                                       <v-progress-linear style="margin-top:-10px" class="deep-purple lighten-5" height="1" :indeterminate="jieLoading"></v-progress-linear>
                                     <v-layout row wrap>
                                        
-                                       <v-btn :disabled="jieLoading"  @click="loginWithGoogle" style="font-size:9px !important; font-weight:bold; font-family: 'Roboto', sans-serif;"  class=" white grey--text  textDefault" > <v-avatar size="16px" class="mr-2" >  <img src="/imgs/google.svg" alt=""></v-avatar>Sign in with Google</v-btn>
-                                       <v-btn :disabled="jieLoading"  @click="loginWithFacebook" style="background-color:#3b5998;font-size:9px !important; font-weight:bold; font-family: 'Roboto', sans-serif;" class=" white--text textDefault" > <v-avatar tile size="16px" class="mr-2" >  <img src="/imgs/facebook.svg" alt=""></v-avatar>Sign in with Facebook</v-btn>
+                                       <v-btn :disabled="jieLoading" block @click="loginWithGoogle" style="font-size:10px !important; font-weight:bold; font-family: 'Roboto', sans-serif;"  class=" white grey--text  textDefault" > <v-avatar size="14px" class="mr-2" >  <img src="/imgs/google.svg" alt=""></v-avatar>Sign in with Google</v-btn>
+                                          <v-divider vertical class="mx-1"></v-divider>
+                                       <v-btn :disabled="jieLoading" block @click="loginWithFacebook" style="background-color:#3b5998;font-size:10px !important; font-weight:bold; font-family: 'Roboto', sans-serif;" class=" white--text textDefault" > <v-avatar tile size="14px" class="mr-2" >  <img src="/imgs/facebook.svg" alt=""></v-avatar>Sign in with Facebook</v-btn>
                                   </v-layout>
                                  </v-form>
                               </v-container>
@@ -132,6 +122,23 @@
                      </v-layout>
                   </v-tab-item>
                <!-- exit! Landing and Login Area -->
+                  <v-tab-item id="signup">
+                     <v-card class="jieLandingBg2 white" height="500">
+                        <v-container>
+
+                        </v-container>
+                     </v-card>
+                  </v-tab-item>
+                  <v-tab-item id="cases">
+                        <v-card-text > page 3</v-card-text>
+                  </v-tab-item>
+                  <v-tab-item id="about">
+                        <v-card-text > page 4</v-card-text>
+                  </v-tab-item>
+                  <v-tab-item id="features">
+                        <v-card-text > page 5</v-card-text>
+                  </v-tab-item>
+
                </v-tabs-items>
             </v-container>
          </v-content>
@@ -251,6 +258,7 @@ export default {
             // The signed-in user info.
             const user = result.user;
             // vm.$store.dispatch("registerUser")
+            console.log(user);
             signUp(user)
                .then((res) => {
                   vm.form.password='jiejie';
@@ -258,18 +266,22 @@ export default {
                   login(vm.$data.form)  
                      .then((res) => {
                         vm.$store.commit("loginSuccess", res);
-                        vm.$store.dispatch("loginFirebase")
-                        vm.$store.dispatch("jieLoaderOff")
-                        vm.$Progress.finish()
-                        vm.$router.push({ path : '/'})
+                        vm.$store.dispatch("loginFirebase");
+                        vm.$store.dispatch("jieLoaderOff");
+                        vm.$Progress.finish();
+                        vm.$router.push({ path : '/'});
                      })
-                     .catch((err) => {
-                        alert(err)
+                     .catch((rej) => {
+                        // alert(err)
+                        vm.$Progress.fail();
+                        vm.textalert="Your facebook account has not yet set an email";
+                        vm.snackbar = true;
                      })
                })
                .catch((rej) => {
-                  vm.$Progress.fail()
-                  vm.textalert="Something is wrong with your connection"
+                  vm.$Progress.fail();
+                  vm.textalert="Something is wrong with your connection";
+                  vm.snackbar = true;
                })
          // ...
          }).catch(function(error) {
@@ -288,7 +300,6 @@ export default {
             } else  {
                vm.textalert = errorMessage // 'Facebook email already used ' + 
             }
-            vm.snackbar = true
             vm.$Progress.fail()
             vm.$store.dispatch("jieLoaderOff")
             // ...
@@ -400,7 +411,7 @@ export default {
    },
    computed: {
       successLogout() {
-         return this.$store.getters.alertLogoutDone
+         return this.$store.state.alertLogoutDone
       },
       jieLoading () {
          return this.$store.getters.isLoading

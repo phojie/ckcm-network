@@ -1,58 +1,132 @@
 <template>
    <v-app>
-  
-      <v-toolbar class="mr-5 white elevation-1" app dense >
-         <v-toolbar-side-icon class="" @click="() => (showNav = !showNav)"></v-toolbar-side-icon>
+      <v-toolbar fixed clipped-right dark class="mycolor1 jieLandingBg  mr-5  " flat app dense >
+         <!-- <v-toolbar-side-icon class="" @click="() => (showNav = !showNav)"></v-toolbar-side-icon> -->
+         <v-toolbar-title class="primaryColortext--text subheading mx-5 ">
+            <!-- <span class="subheading white--text">Christ the King Network</span> -->
+         </v-toolbar-title>
          <v-spacer></v-spacer>
+         <!-- <v-text-field style="height:10px !important" solo>
+         </v-text-field> -->
+         <v-divider vertical inset ></v-divider>
          <v-btn small style="margin-right:-5px !important;" icon>
             <v-icon style="font-size:17px !important">apps</v-icon>
          </v-btn>
-         <v-btn small style="margin-right:-5px !important;" icon>
-            <v-icon style="font-size:17px !important">notifications</v-icon>
+         <v-btn small style="margin-right:12px !important;" icon>
+            <v-badge color="red" >
+               <span slot="badge" class="textfm1" style="font-size:10px">2</span>
+               <v-icon style="font-size:17px !important">notifications</v-icon>
+            </v-badge>
          </v-btn>
-        
-         <!-- <v-avatar class="mr-1" size="30px">
-               <img :src="userData.fdetailsload.photoURL" alt="">
-         </v-avatar> -->
-         <!-- <div class="font-weight-black grey--text caption textDefault textfm1">{{userData.fdetailsload.displayName}}</div> 
-               <v-icon color="primary">arrow_drop_down</v-icon> -->
          <v-menu offset-y>
-             <!-- color="white" flat  -->
+               <!-- color="white" flat  -->
             <v-btn  slot="activator" color="white" flat ripple>
                <!-- Dropdown -->
-               <v-avatar class="mr-1" size="30px">
+               <v-avatar class="mr-1" size="25px">
                   <img :src="userData.photoUrl" alt="">
                </v-avatar>
-               <div class="font-weight-black grey--text caption textDefault textfm1">{{userData.displayName}}</div> 
-                  <v-icon color="primary">arrow_drop_down</v-icon>
+               <div class="mr-2 white--text caption textDefault textfm1"> Hello, {{userData.displayName}}</div> 
+                  <v-icon style="font-size:15px !important" color="primary">menu</v-icon>
             </v-btn>
-
+               <div class="" style="
+                           margin-left:149.5px;
+                           width: 0;
+                           height: 0;
+                           border-left: 6px solid transparent;
+                           border-right: 6px solid transparent;
+                           border-bottom: 6px solid white;">
+               </div>
             <v-list dense>
                <!-- v-for="(item, index) in items" -->
-               <v-list-tile 
-                  @click=""
+               <v-list-tile @click=""
                >
                   <v-list-tile-title class="textfm1" @click="logout">
-                     <v-icon small >logout-variant</v-icon>Logout   
+                     <i class="mdi mdi-icon "> 
+                     <v-icon small >logout-variant</v-icon>
+                     </i>
+                     Logout   
                   </v-list-tile-title>
                </v-list-tile>
+
             </v-list>
          </v-menu>
       </v-toolbar>
-      <v-navigation-drawer
-         class="jieLandingBg"
-         width="230" app  
-         v-model="showNav"
-      >
-      <v-card color="transparent">
-         <!-- <v-spacer></v-spacer>
-         <v-toolbar-side-icon left dark ></v-toolbar-side-icon> -->
-      </v-card>
-      </v-navigation-drawer>
-      
-      <v-content color="secondary">
-         <v-container fluid>
-            <router-view></router-view>
+
+      <v-content >
+         <v-container class="" app fluid>
+            <v-layout>
+               <v-flex class="md2 ">
+                  <v-card class="" height="500px">
+                     <v-list dense class="textfm1">
+                        <v-list-tile>
+                        <v-list-tile-action>
+                           <v-icon>home</v-icon>
+                        </v-list-tile-action>
+                        <v-list-tile-title>Home</v-list-tile-title>
+                        </v-list-tile>
+
+                        <v-list-group
+                        prepend-icon="account_circle"
+                        value="true"
+                        >
+                        <v-list-tile slot="activator">
+                           <v-list-tile-title>Users</v-list-tile-title>
+                        </v-list-tile>
+
+                        <v-list-group
+                           no-action
+                           sub-group
+                           value="true"
+                        >
+                           <v-list-tile slot="activator">
+                              <v-list-tile-title>Admin</v-list-tile-title>
+                           </v-list-tile>
+
+                           <v-list-tile
+                              v-for="(admin, i) in admins"
+                              :key="i"
+                              @click="null"
+                           >
+                              <v-list-tile-title v-text="admin[0]"></v-list-tile-title>
+                              <v-list-tile-action>
+                              <v-icon v-text="admin[1]"></v-icon>
+                              </v-list-tile-action>
+                           </v-list-tile>
+                        </v-list-group>
+
+                        <v-list-group
+                           sub-group
+                           no-action
+                        >
+                           <v-list-tile slot="activator">
+                              <v-list-tile-title>Actions</v-list-tile-title>
+                           </v-list-tile>
+
+                           <v-list-tile
+                              v-for="(crud, i) in cruds"
+                              :key="i"
+                              @click="null"
+                           >
+                              <v-list-tile-title v-text="crud[0]"></v-list-tile-title>
+                              <v-list-tile-action>
+                              <v-icon v-text="crud[1]"></v-icon>
+                              </v-list-tile-action>
+                           </v-list-tile>
+                        </v-list-group>
+                        </v-list-group>
+                     </v-list>
+                  </v-card>
+                  <!-- <router-view></router-view> -->
+               </v-flex>
+               <v-flex class="md6">
+                  <v-card class="" height="700px">
+                  </v-card>
+               </v-flex>
+               <v-flex class="4">
+                  <v-card class="" height="500px">
+                  </v-card>
+               </v-flex>
+            </v-layout>
          </v-container>
       </v-content>
       <!-- <v-footer app></v-footer> -->
@@ -62,14 +136,9 @@
 <script>
 export default {
    data: () => ({
-      showNav:false,
+      mini:true,
+      showNav:true,
       progressDone: false,
-      items: [
-        { title: 'Logout' },
-        { title: 'Click Me' },
-        { title: 'Click Me' },
-        { title: 'Click Me 2' }
-      ]
    }),
    methods: {
       logout(){

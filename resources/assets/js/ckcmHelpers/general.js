@@ -11,6 +11,7 @@ export function initialize(store, router) {
          // next('/auth')
          //kng wla pa ka login 
       } else if(to.path == '/auth' && currentUser) {
+         axios.defaults.headers.common["Authorization"] = `Bearer ${store.getters.accountLoginData.token}`
          next('/');
          // kng nka login mo dretso sa "/"
       } else if(to.path == '/signup' && currentUser) {

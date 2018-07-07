@@ -4,11 +4,11 @@
 .alwaysSignCHECK .material-icons {
    margin-left: 5px !important;
    font-size: 17px !important;
-   margin-top: 9.5px !important;
+   margin-top: -10.5px !important;
    /* height: 40px !important; */
 }
 .alwaysSignCHECK label  {
-   margin-top: 3px !important;
+   margin-top: -28px !important;
    font-size: 14px !important;
 }
 .txt13 {
