@@ -35627,10 +35627,7 @@ var render = function() {
         [
           _c(
             "v-toolbar",
-            {
-              staticClass: "elevation-2",
-              attrs: { dense: "", dark: "", color: "transparent" }
-            },
+            { attrs: { flat: "", dark: "", color: "transparent" } },
             [
               _c("v-toolbar-side-icon", { staticClass: "hidden-md-and-up" }),
               _vm._v(" "),
@@ -35659,10 +35656,10 @@ var render = function() {
                       attrs: {
                         "show-arrows": "",
                         color: "transparent",
+                        "next-icon": "",
                         "hide-slider": _vm.sliderToogle,
                         grow: "",
-                        "slider-color": "secondary ",
-                        left: ""
+                        "slider-color": "secondary "
                       },
                       model: {
                         value: _vm.landingTabs,
@@ -35839,7 +35836,7 @@ var render = function() {
                               _c(
                                 "v-layout",
                                 {
-                                  staticClass: "mt-5",
+                                  staticClass: "mt-4",
                                   attrs: { row: "", wrap: "" }
                                 },
                                 [
@@ -35867,7 +35864,7 @@ var render = function() {
                                   _c(
                                     "v-flex",
                                     {
-                                      staticClass: "px-2 ",
+                                      staticClass: "px-2 mt-2",
                                       attrs: { xs12: "", lg4: "", sm12: "" }
                                     },
                                     [
@@ -36025,26 +36022,6 @@ var render = function() {
                                                   }),
                                                   _vm._v(" "),
                                                   _c(
-                                                    "v-btn",
-                                                    {
-                                                      staticClass:
-                                                        "textfm1 mt-3 mb-2 ",
-                                                      attrs: {
-                                                        block: "",
-                                                        loading: _vm.jieLoading,
-                                                        type: "submit",
-                                                        ripple: false,
-                                                        color: "primary"
-                                                      }
-                                                    },
-                                                    [
-                                                      _vm._v(
-                                                        "\r\n                                       Submit\r\n                                    "
-                                                      )
-                                                    ]
-                                                  ),
-                                                  _vm._v(" "),
-                                                  _c(
                                                     "v-layout",
                                                     { attrs: { row: "" } },
                                                     [
@@ -36104,12 +36081,32 @@ var render = function() {
                                                     1
                                                   ),
                                                   _vm._v(" "),
+                                                  _c(
+                                                    "v-btn",
+                                                    {
+                                                      staticClass:
+                                                        "textfm1 mb-3 ",
+                                                      staticStyle: {
+                                                        "margin-top": "-10px"
+                                                      },
+                                                      attrs: {
+                                                        block: "",
+                                                        loading: _vm.jieLoading,
+                                                        type: "submit",
+                                                        ripple: false,
+                                                        color: "primary"
+                                                      }
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        "\r\n                                    Submit\r\n                                 "
+                                                      )
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
                                                   _c("v-progress-linear", {
                                                     staticClass:
                                                       "deep-purple lighten-5",
-                                                    staticStyle: {
-                                                      "margin-top": "-10px"
-                                                    },
                                                     attrs: {
                                                       height: "1",
                                                       indeterminate:

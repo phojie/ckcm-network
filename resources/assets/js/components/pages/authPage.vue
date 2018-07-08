@@ -1,7 +1,7 @@
 <template>
 <v-app >
    <v-card  class="jieLandingBg mycolor1" flat height="auto" style="min-height: 700px; border-radius: 0" >
-   <v-toolbar dense class="elevation-2" dark color="transparent">
+   <v-toolbar flat dark color="transparent">
       <v-toolbar-side-icon class="hidden-md-and-up"></v-toolbar-side-icon>
       <v-toolbar-title class="primaryColortext--text subheading mx-5 ">
          <span class="subheading white--text">Christ the King Network</span>
@@ -11,7 +11,7 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-flex class="hidden-sm-and-down" md7 lg6 >
-         <v-tabs  show-arrows="" color="transparent" v-model="landingTabs" :hide-slider="sliderToogle"  grow slider-color="secondary " left>
+         <v-tabs show-arrows color="transparent" v-model="landingTabs" next-icon :hide-slider="sliderToogle"  grow slider-color="secondary " >
            
             <v-tab href="#login"  @click="() => (sliderToogle =! true, loginToogle =! false)" class=" textDefault textfm1 txt13"  :ripple="false" >
                Join us today
@@ -47,11 +47,11 @@
                <v-tabs-items v-model="landingTabs">
                   <!-- Landing and Login Area -->
                   <v-tab-item id="login">
-                     <v-layout class="mt-5" row wrap>
+                     <v-layout class="mt-4" row wrap>
                         <v-flex class="" offset-sm1  xs12 lg7 sm12>
                               <img src="/imgs/ckcm-network-homepage-illustration.png" alt="">
                         </v-flex>
-                        <v-flex  class="px-2 " xs12 lg4 sm12>
+                        <v-flex  class="px-2 mt-2" xs12 lg4 sm12>
                            <v-card v-show="passwordReset" class=" jieSvgBg1" >
                              <v-card-text class="" >
                                  <div class="headline">Password Reset</div>
@@ -85,13 +85,6 @@
                                       
                                     >
                                     </v-text-field>
-                                    <v-btn 
-                                       block class="textfm1 mt-3 mb-2 "
-                                       :loading="jieLoading" type="submit"
-                                       :ripple="false" color="primary" 
-                                    >
-                                       Submit
-                                    </v-btn>
                                     <v-layout row >
                                        <v-checkbox 
                                           :disabled="jieLoading"
@@ -108,9 +101,16 @@
                                           Forgot Password
                                        </v-btn> -->
                                  </v-layout>
-                                       <v-progress-linear style="margin-top:-10px" class="deep-purple lighten-5" height="1" :indeterminate="jieLoading"></v-progress-linear>
+                                 <v-btn 
+                                    block class="textfm1 mb-3 "
+                                    :loading="jieLoading" type="submit"
+                                    :ripple="false" color="primary" 
+                                    style="margin-top:-10px"
+                                 >
+                                    Submit
+                                 </v-btn>
+                                       <v-progress-linear  class="deep-purple lighten-5" height="1" :indeterminate="jieLoading"></v-progress-linear>
                                     <v-layout row wrap>
-                                       
                                        <v-btn :disabled="jieLoading" block @click="loginWithGoogle" style="font-size:10px !important; font-weight:bold; font-family: 'Roboto', sans-serif;"  class=" white grey--text  textDefault" > <v-avatar size="14px" class="mr-2" >  <img src="/imgs/google.svg" alt=""></v-avatar>Sign in with Google</v-btn>
                                           <v-divider vertical class="mx-1"></v-divider>
                                        <v-btn :disabled="jieLoading" block @click="loginWithFacebook" style="background-color:#3b5998;font-size:10px !important; font-weight:bold; font-family: 'Roboto', sans-serif;" class=" white--text textDefault" > <v-avatar tile size="14px" class="mr-2" >  <img src="/imgs/facebook.svg" alt=""></v-avatar>Sign in with Facebook</v-btn>
