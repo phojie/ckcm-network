@@ -9,11 +9,11 @@
          <!-- <v-text-field style="height:10px !important" solo>
          </v-text-field> -->
          <v-divider vertical inset ></v-divider>
-         <v-btn small style="margin-right:-5px !important;" icon>
+         <v-btn style="margin-right:-5px !important;" icon>
             <v-icon style="font-size:20px !important">mdi-apps</v-icon>
          </v-btn>
-         <v-menu offset-y nudge-bottom="4px">
-            <v-btn slot="activator" small style="margin-right:12px !important;" icon>
+         <v-menu flat offset-y nudge-left="44px">
+            <v-btn slot="activator"  style="margin-right:12px !important;" icon>
                <!-- <v-badge color="red" >
                   <span slot="badge" class="textfm1" style="font-size:10px">2</span>
                   <v-icon style="font-size:17px !important">mdi-bell</v-icon>
@@ -28,7 +28,7 @@
                </v-badge>
             </v-btn>
               <div class="" style="
-                           margin-left:8.5px;
+                           margin-left:56.5px;
                            width: 0;
                            height: 0;
                            border-left: 6px solid transparent;
@@ -40,9 +40,9 @@
                   <!-- v-for="(item, index) in items" -->
                   <v-list-tile @click=""
                   >
-                     <v-list-tile-title class="textfm1" @click="logout">
-                        <v-icon small >mdi-logout</v-icon>
-                        Logout   
+                     <v-list-tile-title class="textfm1" >
+                        <v-icon small >mdi-person</v-icon>
+                           wla pa
                      </v-list-tile-title>
                   </v-list-tile>
                </v-list>
@@ -71,7 +71,23 @@
                   <!-- v-for="(item, index) in items" -->
                   <v-list-tile @click=""
                   >
-                     <v-list-tile-title class="textfm1" @click="logout">
+                     <v-list-tile-title class="textfm1" >
+                        <v-icon small >mdi-account</v-icon>
+                        Profile   
+                     </v-list-tile-title>
+                  </v-list-tile>
+
+                  <v-list-tile @click=""
+                  >
+                     <v-list-tile-title class="textfm1" >
+                        <v-icon small >mdi-settings</v-icon>
+                        Settings   
+                     </v-list-tile-title>
+                  </v-list-tile>
+
+                  <v-list-tile @click="logout"
+                  >
+                     <v-list-tile-title class="textfm1" >
                         <v-icon small >mdi-logout</v-icon>
                         Logout   
                      </v-list-tile-title>

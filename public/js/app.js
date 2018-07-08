@@ -37798,6 +37798,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
    data: function data() {
@@ -37864,7 +37880,7 @@ var render = function() {
             "v-btn",
             {
               staticStyle: { "margin-right": "-5px !important" },
-              attrs: { small: "", icon: "" }
+              attrs: { icon: "" }
             },
             [
               _c(
@@ -37878,13 +37894,13 @@ var render = function() {
           _vm._v(" "),
           _c(
             "v-menu",
-            { attrs: { "offset-y": "", "nudge-bottom": "4px" } },
+            { attrs: { flat: "", "offset-y": "", "nudge-left": "44px" } },
             [
               _c(
                 "v-btn",
                 {
                   staticStyle: { "margin-right": "12px !important" },
-                  attrs: { slot: "activator", small: "", icon: "" },
+                  attrs: { slot: "activator", icon: "" },
                   slot: "activator"
                 },
                 [
@@ -37932,7 +37948,7 @@ var render = function() {
               _vm._v(" "),
               _c("div", {
                 staticStyle: {
-                  "margin-left": "8.5px",
+                  "margin-left": "56.5px",
                   width: "0",
                   height: "0",
                   "border-left": "6px solid transparent",
@@ -37954,16 +37970,13 @@ var render = function() {
                         [
                           _c(
                             "v-list-tile-title",
-                            {
-                              staticClass: "textfm1",
-                              on: { click: _vm.logout }
-                            },
+                            { staticClass: "textfm1" },
                             [
                               _c("v-icon", { attrs: { small: "" } }, [
-                                _vm._v("mdi-logout")
+                                _vm._v("mdi-person")
                               ]),
                               _vm._v(
-                                "\n                     Logout   \n                  "
+                                "\n                        wla pa\n                  "
                               )
                             ],
                             1
@@ -38052,10 +38065,49 @@ var render = function() {
                         [
                           _c(
                             "v-list-tile-title",
-                            {
-                              staticClass: "textfm1",
-                              on: { click: _vm.logout }
-                            },
+                            { staticClass: "textfm1" },
+                            [
+                              _c("v-icon", { attrs: { small: "" } }, [
+                                _vm._v("mdi-account")
+                              ]),
+                              _vm._v(
+                                "\n                     Profile   \n                  "
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-list-tile",
+                        { on: { click: function($event) {} } },
+                        [
+                          _c(
+                            "v-list-tile-title",
+                            { staticClass: "textfm1" },
+                            [
+                              _c("v-icon", { attrs: { small: "" } }, [
+                                _vm._v("mdi-settings")
+                              ]),
+                              _vm._v(
+                                "\n                     Settings   \n                  "
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-list-tile",
+                        { on: { click: _vm.logout } },
+                        [
+                          _c(
+                            "v-list-tile-title",
+                            { staticClass: "textfm1" },
                             [
                               _c("v-icon", { attrs: { small: "" } }, [
                                 _vm._v("mdi-logout")
