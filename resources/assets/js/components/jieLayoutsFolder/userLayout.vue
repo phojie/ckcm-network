@@ -10,15 +10,45 @@
          </v-text-field> -->
          <v-divider vertical inset ></v-divider>
          <v-btn small style="margin-right:-5px !important;" icon>
-            <v-icon style="font-size:17px !important">mdi-apps</v-icon>
+            <v-icon style="font-size:20px !important">mdi-apps</v-icon>
          </v-btn>
-         <v-btn small style="margin-right:12px !important;" icon>
-            <v-badge color="red" >
-               <span slot="badge" class="textfm1" style="font-size:10px">2</span>
-               <v-icon style="font-size:17px !important">mdi-bell-outline</v-icon>
-            </v-badge>
-         </v-btn>
-         <v-menu offset-y>
+         <v-menu offset-y nudge-bottom="4px">
+            <v-btn slot="activator" small style="margin-right:12px !important;" icon>
+               <!-- <v-badge color="red" >
+                  <span slot="badge" class="textfm1" style="font-size:10px">2</span>
+                  <v-icon style="font-size:17px !important">mdi-bell</v-icon>
+               </v-badge> -->
+               <v-badge color="red" overlap class="jieBadge">
+                  <span  slot="badge" class="textfm1" style="font-size:11px">3</span>
+                  <v-avatar size="27px"
+                  color="transparent red--after"
+                  >
+                  <v-icon style="font-size:20px !important">notifications</v-icon>
+                  </v-avatar>
+               </v-badge>
+            </v-btn>
+              <div class="" style="
+                           margin-left:8.5px;
+                           width: 0;
+                           height: 0;
+                           border-left: 6px solid transparent;
+                           border-right: 6px solid transparent;
+                           border-bottom: 6px solid white;">
+               </div>
+            <v-card>
+               <v-list dense>
+                  <!-- v-for="(item, index) in items" -->
+                  <v-list-tile @click=""
+                  >
+                     <v-list-tile-title class="textfm1" @click="logout">
+                        <v-icon small >mdi-logout</v-icon>
+                        Logout   
+                     </v-list-tile-title>
+                  </v-list-tile>
+               </v-list>
+            </v-card>
+         </v-menu>
+         <v-menu offset-y >
                <!-- color="white" flat  -->
             <v-btn  slot="activator" color="white" flat ripple>
                <!-- Dropdown -->
@@ -36,17 +66,18 @@
                            border-right: 6px solid transparent;
                            border-bottom: 6px solid white;">
                </div>
-            <v-list dense>
-               <!-- v-for="(item, index) in items" -->
-               <v-list-tile @click=""
-               >
-                  <v-list-tile-title class="textfm1" @click="logout">
-                     <v-icon small >mdi-logout</v-icon>
-                     Logout   
-                  </v-list-tile-title>
-               </v-list-tile>
-
-            </v-list>
+            <v-card >
+               <v-list dense>
+                  <!-- v-for="(item, index) in items" -->
+                  <v-list-tile @click=""
+                  >
+                     <v-list-tile-title class="textfm1" @click="logout">
+                        <v-icon small >mdi-logout</v-icon>
+                        Logout   
+                     </v-list-tile-title>
+                  </v-list-tile>
+               </v-list>
+            </v-card>
          </v-menu>
       </v-toolbar>
 
@@ -128,3 +159,10 @@ export default {
    }
 }
 </script>
+
+<style >
+.jieBadge .v-badge__badge {
+   height:19px !important;
+   width:19px !important;
+}
+</style>

@@ -37612,6 +37612,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(126)
+}
 var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = __webpack_require__(98)
@@ -37620,7 +37624,7 @@ var __vue_template__ = __webpack_require__(99)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
@@ -37660,6 +37664,37 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -37834,7 +37869,7 @@ var render = function() {
             [
               _c(
                 "v-icon",
-                { staticStyle: { "font-size": "17px !important" } },
+                { staticStyle: { "font-size": "20px !important" } },
                 [_vm._v("mdi-apps")]
               )
             ],
@@ -37842,31 +37877,102 @@ var render = function() {
           ),
           _vm._v(" "),
           _c(
-            "v-btn",
-            {
-              staticStyle: { "margin-right": "12px !important" },
-              attrs: { small: "", icon: "" }
-            },
+            "v-menu",
+            { attrs: { "offset-y": "", "nudge-bottom": "4px" } },
             [
               _c(
-                "v-badge",
-                { attrs: { color: "red" } },
+                "v-btn",
+                {
+                  staticStyle: { "margin-right": "12px !important" },
+                  attrs: { slot: "activator", small: "", icon: "" },
+                  slot: "activator"
+                },
                 [
                   _c(
-                    "span",
+                    "v-badge",
                     {
-                      staticClass: "textfm1",
-                      staticStyle: { "font-size": "10px" },
-                      attrs: { slot: "badge" },
-                      slot: "badge"
+                      staticClass: "jieBadge",
+                      attrs: { color: "red", overlap: "" }
                     },
-                    [_vm._v("2")]
-                  ),
-                  _vm._v(" "),
+                    [
+                      _c(
+                        "span",
+                        {
+                          staticClass: "textfm1",
+                          staticStyle: { "font-size": "11px" },
+                          attrs: { slot: "badge" },
+                          slot: "badge"
+                        },
+                        [_vm._v("3")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-avatar",
+                        {
+                          attrs: {
+                            size: "27px",
+                            color: "transparent red--after"
+                          }
+                        },
+                        [
+                          _c(
+                            "v-icon",
+                            { staticStyle: { "font-size": "20px !important" } },
+                            [_vm._v("notifications")]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("div", {
+                staticStyle: {
+                  "margin-left": "8.5px",
+                  width: "0",
+                  height: "0",
+                  "border-left": "6px solid transparent",
+                  "border-right": "6px solid transparent",
+                  "border-bottom": "6px solid white"
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "v-card",
+                [
                   _c(
-                    "v-icon",
-                    { staticStyle: { "font-size": "17px !important" } },
-                    [_vm._v("mdi-bell-outline")]
+                    "v-list",
+                    { attrs: { dense: "" } },
+                    [
+                      _c(
+                        "v-list-tile",
+                        { on: { click: function($event) {} } },
+                        [
+                          _c(
+                            "v-list-tile-title",
+                            {
+                              staticClass: "textfm1",
+                              on: { click: _vm.logout }
+                            },
+                            [
+                              _c("v-icon", { attrs: { small: "" } }, [
+                                _vm._v("mdi-logout")
+                              ]),
+                              _vm._v(
+                                "\n                     Logout   \n                  "
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
                   )
                 ],
                 1
@@ -37934,22 +38040,31 @@ var render = function() {
               }),
               _vm._v(" "),
               _c(
-                "v-list",
-                { attrs: { dense: "" } },
+                "v-card",
                 [
                   _c(
-                    "v-list-tile",
-                    { on: { click: function($event) {} } },
+                    "v-list",
+                    { attrs: { dense: "" } },
                     [
                       _c(
-                        "v-list-tile-title",
-                        { staticClass: "textfm1", on: { click: _vm.logout } },
+                        "v-list-tile",
+                        { on: { click: function($event) {} } },
                         [
-                          _c("v-icon", { attrs: { small: "" } }, [
-                            _vm._v("mdi-logout")
-                          ]),
-                          _vm._v(
-                            "\n                  Logout   \n               "
+                          _c(
+                            "v-list-tile-title",
+                            {
+                              staticClass: "textfm1",
+                              on: { click: _vm.logout }
+                            },
+                            [
+                              _c("v-icon", { attrs: { small: "" } }, [
+                                _vm._v("mdi-logout")
+                              ]),
+                              _vm._v(
+                                "\n                     Logout   \n                  "
+                              )
+                            ],
+                            1
                           )
                         ],
                         1
@@ -59809,6 +59924,46 @@ module.exports = "/fonts/vendor/material-design-icons-icondist/MaterialIcons-Reg
 /***/ (function(module, exports) {
 
 module.exports = "/fonts/vendor/material-design-icons-icondist/MaterialIcons-Regular.ttf?a37b0c01c0baf1888ca812cc0508f6e2";
+
+/***/ }),
+/* 126 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(127);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(6)("6fc1e0b6", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-af308dce\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./userLayout.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-af308dce\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./userLayout.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 127 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(5)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.jieBadge .v-badge__badge {\r\n   height:19px !important;\r\n   width:19px !important;\n}\r\n", ""]);
+
+// exports
+
 
 /***/ })
 /******/ ]);
