@@ -36,3 +36,27 @@
    background-position: center;
    background-size: cover;
 }
+/* Upper toolbar Search Input */
+.jie .v-input__control   {
+   margin-top:8px;
+   min-height:0px !important;
+   padding: 10px !important;
+}
+
+.jie .v-input__slot   {
+   border-radius:2px;
+   -webkit-transition: width 2s; /* Safari */
+   transition: width .2;
+}
+
+.jie .v-label {
+   color: rgba(0,0,0,0.54) !important;
+   font-size: 12px !important;
+}
+.jie .v-icon {
+   color: rgba(0,0,0,0.54) !important;
+   font-size: 17px !important;
+}
+/* Exit Upper toolbar Search Input */
+
+

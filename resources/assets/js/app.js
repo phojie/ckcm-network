@@ -31,10 +31,16 @@ Vue.use(Vuetify, {
       info: '#A44F1A',
       success: '#512DA8',
       warning: '#820333',
+
+      // text color
       primaryColortext: '#757575',
       secondaryColortext: '#414141',
+
       mycolor1: '#151126',
-      mycolor2: '#0065ff' //blue
+      mycolor2: '#0065ff', //blue
+      
+      // background color
+      mycolor3: '#233D4D' //dark purple
    }
  })
 //  iconfont: 'mdi', // 'md' || 'mdi' || 'fa' || 'fa4' f99121

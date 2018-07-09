@@ -1,27 +1,13 @@
 <template>
    <div>
       <vue-progress-bar></vue-progress-bar>
-      <!-- <authPage></authPage> -->
-      <jieUserLayouts v-if="loginTrueUser"></jieUserLayouts>
-      <router-view v-else></router-view>
+      <router-view ></router-view>
    </div>
 </template>
 <script>
-import jieUserLayouts from './jieLayoutsFolder/userLayout.vue'
 export default {
    data: () => ({
    }),
-   computed: {
-      loginTrueUser () {
-         return this.$store.getters.isIn;
-      },
-      loginTrueFB () {
-         return this.$store.getters.isFB;
-      }
-   },
-   components: {
-      jieUserLayouts
-      },
    mounted () {
       //  [App.vue specific] When App.vue is finish loading finish the progress bar
       this.$Progress.finish()

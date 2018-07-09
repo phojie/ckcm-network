@@ -2,7 +2,9 @@ import authPage from './components/pages/authPage.vue';
 import jie404 from './components/pages/jie404.vue';
 import jieSignup from './components/jieAuthFolder/jieSignup.vue';
 import jieLogin from './components/jieAuthFolder/jieLogin.vue';
+
 import jieUserHome from './components/jieUserFolder/jieHome.vue';
+import jieUserLayout from './components/jieLayoutsFolder/userLayout.vue';
 export const routes = [
    {
       path:'/auth',
@@ -10,7 +12,7 @@ export const routes = [
    },
    {
       path: '/',
-      component: jieUserHome,
+      component: jieUserLayout,
       meta: {
          requiresAuth: true,
          // progress: {
@@ -21,7 +23,13 @@ export const routes = [
          //       {call: 'transition', modifier: 'temp', argument: {speed: '1.5s', opacity: '0.6s', termination: 400}}
          //    ]
          // }
-      }
+      },
+      children: [
+         {
+            path: '/',
+            component: jieUserHome
+         },
+      ]
    },
    {
       path:'/signup',
