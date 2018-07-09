@@ -36195,7 +36195,7 @@ var render = function() {
                 "v-toolbar-title",
                 { staticClass: "primaryColortext--text subheading mx-5 " },
                 [
-                  _c("span", { staticClass: "subheading white--text" }, [
+                  _c("span", { staticClass: "subheading white--text " }, [
                     _vm._v("Christ the King Network")
                   ])
                 ]
@@ -36690,7 +36690,7 @@ var render = function() {
                                                             " white grey--text  textDefault",
                                                           staticStyle: {
                                                             "font-size":
-                                                              "10px !important",
+                                                              "11px !important",
                                                             "font-weight":
                                                               "bold",
                                                             "font-family":
@@ -36747,7 +36747,7 @@ var render = function() {
                                                             "background-color":
                                                               "#3b5998",
                                                             "font-size":
-                                                              "10px !important",
+                                                              "11px !important",
                                                             "font-weight":
                                                               "bold",
                                                             "font-family":
@@ -38535,7 +38535,7 @@ var render = function() {
                 on: {
                   focus: function() {
                     return (
-                      (_vm.md2 = "md4"), (_vm.extendSearch = "transition: .2s")
+                      (_vm.md2 = "md4"), (_vm.extendSearch = "transition: .5s")
                     )
                   },
                   blur: function() {

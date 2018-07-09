@@ -10,7 +10,7 @@
          <!-- <v-menu  slot="activator"  offset-y nudge-left="44px"> -->
             <v-flex :class="md2" :style="extendSearch" align-start>
                <v-text-field  
-                  @focus="() => (md2 = 'md4', extendSearch = 'transition: .2s')"
+                  @focus="() => (md2 = 'md4', extendSearch = 'transition: .5s')"
                   @blur="() => (md2 = 'md3')"
                   @input="searchInput"
                   single-line
