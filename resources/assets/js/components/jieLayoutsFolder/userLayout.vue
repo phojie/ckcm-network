@@ -64,16 +64,16 @@
 
          <v-divider vertical inset ></v-divider>
             <v-btn style="margin-right:-5px !important;" icon>
-               <v-icon style="font-size:19px !important">mdi-apps</v-icon>
+               <v-icon style="font-size:18px !important">mdi-apps</v-icon>
             </v-btn>
             <v-btn style="margin-right:-5px !important;" icon>
-               <v-icon style="font-size:19px !important">mdi-account-switch</v-icon>
+               <v-icon style="font-size:18px !important">mdi-account-switch</v-icon>
             </v-btn>
             <v-btn style="margin-right:-5px !important;" icon>
-               <v-icon style="font-size:17px !important">mdi-marker-check</v-icon>
+               <v-icon style="font-size:16px !important">mdi-marker-check</v-icon>
             </v-btn>
              <v-btn style="margin-right:-5px !important;" icon>
-               <v-icon style="font-size:19px !important">mdi-forum</v-icon>
+               <v-icon style="font-size:18px !important">mdi-forum</v-icon>
             </v-btn>
           
            
@@ -100,7 +100,7 @@
                         <v-avatar size="27px"
                         color="transparent red--after"
                         >
-                        <v-icon style="font-size:19px !important">notifications</v-icon>
+                        <v-icon style="font-size:18px !important">notifications</v-icon>
                         </v-avatar>
                      </v-badge>
                   </v-btn>

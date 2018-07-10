@@ -38580,7 +38580,7 @@ var render = function() {
             [
               _c(
                 "v-icon",
-                { staticStyle: { "font-size": "19px !important" } },
+                { staticStyle: { "font-size": "18px !important" } },
                 [_vm._v("mdi-apps")]
               )
             ],
@@ -38596,7 +38596,7 @@ var render = function() {
             [
               _c(
                 "v-icon",
-                { staticStyle: { "font-size": "19px !important" } },
+                { staticStyle: { "font-size": "18px !important" } },
                 [_vm._v("mdi-account-switch")]
               )
             ],
@@ -38612,7 +38612,7 @@ var render = function() {
             [
               _c(
                 "v-icon",
-                { staticStyle: { "font-size": "17px !important" } },
+                { staticStyle: { "font-size": "16px !important" } },
                 [_vm._v("mdi-marker-check")]
               )
             ],
@@ -38628,7 +38628,7 @@ var render = function() {
             [
               _c(
                 "v-icon",
-                { staticStyle: { "font-size": "19px !important" } },
+                { staticStyle: { "font-size": "18px !important" } },
                 [_vm._v("mdi-forum")]
               )
             ],
@@ -38699,7 +38699,7 @@ var render = function() {
                                 "v-icon",
                                 {
                                   staticStyle: {
-                                    "font-size": "19px !important"
+                                    "font-size": "18px !important"
                                   }
                                 },
                                 [_vm._v("notifications")]
