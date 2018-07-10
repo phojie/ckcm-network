@@ -4,7 +4,9 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta property="og:image" content="favicon.ico" />
+      <meta property="og:image" content="https://www.ckcm-network.com/favicon.ico" />
+      <meta property="og:image:width" content="100"/>
+      <meta property="og:image:height" content="100"/>
 		<title>Christ the King Network</title>
 		<!-- Fonts -->
 		<!-- Styles -->
