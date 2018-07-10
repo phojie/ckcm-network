@@ -1,7 +1,7 @@
 <template>
    <v-app>
-      <v-navigation-drawer permanent flat right width="230" clipped app></v-navigation-drawer>
-      <v-navigation-drawer permanent class="" floating width="200" style="overflow: hidden !important;" clipped app>
+      <v-navigation-drawer  flat right width="230" clipped app></v-navigation-drawer>
+      <v-navigation-drawer  class="" floating width="200" style="overflow: hidden !important;" clipped app>
          <v-card class="mt-3 ml-3 grey lighten-4" height="30">
          </v-card>
          <v-card flat class="mt-2 ml-3 grey lighten-4" height="200">
@@ -76,7 +76,6 @@
              <v-btn style="margin-right:-5px !important;" icon>
                <v-icon style="font-size:18px !important">mdi-forum</v-icon>
             </v-btn>
-          
            
          <v-tooltip color="tooltipColor" bottom >
             <!-- <div class="" style="
@@ -101,7 +100,7 @@
                         <v-avatar size="27px"
                         color="transparent red--after"
                         >
-                        <v-icon style="font-size:18px !important">notifications</v-icon>
+                        <v-icon style="font-size:18px !important">mdi-earth</v-icon>
                         </v-avatar>
                      </v-badge>
                   </v-btn>
@@ -149,7 +148,7 @@
             <v-card >
                <v-list dense>
                   <!-- v-for="(item, index) in items" -->
-                  <v-list-tile @click=""
+                  <v-list-tile @click="profileMenu"
                   >
                      <v-list-tile-title class="textfm1" >
                         <v-icon small >mdi-account</v-icon>
@@ -191,9 +190,9 @@
                         <v-container fill-height fluid>
                            <v-layout fill-height>
                            <v-flex>
-                              <span class="headline">05:56</span>
+                              <span class="headline">01:20</span>
                               <br>
-                              <span class="subheadline">Good morning, {{userData.displayName}}!</span>
+                              <span class="subheadline">Good afternoon, {{userData.displayName}}!</span>
                            </v-flex>
                            </v-layout>
                         </v-container>
@@ -246,6 +245,7 @@
                      </v-card-media>
                   </v-card> -->
                   <v-card flat class="grey lighten-4 my-2" height="50px">
+                     {{userData}}
                   </v-card>
                    <v-card flat  class="grey lighten-4 my-2" height="150px">
                   </v-card>
@@ -287,6 +287,11 @@ export default {
       },
       searchInput () {
          
+      },
+      profileMenu () {
+         const displayName= this.$store.getters.accountLoginData.user.displayName;
+         const user = displayName.toLocaleLowerCase().replace(/[ ]/g, ".");
+         this.$router.push({path: `/${user}`});
       }
    },
    computed: {
