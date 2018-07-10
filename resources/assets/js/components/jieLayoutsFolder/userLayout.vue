@@ -1,7 +1,7 @@
 <template>
    <v-app>
       <v-navigation-drawer permanent flat right width="230" clipped app></v-navigation-drawer>
-      <v-navigation-drawer permanent class="" floating width="200" clipped app>
+      <v-navigation-drawer permanent class="" floating width="200" style="overflow: hidden !important;" clipped app>
          <v-card class="mt-3 ml-3 grey lighten-4" height="30">
          </v-card>
          <v-card flat class="mt-2 ml-3 grey lighten-4" height="200">

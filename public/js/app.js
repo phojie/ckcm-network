@@ -38478,6 +38478,7 @@ var render = function() {
       _c(
         "v-navigation-drawer",
         {
+          staticStyle: { overflow: "hidden !important" },
           attrs: {
             permanent: "",
             floating: "",
