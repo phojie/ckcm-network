@@ -2,7 +2,7 @@
    <v-app>
       <v-navigation-drawer permanent flat right width="230" clipped app></v-navigation-drawer>
       <v-navigation-drawer permanent class="" floating width="200" clipped app>
-         <v-card class="mt-3 ml-3 grey lighten-4" height="45">
+         <v-card class="mt-3 ml-3 grey lighten-4" height="30">
          </v-card>
          <v-card flat class="mt-2 ml-3 grey lighten-4" height="200">
          </v-card>
@@ -38,7 +38,8 @@
                   :loading="false"
                   placeholder="Search something.."
                   append-icon="search"
-                  class="font-weight-thin-light jie textfm1 caption "
+                  style="font-size:13px"
+                  class="font-weight-thin-light jie textfm1  "
                ></v-text-field>
              <!-- <div class="" style="
                      margin-left:56.5px;
