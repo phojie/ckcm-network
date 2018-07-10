@@ -24230,7 +24230,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_router__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__routes__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_jieApp_vue__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_jieApp_vue__ = __webpack_require__(107);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_jieApp_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_jieApp_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vuelidate__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vuelidate___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_vuelidate__);
@@ -34794,7 +34794,7 @@ if (inBrowser && window.Vue) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_jieAuthFolder_jieLogin_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_jieAuthFolder_jieLogin_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_jieUserFolder_jieHome_vue__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_jieUserFolder_jieHome_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_jieUserFolder_jieHome_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_jieLayoutsFolder_userLayout_vue__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_jieLayoutsFolder_userLayout_vue__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_jieLayoutsFolder_userLayout_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_jieLayoutsFolder_userLayout_vue__);
 
 
@@ -38060,109 +38060,15 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
-/* script */
-var __vue_script__ = __webpack_require__(103)
-/* template */
-var __vue_template__ = __webpack_require__(109)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\components\\jieApp.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5546e1d2", Component.options)
-  } else {
-    hotAPI.reload("data-v-5546e1d2", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 103 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-   data: function data() {
-      return {};
-   },
-   mounted: function mounted() {
-      //  [App.vue specific] When App.vue is finish loading finish the progress bar
-      this.$Progress.finish();
-   },
-   created: function created() {
-      var _this = this;
-
-      //  [App.vue specific] When App.vue is first loaded start the progress bar
-      this.$Progress.start();
-      //  hook the progress bar to start before we move router-view
-      this.$router.beforeEach(function (to, from, next) {
-         //  does the page we want to go to have a meta.progress object
-         if (to.meta.progress !== undefined) {
-            var meta = to.meta.progress;
-            // parse meta tags
-            _this.$Progress.parseMeta(meta);
-         }
-         //  start the progress bar
-         _this.$Progress.start();
-         //  continue to next page
-         next();
-      });
-      //  hook the progress bar to finish after we've finished moving router-view
-      this.$router.afterEach(function (to, from) {
-         //  finish the progress bar
-         _this.$Progress.finish();
-      });
-   }
-});
-
-/***/ }),
-/* 104 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(105)
+  __webpack_require__(103)
 }
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(107)
+var __vue_script__ = __webpack_require__(105)
 /* template */
-var __vue_template__ = __webpack_require__(108)
+var __vue_template__ = __webpack_require__(106)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -38201,13 +38107,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 105 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(106);
+var content = __webpack_require__(104);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -38227,7 +38133,7 @@ if(false) {
 }
 
 /***/ }),
-/* 106 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -38241,7 +38147,7 @@ exports.push([module.i, "\n.jieBadge .v-badge__badge {\r\n   height:19px !import
 
 
 /***/ }),
-/* 107 */
+/* 105 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -38481,7 +38387,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 108 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -38879,6 +38785,100 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-af308dce", module.exports)
   }
 }
+
+/***/ }),
+/* 107 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(108)
+/* template */
+var __vue_template__ = __webpack_require__(109)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\jieApp.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-5546e1d2", Component.options)
+  } else {
+    hotAPI.reload("data-v-5546e1d2", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 108 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+   data: function data() {
+      return {};
+   },
+   mounted: function mounted() {
+      //  [App.vue specific] When App.vue is finish loading finish the progress bar
+      this.$Progress.finish();
+   },
+   created: function created() {
+      var _this = this;
+
+      //  [App.vue specific] When App.vue is first loaded start the progress bar
+      this.$Progress.start();
+      //  hook the progress bar to start before we move router-view
+      this.$router.beforeEach(function (to, from, next) {
+         //  does the page we want to go to have a meta.progress object
+         if (to.meta.progress !== undefined) {
+            var meta = to.meta.progress;
+            // parse meta tags
+            _this.$Progress.parseMeta(meta);
+         }
+         //  start the progress bar
+         _this.$Progress.start();
+         //  continue to next page
+         next();
+      });
+      //  hook the progress bar to finish after we've finished moving router-view
+      this.$router.afterEach(function (to, from) {
+         //  finish the progress bar
+         _this.$Progress.finish();
+      });
+   }
+});
 
 /***/ }),
 /* 109 */
