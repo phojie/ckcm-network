@@ -38141,7 +38141,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* html {\r\n   overflow: hidden !important; \r\n} */\n.jieBadge .v-badge__badge {\r\n   margin-right:3px !important;\r\n   margin-top:4px !important;\r\n   height:18px !important;\r\n   width:18px !important;\n}\n.fade-enter-active, .fade-leave-active {\r\n  -webkit-transition: opacity .5s;\r\n  transition: opacity .5s;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\r\n  opacity: 0;\n}\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* html {\r\n   overflow: hidden !important; \r\n} */\n.jieBadge .v-badge__badge {\r\n   margin-right:3px !important;\r\n   margin-top:4px !important;\r\n   height:18px !important;\r\n   width:18px !important;\n}\n.fade-enter-active, .fade-leave-active {\r\n  -webkit-transition: opacity .5s;\r\n  transition: opacity .5s;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\r\n  opacity: 0;\n}\r\n", ""]);
 
 // exports
 
@@ -38417,9 +38417,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
    data: function data() {
@@ -38427,8 +38424,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          mini: true,
          showNav: true,
          progressDone: false,
-         md2: "md3",
-         extendSearch: ""
+         md2: "md4",
+         extendSearch: "",
+
+         items: [{ title: 'Home', icon: 'dashboard' }, { title: 'About', icon: 'question_answer' }],
+         right: null
       };
    },
    methods: {
@@ -38463,6 +38463,62 @@ var render = function() {
   return _c(
     "v-app",
     [
+      _c("v-navigation-drawer", {
+        attrs: {
+          permanent: "",
+          flat: "",
+          right: "",
+          width: "230",
+          clipped: "",
+          app: ""
+        }
+      }),
+      _vm._v(" "),
+      _c(
+        "v-navigation-drawer",
+        {
+          attrs: {
+            permanent: "",
+            floating: "",
+            width: "200",
+            clipped: "",
+            app: ""
+          }
+        },
+        [
+          _c("v-card", {
+            staticClass: "mt-3 ml-3 grey lighten-4",
+            attrs: { height: "45" }
+          }),
+          _vm._v(" "),
+          _c("v-card", {
+            staticClass: "mt-2 ml-3 grey lighten-4",
+            attrs: { flat: "", height: "200" }
+          }),
+          _vm._v(" "),
+          _c("v-card", {
+            staticClass: "mt-2 ml-3 grey lighten-4",
+            attrs: { flat: "", height: "35" }
+          }),
+          _vm._v(" "),
+          _c("v-card", {
+            staticClass: "mt-2 ml-3 grey lighten-4",
+            attrs: { flat: "", height: "35" }
+          }),
+          _vm._v(" "),
+          _c("v-card", {
+            staticClass: "mt-2 ml-3 grey lighten-4",
+            attrs: { flat: "", height: "115" }
+          }),
+          _vm._v(" "),
+          _c("v-card", {
+            staticClass: "mt-2 ml-3 grey lighten-4",
+            attrs: { flat: "", height: "65" }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
       _c(
         "v-toolbar",
         {
@@ -38471,7 +38527,7 @@ var render = function() {
         },
         [
           _c("v-toolbar-title", {
-            staticClass: "primaryColortext--text subheading mx-5 "
+            staticClass: "primaryColortext--text subheading "
           }),
           _vm._v(" "),
           _c("v-spacer"),
@@ -38500,11 +38556,11 @@ var render = function() {
                 on: {
                   focus: function() {
                     return (
-                      (_vm.md2 = "md4"), (_vm.extendSearch = "transition: .5s")
+                      (_vm.md2 = "md7"), (_vm.extendSearch = "transition: .5s")
                     )
                   },
                   blur: function() {
-                    return (_vm.md2 = "md3")
+                    return (_vm.md2 = "md4")
                   },
                   input: _vm.searchInput
                 }
@@ -38524,8 +38580,56 @@ var render = function() {
             [
               _c(
                 "v-icon",
-                { staticStyle: { "font-size": "20px !important" } },
+                { staticStyle: { "font-size": "19px !important" } },
                 [_vm._v("mdi-apps")]
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-btn",
+            {
+              staticStyle: { "margin-right": "-5px !important" },
+              attrs: { icon: "" }
+            },
+            [
+              _c(
+                "v-icon",
+                { staticStyle: { "font-size": "19px !important" } },
+                [_vm._v("mdi-account-switch")]
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-btn",
+            {
+              staticStyle: { "margin-right": "-5px !important" },
+              attrs: { icon: "" }
+            },
+            [
+              _c(
+                "v-icon",
+                { staticStyle: { "font-size": "17px !important" } },
+                [_vm._v("mdi-marker-check")]
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-btn",
+            {
+              staticStyle: { "margin-right": "-5px !important" },
+              attrs: { icon: "" }
+            },
+            [
+              _c(
+                "v-icon",
+                { staticStyle: { "font-size": "19px !important" } },
+                [_vm._v("mdi-forum")]
               )
             ],
             1
@@ -38595,7 +38699,7 @@ var render = function() {
                                 "v-icon",
                                 {
                                   staticStyle: {
-                                    "font-size": "20px !important"
+                                    "font-size": "19px !important"
                                   }
                                 },
                                 [_vm._v("notifications")]
@@ -38805,13 +38909,11 @@ var render = function() {
         [
           _c(
             "v-layout",
-            { staticStyle: { "margin-top": "10px" } },
+            { staticClass: "mt-2" },
             [
-              _c("v-flex", { staticClass: " md2 " }, [_c("v-card", {})], 1),
-              _vm._v(" "),
               _c(
                 "v-flex",
-                { staticClass: "md5" },
+                { staticClass: "ml-3 md7" },
                 [
                   _c(
                     "v-card",
@@ -38909,7 +39011,7 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "v-flex",
-                { staticClass: "mx-2 md3" },
+                { staticClass: "mx-3 md5" },
                 [
                   _c("v-card", {
                     staticClass: "grey lighten-4 my-2",

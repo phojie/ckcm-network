@@ -1,8 +1,24 @@
 <template>
    <v-app>
+      <v-navigation-drawer permanent flat right width="230" clipped app></v-navigation-drawer>
+      <v-navigation-drawer permanent class="" floating width="200" clipped app>
+         <v-card class="mt-3 ml-3 grey lighten-4" height="45">
+         </v-card>
+         <v-card flat class="mt-2 ml-3 grey lighten-4" height="200">
+         </v-card>
+         <v-card flat class="mt-2 ml-3 grey lighten-4" height="35">
+         </v-card>
+         <v-card flat class="mt-2 ml-3 grey lighten-4" height="35">
+         </v-card>
+         <v-card flat class="mt-2 ml-3 grey lighten-4" height="115">
+         </v-card>
+         <v-card flat class="mt-2 ml-3 grey lighten-4" height="65">
+         </v-card>
+         
+      </v-navigation-drawer>
       <v-toolbar  dark class="mycolor1 jieLandingBg  mr-5  " flat app dense >
          <!-- <v-toolbar-side-icon class="" @click="() => (showNav = !showNav)"></v-toolbar-side-icon> -->
-         <v-toolbar-title class="primaryColortext--text subheading mx-5 ">
+         <v-toolbar-title class="primaryColortext--text subheading ">
             <!-- <span class="subheading white--text">Christ the King Network</span> -->
          </v-toolbar-title>
             <!-- solo-inverted -->
@@ -10,8 +26,8 @@
          <!-- <v-menu  slot="activator"  offset-y nudge-left="44px"> -->
             <v-flex :class="md2" :style="extendSearch" align-start>
                <v-text-field  
-                  @focus="() => (md2 = 'md4', extendSearch = 'transition: .5s')"
-                  @blur="() => (md2 = 'md3')"
+                  @focus="() => (md2 = 'md7', extendSearch = 'transition: .5s')"
+                  @blur="() => (md2 = 'md4')"
                   @input="searchInput"
                   single-line
                   solo
@@ -48,8 +64,19 @@
 
          <v-divider vertical inset ></v-divider>
             <v-btn style="margin-right:-5px !important;" icon>
-               <v-icon style="font-size:20px !important">mdi-apps</v-icon>
+               <v-icon style="font-size:19px !important">mdi-apps</v-icon>
             </v-btn>
+            <v-btn style="margin-right:-5px !important;" icon>
+               <v-icon style="font-size:19px !important">mdi-account-switch</v-icon>
+            </v-btn>
+            <v-btn style="margin-right:-5px !important;" icon>
+               <v-icon style="font-size:17px !important">mdi-marker-check</v-icon>
+            </v-btn>
+             <v-btn style="margin-right:-5px !important;" icon>
+               <v-icon style="font-size:19px !important">mdi-forum</v-icon>
+            </v-btn>
+          
+           
          <v-tooltip color="tooltipColor" bottom >
             <!-- <div class="" style="
                background-color:green;
@@ -73,7 +100,7 @@
                         <v-avatar size="27px"
                         color="transparent red--after"
                         >
-                        <v-icon style="font-size:20px !important">notifications</v-icon>
+                        <v-icon style="font-size:19px !important">notifications</v-icon>
                         </v-avatar>
                      </v-badge>
                   </v-btn>
@@ -148,44 +175,13 @@
             </v-card>
          </v-menu>
       </v-toolbar>
+      
+      
 
       <v-content app >
          <!-- <v-container class="" app fluid> -->
-            <v-layout style="margin-top:10px">
-               <v-flex   class=" md2 ">
-                  <v-card class="">
-                     <!-- <v-list dense class="textfm1">
-                        <v-list-tile>
-                        <v-list-tile-action>
-                           <v-icon>mdi-home</v-icon>
-                        </v-list-tile-action>
-                        <v-list-tile-title>Home</v-list-tile-title>
-                        </v-list-tile>
-
-                        <v-list-group
-                        prepend-icon="account_circle"
-                        value="true"
-                        >
-                           <v-list-tile slot="activator">
-                              <v-list-tile-title>Users</v-list-tile-title>
-                           </v-list-tile>
-
-                           <v-list-group
-                              no-action
-                              sub-group
-                              value="true"
-                           >
-                              <v-list-tile slot="activator">
-                                 <v-list-tile-title>Admin</v-list-tile-title>
-                              </v-list-tile>
-
-                           </v-list-group>
-                        </v-list-group>
-                     </v-list> -->
-                  </v-card>
-                  <!-- <router-view></router-view> -->
-               </v-flex>
-               <v-flex  class="md5">
+            <v-layout class="mt-2">
+               <v-flex  class="ml-3 md7">
                   <v-card class="my-2" height="auto">
                      <v-card-media
                         height="100px"
@@ -227,7 +223,8 @@
                   </v-card>
                   
                </v-flex>
-               <v-flex class="mx-2 md3">
+
+               <v-flex class="mx-3 md5">
                   <v-card flat class="grey lighten-4 my-2" height="200px">
                   </v-card>
                   <!-- <v-card class="my-3" height="auto">
@@ -272,8 +269,14 @@ export default {
       mini:true,
       showNav:true,
       progressDone: false,
-      md2: "md3",
-      extendSearch: ""
+      md2: "md4",
+      extendSearch: "",
+
+      items: [
+         { title: 'Home', icon: 'dashboard' },
+         { title: 'About', icon: 'question_answer' }
+      ],
+      right: null
    }),
    methods: {
       logout () {
