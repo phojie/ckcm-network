@@ -1,6 +1,6 @@
 <template>
    <v-app>
-      <v-toolbar fixed clipped-right dark class="mycolor1 jieLandingBg  mr-5  " flat app dense >
+      <v-toolbar  dark class="mycolor1 jieLandingBg  mr-5  " flat app dense >
          <!-- <v-toolbar-side-icon class="" @click="() => (showNav = !showNav)"></v-toolbar-side-icon> -->
          <v-toolbar-title class="primaryColortext--text subheading mx-5 ">
             <!-- <span class="subheading white--text">Christ the King Network</span> -->
@@ -22,7 +22,7 @@
                   :loading="false"
                   placeholder="Search something.."
                   append-icon="search"
-                  class="jie textfm1 caption font-weight-bold"
+                  class="font-weight-thin-light jie textfm1 caption "
                ></v-text-field>
              <!-- <div class="" style="
                      margin-left:56.5px;
@@ -104,10 +104,10 @@
                <!-- color="white" flat  -->
             <v-btn  slot="activator" flat ripple>
                <!-- Dropdown -->
-               <v-avatar class="mr-1" size="25px">
+               <v-avatar class="mr-1 " color="red--after" size="25px">
                   <img :src="userData.photoUrl" alt="">
                </v-avatar>
-               <div class="mr-2 white--text caption textDefault textfm1"> Hello, {{userData.displayName}}</div> 
+               <div class="font-weight-thin mr-2 white--text caption  textDefault textfm1"> Hello, {{userData.displayName}}</div> 
                   <v-icon style="font-size:15px !important" color="primary">mdi-menu</v-icon>
             </v-btn>
                <div class="" style="
@@ -149,10 +149,10 @@
          </v-menu>
       </v-toolbar>
 
-      <v-content >
-         <v-container class="" app fluid>
-            <v-layout style="margin-top:-10px">
-               <v-flex class=" md2 ">
+      <v-content app >
+         <!-- <v-container class="" app fluid> -->
+            <v-layout style="margin-top:10px">
+               <v-flex   class=" md2 ">
                   <v-card class="">
                      <!-- <v-list dense class="textfm1">
                         <v-list-tile>
@@ -185,16 +185,82 @@
                   </v-card>
                   <!-- <router-view></router-view> -->
                </v-flex>
-               <v-flex class=" md6">
-                  <v-card class="" height="700px">
+               <v-flex  class="md5">
+                  <v-card class="my-2" height="auto">
+                     <v-card-media
+                        height="100px"
+                        src="/imgs/background-main-light.svg"
+                     >
+                        <v-container fill-height fluid>
+                           <v-layout fill-height>
+                           <v-flex>
+                              <span class="headline">05:56</span>
+                              <br>
+                              <span class="subheadline">Good morning, {{userData.displayName}}!</span>
+                           </v-flex>
+                           </v-layout>
+                        </v-container>
+                     </v-card-media>
                   </v-card>
-               </v-flex>
-               <v-flex class=" md4">
-                  <v-card class="" height="500px">
+
+                  <v-card class="my-2" height="350px">
+                     <v-card-media
+                        height="100px"
+                     >
+                        <v-container fill-height fluid>
+                           <v-layout fill-height>
+                           
+                           </v-layout>
+                        </v-container>
+                     </v-card-media>
                   </v-card>
+                  <v-card class="my-2" height="300px">
+                     <v-card-media
+                        height="100px"
+                     >
+                        <v-container fill-height fluid>
+                           <v-layout fill-height>
+                           
+                           </v-layout>
+                        </v-container>
+                     </v-card-media>
+                  </v-card>
+                  
                </v-flex>
+               <v-flex class="mx-2 md3">
+                  <v-card flat class="grey lighten-4 my-2" height="200px">
+                  </v-card>
+                  <!-- <v-card class="my-3" height="auto">
+                     <v-card-media
+                        class="white--text"
+                        height="100px"
+                        src="https://d3cbihxaqsuq0s.cloudfront.net/images/37405678_xl.jpg"
+                     >
+                        <v-container fill-height fluid>
+                           <v-layout fill-height>
+                           <v-flex>
+                              <span class="headline">05:56</span>
+                              <br>
+                              <span class="subheadline">Good morning, Phojie!</span>
+                           </v-flex>
+                           </v-layout>
+                        </v-container>
+                     </v-card-media>
+                  </v-card> -->
+                  <v-card flat class="grey lighten-4 my-2" height="50px">
+                  </v-card>
+                   <v-card flat  class="grey lighten-4 my-2" height="150px">
+                  </v-card>
+                 
+                
+               </v-flex>
+
+               <!-- <v-flex  class="ml-3 md2">
+                  <v-card class="green" height="400px">
+                  </v-card>
+               </v-flex> -->
             </v-layout>
-         </v-container>
+         <!-- </v-container> -->
       </v-content>
       <!-- <v-footer app></v-footer> -->
    </v-app>
@@ -234,9 +300,14 @@ export default {
 </script>
 
 <style >
+/* html {
+   overflow: hidden !important; 
+} */
 .jieBadge .v-badge__badge {
-   height:19px !important;
-   width:19px !important;
+   margin-right:3px !important;
+   margin-top:4px !important;
+   height:18px !important;
+   width:18px !important;
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s;

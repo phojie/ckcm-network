@@ -38141,7 +38141,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.jieBadge .v-badge__badge {\r\n   height:19px !important;\r\n   width:19px !important;\n}\n.fade-enter-active, .fade-leave-active {\r\n  -webkit-transition: opacity .5s;\r\n  transition: opacity .5s;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\r\n  opacity: 0;\n}\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* html {\r\n   overflow: hidden !important; \r\n} */\n.jieBadge .v-badge__badge {\r\n   margin-right:3px !important;\r\n   margin-top:4px !important;\r\n   height:18px !important;\r\n   width:18px !important;\n}\n.fade-enter-active, .fade-leave-active {\r\n  -webkit-transition: opacity .5s;\r\n  transition: opacity .5s;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\r\n  opacity: 0;\n}\r\n", ""]);
 
 // exports
 
@@ -38152,6 +38152,72 @@ exports.push([module.i, "\n.jieBadge .v-badge__badge {\r\n   height:19px !import
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -38401,14 +38467,7 @@ var render = function() {
         "v-toolbar",
         {
           staticClass: "mycolor1 jieLandingBg  mr-5  ",
-          attrs: {
-            fixed: "",
-            "clipped-right": "",
-            dark: "",
-            flat: "",
-            app: "",
-            dense: ""
-          }
+          attrs: { dark: "", flat: "", app: "", dense: "" }
         },
         [
           _c("v-toolbar-title", {
@@ -38426,7 +38485,7 @@ var render = function() {
             },
             [
               _c("v-text-field", {
-                staticClass: "jie textfm1 caption font-weight-bold",
+                staticClass: "font-weight-thin-light jie textfm1 caption ",
                 attrs: {
                   "single-line": "",
                   solo: "",
@@ -38615,7 +38674,10 @@ var render = function() {
                 [
                   _c(
                     "v-avatar",
-                    { staticClass: "mr-1", attrs: { size: "25px" } },
+                    {
+                      staticClass: "mr-1 ",
+                      attrs: { color: "red--after", size: "25px" }
+                    },
                     [
                       _c("img", {
                         attrs: { src: _vm.userData.photoUrl, alt: "" }
@@ -38627,7 +38689,7 @@ var render = function() {
                     "div",
                     {
                       staticClass:
-                        "mr-2 white--text caption textDefault textfm1"
+                        "font-weight-thin mr-2 white--text caption  textDefault textfm1"
                     },
                     [_vm._v(" Hello, " + _vm._s(_vm.userData.displayName))]
                   ),
@@ -38739,30 +38801,130 @@ var render = function() {
       _vm._v(" "),
       _c(
         "v-content",
+        { attrs: { app: "" } },
         [
           _c(
-            "v-container",
-            { attrs: { app: "", fluid: "" } },
+            "v-layout",
+            { staticStyle: { "margin-top": "10px" } },
             [
+              _c("v-flex", { staticClass: " md2 " }, [_c("v-card", {})], 1),
+              _vm._v(" "),
               _c(
-                "v-layout",
-                { staticStyle: { "margin-top": "-10px" } },
+                "v-flex",
+                { staticClass: "md5" },
                 [
-                  _c("v-flex", { staticClass: " md2 " }, [_c("v-card", {})], 1),
-                  _vm._v(" "),
                   _c(
-                    "v-flex",
-                    { staticClass: " md6" },
-                    [_c("v-card", { attrs: { height: "700px" } })],
+                    "v-card",
+                    { staticClass: "my-2", attrs: { height: "auto" } },
+                    [
+                      _c(
+                        "v-card-media",
+                        {
+                          attrs: {
+                            height: "100px",
+                            src: "/imgs/background-main-light.svg"
+                          }
+                        },
+                        [
+                          _c(
+                            "v-container",
+                            { attrs: { "fill-height": "", fluid: "" } },
+                            [
+                              _c(
+                                "v-layout",
+                                { attrs: { "fill-height": "" } },
+                                [
+                                  _c("v-flex", [
+                                    _c("span", { staticClass: "headline" }, [
+                                      _vm._v("05:56")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("br"),
+                                    _vm._v(" "),
+                                    _c("span", { staticClass: "subheadline" }, [
+                                      _vm._v(
+                                        "Good morning, " +
+                                          _vm._s(_vm.userData.displayName) +
+                                          "!"
+                                      )
+                                    ])
+                                  ])
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
                     1
                   ),
                   _vm._v(" "),
                   _c(
-                    "v-flex",
-                    { staticClass: " md4" },
-                    [_c("v-card", { attrs: { height: "500px" } })],
+                    "v-card",
+                    { staticClass: "my-2", attrs: { height: "350px" } },
+                    [
+                      _c(
+                        "v-card-media",
+                        { attrs: { height: "100px" } },
+                        [
+                          _c(
+                            "v-container",
+                            { attrs: { "fill-height": "", fluid: "" } },
+                            [_c("v-layout", { attrs: { "fill-height": "" } })],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-card",
+                    { staticClass: "my-2", attrs: { height: "300px" } },
+                    [
+                      _c(
+                        "v-card-media",
+                        { attrs: { height: "100px" } },
+                        [
+                          _c(
+                            "v-container",
+                            { attrs: { "fill-height": "", fluid: "" } },
+                            [_c("v-layout", { attrs: { "fill-height": "" } })],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
                     1
                   )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { staticClass: "mx-2 md3" },
+                [
+                  _c("v-card", {
+                    staticClass: "grey lighten-4 my-2",
+                    attrs: { flat: "", height: "200px" }
+                  }),
+                  _vm._v(" "),
+                  _c("v-card", {
+                    staticClass: "grey lighten-4 my-2",
+                    attrs: { flat: "", height: "50px" }
+                  }),
+                  _vm._v(" "),
+                  _c("v-card", {
+                    staticClass: "grey lighten-4 my-2",
+                    attrs: { flat: "", height: "150px" }
+                  })
                 ],
                 1
               )
