@@ -1,7 +1,7 @@
 <template>
-   <v-app>
-      <v-navigation-drawer  flat right width="230" clipped app></v-navigation-drawer>
-      <v-navigation-drawer  class="" floating width="200" style="overflow: hidden !important;" clipped app>
+   <v-app class="">
+      <v-navigation-drawer  stateless permanent flat right width="210" clipped app></v-navigation-drawer>
+      <v-navigation-drawer  permanent floating width="200" style="overflow: hidden !important;" clipped app>
          <v-card class="mt-3 ml-3 grey lighten-4" height="30">
          </v-card>
          <v-card flat class="mt-2 ml-3 grey lighten-4" height="200">
@@ -14,9 +14,8 @@
          </v-card>
          <v-card flat class="mt-2 ml-3 grey lighten-4" height="65">
          </v-card>
-         
       </v-navigation-drawer>
-      <v-toolbar  dark class="mycolor1 jieLandingBg  mr-5  " flat app dense >
+      <v-toolbar  clipped-left dark class="mycolor1 jieLandingBg  mr-5  " flat app dense >
          <!-- <v-toolbar-side-icon class="" @click="() => (showNav = !showNav)"></v-toolbar-side-icon> -->
          <v-toolbar-title class="primaryColortext--text subheading ">
             <!-- <span class="subheading white--text">Christ the King Network</span> -->
@@ -24,6 +23,7 @@
             <!-- solo-inverted -->
          <v-spacer></v-spacer>
          <!-- <v-menu  slot="activator"  offset-y nudge-left="44px"> -->
+         
             <v-flex :class="md2" :style="extendSearch" align-start>
                <v-text-field  
                   @focus="() => (md2 = 'md7', extendSearch = 'transition: .5s')"
@@ -64,6 +64,11 @@
          <!-- </v-menu> -->
 
          <v-divider vertical inset ></v-divider>
+         
+            <v-btn small to="/" flat style="margin-right:-5px  !important;" >
+               <v-icon  style="font-size:19px !important">mdi-home</v-icon>
+               <div class=" ml-1 white--text caption  textDefault textfm1"> Home </div> 
+            </v-btn>
             <v-btn style="margin-right:-5px !important;" icon>
                <v-icon style="font-size:18px !important">mdi-apps</v-icon>
             </v-btn>
@@ -71,62 +76,62 @@
                <v-icon style="font-size:18px !important">mdi-account-switch</v-icon>
             </v-btn>
             <v-btn style="margin-right:-5px !important;" icon>
-               <v-icon style="font-size:16px !important">mdi-marker-check</v-icon>
-            </v-btn>
-             <v-btn style="margin-right:-5px !important;" icon>
                <v-icon style="font-size:18px !important">mdi-forum</v-icon>
             </v-btn>
-           
-         <v-tooltip color="tooltipColor" bottom >
-            <!-- <div class="" style="
-               background-color:green;
-               margin-top:-50px;
-               margin-left:149.5px;
-               width: 0;
-               height: 0;
-               border-left: 6px solid transparent;
-               border-right: 6px solid transparent;
-               border-bottom: 6px solid red;">
-            </div> -->
-            <span class="textfm1" style="font-size:11.5px !important">Notifications</span>
-            <v-menu flat slot="activator"  offset-y nudge-left="44px">
-                  <v-btn slot="activator"  style="margin-right:12px !important;" icon>
-                     <!-- <v-badge color="red" >
-                        <span slot="badge" class="textfm1" style="font-size:10px">2</span>
-                        <v-icon style="font-size:17px !important">mdi-bell</v-icon>
-                     </v-badge> -->
-                     <v-badge color="red" overlap class="jieBadge">
-                        <span  slot="badge" class="textfm1" style="font-size:11px">3</span>
-                        <v-avatar size="27px"
-                        color="transparent red--after"
+            
+            
+            <v-tooltip color="tooltipColor" bottom >
+               <!-- <div class="" style="
+                  background-color:green;
+                  margin-top:-50px;
+                  margin-left:149.5px;
+                  width: 0;
+                  height: 0;
+                  border-left: 6px solid transparent;
+                  border-right: 6px solid transparent;
+                  border-bottom: 6px solid red;">
+               </div> -->
+               <span class="textfm1" style="font-size:11.5px !important">Notifications</span>
+               <v-menu flat slot="activator"  offset-y nudge-left="44px">
+                     <v-btn slot="activator"  style="margin-right:12px !important;" icon>
+                        <!-- <v-badge color="red" >
+                           <span slot="badge" class="textfm1" style="font-size:10px">2</span>
+                           <v-icon style="font-size:17px !important">mdi-bell</v-icon>
+                        </v-badge> -->
+                        <v-badge color="red" overlap class="jieBadge">
+                           <span  slot="badge" class="textfm1" style="font-size:11px">3</span>
+                           <v-avatar size="27px"
+                           color="transparent red--after"
+                           >
+                           <v-icon style="font-size:18px !important">mdi-earth</v-icon>
+                           </v-avatar>
+                        </v-badge>
+                     </v-btn>
+                  
+                     <div class="" style="
+                        margin-left:56.5px;
+                        width: 0;
+                        height: 0;
+                        border-left: 6px solid transparent;
+                        border-right: 6px solid transparent;
+                        border-bottom: 6px solid white;">
+                     </div>
+                  <v-card>
+                     <v-list dense>
+                        <!-- v-for="(item, index) in items" -->
+                        <v-list-tile 
                         >
-                        <v-icon style="font-size:18px !important">mdi-earth</v-icon>
-                        </v-avatar>
-                     </v-badge>
-                  </v-btn>
-               
-                  <div class="" style="
-                     margin-left:56.5px;
-                     width: 0;
-                     height: 0;
-                     border-left: 6px solid transparent;
-                     border-right: 6px solid transparent;
-                     border-bottom: 6px solid white;">
-                  </div>
-               <v-card>
-                  <v-list dense>
-                     <!-- v-for="(item, index) in items" -->
-                     <v-list-tile @click=""
-                     >
-                        <v-list-tile-title class="textfm1" >
-                           <v-icon small >mdi-person</v-icon>
-                              wla pa
-                        </v-list-tile-title>
-                     </v-list-tile>
-                  </v-list>
-               </v-card>
-            </v-menu>
-         </v-tooltip>
+                           <v-list-tile-title class="textfm1" >
+                              <v-icon small >mdi-person</v-icon>
+                                 wla pa
+                           </v-list-tile-title>
+                        </v-list-tile>
+                     </v-list>
+                  </v-card>
+               </v-menu>
+            </v-tooltip>
+
+
          <v-menu offset-y >
                <!-- color="white" flat  -->
             <v-btn  slot="activator" flat ripple>
@@ -156,7 +161,7 @@
                      </v-list-tile-title>
                   </v-list-tile>
 
-                  <v-list-tile @click=""
+                  <v-list-tile
                   >
                      <v-list-tile-title class="textfm1" >
                         <v-icon small >mdi-settings</v-icon>
@@ -176,90 +181,12 @@
          </v-menu>
       </v-toolbar>
       
-      
-
-      <v-content app >
+      <v-content >
          <!-- <v-container class="" app fluid> -->
-            <v-layout class="mt-2">
-               <v-flex  class="ml-3 md7">
-                  <v-card class="my-2" height="auto">
-                     <v-card-media
-                        height="100px"
-                        src="/imgs/background-main-light.svg"
-                     >
-                        <v-container fill-height fluid>
-                           <v-layout fill-height>
-                           <v-flex>
-                              <span class="headline">01:20</span>
-                              <br>
-                              <span class="subheadline">Good afternoon, {{userData.displayName}}!</span>
-                           </v-flex>
-                           </v-layout>
-                        </v-container>
-                     </v-card-media>
-                  </v-card>
-
-                  <v-card class="my-2" height="350px">
-                     <v-card-media
-                        height="100px"
-                     >
-                        <v-container fill-height fluid>
-                           <v-layout fill-height>
-                           
-                           </v-layout>
-                        </v-container>
-                     </v-card-media>
-                  </v-card>
-                  <v-card class="my-2" height="300px">
-                     <v-card-media
-                        height="100px"
-                     >
-                        <v-container fill-height fluid>
-                           <v-layout fill-height>
-                           
-                           </v-layout>
-                        </v-container>
-                     </v-card-media>
-                  </v-card>
-                  
-               </v-flex>
-
-               <v-flex class="mx-3 md5">
-                  <v-card flat class="grey lighten-4 my-2" height="200px">
-                  </v-card>
-                  <!-- <v-card class="my-3" height="auto">
-                     <v-card-media
-                        class="white--text"
-                        height="100px"
-                        src="https://d3cbihxaqsuq0s.cloudfront.net/images/37405678_xl.jpg"
-                     >
-                        <v-container fill-height fluid>
-                           <v-layout fill-height>
-                           <v-flex>
-                              <span class="headline">05:56</span>
-                              <br>
-                              <span class="subheadline">Good morning, Phojie!</span>
-                           </v-flex>
-                           </v-layout>
-                        </v-container>
-                     </v-card-media>
-                  </v-card> -->
-                  <v-card flat class="grey lighten-4 my-2" height="50px">
-                     {{userData}}
-                  </v-card>
-                   <v-card flat  class="grey lighten-4 my-2" height="150px">
-                  </v-card>
-                 
-                
-               </v-flex>
-
-               <!-- <v-flex  class="ml-3 md2">
-                  <v-card class="green" height="400px">
-                  </v-card>
-               </v-flex> -->
-            </v-layout>
+            <router-view></router-view>
          <!-- </v-container> -->
       </v-content>
+
       <!-- <v-footer app></v-footer> -->
    </v-app>
 </template>
@@ -291,7 +218,9 @@ export default {
       profileMenu () {
          const displayName= this.$store.getters.accountLoginData.user.displayName;
          const user = displayName.toLocaleLowerCase().replace(/[ ]/g, ".");
-         this.$router.push({path: `/${user}`});
+         this.$router.push({
+            path: `/${user}`,
+            });
       }
    },
    computed: {

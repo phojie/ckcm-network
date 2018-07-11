@@ -6,7 +6,6 @@ import jieLogin from './components/jieAuthFolder/jieLogin.vue';
 import jieUserHome from './components/jieUserFolder/jieHome.vue';
 import jieUserLayout from './components/jieLayoutsFolder/userLayout.vue';
 
-import jieProfileLayout from './components/jieLayoutsFolder/profileLayout.vue';
 import jieProfile from './components/jieUserFolder/jieProfile.vue';
 
 export const routes = [
@@ -33,16 +32,10 @@ export const routes = [
             path: '/',
             component: jieUserHome
          },
-      ]
-   },
-   {
-      path: '/:username',
-      component: jieProfileLayout,
-      children: [
          {
-            path: '/',
-            component: jieProfile
-         }
+            path: '/:username',
+            component: jieProfile,
+         },
       ]
    },
    {

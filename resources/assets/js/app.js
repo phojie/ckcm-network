@@ -15,13 +15,24 @@ import Vuex from 'vuex';
 import {initialize} from './ckcmHelpers/general';
 import VueProgressBar from 'vue-progressbar'
 import '@mdi/font/css/materialdesignicons.css';
+import moment from 'moment-timezone'
+
+window.moment = require('moment');
 
 // notusing
 import VueHotkey from 'v-hotkey'
+// noted
+// import VueMoment from 'vue-moment'
+// import moment from 'moment-timezone'
+// Vue.use(require('vue-moment'));
+// Vue.use(VueMoment, {
+//     moment,
+// });
 
 /**
  * Functions
  */
+// Vue.use(require('vue-moment'));
 Vue.use(Vuetify, { 
    theme: {  
       primary: '#fd9800',
@@ -50,7 +61,6 @@ Vue.use(Vuetify);
 Vue.use(Vuelidate)
 Vue.use(VueRouter);
 Vue.use(Vuex);
-
 Vue.use(VueProgressBar, {
    color: '#512DA8',
    failedColor: '#820333',

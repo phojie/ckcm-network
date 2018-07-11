@@ -12,6 +12,7 @@ export default {
       loading: false,
       auth_error: null,
       alertLogoutDone: false,
+      windowSize: Object
    },
    getters: {
       isLoading(state) {

@@ -1,16 +1,32 @@
 <template>
+   <!-- <v-layout v-resize="onResize" > -->
    <div>
       <vue-progress-bar></vue-progress-bar>
       <router-view ></router-view>
-   </div>
+   </div>   
+    
+   <!-- </v-layout> -->
 </template>
 <script>
+
 export default {
    data: () => ({
+      windowSize: {
+        x: 0,
+        y: 0
+      }
    }),
+   methods: {
+      onResize () {
+         this.windowSize = { x: window.innerWidth, y: window.innerHeight }
+         // console.log(this.windowSize);
+      }
+   },
    mounted () {
       //  [App.vue specific] When App.vue is finish loading finish the progress bar
       this.$Progress.finish()
+      // this.onResize()
+
    },
    created () {
       //  [App.vue specific] When App.vue is first loaded start the progress bar

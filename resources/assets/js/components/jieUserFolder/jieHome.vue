@@ -1,37 +1,124 @@
 <template>
-   <div>
-      <!-- <img height="40" circle :src="logindata.fdetailsload.photoURL" alt=""> -->
-      <!-- {{ logindata.fdetailsload.photoURL}} -->
-      <br>
-      <router-link to="/werew">Get Lost</router-link>
-      <v-btn small color="error" @click="logout">logout</v-btn>
-      {{logindata}}
-      <!-- <router-view></router-view> -->
-   </div>
+   <v-layout  class="mt-2">
+      <v-flex  class="mx-2 xs8">
+         <v-card class="my-2" height="auto">
+            <v-card-media
+               height="100px"
+               src="/imgs/background-main-light.svg"
+            >
+               <v-container fill-height fluid>
+                  <v-layout fill-height>
+                  <v-flex>
+                     <span class="headline">{{timeDisplay}}</span>
+                     <br>
+                     <span class="subheadline"> Good afternoon, {{userData.displayName}}!</span>
+                  </v-flex>
+                  </v-layout>
+               </v-container>
+            </v-card-media>
+         </v-card>
+         
+         <v-card class="my-2" height="400">
+            <v-card-media
+               height="100px"
+            >
+               <!-- src="imgs/background-main-light.svg" -->
+               <v-container fill-height fluid>
+                  <v-layout fill-height>
+                  <v-flex>
+                    
+                  </v-flex>
+                  </v-layout>
+               </v-container>
+            </v-card-media>
+         </v-card>
+
+         <v-card class="my-2" height="400">
+            <v-card-media
+               height="100px"
+            >
+               <!-- src="imgs/background-main-light.svg" -->
+               <v-container fill-height fluid>
+                  <v-layout fill-height>
+                  <v-flex>
+                    
+                  </v-flex>
+                  </v-layout>
+               </v-container>
+            </v-card-media>
+         </v-card>
+         
+      </v-flex>
+      <v-flex class=" mr-2 xs4" >
+         <v-card flat  class=" grey lighten-4 my-2" app height="200px">
+            <v-card flat class="grey lighten-4 my-2" height="50px">
+            sdf
+            </v-card>
+            <v-card flat  class="grey lighten-4 my-2" height="150px">
+            </v-card>
+         </v-card>
+        
+      </v-flex>
+
+      <!-- <v-flex  class="ml-3 md2">
+         <v-card class="green" height="400px">
+         </v-card>
+      </v-flex> -->
+   </v-layout>
+   
 </template>
 
 <script>
+// var moment = require('moment-timezone');
+
+// import moment from 'moment';
+// moment().tz("America/Los_Angeles").format();
+
 export default {  
    data: () => ({
-
+      timeDisplay: '',
+      worldTime:[]
    }),
    computed: {
-      logindata() {
-         return this.$store.getters.accountLoginData
+      userData() {
+         return this.$store.getters.accountLoginData.user
       }
    },
    methods: {
-      logout(){
-         const ckcmcode = Math.random().toString(36).substring(2, 15)  + Math.random().toString(36).substring(2, 15)  + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-         this.$store.commit('logout');
-         this.$router.push(`/?stype=lo&jlou=jie_ckcm-code=${ckcmcode}-AfcXyKTxpz7sQ68VmX5mkDW-v78XPvqoICwwqRFwSZgox8TG0GBDSY0Cd9F9pxUwnqr_c2aOJL4xk0WPhFml466P75gCuUkm2Lkm7ZaR2obLnw&smuh=2724&lh=Ac-yQn60G1vPxGhw`);
-      }
+      
    },
-   mouted() {
+   mounted: function() {
+      var date = new Date();
+      let vm = this;
+      setTimeout(function() {
+         setInterval(()=>{
+            axios.get('http://www.worldclockapi.com/api/json/utc/now')
+               .then((response) =>{
+                  vm.worldTime=response.data
+                  console.log(vm.worldTime)
+                  vm.timeDisplay = moment(vm.worldTime.currentDateTime).tz("Asia/Manila").format('h:mma');
+
+               })
+               .catch((err) => { 
+                  console.log(err)
+               })
+               // MMMM Do YYYY ss,
+         },60000)
+      }, (60 - date.getSeconds()) * 1000);
    },
    created() {
-      // this.$Progress.finish();
-
+      document.title = "Christ the king Network";
+      var date = new Date();
+      let vm = this;
+      axios.get('http://www.worldclockapi.com/api/json/utc/now')
+         .then((response) =>{
+            vm.worldTime=response.data
+            this.timeDisplay = moment(vm.worldTime.currentDateTime).tz("Asia/Manila").format('h:mma');
+         })
+         .catch((err) => { 
+            console.log(err)
+         })
+   
    },
    
 }
