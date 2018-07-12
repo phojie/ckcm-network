@@ -11,7 +11,7 @@
                   <v-flex>
                      <span class="headline">{{timeDisplay}}</span>
                      <br>
-                     <span class="subheadline"> Good afternoon, {{userData.displayName}}!</span>
+                     <span class="subheadline"> {{greet+", "+userData.displayName}}</span>
                   </v-flex>
                   </v-layout>
                </v-container>
@@ -77,7 +77,8 @@
 export default {  
    data: () => ({
       timeDisplay: '',
-      worldTime:[]
+      greet: '',
+      worldTime: []
    }),
    computed: {
       userData() {
@@ -88,32 +89,51 @@ export default {
       
    },
    mounted: function() {
+      
       var date = new Date();
       let vm = this;
-      setTimeout(function() {
+      // setTimeout(function() {
          setInterval(()=>{
-            axios.get('http://www.worldclockapi.com/api/json/utc/now')
+            axios.get('https://api.ipgeolocation.io/ipgeo?apiKey=90a83c7326cc475f8048cf81362e1df0')
                .then((response) =>{
                   vm.worldTime=response.data
-                  console.log(vm.worldTime)
-                  vm.timeDisplay = moment(vm.worldTime.currentDateTime).tz("Asia/Manila").format('h:mma');
-
+                  vm.timeDisplay = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h:mma');
+                  let hour = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h');
+                     if (hour < 24) {
+                           vm.greet = "Good evening";
+                     }
+                     if (hour < 18) {
+                        vm.greet = "Good afternoon"
+                     }
+                     if (hour < 12) {
+                        vm.greet = "Good morning"
+                     }
                })
                .catch((err) => { 
                   console.log(err)
                })
                // MMMM Do YYYY ss,
          },60000)
-      }, (60 - date.getSeconds()) * 1000);
+      // }, (60 - date.getSeconds()) * 1000);
    },
    created() {
       document.title = "Christ the king Network";
-      var date = new Date();
       let vm = this;
-      axios.get('http://www.worldclockapi.com/api/json/utc/now')
+      axios.get('https://api.ipgeolocation.io/ipgeo?apiKey=90a83c7326cc475f8048cf81362e1df0')
          .then((response) =>{
             vm.worldTime=response.data
-            this.timeDisplay = moment(vm.worldTime.currentDateTime).tz("Asia/Manila").format('h:mma');
+            vm.timeDisplay = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h:mma');
+            let hour = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h');
+               if (hour < 24) {
+                     vm.greet = "Good evening";
+               }
+               if (hour < 18) {
+                  vm.greet = "Good afternoon"
+               }
+               if (hour < 12) {
+                  vm.greet = "Good morning"
+               }
+                  
          })
          .catch((err) => { 
             console.log(err)
