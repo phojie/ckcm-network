@@ -11,7 +11,7 @@
                   <v-flex>
                      <span class="headline">{{timeDisplay}}</span>
                      <br>
-                     <span class="subheadline"> {{greet+", "+userData.displayName}}</span>
+                     <span class="subheadline"> {{greet}}</span>
                   </v-flex>
                   </v-layout>
                </v-container>
@@ -78,7 +78,7 @@ export default {
    data: () => ({
       timeDisplay: '',
       greet: '',
-      worldTime: []
+      worldTime: [],
    }),
    computed: {
       userData() {
@@ -89,7 +89,9 @@ export default {
       
    },
    mounted: function() {
-      
+
+      this.$store.commit("leftnavDrawerOn");
+
       var date = new Date();
       let vm = this;
       // setTimeout(function() {
@@ -100,13 +102,13 @@ export default {
                   vm.timeDisplay = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h:mma');
                   let hour = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h');
                      if (hour < 24) {
-                           vm.greet = "Good evening";
+                           vm.greet = "Good evening, " + vm.$store.getters.accountLoginData.user.displayName;
                      }
                      if (hour < 18) {
-                        vm.greet = "Good afternoon"
+                        vm.greet = "Good afternoon, " + vm.$store.getters.accountLoginData.user.displayName;
                      }
                      if (hour < 12) {
-                        vm.greet = "Good morning"
+                        vm.greet = "Good morning, " + vm.$store.getters.accountLoginData.user.displayName;
                      }
                })
                .catch((err) => { 
@@ -117,7 +119,8 @@ export default {
       // }, (60 - date.getSeconds()) * 1000);
    },
    created() {
-      document.title = "Christ the king Network";
+      document.title = "Christ the King Network";
+
       let vm = this;
       axios.get('https://api.ipgeolocation.io/ipgeo?apiKey=90a83c7326cc475f8048cf81362e1df0')
          .then((response) =>{
@@ -125,13 +128,13 @@ export default {
             vm.timeDisplay = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h:mma');
             let hour = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h');
                if (hour < 24) {
-                     vm.greet = "Good evening";
+                  vm.greet = "Good evening, " + vm.userData.displayName;
                }
                if (hour < 18) {
-                  vm.greet = "Good afternoon"
+                  vm.greet = "Good afternoon, " + vm.userData.displayName;
                }
                if (hour < 12) {
-                  vm.greet = "Good morning"
+                  vm.greet = "Good morning , " + vm.userData.displayName;
                }
                   
          })

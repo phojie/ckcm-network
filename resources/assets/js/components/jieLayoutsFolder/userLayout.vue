@@ -1,7 +1,7 @@
 <template>
    <v-app class="">
       <v-navigation-drawer  stateless permanent flat right width="210" clipped app></v-navigation-drawer>
-      <v-navigation-drawer  permanent floating width="200" style="overflow: hidden !important;" clipped app>
+      <v-navigation-drawer :value="leftnavDrawer" class="" floating width="200" style="overflow: hidden !important;" clipped app>
          <v-card class="mt-3 ml-3 grey lighten-4" height="30">
          </v-card>
          <v-card flat class="mt-2 ml-3 grey lighten-4" height="200">
@@ -226,10 +226,14 @@ export default {
    computed: {
       userData () {
          return this.$store.getters.accountLoginData.user
+      },
+      leftnavDrawer () {
+         return this.$store.getters.leftnavDrawer
       }
    },
    mounted() {
       // this.$Progress.finish();
+      
    },
    created() {
       // this.$Progress.start()

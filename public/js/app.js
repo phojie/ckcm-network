@@ -54454,6 +54454,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
    methods: {},
    mounted: function mounted() {
 
+      this.$store.commit("leftnavDrawerOn");
+
       var date = new Date();
       var vm = this;
       // setTimeout(function() {
@@ -54463,13 +54465,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             vm.timeDisplay = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h:mma');
             var hour = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h');
             if (hour < 24) {
-               vm.greet = "Good evening";
+               vm.greet = "Good evening, " + vm.$store.getters.accountLoginData.user.displayName;
             }
             if (hour < 18) {
-               vm.greet = "Good afternoon";
+               vm.greet = "Good afternoon, " + vm.$store.getters.accountLoginData.user.displayName;
             }
             if (hour < 12) {
-               vm.greet = "Good morning";
+               vm.greet = "Good morning, " + vm.$store.getters.accountLoginData.user.displayName;
             }
          }).catch(function (err) {
             console.log(err);
@@ -54479,20 +54481,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       // }, (60 - date.getSeconds()) * 1000);
    },
    created: function created() {
-      document.title = "Christ the king Network";
+      document.title = "Christ the King Network";
+
       var vm = this;
       axios.get('https://api.ipgeolocation.io/ipgeo?apiKey=90a83c7326cc475f8048cf81362e1df0').then(function (response) {
          vm.worldTime = response.data;
          vm.timeDisplay = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h:mma');
          var hour = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h');
          if (hour < 24) {
-            vm.greet = "Good evening";
+            vm.greet = "Good evening, " + vm.userData.displayName;
          }
          if (hour < 18) {
-            vm.greet = "Good afternoon";
+            vm.greet = "Good afternoon, " + vm.userData.displayName;
          }
          if (hour < 12) {
-            vm.greet = "Good morning";
+            vm.greet = "Good morning , " + vm.userData.displayName;
          }
       }).catch(function (err) {
          console.log(err);
@@ -54545,12 +54548,7 @@ var render = function() {
                             _c("br"),
                             _vm._v(" "),
                             _c("span", { staticClass: "subheadline" }, [
-                              _vm._v(
-                                " " +
-                                  _vm._s(
-                                    _vm.greet + ", " + _vm.userData.displayName
-                                  )
-                              )
+                              _vm._v(" " + _vm._s(_vm.greet))
                             ])
                           ])
                         ],
@@ -54755,7 +54753,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* html {\r\n   overflow: hidden !important; \r\n} */\n.jieBadge .v-badge__badge {\r\n   margin-right:3px !important;\r\n   margin-top:4px !important;\r\n   height:18px !important;\r\n   width:18px !important;\n}\n.fade-enter-active, .fade-leave-active {\r\n  -webkit-transition: opacity .5s;\r\n  transition: opacity .5s;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\r\n  opacity: 0;\n}\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* html {\r\n   overflow: hidden !important; \r\n} */\n.jieBadge .v-badge__badge {\r\n   margin-right:3px !important;\r\n   margin-top:4px !important;\r\n   height:18px !important;\r\n   width:18px !important;\n}\n.fade-enter-active, .fade-leave-active {\r\n  -webkit-transition: opacity .5s;\r\n  transition: opacity .5s;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\r\n  opacity: 0;\n}\r\n", ""]);
 
 // exports
 
@@ -54991,10 +54989,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
    computed: {
       userData: function userData() {
          return this.$store.getters.accountLoginData.user;
+      },
+      leftnavDrawer: function leftnavDrawer() {
+         return this.$store.getters.leftnavDrawer;
       }
    },
    mounted: function mounted() {
       // this.$Progress.finish();
+
    },
    created: function created() {
       // this.$Progress.start()
@@ -55030,7 +55032,7 @@ var render = function() {
         {
           staticStyle: { overflow: "hidden !important" },
           attrs: {
-            permanent: "",
+            value: _vm.leftnavDrawer,
             floating: "",
             width: "200",
             clipped: "",
@@ -55550,6 +55552,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
    },
    created: function created() {
       document.title = this.username + " | Profile";
+   },
+   mounted: function mounted() {
+      this.$store.commit("leftnavDrawerOff");
    }
 });
 
@@ -75658,7 +75663,8 @@ var fdetails = Object(__WEBPACK_IMPORTED_MODULE_0__ckcmHelpers_auth__["b" /* get
       loading: false,
       auth_error: null,
       alertLogoutDone: false,
-      windowSize: Object
+      windowSize: [],
+      leftnavDrawer: true
    },
    getters: {
       isLoading: function isLoading(state) {
@@ -75681,6 +75687,9 @@ var fdetails = Object(__WEBPACK_IMPORTED_MODULE_0__ckcmHelpers_auth__["b" /* get
       },
       alertLogoutDone: function alertLogoutDone(state) {
          return state.alertLogoutDone;
+      },
+      leftnavDrawer: function leftnavDrawer(state) {
+         return state.leftnavDrawer;
       }
    },
    mutations: {
@@ -75712,10 +75721,6 @@ var fdetails = Object(__WEBPACK_IMPORTED_MODULE_0__ckcmHelpers_auth__["b" /* get
             // An error happened.
          });
       },
-      login: function login(state) {
-         state.loading = true;
-         state.auth_error = null;
-      },
       jieLoaderOn: function jieLoaderOn(state) {
          state.loading = true;
       },
@@ -75724,6 +75729,12 @@ var fdetails = Object(__WEBPACK_IMPORTED_MODULE_0__ckcmHelpers_auth__["b" /* get
       },
       alertLogoutDone: function alertLogoutDone(state) {
          state.alertLogoutDone = false;
+      },
+      leftnavDrawerOff: function leftnavDrawerOff(state) {
+         state.leftnavDrawer = false;
+      },
+      leftnavDrawerOn: function leftnavDrawerOn(state) {
+         state.leftnavDrawer = true;
       }
    },
    actions: {
@@ -75735,9 +75746,6 @@ var fdetails = Object(__WEBPACK_IMPORTED_MODULE_0__ckcmHelpers_auth__["b" /* get
       },
       jieLoaderOff: function jieLoaderOff(context) {
          context.commit("jieLoaderOff");
-      },
-      login: function login(context) {
-         context.commit("login"); //calling the mutation login
       },
       loginFirebase: function loginFirebase(context) {
          var user = firebase.auth().currentUser;

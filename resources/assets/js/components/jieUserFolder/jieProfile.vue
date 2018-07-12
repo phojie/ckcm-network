@@ -14,11 +14,15 @@ export default {
          userSplit[i] = userSplit[i].charAt(0).toUpperCase() + userSplit[i].slice(1); 
          }
          return userSplit.join(' ');;
-
       }
    },
    created () {
       document.title = this.username + " | Profile";
+
+   },
+   mounted () {
+      this.$store.commit("leftnavDrawerOff");
+      
    }
 }
 </script>

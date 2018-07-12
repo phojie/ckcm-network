@@ -12,7 +12,8 @@ export default {
       loading: false,
       auth_error: null,
       alertLogoutDone: false,
-      windowSize: Object
+      windowSize: [],
+      leftnavDrawer: true,
    },
    getters: {
       isLoading(state) {
@@ -35,7 +36,10 @@ export default {
       },
       alertLogoutDone(state) {
          return state.alertLogoutDone;
-      }
+      },
+      leftnavDrawer(state) {
+         return state.leftnavDrawer
+      }      
       
    },
    mutations: {
@@ -67,10 +71,6 @@ export default {
          // An error happened.
          });
       },
-      login(state) {
-         state.loading = true;
-         state.auth_error = null;
-      },
       jieLoaderOn(state) {
          state.loading = true;
       },
@@ -80,7 +80,12 @@ export default {
       alertLogoutDone(state) {
          state.alertLogoutDone = false;
       },
-
+      leftnavDrawerOff(state) {
+         state.leftnavDrawer = false;
+      },
+      leftnavDrawerOn(state) {
+         state.leftnavDrawer = true;
+      }
    },
    actions: {
       alertLogoutDone(context) {
@@ -91,9 +96,6 @@ export default {
       },
       jieLoaderOff(context) {
          context.commit("jieLoaderOff");
-      },
-      login(context) {
-         context.commit("login"); //calling the mutation login
       },
       loginFirebase(context) {
          const user = firebase.auth().currentUser;
