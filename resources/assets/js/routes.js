@@ -3,9 +3,10 @@ import jie404 from './components/pages/jie404.vue';
 import jieSignup from './components/jieAuthFolder/jieSignup.vue';
 import jieLogin from './components/jieAuthFolder/jieLogin.vue';
 
-import jieUserHome from './components/jieUserFolder/jieHome.vue';
 import jieUserLayout from './components/jieLayoutsFolder/userLayout.vue';
 
+import jieUserWelcome from './components/jieUserFolder/jieWelcome.vue';
+import jieUserHome from './components/jieUserFolder/jieHome.vue';
 import jieProfile from './components/jieUserFolder/jieProfile.vue';
 
 export const routes = [
@@ -33,9 +34,13 @@ export const routes = [
             component: jieUserHome
          },
          {
-            path: '/:username',
+            path: '/profile/:username',
             component: jieProfile,
          },
+         {
+            path: '/welcome',
+            component: jieUserWelcome
+         }
       ]
    },
    {

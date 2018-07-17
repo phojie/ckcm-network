@@ -15,7 +15,7 @@
    font-size:13px !important;
 }
 .textDefault {
-   text-transform: none !important;
+   text-transform: capitalize !important;
 }
 .textfm1 {
    font-family: 'Overlock', cursive;
@@ -58,5 +58,10 @@
    font-size: 17px !important;
 }
 /* Exit Upper toolbar Search Input */
+
+/* leftNavbar */
+.jieleftNav .v-btn__content   {
+   justify-content: left !important
+}
 
 

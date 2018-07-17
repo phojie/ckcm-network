@@ -51,7 +51,10 @@ Vue.use(Vuetify, {
       mycolor2: '#0065ff', //blue
       
       // background color
-      mycolor3: '#233D4D' //dark purple
+      mycolor3: '#233D4D',//dark purple
+      
+      //fake white
+      white2: '#FFFFF1'
    }
  })
 //  iconfont: 'mdi', // 'md' || 'mdi' || 'fa' || 'fa4' f99121

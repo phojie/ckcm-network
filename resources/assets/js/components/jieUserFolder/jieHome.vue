@@ -1,6 +1,6 @@
 <template>
    <v-layout  class="mt-2">
-      <v-flex  class="mx-2 xs8">
+      <v-flex  class="mr-3 ml-3 xs7">
          <v-card class="my-2" height="auto">
             <v-card-media
                height="100px"
@@ -47,21 +47,17 @@
                </v-container>
             </v-card-media>
          </v-card>
-         
-      </v-flex>
-      <v-flex class=" mr-2 xs4" >
-         <v-card flat  class=" grey lighten-4 my-2" app height="200px">
-            <v-card flat class="grey lighten-4 my-2" height="50px">
-            sdf
-            </v-card>
-            <v-card flat  class="grey lighten-4 my-2" height="150px">
-            </v-card>
-         </v-card>
-        
       </v-flex>
 
-      <!-- <v-flex  class="ml-3 md2">
-         <v-card class="green" height="400px">
+      <v-flex class=" mr-4 xs5" >
+         <v-card flat class="grey lighten-4 my-2" height="50px">
+         </v-card>
+         <v-card flat  class="grey lighten-4 mb-2" height="150px">
+         </v-card>
+      </v-flex>
+
+      <!-- <v-flex class=" mr-4 xs5">
+         <v-card class="green " style="position:fixed" height="400px">
          </v-card>
       </v-flex> -->
    </v-layout>
@@ -101,16 +97,17 @@ export default {
                   vm.worldTime=response.data
                   vm.timeDisplay = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h:mma');
                   let hour = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h');
-                     if (hour < 24) {
-                           vm.greet = "Good evening, " + vm.$store.getters.accountLoginData.user.displayName;
+                  let a = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('a');
+                     if ( a == 'pm' && hour > 1 && hour <= 5 || a == 'pm' && hour == 12) {
+                        vm.greet = "Good afternoon , " + vm.userData.displayName;
+                     } else if ( a == 'pm' && hour >= 6) {
+                        vm.greet = "Good evening , " + vm.userData.displayName;
+                     } else if (a == 'am' && hour >= 1 && hour <= 6) {
+                        vm.greet = "Sayuha nimu , " + vm.userData.displayName;
+                     } else {
+                        vm.greet = "Good morning , " + vm.userData.displayName;
                      }
-                     if (hour < 18) {
-                        vm.greet = "Good afternoon, " + vm.$store.getters.accountLoginData.user.displayName;
-                     }
-                     if (hour < 12) {
-                        vm.greet = "Good morning, " + vm.$store.getters.accountLoginData.user.displayName;
-                     }
-               })
+                     })
                .catch((err) => { 
                   console.log(err)
                })
@@ -127,16 +124,16 @@ export default {
             vm.worldTime=response.data
             vm.timeDisplay = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h:mma');
             let hour = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h');
-               if (hour < 24) {
-                  vm.greet = "Good evening, " + vm.userData.displayName;
-               }
-               if (hour < 18) {
-                  vm.greet = "Good afternoon, " + vm.userData.displayName;
-               }
-               if (hour < 12) {
+            let a = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('a');
+               if ( a == 'pm' && hour > 1 && hour <= 5 || a == 'pm' && hour == 12) {
+                  vm.greet = "Good afternoon , " + vm.userData.displayName;
+               } else if ( a == 'pm' && hour >= 6) {
+                  vm.greet = "Good evening , " + vm.userData.displayName;
+               } else if (a == 'am' && hour >= 1 && hour <= 6) {
+                  vm.greet = "Sayuha nimu , " + vm.userData.displayName;
+               } else {
                   vm.greet = "Good morning , " + vm.userData.displayName;
                }
-                  
          })
          .catch((err) => { 
             console.log(err)
