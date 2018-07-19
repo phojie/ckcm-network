@@ -23,7 +23,7 @@
                   <img src="https://png.icons8.com/color/40/B0A18E/globe.png">
                   <!-- <img src="https://png.icons8.com/color/100/B0A18E/newsleecher.png" alt=""> -->
                </v-avatar>
-               <div style="font-size:13px;margin-left:1px; letter-spacing:.5px"class="font-weight-thin mr-2 black--text textDefault textfm1"> News Feed </div> 
+               <div style="font-size:13px;margin-left:1px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault textfm1"> News Feed </div> 
                <v-spacer></v-spacer>
                <div class="textfm1 caption" >24</div>
             </v-btn>
@@ -51,7 +51,7 @@
                   <img src="/favicon.ico">
                   <!-- <img src="https://png.icons8.com/color/100/B0A18E/newsleecher.png" alt=""> -->
                </v-avatar>
-               <div style="font-size:13px;margin-left:1px; letter-spacing:.5px"class="font-weight-thin mr-2 black--text textDefault textfm1"> Welcome </div> 
+               <div style="font-size:13px;margin-left:1px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault textfm1"> Welcome </div> 
                <v-spacer></v-spacer>
                <div class="textfm1 caption" >24</div>
             </v-btn>

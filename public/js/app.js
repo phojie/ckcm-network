@@ -55551,7 +55551,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 // var moment = require('moment-timezone');
 
@@ -55571,7 +55570,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
    },
    methods: {},
    mounted: function mounted() {
-      document.title = "(2) Welcome";
+      document.title = "(2)   Welcome";
       this.$store.commit("leftnavDrawerOn");
    }
 });
@@ -55809,6 +55808,131 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 // var moment = require('moment-timezone');
 
@@ -55896,42 +56020,557 @@ var render = function() {
     [
       _c(
         "v-flex",
-        { staticClass: "mr-3 ml-3 xs7" },
+        { staticClass: "mr-2 ml-3 xs7" },
         [
           _c(
             "v-card",
-            { staticClass: "my-2", attrs: { height: "auto" } },
+            {
+              staticClass: "jieSvgBg1 my-2",
+              staticStyle: { border: ".5px #EEEEEE solid" },
+              attrs: { flat: "" }
+            },
             [
               _c(
-                "v-card-media",
-                {
-                  attrs: {
-                    height: "100px",
-                    src: "/imgs/background-main-light.svg"
-                  }
-                },
+                "v-layout",
+                { staticClass: "px-3 pt-2 ", attrs: { wrap: "", white: "" } },
                 [
                   _c(
-                    "v-container",
-                    { attrs: { "fill-height": "", fluid: "" } },
+                    "v-flex",
+                    { staticClass: "mb-1", attrs: { xs12: "" } },
                     [
                       _c(
-                        "v-layout",
-                        { attrs: { "fill-height": "" } },
+                        "v-chip",
+                        {
+                          attrs: {
+                            small: "",
+                            color: "grey lighten-4 ",
+                            "text-color": "black"
+                          }
+                        },
                         [
-                          _c("v-flex", [
-                            _c("span", { staticClass: "headline" }, [
-                              _vm._v(_vm._s(_vm.timeDisplay))
-                            ]),
-                            _vm._v(" "),
-                            _c("br"),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "subheadline" }, [
-                              _vm._v(" " + _vm._s(_vm.greet))
-                            ])
-                          ])
+                          _c(
+                            "v-avatar",
+                            [
+                              _c(
+                                "v-icon",
+                                {
+                                  staticStyle: { "font-size": "13px" },
+                                  attrs: { dark: "", color: "blue" }
+                                },
+                                [_vm._v("mdi-pencil")]
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass: "font-weigth-bold caption textfm1",
+                              staticStyle: { "margin-left": "-10px" }
+                            },
+                            [_vm._v(" Make Post")]
+                          )
                         ],
                         1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-chip",
+                        {
+                          attrs: {
+                            small: "",
+                            color: "grey lighten-4 ",
+                            "text-color": "black"
+                          }
+                        },
+                        [
+                          _c(
+                            "v-avatar",
+                            [
+                              _c(
+                                "v-icon",
+                                {
+                                  staticStyle: { "font-size": "13px" },
+                                  attrs: { dark: "", color: "brown" }
+                                },
+                                [_vm._v("mdi-image-album")]
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass: "font-weigth-bold caption textfm1",
+                              staticStyle: { "margin-left": "-10px" }
+                            },
+                            [_vm._v("Photo/Album")]
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-chip",
+                        {
+                          attrs: {
+                            small: "",
+                            color: "grey lighten-4 ",
+                            "text-color": "black"
+                          }
+                        },
+                        [
+                          _c(
+                            "v-avatar",
+                            [
+                              _c(
+                                "v-icon",
+                                {
+                                  staticStyle: { "font-size": "13px" },
+                                  attrs: { dark: "", color: "green" }
+                                },
+                                [_vm._v("mdi-poll")]
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass: "font-weigth-bold caption textfm1",
+                              staticStyle: { "margin-left": "-10px" }
+                            },
+                            [_vm._v("Poll Voting")]
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-chip",
+                        {
+                          attrs: {
+                            small: "",
+                            color: "grey lighten-4 ",
+                            "text-color": "black"
+                          }
+                        },
+                        [
+                          _c(
+                            "v-avatar",
+                            [
+                              _c(
+                                "v-icon",
+                                {
+                                  staticStyle: { "font-size": "17px" },
+                                  attrs: { dark: "", color: "primary" }
+                                },
+                                [_vm._v("mdi-dots-horizontal")]
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass: "font-weigth-bold caption textfm1",
+                              staticStyle: { "margin-left": "-10px" }
+                            },
+                            [_vm._v("More")]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-flex",
+                    {
+                      staticStyle: { "margin-top": "1px" },
+                      attrs: { xs4: "" }
+                    },
+                    [
+                      _c("p", { staticClass: "text-xs-center" }, [
+                        _c("span", { staticClass: "headline" }, [
+                          _vm._v(_vm._s(_vm.timeDisplay))
+                        ]),
+                        _vm._v(" "),
+                        _c("br"),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "subheadline" }, [
+                          _vm._v(" " + _vm._s(_vm.greet))
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-flex",
+                    { staticClass: "mt-3", attrs: { xs1: "" } },
+                    [
+                      _c(
+                        "v-avatar",
+                        {
+                          staticClass: "right",
+                          attrs: { color: "red--after", size: "30px" }
+                        },
+                        [
+                          _c("img", {
+                            attrs: { src: _vm.userData.photoUrl, alt: "" }
+                          })
+                        ]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-flex",
+                    {
+                      staticStyle: { "margin-top": "-6px" },
+                      attrs: { xs7: "" }
+                    },
+                    [
+                      _c("v-textarea", {
+                        staticClass: "left textfm1",
+                        staticStyle: { "font-size": "14px !important" },
+                        attrs: {
+                          rows: "2",
+                          placeholder: "What is your main focus for today?",
+                          flat: "",
+                          solo: "",
+                          "auto-grow": ""
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("v-divider", { staticClass: "grey lighten-5" }),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { staticClass: "ma-2" },
+                [
+                  _c(
+                    "v-btn",
+                    { staticClass: "ma-0", attrs: { icon: "", small: "" } },
+                    [
+                      _c(
+                        "v-avatar",
+                        { attrs: { color: "red--after", size: "24px" } },
+                        [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B",
+                              alt: ""
+                            }
+                          })
+                        ]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    { staticClass: "ma-0", attrs: { icon: "", small: "" } },
+                    [
+                      _c(
+                        "v-avatar",
+                        { attrs: { color: "red--after", size: "24px" } },
+                        [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669",
+                              alt: ""
+                            }
+                          })
+                        ]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    { staticClass: "ma-0", attrs: { icon: "", small: "" } },
+                    [
+                      _c(
+                        "v-avatar",
+                        { attrs: { color: "red--after", size: "24px" } },
+                        [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B",
+                              alt: ""
+                            }
+                          })
+                        ]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    { staticClass: "ma-0", attrs: { icon: "", small: "" } },
+                    [
+                      _c(
+                        "v-avatar",
+                        { attrs: { color: "red--after", size: "24px" } },
+                        [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36475819_1766742130062368_2660206145032945664_n.jpg?_nc_cat=0&oh=aa21af20b1f8617026868f31d44b7b72&oe=5BCD5FED",
+                              alt: ""
+                            }
+                          })
+                        ]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    { staticClass: "ma-0", attrs: { icon: "", small: "" } },
+                    [
+                      _c(
+                        "v-avatar",
+                        { attrs: { color: "red--after", size: "24px" } },
+                        [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B",
+                              alt: ""
+                            }
+                          })
+                        ]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    { staticClass: "ma-0", attrs: { icon: "", small: "" } },
+                    [
+                      _c(
+                        "v-avatar",
+                        { attrs: { color: "red--after", size: "24px" } },
+                        [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669",
+                              alt: ""
+                            }
+                          })
+                        ]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    { staticClass: "ma-0", attrs: { icon: "", small: "" } },
+                    [
+                      _c(
+                        "v-avatar",
+                        { attrs: { color: "red--after", size: "24px" } },
+                        [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B",
+                              alt: ""
+                            }
+                          })
+                        ]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    { staticClass: "ma-0", attrs: { icon: "", small: "" } },
+                    [
+                      _c(
+                        "v-avatar",
+                        { attrs: { color: "red--after", size: "24px" } },
+                        [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669",
+                              alt: ""
+                            }
+                          })
+                        ]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    { staticClass: "ma-0", attrs: { icon: "", small: "" } },
+                    [
+                      _c(
+                        "v-avatar",
+                        { attrs: { color: "red--after", size: "24px" } },
+                        [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669",
+                              alt: ""
+                            }
+                          })
+                        ]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    { staticClass: "ma-0", attrs: { icon: "", small: "" } },
+                    [
+                      _c(
+                        "v-avatar",
+                        { attrs: { color: "red--after", size: "24px" } },
+                        [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B",
+                              alt: ""
+                            }
+                          })
+                        ]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    { staticClass: "ma-0", attrs: { icon: "", small: "" } },
+                    [
+                      _c(
+                        "v-avatar",
+                        { attrs: { color: "red--after", size: "24px" } },
+                        [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36475819_1766742130062368_2660206145032945664_n.jpg?_nc_cat=0&oh=aa21af20b1f8617026868f31d44b7b72&oe=5BCD5FED",
+                              alt: ""
+                            }
+                          })
+                        ]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    { staticClass: "ma-0", attrs: { icon: "", small: "" } },
+                    [
+                      _c(
+                        "v-avatar",
+                        { attrs: { color: "red--after", size: "24px" } },
+                        [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B",
+                              alt: ""
+                            }
+                          })
+                        ]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    { staticClass: "ma-0", attrs: { icon: "", small: "" } },
+                    [
+                      _c(
+                        "v-avatar",
+                        { attrs: { color: "red--after", size: "24px" } },
+                        [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669",
+                              alt: ""
+                            }
+                          })
+                        ]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    { staticClass: "ma-0", attrs: { icon: "", small: "" } },
+                    [
+                      _c(
+                        "v-avatar",
+                        { attrs: { color: "red--after", size: "24px" } },
+                        [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B",
+                              alt: ""
+                            }
+                          })
+                        ]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    { staticClass: "ma-0", attrs: { icon: "", small: "" } },
+                    [
+                      _c(
+                        "v-avatar",
+                        { attrs: { color: "red--after", size: "24px" } },
+                        [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669",
+                              alt: ""
+                            }
+                          })
+                        ]
                       )
                     ],
                     1
@@ -56004,7 +56643,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "v-flex",
-        { staticClass: " mr-4 xs5" },
+        { staticClass: " mr-3 xs4" },
         [
           _c("v-card", {
             staticClass: "grey lighten-4 my-2",

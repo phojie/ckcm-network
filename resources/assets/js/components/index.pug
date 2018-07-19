@@ -185,3 +185,227 @@ mobiles navigation
          </v-list-group>
       </v-list>
    </v-navigation-drawer>
+
+
+
+
+
+
+
+
+
+
+
+
+   <template>
+   <v-layout  class="mt-2">
+      <v-flex  class="mr-2 ml-3 xs7">
+                
+         <v-card flat style="border:.5px #EEEEEE solid" class="jieSvgBg1 my-2" >
+         sds
+                  <v-divider class="grey lighten-3"></v-divider>
+               <v-container fluid styl>
+                  <v-layout >
+                  <!-- <v-flex xs4>
+                     <span class="headline">{{timeDisplay}}</span>
+                     <br>
+                     <span class="subheadline"> {{greet}}</span>
+                  </v-flex> -->
+                  
+                  <!-- <v-flex>
+                     <v-btn large icon>
+                        <v-avatar size="40px" color="green">
+                           <v-icon dark>mdi-pencil</v-icon>
+                        </v-avatar>
+                     </v-btn>
+                     <v-btn large icon>
+                        <v-avatar size="40px" color="green">
+                           <v-icon dark>mdi-pencil</v-icon>
+                        </v-avatar>
+                     </v-btn>
+                     <v-btn large icon>
+                        <v-avatar size="40px" color="green">
+                           <v-icon dark>mdi-pencil</v-icon>
+                        </v-avatar>
+                     </v-btn>
+                  </v-flex> -->
+                     <v-flex class="textfm1 "  xs8 >
+                        <v-layout wrap align-center align-content-center justify-center >
+                           <v-flex xs9>
+                              <p style="line-height:26px !important" class="text-xs-center textfm1 title"> What is your <span class="primary--text" >main focus</span> for today?</p>
+                           </v-flex>
+                           <!-- <v-flex >
+                              <p class="text-xs-center"> 
+                              <v-btn icon>
+                                 <v-avatar size="30px" color="indigo">
+                                    <v-icon dark>account_circle</v-icon>
+                                 </v-avatar>
+                              </v-btn>
+                              <v-btn icon>
+                                 <v-avatar  size="30px" color="indigo">
+                                    <v-icon dark>account_circle</v-icon>
+                                 </v-avatar>
+                              </v-btn>
+                              </p>
+                           </v-flex> -->
+                           <v-flex style="margin-top:-10px" xs10 >
+                              <p class="text-xs-center" >
+                                 <v-text-field
+                                 style="font-size:13px !important; "
+                                 placeholder="Write something here..."
+                              ></v-text-field>
+                              
+                           
+                           
+                              </p>
+                           </v-flex>
+                        
+                        </v-layout>
+                  </v-flex>
+                  
+                  <v-flex xs4>
+                            <v-btn icon  large color="grey lighten-4">
+                                 <!-- <v-avatar class="" color="red--after green" size="35px"> -->
+                                    <!-- <v-icon dark>create</v-icon> -->
+                                    <img height="28px" src="https://png.icons8.com/office/80/B0A18E/create-new.png">
+                                    <!-- <img :src="userData.photoUrl" alt=""> -->
+                                 <!-- </v-avatar> -->
+                              </v-btn>
+                             
+                               <v-btn icon  large color="grey lighten-4">
+                                 <!-- <v-avatar class="" color="red--after green" size="35px"> -->
+                                    <!-- <v-icon dark>create</v-icon> -->
+                                    <img height="35px" src="/imgs/svg/jieStory.svg">
+                                    <!-- <img :src="userData.photoUrl" alt=""> -->
+                                 <!-- </v-avatar> -->
+                              </v-btn>
+                        </v-flex>
+                  </v-layout>
+               </v-container>
+         </v-card>
+         
+         <v-card class="my-2" height="400">
+            <v-card-media
+               height="100px"
+            >
+               <!-- src="imgs/background-main-light.svg" -->
+               <v-container fill-height fluid>
+                  <v-layout fill-height>
+                  <v-flex>
+                    
+                  </v-flex>
+                  </v-layout>
+               </v-container>
+            </v-card-media>
+         </v-card>
+
+         <v-card class="my-2" height="400">
+            <v-card-media
+               height="100px"
+            >
+               <!-- src="imgs/background-main-light.svg" -->
+               <v-container fill-height fluid>
+                  <v-layout fill-height>
+                  <v-flex>
+                    
+                  </v-flex>
+                  </v-layout>
+               </v-container>
+            </v-card-media>
+         </v-card>
+      </v-flex>
+
+      <v-flex class=" mr-3 xs4" >
+         <v-card flat class="grey lighten-4 my-2" height="50px">
+         </v-card>
+         <v-card flat  class="grey lighten-4 mb-2" height="150px">
+         </v-card>
+      </v-flex>
+
+      <!-- <v-flex class=" mr-4 xs5">
+         <v-card class="green " style="position:fixed" height="400px">
+         </v-card>
+      </v-flex> -->
+   </v-layout>
+   
+</template>
+
+<script>
+// var moment = require('moment-timezone');
+
+// import moment from 'moment';
+// moment().tz("America/Los_Angeles").format();
+
+export default {  
+   data: () => ({
+      timeDisplay: '',
+      greet: '',
+      worldTime: [],
+   }),
+   computed: {
+      userData() {
+         return this.$store.getters.accountLoginData.user
+      }
+   },
+   methods: {
+      
+   },
+   mounted: function() {
+
+      this.$store.commit("leftnavDrawerOn");
+
+      var date = new Date();
+      let vm = this;
+      // setTimeout(function() {
+         setInterval(()=>{
+            axios.get('https://api.ipgeolocation.io/ipgeo?apiKey=90a83c7326cc475f8048cf81362e1df0')
+               .then((response) =>{
+                  vm.worldTime=response.data
+                  vm.timeDisplay = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h:mma');
+                  let hour = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h');
+                  let a = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('a');
+                     if ( a == 'pm' && hour > 1 && hour <= 5 || a == 'pm' && hour == 12) {
+                        vm.greet = "Good afternoon , " + vm.userData.displayName;
+                     } else if ( a == 'pm' && hour >= 6) {
+                        vm.greet = "Good evening , " + vm.userData.displayName;
+                     } else if (a == 'am' && hour >= 1 && hour <= 6) {
+                        vm.greet = "Sayuha nimu , " + vm.userData.displayName;
+                     } else {
+                        vm.greet = "Good morning , " + vm.userData.displayName;
+                     }
+                     })
+               .catch((err) => { 
+                  console.log(err)
+               })
+               // MMMM Do YYYY ss,
+         },60000)
+      // }, (60 - date.getSeconds()) * 1000);
+   },
+   created() {
+      document.title = "Christ the King Network";
+
+      let vm = this;
+      axios.get('https://api.ipgeolocation.io/ipgeo?apiKey=90a83c7326cc475f8048cf81362e1df0')
+         .then((response) =>{
+            vm.worldTime=response.data
+            vm.timeDisplay = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h:mma');
+            let hour = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h');
+            let a = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('a');
+               if ( a == 'pm' && hour > 1 && hour <= 5 || a == 'pm' && hour == 12) {
+                  vm.greet = "Good afternoon , " + vm.userData.displayName;
+               } else if ( a == 'pm' && hour >= 6) {
+                  vm.greet = "Good evening , " + vm.userData.displayName;
+               } else if (a == 'am' && hour >= 1 && hour <= 6) {
+                  vm.greet = "Sayuha nimu , " + vm.userData.displayName;
+               } else {
+                  vm.greet = "Good morning , " + vm.userData.displayName;
+               }
+         })
+         .catch((err) => { 
+            console.log(err)
+         })
+   
+   },
+   
+}
+</script>
