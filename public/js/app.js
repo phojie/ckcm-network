@@ -56196,16 +56196,14 @@ var render = function() {
                       attrs: { xs4: "" }
                     },
                     [
-                      _c("p", { staticClass: "text-xs-center" }, [
-                        _c("span", { staticClass: "headline" }, [
-                          _vm._v(_vm._s(_vm.timeDisplay))
-                        ]),
-                        _vm._v(" "),
-                        _c("br"),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "subheadline" }, [
-                          _vm._v(" " + _vm._s(_vm.greet))
-                        ])
+                      _c("span", { staticStyle: { "font-size": "27px" } }, [
+                        _vm._v(_vm._s(_vm.timeDisplay))
+                      ]),
+                      _vm._v(" "),
+                      _c("br"),
+                      _vm._v(" "),
+                      _c("span", { staticStyle: { "font-size": "13px" } }, [
+                        _vm._v(" " + _vm._s(_vm.greet))
                       ])
                     ]
                   ),

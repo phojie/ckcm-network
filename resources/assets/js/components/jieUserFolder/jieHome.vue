@@ -39,11 +39,11 @@
                   </v-chip>
                </v-flex>
                <v-flex xs4 style="margin-top:1px">
-                  <p class="text-xs-center">
-                  <span class="headline">{{timeDisplay}}</span>
+                  <!-- <p class="text-xs-center"> -->
+                  <span style="font-size:27px">{{timeDisplay}}</span>
                   <br>
-                  <span class="subheadline"> {{greet}}</span>
-                  </p>
+                  <span class="" style="font-size:13px"> {{greet}}</span>
+                  <!-- </p> -->
                </v-flex>
                
                <v-flex  xs1 class="mt-3">
