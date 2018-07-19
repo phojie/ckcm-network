@@ -56020,7 +56020,7 @@ var render = function() {
     [
       _c(
         "v-flex",
-        { staticClass: "mr-2 ml-3 xs7" },
+        { staticClass: "mr-2 ml-3 xs12 md8 lg7" },
         [
           _c(
             "v-card",
@@ -56641,7 +56641,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "v-flex",
-        { staticClass: " mr-3 xs4" },
+        { staticClass: " mr-3 xs0 md4 lg4" },
         [
           _c("v-card", {
             staticClass: "grey lighten-4 my-2",

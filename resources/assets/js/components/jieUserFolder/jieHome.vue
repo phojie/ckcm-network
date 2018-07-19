@@ -1,12 +1,12 @@
 <template>
    <v-layout  class="mt-2">
-      <v-flex  class="mr-2 ml-3 xs7">
+      <v-flex  class="mr-2 ml-3 xs12 md8 lg7">
                 
          <v-card flat style="border:.5px #EEEEEE solid" class="jieSvgBg1 my-2" >
            
             <!-- <v-container fluid> -->
             <v-layout wrap white class="px-3 pt-2 " >
-               <v-flex xs12 class="mb-1" >
+               <v-flex xs12  class="mb-1" >
                   <v-chip class=""  small color="grey lighten-4 " text-color="black">
                      <v-avatar>
                         <v-icon dark color="blue" style="font-size:13px">mdi-pencil</v-icon>
@@ -174,7 +174,7 @@
          </v-card>
       </v-flex>
 
-      <v-flex class=" mr-3 xs4" >
+      <v-flex class=" mr-3 xs0 md4 lg4" >
          <v-card flat class="grey lighten-4 my-2" height="50px">
          </v-card>
          <v-card flat  class="grey lighten-4 mb-2" height="150px">
