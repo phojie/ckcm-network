@@ -18,6 +18,10 @@
    text-transform: capitalize !important;
 }
 .textfm1 {
+   /* font-family: 'Open Sans', sans-serif; */
+   font-family: 'Source Sans Pro', sans-serif;
+}
+.textfm2 {
    font-family: 'Overlock', cursive;
 }
 
@@ -57,6 +61,14 @@
    color: rgba(0,0,0,0.54) !important;
    font-size: 17px !important;
 }
+
+.searchfriend .v-icon {
+   color: #BDBDBD !important;
+   font-size: 16px !important;
+}
+.searchfriend .v-input__control   {
+   min-height:25px !important;
+}
 /* Exit Upper toolbar Search Input */
 
 /* leftNavbar */
@@ -65,3 +77,145 @@
 }
 
 
+/* left friend list */
+
+.friendscroll {
+   overflow-x:hidden;
+   overflow-y:hidden;
+   height:112% !important;
+}
+.friendscroll:hover{
+   overflow-y:auto;
+}
+.scrollbar-primary::-webkit-scrollbar{
+   width: 5px !important;
+   /* height: 10px !important; */
+   /* padding-top: 40px !important; */
+}
+
+.scrollbar-primary::-webkit-scrollbar-track{
+   /* -webkit-box-shadow: inset 0 0 1px #EDE7F6;
+   border: 1px solid #EDE7F6;
+   background: #EDE7F6; */
+   border-radius: 10px;
+}
+.scrollbar-primary::-webkit-scrollbar-thumb{
+   border-radius:10px;
+   height: 30px;
+   width: 8px;
+   background: #D1C4E9;
+   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+}
+/* 757575 */
+
+.jieBadge .v-badge__badge {
+   margin-right:3px !important;
+   margin-top:6px !important;
+   height:18px !important;
+   width:18px !important;
+}
+.jieBadgeFriend .v-badge__badge {
+   margin-right:15px !important;
+   margin-top:29px !important;
+   height:10px !important;
+   width:10px !important;
+}
+
+.jieBadgeNews .v-badge__badge {
+   margin-right:17px !important;
+   margin-top:33px !important;
+   height:12.5px !important;
+   width:12.5px !important;
+}
+
+.scrollbar-danger::-webkit-scrollbar-track {
+-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+background-color: #F5F5F5;
+border-radius: 10px; }
+
+.scrollbar-danger::-webkit-scrollbar {
+width: 12px;
+background-color: #F5F5F5; }
+
+.scrollbar-danger::-webkit-scrollbar-thumb {
+border-radius: 10px;
+-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+background-color: #ff3547; }
+
+.scrollbar-warning::-webkit-scrollbar-track {
+-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+background-color: #F5F5F5;
+border-radius: 10px; }
+
+.scrollbar-warning::-webkit-scrollbar {
+width: 12px;
+background-color: #F5F5F5; }
+
+.scrollbar-warning::-webkit-scrollbar-thumb {
+border-radius: 10px;
+-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+background-color: #FF8800; }
+
+.scrollbar-success::-webkit-scrollbar-track {
+-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+background-color: #F5F5F5;
+border-radius: 10px; }
+
+.scrollbar-success::-webkit-scrollbar {
+width: 12px;
+background-color: #F5F5F5; }
+
+.scrollbar-success::-webkit-scrollbar-thumb {
+border-radius: 10px;
+-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+background-color: #00C851; }
+
+.scrollbar-info::-webkit-scrollbar-track {
+-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+background-color: #F5F5F5;
+border-radius: 10px; }
+
+.scrollbar-info::-webkit-scrollbar {
+width: 12px;
+background-color: #F5F5F5; }
+
+.scrollbar-info::-webkit-scrollbar-thumb {
+border-radius: 10px;
+-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+background-color: #33b5e5; }
+
+.scrollbar-default::-webkit-scrollbar-track {
+-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+background-color: #F5F5F5;
+border-radius: 10px; }
+
+.scrollbar-default::-webkit-scrollbar {
+width: 12px;
+background-color: #F5F5F5; }
+
+.scrollbar-default::-webkit-scrollbar-thumb {
+border-radius: 10px;
+-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+background-color: #2BBBAD; }
+
+.scrollbar-secondary::-webkit-scrollbar-track {
+-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+background-color: #F5F5F5;
+border-radius: 10px; }
+
+.scrollbar-secondary::-webkit-scrollbar {
+width: 12px;
+background-color: #F5F5F5; }
+
+.scrollbar-secondary::-webkit-scrollbar-thumb {
+border-radius: 10px;
+-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+background-color: #aa66cc; }
+   
+/* left friend list */
+
+/* home */
+.jiew.v-text-field--solo .v-input__slot  {
+   background: transparent !important;
+}
+/* home */

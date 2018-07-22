@@ -14,6 +14,7 @@ export default {
       alertLogoutDone: false,
       windowSize: [],
       leftnavDrawer: true,
+      friendList: [] //Object
    },
    getters: {
       isLoading(state) {
@@ -39,7 +40,10 @@ export default {
       },
       leftnavDrawer(state) {
          return state.leftnavDrawer
-      }      
+      },
+      friendList(state) {
+         return state.friendList
+      }   
       
    },
    mutations: {
@@ -85,6 +89,9 @@ export default {
       },
       leftnavDrawerOn(state) {
          state.leftnavDrawer = true;
+      },
+      friendList(state, friendList) {
+         state.friendList = friendList
       }
    },
    actions: {
@@ -101,5 +108,14 @@ export default {
          const user = firebase.auth().currentUser;
          context.commit("firebaseSuccess", user)
       },
+      friendList(context) {
+         axios.get('/api/jwt/Ckcm-network-api/eqwe/friendList')
+            .then((response) =>{
+               context.commit("friendList",response.data.friendList)
+            })
+            .catch((error) =>{
+               // rej(error);
+            })
+      }
    }
 }

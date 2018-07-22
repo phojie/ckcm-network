@@ -29,7 +29,6 @@ Route::group(['prefix' => 'auth'], function ($router) {
    Route::post('Ckcm-network-api/{any}/deleteinfo', 'AuthRegisterController@deleteInfo')->where('any', '.*');
 });
    
-   
-	Route::group(['prefix' => 'jwt'], function() {
-		//s
-	});
+Route::group(['prefix' => 'jwt'], function() {
+   Route::get('Ckcm-network-api/{any}/friendList', 'AccountsDataController@friendList')->where('any','.*');
+});

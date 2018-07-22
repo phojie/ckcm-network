@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Aref+Ruqaa);@import url(https://fonts.googleapis.com/css?family=Overlock);@-webkit-keyframes shake {
+@import url(https://fonts.googleapis.com/css?family=Aref+Ruqaa);@import url(https://fonts.googleapis.com/css?family=Overlock);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);@-webkit-keyframes shake {
   59% {
     margin-left: 0;
   }
@@ -11779,6 +11779,5 @@ table.v-table tfoot tr td {
 }
 html {
   overflow-y: auto;
-  font-family: 'Aref Ruqaa', serif !important;
+  font-family: 'Source Sans Pro', sans-serif;
 }
-/* width */

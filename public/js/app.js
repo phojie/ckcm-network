@@ -40654,7 +40654,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_6_vuet
         primaryColortext: '#757575',
         secondaryColortext: '#414141',
 
-        mycolor1: '#151126',
+        mycolor1: '#167F39',
         mycolor2: '#0065ff', //blue
 
         // background color
@@ -54404,7 +54404,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* html {\r\n   overflow: hidden !important; \r\n} */\n.jieBadge .v-badge__badge {\r\n   margin-right:3px !important;\r\n   margin-top:4px !important;\r\n   height:18px !important;\r\n   width:18px !important;\n}\n.fade-enter-active, .fade-leave-active {\r\n  -webkit-transition: opacity .5s;\r\n  transition: opacity .5s;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\r\n  opacity: 0;\n}\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* html {\r\n   overflow: hidden !important; \r\n} */\n.fade-enter-active, .fade-leave-active {\r\n  -webkit-transition: opacity .5s;\r\n  transition: opacity .5s;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\r\n  opacity: 0;\n}\r\n", ""]);
 
 // exports
 
@@ -54678,6 +54678,60 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
    data: function data() {
@@ -54687,20 +54741,36 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          progressDone: false,
          md2: "md4",
          extendSearch: "",
-
+         friendLists: [],
          items: [{ title: 'Home', icon: 'dashboard' }, { title: 'About', icon: 'question_answer' }],
          right: null
       };
    },
    methods: {
+      test: function test() {
+         alert("success tes");
+      },
       logout: function logout() {
          var ckcmcode = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
          this.$store.commit('logout');
          this.$router.push("/?stype=lo&jlou=jie_ckcm-code=" + ckcmcode + "-AfcXyKTxpz7sQ68VmX5mkDW-v78XPvqoICwwqRFwSZgox8TG0GBDSY0Cd9F9pxUwnqr_c2aOJL4xk0WPhFml466P75gCuUkm2Lkm7ZaR2obLnw&smuh=2724&lh=Ac-yQn60G1vPxGhw");
       },
-      searchInput: function searchInput() {},
+      friendList: function friendList() {
+         var vm = this;
+         axios.get('/api/jwt/Ckcm-network-api/eqwe/friendList').then(function (response) {
+            vm.friendLists = response.data.friendList;
+         }).catch(function (error) {
+            // rej(error);
+         });
+      },
       profileMenu: function profileMenu() {
          var displayName = this.$store.getters.accountLoginData.user.displayName;
+         var user = displayName.toLocaleLowerCase().replace(/[ ]/g, ".");
+         this.$router.push({
+            path: "/profile/" + user
+         });
+      },
+      profileMenuFriend: function profileMenuFriend(displayName) {
          var user = displayName.toLocaleLowerCase().replace(/[ ]/g, ".");
          this.$router.push({
             path: "/profile/" + user
@@ -54717,13 +54787,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       code: function code() {
          var ckcmcode = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
          return ckcmcode;
+      },
+      firstname: function firstname() {
+         var getFn = this.$store.getters.accountLoginData.user.displayName;
+         var firstname = getFn.split(" ");
+         return firstname[0];
       }
    },
    mounted: function mounted() {
-      // this.$Progress.finish();
-
+      this.$store.dispatch("friendList");
    },
    created: function created() {
+      this.friendList();
+
       // this.$Progress.start()
    }
 });
@@ -54739,31 +54815,149 @@ var render = function() {
   return _c(
     "v-app",
     [
-      _c("v-navigation-drawer", {
-        attrs: {
-          stateless: "",
-          permanent: "",
-          flat: "",
-          right: "",
-          width: "210",
-          clipped: "",
-          app: ""
-        }
-      }),
-      _vm._v(" "),
       _c(
         "v-navigation-drawer",
         {
           staticClass: "transparent",
           staticStyle: { overflow: "hidden !important" },
           attrs: {
-            permanent: "",
-            floating: "",
+            right: "",
             stateless: "",
+            permanent: "",
             width: "210",
             clipped: "",
             app: ""
           }
+        },
+        [
+          _c(
+            "v-card",
+            {
+              staticClass: " friendscroll scrollbar-primary ",
+              attrs: { flat: "", color: "" }
+            },
+            _vm._l(_vm.friendLists, function(friendList) {
+              return _c(
+                "v-btn",
+                {
+                  key: friendList.id,
+                  staticClass: " jieleftNav",
+                  attrs: { color: "grey", block: "", flat: "" },
+                  on: {
+                    click: function($event) {
+                      _vm.profileMenuFriend(friendList.displayName)
+                    }
+                  }
+                },
+                [
+                  _c(
+                    "v-badge",
+                    {
+                      staticClass: "jieBadgeFriend",
+                      attrs: { color: "white", overlap: "" }
+                    },
+                    [
+                      _c("span", {
+                        staticStyle: {
+                          "font-size": "16px",
+                          "border-radius": "50%",
+                          border: "4px solid #7CB342"
+                        },
+                        attrs: { slot: "badge" },
+                        slot: "badge"
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "v-avatar",
+                        {
+                          staticClass: "mr-2",
+                          attrs: { color: "grey lighten-3", size: "28" }
+                        },
+                        [
+                          _c("img", {
+                            attrs: { src: friendList.photoUrl, alt: "" }
+                          })
+                        ]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-toolbar-title",
+                    {
+                      staticClass:
+                        " textDefault textfm1 grey--text text--darken-3 ",
+                      staticStyle: {
+                        "margin-left": "-2px !important",
+                        "font-size": "12px !important",
+                        "letter-spacing": ".5px"
+                      }
+                    },
+                    [
+                      _vm._v(
+                        " \r\n                     " +
+                          _vm._s(friendList.displayName) +
+                          "\r\n                  "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "textfm2 textDefault",
+                      staticStyle: { "font-size": "11px" }
+                    },
+                    [_vm._v("2m")]
+                  )
+                ],
+                1
+              )
+            })
+          ),
+          _vm._v(" "),
+          _c(
+            "v-card",
+            {
+              staticClass: "friendscroll scrollbar-primary ",
+              attrs: { flat: "", color: "white" }
+            },
+            [
+              _c("v-text-field", {
+                staticClass: "textfm1 searchfriend",
+                staticStyle: {
+                  position: "fixed",
+                  bottom: "0",
+                  "margin-bottom": "-30px",
+                  "font-size": "14px",
+                  width: "100%"
+                },
+                attrs: {
+                  "prepend-inner-icon": "search",
+                  "append-icon": "mdi-settings",
+                  color: "primary",
+                  clearable: "",
+                  placeholder: "Search",
+                  solo: ""
+                },
+                on: { "click:append": _vm.test }
+              })
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-navigation-drawer",
+        {
+          staticClass: "transparent",
+          staticStyle: { overflow: "hidden !important" },
+          attrs: { floating: "", width: "230", clipped: "", app: "" }
         },
         [
           _c(
@@ -54784,8 +54978,8 @@ var render = function() {
                   _c(
                     "v-avatar",
                     {
-                      staticClass: "mr-1 ",
-                      attrs: { color: "red--after", size: "23px" }
+                      staticClass: "mr-1",
+                      attrs: { color: "grey lighten-3", size: "20px" }
                     },
                     [
                       _c("img", {
@@ -54801,7 +54995,7 @@ var render = function() {
                         "font-weight-thin mr-2 black--text textDefault textfm1",
                       staticStyle: {
                         "font-size": "13px",
-                        "letter-spacing": ".5px"
+                        "margin-left": "1px letter-spacing:.5px"
                       }
                     },
                     [_vm._v(_vm._s(_vm.userData.displayName))]
@@ -54815,7 +55009,7 @@ var render = function() {
                       staticStyle: { "font-size": "15px !important" },
                       attrs: { color: "grey" }
                     },
-                    [_vm._v("mdi-lastpass")]
+                    [_vm._v("mdi-dots-horizontal")]
                   )
                 ],
                 1
@@ -55050,7 +55244,7 @@ var render = function() {
       _c(
         "v-toolbar",
         {
-          staticClass: "mycolor1 jieLandingBg  mr-5  ",
+          staticClass: "mr-5 deep-purple darken-4 jieLandingBg darken-5",
           attrs: { "clipped-left": "", dark: "", flat: "", app: "", dense: "" }
         },
         [
@@ -55200,8 +55394,7 @@ var render = function() {
                   _c(
                     "v-btn",
                     {
-                      staticStyle: { "margin-right": "12px !important" },
-                      attrs: { slot: "activator", icon: "" },
+                      attrs: { slot: "activator", red: "", icon: "" },
                       slot: "activator"
                     },
                     [
@@ -55251,16 +55444,18 @@ var render = function() {
                     1
                   ),
                   _vm._v(" "),
-                  _c("div", {
-                    staticStyle: {
-                      "margin-left": "56.5px",
-                      width: "0",
-                      height: "0",
-                      "border-left": "6px solid transparent",
-                      "border-right": "6px solid transparent",
-                      "border-bottom": "6px solid white"
-                    }
-                  }),
+                  _c("v-flex", { attrs: { reverse: "" } }, [
+                    _c("div", {
+                      staticStyle: {
+                        "margin-left": "56.5px",
+                        width: "0",
+                        height: "0",
+                        "border-left": "6px solid transparent",
+                        "border-right": "6px solid transparent",
+                        "border-bottom": "6px solid white"
+                      }
+                    })
+                  ]),
                   _vm._v(" "),
                   _c(
                     "v-card",
@@ -55308,6 +55503,7 @@ var render = function() {
               _c(
                 "v-btn",
                 {
+                  staticStyle: { "min-width": "140px" },
                   attrs: { slot: "activator", flat: "", ripple: "" },
                   slot: "activator"
                 },
@@ -55331,8 +55527,10 @@ var render = function() {
                       staticClass:
                         "font-weight-thin mr-2 white--text caption  textDefault textfm1"
                     },
-                    [_vm._v(" Hello, " + _vm._s(_vm.userData.displayName))]
+                    [_vm._v(" Hello, " + _vm._s(_vm.firstname))]
                   ),
+                  _vm._v(" "),
+                  _c("v-spacer"),
                   _vm._v(" "),
                   _c(
                     "v-icon",
@@ -55346,16 +55544,24 @@ var render = function() {
                 1
               ),
               _vm._v(" "),
-              _c("div", {
-                staticStyle: {
-                  "margin-left": "149.5px",
-                  width: "0",
-                  height: "0",
-                  "border-left": "6px solid transparent",
-                  "border-right": "6px solid transparent",
-                  "border-bottom": "6px solid white"
-                }
-              }),
+              _c(
+                "v-layout",
+                {
+                  staticStyle: { "margin-right": "17px !important" },
+                  attrs: { "justify-end": "" }
+                },
+                [
+                  _c("div", {
+                    staticStyle: {
+                      width: "0",
+                      height: "0",
+                      "border-left": "6px solid transparent",
+                      "border-right": "6px solid transparent",
+                      "border-bottom": "6px solid white"
+                    }
+                  })
+                ]
+              ),
               _vm._v(" "),
               _c(
                 "v-card",
@@ -55376,7 +55582,7 @@ var render = function() {
                                 _vm._v("mdi-account")
                               ]),
                               _vm._v(
-                                "\r\n                        Profile   \r\n                     "
+                                "\r\n                        Profile                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     \r\n                     "
                               )
                             ],
                             1
@@ -55933,6 +56139,46 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 // var moment = require('moment-timezone');
 
@@ -55944,15 +56190,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       return {
          timeDisplay: '',
          greet: '',
-         worldTime: []
+         worldTime: [],
+         bottomNav: 'recent'
       };
    },
    computed: {
       userData: function userData() {
          return this.$store.getters.accountLoginData.user;
+      },
+      firstname: function firstname() {
+         var getFn = this.$store.getters.accountLoginData.user.displayName;
+         var firstname = getFn.split(" ");
+         return firstname[0];
       }
    },
-   methods: {},
+   methods: {
+      profileMenu: function profileMenu() {
+         var displayName = this.$store.getters.accountLoginData.user.displayName;
+         var user = displayName.toLocaleLowerCase().replace(/[ ]/g, ".");
+         this.$router.push({
+            path: '/profile/' + user
+         });
+      }
+   },
    mounted: function mounted() {
 
       this.$store.commit("leftnavDrawerOn");
@@ -55967,13 +56227,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var hour = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h');
             var a = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('a');
             if (a == 'pm' && hour > 1 && hour <= 5 || a == 'pm' && hour == 12) {
-               vm.greet = "Good afternoon , " + vm.userData.displayName;
+               vm.greet = "Good afternoon , " + vm.firstname;
             } else if (a == 'pm' && hour >= 6) {
-               vm.greet = "Good evening , " + vm.userData.displayName;
+               vm.greet = "Good evening , " + vm.firstname;
             } else if (a == 'am' && hour >= 1 && hour <= 6) {
-               vm.greet = "Sayuha nimu , " + vm.userData.displayName;
+               vm.greet = "Sayuha nimu , " + vm.firstname;
             } else {
-               vm.greet = "Good morning , " + vm.userData.displayName;
+               vm.greet = "Good morning , " + vm.firstname;
             }
          }).catch(function (err) {
             console.log(err);
@@ -55992,13 +56252,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          var hour = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h');
          var a = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('a');
          if (a == 'pm' && hour > 1 && hour <= 5 || a == 'pm' && hour == 12) {
-            vm.greet = "Good afternoon , " + vm.userData.displayName;
+            vm.greet = "Good afternoon , " + vm.firstname;
          } else if (a == 'pm' && hour >= 6) {
-            vm.greet = "Good evening , " + vm.userData.displayName;
+            vm.greet = "Good evening , " + vm.firstname;
          } else if (a == 'am' && hour >= 1 && hour <= 6) {
-            vm.greet = "Sayuha nimu , " + vm.userData.displayName;
+            vm.greet = "Sayuha nimu , " + vm.firstname;
          } else {
-            vm.greet = "Good morning , " + vm.userData.displayName;
+            vm.greet = "Good morning , " + vm.firstname;
          }
       }).catch(function (err) {
          console.log(err);
@@ -56016,175 +56276,229 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "v-layout",
-    { staticClass: "mt-2" },
+    { staticClass: "mt-2 white" },
     [
       _c(
         "v-flex",
-        { staticClass: "mr-2 ml-3 xs12 md8 lg7" },
+        {
+          staticClass: "mr-2 mt-2 ml-3 xs12 md8 lg8",
+          staticStyle: { border: "1px #EEEEEE solid" }
+        },
         [
           _c(
             "v-card",
-            {
-              staticClass: "jieSvgBg1 my-2",
-              staticStyle: { border: ".5px #EEEEEE solid" },
-              attrs: { flat: "" }
-            },
+            { staticClass: " jieSvgBg1 pa-1 ", attrs: { flat: "" } },
             [
               _c(
                 "v-layout",
-                { staticClass: "px-3 pt-2 ", attrs: { wrap: "", white: "" } },
+                { attrs: { wrap: "", color: "transparent" } },
                 [
                   _c(
                     "v-flex",
                     { staticClass: "mb-1", attrs: { xs12: "" } },
                     [
                       _c(
-                        "v-chip",
-                        {
-                          attrs: {
-                            small: "",
-                            color: "grey lighten-4 ",
-                            "text-color": "black"
-                          }
-                        },
+                        "v-layout",
                         [
                           _c(
-                            "v-avatar",
+                            "v-btn",
+                            {
+                              staticClass:
+                                "font-weigth-bold textfm1 textDefault",
+                              staticStyle: { "font-size": "12px" },
+                              attrs: {
+                                color: "grey lighten-4",
+                                round: "",
+                                depressed: "",
+                                small: ""
+                              }
+                            },
                             [
                               _c(
                                 "v-icon",
                                 {
-                                  staticStyle: { "font-size": "13px" },
+                                  staticClass: "mr-1",
+                                  staticStyle: { "font-size": "15px" },
                                   attrs: { dark: "", color: "blue" }
                                 },
                                 [_vm._v("mdi-pencil")]
+                              ),
+                              _vm._v(
+                                "\n                     Make Post\n                  "
                               )
                             ],
                             1
                           ),
                           _vm._v(" "),
                           _c(
-                            "div",
+                            "v-btn",
                             {
-                              staticClass: "font-weigth-bold caption textfm1",
-                              staticStyle: { "margin-left": "-10px" }
+                              staticClass:
+                                "font-weigth-bold textfm1 textDefault",
+                              staticStyle: { "font-size": "12px" },
+                              attrs: {
+                                color: "grey lighten-4",
+                                round: "",
+                                depressed: "",
+                                small: ""
+                              }
                             },
-                            [_vm._v(" Make Post")]
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-chip",
-                        {
-                          attrs: {
-                            small: "",
-                            color: "grey lighten-4 ",
-                            "text-color": "black"
-                          }
-                        },
-                        [
-                          _c(
-                            "v-avatar",
                             [
                               _c(
                                 "v-icon",
                                 {
-                                  staticStyle: { "font-size": "13px" },
+                                  staticClass: "mr-1",
+                                  staticStyle: { "font-size": "15px" },
                                   attrs: { dark: "", color: "brown" }
                                 },
                                 [_vm._v("mdi-image-album")]
+                              ),
+                              _vm._v(
+                                "\n                     Photo/Album\n                  "
                               )
                             ],
                             1
                           ),
                           _vm._v(" "),
                           _c(
-                            "div",
+                            "v-btn",
                             {
-                              staticClass: "font-weigth-bold caption textfm1",
-                              staticStyle: { "margin-left": "-10px" }
+                              staticClass:
+                                "font-weigth-bold textfm1 textDefault",
+                              staticStyle: { "font-size": "12px" },
+                              attrs: {
+                                color: "grey lighten-4",
+                                round: "",
+                                depressed: "",
+                                small: ""
+                              }
                             },
-                            [_vm._v("Photo/Album")]
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-chip",
-                        {
-                          attrs: {
-                            small: "",
-                            color: "grey lighten-4 ",
-                            "text-color": "black"
-                          }
-                        },
-                        [
-                          _c(
-                            "v-avatar",
                             [
                               _c(
                                 "v-icon",
                                 {
-                                  staticStyle: { "font-size": "13px" },
+                                  staticClass: "mr-1",
+                                  staticStyle: { "font-size": "15px" },
                                   attrs: { dark: "", color: "green" }
                                 },
                                 [_vm._v("mdi-poll")]
+                              ),
+                              _vm._v(
+                                "\n                     Poll Voting\n                  "
                               )
                             ],
                             1
                           ),
                           _vm._v(" "),
+                          _c("v-spacer"),
+                          _vm._v(" "),
                           _c(
-                            "div",
+                            "v-btn",
                             {
-                              staticClass: "font-weigth-bold caption textfm1",
-                              staticStyle: { "margin-left": "-10px" }
+                              staticClass:
+                                "font-weigth-bold textfm1 textDefault",
+                              staticStyle: { "font-size": "12px" },
+                              attrs: {
+                                icon: "",
+                                color: "grey lighten-4",
+                                round: "",
+                                depressed: "",
+                                small: ""
+                              }
                             },
-                            [_vm._v("Poll Voting")]
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-chip",
-                        {
-                          attrs: {
-                            small: "",
-                            color: "grey lighten-4 ",
-                            "text-color": "black"
-                          }
-                        },
-                        [
-                          _c(
-                            "v-avatar",
                             [
                               _c(
                                 "v-icon",
                                 {
                                   staticStyle: { "font-size": "17px" },
-                                  attrs: { dark: "", color: "primary" }
+                                  attrs: { dark: "", color: "grey darken-4" }
                                 },
                                 [_vm._v("mdi-dots-horizontal")]
                               )
                             ],
                             1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass: "font-weigth-bold caption textfm1",
-                              staticStyle: { "margin-left": "-10px" }
-                            },
-                            [_vm._v("More")]
                           )
                         ],
                         1
                       )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-flex",
+                    { staticClass: "mt-3", attrs: { xs1: "" } },
+                    [
+                      _c(
+                        "v-btn",
+                        {
+                          staticClass: " jieleftNav",
+                          staticStyle: {
+                            height: "34px !important",
+                            width: "34px !important",
+                            "margin-top": "-5px"
+                          },
+                          attrs: { color: "", icon: "", flat: "" },
+                          on: { click: _vm.profileMenu }
+                        },
+                        [
+                          _c(
+                            "v-badge",
+                            {
+                              staticClass: "jieBadgeNews",
+                              attrs: { color: "white", overlap: "" }
+                            },
+                            [
+                              _c("span", {
+                                staticStyle: {
+                                  "font-size": "16px",
+                                  "border-radius": "50%",
+                                  border: "4.5px solid #7CB342"
+                                },
+                                attrs: { slot: "badge" },
+                                slot: "badge"
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "v-avatar",
+                                {
+                                  staticClass: "mr-2 ",
+                                  attrs: { color: "grey lighten-3", size: "33" }
+                                },
+                                [
+                                  _c("img", {
+                                    attrs: {
+                                      src: _vm.userData.photoUrl,
+                                      alt: ""
+                                    }
+                                  })
+                                ]
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-flex",
+                    { attrs: { xs7: "" } },
+                    [
+                      _c("v-textarea", {
+                        staticClass: "jiew textfm1",
+                        staticStyle: { "font-size": "15px !important" },
+                        attrs: {
+                          rows: "2",
+                          placeholder: "What is your main focus for today?",
+                          flat: "",
+                          solo: "",
+                          "auto-grow": ""
+                        }
+                      })
                     ],
                     1
                   ),
@@ -56196,64 +56510,30 @@ var render = function() {
                       attrs: { xs4: "" }
                     },
                     [
-                      _c("span", { staticStyle: { "font-size": "27px" } }, [
-                        _vm._v(_vm._s(_vm.timeDisplay))
-                      ]),
+                      _c(
+                        "span",
+                        {
+                          staticClass: "textfm2",
+                          staticStyle: { "font-size": "27px" }
+                        },
+                        [_vm._v(_vm._s(_vm.timeDisplay))]
+                      ),
                       _vm._v(" "),
                       _c("br"),
                       _vm._v(" "),
-                      _c("span", { staticStyle: { "font-size": "13px" } }, [
-                        _vm._v(" " + _vm._s(_vm.greet))
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-flex",
-                    { staticClass: "mt-3", attrs: { xs1: "" } },
-                    [
                       _c(
-                        "v-avatar",
+                        "span",
                         {
-                          staticClass: "right",
-                          attrs: { color: "red--after", size: "30px" }
+                          staticClass: "textfm2",
+                          staticStyle: { "font-size": "13px" }
                         },
-                        [
-                          _c("img", {
-                            attrs: { src: _vm.userData.photoUrl, alt: "" }
-                          })
-                        ]
+                        [_vm._v(" " + _vm._s(_vm.greet))]
                       )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-flex",
-                    {
-                      staticStyle: { "margin-top": "-6px" },
-                      attrs: { xs7: "" }
-                    },
-                    [
-                      _c("v-textarea", {
-                        staticClass: "left textfm1",
-                        staticStyle: { "font-size": "14px !important" },
-                        attrs: {
-                          rows: "2",
-                          placeholder: "What is your main focus for today?",
-                          flat: "",
-                          solo: "",
-                          "auto-grow": ""
-                        }
-                      })
-                    ],
-                    1
+                    ]
                   )
                 ],
                 1
               ),
-              _vm._v(" "),
-              _c("v-divider", { staticClass: "grey lighten-5" }),
               _vm._v(" "),
               _c(
                 "v-flex",
@@ -56582,24 +56862,160 @@ var render = function() {
           _vm._v(" "),
           _c(
             "v-card",
-            { staticClass: "my-2", attrs: { height: "400" } },
+            { staticClass: "jieSvgBg1", attrs: { flat: "" } },
             [
+              _c("v-progress-linear", {
+                staticStyle: { margin: "0px !important" },
+                attrs: {
+                  active: "",
+                  height: "2",
+                  color: "grey lighten-2",
+                  indeterminate: false
+                }
+              }),
+              _vm._v(" "),
               _c(
-                "v-card-media",
-                { attrs: { height: "100px" } },
+                "v-layout",
+                { staticClass: "px-1 py-1", attrs: { wrap: "", white: "" } },
                 [
                   _c(
-                    "v-container",
-                    { attrs: { "fill-height": "", fluid: "" } },
+                    "v-flex",
+                    { attrs: { xs12: "" } },
                     [
                       _c(
                         "v-layout",
-                        { attrs: { "fill-height": "" } },
-                        [_c("v-flex")],
+                        [
+                          _c(
+                            "v-btn",
+                            {
+                              staticClass: " jieleftNav",
+                              staticStyle: {
+                                height: "34px !important",
+                                width: "34px !important"
+                              },
+                              attrs: { color: "", icon: "", flat: "" },
+                              on: { click: _vm.profileMenu }
+                            },
+                            [
+                              _c(
+                                "v-badge",
+                                {
+                                  staticClass: "jieBadgeNews",
+                                  attrs: { color: "white", overlap: "" }
+                                },
+                                [
+                                  _c("span", {
+                                    staticStyle: {
+                                      "font-size": "16px",
+                                      "border-radius": "50%",
+                                      border: "4.5px solid #7CB342"
+                                    },
+                                    attrs: { slot: "badge" },
+                                    slot: "badge"
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-avatar",
+                                    {
+                                      staticClass: "mr-2 ",
+                                      attrs: {
+                                        color: "grey--after",
+                                        size: "33"
+                                      }
+                                    },
+                                    [
+                                      _c("img", {
+                                        attrs: {
+                                          src:
+                                            "https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669",
+                                          alt: ""
+                                        }
+                                      })
+                                    ]
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "mt-2 " }, [
+                            _c(
+                              "p",
+                              {
+                                staticClass:
+                                  "mb-0 deep-purple--text font-weight-bold textfm1",
+                                staticStyle: { "font-size": "14px" }
+                              },
+                              [_vm._v("Phojie Rengel")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "p",
+                              {
+                                staticClass:
+                                  "grey--text text-lighten-2 caption textfm1",
+                                staticStyle: { "margin-top": "-5px" }
+                              },
+                              [_vm._v("2m ago")]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("v-spacer"),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              staticClass:
+                                "font-weigth-bold textfm1 textDefault",
+                              staticStyle: { "font-size": "12px" },
+                              attrs: {
+                                icon: "",
+                                color: "grey lighten-4",
+                                round: "",
+                                depressed: "",
+                                small: ""
+                              }
+                            },
+                            [
+                              _c(
+                                "v-icon",
+                                {
+                                  staticStyle: { "font-size": "17px" },
+                                  attrs: { dark: "", color: "grey darken-4" }
+                                },
+                                [_vm._v("mdi-dots-horizontal")]
+                              )
+                            ],
+                            1
+                          )
+                        ],
                         1
                       )
                     ],
                     1
+                  ),
+                  _vm._v(" "),
+                  _c("v-flex", {
+                    staticStyle: { height: "300px" },
+                    attrs: { xs12: "" }
+                  }),
+                  _vm._v(" "),
+                  _c("v-progress-linear", {
+                    staticStyle: { margin: "0px !important" },
+                    attrs: {
+                      active: "",
+                      height: "2",
+                      color: "red lighten-2",
+                      indeterminate: false
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "v-flex",
+                    { staticClass: "jieSvgBg1", attrs: { xs12: "" } },
+                    [_vm._v("\n               footer\n            ")]
                   )
                 ],
                 1
@@ -56641,7 +57057,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "v-flex",
-        { staticClass: " mr-3 xs0 md4 lg4" },
+        { staticClass: " mr-4  xs0 md4 lg4" },
         [
           _c("v-card", {
             staticClass: "grey lighten-4 my-2",
@@ -77048,7 +77464,8 @@ var fdetails = Object(__WEBPACK_IMPORTED_MODULE_0__ckcmHelpers_auth__["b" /* get
       auth_error: null,
       alertLogoutDone: false,
       windowSize: [],
-      leftnavDrawer: true
+      leftnavDrawer: true,
+      friendList: [] //Object
    },
    getters: {
       isLoading: function isLoading(state) {
@@ -77074,6 +77491,9 @@ var fdetails = Object(__WEBPACK_IMPORTED_MODULE_0__ckcmHelpers_auth__["b" /* get
       },
       leftnavDrawer: function leftnavDrawer(state) {
          return state.leftnavDrawer;
+      },
+      friendList: function friendList(state) {
+         return state.friendList;
       }
    },
    mutations: {
@@ -77119,6 +77539,9 @@ var fdetails = Object(__WEBPACK_IMPORTED_MODULE_0__ckcmHelpers_auth__["b" /* get
       },
       leftnavDrawerOn: function leftnavDrawerOn(state) {
          state.leftnavDrawer = true;
+      },
+      friendList: function friendList(state, _friendList) {
+         state.friendList = _friendList;
       }
    },
    actions: {
@@ -77134,6 +77557,13 @@ var fdetails = Object(__WEBPACK_IMPORTED_MODULE_0__ckcmHelpers_auth__["b" /* get
       loginFirebase: function loginFirebase(context) {
          var user = firebase.auth().currentUser;
          context.commit("firebaseSuccess", user);
+      },
+      friendList: function friendList(context) {
+         axios.get('/api/jwt/Ckcm-network-api/eqwe/friendList').then(function (response) {
+            context.commit("friendList", response.data.friendList);
+         }).catch(function (error) {
+            // rej(error);
+         });
       }
    }
 });

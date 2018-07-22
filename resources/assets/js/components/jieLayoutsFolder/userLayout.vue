@@ -2,17 +2,64 @@
 <!-- :value="leftnavDrawer"  -->
 <!-- <v-navigation-drawer  :value="!leftnavDrawer" stateless permanent flat width="80" clipped app></v-navigation-drawer> -->
    <v-app>
-      <v-navigation-drawer  stateless permanent flat right width="210" clipped app></v-navigation-drawer>
-      <v-navigation-drawer permanent class="transparent" floating stateless width="210" style="overflow: hidden !important;" clipped app>
+      <!-- stateless permanent -->
+      <v-navigation-drawer right stateless permanent  class="transparent"   width="210" style="overflow: hidden !important;" clipped app>
+         <v-card flat color=""   class=" friendscroll scrollbar-primary ">
+               <v-btn v-for="friendList in friendLists" :key="friendList.id" @click="profileMenuFriend(friendList.displayName)"   color="grey" class=" jieleftNav" block flat>
+                  <v-badge color="white"  overlap class="jieBadgeFriend">
+                     <span  slot="badge" style="font-size:16px; border-radius: 50%; border: 4px solid #7CB342 ;"></span>
+                     <v-avatar   class="mr-2"  color="grey lighten-3" size="28">
+                        <img :src="friendList.photoUrl" alt="">
+                     </v-avatar>
+                  </v-badge>
+                  <!-- <img :src="userData.photoUrl" alt=""> -->
+                  <v-toolbar-title style="margin-left:-2px !important;font-size:12px !important; letter-spacing:.5px" class=" textDefault textfm1 grey--text text--darken-3 "> 
+                     {{friendList.displayName}}
+                  </v-toolbar-title>
+                  <v-spacer></v-spacer>
+                  <div style="font-size:11px" class="textfm2 textDefault">2m</div>
+               </v-btn>
+            <!-- </div> -->
+            
+            <!-- <v-btn style="margin-top:-6px" @click="profileMenu" color="grey" class=" jieleftNav" block flat>
+               <v-badge color="white"  overlap class="jieBadgeFriend">
+                  <span  slot="badge" style="font-size:16px; border-radius: 50%; border: 4px solid #7CB342 ;"></span>
+                  <v-avatar  class="mr-2"  color="grey lighten-3" size="28">
+                     <img :src="userData.photoUrl" alt="">
+                  </v-avatar>
+               </v-badge>
+               <v-toolbar-title style="margin-left:-2px !important;font-size:12px !important; letter-spacing:.5px" class=" textDefault textfm1 grey--text text--darken-3 "> 
+                  {{userData.displayName}}
+               </v-toolbar-title>
+               <v-spacer></v-spacer>
+               <div style="font-size:11px" class="textfm2 textDefault">2m</div>
+            </v-btn> -->
+         </v-card>
+         <v-card flat color="white" class="friendscroll scrollbar-primary ">
+            <v-text-field
+               prepend-inner-icon="search"
+               append-icon="mdi-settings"
+               color="primary"
+               @click:append="test"
+               clearable
+               style="position:fixed;bottom:0;margin-bottom:-30px;font-size:14px;width:100%"
+               class="textfm1 searchfriend"
+               placeholder="Search"
+               solo
+            ></v-text-field>
+         </v-card>
+
+      </v-navigation-drawer>
+      <v-navigation-drawer  class="transparent" floating  width="230" style="overflow: hidden !important;" clipped app>
          <v-card flat color="transparent" class="mt-3 ml-5">
             <v-btn @click="profileMenu" color="grey"  small class=" jieleftNav" block flat>
                <!-- Dropdown -->
-               <v-avatar class="mr-1 " color="red--after" size="23px">
+               <v-avatar class="mr-1" color="grey lighten-3" size="20px">
                   <img :src="userData.photoUrl" alt="">
                </v-avatar>
-               <div style="font-size:13px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault textfm1">{{userData.displayName}}</div> 
+               <div style="font-size:13px;margin-left:1px letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault textfm1">{{userData.displayName}}</div> 
                <v-spacer></v-spacer>
-               <v-icon style="font-size:15px !important" color="grey">mdi-lastpass</v-icon>
+               <v-icon style="font-size:15px !important" color="grey">mdi-dots-horizontal</v-icon>
             </v-btn>
          </v-card>
 
@@ -85,8 +132,10 @@
 
        
       </v-navigation-drawer>
-      <v-toolbar   clipped-left dark class="mycolor1 jieLandingBg  mr-5  " flat app dense >
-         <!-- <v-toolbar-side-icon class="" @click="() => (showNav = !showNav)"></v-toolbar-side-icon> -->
+      <!-- jieLandingBg -->
+      <!-- mycolor1 -->
+      <v-toolbar   clipped-left dark class="mr-5 deep-purple darken-4 jieLandingBg darken-5" flat app dense >
+         <!-- <v-toolbar-side-icon class="" @click="(mycolor1) => (showNav = !showNav)"></v-toolbar-side-icon> -->
          <v-toolbar-title class="primaryColortext--text subheading ">
             <!-- <span class="subheading white--text">Christ the King Network</span> -->
          </v-toolbar-title>
@@ -163,7 +212,7 @@
                </div> -->
                <span class="textfm1" style="font-size:11.5px !important">Notifications</span>
                <v-menu flat slot="activator"  offset-y nudge-left="44px">
-                     <v-btn slot="activator"  style="margin-right:12px !important;" icon>
+                     <v-btn slot="activator" red  icon>
                         <!-- <v-badge color="red" >
                            <span slot="badge" class="textfm1" style="font-size:10px">2</span>
                            <v-icon style="font-size:17px !important">mdi-bell</v-icon>
@@ -178,14 +227,16 @@
                         </v-badge>
                      </v-btn>
                   
-                     <div class="" style="
+                     <v-flex reverse>
+                        <div class="" style="
                         margin-left:56.5px;
                         width: 0;
                         height: 0;
                         border-left: 6px solid transparent;
                         border-right: 6px solid transparent;
-                        border-bottom: 6px solid white;">
-                     </div>
+                        border-bottom: 6px solid white;"
+                        ></div>
+                     </v-flex> 
                   <v-card>
                      <v-list dense>
                         <!-- v-for="(item, index) in items" -->
@@ -204,22 +255,25 @@
 
          <v-menu offset-y >
                <!-- color="white" flat  -->
-            <v-btn  slot="activator" flat ripple>
+            <v-btn  slot="activator" style="min-width:140px" flat ripple>
                <!-- Dropdown -->
                <v-avatar class="mr-1 " color="red--after" size="25px">
                   <img :src="userData.photoUrl" alt="">
                </v-avatar>
-               <div class="font-weight-thin mr-2 white--text caption  textDefault textfm1"> Hello, {{userData.displayName}}</div> 
+               <div class="font-weight-thin mr-2 white--text caption  textDefault textfm1"> Hello, {{firstname}}</div> 
+               <v-spacer></v-spacer>
                   <v-icon style="font-size:15px !important" color="primary">mdi-menu</v-icon>
             </v-btn>
-               <div class="" style="
-                  margin-left:149.5px;
+
+               <v-layout style="margin-right:17px !important" justify-end >
+                  <div class="" style="
                   width: 0;
                   height: 0;
                   border-left: 6px solid transparent;
                   border-right: 6px solid transparent;
-                  border-bottom: 6px solid white;">
-               </div>
+                  border-bottom: 6px solid white;"
+                  ></div>
+               </v-layout> 
             <v-card >
                <v-list dense>
                   <!-- v-for="(item, index) in items" -->
@@ -227,7 +281,7 @@
                   >
                      <v-list-tile-title class="textfm1" >
                         <v-icon small >mdi-account</v-icon>
-                        Profile   
+                        Profile                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
                      </v-list-tile-title>
                   </v-list-tile>
 
@@ -269,24 +323,40 @@ export default {
       progressDone: false,
       md2: "md4",
       extendSearch: "",
-
-      items: [
+      friendLists: []
+,      items: [
          { title: 'Home', icon: 'dashboard' },
          { title: 'About', icon: 'question_answer' }
       ],
       right: null
    }),
    methods: {
+      test() {
+         alert("success tes")
+      },
       logout () {
          const ckcmcode = Math.random().toString(36).substring(2, 15)  + Math.random().toString(36).substring(2, 15)  + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
          this.$store.commit('logout');
          this.$router.push(`/?stype=lo&jlou=jie_ckcm-code=${ckcmcode}-AfcXyKTxpz7sQ68VmX5mkDW-v78XPvqoICwwqRFwSZgox8TG0GBDSY0Cd9F9pxUwnqr_c2aOJL4xk0WPhFml466P75gCuUkm2Lkm7ZaR2obLnw&smuh=2724&lh=Ac-yQn60G1vPxGhw`);
       },
-      searchInput () {
-         
+      friendList () {
+         let vm = this;
+         axios.get('/api/jwt/Ckcm-network-api/eqwe/friendList')
+         .then((response) =>{
+            vm.friendLists=response.data.friendList
+         })
+         .catch((error) =>{
+            // rej(error);
+         })
       },
       profileMenu () {
          const displayName= this.$store.getters.accountLoginData.user.displayName;
+         const user = displayName.toLocaleLowerCase().replace(/[ ]/g, ".");
+         this.$router.push({
+            path: `/profile/${user}`,
+            });
+      },
+      profileMenuFriend (displayName) {
          const user = displayName.toLocaleLowerCase().replace(/[ ]/g, ".");
          this.$router.push({
             path: `/profile/${user}`,
@@ -303,13 +373,23 @@ export default {
       code () {
          const ckcmcode = Math.random().toString(36).substring(2, 15)  + Math.random().toString(36).substring(2, 15)  + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
          return ckcmcode;
-     }
+     },
+      firstname() {
+         var getFn = this.$store.getters.accountLoginData.user.displayName
+         var firstname = getFn.split(" ");
+         return firstname[0];
+      },
+      // friendLists() {
+        
+      //    return this.$store.getters.friendList
+      // }
    },
    mounted() {
-      // this.$Progress.finish();
-      
+      this.$store.dispatch("friendList")
    },
    created() {
+      this.friendList()
+    
       // this.$Progress.start()
    }
 }
@@ -319,12 +399,7 @@ export default {
 /* html {
    overflow: hidden !important; 
 } */
-.jieBadge .v-badge__badge {
-   margin-right:3px !important;
-   margin-top:4px !important;
-   height:18px !important;
-   width:18px !important;
-}
+
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s;
 }

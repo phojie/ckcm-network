@@ -47,7 +47,7 @@ Vue.use(Vuetify, {
       primaryColortext: '#757575',
       secondaryColortext: '#414141',
 
-      mycolor1: '#151126',
+      mycolor1: '#167F39',
       mycolor2: '#0065ff', //blue
       
       // background color
