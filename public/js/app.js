@@ -54404,7 +54404,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* html {\r\n   overflow: hidden !important; \r\n} */\n.fade-enter-active, .fade-leave-active {\r\n  -webkit-transition: opacity .5s;\r\n  transition: opacity .5s;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\r\n  opacity: 0;\n}\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* html {\r\n   overflow: hidden !important; \r\n} */\n.fade-enter-active, .fade-leave-active {\r\n  -webkit-transition: opacity .5s;\r\n  transition: opacity .5s;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\r\n  opacity: 0;\n}\r\n", ""]);
 
 // exports
 
@@ -54415,7 +54415,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
 //
 //
 //
@@ -54837,85 +54836,87 @@ var render = function() {
               attrs: { flat: "", color: "" }
             },
             _vm._l(_vm.friendLists, function(friendList) {
-              return _c(
-                "v-btn",
-                {
-                  key: friendList.id,
-                  staticClass: " jieleftNav",
-                  attrs: { color: "grey", block: "", flat: "" },
-                  on: {
-                    click: function($event) {
-                      _vm.profileMenuFriend(friendList.displayName)
-                    }
-                  }
-                },
-                [
-                  _c(
-                    "v-badge",
+              return friendList.email != _vm.userData.email
+                ? _c(
+                    "v-btn",
                     {
-                      staticClass: "jieBadgeFriend",
-                      attrs: { color: "white", overlap: "" }
-                    },
-                    [
-                      _c("span", {
-                        staticStyle: {
-                          "font-size": "16px",
-                          "border-radius": "50%",
-                          border: "4px solid #7CB342"
-                        },
-                        attrs: { slot: "badge" },
-                        slot: "badge"
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "v-avatar",
-                        {
-                          staticClass: "mr-2",
-                          attrs: { color: "grey lighten-3", size: "28" }
-                        },
-                        [
-                          _c("img", {
-                            attrs: { src: friendList.photoUrl, alt: "" }
-                          })
-                        ]
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-toolbar-title",
-                    {
-                      staticClass:
-                        " textDefault textfm1 grey--text text--darken-3 ",
-                      staticStyle: {
-                        "margin-left": "-2px !important",
-                        "font-size": "12px !important",
-                        "letter-spacing": ".5px"
+                      key: friendList.id,
+                      staticClass: " jieleftNav",
+                      attrs: { color: "grey", block: "", flat: "" },
+                      on: {
+                        click: function($event) {
+                          _vm.profileMenuFriend(friendList.displayName)
+                        }
                       }
                     },
                     [
-                      _vm._v(
-                        " \r\n                     " +
-                          _vm._s(friendList.displayName) +
-                          "\r\n                  "
+                      _c(
+                        "v-badge",
+                        {
+                          staticClass: "jieBadgeFriend",
+                          attrs: { color: "white", overlap: "" }
+                        },
+                        [
+                          _c("span", {
+                            staticStyle: {
+                              "font-size": "16px",
+                              "border-radius": "50%",
+                              border: "4px solid #7CB342"
+                            },
+                            attrs: { slot: "badge" },
+                            slot: "badge"
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "v-avatar",
+                            {
+                              staticClass: "mr-2",
+                              attrs: { color: "grey lighten-3", size: "28" }
+                            },
+                            [
+                              _c("img", {
+                                attrs: { src: friendList.photoUrl, alt: "" }
+                              })
+                            ]
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-toolbar-title",
+                        {
+                          staticClass:
+                            " textDefault textfm1 grey--text text--darken-3 ",
+                          staticStyle: {
+                            "margin-left": "-2px !important",
+                            "font-size": "12px !important",
+                            "letter-spacing": ".5px"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            " \r\n                     " +
+                              _vm._s(friendList.displayName) +
+                              "\r\n                  "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("v-spacer"),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "textfm2 textDefault",
+                          staticStyle: { "font-size": "11px" }
+                        },
+                        [_vm._v("2m")]
                       )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("v-spacer"),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "textfm2 textDefault",
-                      staticStyle: { "font-size": "11px" }
-                    },
-                    [_vm._v("2m")]
+                    ],
+                    1
                   )
-                ],
-                1
-              )
+                : _vm._e()
             })
           ),
           _vm._v(" "),

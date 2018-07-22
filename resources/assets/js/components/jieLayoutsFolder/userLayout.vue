@@ -5,7 +5,7 @@
       <!-- stateless permanent -->
       <v-navigation-drawer right stateless permanent  class="transparent"   width="210" style="overflow: hidden !important;" clipped app>
          <v-card flat color=""   class=" friendscroll scrollbar-primary ">
-               <v-btn v-for="friendList in friendLists" :key="friendList.id" @click="profileMenuFriend(friendList.displayName)"   color="grey" class=" jieleftNav" block flat>
+               <v-btn v-for="friendList in friendLists" :key="friendList.id" v-if="friendList.email != userData.email" @click="profileMenuFriend(friendList.displayName)"   color="grey" class=" jieleftNav" block flat>
                   <v-badge color="white"  overlap class="jieBadgeFriend">
                      <span  slot="badge" style="font-size:16px; border-radius: 50%; border: 4px solid #7CB342 ;"></span>
                      <v-avatar   class="mr-2"  color="grey lighten-3" size="28">
@@ -251,7 +251,6 @@
                   </v-card>
                </v-menu>
             </v-tooltip>
-
 
          <v-menu offset-y >
                <!-- color="white" flat  -->
