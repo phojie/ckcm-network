@@ -52569,7 +52569,7 @@ var render = function() {
         {
           staticClass: "jieLandingBg mycolor1",
           staticStyle: { "min-height": "700px", "border-radius": "0" },
-          attrs: { flat: "", height: "auto" }
+          attrs: { flat: "", height: "100%" }
         },
         [
           _c(
@@ -56227,7 +56227,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             vm.timeDisplay = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h:mma');
             var hour = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h');
             var a = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('a');
-            if (a == 'pm' && hour > 1 && hour <= 5 || a == 'pm' && hour == 12) {
+            if (a == 'pm' && hour >= 1 && hour <= 5 || a == 'pm' && hour == 12) {
                vm.greet = "Good afternoon , " + vm.firstname;
             } else if (a == 'pm' && hour >= 6) {
                vm.greet = "Good evening , " + vm.firstname;
@@ -56252,7 +56252,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          vm.timeDisplay = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h:mma');
          var hour = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h');
          var a = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('a');
-         if (a == 'pm' && hour > 1 && hour <= 5 || a == 'pm' && hour == 12) {
+         if (a == 'pm' && hour >= 1 && hour <= 5 || a == 'pm' && hour == 12) {
             vm.greet = "Good afternoon , " + vm.firstname;
          } else if (a == 'pm' && hour >= 6) {
             vm.greet = "Good evening , " + vm.firstname;
@@ -56920,7 +56920,7 @@ var render = function() {
                                     {
                                       staticClass: "mr-2 ",
                                       attrs: {
-                                        color: "grey--after",
+                                        color: "grey lighten-3",
                                         size: "33"
                                       }
                                     },

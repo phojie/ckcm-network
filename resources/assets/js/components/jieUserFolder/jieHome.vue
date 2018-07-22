@@ -164,7 +164,7 @@
                   <v-btn @click="profileMenu" color="" icon style="height:34px !important; width:34px !important" class=" jieleftNav"  flat>
                      <v-badge color="white"  overlap class="jieBadgeNews">
                         <span  slot="badge" class="" style="font-size:16px; border-radius: 50%; border: 4.5px solid #7CB342 ;"></span>
-                        <v-avatar class="mr-2 " color="grey--after" size="33">
+                        <v-avatar class="mr-2 " color="grey lighten-3" size="33">
                            <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
                         </v-avatar>
                      </v-badge>
@@ -275,7 +275,7 @@ export default {
                   vm.timeDisplay = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h:mma');
                   let hour = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h');
                   let a = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('a');
-                     if ( a == 'pm' && hour > 1 && hour <= 5 || a == 'pm' && hour == 12) {
+                     if ( a == 'pm' && hour >= 1 && hour <= 5 || a == 'pm' && hour == 12) {
                         vm.greet = "Good afternoon , " +vm.firstname;
                      } else if ( a == 'pm' && hour >= 6) {
                         vm.greet = "Good evening , " + vm.firstname;
@@ -302,7 +302,7 @@ export default {
             vm.timeDisplay = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h:mma');
             let hour = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h');
             let a = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('a');
-               if ( a == 'pm' && hour > 1 && hour <= 5 || a == 'pm' && hour == 12) {
+               if ( a == 'pm' && hour >= 1 && hour <= 5 || a == 'pm' && hour == 12) {
                   vm.greet = "Good afternoon , " + vm.firstname;
                } else if ( a == 'pm' && hour >= 6) {
                   vm.greet = "Good evening , " + vm.firstname;

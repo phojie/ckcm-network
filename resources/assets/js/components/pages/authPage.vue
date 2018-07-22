@@ -1,6 +1,6 @@
 <template>
 <v-app >
-   <v-card  class="jieLandingBg mycolor1" flat height="auto" style="min-height: 700px; border-radius: 0" >
+   <v-card  class="jieLandingBg mycolor1" flat height="100%" style="min-height: 700px; border-radius: 0" >
    <v-toolbar flat dark color="transparent">
       <v-toolbar-side-icon class="hidden-md-and-up"></v-toolbar-side-icon>
       <v-toolbar-title class="primaryColortext--text subheading mx-5 ">
