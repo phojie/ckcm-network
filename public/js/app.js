@@ -56174,17 +56174,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-
-// var moment = require('moment-timezone');
-
-// import moment from 'moment';
-// moment().tz("America/Los_Angeles").format();
 
 /* harmony default export */ __webpack_exports__["default"] = ({
    data: function data() {
@@ -56192,7 +56181,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          timeDisplay: '',
          greet: '',
          worldTime: [],
-         bottomNav: 'recent'
+         whatisFunction: false,
+         whatisClass: "",
+         bottomNav: 'recent',
+         whatisFlex: 'xs7'
       };
    },
    computed: {
@@ -56206,6 +56198,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
    },
    methods: {
+      test: function test() {
+         alert("success");
+      },
+      whatisFunctionMethod: function whatisFunctionMethod() {
+         this.whatisClass = "mb-3 elevation-10";
+         this.whatisFunction = true;
+         this.whatisFlex = "xs11";
+      },
+      whatisFunctionMethodFalse: function whatisFunctionMethodFalse() {
+         this.whatisFunction = false;
+         this.whatisClass = "";
+         this.whatisFlex = "xs7";
+      },
       profileMenu: function profileMenu() {
          var displayName = this.$store.getters.accountLoginData.user.displayName;
          var user = displayName.toLocaleLowerCase().replace(/[ ]/g, ".");
@@ -56277,7 +56282,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "v-layout",
-    { staticClass: "mt-2 white" },
+    { staticClass: "mt-2 " },
     [
       _c(
         "v-flex",
@@ -56288,11 +56293,14 @@ var render = function() {
         [
           _c(
             "v-card",
-            { staticClass: " jieSvgBg1 pa-1 ", attrs: { flat: "" } },
+            { staticClass: " jieSvgBg1  ", attrs: { flat: "" } },
             [
               _c(
                 "v-layout",
-                { attrs: { wrap: "", color: "transparent" } },
+                {
+                  class: _vm.whatisClass,
+                  attrs: { wrap: "", color: "transparent" }
+                },
                 [
                   _c(
                     "v-flex",
@@ -56487,58 +56495,68 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "v-flex",
-                    { attrs: { xs7: "" } },
+                    { class: _vm.whatisFlex },
                     [
                       _c("v-textarea", {
                         staticClass: "jiew textfm1",
                         staticStyle: { "font-size": "15px !important" },
                         attrs: {
-                          rows: "2",
+                          "row-height": "10",
                           placeholder: "What is your main focus for today?",
                           flat: "",
                           solo: "",
                           "auto-grow": ""
+                        },
+                        on: {
+                          click: _vm.whatisFunctionMethod,
+                          blur: _vm.whatisFunctionMethodFalse
                         }
                       })
                     ],
                     1
                   ),
                   _vm._v(" "),
-                  _c(
-                    "v-flex",
-                    {
-                      staticStyle: { "margin-top": "1px" },
-                      attrs: { xs4: "" }
-                    },
-                    [
-                      _c(
-                        "span",
-                        {
-                          staticClass: "textfm2",
-                          staticStyle: { "font-size": "27px" }
-                        },
-                        [_vm._v(_vm._s(_vm.timeDisplay))]
-                      ),
-                      _vm._v(" "),
-                      _c("br"),
-                      _vm._v(" "),
-                      _c(
-                        "span",
-                        {
-                          staticClass: "textfm2",
-                          staticStyle: { "font-size": "13px" }
-                        },
-                        [_vm._v(" " + _vm._s(_vm.greet))]
-                      )
-                    ]
-                  )
+                  !_vm.whatisFunction
+                    ? _c("v-flex", { staticStyle: { "margin-top": "1px" } }, [
+                        _c(
+                          "span",
+                          {
+                            staticClass: "textfm2",
+                            staticStyle: { "font-size": "27px" }
+                          },
+                          [_vm._v(_vm._s(_vm.timeDisplay))]
+                        ),
+                        _vm._v(" "),
+                        _c("br"),
+                        _vm._v(" "),
+                        _c(
+                          "span",
+                          {
+                            staticClass: "textfm2",
+                            staticStyle: { "font-size": "13px" }
+                          },
+                          [_vm._v(" " + _vm._s(_vm.greet))]
+                        )
+                      ])
+                    : _vm._e()
                 ],
                 1
               ),
               _vm._v(" "),
+              _vm.whatisFunction
+                ? _c("v-progress-linear", {
+                    staticStyle: { margin: "0px !important" },
+                    attrs: {
+                      height: "2",
+                      color: "primary",
+                      indeterminate: true
+                    }
+                  })
+                : _vm._e(),
+              _vm._v(" "),
               _c(
                 "v-flex",
-                { staticClass: "ma-2" },
+                { staticClass: "pa-2" },
                 [
                   _c(
                     "v-btn",

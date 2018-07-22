@@ -1,9 +1,8 @@
 <template>
-   <v-layout class="mt-2 white">
+   <v-layout class="mt-2 ">
       <v-flex style="border:1px #EEEEEE solid" class="mr-2 mt-2 ml-3 xs12 md8 lg8">
-         <v-card flat  class=" jieSvgBg1 pa-1 " >
-            <!-- <v-container fluid> -->
-            <v-layout wrap color="transparent" class="" >
+         <v-card flat  class=" jieSvgBg1  " >
+            <v-layout wrap color="transparent" :class="whatisClass" >
                <v-flex xs12  class="mb-1" >
                   <v-layout>
                      <v-btn
@@ -48,8 +47,8 @@
                         <v-icon dark  color="grey darken-4" style="font-size:17px">mdi-dots-horizontal</v-icon>
                      </v-btn>
                   </v-layout>
-               </v-flex>
 
+               </v-flex>
                <v-flex  xs1 class="mt-3">
                   <v-btn @click="profileMenu" color="" icon style="height:34px !important; width:34px !important;margin-top:-5px" class=" jieleftNav"  flat>
                      <v-badge color="white"  overlap class="jieBadgeNews">
@@ -60,17 +59,19 @@
                      </v-badge>
                   </v-btn> 
                </v-flex>
-               <v-flex  xs7>
+               <v-flex :class="whatisFlex">
                   <v-textarea 
-                     class="jiew textfm1"  
-                     rows="2"
+                     class="jiew textfm1"
+                     row-height="10"
                      style="font-size:15px !important"
                      placeholder="What is your main focus for today?"
+                     @click="whatisFunctionMethod"
+                     @blur="whatisFunctionMethodFalse"
                      flat solo
                      auto-grow
                   ></v-textarea>
                </v-flex>
-               <v-flex xs4 style="margin-top:1px">
+               <v-flex v-if="!whatisFunction" style="margin-top:1px">
                   <!-- <p class="text-xs-center"> -->
                   <span style="font-size:27px" class="textfm2">{{timeDisplay}}</span>
                   <br>
@@ -78,82 +79,82 @@
                   <!-- </p> -->
                </v-flex>
             </v-layout>
-               <v-flex class="ma-2">
+            <v-progress-linear  v-if="whatisFunction"  height="2" style="margin:0px !important" color="primary" :indeterminate="true"></v-progress-linear>
+            <v-flex class="pa-2">
+               <v-btn icon small class="ma-0">
+                  <v-avatar color="red--after" size="24px">
+                     <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
+                  </v-avatar>
+               </v-btn>
+               <v-btn icon small  class="ma-0">
+                  <v-avatar class="" color="red--after" size="24px">
+                     <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
+                  </v-avatar>
+               </v-btn>
                   <v-btn icon small class="ma-0">
-                     <v-avatar color="red--after" size="24px">
-                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
-                     </v-avatar>
-                  </v-btn>
+                  <v-avatar color="red--after" size="24px">
+                     <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
+                  </v-avatar>
+               </v-btn>
+               <v-btn icon small  class="ma-0">
+                  <v-avatar class="" color="red--after" size="24px">
+                     <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36475819_1766742130062368_2660206145032945664_n.jpg?_nc_cat=0&oh=aa21af20b1f8617026868f31d44b7b72&oe=5BCD5FED" alt="">
+                  </v-avatar>
+               </v-btn> <v-btn icon small class="ma-0">
+                  <v-avatar color="red--after" size="24px">
+                     <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
+                  </v-avatar>
+               </v-btn>
+               <v-btn icon small  class="ma-0">
+                  <v-avatar class="" color="red--after" size="24px">
+                     <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
+                  </v-avatar>
+               </v-btn> <v-btn icon small class="ma-0">
+                  <v-avatar color="red--after" size="24px">
+                     <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
+                  </v-avatar>
+               </v-btn>
+               <v-btn icon small  class="ma-0">
+                  <v-avatar class="" color="red--after" size="24px">
+                     <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
+                  </v-avatar>
+               </v-btn>
                   <v-btn icon small  class="ma-0">
-                     <v-avatar class="" color="red--after" size="24px">
-                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
-                     </v-avatar>
-                  </v-btn>
-                   <v-btn icon small class="ma-0">
-                     <v-avatar color="red--after" size="24px">
-                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
-                     </v-avatar>
-                  </v-btn>
-                  <v-btn icon small  class="ma-0">
-                     <v-avatar class="" color="red--after" size="24px">
-                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36475819_1766742130062368_2660206145032945664_n.jpg?_nc_cat=0&oh=aa21af20b1f8617026868f31d44b7b72&oe=5BCD5FED" alt="">
-                     </v-avatar>
-                  </v-btn> <v-btn icon small class="ma-0">
-                     <v-avatar color="red--after" size="24px">
-                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
-                     </v-avatar>
-                  </v-btn>
-                  <v-btn icon small  class="ma-0">
-                     <v-avatar class="" color="red--after" size="24px">
-                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
-                     </v-avatar>
-                  </v-btn> <v-btn icon small class="ma-0">
-                     <v-avatar color="red--after" size="24px">
-                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
-                     </v-avatar>
-                  </v-btn>
-                  <v-btn icon small  class="ma-0">
-                     <v-avatar class="" color="red--after" size="24px">
-                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
-                     </v-avatar>
-                  </v-btn>
-                    <v-btn icon small  class="ma-0">
-                     <v-avatar class="" color="red--after" size="24px">
-                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
-                     </v-avatar>
-                  </v-btn>
-                   <v-btn icon small class="ma-0">
-                     <v-avatar color="red--after" size="24px">
-                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
-                     </v-avatar>
-                  </v-btn>
-                  <v-btn icon small  class="ma-0">
-                     <v-avatar class="" color="red--after" size="24px">
-                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36475819_1766742130062368_2660206145032945664_n.jpg?_nc_cat=0&oh=aa21af20b1f8617026868f31d44b7b72&oe=5BCD5FED" alt="">
-                     </v-avatar>
-                  </v-btn> <v-btn icon small class="ma-0">
-                     <v-avatar color="red--after" size="24px">
-                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
-                     </v-avatar>
-                  </v-btn>
-                  <v-btn icon small  class="ma-0">
-                     <v-avatar class="" color="red--after" size="24px">
-                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
-                     </v-avatar>
-                  </v-btn> <v-btn icon small class="ma-0">
-                     <v-avatar color="red--after" size="24px">
-                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
-                     </v-avatar>
-                  </v-btn>
-                  <v-btn icon small  class="ma-0">
-                     <v-avatar class="" color="red--after" size="24px">
-                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
-                     </v-avatar>
-                  </v-btn>
+                  <v-avatar class="" color="red--after" size="24px">
+                     <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
+                  </v-avatar>
+               </v-btn>
+                  <v-btn icon small class="ma-0">
+                  <v-avatar color="red--after" size="24px">
+                     <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
+                  </v-avatar>
+               </v-btn>
+               <v-btn icon small  class="ma-0">
+                  <v-avatar class="" color="red--after" size="24px">
+                     <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36475819_1766742130062368_2660206145032945664_n.jpg?_nc_cat=0&oh=aa21af20b1f8617026868f31d44b7b72&oe=5BCD5FED" alt="">
+                  </v-avatar>
+               </v-btn> <v-btn icon small class="ma-0">
+                  <v-avatar color="red--after" size="24px">
+                     <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
+                  </v-avatar>
+               </v-btn>
+               <v-btn icon small  class="ma-0">
+                  <v-avatar class="" color="red--after" size="24px">
+                     <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
+                  </v-avatar>
+               </v-btn> <v-btn icon small class="ma-0">
+                  <v-avatar color="red--after" size="24px">
+                     <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
+                  </v-avatar>
+               </v-btn>
+               <v-btn icon small  class="ma-0">
+                  <v-avatar class="" color="red--after" size="24px">
+                     <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
+                  </v-avatar>
+               </v-btn>
 
 
-               </v-flex>
-               
+            </v-flex>
             <!-- </v-container> -->
          </v-card>
          <v-card flat class="jieSvgBg1" >
@@ -220,27 +221,18 @@
          <v-card flat  class="grey lighten-4 mb-2" height="150px">
          </v-card>
       </v-flex>
-
-      <!-- <v-flex class=" mr-4 xs5">
-         <v-card class="green " style="position:fixed" height="400px">
-         </v-card>
-      </v-flex> -->
    </v-layout>
-   
 </template>
-
 <script>
-// var moment = require('moment-timezone');
-
-// import moment from 'moment';
-// moment().tz("America/Los_Angeles").format();
-
 export default {  
    data: () => ({
       timeDisplay: '',
       greet: '',
       worldTime: [],
-      bottomNav: 'recent'
+      whatisFunction: false,
+      whatisClass: "",
+      bottomNav: 'recent',
+      whatisFlex: 'xs7'
    }),
    computed: {
       userData() {
@@ -253,12 +245,26 @@ export default {
       }
    },
    methods: {
+      test() {
+         alert("success")
+      },
+      whatisFunctionMethod () {
+         this.whatisClass = "mb-3 elevation-10"
+         this.whatisFunction = true
+         this.whatisFlex = "xs11"
+      },
+      whatisFunctionMethodFalse () {
+         this.whatisFunction = false
+         this.whatisClass = ""
+         this.whatisFlex = "xs7"
+
+      },
       profileMenu () {
          const displayName= this.$store.getters.accountLoginData.user.displayName;
          const user = displayName.toLocaleLowerCase().replace(/[ ]/g, ".");
          this.$router.push({
             path: `/profile/${user}`,
-            });
+         });
       }
    },
    mounted: function() {
