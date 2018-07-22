@@ -40657,11 +40657,11 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_6_vuet
         mycolor1: '#167F39',
         mycolor2: '#0065ff', //blue
 
-        // background color
-        mycolor3: '#233D4D', //dark purple
-
         //fake white
-        white2: '#FFFFF1'
+        white2: '#FFFFF1',
+
+        // jiethemeColor
+        mycolor3: '#170e3f' //dark purple
     }
 });
 //  iconfont: 'mdi', // 'md' || 'mdi' || 'fa' || 'fa4' f99121
@@ -52567,7 +52567,7 @@ var render = function() {
       _c(
         "v-card",
         {
-          staticClass: "jieLandingBg mycolor1",
+          staticClass: "jieLandingBg mycolor3",
           staticStyle: { "min-height": "700px", "border-radius": "0" },
           attrs: { flat: "", height: "100%" }
         },
@@ -52784,16 +52784,22 @@ var render = function() {
                                 "v-layout",
                                 {
                                   staticClass: "mt-4",
-                                  attrs: { row: "", wrap: "" }
+                                  attrs: {
+                                    row: "",
+                                    wrap: "",
+                                    "align-center": "",
+                                    "align-content-center": "",
+                                    "justify-center": ""
+                                  }
                                 },
                                 [
                                   _c(
                                     "v-flex",
                                     {
                                       attrs: {
-                                        "offset-sm1": "",
                                         xs12: "",
                                         lg7: "",
+                                        md8: "",
                                         sm12: ""
                                       }
                                     },
@@ -52812,7 +52818,12 @@ var render = function() {
                                     "v-flex",
                                     {
                                       staticClass: "px-2 mt-2",
-                                      attrs: { xs12: "", lg4: "", sm12: "" }
+                                      attrs: {
+                                        xs12: "",
+                                        lg4: "",
+                                        md10: "",
+                                        sm12: ""
+                                      }
                                     },
                                     [
                                       _c(
@@ -55245,7 +55256,7 @@ var render = function() {
       _c(
         "v-toolbar",
         {
-          staticClass: "mr-5 deep-purple darken-4 jieLandingBg darken-5",
+          staticClass: "mr-5 mycolor3 jieLandingBg darken-5",
           attrs: { "clipped-left": "", dark: "", flat: "", app: "", dense: "" }
         },
         [
@@ -56202,7 +56213,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          alert("success");
       },
       whatisFunctionMethod: function whatisFunctionMethod() {
-         this.whatisClass = "mb-3 elevation-10";
+         this.whatisClass = "mb-1 elevation-3";
          this.whatisFunction = true;
          this.whatisFlex = "xs11";
       },
@@ -56298,6 +56309,7 @@ var render = function() {
               _c(
                 "v-layout",
                 {
+                  staticClass: "px-1",
                   class: _vm.whatisClass,
                   attrs: { wrap: "", color: "transparent" }
                 },
@@ -56522,7 +56534,7 @@ var render = function() {
                           "span",
                           {
                             staticClass: "textfm2",
-                            staticStyle: { "font-size": "27px" }
+                            staticStyle: { "font-size": "28px" }
                           },
                           [_vm._v(_vm._s(_vm.timeDisplay))]
                         ),
@@ -56532,8 +56544,8 @@ var render = function() {
                         _c(
                           "span",
                           {
-                            staticClass: "textfm2",
-                            staticStyle: { "font-size": "13px" }
+                            staticClass: "textfm2 black--text",
+                            staticStyle: { "font-size": "15px" }
                           },
                           [_vm._v(" " + _vm._s(_vm.greet))]
                         )
@@ -56542,17 +56554,6 @@ var render = function() {
                 ],
                 1
               ),
-              _vm._v(" "),
-              _vm.whatisFunction
-                ? _c("v-progress-linear", {
-                    staticStyle: { margin: "0px !important" },
-                    attrs: {
-                      height: "2",
-                      color: "primary",
-                      indeterminate: true
-                    }
-                  })
-                : _vm._e(),
               _vm._v(" "),
               _c(
                 "v-flex",
@@ -56964,8 +56965,9 @@ var render = function() {
                               "p",
                               {
                                 staticClass:
-                                  "mb-0 deep-purple--text font-weight-bold textfm1",
-                                staticStyle: { "font-size": "14px" }
+                                  "mb-0 mycolor3--text font-weight-bold textfm1",
+                                staticStyle: { "font-size": "14px" },
+                                on: { click: _vm.profileMenu }
                               },
                               [_vm._v("Phojie Rengel")]
                             ),

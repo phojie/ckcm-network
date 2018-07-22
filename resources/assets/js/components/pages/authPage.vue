@@ -1,6 +1,6 @@
 <template>
 <v-app >
-   <v-card  class="jieLandingBg mycolor1" flat height="100%" style="min-height: 700px; border-radius: 0" >
+   <v-card  class="jieLandingBg mycolor3" flat height="100%" style="min-height: 700px; border-radius: 0" >
    <v-toolbar flat dark color="transparent">
       <v-toolbar-side-icon class="hidden-md-and-up"></v-toolbar-side-icon>
       <v-toolbar-title class="primaryColortext--text subheading mx-5 ">
@@ -43,15 +43,15 @@
    </v-toolbar>
       <div class=" mt-5">
          <v-content slot="extension">
-            <v-container  >
+            <v-container>
                <v-tabs-items v-model="landingTabs">
                   <!-- Landing and Login Area -->
                   <v-tab-item id="login">
-                     <v-layout class="mt-4" row wrap>
-                        <v-flex class="" offset-sm1  xs12 lg7 sm12>
+                     <v-layout class="mt-4" row wrap align-center align-content-center justify-center>
+                        <v-flex class="" xs12 lg7 md8 sm12>
                               <img src="/imgs/ckcm-network-homepage-illustration.png" alt="">
                         </v-flex>
-                        <v-flex  class="px-2 mt-2" xs12 lg4 sm12>
+                        <v-flex  class="px-2 mt-2" xs12 lg4 md10 sm12>
                            <v-card v-show="passwordReset" class=" jieSvgBg1" >
                              <v-card-text class="" >
                                  <div class="headline">Password Reset</div>

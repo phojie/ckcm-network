@@ -2,7 +2,7 @@
    <v-layout class="mt-2 ">
       <v-flex style="border:1px #EEEEEE solid" class="mr-2 mt-2 ml-3 xs12 md8 lg8">
          <v-card flat  class=" jieSvgBg1  " >
-            <v-layout wrap color="transparent" :class="whatisClass" >
+            <v-layout wrap color="transparent" :class="whatisClass" class="px-1" >
                <v-flex xs12  class="mb-1" >
                   <v-layout>
                      <v-btn
@@ -73,13 +73,13 @@
                </v-flex>
                <v-flex v-if="!whatisFunction" style="margin-top:1px">
                   <!-- <p class="text-xs-center"> -->
-                  <span style="font-size:27px" class="textfm2">{{timeDisplay}}</span>
+                  <span style="font-size:28px" class="textfm2">{{timeDisplay}}</span>
                   <br>
-                  <span class="textfm2" style="font-size:13px"> {{greet}}</span>
+                  <span class="textfm2 black--text" style="font-size:15px"> {{greet}}</span>
                   <!-- </p> -->
                </v-flex>
             </v-layout>
-            <v-progress-linear  v-if="whatisFunction"  height="2" style="margin:0px !important" color="primary" :indeterminate="true"></v-progress-linear>
+            <!-- <v-progress-linear  v-if="whatisFunction"  height="2" style="margin:0px !important" color="grey" :indeterminate="true"></v-progress-linear> -->
             <v-flex class="pa-2">
                <v-btn icon small class="ma-0">
                   <v-avatar color="red--after" size="24px">
@@ -171,7 +171,7 @@
                      </v-badge>
                   </v-btn> 
                   <div class="mt-2 ">
-                  <p style="font-size:14px" class="mb-0 deep-purple--text font-weight-bold textfm1">Phojie Rengel</p>
+                  <p @click="profileMenu" style="font-size:14px" class="mb-0 mycolor3--text font-weight-bold textfm1">Phojie Rengel</p>
                   <p style="margin-top:-5px" class="grey--text text-lighten-2 caption textfm1">2m ago</p>
                   </div>
 
@@ -249,7 +249,7 @@ export default {
          alert("success")
       },
       whatisFunctionMethod () {
-         this.whatisClass = "mb-3 elevation-10"
+         this.whatisClass = "mb-1 elevation-3"
          this.whatisFunction = true
          this.whatisFlex = "xs11"
       },
