@@ -9,4 +9,3 @@ jie.stylus('resources/assets/stylus/app.styl', 'public/css', {
 });
 
 jie.browserSync('spa.test');
-

@@ -16,6 +16,8 @@
       {{--  <link href="https://fonts.googleapis.com/css?family=Overlock" rel="stylesheet">  --}}
 		<link rel="shortcut icon"  href="favicon.ico" />
 		<!--upscript-->      
+      
+       
 	</head>
 	<body>
 		<div id="jie">
@@ -23,9 +25,19 @@
 		</div>
 	</body>
 		<!-- script -->
-   <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
-   <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>
-	<script src="{{ asset('js/app.js') }}"></script>
 
+         
+      <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
+
+      <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-database.js"></script>
+      <script src="{{ asset('js/app.js') }}"></script>
+
+         {{--  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-firestore.js"></script>
+         <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-messaging.js"></script>
+         <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-functions.js"></script>  --}}
+
+      {{--  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-firestore.js"></script>   --}}
+  
 
 </html>
