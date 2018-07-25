@@ -4,36 +4,23 @@
    <v-app>
       <!-- stateless permanent -->
       <v-navigation-drawer right stateless permanent  class="transparent"   width="210" style="overflow: hidden !important;" clipped app>
-         <v-card flat color=""   class=" friendscroll scrollbar-primary ">
-               <v-btn v-for="friendList in friendLists" :key="friendList.id" v-if="friendList.email != userData.email" @click="profileMenuFriend(friendList.displayName)"   color="grey" class=" jieleftNav" block flat>
-                  <v-badge color="white"  overlap class="jieBadgeFriend">
-                     <span  slot="badge" style="font-size:16px; border-radius: 50%; border: 4px solid #7CB342 ;"></span>
-                     <v-avatar   class="mr-2"  color="grey lighten-3" size="28">
-                        <img :src="friendList.photoUrl" alt="">
-                     </v-avatar>
-                  </v-badge>
-                  <!-- <img :src="userData.photoUrl" alt=""> -->
-                  <v-toolbar-title style="margin-left:-2px !important;font-size:12px !important; letter-spacing:.5px" class=" textDefault textfm1 grey--text text--darken-3 "> 
-                     {{friendList.displayName}}
-                  </v-toolbar-title>
-                  <v-spacer></v-spacer>
-                  <div style="font-size:11px" class="textfm2 textDefault">2m</div>
-               </v-btn>
-            <!-- </div> -->
-            
-            <!-- <v-btn style="margin-top:-6px" @click="profileMenu" color="grey" class=" jieleftNav" block flat>
+         <v-card flat color=""   style="padding-top:7px !important" class=" friendscroll scrollbar-primary ">
+           
+            <v-btn style="margin-top:-6px" v-for="friendList in friendLists" :key="friendList.id" v-if="friendList.email != userData.email" @click="profileMenuFriend(friendList.displayName)"   color="grey" class=" jieleftNav" block flat>
                <v-badge color="white"  overlap class="jieBadgeFriend">
-                  <span  slot="badge" style="font-size:16px; border-radius: 50%; border: 4px solid #7CB342 ;"></span>
-                  <v-avatar  class="mr-2"  color="grey lighten-3" size="28">
-                     <img :src="userData.photoUrl" alt="">
+                  <span v-for="user in users" v-if="friendList['ckcm-network_token_id'] === user['.key'] && user.status == 'online'" :key="user['.key']" slot="badge" style="font-size:16px; border-radius: 50%; border: 4px solid #7CB342 ;"></span>
+                  <span v-for="user in users" v-if="friendList['ckcm-network_token_id'] === user['.key'] && user.status != 'online'" :key="user['.key']" slot="badge" style="font-size:16px; border-radius: 50%; border: 4px solid pink ;"></span>
+                  <v-avatar   class="mr-2"  color="grey lighten-3" size="28">
+                     <img :src="friendList.photoUrl" alt="">
                   </v-avatar>
                </v-badge>
+               <!-- <img :src="userData.photoUrl" alt=""> -->
                <v-toolbar-title style="margin-left:-2px !important;font-size:12px !important; letter-spacing:.5px" class=" textDefault textfm1 grey--text text--darken-3 "> 
-                  {{userData.displayName}}
+                  {{friendList.displayName}}
                </v-toolbar-title>
                <v-spacer></v-spacer>
                <div style="font-size:11px" class="textfm2 textDefault">2m</div>
-            </v-btn> -->
+            </v-btn>
          </v-card>
          <v-card flat color="white" class="friendscroll scrollbar-primary ">
             <v-text-field
@@ -315,7 +302,11 @@
 </template>
 
 <script>
+import { usersRef } from '../../firebase.js'
 export default {
+   firebase: {
+      users : usersRef
+   },
    data: () => ({
       mini:true,
       showNav:true,
@@ -327,9 +318,12 @@ export default {
          { title: 'Home', icon: 'dashboard' },
          { title: 'About', icon: 'question_answer' }
       ],
-      right: null
+      right: null,
    }),
    methods: {
+      searchInput() {
+
+      },
       test() {
          alert("success tes")
       },
@@ -378,6 +372,13 @@ export default {
          var firstname = getFn.split(" ");
          return firstname[0];
       },
+      // userFire () {
+      //    var starCountRef = firebase.database().ref('users/' + "7J9naFQsS8M3QZvEdlmyX4Umr402" + '/status');
+      //    starCountRef.on('value', function(snapshot) {
+      //    updateStarCount(postElement, snapshot.val());
+      //    });
+      //    return starCountRef
+      // }
       // friendLists() {
         
       //    return this.$store.getters.friendList

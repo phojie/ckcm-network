@@ -1,5 +1,6 @@
 import { getLocalUser } from "./ckcmHelpers/auth";
 import { getLocalfdetails } from "./ckcmHelpers/auth";
+import { db } from "./firebase";
 import Axios from "axios";
 const user = getLocalUser();
 const fdetails = getLocalfdetails();
@@ -52,28 +53,51 @@ export default {
          localStorage.setItem("fdetails", JSON.stringify(state.fdetails));
       },
       loginSuccess(state, payload) {
+        
          state.alertLogoutDone = false
          state.auth_error = null;
          state.isIn = true;
          state.loading = false;
-         state.accountLoginData = Object.assign({}, payload, {
-               token: payload.access_token
-         });
+         state.accountLoginData = Object.assign({}, payload, {token: payload.access_token});
          localStorage.setItem("user", JSON.stringify(state.accountLoginData));
          // localStorage.user = JSON.stringify(state.accountLoginData);
+         console.log(state.accountLoginData)
+         const id = state.accountLoginData.user["ckcm-network_token_id"]
+         db.ref('users/' + id).set({
+            status: "online",
+          }, function(error) {
+            if (error) {
+               console.log(error)
+              // The write failed...r
+            } else {
+              // Data saved successfully!
+            }
+          });
       },
       logout(state) {
+         const id = state.accountLoginData.user["ckcm-network_token_id"]
+         db.ref('users/' + id).set({
+            status: "offline",
+          }, function(error) {
+            if (error) {
+               console.log(error)
+              // The write failed...r
+            } else {
+              // Data saved successfully!
+            }
+          });
+         
          localStorage.removeItem("user");
          localStorage.removeItem("fdetails");
          state.isIn = false;
          state.fdetails = null ;
          state.accountLoginData = null;
          state.alertLogoutDone = true
-         firebase.auth().signOut().then(function() {
-         // Sign-out successful.
-         }).catch(function(error) {
-         // An error happened.
-         });
+         // firebase.auth().signOut().then(function() {
+         // // Sign-out successful.
+         // }).catch(function(error) {
+         // // An error happened.
+         // });
       },
       jieLoaderOn(state) {
          state.loading = true;
@@ -106,6 +130,7 @@ export default {
       },
       loginFirebase(context) {
          const user = firebase.auth().currentUser;
+         
          context.commit("firebaseSuccess", user)
       },
       friendList(context) {

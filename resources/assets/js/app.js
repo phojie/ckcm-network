@@ -15,24 +15,21 @@ import Vuex from 'vuex';
 import {initialize} from './ckcmHelpers/general';
 import VueProgressBar from 'vue-progressbar'
 import '@mdi/font/css/materialdesignicons.css';
-import moment from 'moment-timezone'
+import firebase from 'firebase';
+import './firebase';
+import VueFire from 'vuefire';
+// import moment from 'moment-timezone';
 
-window.moment = require('moment');
+// import firebase from 'firebase';
+// window.firebase = firebase;
 
+window.moment = require('moment');``
+window.moment = require('moment-timezone')
 // notusing
-import VueHotkey from 'v-hotkey'
-// noted
-// import VueMoment from 'vue-moment'
-// import moment from 'moment-timezone'
-// Vue.use(require('vue-moment'));
-// Vue.use(VueMoment, {
-//     moment,
-// });
 
-/**
- * Functions
- */
-// Vue.use(require('vue-moment'));
+import VueHotkey from 'v-hotkey'
+
+Vue.use(VueFire);
 Vue.use(Vuetify, { 
    theme: {  
       primary: '#fd9800',
@@ -58,7 +55,6 @@ Vue.use(Vuetify, {
    }
  })
 //  iconfont: 'mdi', // 'md' || 'mdi' || 'fa' || 'fa4' f99121
-
 Vue.use(VueHotkey)
 Vue.use(Vuetify);
 Vue.use(Vuelidate)
@@ -78,16 +74,6 @@ Vue.use(VueProgressBar, {
    inverse: false,
    autoFinish: false
 })
-// Initialize Firebase
-const config = {
-    apiKey: "AIzaSyAcYoRTQ4nmID5XjHbPXz543yG5ozz1bFM",
-    authDomain: "authjie.ckcm-network.com",
-    databaseURL: "https://christ-the-king-network.firebaseio.com",
-    projectId: "christ-the-king-network",
-    storageBucket: "christ-the-king-network.appspot.com",
-    messagingSenderId: "631685789688"
-};
-firebase.initializeApp(config);
 
 
 const router = new VueRouter({

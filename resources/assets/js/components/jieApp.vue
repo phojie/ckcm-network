@@ -8,7 +8,7 @@
    <!-- </v-layout> -->
 </template>
 <script>
-
+// import './firebase';
 export default {
    data: () => ({
       windowSize: {
@@ -26,7 +26,6 @@ export default {
       //  [App.vue specific] When App.vue is finish loading finish the progress bar
       this.$Progress.finish()
       // this.onResize()
-
    },
    created () {
       //  [App.vue specific] When App.vue is first loaded start the progress bar
