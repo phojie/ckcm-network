@@ -214,7 +214,8 @@
 import { validationMixin } from 'vuelidate'
 import { email, required } from 'vuelidate/lib/validators';
 import { login } from '../../ckcmHelpers/auth';
-import { signUp } from '../../ckcmHelpers/auth'
+import { signUp } from '../../ckcmHelpers/auth';
+import '../../firebase';
 export default {
    
    mixins: [validationMixin],
@@ -324,8 +325,8 @@ export default {
                   vm.form.email=res;
                   login(vm.$data.form)  
                      .then((res) => {
-                     vm.$store.commit("loginSuccess", res);
                      vm.$store.dispatch("loginFirebase")
+                     vm.$store.commit("loginSuccess", res);
                      vm.$Progress.finish()
                      vm.$store.dispatch("jieLoaderOff")
                      vm.$router.push({ path : '/'})

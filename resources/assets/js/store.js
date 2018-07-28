@@ -93,11 +93,11 @@ export default {
          state.fdetails = null ;
          state.accountLoginData = null;
          state.alertLogoutDone = true
-         // firebase.auth().signOut().then(function() {
-         // // Sign-out successful.
-         // }).catch(function(error) {
-         // // An error happened.
-         // });
+         firebase.auth().signOut().then(function() {
+         // Sign-out successful.
+         }).catch(function(error) {
+         // An error happened.
+         });
       },
       jieLoaderOn(state) {
          state.loading = true;
