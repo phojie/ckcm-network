@@ -1,12 +1,25 @@
 <template>
 <!-- :value="leftnavDrawer"  -->
 <!-- <v-navigation-drawer  :value="!leftnavDrawer" stateless permanent flat width="80" clipped app></v-navigation-drawer> -->
-   <v-app>
+   <v-app class="grey lighten-3"  style="overflow:hidden !important" >
       <!-- stateless permanent -->
       <v-navigation-drawer right stateless permanent  class="transparent"   width="210" style="overflow: hidden !important;" clipped app>
          <v-card flat color=""   style="padding-top:7px !important" class=" friendscroll scrollbar-primary ">
-           
-            <v-btn style="margin-top:-6px" v-for="friendList in friendLists" :key="friendList.id" v-if="friendList.email != userData.email" @click="profileMenuFriend(friendList.displayName)"   color="grey" class=" jieleftNav" block flat>
+            <v-menu
+               :close-on-content-click="false"
+               full-width
+               open-on-click
+               allow-overflow
+               nudge-left="240"
+               min-width="260"
+               max-width="260"
+               close-delay="50"
+               v-for="friendList in friendLists" :key="friendList.id" v-if="friendList.email != userData.email"
+               bottom
+               app
+            >
+            <!-- @click="profileMenuFriend(friendList.displayName)"  -->
+            <v-btn slot="activator" style="margin-top:-6px"    color="grey" class=" jieleftNav" block flat>
                <v-badge color="white"  overlap class="jieBadgeFriend">
                   <span v-for="user in users" v-if="friendList['ckcm-network_token_id'] === user['.key'] && user.status == 'online'" :key="user['.key']" slot="badge" style="font-size:16px; border-radius: 50%; border: 4px solid #7CB342 ;"></span>
                   <span v-for="user in users" v-if="friendList['ckcm-network_token_id'] === user['.key'] && user.status != 'online'" :key="user['.key']" slot="badge" style="font-size:16px; border-radius: 50%; border: 4px solid pink ;"></span>
@@ -15,12 +28,130 @@
                   </v-avatar>
                </v-badge>
                <!-- <img :src="userData.photoUrl" alt=""> -->
-               <v-toolbar-title style="margin-left:-2px !important;font-size:12px !important; letter-spacing:.5px" class=" textDefault textfm1 grey--text text--darken-3 "> 
+               <v-toolbar-title style="margin-left:-2px !important;font-size:14px !important; letter-spacing:.5px;" class="textDefault textfm1 grey--text text--darken-3 "> 
                   {{friendList.displayName}}
                </v-toolbar-title>
                <v-spacer></v-spacer>
                <div style="font-size:11px" class="textfm2 textDefault">2m</div>
             </v-btn>
+               <v-card >
+
+                  <v-avatar style="position:absolute; margin-top:235px"   class="ml-2"  color="grey lighten-3" size="28">
+                     <img :src="userData.photoUrl" alt="">
+                  </v-avatar>
+                  <v-layout  row wrap justify-center align-center align-content-center>
+                     <v-flex xs12 class="grey lighten-5 pa-3 ">
+                        <v-layout  row wrap justify-center align-center align-content-center>
+                           <v-badge color="white"  overlap class="jieBadgeFriendMessage">
+                              <span v-for="user in users" v-if="friendList['ckcm-network_token_id'] === user['.key'] && user.status == 'online'" :key="user['.key']" slot="badge" style="border-radius: 50%; border: 6px solid #7CB342 ;"></span>
+                              <span v-for="user in users" v-if="friendList['ckcm-network_token_id'] === user['.key'] && user.status != 'online'" :key="user['.key']" slot="badge" style="border-radius: 50%; border: 6px solid pink ;"></span>
+                              <v-avatar   color="grey lighten-3" size="70">
+                                 <img :src="friendList.photoUrl" alt="">
+                              </v-avatar>
+                           </v-badge>
+                        </v-layout>
+                        <div class="text-xs-center mt-1">
+                           <div class="subheading font-weight-bold textDefault textfm1"> {{friendList.displayName}}</div>
+                           <div class="body-1 textDefault textfm1"> Caption </div>
+                        </div>
+                     </v-flex>
+                     <!-- 170e3f54 -->
+
+                     <v-flex xs12 class="pa-2">
+                        <div class="caption font-weight-bold textDefault textfm1 grey--text"> ROLES </div>
+                        <div class="caption font-weight-bold textDefault textfm1 grey--text"> NOTE </div>
+                        <!-- <v-chip outline class="caption" small color="aqua" text-color="white">
+                           <v-icon size="15px">mdi-circle</v-icon>
+                           Primary</v-chip> -->
+                     </v-flex>
+                     <v-flex xs12 >
+                        <v-divider></v-divider>
+                     </v-flex>
+                     <v-flex xs12 style="padding-left:30px" class="">
+                           <v-textarea
+                              row-height="12"
+                              background-color="transparent"
+                              box
+                              outline
+                              hide-details
+                              auto-grow
+                              color="primary"
+                              :label="`Message @ ${friendList.displayName}`"
+                              class="textfm1  textDefault"
+                              style="font-size:16px"
+                              value=" "
+                              flat
+                           ></v-textarea>
+                        <!-- <v-chip outline class="caption" small color="aqua" text-color="white">
+                           <v-icon size="15px">mdi-circle</v-icon>
+                           Primary</v-chip> -->
+                     </v-flex>
+                  </v-layout>
+               </v-card>
+               <!-- <v-card flat class="transparent" >
+                  <v-layout>
+                  <v-flex xs11 >
+                  <v-list>
+                     <v-list-tile avatar>
+                        <v-list-tile-avatar>
+                        <img :src="friendList.photoUrl">
+                        </v-list-tile-avatar>
+
+                        <v-list-tile-content>
+                        <v-list-tile-title class="textDefault textfm1">{{friendList.displayName}}</v-list-tile-title>
+                        <v-list-tile-sub-title class="text-xs-justify textDefault textfm1">BSCS</v-list-tile-sub-title>
+                        </v-list-tile-content>
+
+                        <v-list-tile-action>
+                        <v-btn
+                           :class="fav ? 'red--text' : ''"
+                           icon
+                           @click="fav = !fav"
+                        >
+                           <v-icon>favorite</v-icon>
+                        </v-btn>
+                        </v-list-tile-action>
+                     </v-list-tile>
+                  </v-list>
+                  <v-divider></v-divider>
+
+                  <v-list>
+                     <v-list-tile>
+                        <v-list-tile-action>
+                        <v-switch v-model="message" color="purple"></v-switch>
+                        </v-list-tile-action>
+                        <v-list-tile-title>Enable messages</v-list-tile-title>
+                     </v-list-tile>
+
+                     <v-list-tile>
+                        <v-list-tile-action>
+                        <v-switch v-model="hints" color="purple"></v-switch>
+                        </v-list-tile-action>
+                        <v-list-tile-title>Enable hints</v-list-tile-title>
+                     </v-list-tile>
+                  </v-list>
+
+                  <v-card-actions>
+                     <v-spacer></v-spacer>
+
+                     <v-btn flat @click="menu = false">Cancel</v-btn>
+                     <v-btn color="primary" flat @click="menu = false">Save</v-btn>
+                  </v-card-actions>
+                  </v-flex>
+                  <v-flex class="transparent">
+                     <div class="mt-2" style="
+                     width: 0;
+                     height: 0;
+                     border-top: 10px solid transparent;
+                     border-left: 20px solid green;
+                     border-bottom: 10px solid transparent;"
+                     ></div>
+                  </v-flex>
+                  </v-layout>
+               </v-card> -->
+            </v-menu>
+
+
          </v-card>
          <v-card flat color="white" class="friendscroll scrollbar-primary ">
             <v-text-field
@@ -187,16 +318,7 @@
             
             
             <v-tooltip color="tooltipColor" bottom >
-               <!-- <div class="" style="
-                  background-color:green;
-                  margin-top:-50px;
-                  margin-left:149.5px;
-                  width: 0;
-                  height: 0;
-                  border-left: 6px solid transparent;
-                  border-right: 6px solid transparent;
-                  border-bottom: 6px solid red;">
-               </div> -->
+            
                <span class="textfm1" style="font-size:11.5px !important">Notifications</span>
                <v-menu flat slot="activator"  offset-y nudge-left="44px">
                      <v-btn slot="activator" red  icon>
@@ -291,7 +413,7 @@
          </v-menu>
       </v-toolbar>
       
-      <v-content >
+      <v-content class="" >
          <!-- <v-container class="" app fluid> -->
             <router-view></router-view>
          <!-- </v-container> -->
@@ -319,6 +441,11 @@ export default {
          { title: 'About', icon: 'question_answer' }
       ],
       right: null,
+
+      fav: true,
+      menu: false,
+      message: false,
+      hints: true
    }),
    methods: {
       searchInput() {
@@ -368,10 +495,10 @@ export default {
          return ckcmcode;
      },
       firstname() {
-         var getFn = this.$store.getters.accountLoginData.user.displayName
-         var firstname = getFn.split(" ");
+         let getFn = this.$store.getters.accountLoginData.user.displayName
+         let firstname = getFn.split(" ");
          return firstname[0];
-      },
+      }
       // userFire () {
       //    var starCountRef = firebase.database().ref('users/' + "7J9naFQsS8M3QZvEdlmyX4Umr402" + '/status');
       //    starCountRef.on('value', function(snapshot) {

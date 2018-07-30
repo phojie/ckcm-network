@@ -1,5 +1,5 @@
 <template>
-<v-app >
+<v-app>
    <v-card  class="jieLandingBg mycolor3" flat height="100%" style="min-height: 700px; border-radius: 0" >
    <v-toolbar flat dark color="transparent">
       <v-toolbar-side-icon class="hidden-md-and-up"></v-toolbar-side-icon>
@@ -42,12 +42,12 @@
       </v-btn>
    </v-toolbar>
       <div class=" mt-5">
-         <v-content slot="extension">
+        
             <v-container>
                <v-tabs-items v-model="landingTabs">
                   <!-- Landing and Login Area -->
                   <v-tab-item id="login">
-                     <v-layout class="mt-4" row wrap align-center align-content-center justify-center>
+                     <v-layout class=" mt-4" row wrap justify-center align-center align-content-center >
                         <v-flex class="" xs12 lg7 md8 sm12>
                               <img src="/imgs/ckcm-network-homepage-illustration.png" alt="">
                         </v-flex>
@@ -141,7 +141,7 @@
 
                </v-tabs-items>
             </v-container>
-         </v-content>
+       
       </div>
       <!-- snackbar alert area-->
       <v-snackbar
@@ -211,12 +211,10 @@
 
 <script>
 
-import { validationMixin } from 'vuelidate'
+import { validationMixin } from 'vuelidate';
 import { email, required } from 'vuelidate/lib/validators';
-import { login } from '../../ckcmHelpers/auth';
-import { signUp } from '../../ckcmHelpers/auth'
+import { login, signUp } from '../../ckcmHelpers/auth';
 export default {
-   
    mixins: [validationMixin],
    validations: {
       codeid: {
@@ -309,8 +307,8 @@ export default {
          this.$v.$reset()
          this.$store.dispatch("jieLoaderOn")
          let vm = this
-         const provider = new firebase.auth.GoogleAuthProvider();
-         // firebase.auth().signInWithRedirect(provider);
+         const provider =  new firebase.auth.GoogleAuthProvider();
+         // firebase.auth().signInWithPopup(provider);
          firebase.auth().signInWithPopup(provider).then(function(result) {
             vm.$Progress.start()
             // This gives you a Google Access Token. You can use it to access the Google API.
@@ -379,13 +377,12 @@ export default {
          this.$Progress.start()
          this.$store.dispatch("jieLoaderOn");
          let vm = this;
-         this.$store.dispatch('login');
          login(this.$data.form) 
             .then((res) => {
                vm.$Progress.finish();
                vm.$store.commit("loginSuccess", res);
                vm.$router.push({ path: '/'});
-               firebase.auth().signInWithEmailAndPassword(vm.form.email, vm.form.password)
+               auth.signInWithEmailAndPassword(vm.form.email, vm.form.password)
                   .then((response) =>{
                      vm.$store.dispatch("jieLoaderOff")
                      vm.$store.dispatch("loginFirebase")

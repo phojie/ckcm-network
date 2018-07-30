@@ -15,8 +15,8 @@ import Vuex from 'vuex';
 import {initialize} from './ckcmHelpers/general';
 import VueProgressBar from 'vue-progressbar'
 import '@mdi/font/css/materialdesignicons.css';
-import firebase from 'firebase';
 import './firebase';
+// import firebase from 'firebase';
 import VueFire from 'vuefire';
 // import moment from 'moment-timezone';
 

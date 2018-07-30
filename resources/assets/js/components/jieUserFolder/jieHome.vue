@@ -1,227 +1,230 @@
 <template>
-   <v-layout class="mt-2 ">
-      <v-flex style="border:1px #EEEEEE solid" class="mr-2 mt-2 ml-3 xs12 md8 lg8">
-         <v-card flat  class=" jieSvgBg1  " >
-            <v-layout wrap color="transparent" :class="whatisClass" class="px-1" >
-               <v-flex xs12  class="mb-1" >
-                  <v-layout>
-                     <v-btn
-                        color="grey lighten-4"
-                        round
-                        depressed
-                        small
-                        style="font-size:12px" class="font-weigth-bold textfm1 textDefault"
-                     >
-                        <v-icon dark class="mr-1" color="blue" style="font-size:15px">mdi-pencil</v-icon>
-                        Make Post
-                     </v-btn>
-                     <v-btn
-                        color="grey lighten-4"
-                        round
-                        depressed
-                        small
-                        style="font-size:12px" class="font-weigth-bold textfm1 textDefault"
-                     >
-                        <v-icon dark class="mr-1" color="brown" style="font-size:15px">mdi-image-album</v-icon>
-                        Photo/Album
-                     </v-btn>
-                     <v-btn
-                        color="grey lighten-4"
-                        round
-                        depressed
-                        small
-                        style="font-size:12px" class="font-weigth-bold textfm1 textDefault"
-                     >
-                        <v-icon dark class="mr-1" color="green" style="font-size:15px">mdi-poll</v-icon>
-                        Poll Voting
-                     </v-btn>
-                     <v-spacer></v-spacer>
-                     <v-btn
-                        icon
-                        color="grey lighten-4"
-                        round
-                        depressed
-                        small
-                        style="font-size:12px" class="font-weigth-bold textfm1 textDefault"
-                     >
-                        <v-icon dark  color="grey darken-4" style="font-size:17px">mdi-dots-horizontal</v-icon>
-                     </v-btn>
-                  </v-layout>
+   <v-card app height="100%" width="100%" style="position:absolute; bottom:0" flat class="newsfeedScroll pa-0 ma-0 transparent scrollbar-primary "> 
+      <v-layout class="mt-2 ">
+         <v-flex style="border:1px #EEEEEE solid" class="  mr-2 mt-2 ml-3 xs12 sm12 md8 lg8">
+            <v-card flat  class=" jieSvgBg1  " >
+               <v-layout wrap color="transparent" :class="whatisClass" class="px-1" >
+                  <v-flex xs12  class="mb-1" >
+                     <v-layout>
+                        <v-btn
+                           color="grey lighten-4"
+                           round
+                           depressed
+                           small
+                           style="font-size:12px" class="font-weigth-bold textfm1 textDefault"
+                        >
+                           <v-icon dark class="mr-1" color="blue" style="font-size:15px">mdi-pencil</v-icon>
+                           Make Post
+                        </v-btn>
+                        <v-btn
+                           color="grey lighten-4"
+                           round
+                           depressed
+                           small
+                           style="font-size:12px" class="font-weigth-bold textfm1 textDefault"
+                        >
+                           <v-icon dark class="mr-1" color="brown" style="font-size:15px">mdi-image-album</v-icon>
+                           Photo/Album
+                        </v-btn>
+                        <v-btn
+                           color="grey lighten-4"
+                           round
+                           depressed
+                           small
+                           style="font-size:12px" class="font-weigth-bold textfm1 textDefault"
+                        >
+                           <v-icon dark class="mr-1" color="green" style="font-size:15px">mdi-poll</v-icon>
+                           Poll Voting
+                        </v-btn>
+                        <v-spacer></v-spacer>
+                        <v-btn
+                           icon
+                           color="grey lighten-4"
+                           round
+                           depressed
+                           small
+                           style="font-size:12px" class="font-weigth-bold textfm1 textDefault"
+                        >
+                           <v-icon dark  color="grey darken-4" style="font-size:17px">mdi-dots-horizontal</v-icon>
+                        </v-btn>
+                     </v-layout>
 
-               </v-flex>
-               <v-flex  xs1 class="mt-3">
-                  <v-btn @click="profileMenu" color="" icon style="height:34px !important; width:34px !important;margin-top:-5px" class=" jieleftNav"  flat>
-                     <v-badge color="white"  overlap class="jieBadgeNews">
-                        <span  slot="badge" class="" style="font-size:16px; border-radius: 50%; border: 4.5px solid #7CB342 ;"></span>
-                        <v-avatar class="mr-2 " color="grey lighten-3" size="33">
-                           <img :src="userData.photoUrl" alt="">
-                        </v-avatar>
-                     </v-badge>
-                  </v-btn> 
-               </v-flex>
-               <v-flex :class="whatisFlex">
-                  <v-textarea 
-                     class="jiew textfm1"
-                     row-height="10"
-                     style="font-size:15px !important"
-                     placeholder="What is your main focus for today?"
-                     @click="whatisFunctionMethod"
-                     @blur="whatisFunctionMethodFalse"
-                     flat solo
-                     auto-grow
-                  ></v-textarea>
-               </v-flex>
-               <v-flex v-if="!whatisFunction" style="margin-top:1px">
-                  <!-- <p class="text-xs-center"> -->
-                  <span style="font-size:28px" class="textfm2">{{timeDisplay}}</span>
-                  <br>
-                  <span class="textfm2 black--text" style="font-size:15px"> {{greet}}</span>
-                  <!-- </p> -->
-               </v-flex>
-            </v-layout>
-            <!-- <v-progress-linear  v-if="whatisFunction"  height="2" style="margin:0px !important" color="grey" :indeterminate="true"></v-progress-linear> -->
-            <v-flex class="pa-2">
-               <v-btn icon small class="ma-0">
-                  <v-avatar color="red--after" size="24px">
-                     <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
-                  </v-avatar>
-               </v-btn>
-               <v-btn icon small  class="ma-0">
-                  <v-avatar class="" color="red--after" size="24px">
-                     <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
-                  </v-avatar>
-               </v-btn>
-                  <v-btn icon small class="ma-0">
-                  <v-avatar color="red--after" size="24px">
-                     <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
-                  </v-avatar>
-               </v-btn>
-               <v-btn icon small  class="ma-0">
-                  <v-avatar class="" color="red--after" size="24px">
-                     <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36475819_1766742130062368_2660206145032945664_n.jpg?_nc_cat=0&oh=aa21af20b1f8617026868f31d44b7b72&oe=5BCD5FED" alt="">
-                  </v-avatar>
-               </v-btn> <v-btn icon small class="ma-0">
-                  <v-avatar color="red--after" size="24px">
-                     <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
-                  </v-avatar>
-               </v-btn>
-               <v-btn icon small  class="ma-0">
-                  <v-avatar class="" color="red--after" size="24px">
-                     <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
-                  </v-avatar>
-               </v-btn> <v-btn icon small class="ma-0">
-                  <v-avatar color="red--after" size="24px">
-                     <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
-                  </v-avatar>
-               </v-btn>
-               <v-btn icon small  class="ma-0">
-                  <v-avatar class="" color="red--after" size="24px">
-                     <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
-                  </v-avatar>
-               </v-btn>
-                  <v-btn icon small  class="ma-0">
-                  <v-avatar class="" color="red--after" size="24px">
-                     <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
-                  </v-avatar>
-               </v-btn>
-                  <v-btn icon small class="ma-0">
-                  <v-avatar color="red--after" size="24px">
-                     <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
-                  </v-avatar>
-               </v-btn>
-               <v-btn icon small  class="ma-0">
-                  <v-avatar class="" color="red--after" size="24px">
-                     <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36475819_1766742130062368_2660206145032945664_n.jpg?_nc_cat=0&oh=aa21af20b1f8617026868f31d44b7b72&oe=5BCD5FED" alt="">
-                  </v-avatar>
-               </v-btn> <v-btn icon small class="ma-0">
-                  <v-avatar color="red--after" size="24px">
-                     <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
-                  </v-avatar>
-               </v-btn>
-               <v-btn icon small  class="ma-0">
-                  <v-avatar class="" color="red--after" size="24px">
-                     <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
-                  </v-avatar>
-               </v-btn> <v-btn icon small class="ma-0">
-                  <v-avatar color="red--after" size="24px">
-                     <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
-                  </v-avatar>
-               </v-btn>
-               <v-btn icon small  class="ma-0">
-                  <v-avatar class="" color="red--after" size="24px">
-                     <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
-                  </v-avatar>
-               </v-btn>
-
-
-            </v-flex>
-            <!-- </v-container> -->
-         </v-card>
-         <v-card flat class="jieSvgBg1" >
-            <v-progress-linear active height="2" style="margin:0px !important" color="grey lighten-2" :indeterminate="false"></v-progress-linear>
-            <v-layout wrap white class="px-1 py-1" >
-               <v-flex xs12>
-                  <v-layout>
-                  <v-btn @click="profileMenu" color="" icon style="height:34px !important; width:34px !important" class=" jieleftNav"  flat>
-                     <v-badge color="white"  overlap class="jieBadgeNews">
-                        <span  slot="badge" class="" style="font-size:16px; border-radius: 50%; border: 4.5px solid #7CB342 ;"></span>
-                        <v-avatar class="mr-2 " color="grey lighten-3" size="33">
-                           <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
-                        </v-avatar>
-                     </v-badge>
-                  </v-btn> 
-                  <div class="mt-2 ">
-                  <p @click="profileMenu" style="font-size:14px" class="mb-0 mycolor3--text font-weight-bold textfm1">Phojie Rengel</p>
-                  <p style="margin-top:-5px" class="grey--text text-lighten-2 caption textfm1">2m ago</p>
-                  </div>
-
-                  <v-spacer></v-spacer>
-                     <v-btn
-                        icon
-                        color="grey lighten-4"
-                        round
-                        depressed
-                        small
-                        style="font-size:12px" class="font-weigth-bold textfm1 textDefault"
-                     >
-                        <v-icon dark  color="grey darken-4" style="font-size:17px">mdi-dots-horizontal</v-icon>
-                     </v-btn>
-                  </v-layout>
-
-               </v-flex>
-
-               <v-flex xs12 style="height:300px">
-               </v-flex>
-            <v-progress-linear active height="2" style="margin:0px !important" color="red lighten-2" :indeterminate="false"></v-progress-linear>
-               <v-flex class="jieSvgBg1" xs12>
-                  footer
-               </v-flex>
-            </v-layout>
-
-         </v-card>
-         <v-card class="my-2" height="400">
-            <v-card-media
-               height="100px"
-            >
-               <!-- src="imgs/background-main-light.svg" -->
-               <v-container fill-height fluid>
-                  <v-layout fill-height>
-                  <v-flex>
-                    
                   </v-flex>
-                  </v-layout>
-               </v-container>
-            </v-card-media>
-         </v-card>
-      </v-flex>
+                  <v-flex  xs1 class="mt-3">
+                     <v-btn @click="profileMenu" color="" icon style="height:34px !important; width:34px !important;margin-top:-5px" class=" jieleftNav"  flat>
+                        <v-badge color="white"  overlap class="jieBadgeNews">
+                           <span  slot="badge" class="" style="font-size:16px; border-radius: 50%; border: 4.5px solid #7CB342 ;"></span>
+                           <v-avatar class="mr-2 " color="grey lighten-3" size="33">
+                              <img :src="userData.photoUrl" alt="">
+                           </v-avatar>
+                        </v-badge>
+                     </v-btn> 
+                  </v-flex>
+                  <v-flex :class="whatisFlex">
+                     <v-textarea 
+                        class="jiew textfm1"
+                        row-height="10"
+                        style="font-size:15px !important"
+                        placeholder="What is your main focus for today?"
+                        @click="whatisFunctionMethod"
+                        @blur="whatisFunctionMethodFalse"
+                        flat solo
+                        auto-grow
+                     ></v-textarea>
+                  </v-flex>
+                  <v-flex v-if="!whatisFunction" style="margin-top:1px">
+                     <!-- <p class="text-xs-center"> -->
+                     <span style="font-size:28px" class="textfm2">{{timeDisplay}}</span>
+                     <br>
+                     <span class="textfm2 black--text" style="font-size:15px"> {{greet}}</span>
+                     <!-- </p> -->
+                  </v-flex>
+               </v-layout>
+               <!-- <v-progress-linear  v-if="whatisFunction"  height="2" style="margin:0px !important" color="grey" :indeterminate="true"></v-progress-linear> -->
+               <v-flex class="pa-2">
+                  <v-btn icon small class="ma-0">
+                     <v-avatar color="red--after" size="24px">
+                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
+                     </v-avatar>
+                  </v-btn>
+                  <v-btn icon small  class="ma-0">
+                     <v-avatar class="" color="red--after" size="24px">
+                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
+                     </v-avatar>
+                  </v-btn>
+                     <v-btn icon small class="ma-0">
+                     <v-avatar color="red--after" size="24px">
+                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
+                     </v-avatar>
+                  </v-btn>
+                  <v-btn icon small  class="ma-0">
+                     <v-avatar class="" color="red--after" size="24px">
+                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36475819_1766742130062368_2660206145032945664_n.jpg?_nc_cat=0&oh=aa21af20b1f8617026868f31d44b7b72&oe=5BCD5FED" alt="">
+                     </v-avatar>
+                  </v-btn> <v-btn icon small class="ma-0">
+                     <v-avatar color="red--after" size="24px">
+                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
+                     </v-avatar>
+                  </v-btn>
+                  <v-btn icon small  class="ma-0">
+                     <v-avatar class="" color="red--after" size="24px">
+                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
+                     </v-avatar>
+                  </v-btn> <v-btn icon small class="ma-0">
+                     <v-avatar color="red--after" size="24px">
+                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
+                     </v-avatar>
+                  </v-btn>
+                  <v-btn icon small  class="ma-0">
+                     <v-avatar class="" color="red--after" size="24px">
+                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
+                     </v-avatar>
+                  </v-btn>
+                     <v-btn icon small  class="ma-0">
+                     <v-avatar class="" color="red--after" size="24px">
+                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
+                     </v-avatar>
+                  </v-btn>
+                     <v-btn icon small class="ma-0">
+                     <v-avatar color="red--after" size="24px">
+                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
+                     </v-avatar>
+                  </v-btn>
+                  <v-btn icon small  class="ma-0">
+                     <v-avatar class="" color="red--after" size="24px">
+                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36475819_1766742130062368_2660206145032945664_n.jpg?_nc_cat=0&oh=aa21af20b1f8617026868f31d44b7b72&oe=5BCD5FED" alt="">
+                     </v-avatar>
+                  </v-btn> <v-btn icon small class="ma-0">
+                     <v-avatar color="red--after" size="24px">
+                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
+                     </v-avatar>
+                  </v-btn>
+                  <v-btn icon small  class="ma-0">
+                     <v-avatar class="" color="red--after" size="24px">
+                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
+                     </v-avatar>
+                  </v-btn> <v-btn icon small class="ma-0">
+                     <v-avatar color="red--after" size="24px">
+                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
+                     </v-avatar>
+                  </v-btn>
+                  <v-btn icon small  class="ma-0">
+                     <v-avatar class="" color="red--after" size="24px">
+                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
+                     </v-avatar>
+                  </v-btn>
 
-      <v-flex class=" mr-4  xs0 md4 lg4" >
-         <v-card flat class="grey lighten-4 my-2" height="50px">
-         </v-card>
-         <v-card flat  class="grey lighten-4 mb-2" height="150px">
-         </v-card>
-      </v-flex>
-   </v-layout>
+
+               </v-flex>
+               <!-- </v-container> -->
+            </v-card>
+            <v-card flat class="jieSvgBg1" >
+               <v-progress-linear active height="2" style="margin:0px !important" color="grey lighten-2" :indeterminate="false"></v-progress-linear>
+               <v-layout wrap white class="px-1 py-1" >
+                  <v-flex xs12>
+                     <v-layout>
+                     <v-btn @click="profileMenu" color="" icon style="height:34px !important; width:34px !important" class=" jieleftNav"  flat>
+                        <v-badge color="white"  overlap class="jieBadgeNews">
+                           <span  slot="badge" class="" style="font-size:16px; border-radius: 50%; border: 4.5px solid #7CB342 ;"></span>
+                           <v-avatar class="mr-2 " color="grey lighten-3" size="33">
+                              <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
+                           </v-avatar>
+                        </v-badge>
+                     </v-btn> 
+                     <div class="mt-2 ">
+                     <p @click="profileMenu" style="font-size:14px" class="mb-0 mycolor3--text font-weight-bold textfm1">Phojie Rengel</p>
+                     <p style="margin-top:-5px" class="grey--text text-lighten-2 caption textfm1">2m ago</p>
+                     </div>
+
+                     <v-spacer></v-spacer>
+                        <v-btn
+                           icon
+                           color="grey lighten-4"
+                           round
+                           depressed
+                           small
+                           style="font-size:12px" class="font-weigth-bold textfm1 textDefault"
+                        >
+                           <v-icon dark  color="grey darken-4" style="font-size:17px">mdi-dots-horizontal</v-icon>
+                        </v-btn>
+                     </v-layout>
+
+                  </v-flex>
+
+                  <v-flex xs12 style="height:300px">
+                  </v-flex>
+               <v-progress-linear active height="2" style="margin:0px !important" color="red lighten-2" :indeterminate="false"></v-progress-linear>
+                  <v-flex class="jieSvgBg1" xs12>
+                     footer
+                  </v-flex>
+               </v-layout>
+
+            </v-card>
+            <v-card class="my-2" height="400">
+               <v-card-media
+                  height="100px"
+               >
+                  <!-- src="imgs/background-main-light.svg" -->
+                  <v-container fill-height fluid>
+                     <v-layout fill-height>
+                     <v-flex>
+                     
+                     </v-flex>
+                     </v-layout>
+                  </v-container>
+               </v-card-media>
+            </v-card>
+         </v-flex>
+
+         <v-flex class=" mr-4  xs0 sm0 md4 lg4" >
+            <v-card flat class="grey lighten-4 my-2" height="50px">
+            </v-card>
+            <v-card flat  class="grey lighten-4 mb-2" height="150px">
+            </v-card>
+         </v-flex>
+      </v-layout>
+   </v-card>
+
 </template>
 <script>
 export default {  

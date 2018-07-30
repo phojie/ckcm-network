@@ -1,6 +1,8 @@
 import { getLocalUser } from "./ckcmHelpers/auth";
 import { getLocalfdetails } from "./ckcmHelpers/auth";
 import { db } from "./firebase";
+import { auth } from "./firebase";
+
 import Axios from "axios";
 const user = getLocalUser();
 const fdetails = getLocalfdetails();
@@ -53,7 +55,6 @@ export default {
          localStorage.setItem("fdetails", JSON.stringify(state.fdetails));
       },
       loginSuccess(state, payload) {
-        
          state.alertLogoutDone = false
          state.auth_error = null;
          state.isIn = true;
@@ -61,7 +62,7 @@ export default {
          state.accountLoginData = Object.assign({}, payload, {token: payload.access_token});
          localStorage.setItem("user", JSON.stringify(state.accountLoginData));
          // localStorage.user = JSON.stringify(state.accountLoginData);
-         console.log(state.accountLoginData)
+         // console.log(state.accountLoginData)
          const id = state.accountLoginData.user["ckcm-network_token_id"]
          db.ref('users/' + id).set({
             status: "online",
@@ -93,11 +94,11 @@ export default {
          state.fdetails = null ;
          state.accountLoginData = null;
          state.alertLogoutDone = true
-         // firebase.auth().signOut().then(function() {
-         // // Sign-out successful.
-         // }).catch(function(error) {
-         // // An error happened.
-         // });
+         auth.signOut().then(function() {
+         // Sign-out successful.
+         }).catch(function(error) {
+         // An error happened.
+         });
       },
       jieLoaderOn(state) {
          state.loading = true;
@@ -129,8 +130,7 @@ export default {
          context.commit("jieLoaderOff");
       },
       loginFirebase(context) {
-         const user = firebase.auth().currentUser;
-         
+         const user = auth.currentUser;
          context.commit("firebaseSuccess", user)
       },
       friendList(context) {

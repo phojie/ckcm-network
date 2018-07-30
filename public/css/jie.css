@@ -76,6 +76,20 @@
    justify-content: left !important
 }
 
+/* newsFeed */
+.newsfeedScroll {
+   overflow-x:hidden;
+   overflow-y:scroll;
+}
+.newsfeedScroll:hover{
+   overflow-y:scroll;
+}
+.scrollbar-primary::-webkit-scrollbar{
+   width: 5px !important;
+   /* height: 10px !important; */
+   /* padding-top: 40px !important; */
+}
+/* newsFeed exit */
 
 /* left friend list */
 
@@ -120,7 +134,12 @@
    height:10px !important;
    width:10px !important;
 }
-
+.jieBadgeFriendMessage .v-badge__badge {
+   margin-right:15px !important;
+   margin-top:63px !important;
+   height:15px !important;
+   width:15px !important;
+}
 .jieBadgeNews .v-badge__badge {
    margin-right:17px !important;
    margin-top:33px !important;
