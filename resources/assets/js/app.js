@@ -15,6 +15,7 @@ import Vuex from 'vuex';
 import {initialize} from './ckcmHelpers/general';
 import VueProgressBar from 'vue-progressbar'
 import '@mdi/font/css/materialdesignicons.css';
+// import firebase from 'firebase';
 import './firebase';
 // import firebase from 'firebase';
 import VueFire from 'vuefire';
@@ -25,6 +26,9 @@ import VueFire from 'vuefire';
 
 window.moment = require('moment');``
 window.moment = require('moment-timezone')
+
+// window.firebase = require('./firebase')
+
 // notusing
 
 import VueHotkey from 'v-hotkey'

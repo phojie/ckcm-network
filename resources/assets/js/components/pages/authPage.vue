@@ -1,5 +1,5 @@
 <template>
-<v-app>
+<v-app style="overflow-scroll" >
    <v-card  class="jieLandingBg mycolor3" flat height="100%" style="min-height: 700px; border-radius: 0" >
    <v-toolbar flat dark color="transparent">
       <v-toolbar-side-icon class="hidden-md-and-up"></v-toolbar-side-icon>

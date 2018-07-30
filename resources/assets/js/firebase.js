@@ -18,5 +18,9 @@ const config = {
 };
 export const app = firebase.initializeApp(config);
 export const auth = app.auth();
+// firebase.initializeApp(config);
+// export const ckcmApp = app.auth;
+// export const auth = app.auth();
+// export const authGoogle = firebase.auth.GoogleAuthProvider();
 export const db = app.database();
 export const usersRef = db.ref('users');

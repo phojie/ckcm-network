@@ -5496,6 +5496,10 @@ var config = {
 };
 var app = firebase.initializeApp(config);
 var auth = app.auth();
+// firebase.initializeApp(config);
+// export const ckcmApp = app.auth;
+// export const auth = app.auth();
+// export const authGoogle = firebase.auth.GoogleAuthProvider();
 var db = app.database();
 var usersRef = db.ref('users');
 
@@ -40655,6 +40659,7 @@ __webpack_require__(149);
 
 
 
+// import firebase from 'firebase';
 
 // import firebase from 'firebase';
 
@@ -40665,6 +40670,9 @@ __webpack_require__(149);
 
 window.moment = __webpack_require__(0);'';
 window.moment = __webpack_require__(259);
+
+// window.firebase = require('./firebase')
+
 // notusing
 
 
@@ -57709,6 +57717,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "v-app",
+    { staticStyle: {} },
     [
       _c(
         "v-card",
