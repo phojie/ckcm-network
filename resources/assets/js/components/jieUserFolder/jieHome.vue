@@ -1,13 +1,13 @@
 <template>
    <v-card app height="100%" width="100%" style="position:absolute; bottom:0" flat class="newsfeedScroll pa-0 ma-0 transparent scrollbar-primary "> 
       <v-layout class="mt-2 ">
-         <v-flex style="border:1px #EEEEEE solid" class="  mr-2 mt-2 ml-3 xs12 sm12 md8 lg8">
+         <v-flex style="border:1px #E0E0E0 solid;border-radius:2px" class="  mr-2 mt-2 ml-3 xs12 sm12 md8 lg8">
             <v-card flat  class=" jieSvgBg1  " >
-               <v-layout wrap color="transparent" :class="whatisClass" class="px-1" >
+               <v-layout wrap color="transparent" :class="whatisClass" class="px-2" >
                   <v-flex xs12  class="mb-1" >
                      <v-layout>
                         <v-btn
-                           color="grey lighten-4"
+                           color="grey lighten-3"
                            round
                            depressed
                            small
@@ -17,7 +17,7 @@
                            Make Post
                         </v-btn>
                         <v-btn
-                           color="grey lighten-4"
+                           color="grey lighten-3"
                            round
                            depressed
                            small
@@ -27,7 +27,7 @@
                            Photo/Album
                         </v-btn>
                         <v-btn
-                           color="grey lighten-4"
+                           color="grey lighten-3"
                            round
                            depressed
                            small
@@ -39,7 +39,7 @@
                         <v-spacer></v-spacer>
                         <v-btn
                            icon
-                           color="grey lighten-4"
+                           color="grey lighten-3"
                            round
                            depressed
                            small
@@ -53,8 +53,8 @@
                   <v-flex  xs1 class="mt-3">
                      <v-btn @click="profileMenu" color="" icon style="height:34px !important; width:34px !important;margin-top:-5px" class=" jieleftNav"  flat>
                         <v-badge color="white"  overlap class="jieBadgeNews">
-                           <span  slot="badge" class="" style="font-size:16px; border-radius: 50%; border: 4.5px solid #7CB342 ;"></span>
-                           <v-avatar class="mr-2 " color="grey lighten-3" size="33">
+                           <!-- <span  slot="badge" class="" style="font-size:16px; border-radius: 50%; border: 4.5px solid #7CB342 ;"></span> -->
+                           <v-avatar class="mr-2 " color="grey lighten-3" size="35">
                               <img :src="userData.photoUrl" alt="">
                            </v-avatar>
                         </v-badge>
@@ -64,7 +64,7 @@
                      <v-textarea 
                         class="jiew textfm1"
                         row-height="10"
-                        style="font-size:15px !important"
+                        style="font-size:16px !important"
                         placeholder="What is your main focus for today?"
                         @click="whatisFunctionMethod"
                         @blur="whatisFunctionMethodFalse"
@@ -160,24 +160,26 @@
             </v-card>
             <v-card flat class="jieSvgBg1" >
                <v-progress-linear active height="2" style="margin:0px !important" color="grey lighten-2" :indeterminate="false"></v-progress-linear>
-               <v-layout wrap white class="px-1 py-1" >
-                  <v-flex xs12>
+               <v-layout wrap white class=" py-2" >
+                  <v-flex xs12 class="mx-2">
                      <v-layout>
                      <v-btn @click="profileMenu" color="" icon style="height:34px !important; width:34px !important" class=" jieleftNav"  flat>
                         <v-badge color="white"  overlap class="jieBadgeNews">
                            <span  slot="badge" class="" style="font-size:16px; border-radius: 50%; border: 4.5px solid #7CB342 ;"></span>
-                           <v-avatar class="mr-2 " color="grey lighten-3" size="33">
+                           <v-avatar class="mr-2 " color="grey lighten-3" size="35">
                               <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
                            </v-avatar>
                         </v-badge>
                      </v-btn> 
                      <div class="mt-2 ">
-                     <p @click="profileMenu" style="font-size:14px" class="mb-0 mycolor3--text font-weight-bold textfm1">Phojie Rengel</p>
-                     <p style="margin-top:-5px" class="grey--text text-lighten-2 caption textfm1">2m ago</p>
+                     <p @click="profileMenu" style="font-size:15px" class="mb-0 mycolor3--text font-weight-bold textfm1">Phojie Rengel</p>
+                     <p style="margin-top:-5px;font-size:13px" class="grey--text textfm2">2 mins</p>
                      </div>
 
                      <v-spacer></v-spacer>
-                        <v-btn
+                     <v-menu offset-y nudge-left="80"> 
+                          <v-btn
+                           slot="activator"
                            icon
                            color="grey lighten-4"
                            round
@@ -187,19 +189,90 @@
                         >
                            <v-icon dark  color="grey darken-4" style="font-size:17px">mdi-dots-horizontal</v-icon>
                         </v-btn>
+                        <v-list>
+                        <v-list-tile
+                           v-for="(item, index) in items"
+                           :key="index"
+                           @click=""
+                        >
+                           <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+                        </v-list-tile>
+                        </v-list>
+                     </v-menu>
+                      
                      </v-layout>
 
                   </v-flex>
 
-                  <v-flex xs12 style="height:300px">
+                  <v-flex class="mx-3" xs12  >
+                     <div style="font-size:16px;" class="black--text textfm1">
+                     Excepteur aliqua cupidatat et enim aliqua incididunt irure eiusmod officia dolore. Amet qui elit cupidatat veniam incididunt cillum tempor et anim voluptate ullamco do. Nostrud et duis ad nulla sint et aliquip. Dolore adipisicing ad in eiusmod aute. Ad consequat tempor Lorem duis laborum.
+                     </div>
+                     <v-divider class="mt-3 grey lighten-3"> </v-divider>
+                     <v-layout>
+                        <v-flex xs3  >
+                           <v-btn depressed color="transparent" class="font-weight-medium textDefault grey--text text--darken-2 textfm1" block>
+                              <v-icon size="20" class="mr-1" >mdi-thumb-up-outline</v-icon>
+                              Like
+                           </v-btn>
+                        </v-flex>
+
+                        <v-flex xs3  >
+                           <v-btn depressed color="transparent" class="font-weight-medium textDefault grey--text text--darken-2 textfm1" block>
+                              <v-icon size="20" class="mr-1" >mdi-sticker-emoji</v-icon>
+                              React
+                           </v-btn>
+                        </v-flex>
+
+                        <v-flex xs3 >
+                         <v-btn depressed color="transparent" class="font-weight-medium textDefault grey--text text--darken-2 textfm1" block>
+                              <v-icon size="20" class="mr-1" >mdi-comment-outline</v-icon>
+                              Comment
+                           </v-btn>
+                        </v-flex>
+
+                        <v-flex xs3  >
+                           <v-btn depressed color="transparent" class="font-weight-medium textDefault grey--text text--darken-2 textfm1" block>
+                              <v-icon size="20" class="mr-1" >mdi-share-outline</v-icon>
+                              Share
+                           </v-btn>
+                        </v-flex>
+
+                     </v-layout>
                   </v-flex>
-               <v-progress-linear active height="2" style="margin:0px !important" color="red lighten-2" :indeterminate="false"></v-progress-linear>
-                  <v-flex class="jieSvgBg1" xs12>
+                  <v-flex xs12>
+                     <v-divider class="grey lighten-3"></v-divider>
+                  </v-flex>
+                  <v-flex xs12 class="px-2">
+                     <v-layout>
+                        <v-flex  xs1 class="mt-3">
+                           <v-btn @click="profileMenu" color="" icon style="height:34px !important; width:34px !important;margin-top:-5px" class=" jieleftNav"  flat>
+                              <v-badge color="white"  overlap class="jieBadgeNews">
+                                 <!-- <span  slot="badge" class="" style="font-size:16px; border-radius: 50%; border: 4.5px solid #7CB342 ;"></span> -->
+                                 <v-avatar class="mr-2 " color="grey lighten-3" size="30">
+                                    <img :src="userData.photoUrl" alt="">
+                                 </v-avatar>
+                              </v-badge>
+                           </v-btn> 
+                        </v-flex>
+                        <v-flex :class="whatisFlex">
+                           <v-text-field 
+                              class="jiew textfm1"
+                              style="font-size:14px !important"
+                              placeholder="Write something here..."
+                              flat solo
+                           ></v-text-field>
+                        </v-flex>
+                     </v-layout>
+                  </v-flex>
+               <!-- <v-progress-linear active height="2" style="margin:0px !important" color="red lighten-2" :indeterminate="false"></v-progress-linear> -->
+                  <!-- <v-flex class="jieSvgBg1" xs12>
                      footer
-                  </v-flex>
+                  </v-flex> -->
                </v-layout>
 
             </v-card>
+            
             <v-card class="my-2" height="400">
                <v-card-media
                   height="100px"
@@ -235,7 +308,11 @@ export default {
       whatisFunction: false,
       whatisClass: "",
       bottomNav: 'recent',
-      whatisFlex: 'xs7'
+      whatisFlex: 'xs7',
+      items: [
+        { title: 'Op jie1' },
+        { title: 'Op jie2' },
+      ]
    }),
    computed: {
       userData() {

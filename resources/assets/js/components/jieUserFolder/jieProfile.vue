@@ -97,10 +97,12 @@ export default {
        
    },
    created () {
-   },
-   mounted () {
       document.title = this.username + " | Profile";
       this.$store.commit("leftnavDrawerOff");
+   },
+   mounted () {
+      // document.title = this.username + " | Profile";
+      // this.$store.commit("leftnavDrawerOff");
    }
 }
 </script>

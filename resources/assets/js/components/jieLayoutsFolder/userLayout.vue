@@ -2,17 +2,18 @@
 <!-- :value="leftnavDrawer"  -->
 <!-- <v-navigation-drawer  :value="!leftnavDrawer" stateless permanent flat width="80" clipped app></v-navigation-drawer> -->
    <v-app class="grey lighten-3"  style="overflow:hidden !important" >
+    
       <!-- stateless permanent -->
-      <v-navigation-drawer right stateless permanent  class="transparent"   width="210" style="overflow: hidden !important;" clipped app>
+      <v-navigation-drawer right stateless permanent  class="white" floating  width="210" style="overflow: hidden !important;" clipped app>
          <v-card flat color=""   style="padding-top:7px !important" class=" friendscroll scrollbar-primary ">
             <v-menu
                :close-on-content-click="false"
                full-width
-               open-on-click
+               open-on-hover
                allow-overflow
                nudge-left="240"
-               min-width="260"
-               max-width="260"
+               min-width="240"
+               max-width="240"
                close-delay="50"
                v-for="friendList in friendLists" :key="friendList.id" v-if="friendList.email != userData.email"
                bottom
@@ -22,7 +23,7 @@
             <v-btn slot="activator" style="margin-top:-6px"    color="grey" class=" jieleftNav" block flat>
                <v-badge color="white"  overlap class="jieBadgeFriend">
                   <span v-for="user in users" v-if="friendList['ckcm-network_token_id'] === user['.key'] && user.status == 'online'" :key="user['.key']" slot="badge" style="font-size:16px; border-radius: 50%; border: 4px solid #7CB342 ;"></span>
-                  <span v-for="user in users" v-if="friendList['ckcm-network_token_id'] === user['.key'] && user.status != 'online'" :key="user['.key']" slot="badge" style="font-size:16px; border-radius: 50%; border: 4px solid pink ;"></span>
+                  <span v-for="user in users" v-if="friendList['ckcm-network_token_id'] === user['.key'] && user.status != 'online'" :key="user['.key']" slot="badge" style="font-size:16px; border-radius: 50%; border: 4px solid #E57373 ;"></span>
                   <v-avatar   class="mr-2"  color="grey lighten-3" size="28">
                      <img :src="friendList.photoUrl" alt="">
                   </v-avatar>
@@ -36,15 +37,13 @@
             </v-btn>
                <v-card >
 
-                  <v-avatar style="position:absolute; margin-top:235px"   class="ml-2"  color="grey lighten-3" size="28">
-                     <img :src="userData.photoUrl" alt="">
-                  </v-avatar>
+                 
                   <v-layout  row wrap justify-center align-center align-content-center>
                      <v-flex xs12 class="grey lighten-5 pa-3 ">
                         <v-layout  row wrap justify-center align-center align-content-center>
                            <v-badge color="white"  overlap class="jieBadgeFriendMessage">
                               <span v-for="user in users" v-if="friendList['ckcm-network_token_id'] === user['.key'] && user.status == 'online'" :key="user['.key']" slot="badge" style="border-radius: 50%; border: 6px solid #7CB342 ;"></span>
-                              <span v-for="user in users" v-if="friendList['ckcm-network_token_id'] === user['.key'] && user.status != 'online'" :key="user['.key']" slot="badge" style="border-radius: 50%; border: 6px solid pink ;"></span>
+                              <span v-for="user in users" v-if="friendList['ckcm-network_token_id'] === user['.key'] && user.status != 'online'" :key="user['.key']" slot="badge" style="border-radius: 50%; border: 6px solid #E57373 ;"></span>
                               <v-avatar   color="grey lighten-3" size="70">
                                  <img :src="friendList.photoUrl" alt="">
                               </v-avatar>
@@ -64,28 +63,48 @@
                            <v-icon size="15px">mdi-circle</v-icon>
                            Primary</v-chip> -->
                      </v-flex>
+                     <!-- <v-flex xs12 class="mx-1" >
+                        <div class="text-xs-left">
+                           <v-card height="200" >
+                              <v-layout row wrap>
+                              <v-flex>
+                                 <div class="text-xs-right">
+                                    <v-chip small size="30" >
+                                       Trevor Hansen Proident dolor fugiat ipsum commodo est reprehenderit eiusmod voluptate excepteur id veniam.
+                                    </v-chip>
+                                    <v-avatar small right>
+                                       <img src="https://randomuser.me/api/portraits/men/35.jpg" alt="trevor">
+                                    </v-avatar>
+                                 </div>
+                              </v-flex>
+                             
+                              </v-layout>
+                           </v-card>
+                        </div>
+                           <v-spacer></v-spacer>
+                     </v-flex> -->
                      <v-flex xs12 >
-                        <v-divider></v-divider>
+                        <v-divider class="mt-4"></v-divider>
                      </v-flex>
-                     <v-flex xs12 style="padding-left:30px" class="">
+                     <!-- <v-flex xs2>
+                        <v-avatar class="ml-2"  color="grey lighten-3" size="32">
+                           <img :src="userData.photoUrl" alt="">
+                        </v-avatar>
+                     </v-flex>
+                     <v-flex xs10 class="" style="margin-left:-15px">
                            <v-textarea
-                              row-height="12"
+                              height="100"
                               background-color="transparent"
                               box
                               outline
                               hide-details
-                              auto-grow
                               color="primary"
                               :label="`Message @ ${friendList.displayName}`"
                               class="textfm1  textDefault"
                               style="font-size:16px"
-                              value=" "
                               flat
                            ></v-textarea>
-                        <!-- <v-chip outline class="caption" small color="aqua" text-color="white">
-                           <v-icon size="15px">mdi-circle</v-icon>
-                           Primary</v-chip> -->
-                     </v-flex>
+                     </v-flex> -->
                   </v-layout>
                </v-card>
                <!-- <v-card flat class="transparent" >
@@ -168,7 +187,7 @@
          </v-card>
 
       </v-navigation-drawer>
-      <v-navigation-drawer  class="transparent" floating  width="230" style="overflow: hidden !important;" clipped app>
+      <v-navigation-drawer  class="grey lighten-3" floating  width="230" style="overflow: hidden !important;" clipped app>
          <v-card flat color="transparent" class="mt-3 ml-5">
             <v-btn @click="profileMenu" color="grey"  small class=" jieleftNav" block flat>
                <!-- Dropdown -->
@@ -416,8 +435,31 @@
       <v-content class="" >
          <!-- <v-container class="" app fluid> -->
             <router-view></router-view>
+            
          <!-- </v-container> -->
       </v-content>
+
+      <!-- <v-content class="purple"  style="padding-top:0px !important;height:340px;width:100%;position:absolute;right:0;bottom:0 !important;" >
+         <v-layout wrap justify-end class="pr-3">
+               <v-card width="275px" class="blue mr-3" height="540px">
+                  tester
+               </v-card>
+              <v-card width="275px" class="green mr-3" height="540px">
+                  tester
+               </v-card>
+               <v-card width="275px" class="red mr-3" height="540px">
+                  tester
+               </v-card>
+         </v-layout>
+      </v-content> -->
+
+      <!-- <v-content class="purple"  style="padding-top:0px !important;height:340px;width:30%;position:absolute;right:0;bottom:0 !important;" >
+         <v-layout wrap justify-end class="pr-3">
+               <v-card width="275px" class="blue mr-3" height="540px">
+                  tester
+               </v-card>
+         </v-layout>
+      </v-content> -->
 
       <!-- <v-footer app></v-footer> -->
    </v-app>
