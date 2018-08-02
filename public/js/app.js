@@ -61840,6 +61840,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -62809,20 +62813,37 @@ var render = function() {
                           "v-flex",
                           { staticClass: "mx-3", attrs: { xs12: "" } },
                           [
-                            _c(
-                              "div",
-                              {
-                                staticClass: "black--text textfm1",
-                                staticStyle: { "font-size": "16px" }
-                              },
-                              [
-                                _vm._v(
-                                  "\n                     " +
-                                    _vm._s(newsfeed.data.message) +
-                                    "\n                  "
+                            newsfeed.data.message.length < 150
+                              ? _c(
+                                  "div",
+                                  {
+                                    staticClass: "black--text textfm1",
+                                    staticStyle: { "font-size": "25px" }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                     " +
+                                        _vm._s(newsfeed.data.message) +
+                                        "\n                  "
+                                    )
+                                  ]
                                 )
-                              ]
-                            ),
+                              : newsfeed.data.message.length > 150
+                                ? _c(
+                                    "div",
+                                    {
+                                      staticClass: "black--text textfm1",
+                                      staticStyle: { "font-size": "16px" }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                     " +
+                                          _vm._s(newsfeed.data.message) +
+                                          "\n                  "
+                                      )
+                                    ]
+                                  )
+                                : _vm._e(),
                             _vm._v(" "),
                             _c("v-divider", {
                               staticClass: "mt-3 grey lighten-3"

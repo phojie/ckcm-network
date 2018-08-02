@@ -212,7 +212,11 @@
                   </v-flex>
 
                   <v-flex class="mx-3" xs12  >
-                     <div style="font-size:16px;" class="black--text textfm1">
+                     <div v-if="newsfeed.data.message.length < 150" style="font-size:25px;" class="black--text textfm1">
+                        {{newsfeed.data.message}}
+                     </div>
+
+                     <div v-else-if="newsfeed.data.message.length > 150" style="font-size:16px;" class="black--text textfm1">
                         {{newsfeed.data.message}}
                      </div>
                      <v-divider class="mt-3 grey lighten-3"> </v-divider>
