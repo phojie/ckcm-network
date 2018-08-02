@@ -24,3 +24,7 @@ export const auth = app.auth();
 // export const authGoogle = firebase.auth.GoogleAuthProvider();
 export const db = app.database();
 export const usersRef = db.ref('users');
+export const newsfeedRef = db.ref('Newsfeed');
+
+newsfeedRef.on('value', snap => console.log(snap.val()));
+

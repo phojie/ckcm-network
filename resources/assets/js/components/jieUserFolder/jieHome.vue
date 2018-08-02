@@ -50,6 +50,7 @@
                      </v-layout>
 
                   </v-flex>
+                 
                   <v-flex  xs1 class="mt-3">
                      <v-btn @click="profileMenu" color="" icon style="height:34px !important; width:34px !important;margin-top:-5px" class=" jieleftNav"  flat>
                         <v-badge color="white"  overlap class="jieBadgeNews">
@@ -61,7 +62,9 @@
                      </v-btn> 
                   </v-flex>
                   <v-flex :class="whatisFlex">
+                  
                      <v-textarea 
+                        v-model="postedData.message"
                         class="jiew textfm1"
                         row-height="10"
                         style="font-size:16px !important"
@@ -78,6 +81,10 @@
                      <br>
                      <span class="textfm2 black--text" style="font-size:15px"> {{greet}}</span>
                      <!-- </p> -->
+                  </v-flex>
+
+                  <v-flex xs12  v-if="whatisFunction" >
+                     <v-btn small block  depressed color="indigo" @click="makePost(userData)" class="white--text caption textDefault"> Post </v-btn>
                   </v-flex>
                </v-layout>
                <!-- <v-progress-linear  v-if="whatisFunction"  height="2" style="margin:0px !important" color="grey" :indeterminate="true"></v-progress-linear> -->
@@ -158,7 +165,7 @@
                </v-flex>
                <!-- </v-container> -->
             </v-card>
-            <v-card flat class="jieSvgBg1" >
+            <v-card  v-for="newsfeed in newsfeeds" :key="newsfeed['.key']" flat class="jieSvgBg1" >
                <v-progress-linear active height="2" style="margin:0px !important" color="grey lighten-2" :indeterminate="false"></v-progress-linear>
                <v-layout wrap white class=" py-2" >
                   <v-flex xs12 class="mx-2">
@@ -167,17 +174,17 @@
                         <v-badge color="white"  overlap class="jieBadgeNews">
                            <span  slot="badge" class="" style="font-size:16px; border-radius: 50%; border: 4.5px solid #7CB342 ;"></span>
                            <v-avatar class="mr-2 " color="grey lighten-3" size="35">
-                              <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
+                              <img :src="newsfeed.photoUrl" alt="">
                            </v-avatar>
                         </v-badge>
                      </v-btn> 
                      <div class="mt-2 ">
-                     <p @click="profileMenu" style="font-size:15px" class="mb-0 mycolor3--text font-weight-bold textfm1">Phojie Rengel</p>
+                     <p @click="profileMenuFriend(newsfeed.displayName)" style="font-size:15px" class="aJie mb-0 indigo--text text--darken-4 font-weight-bold textfm1">{{newsfeed.displayName}} </p>
                      <p style="margin-top:-5px;font-size:13px" class="grey--text textfm2">2 mins</p>
                      </div>
 
                      <v-spacer></v-spacer>
-                     <v-menu offset-y nudge-left="80"> 
+                     <v-menu style="margin-top:-27px;" offset-y nudge-left="80"> 
                           <v-btn
                            slot="activator"
                            icon
@@ -193,7 +200,7 @@
                         <v-list-tile
                            v-for="(item, index) in items"
                            :key="index"
-                           @click=""
+                           @click="test"
                         >
                            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
                         </v-list-tile>
@@ -206,34 +213,41 @@
 
                   <v-flex class="mx-3" xs12  >
                      <div style="font-size:16px;" class="black--text textfm1">
-                     Excepteur aliqua cupidatat et enim aliqua incididunt irure eiusmod officia dolore. Amet qui elit cupidatat veniam incididunt cillum tempor et anim voluptate ullamco do. Nostrud et duis ad nulla sint et aliquip. Dolore adipisicing ad in eiusmod aute. Ad consequat tempor Lorem duis laborum.
+                        {{newsfeed.data.message}}
                      </div>
                      <v-divider class="mt-3 grey lighten-3"> </v-divider>
                      <v-layout>
                         <v-flex xs3  >
-                           <v-btn depressed color="transparent" class="font-weight-medium textDefault grey--text text--darken-2 textfm1" block>
-                              <v-icon size="20" class="mr-1" >mdi-thumb-up-outline</v-icon>
+                           <v-btn depressed color="transparent" class=" textDefault grey--text text--darken-1 textfm1" block>
+                              <v-icon size="19" class="mr-1 --text text--darken-3" >mdi-thumb-up-outline</v-icon>
                               Like
                            </v-btn>
                         </v-flex>
 
                         <v-flex xs3  >
-                           <v-btn depressed color="transparent" class="font-weight-medium textDefault grey--text text--darken-2 textfm1" block>
-                              <v-icon size="20" class="mr-1" >mdi-sticker-emoji</v-icon>
-                              React
+                           <v-btn depressed color="transparent" class=" textDefault grey--text text--darken-1 textfm1" block>
+                              <v-icon size="19" class="--text text--darken-3 mr-1" >mdi-thumb-down-outline</v-icon>
+                              Dislike
                            </v-btn>
                         </v-flex>
 
+                        <!-- <v-flex xs3  >
+                           <v-btn depressed color="transparent" class=" textDefault grey--text text--darken-1 textfm1" block>
+                              <v-icon size="19" class="--text text--darken-3 mr-1" >mdi-thumb-down-outline</v-icon>
+                              React
+                           </v-btn>
+                        </v-flex> -->
+
                         <v-flex xs3 >
-                         <v-btn depressed color="transparent" class="font-weight-medium textDefault grey--text text--darken-2 textfm1" block>
-                              <v-icon size="20" class="mr-1" >mdi-comment-outline</v-icon>
+                         <v-btn depressed color="transparent" class=" textDefault grey--text text--darken-1 textfm1" block>
+                              <v-icon size="19" class="--text text--darken-3  mr-1" >mdi-comment-outline</v-icon>
                               Comment
                            </v-btn>
                         </v-flex>
 
-                        <v-flex xs3  >
-                           <v-btn depressed color="transparent" class="font-weight-medium textDefault grey--text text--darken-2 textfm1" block>
-                              <v-icon size="20" class="mr-1" >mdi-share-outline</v-icon>
+                        <v-flex xs3 >
+                           <v-btn depressed color="transparent" class=" textDefault grey--text text--darken-1 textfm1" block>
+                              <v-icon size="20" class="--text text--darken-3 mr-1" >mdi-share-outline</v-icon>
                               Share
                            </v-btn>
                         </v-flex>
@@ -243,28 +257,93 @@
                   <v-flex xs12>
                      <v-divider class="grey lighten-3"></v-divider>
                   </v-flex>
-                  <v-flex xs12 class="px-2">
+
+                  <v-flex xs12 class="mx-2 ">
+                     <v-flex xs12>
+                        <v-layout>
+                           <div  class=" mt-3">
+                              <v-btn @click="profileMenu" color="" icon style="height:34px !important; width:34px !important;margin-top:-5px" class=" jieleftNav"  flat>
+                                 <v-badge color="white"  overlap class="jieBadgeNews">
+                                    <!-- <span  slot="badge" class="" style="font-size:16px; border-radius: 50%; border: 4.5px solid #7CB342 ;"></span> -->
+                                    <v-avatar class="mr-2 " color="grey lighten-3" size="32">
+                                       <img :src="userData.photoUrl" alt="">
+                                    </v-avatar>
+                                 </v-badge>
+                              </v-btn> 
+                           </div>
+                           <!-- comment area -->
+                        
+                           <v-flex xs11  style="margin-top:12px;margin-left:-4px" >
+                              <p style="width: auto !important" class=" jie3Commented">
+                                 <router-link class="indigo--text aJie" to="/profile/jiecel.marianne">Jiecel Marianne </router-link>
+                                 {{userComment}}
+                                 <!-- mollit voluptate deserunt tempor aliquip elit consequat ut amet sit eiusmod cupidatat ipsum. Ipsum magna aute non incididunt. Consectetur veniam in cupidatat anim deserunt esse pariatur ad. Dolore culpa eiusmod eu non cillum amet et do minim esse. Irure sunt do laboris cillum exercitation culpa voluptate. -->
+                              </p>
+                              <div class="caption ml-2" style="margin-top:-13px; ">
+                                 <span>
+                                 <a style="font-size:13px;" class="aJie indigo--text mt-2  textfm1" @click="test"> Like </a> 
+                                    <v-icon size="3px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
+                                 </span>
+                                 <span class="ml-3">
+                                 <a style="font-size:13px;" class=" aJie indigo--text mt-2  textfm1" @click="test"> Dislike </a> 
+                                    <v-icon size="3px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
+                                 </span>
+                                 <span class="ml-3">
+                                 <a style="font-size:13px;" class=" aJie indigo--text mt-2  textfm1" @click="test"> Reply </a> 
+                                    <v-icon size="3px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
+                                 </span>
+                                 <span class="ml-3">
+                                 <span style="font-size:13px;" class=" grey--text mt-2  textfm1" > 1h </span> 
+                                 </span>
+
+                              </div>
+                           </v-flex>
+                        </v-layout>
+                     </v-flex>
+                  </v-flex>
+
+                  <v-flex xs12 class="mx-2">
                      <v-layout>
-                        <v-flex  xs1 class="mt-3">
+                        <v-card flat xs1 class=" mt-3">
                            <v-btn @click="profileMenu" color="" icon style="height:34px !important; width:34px !important;margin-top:-5px" class=" jieleftNav"  flat>
                               <v-badge color="white"  overlap class="jieBadgeNews">
                                  <!-- <span  slot="badge" class="" style="font-size:16px; border-radius: 50%; border: 4.5px solid #7CB342 ;"></span> -->
-                                 <v-avatar class="mr-2 " color="grey lighten-3" size="30">
+                                 <v-avatar class="mr-2 " color="grey lighten-3" size="32">
                                     <img :src="userData.photoUrl" alt="">
                                  </v-avatar>
                               </v-badge>
                            </v-btn> 
-                        </v-flex>
-                        <v-flex :class="whatisFlex">
-                           <v-text-field 
-                              class="jiew textfm1"
-                              style="font-size:14px !important"
-                              placeholder="Write something here..."
-                              flat solo
+                        </v-card>
+
+                        <!-- comment area -->
+                       
+                        <v-flex  xs11 style="margin-top:-7px;margin-left:-5px">
+                           <v-text-field  
+                              background-color="grey lighten-5"
+                              single-line
+                              solo
+                              hint="Press Enter to comment"
+                              flat
+                              height="32"
+                              full-width
+                              v-model="userComment"
+                              :loading="false"
+                              placeholder="Write something here.."
+                              append-icon="mdi-thought-bubble-outline"
+                              style="font-size:13px"
+                              class="font-weight-thin-light jie3 textfm1  "
                            ></v-text-field>
                         </v-flex>
+                        <!-- <v-flex style="margin-top:2px;margin-left:-5px">
+                           <v-btn icon>
+                              <v-icon class="grey--text text--lighten-1">
+                                 mdi-camera
+                              </v-icon>   
+                           </v-btn>                           
+                        </v-flex> -->
                      </v-layout>
                   </v-flex>
+
                <!-- <v-progress-linear active height="2" style="margin:0px !important" color="red lighten-2" :indeterminate="false"></v-progress-linear> -->
                   <!-- <v-flex class="jieSvgBg1" xs12>
                      footer
@@ -273,11 +352,10 @@
 
             </v-card>
             
-            <v-card class="my-2" height="400">
+            <!-- <v-card class="my-2" height="400">
                <v-card-media
                   height="100px"
                >
-                  <!-- src="imgs/background-main-light.svg" -->
                   <v-container fill-height fluid>
                      <v-layout fill-height>
                      <v-flex>
@@ -286,7 +364,7 @@
                      </v-layout>
                   </v-container>
                </v-card-media>
-            </v-card>
+            </v-card> -->
          </v-flex>
 
          <v-flex class=" mr-4  xs0 sm0 md4 lg4" >
@@ -300,7 +378,11 @@
 
 </template>
 <script>
+import { newsfeedRef, db } from '../../firebase.js'
 export default {  
+   firebase: {
+      newsfeeds: newsfeedRef
+   },
    data: () => ({
       timeDisplay: '',
       greet: '',
@@ -309,9 +391,14 @@ export default {
       whatisClass: "",
       bottomNav: 'recent',
       whatisFlex: 'xs7',
+      userComment: '',
       items: [
         { title: 'Op jie1' },
         { title: 'Op jie2' },
+      ],
+      postedData: [
+         { message:'' },
+         { image:'' },
       ]
    }),
    computed: {
@@ -328,16 +415,36 @@ export default {
       test() {
          alert("success")
       },
+      makePost(user) {
+         let vm = this
+         db.ref('Newsfeed/' ).push().set({
+            userId: user['ckcm-network_token_id'],
+            displayName: user.displayName,
+            data: this.postedData,
+            photoUrl: user.photoUrl,
+            timestamp: "",
+         }, function(error) {
+         if (error) {
+            console.log(error)
+            // The write failed...r
+         } else {
+            vm.postedData.message = "";
+            // Data saved successfully!
+         }
+         });
+         console.log(user);
+      },
       whatisFunctionMethod () {
          this.whatisClass = "mb-1 elevation-3"
          this.whatisFunction = true
          this.whatisFlex = "xs11"
       },
       whatisFunctionMethodFalse () {
-         this.whatisFunction = false
-         this.whatisClass = ""
-         this.whatisFlex = "xs7"
-
+         if(this.postedData.message == "") {
+            this.whatisFunction = false
+            this.whatisClass = ""
+            this.whatisFlex = "xs7"
+         }
       },
       profileMenu () {
          const displayName= this.$store.getters.accountLoginData.user.displayName;
@@ -345,6 +452,12 @@ export default {
          this.$router.push({
             path: `/profile/${user}`,
          });
+      },
+      profileMenuFriend (displayName) {
+         const user = displayName.toLocaleLowerCase().replace(/[ ]/g, ".");
+         this.$router.push({
+            path: `/profile/${user}`,
+            });
       }
    },
    mounted: function() {

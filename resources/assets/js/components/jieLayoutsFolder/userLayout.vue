@@ -15,15 +15,15 @@
                min-width="240"
                max-width="240"
                close-delay="50"
-               v-for="friendList in friendLists" :key="friendList.id" v-if="friendList.email != userData.email"
+               v-for="friendList in users" :key="friendList.id" v-if="friendList['.key'] != userData['ckcm-network_token_id']"
                bottom
                app
             >
             <!-- @click="profileMenuFriend(friendList.displayName)"  -->
             <v-btn slot="activator" style="margin-top:-6px"    color="grey" class=" jieleftNav" block flat>
                <v-badge color="white"  overlap class="jieBadgeFriend">
-                  <span v-for="user in users" v-if="friendList['ckcm-network_token_id'] === user['.key'] && user.status == 'online'" :key="user['.key']" slot="badge" style="font-size:16px; border-radius: 50%; border: 4px solid #7CB342 ;"></span>
-                  <span v-for="user in users" v-if="friendList['ckcm-network_token_id'] === user['.key'] && user.status != 'online'" :key="user['.key']" slot="badge" style="font-size:16px; border-radius: 50%; border: 4px solid #E57373 ;"></span>
+                  <span v-if="friendList.status == 'online'" :key="friendList['.key']" slot="badge" style="font-size:16px; border-radius: 50%; border: 4px solid #7CB342 ;"></span>
+                  <span  v-if="friendList.status != 'online'" :key="friendList['.key']" slot="badge" style="font-size:16px; border-radius: 50%; border: 4px solid #E57373 ;"></span>
                   <v-avatar   class="mr-2"  color="grey lighten-3" size="28">
                      <img :src="friendList.photoUrl" alt="">
                   </v-avatar>
@@ -42,8 +42,8 @@
                      <v-flex xs12 class="grey lighten-5 pa-3 ">
                         <v-layout  row wrap justify-center align-center align-content-center>
                            <v-badge color="white"  overlap class="jieBadgeFriendMessage">
-                              <span v-for="user in users" v-if="friendList['ckcm-network_token_id'] === user['.key'] && user.status == 'online'" :key="user['.key']" slot="badge" style="border-radius: 50%; border: 6px solid #7CB342 ;"></span>
-                              <span v-for="user in users" v-if="friendList['ckcm-network_token_id'] === user['.key'] && user.status != 'online'" :key="user['.key']" slot="badge" style="border-radius: 50%; border: 6px solid #E57373 ;"></span>
+                              <span v-if="friendList.status == 'online'" :key="friendList['.key']" slot="badge" style="border-radius: 50%; border: 6px solid #7CB342 ;"></span>
+                              <span v-if="friendList.status != 'online'" :key="friendList['.key']" slot="badge" style="border-radius: 50%; border: 6px solid #E57373 ;"></span>
                               <v-avatar   color="grey lighten-3" size="70">
                                  <img :src="friendList.photoUrl" alt="">
                               </v-avatar>
@@ -194,7 +194,7 @@
                <v-avatar class="mr-1" color="grey lighten-3" size="20px">
                   <img :src="userData.photoUrl" alt="">
                </v-avatar>
-               <div style="font-size:13px;margin-left:1px letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault textfm1">{{userData.displayName}}</div> 
+               <div style="font-size:14px;margin-left:1px letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault textfm1">{{userData.displayName}}</div> 
                <v-spacer></v-spacer>
                <v-icon style="font-size:15px !important" color="grey">mdi-dots-horizontal</v-icon>
             </v-btn>
@@ -207,7 +207,7 @@
                   <img src="https://png.icons8.com/color/40/B0A18E/globe.png">
                   <!-- <img src="https://png.icons8.com/color/100/B0A18E/newsleecher.png" alt=""> -->
                </v-avatar>
-               <div style="font-size:13px;margin-left:1px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault textfm1"> News Feed </div> 
+               <div style="font-size:14px;margin-left:1px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault textfm1"> News Feed </div> 
                <v-spacer></v-spacer>
                <div class="textfm1 caption" >24</div>
             </v-btn>
@@ -216,7 +216,7 @@
                <v-avatar class="mr-1 " color="red--after" size="23px">
                   <img src="/imgs/svg/jieChat.svg">
                </v-avatar>
-               <div style="font-size:13px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault textfm1"> Chat app </div> 
+               <div style="font-size:14px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault textfm1"> Chat app </div> 
                <v-spacer></v-spacer>
                <div class="textfm1 caption" >2</div>
             </v-btn>
@@ -225,7 +225,7 @@
                <v-avatar class="mr-1 " color="red--after" size="23px">
                   <img src="https://png.icons8.com/color/40/B0A18E/pin3.png">
                </v-avatar>
-               <div style="font-size:13px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault textfm1"> Announcement </div> 
+               <div style="font-size:14px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault textfm1"> Announcement </div> 
                <v-spacer></v-spacer>
                <div class="textfm1 caption" >2</div>
             </v-btn>
@@ -235,9 +235,9 @@
                   <img src="/favicon.ico">
                   <!-- <img src="https://png.icons8.com/color/100/B0A18E/newsleecher.png" alt=""> -->
                </v-avatar>
-               <div style="font-size:13px;margin-left:1px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault textfm1"> Welcome </div> 
+               <div style="font-size:14px;margin-left:1px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault textfm1"> Welcome </div> 
                <v-spacer></v-spacer>
-               <div class="textfm1 caption" >24</div>
+               <div class="textfm1 caption" ></div>
             </v-btn>
             
          </v-card>
@@ -469,7 +469,7 @@
 import { usersRef } from '../../firebase.js'
 export default {
    firebase: {
-      users : usersRef
+      users : usersRef,
    },
    data: () => ({
       mini:true,
@@ -500,16 +500,6 @@ export default {
          const ckcmcode = Math.random().toString(36).substring(2, 15)  + Math.random().toString(36).substring(2, 15)  + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
          this.$store.commit('logout');
          this.$router.push(`/?stype=lo&jlou=jie_ckcm-code=${ckcmcode}-AfcXyKTxpz7sQ68VmX5mkDW-v78XPvqoICwwqRFwSZgox8TG0GBDSY0Cd9F9pxUwnqr_c2aOJL4xk0WPhFml466P75gCuUkm2Lkm7ZaR2obLnw&smuh=2724&lh=Ac-yQn60G1vPxGhw`);
-      },
-      friendList () {
-         let vm = this;
-         axios.get('/api/jwt/Ckcm-network-api/eqwe/friendList')
-         .then((response) =>{
-            vm.friendLists=response.data.friendList
-         })
-         .catch((error) =>{
-            // rej(error);
-         })
       },
       profileMenu () {
          const displayName= this.$store.getters.accountLoginData.user.displayName;
@@ -557,8 +547,6 @@ export default {
       this.$store.dispatch("friendList")
    },
    created() {
-      this.friendList()
-    
       // this.$Progress.start()
    }
 }

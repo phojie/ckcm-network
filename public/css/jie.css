@@ -14,6 +14,15 @@
 .txt13 {
    font-size:13px !important;
 }
+
+.aJie {
+   text-decoration: none !important ;
+}
+
+.aJie:hover{
+   text-decoration: underline !important ;
+}
+
 .textDefault {
    text-transform: capitalize !important;
 }
@@ -60,6 +69,49 @@
 .jie .v-icon {
    color: rgba(0,0,0,0.54) !important;
    font-size: 17px !important;
+}
+
+.jie3 .v-input__control   {
+   margin-left:-8px;
+   margin-top:8px;
+   min-height:0px !important;
+   padding: 10px !important;
+}
+
+.jie3 .v-input__slot   {
+   border:1px solid #E0E0E0 !important;
+   border-radius:20px;
+   -webkit-transition: width 2s; /* Safari */
+   transition: width .2;
+}
+
+.jie3 .v-text-field__details   {
+   margin-bottom: -18px !important;
+}
+
+.jie3 .v-messages__message   {
+   font-family: 'Source Sans Pro', sans-serif;
+   font-size:10px !important;
+   margin-top:-1px !important;
+}
+
+
+.jie3 .v-label {
+   color: rgba(0,0,0,0.54) !important;
+   font-size: 12px !important;
+}
+.jie3 .v-icon {
+   color: rgba(0,0,0,0.54) !important;
+   font-size: 17px !important;
+}
+
+.jie3Commented {
+   font-size:13px;
+   padding: 6px !important;
+   display: inline-block;
+   border-radius: 20px !important;
+   background-color: #EEEEEE;
+   /* border: 1px solid #E0E0E0; */
 }
 
 .searchfriend .v-icon {

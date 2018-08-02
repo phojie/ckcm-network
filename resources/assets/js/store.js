@@ -66,6 +66,10 @@ export default {
          const id = state.accountLoginData.user["ckcm-network_token_id"]
          db.ref('users/' + id).set({
             status: "online",
+            displayName: state.accountLoginData.user.displayName ,
+            photoUrl: state.accountLoginData.user.photoUrl,
+            timestamp: "",
+
           }, function(error) {
             if (error) {
                console.log(error)
@@ -79,6 +83,9 @@ export default {
          const id = state.accountLoginData.user["ckcm-network_token_id"]
          db.ref('users/' + id).set({
             status: "offline",
+            displayName: state.accountLoginData.user.displayName ,
+            photoUrl: state.accountLoginData.user.photoUrl,
+            timestamp: "",
           }, function(error) {
             if (error) {
                console.log(error)
