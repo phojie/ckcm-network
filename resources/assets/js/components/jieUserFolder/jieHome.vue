@@ -1,7 +1,7 @@
 <template>
    <v-card app height="100%" width="100%" style="position:absolute; bottom:0" flat class="newsfeedScroll pa-0 ma-0 transparent scrollbar-primary "> 
-      <v-layout class="mt-2 ">
-         <v-flex style="border:1px #E0E0E0 solid;border-radius:2px" class="  mr-2 mt-2 ml-3 xs12 sm12 md8 lg8">
+      <v-layout class="mt-2 justify-center justify-space-arround">
+         <v-flex style="border:1px #E0E0E0 solid;border-radius:2px" class="  mr-2 mt-2 ml-3 xs12 sm12 md8 lg7">
             <v-card flat  class=" jieSvgBg1  " >
                <v-layout wrap color="transparent" :class="whatisClass" class="px-2" >
                   <v-flex xs12  class="mb-1" >
@@ -84,7 +84,7 @@
                   </v-flex>
 
                   <v-flex xs12  v-if="whatisFunction" >
-                     <v-btn small block  depressed color="indigo" @click="makePost(userData)" class="white--text caption textDefault"> Post </v-btn>
+                     <v-btn small block :disabled="postedDataNews"  depressed color="indigo" @click="makePost(userData)" class="white--text caption textDefault"> Post </v-btn>
                   </v-flex>
                </v-layout>
                <!-- <v-progress-linear  v-if="whatisFunction"  height="2" style="margin:0px !important" color="grey" :indeterminate="true"></v-progress-linear> -->
@@ -165,7 +165,7 @@
                </v-flex>
                <!-- </v-container> -->
             </v-card>
-            <v-card  v-for="newsfeed in newsfeeds" :key="newsfeed['.key']" flat class="jieSvgBg1" >
+            <v-card  v-for="newsfeed in newsfeeds " :key="newsfeed['.key']" flat class="jieSvgBg1" >
                <v-progress-linear active height="2" style="margin:0px !important" color="grey lighten-2" :indeterminate="false"></v-progress-linear>
                <v-layout wrap white class=" py-2" >
                   <v-flex xs12 class="mx-2">
@@ -180,7 +180,10 @@
                      </v-btn> 
                      <div class="mt-2 ">
                      <p @click="profileMenuFriend(newsfeed.displayName)" style="font-size:15px" class="aJie mb-0 indigo--text text--darken-4 font-weight-bold textfm1">{{newsfeed.displayName}} </p>
-                     <p style="margin-top:-5px;font-size:13px" class="grey--text textfm2">2 mins</p>
+                     <p style="margin-top:-5px;font-size:13px" class="grey--text textfm2">
+                        <!-- {{ newsfeed.timestamp | moment("dddd, MMMM Do YYYY") }}| -->
+                        <span> <timeago :auto-update="60" :datetime="newsfeed.timestamp"></timeago></span>
+                     </p>
                      </div>
 
                      <v-spacer></v-spacer>
@@ -263,25 +266,23 @@
                   </v-flex>
 
                   <v-flex xs12 class="mx-2 ">
-                     <v-flex xs12>
+                     <!-- <li>{{newsfeed}}</li> -->
+                     <v-flex xs12 v-for="commented in newsfeed.commented  " :key="commented['.key']">
                         <v-layout>
                            <div  class=" mt-3">
                               <v-btn @click="profileMenu" color="" icon style="height:34px !important; width:34px !important;margin-top:-5px" class=" jieleftNav"  flat>
                                  <v-badge color="white"  overlap class="jieBadgeNews">
-                                    <!-- <span  slot="badge" class="" style="font-size:16px; border-radius: 50%; border: 4.5px solid #7CB342 ;"></span> -->
                                     <v-avatar class="mr-2 " color="grey lighten-3" size="32">
-                                       <img :src="userData.photoUrl" alt="">
+                                       <img :src="commented.photoUrl" alt="">
                                     </v-avatar>
                                  </v-badge>
                               </v-btn> 
                            </div>
-                           <!-- comment area -->
                         
                            <v-flex xs11  style="margin-top:12px;margin-left:-4px" >
                               <p style="width: auto !important" class=" jie3Commented">
-                                 <router-link class="indigo--text aJie" to="/profile/jiecel.marianne">Jiecel Marianne </router-link>
-                                 {{userComment}}
-                                 <!-- mollit voluptate deserunt tempor aliquip elit consequat ut amet sit eiusmod cupidatat ipsum. Ipsum magna aute non incididunt. Consectetur veniam in cupidatat anim deserunt esse pariatur ad. Dolore culpa eiusmod eu non cillum amet et do minim esse. Irure sunt do laboris cillum exercitation culpa voluptate. -->
+                                 <router-link class="indigo--text aJie" to="/profile/jiecel.marianne">{{commented.displayName}}</router-link>
+                                 {{commented.data}}
                               </p>
                               <div class="caption ml-2" style="margin-top:-13px; ">
                                  <span>
@@ -322,21 +323,23 @@
                         <!-- comment area -->
                        
                         <v-flex  xs11 style="margin-top:-7px;margin-left:-5px">
-                           <v-text-field  
-                              background-color="grey lighten-5"
-                              single-line
-                              solo
-                              hint="Press Enter to comment"
-                              flat
-                              height="32"
-                              full-width
-                              v-model="userComment"
-                              :loading="false"
-                              placeholder="Write something here.."
-                              append-icon="mdi-thought-bubble-outline"
-                              style="font-size:13px"
-                              class="font-weight-thin-light jie3 textfm1  "
-                           ></v-text-field>
+                           <v-form @submit.prevent="commentPost(newsfeed['.key'], userData)">
+                              <v-text-field  
+                                 background-color="grey lighten-5"
+                                 single-line
+                                 solo
+                                 hint="Press Enter to comment"
+                                 flat
+                                 height="32"
+                                 full-width
+                                 v-model="userComment"
+                                 :loading="false"
+                                 placeholder="Write something here.."
+                                 append-icon="mdi-thought-bubble-outline"
+                                 style="font-size:13px"
+                                 class="font-weight-thin-light jie3 textfm1  "
+                              ></v-text-field>
+                           </v-form>
                         </v-flex>
                         <!-- <v-flex style="margin-top:2px;margin-left:-5px">
                            <v-btn icon>
@@ -371,7 +374,7 @@
             </v-card> -->
          </v-flex>
 
-         <v-flex class=" mr-4  xs0 sm0 md4 lg4" >
+         <v-flex class=" mr-2   xs0 sm0 md4 lg4" >
             <v-card flat class="grey lighten-4 my-2" height="50px">
             </v-card>
             <v-card flat  class="grey lighten-4 mb-2" height="150px">
@@ -382,11 +385,14 @@
 
 </template>
 <script>
-import { newsfeedRef, db } from '../../firebase.js'
+import { newsfeedRef, db } from '../../firebase.js';
+
 export default {  
+  
    firebase: {
       newsfeeds: newsfeedRef
    },
+  
    data: () => ({
       timeDisplay: '',
       greet: '',
@@ -396,16 +402,21 @@ export default {
       bottomNav: 'recent',
       whatisFlex: 'xs7',
       userComment: '',
+      timestamp: '',
       items: [
         { title: 'Op jie1' },
         { title: 'Op jie2' },
       ],
-      postedData: [
-         { message:'' },
-         { image:'' },
-      ]
+      postedData: { 
+         message:'', 
+         image:''
+      },
+
    }),
    computed: {
+      // newsfeedsReverse() {
+      //    return this.newsfeeds.reverse();
+      // },
       userData() {
          return this.$store.getters.accountLoginData.user
       },
@@ -413,20 +424,44 @@ export default {
          var getFn = this.$store.getters.accountLoginData.user.displayName
          var firstname = getFn.split(" ");
          return firstname[0];
-      }
+      },
+      postedDataNews() {
+         if (this.postedData.message == "") return true
+         this.postedData.message != ""
+         return false
+      },
    },
    methods: {
       test() {
          alert("success")
       },
+      commentPost(id,user) {
+         let vm = this
+         db.ref(`Newsfeed/${id}/commented`).push().set({
+            userId: user['ckcm-network_token_id'],
+            displayName: user.displayName,
+            data: vm.userComment,
+            photoUrl: user.photoUrl,
+            timestamp: "",
+         }, function(error) {
+         if (error) {
+            console.log(error)
+            // The write failed...r
+         } else {
+            vm.userComment.message = "";
+            // Data saved successfully!
+         }
+         });
+      },
       makePost(user) {
          let vm = this
+            // timestamp: Date.now(),
          db.ref('Newsfeed/' ).push().set({
             userId: user['ckcm-network_token_id'],
             displayName: user.displayName,
             data: this.postedData,
             photoUrl: user.photoUrl,
-            timestamp: "",
+            timestamp: vm.timestamp
          }, function(error) {
          if (error) {
             console.log(error)
@@ -436,7 +471,6 @@ export default {
             // Data saved successfully!
          }
          });
-         console.log(user);
       },
       whatisFunctionMethod () {
          this.whatisClass = "mb-1 elevation-3"
@@ -448,6 +482,8 @@ export default {
             this.whatisFunction = false
             this.whatisClass = ""
             this.whatisFlex = "xs7"
+         } else {
+            
          }
       },
       profileMenu () {
@@ -476,6 +512,7 @@ export default {
                .then((response) =>{
                   vm.worldTime=response.data
                   vm.timeDisplay = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h:mma');
+                  vm.timestamp =  moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h:mma');
                   let hour = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h');
                   let a = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('a');
                      if ( a == 'pm' && hour >= 1 && hour <= 5 || a == 'pm' && hour == 12) {
@@ -503,6 +540,7 @@ export default {
          .then((response) =>{
             vm.worldTime=response.data
             vm.timeDisplay = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h:mma');
+            vm.timestamp =  vm.worldTime.time_zone.current_time
             let hour = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h');
             let a = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('a');
                if ( a == 'pm' && hour >= 1 && hour <= 5 || a == 'pm' && hour == 12) {

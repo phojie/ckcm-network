@@ -26,12 +26,27 @@ import VueFire from 'vuefire';
 
 window.moment = require('moment');``
 window.moment = require('moment-timezone')
-
+Vue.use(require('vue-moment'));
 // window.firebase = require('./firebase')
 
 // notusing
 
 import VueHotkey from 'v-hotkey'
+
+import VueTimeago from 'vue-timeago'
+
+Vue.use(VueTimeago, {
+  name: 'Timeago', // Component name, `Timeago` by default
+  locale: 'en', // Default locale
+  // We use `date-fns` under the hood
+  // So you can use all locales from it
+  locales: {
+    'zh-CN': require('date-fns/locale/zh_cn'),
+    'ja': require('date-fns/locale/ja'),
+  }
+})
+
+// notusing
 
 Vue.use(VueFire);
 Vue.use(Vuetify, { 

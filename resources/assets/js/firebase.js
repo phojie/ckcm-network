@@ -25,6 +25,8 @@ export const auth = app.auth();
 export const db = app.database();
 export const usersRef = db.ref('users');
 export const newsfeedRef = db.ref('Newsfeed');
+// export const timestamp = app.ServerValue.TIMESTAMP();
 
-newsfeedRef.on('value', snap => console.log(snap.val()));
+// to identify if data has change or added
+// newsfeedRef.on('value', snap => console.log(snap.val()));
 

@@ -5241,6 +5241,48 @@ function getLocalfdetails() {
 
 /***/ }),
 /* 7 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export app */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return auth; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return db; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return usersRef; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return newsfeedRef; });
+
+// import { app } from 'firebase';
+
+var config = {
+   apiKey: "AIzaSyAcYoRTQ4nmID5XjHbPXz543yG5ozz1bFM",
+   authDomain: "authjie.ckcm-network.com",
+   databaseURL: "https://christ-the-king-network.firebaseio.com",
+   projectId: "christ-the-king-network",
+   storageBucket: "christ-the-king-network.appspot.com",
+   messagingSenderId: "631685789688"
+
+   // apiKey: "AIzaSyAcYoRTQ4nmID5XjHbPXz543yG5ozz1bFM",
+   // authDomain: "authjie.ckcm-network.com",
+   // databaseURL: "https://christ-the-king-network.firebaseio.com",
+   // projectId: "christ-the-king-network",
+   // storageBucket: "christ-the-king-network.appspot.com",
+   // messagingSenderId: "631685789688"
+};
+var app = firebase.initializeApp(config);
+var auth = app.auth();
+// firebase.initializeApp(config);
+// export const ckcmApp = app.auth;
+// export const auth = app.auth();
+// export const authGoogle = firebase.auth.GoogleAuthProvider();
+var db = app.database();
+var usersRef = db.ref('users');
+var newsfeedRef = db.ref('Newsfeed');
+// export const timestamp = app.ServerValue.TIMESTAMP();
+
+// to identify if data has change or added
+// newsfeedRef.on('value', snap => console.log(snap.val()));
+
+/***/ }),
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -5466,48 +5508,6 @@ function applyToTag (styleElement, obj) {
   }
 }
 
-
-/***/ }),
-/* 8 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export app */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return auth; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return db; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return usersRef; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return newsfeedRef; });
-
-// import { app } from 'firebase';
-
-var config = {
-   apiKey: "AIzaSyAcYoRTQ4nmID5XjHbPXz543yG5ozz1bFM",
-   authDomain: "authjie.ckcm-network.com",
-   databaseURL: "https://christ-the-king-network.firebaseio.com",
-   projectId: "christ-the-king-network",
-   storageBucket: "christ-the-king-network.appspot.com",
-   messagingSenderId: "631685789688"
-
-   // apiKey: "AIzaSyAcYoRTQ4nmID5XjHbPXz543yG5ozz1bFM",
-   // authDomain: "authjie.ckcm-network.com",
-   // databaseURL: "https://christ-the-king-network.firebaseio.com",
-   // projectId: "christ-the-king-network",
-   // storageBucket: "christ-the-king-network.appspot.com",
-   // messagingSenderId: "631685789688"
-};
-var app = firebase.initializeApp(config);
-var auth = app.auth();
-// firebase.initializeApp(config);
-// export const ckcmApp = app.auth;
-// export const auth = app.auth();
-// export const authGoogle = firebase.auth.GoogleAuthProvider();
-var db = app.database();
-var usersRef = db.ref('users');
-var newsfeedRef = db.ref('Newsfeed');
-
-newsfeedRef.on('value', function (snap) {
-   return console.log(snap.val());
-});
 
 /***/ }),
 /* 9 */
@@ -17023,7 +17023,7 @@ function updateLink (link, options, obj) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global, setImmediate) {/*!
- * Vue.js v2.5.16
+ * Vue.js v2.5.17
  * (c) 2014-2018 Evan You
  * Released under the MIT License.
  */
@@ -22112,7 +22112,7 @@ Object.defineProperty(Vue, 'FunctionalRenderContext', {
   value: FunctionalRenderContext
 });
 
-Vue.version = '2.5.16';
+Vue.version = '2.5.17';
 
 /*  */
 
@@ -40643,11 +40643,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_vue_progressbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_vue_progressbar__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__mdi_font_css_materialdesignicons_css__ = __webpack_require__(248);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__mdi_font_css_materialdesignicons_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__mdi_font_css_materialdesignicons_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__firebase__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__firebase__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_vuefire__ = __webpack_require__(256);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_vuefire___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_vuefire__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_v_hotkey__ = __webpack_require__(262);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_v_hotkey___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_v_hotkey__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_vue_timeago__ = __webpack_require__(273);
 /**
  * depen.
  */
@@ -40676,12 +40677,27 @@ __webpack_require__(149);
 
 window.moment = __webpack_require__(0);'';
 window.moment = __webpack_require__(259);
-
+__WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__webpack_require__(265));
 // window.firebase = require('./firebase')
 
 // notusing
 
 
+
+
+
+__WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_15_vue_timeago__["a" /* default */], {
+   name: 'Timeago', // Component name, `Timeago` by default
+   locale: 'en', // Default locale
+   // We use `date-fns` under the hood
+   // So you can use all locales from it
+   locales: {
+      'zh-CN': __webpack_require__(286),
+      'ja': __webpack_require__(289)
+   }
+});
+
+// notusing
 
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_13_vuefire___default.a);
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_6_vuetify___default.a, {
@@ -40791,7 +40807,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
-  * Bootstrap v4.1.1 (https://getbootstrap.com/)
+  * Bootstrap v4.1.3 (https://getbootstrap.com/)
   * Copyright 2011-2018 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   */
@@ -40862,7 +40878,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.1): util.js
+   * Bootstrap (v4.1.3): util.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -40939,8 +40955,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
         }
 
         try {
-          var $selector = $$$1(document).find(selector);
-          return $selector.length > 0 ? selector : null;
+          return document.querySelector(selector) ? selector : null;
         } catch (err) {
           return null;
         }
@@ -40995,7 +41010,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.1): alert.js
+   * Bootstrap (v4.1.3): alert.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -41007,7 +41022,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
      * ------------------------------------------------------------------------
      */
     var NAME = 'alert';
-    var VERSION = '4.1.1';
+    var VERSION = '4.1.3';
     var DATA_KEY = 'bs.alert';
     var EVENT_KEY = "." + DATA_KEY;
     var DATA_API_KEY = '.data-api';
@@ -41070,7 +41085,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
         var parent = false;
 
         if (selector) {
-          parent = $$$1(selector)[0];
+          parent = document.querySelector(selector);
         }
 
         if (!parent) {
@@ -41170,7 +41185,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.1): button.js
+   * Bootstrap (v4.1.3): button.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -41182,7 +41197,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
      * ------------------------------------------------------------------------
      */
     var NAME = 'button';
-    var VERSION = '4.1.1';
+    var VERSION = '4.1.3';
     var DATA_KEY = 'bs.button';
     var EVENT_KEY = "." + DATA_KEY;
     var DATA_API_KEY = '.data-api';
@@ -41227,14 +41242,14 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
         var rootElement = $$$1(this._element).closest(Selector.DATA_TOGGLE)[0];
 
         if (rootElement) {
-          var input = $$$1(this._element).find(Selector.INPUT)[0];
+          var input = this._element.querySelector(Selector.INPUT);
 
           if (input) {
             if (input.type === 'radio') {
-              if (input.checked && $$$1(this._element).hasClass(ClassName.ACTIVE)) {
+              if (input.checked && this._element.classList.contains(ClassName.ACTIVE)) {
                 triggerChangeEvent = false;
               } else {
-                var activeElement = $$$1(rootElement).find(Selector.ACTIVE)[0];
+                var activeElement = rootElement.querySelector(Selector.ACTIVE);
 
                 if (activeElement) {
                   $$$1(activeElement).removeClass(ClassName.ACTIVE);
@@ -41247,7 +41262,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
                 return;
               }
 
-              input.checked = !$$$1(this._element).hasClass(ClassName.ACTIVE);
+              input.checked = !this._element.classList.contains(ClassName.ACTIVE);
               $$$1(input).trigger('change');
             }
 
@@ -41257,7 +41272,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
         }
 
         if (addAriaPressed) {
-          this._element.setAttribute('aria-pressed', !$$$1(this._element).hasClass(ClassName.ACTIVE));
+          this._element.setAttribute('aria-pressed', !this._element.classList.contains(ClassName.ACTIVE));
         }
 
         if (triggerChangeEvent) {
@@ -41334,7 +41349,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.1): carousel.js
+   * Bootstrap (v4.1.3): carousel.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -41346,7 +41361,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
      * ------------------------------------------------------------------------
      */
     var NAME = 'carousel';
-    var VERSION = '4.1.1';
+    var VERSION = '4.1.3';
     var DATA_KEY = 'bs.carousel';
     var EVENT_KEY = "." + DATA_KEY;
     var DATA_API_KEY = '.data-api';
@@ -41425,7 +41440,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
         this.touchTimeout = null;
         this._config = this._getConfig(config);
         this._element = $$$1(element)[0];
-        this._indicatorsElement = $$$1(this._element).find(Selector.INDICATORS)[0];
+        this._indicatorsElement = this._element.querySelector(Selector.INDICATORS);
 
         this._addEventListeners();
       } // Getters
@@ -41459,7 +41474,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
           this._isPaused = true;
         }
 
-        if ($$$1(this._element).find(Selector.NEXT_PREV)[0]) {
+        if (this._element.querySelector(Selector.NEXT_PREV)) {
           Util.triggerTransitionEnd(this._element);
           this.cycle(true);
         }
@@ -41486,7 +41501,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
       _proto.to = function to(index) {
         var _this = this;
 
-        this._activeElement = $$$1(this._element).find(Selector.ACTIVE_ITEM)[0];
+        this._activeElement = this._element.querySelector(Selector.ACTIVE_ITEM);
 
         var activeIndex = this._getItemIndex(this._activeElement);
 
@@ -41592,7 +41607,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
       };
 
       _proto._getItemIndex = function _getItemIndex(element) {
-        this._items = $$$1.makeArray($$$1(element).parent().find(Selector.ITEM));
+        this._items = element && element.parentNode ? [].slice.call(element.parentNode.querySelectorAll(Selector.ITEM)) : [];
         return this._items.indexOf(element);
       };
 
@@ -41617,7 +41632,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
       _proto._triggerSlideEvent = function _triggerSlideEvent(relatedTarget, eventDirectionName) {
         var targetIndex = this._getItemIndex(relatedTarget);
 
-        var fromIndex = this._getItemIndex($$$1(this._element).find(Selector.ACTIVE_ITEM)[0]);
+        var fromIndex = this._getItemIndex(this._element.querySelector(Selector.ACTIVE_ITEM));
 
         var slideEvent = $$$1.Event(Event.SLIDE, {
           relatedTarget: relatedTarget,
@@ -41631,7 +41646,8 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
 
       _proto._setActiveIndicatorElement = function _setActiveIndicatorElement(element) {
         if (this._indicatorsElement) {
-          $$$1(this._indicatorsElement).find(Selector.ACTIVE).removeClass(ClassName.ACTIVE);
+          var indicators = [].slice.call(this._indicatorsElement.querySelectorAll(Selector.ACTIVE));
+          $$$1(indicators).removeClass(ClassName.ACTIVE);
 
           var nextIndicator = this._indicatorsElement.children[this._getItemIndex(element)];
 
@@ -41644,7 +41660,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
       _proto._slide = function _slide(direction, element) {
         var _this3 = this;
 
-        var activeElement = $$$1(this._element).find(Selector.ACTIVE_ITEM)[0];
+        var activeElement = this._element.querySelector(Selector.ACTIVE_ITEM);
 
         var activeElementIndex = this._getItemIndex(activeElement);
 
@@ -41810,11 +41826,13 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
 
     $$$1(document).on(Event.CLICK_DATA_API, Selector.DATA_SLIDE, Carousel._dataApiClickHandler);
     $$$1(window).on(Event.LOAD_DATA_API, function () {
-      $$$1(Selector.DATA_RIDE).each(function () {
-        var $carousel = $$$1(this);
+      var carousels = [].slice.call(document.querySelectorAll(Selector.DATA_RIDE));
+
+      for (var i = 0, len = carousels.length; i < len; i++) {
+        var $carousel = $$$1(carousels[i]);
 
         Carousel._jQueryInterface.call($carousel, $carousel.data());
-      });
+      }
     });
     /**
      * ------------------------------------------------------------------------
@@ -41835,7 +41853,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.1): collapse.js
+   * Bootstrap (v4.1.3): collapse.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -41847,7 +41865,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
      * ------------------------------------------------------------------------
      */
     var NAME = 'collapse';
-    var VERSION = '4.1.1';
+    var VERSION = '4.1.3';
     var DATA_KEY = 'bs.collapse';
     var EVENT_KEY = "." + DATA_KEY;
     var DATA_API_KEY = '.data-api';
@@ -41895,14 +41913,17 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
         this._isTransitioning = false;
         this._element = element;
         this._config = this._getConfig(config);
-        this._triggerArray = $$$1.makeArray($$$1("[data-toggle=\"collapse\"][href=\"#" + element.id + "\"]," + ("[data-toggle=\"collapse\"][data-target=\"#" + element.id + "\"]")));
-        var tabToggles = $$$1(Selector.DATA_TOGGLE);
+        this._triggerArray = $$$1.makeArray(document.querySelectorAll("[data-toggle=\"collapse\"][href=\"#" + element.id + "\"]," + ("[data-toggle=\"collapse\"][data-target=\"#" + element.id + "\"]")));
+        var toggleList = [].slice.call(document.querySelectorAll(Selector.DATA_TOGGLE));
 
-        for (var i = 0; i < tabToggles.length; i++) {
-          var elem = tabToggles[i];
+        for (var i = 0, len = toggleList.length; i < len; i++) {
+          var elem = toggleList[i];
           var selector = Util.getSelectorFromElement(elem);
+          var filterElement = [].slice.call(document.querySelectorAll(selector)).filter(function (foundElem) {
+            return foundElem === element;
+          });
 
-          if (selector !== null && $$$1(selector).filter(element).length > 0) {
+          if (selector !== null && filterElement.length > 0) {
             this._selector = selector;
 
             this._triggerArray.push(elem);
@@ -41943,7 +41964,9 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
         var activesData;
 
         if (this._parent) {
-          actives = $$$1.makeArray($$$1(this._parent).find(Selector.ACTIVES).filter("[data-parent=\"" + this._config.parent + "\"]"));
+          actives = [].slice.call(this._parent.querySelectorAll(Selector.ACTIVES)).filter(function (elem) {
+            return elem.getAttribute('data-parent') === _this._config.parent;
+          });
 
           if (actives.length === 0) {
             actives = null;
@@ -41978,7 +42001,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
         $$$1(this._element).removeClass(ClassName.COLLAPSE).addClass(ClassName.COLLAPSING);
         this._element.style[dimension] = 0;
 
-        if (this._triggerArray.length > 0) {
+        if (this._triggerArray.length) {
           $$$1(this._triggerArray).removeClass(ClassName.COLLAPSED).attr('aria-expanded', true);
         }
 
@@ -42019,14 +42042,15 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
         this._element.style[dimension] = this._element.getBoundingClientRect()[dimension] + "px";
         Util.reflow(this._element);
         $$$1(this._element).addClass(ClassName.COLLAPSING).removeClass(ClassName.COLLAPSE).removeClass(ClassName.SHOW);
+        var triggerArrayLength = this._triggerArray.length;
 
-        if (this._triggerArray.length > 0) {
-          for (var i = 0; i < this._triggerArray.length; i++) {
+        if (triggerArrayLength > 0) {
+          for (var i = 0; i < triggerArrayLength; i++) {
             var trigger = this._triggerArray[i];
             var selector = Util.getSelectorFromElement(trigger);
 
             if (selector !== null) {
-              var $elem = $$$1(selector);
+              var $elem = $$$1([].slice.call(document.querySelectorAll(selector)));
 
               if (!$elem.hasClass(ClassName.SHOW)) {
                 $$$1(trigger).addClass(ClassName.COLLAPSED).attr('aria-expanded', false);
@@ -42087,11 +42111,12 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
             parent = this._config.parent[0];
           }
         } else {
-          parent = $$$1(this._config.parent)[0];
+          parent = document.querySelector(this._config.parent);
         }
 
         var selector = "[data-toggle=\"collapse\"][data-parent=\"" + this._config.parent + "\"]";
-        $$$1(parent).find(selector).each(function (i, element) {
+        var children = [].slice.call(parent.querySelectorAll(selector));
+        $$$1(children).each(function (i, element) {
           _this3._addAriaAndCollapsedClass(Collapse._getTargetFromElement(element), [element]);
         });
         return parent;
@@ -42101,7 +42126,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
         if (element) {
           var isOpen = $$$1(element).hasClass(ClassName.SHOW);
 
-          if (triggerArray.length > 0) {
+          if (triggerArray.length) {
             $$$1(triggerArray).toggleClass(ClassName.COLLAPSED, !isOpen).attr('aria-expanded', isOpen);
           }
         }
@@ -42110,7 +42135,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
 
       Collapse._getTargetFromElement = function _getTargetFromElement(element) {
         var selector = Util.getSelectorFromElement(element);
-        return selector ? $$$1(selector)[0] : null;
+        return selector ? document.querySelector(selector) : null;
       };
 
       Collapse._jQueryInterface = function _jQueryInterface(config) {
@@ -42168,7 +42193,8 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
 
       var $trigger = $$$1(this);
       var selector = Util.getSelectorFromElement(this);
-      $$$1(selector).each(function () {
+      var selectors = [].slice.call(document.querySelectorAll(selector));
+      $$$1(selectors).each(function () {
         var $target = $$$1(this);
         var data = $target.data(DATA_KEY);
         var config = data ? 'toggle' : $trigger.data();
@@ -42195,7 +42221,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.1): dropdown.js
+   * Bootstrap (v4.1.3): dropdown.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -42207,7 +42233,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
      * ------------------------------------------------------------------------
      */
     var NAME = 'dropdown';
-    var VERSION = '4.1.1';
+    var VERSION = '4.1.3';
     var DATA_KEY = 'bs.dropdown';
     var EVENT_KEY = "." + DATA_KEY;
     var DATA_API_KEY = '.data-api';
@@ -42416,14 +42442,16 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
         if (!this._menu) {
           var parent = Dropdown._getParentFromElement(this._element);
 
-          this._menu = $$$1(parent).find(Selector.MENU)[0];
+          if (parent) {
+            this._menu = parent.querySelector(Selector.MENU);
+          }
         }
 
         return this._menu;
       };
 
       _proto._getPlacement = function _getPlacement() {
-        var $parentDropdown = $$$1(this._element).parent();
+        var $parentDropdown = $$$1(this._element.parentNode);
         var placement = AttachmentMap.BOTTOM; // Handle dropup
 
         if ($parentDropdown.hasClass(ClassName.DROPUP)) {
@@ -42511,15 +42539,19 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
           return;
         }
 
-        var toggles = $$$1.makeArray($$$1(Selector.DATA_TOGGLE));
+        var toggles = [].slice.call(document.querySelectorAll(Selector.DATA_TOGGLE));
 
-        for (var i = 0; i < toggles.length; i++) {
+        for (var i = 0, len = toggles.length; i < len; i++) {
           var parent = Dropdown._getParentFromElement(toggles[i]);
 
           var context = $$$1(toggles[i]).data(DATA_KEY);
           var relatedTarget = {
             relatedTarget: toggles[i]
           };
+
+          if (event && event.type === 'click') {
+            relatedTarget.clickEvent = event;
+          }
 
           if (!context) {
             continue;
@@ -42559,7 +42591,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
         var selector = Util.getSelectorFromElement(element);
 
         if (selector) {
-          parent = $$$1(selector)[0];
+          parent = document.querySelector(selector);
         }
 
         return parent || element.parentNode;
@@ -42591,7 +42623,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
 
         if (!isActive && (event.which !== ESCAPE_KEYCODE || event.which !== SPACE_KEYCODE) || isActive && (event.which === ESCAPE_KEYCODE || event.which === SPACE_KEYCODE)) {
           if (event.which === ESCAPE_KEYCODE) {
-            var toggle = $$$1(parent).find(Selector.DATA_TOGGLE)[0];
+            var toggle = parent.querySelector(Selector.DATA_TOGGLE);
             $$$1(toggle).trigger('focus');
           }
 
@@ -42599,7 +42631,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
           return;
         }
 
-        var items = $$$1(parent).find(Selector.VISIBLE_ITEMS).get();
+        var items = [].slice.call(parent.querySelectorAll(Selector.VISIBLE_ITEMS));
 
         if (items.length === 0) {
           return;
@@ -42677,7 +42709,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.1): modal.js
+   * Bootstrap (v4.1.3): modal.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -42689,7 +42721,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
      * ------------------------------------------------------------------------
      */
     var NAME = 'modal';
-    var VERSION = '4.1.1';
+    var VERSION = '4.1.3';
     var DATA_KEY = 'bs.modal';
     var EVENT_KEY = "." + DATA_KEY;
     var DATA_API_KEY = '.data-api';
@@ -42733,8 +42765,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
       DATA_TOGGLE: '[data-toggle="modal"]',
       DATA_DISMISS: '[data-dismiss="modal"]',
       FIXED_CONTENT: '.fixed-top, .fixed-bottom, .is-fixed, .sticky-top',
-      STICKY_CONTENT: '.sticky-top',
-      NAVBAR_TOGGLER: '.navbar-toggler'
+      STICKY_CONTENT: '.sticky-top'
       /**
        * ------------------------------------------------------------------------
        * Class Definition
@@ -42749,7 +42780,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
       function Modal(element, config) {
         this._config = this._getConfig(config);
         this._element = element;
-        this._dialog = $$$1(element).find(Selector.DIALOG)[0];
+        this._dialog = element.querySelector(Selector.DIALOG);
         this._backdrop = null;
         this._isShown = false;
         this._isBodyOverflowing = false;
@@ -43006,7 +43037,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
           this._backdrop.className = ClassName.BACKDROP;
 
           if (animate) {
-            $$$1(this._backdrop).addClass(animate);
+            this._backdrop.classList.add(animate);
           }
 
           $$$1(this._backdrop).appendTo(document.body);
@@ -43100,23 +43131,19 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
         if (this._isBodyOverflowing) {
           // Note: DOMNode.style.paddingRight returns the actual value or '' if not set
           //   while $(DOMNode).css('padding-right') returns the calculated value or 0 if not set
-          // Adjust fixed content padding
-          $$$1(Selector.FIXED_CONTENT).each(function (index, element) {
-            var actualPadding = $$$1(element)[0].style.paddingRight;
+          var fixedContent = [].slice.call(document.querySelectorAll(Selector.FIXED_CONTENT));
+          var stickyContent = [].slice.call(document.querySelectorAll(Selector.STICKY_CONTENT)); // Adjust fixed content padding
+
+          $$$1(fixedContent).each(function (index, element) {
+            var actualPadding = element.style.paddingRight;
             var calculatedPadding = $$$1(element).css('padding-right');
             $$$1(element).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + _this9._scrollbarWidth + "px");
           }); // Adjust sticky content margin
 
-          $$$1(Selector.STICKY_CONTENT).each(function (index, element) {
-            var actualMargin = $$$1(element)[0].style.marginRight;
+          $$$1(stickyContent).each(function (index, element) {
+            var actualMargin = element.style.marginRight;
             var calculatedMargin = $$$1(element).css('margin-right');
             $$$1(element).data('margin-right', actualMargin).css('margin-right', parseFloat(calculatedMargin) - _this9._scrollbarWidth + "px");
-          }); // Adjust navbar-toggler margin
-
-          $$$1(Selector.NAVBAR_TOGGLER).each(function (index, element) {
-            var actualMargin = $$$1(element)[0].style.marginRight;
-            var calculatedMargin = $$$1(element).css('margin-right');
-            $$$1(element).data('margin-right', actualMargin).css('margin-right', parseFloat(calculatedMargin) + _this9._scrollbarWidth + "px");
           }); // Adjust body padding
 
           var actualPadding = document.body.style.paddingRight;
@@ -43127,15 +43154,15 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
 
       _proto._resetScrollbar = function _resetScrollbar() {
         // Restore fixed content padding
-        $$$1(Selector.FIXED_CONTENT).each(function (index, element) {
+        var fixedContent = [].slice.call(document.querySelectorAll(Selector.FIXED_CONTENT));
+        $$$1(fixedContent).each(function (index, element) {
           var padding = $$$1(element).data('padding-right');
+          $$$1(element).removeData('padding-right');
+          element.style.paddingRight = padding ? padding : '';
+        }); // Restore sticky content
 
-          if (typeof padding !== 'undefined') {
-            $$$1(element).css('padding-right', padding).removeData('padding-right');
-          }
-        }); // Restore sticky content and navbar-toggler margin
-
-        $$$1(Selector.STICKY_CONTENT + ", " + Selector.NAVBAR_TOGGLER).each(function (index, element) {
+        var elements = [].slice.call(document.querySelectorAll("" + Selector.STICKY_CONTENT));
+        $$$1(elements).each(function (index, element) {
           var margin = $$$1(element).data('margin-right');
 
           if (typeof margin !== 'undefined') {
@@ -43144,10 +43171,8 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
         }); // Restore body padding
 
         var padding = $$$1(document.body).data('padding-right');
-
-        if (typeof padding !== 'undefined') {
-          $$$1(document.body).css('padding-right', padding).removeData('padding-right');
-        }
+        $$$1(document.body).removeData('padding-right');
+        document.body.style.paddingRight = padding ? padding : '';
       };
 
       _proto._getScrollbarWidth = function _getScrollbarWidth() {
@@ -43212,7 +43237,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
       var selector = Util.getSelectorFromElement(this);
 
       if (selector) {
-        target = $$$1(selector)[0];
+        target = document.querySelector(selector);
       }
 
       var config = $$$1(target).data(DATA_KEY) ? 'toggle' : _objectSpread({}, $$$1(target).data(), $$$1(this).data());
@@ -43255,7 +43280,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.1): tooltip.js
+   * Bootstrap (v4.1.3): tooltip.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -43267,7 +43292,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
      * ------------------------------------------------------------------------
      */
     var NAME = 'tooltip';
-    var VERSION = '4.1.1';
+    var VERSION = '4.1.3';
     var DATA_KEY = 'bs.tooltip';
     var EVENT_KEY = "." + DATA_KEY;
     var JQUERY_NO_CONFLICT = $$$1.fn[NAME];
@@ -43477,7 +43502,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
           var attachment = this._getAttachment(placement);
 
           this.addAttachmentClass(attachment);
-          var container = this.config.container === false ? document.body : $$$1(this.config.container);
+          var container = this.config.container === false ? document.body : $$$1(document).find(this.config.container);
           $$$1(tip).data(this.constructor.DATA_KEY, this);
 
           if (!$$$1.contains(this.element.ownerDocument.documentElement, this.tip)) {
@@ -43616,9 +43641,9 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
       };
 
       _proto.setContent = function setContent() {
-        var $tip = $$$1(this.getTipElement());
-        this.setElementContent($tip.find(Selector.TOOLTIP_INNER), this.getTitle());
-        $tip.removeClass(ClassName.FADE + " " + ClassName.SHOW);
+        var tip = this.getTipElement();
+        this.setElementContent($$$1(tip.querySelectorAll(Selector.TOOLTIP_INNER)), this.getTitle());
+        $$$1(tip).removeClass(ClassName.FADE + " " + ClassName.SHOW);
       };
 
       _proto.setElementContent = function setElementContent($element, content) {
@@ -43811,15 +43836,18 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
         var $tip = $$$1(this.getTipElement());
         var tabClass = $tip.attr('class').match(BSCLS_PREFIX_REGEX);
 
-        if (tabClass !== null && tabClass.length > 0) {
+        if (tabClass !== null && tabClass.length) {
           $tip.removeClass(tabClass.join(''));
         }
       };
 
-      _proto._handlePopperPlacementChange = function _handlePopperPlacementChange(data) {
+      _proto._handlePopperPlacementChange = function _handlePopperPlacementChange(popperData) {
+        var popperInstance = popperData.instance;
+        this.tip = popperInstance.popper;
+
         this._cleanTipClass();
 
-        this.addAttachmentClass(this._getAttachment(data.placement));
+        this.addAttachmentClass(this._getAttachment(popperData.placement));
       };
 
       _proto._fixTransition = function _fixTransition() {
@@ -43922,7 +43950,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.1): popover.js
+   * Bootstrap (v4.1.3): popover.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -43934,7 +43962,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
      * ------------------------------------------------------------------------
      */
     var NAME = 'popover';
-    var VERSION = '4.1.1';
+    var VERSION = '4.1.3';
     var DATA_KEY = 'bs.popover';
     var EVENT_KEY = "." + DATA_KEY;
     var JQUERY_NO_CONFLICT = $$$1.fn[NAME];
@@ -44119,7 +44147,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.1): scrollspy.js
+   * Bootstrap (v4.1.3): scrollspy.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -44131,7 +44159,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
      * ------------------------------------------------------------------------
      */
     var NAME = 'scrollspy';
-    var VERSION = '4.1.1';
+    var VERSION = '4.1.3';
     var DATA_KEY = 'bs.scrollspy';
     var EVENT_KEY = "." + DATA_KEY;
     var DATA_API_KEY = '.data-api';
@@ -44213,13 +44241,13 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
         this._offsets = [];
         this._targets = [];
         this._scrollHeight = this._getScrollHeight();
-        var targets = $$$1.makeArray($$$1(this._selector));
+        var targets = [].slice.call(document.querySelectorAll(this._selector));
         targets.map(function (element) {
           var target;
           var targetSelector = Util.getSelectorFromElement(element);
 
           if (targetSelector) {
-            target = $$$1(targetSelector)[0];
+            target = document.querySelector(targetSelector);
           }
 
           if (target) {
@@ -44316,7 +44344,9 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
           return;
         }
 
-        for (var i = this._offsets.length; i--;) {
+        var offsetLength = this._offsets.length;
+
+        for (var i = offsetLength; i--;) {
           var isActiveTarget = this._activeTarget !== this._targets[i] && scrollTop >= this._offsets[i] && (typeof this._offsets[i + 1] === 'undefined' || scrollTop < this._offsets[i + 1]);
 
           if (isActiveTarget) {
@@ -44336,7 +44366,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
         queries = queries.map(function (selector) {
           return selector + "[data-target=\"" + target + "\"]," + (selector + "[href=\"" + target + "\"]");
         });
-        var $link = $$$1(queries.join(','));
+        var $link = $$$1([].slice.call(document.querySelectorAll(queries.join(','))));
 
         if ($link.hasClass(ClassName.DROPDOWN_ITEM)) {
           $link.closest(Selector.DROPDOWN).find(Selector.DROPDOWN_TOGGLE).addClass(ClassName.ACTIVE);
@@ -44357,7 +44387,8 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
       };
 
       _proto._clear = function _clear() {
-        $$$1(this._selector).filter(Selector.ACTIVE).removeClass(ClassName.ACTIVE);
+        var nodes = [].slice.call(document.querySelectorAll(this._selector));
+        $$$1(nodes).filter(Selector.ACTIVE).removeClass(ClassName.ACTIVE);
       }; // Static
 
 
@@ -44404,9 +44435,10 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
 
 
     $$$1(window).on(Event.LOAD_DATA_API, function () {
-      var scrollSpys = $$$1.makeArray($$$1(Selector.DATA_SPY));
+      var scrollSpys = [].slice.call(document.querySelectorAll(Selector.DATA_SPY));
+      var scrollSpysLength = scrollSpys.length;
 
-      for (var i = scrollSpys.length; i--;) {
+      for (var i = scrollSpysLength; i--;) {
         var $spy = $$$1(scrollSpys[i]);
 
         ScrollSpy._jQueryInterface.call($spy, $spy.data());
@@ -44431,7 +44463,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.1): tab.js
+   * Bootstrap (v4.1.3): tab.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -44443,7 +44475,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
      * ------------------------------------------------------------------------
      */
     var NAME = 'tab';
-    var VERSION = '4.1.1';
+    var VERSION = '4.1.3';
     var DATA_KEY = 'bs.tab';
     var EVENT_KEY = "." + DATA_KEY;
     var DATA_API_KEY = '.data-api';
@@ -44525,7 +44557,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
         }
 
         if (selector) {
-          target = $$$1(selector)[0];
+          target = document.querySelector(selector);
         }
 
         this._activate(this._element, listElement);
@@ -44607,7 +44639,8 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
           var dropdownElement = $$$1(element).closest(Selector.DROPDOWN)[0];
 
           if (dropdownElement) {
-            $$$1(dropdownElement).find(Selector.DROPDOWN_TOGGLE).addClass(ClassName.ACTIVE);
+            var dropdownToggleList = [].slice.call(dropdownElement.querySelectorAll(Selector.DROPDOWN_TOGGLE));
+            $$$1(dropdownToggleList).addClass(ClassName.ACTIVE);
           }
 
           element.setAttribute('aria-expanded', true);
@@ -44679,7 +44712,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.1): index.js
+   * Bootstrap (v4.1.3): index.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -56458,7 +56491,7 @@ var content = __webpack_require__(185);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(7)("600017e2", content, false, {});
+var update = __webpack_require__(8)("600017e2", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -58672,7 +58705,7 @@ var content = __webpack_require__(218);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(7)("3b88d4a4", content, false, {});
+var update = __webpack_require__(8)("3b88d4a4", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -59099,7 +59132,7 @@ var content = __webpack_require__(223);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(7)("0fd3054c", content, false, {});
+var update = __webpack_require__(8)("0fd3054c", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -59526,7 +59559,7 @@ var content = __webpack_require__(228);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(7)("6fc1e0b6", content, false, {});
+var update = __webpack_require__(8)("6fc1e0b6", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -59561,7 +59594,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_js__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_js__ = __webpack_require__(7);
 //
 //
 //
@@ -61460,7 +61493,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_js__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_js__ = __webpack_require__(7);
 //
 //
 //
@@ -61844,12 +61877,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+
    firebase: {
       newsfeeds: __WEBPACK_IMPORTED_MODULE_0__firebase_js__["c" /* newsfeedRef */]
    },
+
    data: function data() {
       return {
          timeDisplay: '',
@@ -61860,11 +61899,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          bottomNav: 'recent',
          whatisFlex: 'xs7',
          userComment: '',
+         timestamp: '',
          items: [{ title: 'Op jie1' }, { title: 'Op jie2' }],
-         postedData: [{ message: '' }, { image: '' }]
+         postedData: {
+            message: '',
+            image: ''
+         }
+
       };
    },
    computed: {
+      // newsfeedsReverse() {
+      //    return this.newsfeeds.reverse();
+      // },
       userData: function userData() {
          return this.$store.getters.accountLoginData.user;
       },
@@ -61872,20 +61919,44 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          var getFn = this.$store.getters.accountLoginData.user.displayName;
          var firstname = getFn.split(" ");
          return firstname[0];
+      },
+      postedDataNews: function postedDataNews() {
+         if (this.postedData.message == "") return true;
+         this.postedData.message != "";
+         return false;
       }
    },
    methods: {
       test: function test() {
          alert("success");
       },
+      commentPost: function commentPost(id, user) {
+         var vm = this;
+         __WEBPACK_IMPORTED_MODULE_0__firebase_js__["b" /* db */].ref('Newsfeed/' + id + '/commented').push().set({
+            userId: user['ckcm-network_token_id'],
+            displayName: user.displayName,
+            data: vm.userComment,
+            photoUrl: user.photoUrl,
+            timestamp: ""
+         }, function (error) {
+            if (error) {
+               console.log(error);
+               // The write failed...r
+            } else {
+               vm.userComment.message = "";
+               // Data saved successfully!
+            }
+         });
+      },
       makePost: function makePost(user) {
          var vm = this;
+         // timestamp: Date.now(),
          __WEBPACK_IMPORTED_MODULE_0__firebase_js__["b" /* db */].ref('Newsfeed/').push().set({
             userId: user['ckcm-network_token_id'],
             displayName: user.displayName,
             data: this.postedData,
             photoUrl: user.photoUrl,
-            timestamp: ""
+            timestamp: vm.timestamp
          }, function (error) {
             if (error) {
                console.log(error);
@@ -61895,7 +61966,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                // Data saved successfully!
             }
          });
-         console.log(user);
       },
       whatisFunctionMethod: function whatisFunctionMethod() {
          this.whatisClass = "mb-1 elevation-3";
@@ -61907,7 +61977,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.whatisFunction = false;
             this.whatisClass = "";
             this.whatisFlex = "xs7";
-         }
+         } else {}
       },
       profileMenu: function profileMenu() {
          var displayName = this.$store.getters.accountLoginData.user.displayName;
@@ -61934,6 +62004,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          axios.get('https://api.ipgeolocation.io/ipgeo?apiKey=90a83c7326cc475f8048cf81362e1df0').then(function (response) {
             vm.worldTime = response.data;
             vm.timeDisplay = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h:mma');
+            vm.timestamp = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h:mma');
             var hour = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h');
             var a = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('a');
             if (a == 'pm' && hour >= 1 && hour <= 5 || a == 'pm' && hour == 12) {
@@ -61959,6 +62030,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       axios.get('https://api.ipgeolocation.io/ipgeo?apiKey=90a83c7326cc475f8048cf81362e1df0').then(function (response) {
          vm.worldTime = response.data;
          vm.timeDisplay = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h:mma');
+         vm.timestamp = vm.worldTime.time_zone.current_time;
          var hour = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h');
          var a = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('a');
          if (a == 'pm' && hour >= 1 && hour <= 5 || a == 'pm' && hour == 12) {
@@ -61994,12 +62066,12 @@ var render = function() {
     [
       _c(
         "v-layout",
-        { staticClass: "mt-2 " },
+        { staticClass: "mt-2 justify-center justify-space-arround" },
         [
           _c(
             "v-flex",
             {
-              staticClass: "  mr-2 mt-2 ml-3 xs12 sm12 md8 lg8",
+              staticClass: "  mr-2 mt-2 ml-3 xs12 sm12 md8 lg7",
               staticStyle: {
                 border: "1px #E0E0E0 solid",
                 "border-radius": "2px"
@@ -62276,6 +62348,7 @@ var render = function() {
                                   attrs: {
                                     small: "",
                                     block: "",
+                                    disabled: _vm.postedDataNews,
                                     depressed: "",
                                     color: "indigo"
                                   },
@@ -62731,7 +62804,20 @@ var render = function() {
                                         "font-size": "13px"
                                       }
                                     },
-                                    [_vm._v("2 mins")]
+                                    [
+                                      _c(
+                                        "span",
+                                        [
+                                          _c("timeago", {
+                                            attrs: {
+                                              "auto-update": 60,
+                                              datetime: newsfeed.timestamp
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      )
+                                    ]
                                   )
                                 ]),
                                 _vm._v(" "),
@@ -63008,10 +63094,10 @@ var render = function() {
                         _c(
                           "v-flex",
                           { staticClass: "mx-2 ", attrs: { xs12: "" } },
-                          [
-                            _c(
+                          _vm._l(newsfeed.commented, function(commented) {
+                            return _c(
                               "v-flex",
-                              { attrs: { xs12: "" } },
+                              { key: commented[".key"], attrs: { xs12: "" } },
                               [
                                 _c(
                                   "v-layout",
@@ -63059,8 +63145,7 @@ var render = function() {
                                                   [
                                                     _c("img", {
                                                       attrs: {
-                                                        src:
-                                                          _vm.userData.photoUrl,
+                                                        src: commented.photoUrl,
                                                         alt: ""
                                                       }
                                                     })
@@ -63104,12 +63189,16 @@ var render = function() {
                                                   to: "/profile/jiecel.marianne"
                                                 }
                                               },
-                                              [_vm._v("Jiecel Marianne ")]
+                                              [
+                                                _vm._v(
+                                                  _vm._s(commented.displayName)
+                                                )
+                                              ]
                                             ),
                                             _vm._v(
                                               "\n                              " +
-                                                _vm._s(_vm.userComment) +
-                                                "\n                              "
+                                                _vm._s(commented.data) +
+                                                "\n                           "
                                             )
                                           ],
                                           1
@@ -63249,8 +63338,7 @@ var render = function() {
                               ],
                               1
                             )
-                          ],
-                          1
+                          })
                         ),
                         _vm._v(" "),
                         _c(
@@ -63332,31 +63420,50 @@ var render = function() {
                                     attrs: { xs11: "" }
                                   },
                                   [
-                                    _c("v-text-field", {
-                                      staticClass:
-                                        "font-weight-thin-light jie3 textfm1  ",
-                                      staticStyle: { "font-size": "13px" },
-                                      attrs: {
-                                        "background-color": "grey lighten-5",
-                                        "single-line": "",
-                                        solo: "",
-                                        hint: "Press Enter to comment",
-                                        flat: "",
-                                        height: "32",
-                                        "full-width": "",
-                                        loading: false,
-                                        placeholder: "Write something here..",
-                                        "append-icon":
-                                          "mdi-thought-bubble-outline"
+                                    _c(
+                                      "v-form",
+                                      {
+                                        on: {
+                                          submit: function($event) {
+                                            $event.preventDefault()
+                                            _vm.commentPost(
+                                              newsfeed[".key"],
+                                              _vm.userData
+                                            )
+                                          }
+                                        }
                                       },
-                                      model: {
-                                        value: _vm.userComment,
-                                        callback: function($$v) {
-                                          _vm.userComment = $$v
-                                        },
-                                        expression: "userComment"
-                                      }
-                                    })
+                                      [
+                                        _c("v-text-field", {
+                                          staticClass:
+                                            "font-weight-thin-light jie3 textfm1  ",
+                                          staticStyle: { "font-size": "13px" },
+                                          attrs: {
+                                            "background-color":
+                                              "grey lighten-5",
+                                            "single-line": "",
+                                            solo: "",
+                                            hint: "Press Enter to comment",
+                                            flat: "",
+                                            height: "32",
+                                            "full-width": "",
+                                            loading: false,
+                                            placeholder:
+                                              "Write something here..",
+                                            "append-icon":
+                                              "mdi-thought-bubble-outline"
+                                          },
+                                          model: {
+                                            value: _vm.userComment,
+                                            callback: function($$v) {
+                                              _vm.userComment = $$v
+                                            },
+                                            expression: "userComment"
+                                          }
+                                        })
+                                      ],
+                                      1
+                                    )
                                   ],
                                   1
                                 )
@@ -63379,7 +63486,7 @@ var render = function() {
           _vm._v(" "),
           _c(
             "v-flex",
-            { staticClass: " mr-4  xs0 sm0 md4 lg4" },
+            { staticClass: " mr-2   xs0 sm0 md4 lg4" },
             [
               _c("v-card", {
                 staticClass: "grey lighten-4 my-2",
@@ -63939,9 +64046,9 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/components/VAlert/VAlert.js":
+/***/ "./src/components/VAlert/VAlert.ts":
 /*!*****************************************!*\
-  !*** ./src/components/VAlert/VAlert.js ***!
+  !*** ./src/components/VAlert/VAlert.ts ***!
   \*****************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -63954,15 +64061,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_colorable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/colorable */ "./src/mixins/colorable.ts");
 /* harmony import */ var _mixins_toggleable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mixins/toggleable */ "./src/mixins/toggleable.ts");
 /* harmony import */ var _mixins_transitionable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../mixins/transitionable */ "./src/mixins/transitionable.ts");
+/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../util/mixins */ "./src/util/mixins.ts");
+// Styles
 
+// Components
+
+// Mixins
 
 
 
 
 /* @vue/component */
-/* harmony default export */ __webpack_exports__["default"] = ({
+/* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_5__["default"])(_mixins_colorable__WEBPACK_IMPORTED_MODULE_2__["default"], _mixins_toggleable__WEBPACK_IMPORTED_MODULE_3__["default"], _mixins_transitionable__WEBPACK_IMPORTED_MODULE_4__["default"]).extend({
     name: 'v-alert',
-    mixins: [_mixins_colorable__WEBPACK_IMPORTED_MODULE_2__["default"], _mixins_toggleable__WEBPACK_IMPORTED_MODULE_3__["default"], _mixins_transitionable__WEBPACK_IMPORTED_MODULE_4__["default"]],
     props: {
         dismissible: Boolean,
         icon: String,
@@ -64013,7 +64124,7 @@ __webpack_require__.r(__webpack_exports__);
             var close = h('a', {
                 'class': 'v-alert__dismissible',
                 on: { click: function click() {
-                        return _this.$emit('input', false);
+                        _this.isActive = false;
                     } }
             }, [h(_VIcon__WEBPACK_IMPORTED_MODULE_1__["default"], {
                 props: {
@@ -64040,26 +64151,26 @@ __webpack_require__.r(__webpack_exports__);
             }
         }, [alert]);
     }
-});
+}));
 
 /***/ }),
 
-/***/ "./src/components/VAlert/index.js":
+/***/ "./src/components/VAlert/index.ts":
 /*!****************************************!*\
-  !*** ./src/components/VAlert/index.js ***!
+  !*** ./src/components/VAlert/index.ts ***!
   \****************************************/
 /*! exports provided: VAlert, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _VAlert__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VAlert */ "./src/components/VAlert/VAlert.js");
+/* harmony import */ var _VAlert__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VAlert */ "./src/components/VAlert/VAlert.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VAlert", function() { return _VAlert__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
 
 /* istanbul ignore next */
 _VAlert__WEBPACK_IMPORTED_MODULE_0__["default"].install = function install(Vue) {
-    Vue.component(_VAlert__WEBPACK_IMPORTED_MODULE_0__["default"].name, _VAlert__WEBPACK_IMPORTED_MODULE_0__["default"]);
+    Vue.component(_VAlert__WEBPACK_IMPORTED_MODULE_0__["default"].options.name, _VAlert__WEBPACK_IMPORTED_MODULE_0__["default"]);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (_VAlert__WEBPACK_IMPORTED_MODULE_0__["default"]);
@@ -64078,11 +64189,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _stylus_components_app_styl__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../stylus/components/_app.styl */ "./src/stylus/components/_app.styl");
 /* harmony import */ var _stylus_components_app_styl__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_stylus_components_app_styl__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _mixins_app_theme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mixins/app-theme */ "./src/components/VApp/mixins/app-theme.js");
-/* harmony import */ var _mixins_app_breakpoint__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./mixins/app-breakpoint */ "./src/components/VApp/mixins/app-breakpoint.js");
-/* harmony import */ var _directives_resize__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../directives/resize */ "./src/directives/resize.ts");
+/* harmony import */ var _directives_resize__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../directives/resize */ "./src/directives/resize.ts");
 
 // Component level mixins
-
 
 // Directives
 
@@ -64090,9 +64199,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'v-app',
     directives: {
-        Resize: _directives_resize__WEBPACK_IMPORTED_MODULE_3__["default"]
+        Resize: _directives_resize__WEBPACK_IMPORTED_MODULE_2__["default"]
     },
-    mixins: [_mixins_app_breakpoint__WEBPACK_IMPORTED_MODULE_2__["default"], _mixins_app_theme__WEBPACK_IMPORTED_MODULE_1__["default"]],
+    mixins: [_mixins_app_theme__WEBPACK_IMPORTED_MODULE_1__["default"]],
     props: {
         id: {
             type: String,
@@ -64119,11 +64228,7 @@ __webpack_require__.r(__webpack_exports__);
             staticClass: 'application',
             'class': this.classes,
             attrs: { 'data-app': true },
-            domProps: { id: this.id },
-            directives: [{
-                name: 'resize',
-                value: this.onResize
-            }]
+            domProps: { id: this.id }
         };
         var wrapper = h('div', { staticClass: 'application--wrap' }, this.$slots.default);
         return h('div', data, [wrapper]);
@@ -64151,149 +64256,6 @@ _VApp__WEBPACK_IMPORTED_MODULE_0__["default"].install = function install(Vue) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (_VApp__WEBPACK_IMPORTED_MODULE_0__["default"]);
-
-/***/ }),
-
-/***/ "./src/components/VApp/mixins/app-breakpoint.js":
-/*!******************************************************!*\
-  !*** ./src/components/VApp/mixins/app-breakpoint.js ***!
-  \******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/**
- * A modified version of https://gist.github.com/cb109/b074a65f7595cffc21cea59ce8d15f9b
- */
-/**
- * A Vue mixin to get the current width/height and the associated breakpoint.
- *
- * Useful to e.g. adapt the user interface from inside a Vue component
- * as opposed to using CSS classes. The breakpoint pixel values and
- * range names are taken from Vuetify (https://github.com/vuetifyjs).
- *
- * Use within a component:
- *
- *   import breakpoint from './breakpoint.js'
- *
- *   export default {
- *     name: 'my-component',
- *     mixins: [breakpoint],
- *     ...
- *
- * Then inside a template:
- *
- *   <div v-if="$breakpoint.smAndDown">...</div>
- */
-var breakpoint = {
-    data: function data() {
-        return {
-            clientWidth: clientDimensions.getWidth(),
-            clientHeight: clientDimensions.getHeight(),
-            resizeTimeout: null
-        };
-    },
-    computed: {
-        breakpoint: function breakpoint() {
-            var xs = this.clientWidth < 600;
-            var sm = this.clientWidth < 960 && !xs;
-            var md = this.clientWidth < 1280 - 16 && !(sm || xs);
-            var lg = this.clientWidth < 1920 - 16 && !(md || sm || xs);
-            var xl = this.clientWidth >= 1920 - 16 && !(lg || md || sm || xs);
-            var xsOnly = xs;
-            var smOnly = sm;
-            var smAndDown = (xs || sm) && !(md || lg || xl);
-            var smAndUp = !xs && (sm || md || lg || xl);
-            var mdOnly = md;
-            var mdAndDown = (xs || sm || md) && !(lg || xl);
-            var mdAndUp = !(xs || sm) && (md || lg || xl);
-            var lgOnly = lg;
-            var lgAndDown = (xs || sm || md || lg) && !xl;
-            var lgAndUp = !(xs || sm || md) && (lg || xl);
-            var xlOnly = xl;
-            var name;
-            switch (true) {
-                case xs:
-                    name = 'xs';
-                    break;
-                case sm:
-                    name = 'sm';
-                    break;
-                case md:
-                    name = 'md';
-                    break;
-                case lg:
-                    name = 'lg';
-                    break;
-                default:
-                    name = 'xl';
-                    break;
-            }
-            var result = {
-                // Definite breakpoint.
-                xs: xs,
-                sm: sm,
-                md: md,
-                lg: lg,
-                xl: xl,
-                // Useful e.g. to construct CSS class names dynamically.
-                name: name,
-                // Breakpoint ranges.
-                xsOnly: xsOnly,
-                smOnly: smOnly,
-                smAndDown: smAndDown,
-                smAndUp: smAndUp,
-                mdOnly: mdOnly,
-                mdAndDown: mdAndDown,
-                mdAndUp: mdAndUp,
-                lgOnly: lgOnly,
-                lgAndDown: lgAndDown,
-                lgAndUp: lgAndUp,
-                xlOnly: xlOnly,
-                // For custom breakpoint logic.
-                width: this.clientWidth,
-                height: this.clientHeight
-            };
-            return result;
-        }
-    },
-    watch: {
-        breakpoint: function breakpoint(val) {
-            this.$vuetify.breakpoint = val;
-        }
-    },
-    created: function created() {
-        this.$vuetify.breakpoint = this.breakpoint;
-    },
-    methods: {
-        onResize: function onResize() {
-            var _this = this;
-            clearTimeout(this.resizeTimeout);
-            // Added debounce to match what
-            // v-resize used to do but was
-            // removed due to a memory leak
-            // https://github.com/vuetifyjs/vuetify/pull/2997
-            this.resizeTimeout = setTimeout(function () {
-                _this.clientWidth = clientDimensions.getWidth();
-                _this.clientHeight = clientDimensions.getHeight();
-            }, 200);
-        }
-    }
-};
-// Cross-browser support as described in:
-// https://stackoverflow.com/questions/1248081
-var clientDimensions = {
-    getWidth: function getWidth() {
-        if (typeof document === 'undefined') return 0; // SSR
-        return Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    },
-    getHeight: function getHeight() {
-        if (typeof document === 'undefined') return 0; // SSR
-        return Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    }
-};
-/* harmony default export */ __webpack_exports__["default"] = (breakpoint);
 
 /***/ }),
 
@@ -64480,9 +64442,7 @@ __webpack_require__.r(__webpack_exports__);
     data: function data(vm) {
         return {
             attrsInput: null,
-            editingIndex: -1,
-            lazySearch: vm.searchInput,
-            lazyValue: vm.value != null ? vm.value : vm.multiple ? [] : undefined
+            lazySearch: vm.searchInput
         };
     },
     computed: {
@@ -64645,7 +64605,7 @@ __webpack_require__.r(__webpack_exports__);
             }
         },
         clearableCallback: function clearableCallback() {
-            this.internalSearch = null;
+            this.internalSearch = undefined;
             _VSelect_VSelect__WEBPACK_IMPORTED_MODULE_1__["default"].methods.clearableCallback.call(this);
         },
         genInput: function genInput() {
@@ -64692,23 +64652,14 @@ __webpack_require__.r(__webpack_exports__);
             this.updateSelf();
         },
         selectItem: function selectItem(item) {
-            // Currently only supports items:<string[]>
-            if (this.editingIndex > -1) {
-                this.updateEditing();
-            } else {
-                _VSelect_VSelect__WEBPACK_IMPORTED_MODULE_1__["default"].methods.selectItem.call(this, item);
-            }
+            _VSelect_VSelect__WEBPACK_IMPORTED_MODULE_1__["default"].methods.selectItem.call(this, item);
             this.setSearch();
         },
         setSelectedItems: function setSelectedItems() {
-            if (this.internalValue == null || this.internalValue === '') {
-                this.selectedItems = [];
-            } else {
-                _VSelect_VSelect__WEBPACK_IMPORTED_MODULE_1__["default"].methods.setSelectedItems.call(this);
-                // #4273 Don't replace if searching
-                // #4403 Don't replace is focused
-                if (!this.isFocused) this.setSearch();
-            }
+            _VSelect_VSelect__WEBPACK_IMPORTED_MODULE_1__["default"].methods.setSelectedItems.call(this);
+            // #4273 Don't replace if searching
+            // #4403 Don't replace if focused
+            if (!this.isFocused) this.setSearch();
         },
         setSearch: function setSearch() {
             var _this = this;
@@ -64721,10 +64672,6 @@ __webpack_require__.r(__webpack_exports__);
         setValue: function setValue() {
             this.internalValue = this.internalSearch;
             this.$emit('change', this.internalSearch);
-        },
-        updateEditing: function updateEditing() {
-            this.internalValue.splice(this.editingIndex, 1, this.internalSearch);
-            this.editingIndex = -1;
         },
         updateSelf: function updateSelf() {
             this.updateAutocomplete();
@@ -64762,9 +64709,9 @@ _VAutocomplete__WEBPACK_IMPORTED_MODULE_0__["default"].install = function instal
 
 /***/ }),
 
-/***/ "./src/components/VAvatar/VAvatar.js":
+/***/ "./src/components/VAvatar/VAvatar.ts":
 /*!*******************************************!*\
-  !*** ./src/components/VAvatar/VAvatar.js ***!
+  !*** ./src/components/VAvatar/VAvatar.ts ***!
   \*******************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -64775,16 +64722,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _stylus_components_avatars_styl__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_stylus_components_avatars_styl__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _mixins_colorable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/colorable */ "./src/mixins/colorable.ts");
 /* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../util/helpers */ "./src/util/helpers.ts");
+/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../util/mixins */ "./src/util/mixins.ts");
+var __assign = undefined && undefined.__assign || Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) {
+            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+    }
+    return t;
+};
 
 // Mixins
 
 
+
 /* @vue/component */
-/* harmony default export */ __webpack_exports__["default"] = ({
+/* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_3__["default"])(_mixins_colorable__WEBPACK_IMPORTED_MODULE_1__["default"]).extend({
     name: 'v-avatar',
     functional: true,
-    mixins: [_mixins_colorable__WEBPACK_IMPORTED_MODULE_1__["default"]],
     props: {
+        // TODO: inherit these
+        color: String,
         size: {
             type: [Number, String],
             default: 48
@@ -64796,43 +64755,41 @@ __webpack_require__.r(__webpack_exports__);
             props = _a.props,
             children = _a.children;
         data.staticClass = ("v-avatar " + (data.staticClass || '')).trim();
-        data.style = data.style || {};
         if (props.tile) data.staticClass += ' v-avatar--tile';
         var size = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_2__["convertToUnit"])(props.size);
-        data.style.height = size;
-        data.style.width = size;
+        data.style = __assign({ height: size, width: size }, data.style);
         data.class = [data.class, _mixins_colorable__WEBPACK_IMPORTED_MODULE_1__["default"].options.methods.addBackgroundColorClassChecks.call(props, {}, props.color)];
         return h('div', data, children);
     }
-});
+}));
 
 /***/ }),
 
-/***/ "./src/components/VAvatar/index.js":
+/***/ "./src/components/VAvatar/index.ts":
 /*!*****************************************!*\
-  !*** ./src/components/VAvatar/index.js ***!
+  !*** ./src/components/VAvatar/index.ts ***!
   \*****************************************/
 /*! exports provided: VAvatar, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _VAvatar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VAvatar */ "./src/components/VAvatar/VAvatar.js");
+/* harmony import */ var _VAvatar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VAvatar */ "./src/components/VAvatar/VAvatar.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VAvatar", function() { return _VAvatar__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
 
 /* istanbul ignore next */
 _VAvatar__WEBPACK_IMPORTED_MODULE_0__["default"].install = function install(Vue) {
-    Vue.component(_VAvatar__WEBPACK_IMPORTED_MODULE_0__["default"].name, _VAvatar__WEBPACK_IMPORTED_MODULE_0__["default"]);
+    Vue.component(_VAvatar__WEBPACK_IMPORTED_MODULE_0__["default"].options.name, _VAvatar__WEBPACK_IMPORTED_MODULE_0__["default"]);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (_VAvatar__WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 /***/ }),
 
-/***/ "./src/components/VBadge/VBadge.js":
+/***/ "./src/components/VBadge/VBadge.ts":
 /*!*****************************************!*\
-  !*** ./src/components/VBadge/VBadge.js ***!
+  !*** ./src/components/VBadge/VBadge.ts ***!
   \*****************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -64845,16 +64802,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_toggleable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/toggleable */ "./src/mixins/toggleable.ts");
 /* harmony import */ var _mixins_positionable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mixins/positionable */ "./src/mixins/positionable.ts");
 /* harmony import */ var _mixins_transitionable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../mixins/transitionable */ "./src/mixins/transitionable.ts");
+/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../util/mixins */ "./src/util/mixins.ts");
+// Styles
 
 // Mixins
 
 
 
 
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_5__["default"])(_mixins_colorable__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_toggleable__WEBPACK_IMPORTED_MODULE_2__["default"], Object(_mixins_positionable__WEBPACK_IMPORTED_MODULE_3__["factory"])(['left', 'bottom']), _mixins_transitionable__WEBPACK_IMPORTED_MODULE_4__["default"]
 /* @vue/component */
-/* harmony default export */ __webpack_exports__["default"] = ({
+).extend({
     name: 'v-badge',
-    mixins: [_mixins_colorable__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_toggleable__WEBPACK_IMPORTED_MODULE_2__["default"], Object(_mixins_positionable__WEBPACK_IMPORTED_MODULE_3__["factory"])(['left', 'bottom']), _mixins_transitionable__WEBPACK_IMPORTED_MODULE_4__["default"]],
     props: {
         color: {
             type: String,
@@ -64882,12 +64842,12 @@ __webpack_require__.r(__webpack_exports__);
         var badge = this.$slots.badge ? [h('span', {
             staticClass: 'v-badge__badge',
             'class': this.addBackgroundColorClassChecks(),
-            attrs: this.attrs,
+            attrs: this.$attrs,
             directives: [{
                 name: 'show',
                 value: this.isActive
             }]
-        }, this.$slots.badge)] : null;
+        }, this.$slots.badge)] : undefined;
         return h('span', {
             staticClass: 'v-badge',
             'class': this.classes
@@ -64899,35 +64859,35 @@ __webpack_require__.r(__webpack_exports__);
             }
         }, badge)]);
     }
-});
+}));
 
 /***/ }),
 
-/***/ "./src/components/VBadge/index.js":
+/***/ "./src/components/VBadge/index.ts":
 /*!****************************************!*\
-  !*** ./src/components/VBadge/index.js ***!
+  !*** ./src/components/VBadge/index.ts ***!
   \****************************************/
 /*! exports provided: VBadge, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _VBadge__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VBadge */ "./src/components/VBadge/VBadge.js");
+/* harmony import */ var _VBadge__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VBadge */ "./src/components/VBadge/VBadge.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VBadge", function() { return _VBadge__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
 
 /* istanbul ignore next */
 _VBadge__WEBPACK_IMPORTED_MODULE_0__["default"].install = function install(Vue) {
-    Vue.component(_VBadge__WEBPACK_IMPORTED_MODULE_0__["default"].name, _VBadge__WEBPACK_IMPORTED_MODULE_0__["default"]);
+    Vue.component(_VBadge__WEBPACK_IMPORTED_MODULE_0__["default"].options.name, _VBadge__WEBPACK_IMPORTED_MODULE_0__["default"]);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (_VBadge__WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 /***/ }),
 
-/***/ "./src/components/VBottomNav/VBottomNav.js":
+/***/ "./src/components/VBottomNav/VBottomNav.ts":
 /*!*************************************************!*\
-  !*** ./src/components/VBottomNav/VBottomNav.js ***!
+  !*** ./src/components/VBottomNav/VBottomNav.ts ***!
   \*************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -64936,19 +64896,22 @@ _VBadge__WEBPACK_IMPORTED_MODULE_0__["default"].install = function install(Vue) 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _stylus_components_bottom_navs_styl__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../stylus/components/_bottom-navs.styl */ "./src/stylus/components/_bottom-navs.styl");
 /* harmony import */ var _stylus_components_bottom_navs_styl__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_stylus_components_bottom_navs_styl__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _mixins_applicationable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/applicationable */ "./src/mixins/applicationable.js");
+/* harmony import */ var _mixins_applicationable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/applicationable */ "./src/mixins/applicationable.ts");
 /* harmony import */ var _mixins_button_group__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/button-group */ "./src/mixins/button-group.ts");
 /* harmony import */ var _mixins_colorable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mixins/colorable */ "./src/mixins/colorable.ts");
+/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../util/mixins */ "./src/util/mixins.ts");
 // Styles
 
 // Mixins
 
 
 
+// Util
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_4__["default"])(Object(_mixins_applicationable__WEBPACK_IMPORTED_MODULE_1__["default"])('bottom', ['height', 'value']), _mixins_button_group__WEBPACK_IMPORTED_MODULE_2__["default"], _mixins_colorable__WEBPACK_IMPORTED_MODULE_3__["default"]
 /* @vue/component */
-/* harmony default export */ __webpack_exports__["default"] = ({
+).extend({
     name: 'v-bottom-nav',
-    mixins: [Object(_mixins_applicationable__WEBPACK_IMPORTED_MODULE_1__["default"])('bottom', ['height', 'value']), _mixins_button_group__WEBPACK_IMPORTED_MODULE_2__["default"], _mixins_colorable__WEBPACK_IMPORTED_MODULE_3__["default"]],
     props: {
         active: [Number, String],
         height: {
@@ -64984,11 +64947,6 @@ __webpack_require__.r(__webpack_exports__);
             var item = this.getValue(i);
             return this.active === item;
         },
-        /**
-         * Update the application layout
-         *
-         * @return {number}
-         */
         updateApplication: function updateApplication() {
             return !this.value ? 0 : this.computedHeight;
         },
@@ -65007,26 +64965,26 @@ __webpack_require__.r(__webpack_exports__);
             ref: 'content'
         }, this.$slots.default);
     }
-});
+}));
 
 /***/ }),
 
-/***/ "./src/components/VBottomNav/index.js":
+/***/ "./src/components/VBottomNav/index.ts":
 /*!********************************************!*\
-  !*** ./src/components/VBottomNav/index.js ***!
+  !*** ./src/components/VBottomNav/index.ts ***!
   \********************************************/
 /*! exports provided: VBottomNav, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _VBottomNav__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VBottomNav */ "./src/components/VBottomNav/VBottomNav.js");
+/* harmony import */ var _VBottomNav__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VBottomNav */ "./src/components/VBottomNav/VBottomNav.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VBottomNav", function() { return _VBottomNav__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
 
 /* istanbul ignore next */
 _VBottomNav__WEBPACK_IMPORTED_MODULE_0__["default"].install = function install(Vue) {
-    Vue.component(_VBottomNav__WEBPACK_IMPORTED_MODULE_0__["default"].name, _VBottomNav__WEBPACK_IMPORTED_MODULE_0__["default"]);
+    Vue.component(_VBottomNav__WEBPACK_IMPORTED_MODULE_0__["default"].options.name, _VBottomNav__WEBPACK_IMPORTED_MODULE_0__["default"]);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (_VBottomNav__WEBPACK_IMPORTED_MODULE_0__["default"]);
@@ -65273,7 +65231,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _stylus_components_buttons_styl__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../stylus/components/_buttons.styl */ "./src/stylus/components/_buttons.styl");
 /* harmony import */ var _stylus_components_buttons_styl__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_stylus_components_buttons_styl__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../util/mixins */ "./src/util/mixins.ts");
-/* harmony import */ var _VProgressCircular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../VProgressCircular */ "./src/components/VProgressCircular/index.js");
+/* harmony import */ var _VProgressCircular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../VProgressCircular */ "./src/components/VProgressCircular/index.ts");
 /* harmony import */ var _mixins_colorable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mixins/colorable */ "./src/mixins/colorable.ts");
 /* harmony import */ var _mixins_positionable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../mixins/positionable */ "./src/mixins/positionable.ts");
 /* harmony import */ var _mixins_routable__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../mixins/routable */ "./src/mixins/routable.ts");
@@ -65303,7 +65261,7 @@ var __assign = undefined && undefined.__assign || Object.assign || function (t) 
 
 
 
-var VBtn = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_1__["default"])(_mixins_colorable__WEBPACK_IMPORTED_MODULE_3__["default"], _mixins_routable__WEBPACK_IMPORTED_MODULE_5__["default"], _mixins_positionable__WEBPACK_IMPORTED_MODULE_4__["default"], _mixins_themeable__WEBPACK_IMPORTED_MODULE_6__["default"], Object(_mixins_toggleable__WEBPACK_IMPORTED_MODULE_7__["factory"])('inputValue'), Object(_mixins_registrable__WEBPACK_IMPORTED_MODULE_8__["inject"])('buttonGroup')
+/* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_1__["default"])(_mixins_colorable__WEBPACK_IMPORTED_MODULE_3__["default"], _mixins_routable__WEBPACK_IMPORTED_MODULE_5__["default"], _mixins_positionable__WEBPACK_IMPORTED_MODULE_4__["default"], _mixins_themeable__WEBPACK_IMPORTED_MODULE_6__["default"], Object(_mixins_toggleable__WEBPACK_IMPORTED_MODULE_7__["factory"])('inputValue'), Object(_mixins_registrable__WEBPACK_IMPORTED_MODULE_8__["inject"])('buttonGroup')
 /* @vue/component */
 ).extend({
     name: 'v-btn',
@@ -65365,7 +65323,6 @@ var VBtn = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_1__["default"])(_mixins_
         genLoader: function genLoader() {
             var children = [];
             if (!this.$slots.loader) {
-                // TODO: uncast
                 children.push(this.$createElement(_VProgressCircular__WEBPACK_IMPORTED_MODULE_2__["default"], {
                     props: {
                         indeterminate: true,
@@ -65389,8 +65346,7 @@ var VBtn = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_1__["default"])(_mixins_
         data.attrs.value = ['string', 'number'].includes(_typeof(this.value)) ? this.value : JSON.stringify(this.value);
         return h(tag, data, children);
     }
-});
-/* harmony default export */ __webpack_exports__["default"] = (VBtn);
+}));
 
 /***/ }),
 
@@ -65432,12 +65388,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_themeable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mixins/themeable */ "./src/mixins/themeable.ts");
 /* harmony import */ var _util_console__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../util/console */ "./src/util/console.ts");
 
+// Mixins
 
 
 
+// Util
 
 /* @vue/component */
-var VBtnToggle = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_1__["default"])(_mixins_button_group__WEBPACK_IMPORTED_MODULE_2__["default"], _mixins_themeable__WEBPACK_IMPORTED_MODULE_3__["default"]).extend({
+/* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_1__["default"])(_mixins_button_group__WEBPACK_IMPORTED_MODULE_2__["default"], _mixins_themeable__WEBPACK_IMPORTED_MODULE_3__["default"]).extend({
     name: 'v-btn-toggle',
     model: {
         prop: 'inputValue',
@@ -65517,8 +65475,7 @@ var VBtnToggle = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_1__["default"])(_m
     render: function render(h) {
         return h('div', { class: this.classes }, this.$slots.default);
     }
-});
-/* harmony default export */ __webpack_exports__["default"] = (VBtnToggle);
+}));
 
 /***/ }),
 
@@ -65544,9 +65501,9 @@ _VBtnToggle__WEBPACK_IMPORTED_MODULE_0__["default"].install = function install(V
 
 /***/ }),
 
-/***/ "./src/components/VCard/VCard.js":
+/***/ "./src/components/VCard/VCard.ts":
 /*!***************************************!*\
-  !*** ./src/components/VCard/VCard.js ***!
+  !*** ./src/components/VCard/VCard.ts ***!
   \***************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -65559,6 +65516,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_routable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/routable */ "./src/mixins/routable.ts");
 /* harmony import */ var _mixins_themeable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mixins/themeable */ "./src/mixins/themeable.ts");
 /* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../util/helpers */ "./src/util/helpers.ts");
+/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../util/mixins */ "./src/util/mixins.ts");
 
 // Mixins
 
@@ -65566,10 +65524,10 @@ __webpack_require__.r(__webpack_exports__);
 
 // Helpers
 
+
 /* @vue/component */
-/* harmony default export */ __webpack_exports__["default"] = ({
+/* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_5__["default"])(_mixins_colorable__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_routable__WEBPACK_IMPORTED_MODULE_2__["default"], _mixins_themeable__WEBPACK_IMPORTED_MODULE_3__["default"]).extend({
     name: 'v-card',
-    mixins: [_mixins_colorable__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_routable__WEBPACK_IMPORTED_MODULE_2__["default"], _mixins_themeable__WEBPACK_IMPORTED_MODULE_3__["default"]],
     props: {
         flat: Boolean,
         height: [Number, String],
@@ -65588,7 +65546,6 @@ __webpack_require__.r(__webpack_exports__);
             return this.addBackgroundColorClassChecks({
                 'v-card': true,
                 'v-card--flat': this.flat,
-                'v-card--horizontal': this.horizontal,
                 'v-card--hover': this.hover,
                 'v-card--raised': this.raised,
                 'v-card--tile': this.tile,
@@ -65616,13 +65573,13 @@ __webpack_require__.r(__webpack_exports__);
         data.style = this.styles;
         return h(tag, data, this.$slots.default);
     }
-});
+}));
 
 /***/ }),
 
-/***/ "./src/components/VCard/VCardMedia.js":
+/***/ "./src/components/VCard/VCardMedia.ts":
 /*!********************************************!*\
-  !*** ./src/components/VCard/VCardMedia.js ***!
+  !*** ./src/components/VCard/VCardMedia.ts ***!
   \********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -65630,10 +65587,14 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../util/helpers */ "./src/util/helpers.ts");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "vue");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
 // Helpers
 
+// Types
+
 /* @vue/component */
-/* harmony default export */ __webpack_exports__["default"] = ({
+/* harmony default export */ __webpack_exports__["default"] = (vue__WEBPACK_IMPORTED_MODULE_1___default.a.extend({
     name: 'v-card-media',
     props: {
         contain: Boolean,
@@ -65667,21 +65628,25 @@ __webpack_require__.r(__webpack_exports__);
         }, this.$slots.default));
         return h('div', data, children);
     }
-});
+}));
 
 /***/ }),
 
-/***/ "./src/components/VCard/VCardTitle.js":
+/***/ "./src/components/VCard/VCardTitle.ts":
 /*!********************************************!*\
-  !*** ./src/components/VCard/VCardTitle.js ***!
+  !*** ./src/components/VCard/VCardTitle.ts ***!
   \********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "vue");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+// Types
+
 /* @vue/component */
-/* harmony default export */ __webpack_exports__["default"] = ({
+/* harmony default export */ __webpack_exports__["default"] = (vue__WEBPACK_IMPORTED_MODULE_0___default.a.extend({
     name: 'v-card-title',
     functional: true,
     props: {
@@ -65695,13 +65660,13 @@ __webpack_require__.r(__webpack_exports__);
         if (props.primaryTitle) data.staticClass += ' v-card__title--primary';
         return h('div', data, children);
     }
-});
+}));
 
 /***/ }),
 
-/***/ "./src/components/VCard/index.js":
+/***/ "./src/components/VCard/index.ts":
 /*!***************************************!*\
-  !*** ./src/components/VCard/index.js ***!
+  !*** ./src/components/VCard/index.ts ***!
   \***************************************/
 /*! exports provided: VCard, VCardMedia, VCardTitle, VCardActions, VCardText, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -65711,29 +65676,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VCardActions", function() { return VCardActions; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VCardText", function() { return VCardText; });
 /* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../util/helpers */ "./src/util/helpers.ts");
-/* harmony import */ var _VCard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./VCard */ "./src/components/VCard/VCard.js");
+/* harmony import */ var _VCard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./VCard */ "./src/components/VCard/VCard.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VCard", function() { return _VCard__WEBPACK_IMPORTED_MODULE_1__["default"]; });
 
-/* harmony import */ var _VCardMedia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./VCardMedia */ "./src/components/VCard/VCardMedia.js");
+/* harmony import */ var _VCardMedia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./VCardMedia */ "./src/components/VCard/VCardMedia.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VCardMedia", function() { return _VCardMedia__WEBPACK_IMPORTED_MODULE_2__["default"]; });
 
-/* harmony import */ var _VCardTitle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./VCardTitle */ "./src/components/VCard/VCardTitle.js");
+/* harmony import */ var _VCardTitle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./VCardTitle */ "./src/components/VCard/VCardTitle.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VCardTitle", function() { return _VCardTitle__WEBPACK_IMPORTED_MODULE_3__["default"]; });
 
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue */ "vue");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_4__);
 
 
 
 
-var VCardActions = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_0__["createSimpleFunctional"])('v-card__actions');
-var VCardText = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_0__["createSimpleFunctional"])('v-card__text');
+
+var VCardActions = vue__WEBPACK_IMPORTED_MODULE_4___default.a.extend(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_0__["createSimpleFunctional"])('v-card__actions'));
+var VCardText = vue__WEBPACK_IMPORTED_MODULE_4___default.a.extend(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_0__["createSimpleFunctional"])('v-card__text'));
 
 /* istanbul ignore next */
 _VCard__WEBPACK_IMPORTED_MODULE_1__["default"].install = function install(Vue) {
-    Vue.component(_VCard__WEBPACK_IMPORTED_MODULE_1__["default"].name, _VCard__WEBPACK_IMPORTED_MODULE_1__["default"]);
-    Vue.component(_VCardMedia__WEBPACK_IMPORTED_MODULE_2__["default"].name, _VCardMedia__WEBPACK_IMPORTED_MODULE_2__["default"]);
-    Vue.component(_VCardTitle__WEBPACK_IMPORTED_MODULE_3__["default"].name, _VCardTitle__WEBPACK_IMPORTED_MODULE_3__["default"]);
-    Vue.component(VCardActions.name, VCardActions);
-    Vue.component(VCardText.name, VCardText);
+    Vue.component(_VCard__WEBPACK_IMPORTED_MODULE_1__["default"].options.name, _VCard__WEBPACK_IMPORTED_MODULE_1__["default"]);
+    Vue.component(_VCardMedia__WEBPACK_IMPORTED_MODULE_2__["default"].options.name, _VCardMedia__WEBPACK_IMPORTED_MODULE_2__["default"]);
+    Vue.component(_VCardTitle__WEBPACK_IMPORTED_MODULE_3__["default"].options.name, _VCardTitle__WEBPACK_IMPORTED_MODULE_3__["default"]);
+    Vue.component(VCardActions.options.name, VCardActions);
+    Vue.component(VCardText.options.name, VCardText);
 };
 /* harmony default export */ __webpack_exports__["default"] = (_VCard__WEBPACK_IMPORTED_MODULE_1__["default"]);
 
@@ -66050,6 +66018,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _stylus_components_selection_controls_styl__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_stylus_components_selection_controls_styl__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _VIcon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../VIcon */ "./src/components/VIcon/index.ts");
 /* harmony import */ var _mixins_selectable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/selectable */ "./src/mixins/selectable.js");
+var __assign = undefined && undefined.__assign || Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) {
+            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+    }
+    return t;
+};
 // Styles
 
 // Components
@@ -66107,12 +66084,14 @@ __webpack_require__.r(__webpack_exports__);
         genCheckbox: function genCheckbox() {
             return this.$createElement('div', {
                 staticClass: 'v-input--selection-controls__input'
-            }, [this.genInput('checkbox', {
-                'aria-checked': this.inputIndeterminate ? 'mixed' : this.isActive.toString()
-            }), !this.disabled && this.genRipple({
+            }, [this.genInput('checkbox', __assign({}, this.$attrs, { 'aria-checked': this.inputIndeterminate ? 'mixed' : this.isActive.toString() })), !this.disabled && this.genRipple({
                 'class': this.classesSelectable
             }), this.$createElement(_VIcon__WEBPACK_IMPORTED_MODULE_1__["default"], {
-                'class': this.classesSelectable
+                'class': this.classesSelectable,
+                props: {
+                    dark: this.dark,
+                    light: this.light
+                }
             }, this.computedIcon)]);
         },
         genDefaultSlot: function genDefaultSlot() {
@@ -66145,9 +66124,9 @@ _VCheckbox__WEBPACK_IMPORTED_MODULE_0__["default"].install = function install(Vu
 
 /***/ }),
 
-/***/ "./src/components/VChip/VChip.js":
+/***/ "./src/components/VChip/VChip.ts":
 /*!***************************************!*\
-  !*** ./src/components/VChip/VChip.js ***!
+  !*** ./src/components/VChip/VChip.ts ***!
   \***************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -66156,19 +66135,22 @@ _VCheckbox__WEBPACK_IMPORTED_MODULE_0__["default"].install = function install(Vu
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _stylus_components_chips_styl__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../stylus/components/_chips.styl */ "./src/stylus/components/_chips.styl");
 /* harmony import */ var _stylus_components_chips_styl__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_stylus_components_chips_styl__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _VIcon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../VIcon */ "./src/components/VIcon/index.ts");
-/* harmony import */ var _mixins_colorable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/colorable */ "./src/mixins/colorable.ts");
-/* harmony import */ var _mixins_themeable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mixins/themeable */ "./src/mixins/themeable.ts");
-/* harmony import */ var _mixins_toggleable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../mixins/toggleable */ "./src/mixins/toggleable.ts");
+/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../util/mixins */ "./src/util/mixins.ts");
+/* harmony import */ var _VIcon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../VIcon */ "./src/components/VIcon/index.ts");
+/* harmony import */ var _mixins_colorable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mixins/colorable */ "./src/mixins/colorable.ts");
+/* harmony import */ var _mixins_themeable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../mixins/themeable */ "./src/mixins/themeable.ts");
+/* harmony import */ var _mixins_toggleable__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../mixins/toggleable */ "./src/mixins/toggleable.ts");
 
 
+// Components
+
+// Mixins
 
 
 
 /* @vue/component */
-/* harmony default export */ __webpack_exports__["default"] = ({
+/* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_1__["default"])(_mixins_colorable__WEBPACK_IMPORTED_MODULE_3__["default"], _mixins_themeable__WEBPACK_IMPORTED_MODULE_4__["default"], _mixins_toggleable__WEBPACK_IMPORTED_MODULE_5__["default"]).extend({
     name: 'v-chip',
-    mixins: [_mixins_colorable__WEBPACK_IMPORTED_MODULE_2__["default"], _mixins_themeable__WEBPACK_IMPORTED_MODULE_3__["default"], _mixins_toggleable__WEBPACK_IMPORTED_MODULE_4__["default"]],
     props: {
         close: Boolean,
         disabled: Boolean,
@@ -66187,7 +66169,7 @@ __webpack_require__.r(__webpack_exports__);
         classes: function classes() {
             var classes = this.addBackgroundColorClassChecks({
                 'v-chip--disabled': this.disabled,
-                'v-chip--selected': this.selected,
+                'v-chip--selected': this.selected && !this.disabled,
                 'v-chip--label': this.label,
                 'v-chip--outline': this.outline,
                 'v-chip--small': this.small,
@@ -66210,7 +66192,7 @@ __webpack_require__.r(__webpack_exports__);
                     }
                 }
             };
-            return h('div', data, [h(_VIcon__WEBPACK_IMPORTED_MODULE_1__["default"], '$vuetify.icons.delete')]);
+            return h('div', data, [h(_VIcon__WEBPACK_IMPORTED_MODULE_2__["default"], '$vuetify.icons.delete')]);
         },
         genContent: function genContent(h) {
             var children = [this.$slots.default];
@@ -66233,26 +66215,26 @@ __webpack_require__.r(__webpack_exports__);
         };
         return h('span', data, [this.genContent(h)]);
     }
-});
+}));
 
 /***/ }),
 
-/***/ "./src/components/VChip/index.js":
+/***/ "./src/components/VChip/index.ts":
 /*!***************************************!*\
-  !*** ./src/components/VChip/index.js ***!
+  !*** ./src/components/VChip/index.ts ***!
   \***************************************/
 /*! exports provided: VChip, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _VChip__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VChip */ "./src/components/VChip/VChip.js");
+/* harmony import */ var _VChip__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VChip */ "./src/components/VChip/VChip.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VChip", function() { return _VChip__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
 
 /* istanbul ignore next */
 _VChip__WEBPACK_IMPORTED_MODULE_0__["default"].install = function install(Vue) {
-    Vue.component(_VChip__WEBPACK_IMPORTED_MODULE_0__["default"].name, _VChip__WEBPACK_IMPORTED_MODULE_0__["default"]);
+    Vue.component(_VChip__WEBPACK_IMPORTED_MODULE_0__["default"].options.name, _VChip__WEBPACK_IMPORTED_MODULE_0__["default"]);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (_VChip__WEBPACK_IMPORTED_MODULE_0__["default"]);
@@ -66296,7 +66278,15 @@ __webpack_require__.r(__webpack_exports__);
             default: true
         }
     },
+    data: function data() {
+        return {
+            editingIndex: -1
+        };
+    },
     computed: {
+        counterValue: function counterValue() {
+            return this.multiple ? this.selectedItems.length : (this.internalSearch || '').toString().length;
+        },
         hasSlot: function hasSlot() {
             return _VSelect_VSelect__WEBPACK_IMPORTED_MODULE_1__["default"].computed.hasSlot.call(this) || this.multiple;
         },
@@ -66336,6 +66326,10 @@ __webpack_require__.r(__webpack_exports__);
             }
             return chip;
         },
+        onChipInput: function onChipInput(item) {
+            _VSelect_VSelect__WEBPACK_IMPORTED_MODULE_1__["default"].methods.onChipInput.call(this, item);
+            this.editingIndex = -1;
+        },
         // Requires a manual definition
         // to overwrite removal in v-autocomplete
         onEnterDown: function onEnterDown() {
@@ -66367,6 +66361,15 @@ __webpack_require__.r(__webpack_exports__);
             }
             _VAutocomplete_VAutocomplete__WEBPACK_IMPORTED_MODULE_2__["default"].methods.onTabDown.call(this, e);
         },
+        selectItem: function selectItem(item) {
+            // Currently only supports items:<string[]>
+            if (this.editingIndex > -1) {
+                this.updateEditing();
+            } else {
+                _VSelect_VSelect__WEBPACK_IMPORTED_MODULE_1__["default"].methods.selectItem.call(this, item);
+            }
+            this.setSearch();
+        },
         setSelectedItems: function setSelectedItems() {
             if (this.internalValue == null || this.internalValue === '') {
                 this.selectedItems = [];
@@ -66374,19 +66377,26 @@ __webpack_require__.r(__webpack_exports__);
                 this.selectedItems = this.multiple ? this.internalValue : [this.internalValue];
             }
         },
-        updateSelf: function updateSelf() {
-            this.multiple ? this.updateTags() : this.updateCombobox();
+        updateEditing: function updateEditing() {
+            var value = this.internalValue.slice();
+            value[this.editingIndex] = this.internalSearch;
+            this.internalValue = value;
+            this.editingIndex = -1;
         },
         updateCombobox: function updateCombobox() {
-            // When using chips and search is dirty
-            // avoid updating input
-            if (this.hasChips && !this.searchIsDirty) return;
+            var isUsingSlot = Boolean(this.$scopedSlots.selection) || this.hasChips;
+            // If search is not dirty and is
+            // using slot, do nothing
+            if (isUsingSlot && !this.searchIsDirty) return;
             // The internal search is not matching
-            // the initial value, update the input
-            if (this.internalSearch !== this.internalValue) this.setValue();
-            // Reset search if using chips
+            // the internal value, update the input
+            if (this.internalSearch !== this.getText(this.internalValue)) this.setValue();
+            // Reset search if using slot
             // to avoid a double input
-            if (this.hasChips) this.internalSearch = undefined;
+            if (isUsingSlot) this.internalSearch = undefined;
+        },
+        updateSelf: function updateSelf() {
+            this.multiple ? this.updateTags() : this.updateCombobox();
         },
         updateTags: function updateTags() {
             var menuIndex = this.getMenuIndex();
@@ -66449,12 +66459,25 @@ _VCombobox__WEBPACK_IMPORTED_MODULE_0__["default"].install = function install(Vu
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _stylus_components_counters_styl__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../stylus/components/_counters.styl */ "./src/stylus/components/_counters.styl");
 /* harmony import */ var _stylus_components_counters_styl__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_stylus_components_counters_styl__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _mixins_themeable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/themeable */ "./src/mixins/themeable.ts");
+var __assign = undefined && undefined.__assign || Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) {
+            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+    }
+    return t;
+};
 // Styles
+
+// Mixins
 
 /* @vue/component */
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'v-counter',
     functional: true,
+    mixins: [_mixins_themeable__WEBPACK_IMPORTED_MODULE_1__["default"]],
     props: {
         value: {
             type: [Number, String],
@@ -66470,7 +66493,7 @@ __webpack_require__.r(__webpack_exports__);
         var isGreater = max && value > max;
         return h('div', {
             staticClass: 'v-counter',
-            class: isGreater ? ['error--text'] : []
+            class: __assign({ 'error--text': isGreater }, _mixins_themeable__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.themeClasses.call(props))
         }, content);
     }
 });
@@ -68621,7 +68644,6 @@ var __assign = undefined && undefined.__assign || Object.assign || function (t) 
         return {
             animate: false,
             animateTimeout: null,
-            isDependent: false,
             stackClass: 'v-dialog__content--active',
             stackMinZIndex: 200
         };
@@ -68791,9 +68813,9 @@ _VDialog__WEBPACK_IMPORTED_MODULE_0__["default"].install = function install(Vue)
 
 /***/ }),
 
-/***/ "./src/components/VDivider/VDivider.js":
+/***/ "./src/components/VDivider/VDivider.ts":
 /*!*********************************************!*\
-  !*** ./src/components/VDivider/VDivider.js ***!
+  !*** ./src/components/VDivider/VDivider.ts ***!
   \*********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -68802,7 +68824,9 @@ _VDialog__WEBPACK_IMPORTED_MODULE_0__["default"].install = function install(Vue)
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _stylus_components_dividers_styl__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../stylus/components/_dividers.styl */ "./src/stylus/components/_dividers.styl");
 /* harmony import */ var _stylus_components_dividers_styl__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_stylus_components_dividers_styl__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _mixins_themeable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/themeable */ "./src/mixins/themeable.ts");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "vue");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _mixins_themeable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/themeable */ "./src/mixins/themeable.ts");
 var __assign = undefined && undefined.__assign || Object.assign || function (t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
         s = arguments[i];
@@ -68814,13 +68838,14 @@ var __assign = undefined && undefined.__assign || Object.assign || function (t) 
 };
 // Styles
 
+// Types
+
 // Mixins
 
-/* @vue/component */
-/* harmony default export */ __webpack_exports__["default"] = ({
+/* harmony default export */ __webpack_exports__["default"] = (vue__WEBPACK_IMPORTED_MODULE_1___default.a.extend({
     name: 'v-divider',
     functional: true,
-    props: __assign({}, _mixins_themeable__WEBPACK_IMPORTED_MODULE_1__["default"].options.props, { inset: Boolean, vertical: Boolean }),
+    props: __assign({}, _mixins_themeable__WEBPACK_IMPORTED_MODULE_2__["default"].options.props, { inset: Boolean, vertical: Boolean }),
     render: function render(h, _a) {
         var props = _a.props,
             data = _a.data;
@@ -68831,35 +68856,35 @@ var __assign = undefined && undefined.__assign || Object.assign || function (t) 
         if (props.dark) data.staticClass += ' theme--dark';
         return h('hr', data);
     }
-});
+}));
 
 /***/ }),
 
-/***/ "./src/components/VDivider/index.js":
+/***/ "./src/components/VDivider/index.ts":
 /*!******************************************!*\
-  !*** ./src/components/VDivider/index.js ***!
+  !*** ./src/components/VDivider/index.ts ***!
   \******************************************/
 /*! exports provided: VDivider, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _VDivider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VDivider */ "./src/components/VDivider/VDivider.js");
+/* harmony import */ var _VDivider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VDivider */ "./src/components/VDivider/VDivider.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VDivider", function() { return _VDivider__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
 
 /* istanbul ignore next */
 _VDivider__WEBPACK_IMPORTED_MODULE_0__["default"].install = function install(Vue) {
-    Vue.component(_VDivider__WEBPACK_IMPORTED_MODULE_0__["default"].name, _VDivider__WEBPACK_IMPORTED_MODULE_0__["default"]);
+    Vue.component(_VDivider__WEBPACK_IMPORTED_MODULE_0__["default"].options.name, _VDivider__WEBPACK_IMPORTED_MODULE_0__["default"]);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (_VDivider__WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 /***/ }),
 
-/***/ "./src/components/VExpansionPanel/VExpansionPanel.js":
+/***/ "./src/components/VExpansionPanel/VExpansionPanel.ts":
 /*!***********************************************************!*\
-  !*** ./src/components/VExpansionPanel/VExpansionPanel.js ***!
+  !*** ./src/components/VExpansionPanel/VExpansionPanel.ts ***!
   \***********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -68870,6 +68895,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _stylus_components_expansion_panel_styl__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_stylus_components_expansion_panel_styl__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _mixins_themeable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/themeable */ "./src/mixins/themeable.ts");
 /* harmony import */ var _mixins_registrable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/registrable */ "./src/mixins/registrable.ts");
+/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../util/mixins */ "./src/util/mixins.ts");
 var __assign = undefined && undefined.__assign || Object.assign || function (t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
         s = arguments[i];
@@ -68882,10 +68908,10 @@ var __assign = undefined && undefined.__assign || Object.assign || function (t) 
 
 
 
+
 /* @vue/component */
-/* harmony default export */ __webpack_exports__["default"] = ({
+/* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_3__["default"])(_mixins_themeable__WEBPACK_IMPORTED_MODULE_1__["default"], Object(_mixins_registrable__WEBPACK_IMPORTED_MODULE_2__["provide"])('expansionPanel')).extend({
     name: 'v-expansion-panel',
-    mixins: [_mixins_themeable__WEBPACK_IMPORTED_MODULE_1__["default"], Object(_mixins_registrable__WEBPACK_IMPORTED_MODULE_2__["provide"])('expansionPanel')],
     provide: function provide() {
         return {
             expansionPanel: this
@@ -68917,12 +68943,12 @@ var __assign = undefined && undefined.__assign || Object.assign || function (t) 
         }
     },
     watch: {
-        expand: function expand(val) {
-            var openIndex;
-            if (!val) {
+        expand: function expand(v) {
+            var openIndex = -1;
+            if (!v) {
                 // Close all panels unless only one is open
                 var openCount = this.open.reduce(function (acc, val) {
-                    return acc + val;
+                    return val ? acc + 1 : acc;
                 }, 0);
                 var open = Array(this.items.length).fill(false);
                 if (openCount === 1) {
@@ -68933,7 +68959,7 @@ var __assign = undefined && undefined.__assign || Object.assign || function (t) 
                 }
                 this.open = open;
             }
-            this.$emit('input', val ? this.open : openIndex > -1 ? openIndex : null);
+            this.$emit('input', v ? this.open : openIndex > -1 ? openIndex : null);
         },
         value: function value(v) {
             this.updateFromValue(v);
@@ -68963,7 +68989,7 @@ var __assign = undefined && undefined.__assign || Object.assign || function (t) 
         panelClick: function panelClick(uid) {
             var open = this.expand ? this.open.slice() : Array(this.items.length).fill(false);
             for (var i = 0; i < this.items.length; i++) {
-                if (this.items[i].uid === uid) {
+                if (this.items[i]._uid === uid) {
                     open[i] = !this.open[i];
                     !this.expand && this.$emit('input', open[i] ? i : null);
                 }
@@ -68971,13 +68997,13 @@ var __assign = undefined && undefined.__assign || Object.assign || function (t) 
             this.updatePanels(open);
             if (this.expand) this.$emit('input', open);
         },
-        register: function register(uid, toggle) {
-            this.items.push({ uid: uid, toggle: toggle });
+        register: function register(content) {
+            this.items.push(content);
             this.open.push(false);
         },
-        unregister: function unregister(uid) {
+        unregister: function unregister(content) {
             var index = this.items.findIndex(function (i) {
-                return i.uid === uid;
+                return i._uid === content._uid;
             });
             this.items.splice(index, 1);
             this.open.splice(index, 1);
@@ -68989,13 +69015,13 @@ var __assign = undefined && undefined.__assign || Object.assign || function (t) 
             class: this.classes
         }, this.$slots.default);
     }
-});
+}));
 
 /***/ }),
 
-/***/ "./src/components/VExpansionPanel/VExpansionPanelContent.js":
+/***/ "./src/components/VExpansionPanel/VExpansionPanelContent.ts":
 /*!******************************************************************!*\
-  !*** ./src/components/VExpansionPanel/VExpansionPanelContent.js ***!
+  !*** ./src/components/VExpansionPanel/VExpansionPanelContent.ts ***!
   \******************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -69005,10 +69031,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _transitions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../transitions */ "./src/components/transitions/index.js");
 /* harmony import */ var _mixins_bootable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/bootable */ "./src/mixins/bootable.ts");
 /* harmony import */ var _mixins_toggleable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/toggleable */ "./src/mixins/toggleable.ts");
-/* harmony import */ var _mixins_rippleable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mixins/rippleable */ "./src/mixins/rippleable.js");
+/* harmony import */ var _mixins_rippleable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mixins/rippleable */ "./src/mixins/rippleable.ts");
 /* harmony import */ var _mixins_registrable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../mixins/registrable */ "./src/mixins/registrable.ts");
 /* harmony import */ var _VIcon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../VIcon */ "./src/components/VIcon/index.ts");
-/* harmony import */ var _util_console__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../util/console */ "./src/util/console.ts");
+/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../util/mixins */ "./src/util/mixins.ts");
+/* harmony import */ var _util_console__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../util/console */ "./src/util/console.ts");
+var __read = undefined && undefined.__read || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o),
+        r,
+        ar = [],
+        e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
+            ar.push(r.value);
+        }
+    } catch (error) {
+        e = { error: error };
+    } finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        } finally {
+            if (e) throw e.error;
+        }
+    }
+    return ar;
+};
+var __spread = undefined && undefined.__spread || function () {
+    for (var ar = [], i = 0; i < arguments.length; i++) {
+        ar = ar.concat(__read(arguments[i]));
+    }return ar;
+};
 
 
 
@@ -69016,11 +69070,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_6__["default"])(_mixins_bootable__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_toggleable__WEBPACK_IMPORTED_MODULE_2__["default"], _mixins_rippleable__WEBPACK_IMPORTED_MODULE_3__["default"], Object(_mixins_registrable__WEBPACK_IMPORTED_MODULE_4__["inject"])('expansionPanel', 'v-expansion-panel-content', 'v-expansion-panel')
 /* @vue/component */
-/* harmony default export */ __webpack_exports__["default"] = ({
+).extend({
     name: 'v-expansion-panel-content',
-    mixins: [_mixins_bootable__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_toggleable__WEBPACK_IMPORTED_MODULE_2__["default"], _mixins_rippleable__WEBPACK_IMPORTED_MODULE_3__["default"], Object(_mixins_registrable__WEBPACK_IMPORTED_MODULE_4__["inject"])('expansionPanel', 'v-expansion-panel-content', 'v-expansion-panel')],
-    inject: ['expansionPanel'],
     props: {
         disabled: Boolean,
         readonly: Boolean,
@@ -69054,12 +69108,12 @@ __webpack_require__.r(__webpack_exports__);
         }
     },
     mounted: function mounted() {
-        this.expansionPanel.register(this._uid, this.toggle);
+        this.expansionPanel.register(this);
         // Can be removed once fully deprecated
-        if (typeof this.value !== 'undefined') Object(_util_console__WEBPACK_IMPORTED_MODULE_6__["consoleWarn"])('v-model has been deprecated', this);
+        if (typeof this.value !== 'undefined') Object(_util_console__WEBPACK_IMPORTED_MODULE_7__["consoleWarn"])('v-model has been deprecated', this);
     },
     beforeDestroy: function beforeDestroy() {
-        this.expansionPanel.unregister(this._uid);
+        this.expansionPanel.unregister(this);
     },
     methods: {
         onKeydown: function onKeydown(e) {
@@ -69080,6 +69134,8 @@ __webpack_require__.r(__webpack_exports__);
             }, this.showLazyContent(this.$slots.default));
         },
         genHeader: function genHeader() {
+            var children = __spread(this.$slots.header);
+            if (!this.hideActions) children.push(this.genIcon());
             return this.$createElement('div', {
                 staticClass: 'v-expansion-panel__header',
                 directives: [{
@@ -69089,20 +69145,19 @@ __webpack_require__.r(__webpack_exports__);
                 on: {
                     click: this.onHeaderClick
                 }
-            }, [this.$slots.header, this.genIcon()]);
+            }, children);
         },
         genIcon: function genIcon() {
-            if (this.hideActions) return null;
-            var icon = this.$slots.actions || this.$createElement(_VIcon__WEBPACK_IMPORTED_MODULE_5__["default"], this.expandIcon);
+            var icon = this.$slots.actions || [this.$createElement(_VIcon__WEBPACK_IMPORTED_MODULE_5__["default"], this.expandIcon)];
             return this.$createElement('transition', {
                 attrs: { name: 'fade-transition' }
             }, [this.$createElement('div', {
-                staticClass: 'header__icon',
+                staticClass: 'v-expansion-panel__header__icon',
                 directives: [{
                     name: 'show',
                     value: !this.isDisabled
                 }]
-            }, [icon])]);
+            }, icon)]);
         },
         toggle: function toggle(active) {
             var _this = this;
@@ -69129,23 +69184,23 @@ __webpack_require__.r(__webpack_exports__);
             }
         }, children);
     }
-});
+}));
 
 /***/ }),
 
-/***/ "./src/components/VExpansionPanel/index.js":
+/***/ "./src/components/VExpansionPanel/index.ts":
 /*!*************************************************!*\
-  !*** ./src/components/VExpansionPanel/index.js ***!
+  !*** ./src/components/VExpansionPanel/index.ts ***!
   \*************************************************/
 /*! exports provided: VExpansionPanel, VExpansionPanelContent, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _VExpansionPanel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VExpansionPanel */ "./src/components/VExpansionPanel/VExpansionPanel.js");
+/* harmony import */ var _VExpansionPanel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VExpansionPanel */ "./src/components/VExpansionPanel/VExpansionPanel.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VExpansionPanel", function() { return _VExpansionPanel__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
-/* harmony import */ var _VExpansionPanelContent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./VExpansionPanelContent */ "./src/components/VExpansionPanel/VExpansionPanelContent.js");
+/* harmony import */ var _VExpansionPanelContent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./VExpansionPanelContent */ "./src/components/VExpansionPanel/VExpansionPanelContent.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VExpansionPanelContent", function() { return _VExpansionPanelContent__WEBPACK_IMPORTED_MODULE_1__["default"]; });
 
 
@@ -69153,8 +69208,8 @@ __webpack_require__.r(__webpack_exports__);
 
 /* istanbul ignore next */
 _VExpansionPanel__WEBPACK_IMPORTED_MODULE_0__["default"].install = function install(Vue) {
-    Vue.component(_VExpansionPanel__WEBPACK_IMPORTED_MODULE_0__["default"].name, _VExpansionPanel__WEBPACK_IMPORTED_MODULE_0__["default"]);
-    Vue.component(_VExpansionPanelContent__WEBPACK_IMPORTED_MODULE_1__["default"].name, _VExpansionPanelContent__WEBPACK_IMPORTED_MODULE_1__["default"]);
+    Vue.component(_VExpansionPanel__WEBPACK_IMPORTED_MODULE_0__["default"].options.name, _VExpansionPanel__WEBPACK_IMPORTED_MODULE_0__["default"]);
+    Vue.component(_VExpansionPanelContent__WEBPACK_IMPORTED_MODULE_1__["default"].options.name, _VExpansionPanelContent__WEBPACK_IMPORTED_MODULE_1__["default"]);
 };
 /* harmony default export */ __webpack_exports__["default"] = (_VExpansionPanel__WEBPACK_IMPORTED_MODULE_0__["default"]);
 
@@ -69171,7 +69226,7 @@ _VExpansionPanel__WEBPACK_IMPORTED_MODULE_0__["default"].install = function inst
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _stylus_components_footer_styl__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../stylus/components/_footer.styl */ "./src/stylus/components/_footer.styl");
 /* harmony import */ var _stylus_components_footer_styl__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_stylus_components_footer_styl__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _mixins_applicationable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/applicationable */ "./src/mixins/applicationable.js");
+/* harmony import */ var _mixins_applicationable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/applicationable */ "./src/mixins/applicationable.ts");
 /* harmony import */ var _mixins_colorable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/colorable */ "./src/mixins/colorable.ts");
 /* harmony import */ var _mixins_themeable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mixins/themeable */ "./src/mixins/themeable.ts");
 // Styles
@@ -69225,7 +69280,8 @@ __webpack_require__.r(__webpack_exports__);
          * @return {number}
          */
         updateApplication: function updateApplication() {
-            return isNaN(this.height) ? this.$el ? this.$el.clientHeight : 0 : this.height;
+            var height = parseInt(this.height);
+            return isNaN(height) ? this.$el ? this.$el.clientHeight : 0 : height;
         }
     },
     render: function render(h) {
@@ -69296,6 +69352,7 @@ __webpack_require__.r(__webpack_exports__);
     data: function data() {
         return {
             inputs: [],
+            watchers: [],
             errorBag: {}
         };
     },
@@ -69318,6 +69375,7 @@ __webpack_require__.r(__webpack_exports__);
                 }, { immediate: true });
             };
             var watchers = {
+                _uid: input._uid,
                 valid: undefined,
                 shouldValidate: undefined
             };
@@ -69354,24 +69412,26 @@ __webpack_require__.r(__webpack_exports__);
         },
         register: function register(input) {
             var unwatch = this.watchInput(input);
-            this.inputs.push({
-                uid: input._uid,
-                validate: input.validate,
-                reset: input.reset,
-                unwatch: unwatch
-            });
+            this.inputs.push(input);
+            this.watchers.push(unwatch);
         },
         unregister: function unregister(input) {
             var found = this.inputs.find(function (i) {
-                return i.uid === input._uid;
+                return i._uid === input._uid;
             });
             if (!found) return;
-            found.unwatch.valid && found.unwatch.valid();
-            found.unwatch.shouldValidate && found.unwatch.shouldValidate();
-            this.inputs = this.inputs.filter(function (i) {
-                return i.uid !== found.uid;
+            var unwatch = this.watchers.find(function (i) {
+                return i._uid === found._uid;
             });
-            this.$delete(this.errorBag, found.uid);
+            unwatch.valid && unwatch.valid();
+            unwatch.shouldValidate && unwatch.shouldValidate();
+            this.watchers = this.watchers.filter(function (i) {
+                return i._uid !== found._uid;
+            });
+            this.inputs = this.inputs.filter(function (i) {
+                return i._uid !== found._uid;
+            });
+            this.$delete(this.errorBag, found._uid);
         }
     },
     render: function render(h) {
@@ -69600,7 +69660,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var VSpacer = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_0__["createSimpleFunctional"])('spacer');
+var VSpacer = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_0__["createSimpleFunctional"])('spacer', 'div', 'v-spacer');
 
 var VGrid = {};
 /* istanbul ignore next */
@@ -69640,8 +69700,10 @@ var __assign = undefined && undefined.__assign || Object.assign || function (t) 
     return t;
 };
 
+// Mixins
 
 
+// Util
 
 
 var SIZE_MAP;
@@ -69840,7 +69902,6 @@ var __assign = undefined && undefined.__assign || Object.assign || function (t) 
         /** @deprecated */
         prependIconCb: Function,
         readonly: Boolean,
-        tabindex: { default: 0 },
         value: { required: false }
     },
     data: function data(vm) {
@@ -69917,7 +69978,9 @@ var __assign = undefined && undefined.__assign || Object.assign || function (t) 
             var data = {
                 props: {
                     color: this.validationState,
-                    disabled: this.disabled
+                    dark: this.dark,
+                    disabled: this.disabled,
+                    light: this.light
                 },
                 on: !(this.$listeners[eventName] || cb) ? null : {
                     click: function click(e) {
@@ -69958,8 +70021,10 @@ var __assign = undefined && undefined.__assign || Object.assign || function (t) 
             return this.$createElement(_VLabel__WEBPACK_IMPORTED_MODULE_2__["default"], {
                 props: {
                     color: this.validationState,
+                    dark: this.dark,
                     focused: this.hasState,
-                    for: this.$attrs.id
+                    for: this.$attrs.id,
+                    light: this.light
                 }
             }, this.$slots.label || this.label);
         },
@@ -69969,6 +70034,8 @@ var __assign = undefined && undefined.__assign || Object.assign || function (t) 
             return this.$createElement(_VMessages__WEBPACK_IMPORTED_MODULE_3__["default"], {
                 props: {
                     color: this.hasHint ? '' : this.validationState,
+                    dark: this.dark,
+                    light: this.light,
                     value: this.hasMessages || this.hasHint ? messages : []
                 }
             });
@@ -70174,10 +70241,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _stylus_components_labels_styl__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../stylus/components/_labels.styl */ "./src/stylus/components/_labels.styl");
 /* harmony import */ var _stylus_components_labels_styl__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_stylus_components_labels_styl__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _mixins_colorable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/colorable */ "./src/mixins/colorable.ts");
-/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../util/helpers */ "./src/util/helpers.ts");
+/* harmony import */ var _mixins_themeable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/themeable */ "./src/mixins/themeable.ts");
+/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../util/helpers */ "./src/util/helpers.ts");
+var __assign = undefined && undefined.__assign || Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) {
+            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+    }
+    return t;
+};
 // Styles
 
 // Mixins
+
 
 // Helpers
 
@@ -70185,6 +70263,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'v-label',
     functional: true,
+    mixins: [_mixins_themeable__WEBPACK_IMPORTED_MODULE_2__["default"]],
     props: {
         absolute: Boolean,
         color: {
@@ -70210,18 +70289,15 @@ __webpack_require__.r(__webpack_exports__);
             props = _a.props;
         var data = {
             staticClass: 'v-label',
-            'class': {
-                'v-label--active': props.value,
-                'v-label--is-disabled': props.disabled
-            },
+            'class': __assign({ 'v-label--active': props.value, 'v-label--is-disabled': props.disabled }, _mixins_themeable__WEBPACK_IMPORTED_MODULE_2__["default"].options.computed.themeClasses.call(props)),
             attrs: {
                 for: props.for,
                 'aria-hidden': !props.for
             },
             on: listeners,
             style: {
-                left: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_2__["convertToUnit"])(props.left),
-                right: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_2__["convertToUnit"])(props.right),
+                left: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["convertToUnit"])(props.left),
+                right: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["convertToUnit"])(props.right),
                 position: props.absolute ? 'absolute' : 'relative'
             }
         };
@@ -70615,7 +70691,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _VAvatar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../VAvatar */ "./src/components/VAvatar/index.js");
+/* harmony import */ var _VAvatar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../VAvatar */ "./src/components/VAvatar/index.ts");
 // Components
 
 /* @vue/component */
@@ -70875,9 +70951,7 @@ __webpack_require__.r(__webpack_exports__);
     render: function render(h) {
         var data = {
             staticClass: 'v-menu',
-            style: {
-                display: this.fullWidth ? 'block' : 'inline-block'
-            },
+            class: { 'v-menu--inline': !this.fullWidth && this.$slots.activator },
             directives: [{
                 arg: 500,
                 name: 'resize',
@@ -71264,14 +71338,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _stylus_components_messages_styl__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../stylus/components/_messages.styl */ "./src/stylus/components/_messages.styl");
 /* harmony import */ var _stylus_components_messages_styl__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_stylus_components_messages_styl__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _mixins_colorable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/colorable */ "./src/mixins/colorable.ts");
+/* harmony import */ var _mixins_themeable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/themeable */ "./src/mixins/themeable.ts");
+var __assign = undefined && undefined.__assign || Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) {
+            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+    }
+    return t;
+};
 // Styles
 
 // Mixins
 
+
 /* @vue/component */
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'v-messages',
-    mixins: [_mixins_colorable__WEBPACK_IMPORTED_MODULE_1__["default"]],
+    mixins: [_mixins_colorable__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_themeable__WEBPACK_IMPORTED_MODULE_2__["default"]],
     props: {
         value: {
             type: Array,
@@ -71311,7 +71396,7 @@ __webpack_require__.r(__webpack_exports__);
     render: function render(h) {
         return h('div', {
             staticClass: 'v-messages',
-            'class': this.classes
+            'class': __assign({}, this.classes, this.themeClasses)
         }, [this.genChildren()]);
     }
 });
@@ -71351,7 +71436,7 @@ _VMessages__WEBPACK_IMPORTED_MODULE_0__["default"].install = function install(Vu
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _stylus_components_navigation_drawer_styl__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../stylus/components/_navigation-drawer.styl */ "./src/stylus/components/_navigation-drawer.styl");
 /* harmony import */ var _stylus_components_navigation_drawer_styl__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_stylus_components_navigation_drawer_styl__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _mixins_applicationable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/applicationable */ "./src/mixins/applicationable.js");
+/* harmony import */ var _mixins_applicationable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/applicationable */ "./src/mixins/applicationable.ts");
 /* harmony import */ var _mixins_overlayable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/overlayable */ "./src/mixins/overlayable.js");
 /* harmony import */ var _mixins_ssr_bootable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mixins/ssr-bootable */ "./src/mixins/ssr-bootable.ts");
 /* harmony import */ var _mixins_themeable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../mixins/themeable */ "./src/mixins/themeable.ts");
@@ -71454,18 +71539,23 @@ __webpack_require__.r(__webpack_exports__);
                 'theme--light': this.light
             };
         },
+        hasApp: function hasApp() {
+            return this.app && !this.isMobile && !this.temporary;
+        },
         isMobile: function isMobile() {
             return !this.stateless && !this.permanent && !this.temporary && this.$vuetify.breakpoint.width < parseInt(this.mobileBreakPoint, 10);
         },
         marginTop: function marginTop() {
-            if (!this.app) return 0;
+            if (!this.hasApp) return 0;
             var marginTop = this.$vuetify.application.bar;
             marginTop += this.clipped ? this.$vuetify.application.top : 0;
             return marginTop;
         },
         maxHeight: function maxHeight() {
-            if (!this.app) return '100%';
-            return this.clipped ? this.$vuetify.application.top + this.$vuetify.application.bottom : this.$vuetify.application.bottom;
+            if (!this.hasApp) return null;
+            var maxHeight = this.$vuetify.application.bottom + this.$vuetify.application.footer + this.$vuetify.application.bar;
+            if (!this.clipped) return maxHeight;
+            return maxHeight + this.$vuetify.application.top;
         },
         reactsToClick: function reactsToClick() {
             return !this.stateless && !this.permanent && (this.isMobile || this.temporary);
@@ -71486,7 +71576,7 @@ __webpack_require__.r(__webpack_exports__);
             var styles = {
                 height: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_8__["convertToUnit"])(this.height),
                 marginTop: this.marginTop + "px",
-                maxHeight: "calc(100% - " + this.maxHeight + "px)",
+                maxHeight: "calc(100% - " + +this.maxHeight + "px)",
                 transform: "translateX(" + this.calculatedTransform + "px)",
                 width: this.calculatedWidth + "px"
             };
@@ -71878,7 +71968,7 @@ var __spread = undefined && undefined.__spread || function () {
             var even = maxLength % 2 === 0 ? 1 : 0;
             var left = Math.floor(maxLength / 2);
             var right = this.length - left + 1 + even;
-            if (this.value >= left && this.value <= right) {
+            if (this.value > left && this.value < right) {
                 var start = this.value - left + 2;
                 var end = this.value + left - 2 - even;
                 return __spread([1, '...'], this.range(start, end), ['...', this.length]);
@@ -71994,9 +72084,9 @@ _VPagination__WEBPACK_IMPORTED_MODULE_0__["default"].install = function install(
 
 /***/ }),
 
-/***/ "./src/components/VParallax/VParallax.js":
+/***/ "./src/components/VParallax/VParallax.ts":
 /*!***********************************************!*\
-  !*** ./src/components/VParallax/VParallax.js ***!
+  !*** ./src/components/VParallax/VParallax.ts ***!
   \***********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -72005,13 +72095,16 @@ _VPagination__WEBPACK_IMPORTED_MODULE_0__["default"].install = function install(
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _stylus_components_parallax_styl__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../stylus/components/_parallax.styl */ "./src/stylus/components/_parallax.styl");
 /* harmony import */ var _stylus_components_parallax_styl__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_stylus_components_parallax_styl__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _mixins_translatable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/translatable */ "./src/mixins/translatable.js");
+/* harmony import */ var _mixins_translatable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/translatable */ "./src/mixins/translatable.ts");
+/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../util/mixins */ "./src/util/mixins.ts");
+// Style
+
+// Mixins
 
 
 /* @vue/component */
-/* harmony default export */ __webpack_exports__["default"] = ({
+/* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_2__["default"])(_mixins_translatable__WEBPACK_IMPORTED_MODULE_1__["default"]).extend({
     name: 'v-parallax',
-    mixins: [_mixins_translatable__WEBPACK_IMPORTED_MODULE_1__["default"]],
     props: {
         alt: String,
         height: {
@@ -72045,12 +72138,13 @@ __webpack_require__.r(__webpack_exports__);
     methods: {
         init: function init() {
             var _this = this;
-            if (!this.$refs.img) return;
-            if (this.$refs.img.complete) {
+            var img = this.$refs.img;
+            if (!img) return;
+            if (img.complete) {
                 this.translate();
                 this.listeners();
             } else {
-                this.$refs.img.addEventListener('load', function () {
+                img.addEventListener('load', function () {
                     _this.translate();
                     _this.listeners();
                 }, false);
@@ -72058,9 +72152,6 @@ __webpack_require__.r(__webpack_exports__);
         },
         objHeight: function objHeight() {
             return this.$refs.img.naturalHeight;
-        },
-        elOffsetTop: function elOffsetTop() {
-            return this.$el.offsetTop;
         }
     },
     render: function render(h) {
@@ -72087,26 +72178,26 @@ __webpack_require__.r(__webpack_exports__);
             on: this.$listeners
         }, [container, content]);
     }
-});
+}));
 
 /***/ }),
 
-/***/ "./src/components/VParallax/index.js":
+/***/ "./src/components/VParallax/index.ts":
 /*!*******************************************!*\
-  !*** ./src/components/VParallax/index.js ***!
+  !*** ./src/components/VParallax/index.ts ***!
   \*******************************************/
 /*! exports provided: VParallax, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _VParallax__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VParallax */ "./src/components/VParallax/VParallax.js");
+/* harmony import */ var _VParallax__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VParallax */ "./src/components/VParallax/VParallax.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VParallax", function() { return _VParallax__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
 
 /* istanbul ignore next */
 _VParallax__WEBPACK_IMPORTED_MODULE_0__["default"].install = function install(Vue) {
-    Vue.component(_VParallax__WEBPACK_IMPORTED_MODULE_0__["default"].name, _VParallax__WEBPACK_IMPORTED_MODULE_0__["default"]);
+    Vue.component(_VParallax__WEBPACK_IMPORTED_MODULE_0__["default"].options.name, _VParallax__WEBPACK_IMPORTED_MODULE_0__["default"]);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (_VParallax__WEBPACK_IMPORTED_MODULE_0__["default"]);
@@ -72236,9 +72327,9 @@ _VPicker__WEBPACK_IMPORTED_MODULE_0__["default"].install = function install(Vue)
 
 /***/ }),
 
-/***/ "./src/components/VProgressCircular/VProgressCircular.js":
+/***/ "./src/components/VProgressCircular/VProgressCircular.ts":
 /*!***************************************************************!*\
-  !*** ./src/components/VProgressCircular/VProgressCircular.js ***!
+  !*** ./src/components/VProgressCircular/VProgressCircular.ts ***!
   \***************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -72248,12 +72339,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _stylus_components_progress_circular_styl__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../stylus/components/_progress-circular.styl */ "./src/stylus/components/_progress-circular.styl");
 /* harmony import */ var _stylus_components_progress_circular_styl__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_stylus_components_progress_circular_styl__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _mixins_colorable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/colorable */ "./src/mixins/colorable.ts");
+/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../util/mixins */ "./src/util/mixins.ts");
+
+// Mixins
 
 
 /* @vue/component */
-/* harmony default export */ __webpack_exports__["default"] = ({
+/* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_2__["default"])(_mixins_colorable__WEBPACK_IMPORTED_MODULE_1__["default"]).extend({
     name: 'v-progress-circular',
-    mixins: [_mixins_colorable__WEBPACK_IMPORTED_MODULE_1__["default"]],
     props: {
         button: Boolean,
         indeterminate: Boolean,
@@ -72307,7 +72400,7 @@ __webpack_require__.r(__webpack_exports__);
             return (100 - this.normalizedValue) / 100 * this.circumference + 'px';
         },
         strokeWidth: function strokeWidth() {
-            return this.width / this.size * this.viewBoxSize * 2;
+            return this.width / +this.size * this.viewBoxSize * 2;
         },
         styles: function styles() {
             return {
@@ -72321,7 +72414,7 @@ __webpack_require__.r(__webpack_exports__);
             };
         },
         viewBoxSize: function viewBoxSize() {
-            return this.radius / (1 - this.width / this.size);
+            return this.radius / (1 - this.width / +this.size);
         }
     },
     methods: {
@@ -72359,35 +72452,35 @@ __webpack_require__.r(__webpack_exports__);
             on: this.$listeners
         }, [svg, info]);
     }
-});
+}));
 
 /***/ }),
 
-/***/ "./src/components/VProgressCircular/index.js":
+/***/ "./src/components/VProgressCircular/index.ts":
 /*!***************************************************!*\
-  !*** ./src/components/VProgressCircular/index.js ***!
+  !*** ./src/components/VProgressCircular/index.ts ***!
   \***************************************************/
 /*! exports provided: VProgressCircular, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _VProgressCircular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VProgressCircular */ "./src/components/VProgressCircular/VProgressCircular.js");
+/* harmony import */ var _VProgressCircular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VProgressCircular */ "./src/components/VProgressCircular/VProgressCircular.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VProgressCircular", function() { return _VProgressCircular__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
 
 /* istanbul ignore next */
 _VProgressCircular__WEBPACK_IMPORTED_MODULE_0__["default"].install = function install(Vue) {
-    Vue.component(_VProgressCircular__WEBPACK_IMPORTED_MODULE_0__["default"].name, _VProgressCircular__WEBPACK_IMPORTED_MODULE_0__["default"]);
+    Vue.component(_VProgressCircular__WEBPACK_IMPORTED_MODULE_0__["default"].options.name, _VProgressCircular__WEBPACK_IMPORTED_MODULE_0__["default"]);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (_VProgressCircular__WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 /***/ }),
 
-/***/ "./src/components/VProgressLinear/VProgressLinear.js":
+/***/ "./src/components/VProgressLinear/VProgressLinear.ts":
 /*!***********************************************************!*\
-  !*** ./src/components/VProgressLinear/VProgressLinear.js ***!
+  !*** ./src/components/VProgressLinear/VProgressLinear.ts ***!
   \***********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -72398,17 +72491,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _stylus_components_progress_linear_styl__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_stylus_components_progress_linear_styl__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _mixins_colorable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/colorable */ "./src/mixins/colorable.ts");
 /* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../util/helpers */ "./src/util/helpers.ts");
-/* harmony import */ var _transitions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../transitions */ "./src/components/transitions/index.js");
+/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../util/mixins */ "./src/util/mixins.ts");
+/* harmony import */ var _transitions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../transitions */ "./src/components/transitions/index.js");
 
 // Mixins
 
 // Helpers
 
 
+
 /* @vue/component */
-/* harmony default export */ __webpack_exports__["default"] = ({
+/* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_3__["default"])(_mixins_colorable__WEBPACK_IMPORTED_MODULE_1__["default"]).extend({
     name: 'v-progress-linear',
-    mixins: [_mixins_colorable__WEBPACK_IMPORTED_MODULE_1__["default"]],
     props: {
         active: {
             type: Boolean,
@@ -72456,7 +72550,7 @@ __webpack_require__.r(__webpack_exports__);
             if (!this.bufferValue) {
                 return 0;
             }
-            return this.value * 100 / this.bufferValue;
+            return +this.value * 100 / +this.bufferValue;
         },
         backgroundStyle: function backgroundStyle() {
             var backgroundOpacity = this.backgroundOpacity == null ? this.backgroundColor ? 1 : 0.3 : parseFloat(this.backgroundOpacity);
@@ -72496,8 +72590,8 @@ __webpack_require__.r(__webpack_exports__);
         }
     },
     render: function render(h) {
-        var fade = h(_transitions__WEBPACK_IMPORTED_MODULE_3__["VFadeTransition"], [this.indeterminate && this.genIndeterminate(h)]);
-        var slide = h(_transitions__WEBPACK_IMPORTED_MODULE_3__["VSlideXTransition"], [!this.indeterminate && this.genDeterminate(h)]);
+        var fade = h(_transitions__WEBPACK_IMPORTED_MODULE_4__["VFadeTransition"], this.indeterminate ? [this.genIndeterminate(h)] : []);
+        var slide = h(_transitions__WEBPACK_IMPORTED_MODULE_4__["VSlideXTransition"], this.indeterminate ? [] : [this.genDeterminate(h)]);
         var bar = h('div', {
             staticClass: 'v-progress-linear__bar',
             style: this.styles
@@ -72518,26 +72612,26 @@ __webpack_require__.r(__webpack_exports__);
             on: this.$listeners
         }, [background, bar]);
     }
-});
+}));
 
 /***/ }),
 
-/***/ "./src/components/VProgressLinear/index.js":
+/***/ "./src/components/VProgressLinear/index.ts":
 /*!*************************************************!*\
-  !*** ./src/components/VProgressLinear/index.js ***!
+  !*** ./src/components/VProgressLinear/index.ts ***!
   \*************************************************/
 /*! exports provided: VProgressLinear, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _VProgressLinear__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VProgressLinear */ "./src/components/VProgressLinear/VProgressLinear.js");
+/* harmony import */ var _VProgressLinear__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VProgressLinear */ "./src/components/VProgressLinear/VProgressLinear.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VProgressLinear", function() { return _VProgressLinear__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
 
 /* istanbul ignore next */
 _VProgressLinear__WEBPACK_IMPORTED_MODULE_0__["default"].install = function install(Vue) {
-    Vue.component(_VProgressLinear__WEBPACK_IMPORTED_MODULE_0__["default"].name, _VProgressLinear__WEBPACK_IMPORTED_MODULE_0__["default"]);
+    Vue.component(_VProgressLinear__WEBPACK_IMPORTED_MODULE_0__["default"].options.name, _VProgressLinear__WEBPACK_IMPORTED_MODULE_0__["default"]);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (_VProgressLinear__WEBPACK_IMPORTED_MODULE_0__["default"]);
@@ -72558,7 +72652,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _VIcon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../VIcon */ "./src/components/VIcon/index.ts");
 /* harmony import */ var _VLabel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../VLabel */ "./src/components/VLabel/index.js");
 /* harmony import */ var _mixins_colorable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mixins/colorable */ "./src/mixins/colorable.ts");
-/* harmony import */ var _mixins_rippleable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../mixins/rippleable */ "./src/mixins/rippleable.js");
+/* harmony import */ var _mixins_rippleable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../mixins/rippleable */ "./src/mixins/rippleable.ts");
 /* harmony import */ var _mixins_themeable__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../mixins/themeable */ "./src/mixins/themeable.ts");
 /* harmony import */ var _mixins_registrable__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../mixins/registrable */ "./src/mixins/registrable.ts");
 /* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../util/helpers */ "./src/util/helpers.ts");
@@ -72654,11 +72748,14 @@ var __assign = undefined && undefined.__assign || Object.assign || function (t) 
             return this.$createElement('input', {
                 attrs: Object.assign({}, attrs, {
                     'aria-label': this.label,
-                    name: this.radio.name || false,
+                    name: this.radio.name || (this.radio._uid ? 'v-radio-' + this.radio._uid : false),
+                    value: this.value,
                     role: type,
-                    type: type,
-                    checked: this.isActive
+                    type: type
                 }),
+                domProps: {
+                    checked: this.isActive
+                },
                 on: {
                     blur: this.onBlur,
                     change: this.onChange,
@@ -72681,7 +72778,9 @@ var __assign = undefined && undefined.__assign || Object.assign || function (t) 
                 },
                 props: {
                     color: this.radio.validationState || false,
-                    focused: this.hasState
+                    dark: this.dark,
+                    focused: this.hasState,
+                    light: this.light
                 }
             }, this.$slots.label || this.label);
         },
@@ -72691,7 +72790,11 @@ var __assign = undefined && undefined.__assign || Object.assign || function (t) 
             }, [this.genInput('radio', __assign({ 'aria-checked': this.isActive.toString() }, this.$attrs)), !this.isDisabled && this.genRipple({
                 'class': this.classesSelectable
             }), this.$createElement(_VIcon__WEBPACK_IMPORTED_MODULE_1__["default"], {
-                'class': this.classesSelectable
+                'class': this.classesSelectable,
+                props: {
+                    dark: this.dark,
+                    light: this.light
+                }
             }, this.computedIcon)]);
         },
         onFocus: function onFocus() {
@@ -72826,7 +72929,6 @@ __webpack_require__.r(__webpack_exports__);
         },
         register: function register(radio) {
             radio.isActive = this.valueComparator(this.internalValue, radio.value);
-            radio.$refs.input.tabIndex = radio.$refs.input.tabIndex > 0 ? radio.$refs.input.tabIndex : 0;
             radio.$on('change', this.onRadioChange);
             radio.$on('blur', this.onRadioBlur);
             this.radios.push(radio);
@@ -73074,17 +73176,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _stylus_components_text_fields_styl__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_stylus_components_text_fields_styl__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _stylus_components_select_styl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../stylus/components/_select.styl */ "./src/stylus/components/_select.styl");
 /* harmony import */ var _stylus_components_select_styl__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_stylus_components_select_styl__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _VChip__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../VChip */ "./src/components/VChip/index.js");
+/* harmony import */ var _VChip__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../VChip */ "./src/components/VChip/index.ts");
 /* harmony import */ var _VMenu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../VMenu */ "./src/components/VMenu/index.js");
 /* harmony import */ var _VSelectList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./VSelectList */ "./src/components/VSelect/VSelectList.js");
 /* harmony import */ var _VTextField_VTextField__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../VTextField/VTextField */ "./src/components/VTextField/VTextField.js");
 /* harmony import */ var _mixins_comparable__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../mixins/comparable */ "./src/mixins/comparable.ts");
-/* harmony import */ var _mixins_dependent__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../mixins/dependent */ "./src/mixins/dependent.js");
-/* harmony import */ var _mixins_filterable__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../mixins/filterable */ "./src/mixins/filterable.js");
-/* harmony import */ var _mixins_menuable__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../mixins/menuable */ "./src/mixins/menuable.js");
-/* harmony import */ var _directives_click_outside__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../directives/click-outside */ "./src/directives/click-outside.ts");
-/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../util/helpers */ "./src/util/helpers.ts");
-/* harmony import */ var _util_console__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../util/console */ "./src/util/console.ts");
+/* harmony import */ var _mixins_filterable__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../mixins/filterable */ "./src/mixins/filterable.js");
+/* harmony import */ var _mixins_menuable__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../mixins/menuable */ "./src/mixins/menuable.js");
+/* harmony import */ var _directives_click_outside__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../directives/click-outside */ "./src/directives/click-outside.ts");
+/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../util/helpers */ "./src/util/helpers.ts");
+/* harmony import */ var _util_console__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../util/console */ "./src/util/console.ts");
 var __assign = undefined && undefined.__assign || Object.assign || function (t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
         s = arguments[i];
@@ -73118,7 +73219,6 @@ var __values = undefined && undefined.__values || function (o) {
 
 
 
-
 // Directives
 
 // Helpers
@@ -73131,23 +73231,26 @@ var fakeVMenu = {
 };
 var fakeMenuable = {
     name: 'menuable',
-    props: _mixins_menuable__WEBPACK_IMPORTED_MODULE_9__["default"].props
+    props: _mixins_menuable__WEBPACK_IMPORTED_MODULE_8__["default"].props
 };
 /* @vue/component */
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'v-select',
     directives: {
-        ClickOutside: _directives_click_outside__WEBPACK_IMPORTED_MODULE_10__["default"]
+        ClickOutside: _directives_click_outside__WEBPACK_IMPORTED_MODULE_9__["default"]
     },
     extends: _VTextField_VTextField__WEBPACK_IMPORTED_MODULE_5__["default"],
-    mixins: [fakeVMenu, fakeMenuable, _mixins_comparable__WEBPACK_IMPORTED_MODULE_6__["default"], _mixins_dependent__WEBPACK_IMPORTED_MODULE_7__["default"], _mixins_filterable__WEBPACK_IMPORTED_MODULE_8__["default"]],
+    mixins: [fakeVMenu, fakeMenuable, _mixins_comparable__WEBPACK_IMPORTED_MODULE_6__["default"], _mixins_filterable__WEBPACK_IMPORTED_MODULE_7__["default"]],
     props: {
         appendIcon: {
             type: String,
             default: '$vuetify.icons.dropdown'
         },
         appendIconCb: Function,
-        attach: Boolean,
+        attach: {
+            type: null,
+            default: false
+        },
         auto: Boolean,
         browserAutocomplete: {
             type: String,
@@ -73211,7 +73314,7 @@ var fakeMenuable = {
             // As long as a value is defined, show it
             // Otherwise, check if multiple
             // to determine which default to provide
-            lazyValue: vm.value != null ? vm.value : vm.multiple ? [] : undefined,
+            lazyValue: vm.value !== undefined ? vm.value : vm.multiple ? [] : undefined,
             selectedIndex: -1,
             selectedItems: []
         };
@@ -73233,34 +73336,17 @@ var fakeMenuable = {
         computedItems: function computedItems() {
             return this.allItems;
         },
+        counterValue: function counterValue() {
+            return this.multiple ? this.selectedItems.length : (this.getText(this.selectedItems[0]) || '').toString().length;
+        },
         directives: function directives() {
-            var _this = this;
-            return [{
+            return this.isFocused ? [{
                 name: 'click-outside',
-                // TODO: Check into this firing when it shouldn't
-                value: function value(e) {
-                    if (_this.isMenuActive) {
-                        _this.onKeyDown(e);
-                    }
-                    /* eslint-disable vue/no-side-effects-in-computed-properties */
-                    _this.isMenuActive = false;
-                    _this.isFocused = false;
-                    _this.selectedIndex = -1;
-                    /* eslint-enable vue/no-side-effects-in-computed-properties */
-                },
+                value: this.blur,
                 args: {
-                    closeConditional: function closeConditional(e) {
-                        return (
-                            // Check if click originates
-                            // from within the content
-                            !!_this.content && !_this.content.contains(e.target) &&
-                            // Check if click originates
-                            // from within the element
-                            !!_this.$el && !_this.$el.contains(e.target) && e.target !== _this.$el
-                        );
-                    }
+                    closeConditional: this.closeConditional
                 }
-            }];
+            }] : undefined;
         },
         dynamicHeight: function dynamicHeight() {
             return 'auto';
@@ -73281,7 +73367,7 @@ var fakeMenuable = {
                 openOnClick: false,
                 value: this.isMenuActive,
                 offsetY: this.offsetY,
-                nudgeBottom: this.offsetY ? 1 : 0 // convert to int
+                nudgeBottom: this.nudgeBottom ? this.nudgeBottom : this.offsetY ? 1 : 0 // convert to int
             };
         },
         listData: function listData() {
@@ -73311,7 +73397,7 @@ var fakeMenuable = {
         },
         staticList: function staticList() {
             if (this.$slots['no-data']) {
-                Object(_util_console__WEBPACK_IMPORTED_MODULE_12__["consoleError"])('assert: staticList should not be called if slots are used');
+                Object(_util_console__WEBPACK_IMPORTED_MODULE_11__["consoleError"])('assert: staticList should not be called if slots are used');
             }
             return this.$createElement(_VSelectList__WEBPACK_IMPORTED_MODULE_4__["default"], this.listData);
         },
@@ -73320,7 +73406,8 @@ var fakeMenuable = {
         }
     },
     watch: {
-        internalValue: function internalValue() {
+        internalValue: function internalValue(val) {
+            this.initialValue = val;
             this.$emit('change', this.internalValue);
             this.setSelectedItems();
         },
@@ -73350,17 +73437,32 @@ var fakeMenuable = {
         this.content = this.$refs.menu && this.$refs.menu.$refs.content;
     },
     methods: {
+        /** @public */
+        blur: function blur() {
+            this.isMenuActive = false;
+            this.isFocused = false;
+            this.$refs.input && this.$refs.input.blur();
+            this.selectedIndex = -1;
+        },
+        /** @public */
         activateMenu: function activateMenu() {
             this.isMenuActive = true;
         },
         clearableCallback: function clearableCallback() {
             var _this = this;
-            this.internalValue = this.multiple ? [] : null;
-            this.$emit('change', this.internalValue);
+            this.internalValue = this.multiple ? [] : undefined;
             this.$nextTick(function () {
                 return _this.$refs.input.focus();
             });
             if (this.openOnClear) this.isMenuActive = true;
+        },
+        closeConditional: function closeConditional(e) {
+            return (
+                // Click originates from outside the menu content
+                !!this.content && !this.content.contains(e.target) &&
+                // Click originates from outside the element
+                !!this.$el && !this.$el.contains(e.target) && e.target !== this.$el
+            );
         },
         filterDuplicates: function filterDuplicates(arr) {
             var uniqueValues = new Map();
@@ -73436,7 +73538,7 @@ var fakeMenuable = {
                 selections.children = selections.children || [];
                 selections.children.push(input);
             }
-            var activator = this.genSelectSlot([this.genLabel(), this.prefix ? this.genAffix('prefix') : null, selections, this.suffix ? this.genAffix('suffix') : null, this.genClearIcon(), this.genSlot('append', 'inner', [this.genIcon('append')])]);
+            var activator = this.genSelectSlot([this.genLabel(), this.prefix ? this.genAffix('prefix') : null, selections, this.suffix ? this.genAffix('suffix') : null, this.genClearIcon(), this.genIconSlot()]);
             return [this.genMenu(activator)];
         },
         genInput: function genInput() {
@@ -73468,7 +73570,7 @@ var fakeMenuable = {
             var props = {
                 contentClass: this.contentClass
             };
-            var inheritedProps = Object.keys(_VMenu__WEBPACK_IMPORTED_MODULE_3__["default"].props).concat(Object.keys(_mixins_menuable__WEBPACK_IMPORTED_MODULE_9__["default"].props));
+            var inheritedProps = Object.keys(_VMenu__WEBPACK_IMPORTED_MODULE_3__["default"].props).concat(Object.keys(_mixins_menuable__WEBPACK_IMPORTED_MODULE_8__["default"].props));
             try {
                 // Later this might be filtered
                 for (var inheritedProps_1 = __values(inheritedProps), inheritedProps_1_1 = inheritedProps_1.next(); !inheritedProps_1_1.done; inheritedProps_1_1 = inheritedProps_1.next()) {
@@ -73495,7 +73597,9 @@ var fakeMenuable = {
             this.attach === 'attach' // If bound as boolean prop in pug (v-menu(attach))
             ) {
                     props.attach = this.$el;
-                }
+                } else {
+                props.attach = this.attach;
+            }
             return this.$createElement(_VMenu__WEBPACK_IMPORTED_MODULE_3__["default"], {
                 props: props,
                 on: {
@@ -73545,13 +73649,13 @@ var fakeMenuable = {
             return this.$refs.menu ? this.$refs.menu.listIndex : -1;
         },
         getDisabled: function getDisabled(item) {
-            return Object(_util_helpers__WEBPACK_IMPORTED_MODULE_11__["getPropertyFromItem"])(item, this.itemDisabled, false);
+            return Object(_util_helpers__WEBPACK_IMPORTED_MODULE_10__["getPropertyFromItem"])(item, this.itemDisabled, false);
         },
         getText: function getText(item) {
-            return Object(_util_helpers__WEBPACK_IMPORTED_MODULE_11__["getPropertyFromItem"])(item, this.itemText, item);
+            return Object(_util_helpers__WEBPACK_IMPORTED_MODULE_10__["getPropertyFromItem"])(item, this.itemText, item);
         },
         getValue: function getValue(item) {
-            return Object(_util_helpers__WEBPACK_IMPORTED_MODULE_11__["getPropertyFromItem"])(item, this.itemValue, this.getText(item));
+            return Object(_util_helpers__WEBPACK_IMPORTED_MODULE_10__["getPropertyFromItem"])(item, this.itemValue, this.getText(item));
         },
         onBlur: function onBlur(e) {
             this.$emit('blur', e);
@@ -73563,7 +73667,6 @@ var fakeMenuable = {
             if (this.selectedItems.length === 0) {
                 this.isMenuActive = true;
             }
-            this.editingIndex = -1;
             this.selectedIndex = -1;
         },
         onClick: function onClick() {
@@ -73585,13 +73688,13 @@ var fakeMenuable = {
         onKeyDown: function onKeyDown(e) {
             var keyCode = e.keyCode;
             // If enter, space, up, or down is pressed, open menu
-            if (!this.isMenuActive && [_util_helpers__WEBPACK_IMPORTED_MODULE_11__["keyCodes"].enter, _util_helpers__WEBPACK_IMPORTED_MODULE_11__["keyCodes"].space, _util_helpers__WEBPACK_IMPORTED_MODULE_11__["keyCodes"].up, _util_helpers__WEBPACK_IMPORTED_MODULE_11__["keyCodes"].down].includes(keyCode)) this.activateMenu();
+            if (!this.isMenuActive && [_util_helpers__WEBPACK_IMPORTED_MODULE_10__["keyCodes"].enter, _util_helpers__WEBPACK_IMPORTED_MODULE_10__["keyCodes"].space, _util_helpers__WEBPACK_IMPORTED_MODULE_10__["keyCodes"].up, _util_helpers__WEBPACK_IMPORTED_MODULE_10__["keyCodes"].down].includes(keyCode)) this.activateMenu();
             // This should do something different
-            if (e.keyCode === _util_helpers__WEBPACK_IMPORTED_MODULE_11__["keyCodes"].enter) return this.onEnterDown();
+            if (keyCode === _util_helpers__WEBPACK_IMPORTED_MODULE_10__["keyCodes"].enter) return this.onEnterDown();
             // If escape deactivate the menu
-            if (keyCode === _util_helpers__WEBPACK_IMPORTED_MODULE_11__["keyCodes"].esc) return this.onEscDown(e);
+            if (keyCode === _util_helpers__WEBPACK_IMPORTED_MODULE_10__["keyCodes"].esc) return this.onEscDown(e);
             // If tab - select item or close menu
-            if (keyCode === _util_helpers__WEBPACK_IMPORTED_MODULE_11__["keyCodes"].tab) return this.onTabDown(e);
+            if (keyCode === _util_helpers__WEBPACK_IMPORTED_MODULE_10__["keyCodes"].tab) return this.onTabDown(e);
         },
         onMouseUp: function onMouseUp(e) {
             var _this = this;
@@ -73710,7 +73813,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _stylus_components_cards_styl__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../stylus/components/_cards.styl */ "./src/stylus/components/_cards.styl");
 /* harmony import */ var _stylus_components_cards_styl__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_stylus_components_cards_styl__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _VCheckbox__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../VCheckbox */ "./src/components/VCheckbox/index.js");
-/* harmony import */ var _VDivider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../VDivider */ "./src/components/VDivider/index.js");
+/* harmony import */ var _VDivider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../VDivider */ "./src/components/VDivider/index.ts");
 /* harmony import */ var _VSubheader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../VSubheader */ "./src/components/VSubheader/index.js");
 /* harmony import */ var _VList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../VList */ "./src/components/VList/index.js");
 /* harmony import */ var _mixins_colorable__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../mixins/colorable */ "./src/mixins/colorable.ts");
@@ -73905,7 +74008,7 @@ var __values = undefined && undefined.__values || function (o) {
             return Boolean(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__["getPropertyFromItem"])(item, this.itemDisabled, false));
         },
         getText: function getText(item) {
-            return (Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__["getPropertyFromItem"])(item, this.itemText, item) || '').toString();
+            return String(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__["getPropertyFromItem"])(item, this.itemText, item));
         },
         getValue: function getValue(item) {
             return Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__["getPropertyFromItem"])(item, this.itemValue, this.getText(item));
@@ -73918,7 +74021,7 @@ var __values = undefined && undefined.__values || function (o) {
             for (var _b = __values(this.items), _c = _b.next(); !_c.done; _c = _b.next()) {
                 var item = _c.value;
                 if (this.hideSelected && this.hasItem(item)) continue;
-                if (item.header) children.push(this.genHeader(item));else if (item.divider) children.push(this.genDivider(item));else children.push(this.genTile(item));
+                if (item == null) children.push(this.genTile(item));else if (item.header) children.push(this.genHeader(item));else if (item.divider) children.push(this.genDivider(item));else children.push(this.genTile(item));
             }
         } catch (e_1_1) {
             e_1 = { error: e_1_1 };
@@ -74261,13 +74364,13 @@ var __assign = undefined && undefined.__assign || Object.assign || function (t) 
             return children;
         },
         genListeners: function genListeners() {
-            return Object.assign({}, {
+            return {
                 blur: this.onBlur,
                 click: this.onSliderClick,
                 focus: this.onFocus,
                 keydown: this.onKeyDown,
                 keyup: this.onKeyUp
-            });
+            };
         },
         genInput: function genInput() {
             return this.$createElement('input', {
@@ -74275,8 +74378,7 @@ var __assign = undefined && undefined.__assign || Object.assign || function (t) 
                     'aria-label': this.label,
                     name: this.name,
                     role: 'slider',
-                    tabindex: this.disabled ? -1 : undefined,
-                    type: 'range',
+                    tabindex: this.disabled ? -1 : this.$attrs.tabindex,
                     value: this.internalValue,
                     readonly: true,
                     'aria-readonly': String(this.readonly)
@@ -74496,7 +74598,8 @@ var __assign = undefined && undefined.__assign || Object.assign || function (t) 
             // of decimals places as in the step prop
             var trimmedStep = this.step.toString().trim();
             var decimals = trimmedStep.indexOf('.') > -1 ? trimmedStep.length - trimmedStep.indexOf('.') - 1 : 0;
-            var newValue = Math.round(value / this.stepNumeric) * this.stepNumeric;
+            var offset = this.min % this.stepNumeric;
+            var newValue = Math.round((value - offset) / this.stepNumeric) * this.stepNumeric + offset;
             return parseFloat(Math.min(newValue, this.max).toFixed(decimals));
         },
         setInternalValue: function setInternalValue(value) {
@@ -74529,9 +74632,9 @@ _VSlider__WEBPACK_IMPORTED_MODULE_0__["default"].install = function install(Vue)
 
 /***/ }),
 
-/***/ "./src/components/VSnackbar/VSnackbar.js":
+/***/ "./src/components/VSnackbar/VSnackbar.ts":
 /*!***********************************************!*\
-  !*** ./src/components/VSnackbar/VSnackbar.js ***!
+  !*** ./src/components/VSnackbar/VSnackbar.ts ***!
   \***********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -74543,14 +74646,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_colorable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/colorable */ "./src/mixins/colorable.ts");
 /* harmony import */ var _mixins_toggleable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/toggleable */ "./src/mixins/toggleable.ts");
 /* harmony import */ var _mixins_positionable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mixins/positionable */ "./src/mixins/positionable.ts");
+/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../util/mixins */ "./src/util/mixins.ts");
 
 
 
 
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_4__["default"])(_mixins_colorable__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_toggleable__WEBPACK_IMPORTED_MODULE_2__["default"], Object(_mixins_positionable__WEBPACK_IMPORTED_MODULE_3__["factory"])(['absolute', 'top', 'bottom', 'left', 'right'])
 /* @vue/component */
-/* harmony default export */ __webpack_exports__["default"] = ({
+).extend({
     name: 'v-snackbar',
-    mixins: [_mixins_colorable__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_toggleable__WEBPACK_IMPORTED_MODULE_2__["default"], Object(_mixins_positionable__WEBPACK_IMPORTED_MODULE_3__["factory"])(['absolute', 'top', 'bottom', 'left', 'right'])],
     props: {
         autoHeight: Boolean,
         multiLine: Boolean,
@@ -74563,7 +74668,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     data: function data() {
         return {
-            activeTimeout: {}
+            activeTimeout: -1
         };
     },
     computed: {
@@ -74590,25 +74695,15 @@ __webpack_require__.r(__webpack_exports__);
         this.setTimeout();
     },
     methods: {
-        setTimeout: function (_setTimeout) {
-            function setTimeout() {
-                return _setTimeout.apply(this, arguments);
-            }
-
-            setTimeout.toString = function () {
-                return _setTimeout.toString();
-            };
-
-            return setTimeout;
-        }(function () {
+        setTimeout: function setTimeout() {
             var _this = this;
-            clearTimeout(this.activeTimeout);
+            window.clearTimeout(this.activeTimeout);
             if (this.isActive && this.timeout) {
-                this.activeTimeout = setTimeout(function () {
+                this.activeTimeout = window.setTimeout(function () {
                     _this.isActive = false;
                 }, this.timeout);
             }
-        })
+        }
     },
     render: function render(h) {
         var children = [];
@@ -74628,26 +74723,26 @@ __webpack_require__.r(__webpack_exports__);
             attrs: { name: 'v-snack-transition' }
         }, children);
     }
-});
+}));
 
 /***/ }),
 
-/***/ "./src/components/VSnackbar/index.js":
+/***/ "./src/components/VSnackbar/index.ts":
 /*!*******************************************!*\
-  !*** ./src/components/VSnackbar/index.js ***!
+  !*** ./src/components/VSnackbar/index.ts ***!
   \*******************************************/
 /*! exports provided: VSnackbar, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _VSnackbar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VSnackbar */ "./src/components/VSnackbar/VSnackbar.js");
+/* harmony import */ var _VSnackbar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VSnackbar */ "./src/components/VSnackbar/VSnackbar.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VSnackbar", function() { return _VSnackbar__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
 
 /* istanbul ignore next */
 _VSnackbar__WEBPACK_IMPORTED_MODULE_0__["default"].install = function install(Vue) {
-    Vue.component(_VSnackbar__WEBPACK_IMPORTED_MODULE_0__["default"].name, _VSnackbar__WEBPACK_IMPORTED_MODULE_0__["default"]);
+    Vue.component(_VSnackbar__WEBPACK_IMPORTED_MODULE_0__["default"].options.name, _VSnackbar__WEBPACK_IMPORTED_MODULE_0__["default"]);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (_VSnackbar__WEBPACK_IMPORTED_MODULE_0__["default"]);
@@ -75238,6 +75333,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _stylus_components_switch_styl__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_stylus_components_switch_styl__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _mixins_selectable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/selectable */ "./src/mixins/selectable.js");
 /* harmony import */ var _directives_touch__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../directives/touch */ "./src/directives/touch.ts");
+var __assign = undefined && undefined.__assign || Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) {
+            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+    }
+    return t;
+};
 
 
 // Mixins
@@ -75263,7 +75367,7 @@ __webpack_require__.r(__webpack_exports__);
         genSwitch: function genSwitch() {
             return this.$createElement('div', {
                 staticClass: 'v-input--selection-controls__input'
-            }, [this.genInput('checkbox'), !this.disabled && this.genRipple({
+            }, [this.genInput('checkbox', this.$attrs), !this.disabled && this.genRipple({
                 'class': this.classesSelectable,
                 directives: [{
                     name: 'touch',
@@ -75281,7 +75385,9 @@ __webpack_require__.r(__webpack_exports__);
         genSwitchPart: function genSwitchPart(target) {
             return this.$createElement('div', {
                 staticClass: "v-input--switch__" + target,
-                'class': this.classesSelectable
+                'class': __assign({}, this.classesSelectable, this.themeClasses),
+                // Avoid cache collision
+                key: target
             });
         },
         onSwipeLeft: function onSwipeLeft() {
@@ -75328,7 +75434,7 @@ _VSwitch__WEBPACK_IMPORTED_MODULE_0__["default"].install = function install(Vue)
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _stylus_components_system_bars_styl__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../stylus/components/_system-bars.styl */ "./src/stylus/components/_system-bars.styl");
 /* harmony import */ var _stylus_components_system_bars_styl__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_stylus_components_system_bars_styl__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _mixins_applicationable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/applicationable */ "./src/mixins/applicationable.js");
+/* harmony import */ var _mixins_applicationable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/applicationable */ "./src/mixins/applicationable.ts");
 /* harmony import */ var _mixins_colorable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/colorable */ "./src/mixins/colorable.ts");
 /* harmony import */ var _mixins_themeable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mixins/themeable */ "./src/mixins/themeable.ts");
 
@@ -75809,7 +75915,7 @@ __webpack_require__.r(__webpack_exports__);
             this.scrollIntoView();
         },
         tabProxy: function tabProxy(val) {
-            this.lazyValue = val;
+            this.inputValue = val;
         },
         registerItems: function registerItems(fn) {
             this.tabItems = fn;
@@ -76102,6 +76208,7 @@ __webpack_require__.r(__webpack_exports__);
                 return this.lazyValue;
             },
             set: function set(val) {
+                if (this.inputValue === val) return;
                 this.lazyValue = val;
                 this.$emit('input', val);
             }
@@ -76507,6 +76614,9 @@ var dirtyTypes = ['color', 'file', 'time', 'date', 'datetime-local', 'week', 'mo
                 'v-text-field--outline': this.hasOutline
             };
         },
+        counterValue: function counterValue() {
+            return (this.internalValue || '').toString().length;
+        },
         directivesInput: function directivesInput() {
             return [];
         },
@@ -76643,12 +76753,13 @@ var dirtyTypes = ['color', 'file', 'time', 'date', 'datetime-local', 'week', 'mo
         },
         genCounter: function genCounter() {
             if (this.counter === false || this.counter == null) return null;
-            var value = (this.internalValue || '').length;
             var max = this.counter === true ? this.$attrs.maxlength : this.counter;
             return this.$createElement(_VCounter__WEBPACK_IMPORTED_MODULE_2__["default"], {
                 props: {
-                    value: value,
-                    max: max
+                    dark: this.dark,
+                    light: this.light,
+                    max: max,
+                    value: this.counterValue
                 }
             });
         },
@@ -76661,9 +76772,11 @@ var dirtyTypes = ['color', 'file', 'time', 'date', 'datetime-local', 'week', 'mo
                 props: {
                     absolute: true,
                     color: this.validationState,
+                    dark: this.dark,
                     disabled: this.disabled,
                     focused: !this.isSingle && (this.isFocused || !!this.validationState),
                     left: this.labelPosition.left,
+                    light: this.light,
                     right: this.labelPosition.right,
                     value: this.labelValue
                 }
@@ -76679,8 +76792,7 @@ var dirtyTypes = ['color', 'file', 'time', 'date', 'datetime-local', 'week', 'mo
                 domProps: {
                     value: this.maskText(this.lazyValue)
                 },
-                attrs: __assign({}, this.$attrs, { autofocus: this.autofocus, disabled: this.disabled, readonly: this.readonly, tabindex: this.tabindex, type: this.type, 'aria-label': (!this.$attrs || !this.$attrs.id) && this.label // Label `for` will be set if we have an id
-                }),
+                attrs: __assign({ 'aria-label': (!this.$attrs || !this.$attrs.id) && this.label }, this.$attrs, { autofocus: this.autofocus, disabled: this.disabled, readonly: this.readonly, type: this.type }),
                 on: Object.assign(listeners, {
                     blur: this.onBlur,
                     input: this.onInput,
@@ -76695,6 +76807,7 @@ var dirtyTypes = ['color', 'file', 'time', 'date', 'datetime-local', 'week', 'mo
             return this.$createElement('input', data);
         },
         genMessages: function genMessages() {
+            if (this.hideDetails) return null;
             return this.$createElement('div', {
                 staticClass: 'v-text-field__details'
             }, [_VInput__WEBPACK_IMPORTED_MODULE_1__["default"].methods.genMessages.call(this), this.genCounter()]);
@@ -77561,11 +77674,12 @@ _VTimePicker__WEBPACK_IMPORTED_MODULE_0__["default"].install = function install(
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _stylus_components_toolbar_styl__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../stylus/components/_toolbar.styl */ "./src/stylus/components/_toolbar.styl");
 /* harmony import */ var _stylus_components_toolbar_styl__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_stylus_components_toolbar_styl__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _mixins_applicationable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/applicationable */ "./src/mixins/applicationable.js");
+/* harmony import */ var _mixins_applicationable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/applicationable */ "./src/mixins/applicationable.ts");
 /* harmony import */ var _mixins_colorable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/colorable */ "./src/mixins/colorable.ts");
 /* harmony import */ var _mixins_themeable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mixins/themeable */ "./src/mixins/themeable.ts");
 /* harmony import */ var _mixins_ssr_bootable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../mixins/ssr-bootable */ "./src/mixins/ssr-bootable.ts");
 /* harmony import */ var _directives_scroll__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../directives/scroll */ "./src/directives/scroll.ts");
+/* harmony import */ var _util_console__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../util/console */ "./src/util/console.ts");
 // Styles
 
 // Mixins
@@ -77574,6 +77688,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // Directives
+
 
 /* @vue/component */
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -77604,6 +77719,7 @@ __webpack_require__.r(__webpack_exports__);
         manualScroll: Boolean,
         prominent: Boolean,
         scrollOffScreen: Boolean,
+        /* @deprecated */
         scrollToolbarOffScreen: Boolean,
         scrollTarget: String,
         scrollThreshold: {
@@ -77632,6 +77748,14 @@ __webpack_require__.r(__webpack_exports__);
         };
     },
     computed: {
+        canScroll: function canScroll() {
+            // TODO: remove
+            if (this.scrollToolbarOffScreen) {
+                Object(_util_console__WEBPACK_IMPORTED_MODULE_6__["deprecate"])('scrollToolbarOffScreen', 'scrollOffScreen', this);
+                return true;
+            }
+            return this.scrollOffScreen || this.invertedScroll;
+        },
         computedContentHeight: function computedContentHeight() {
             if (this.height) return parseInt(this.height);
             if (this.dense) return this.heights.dense;
@@ -77655,7 +77779,7 @@ __webpack_require__.r(__webpack_exports__);
         classes: function classes() {
             return this.addBackgroundColorClassChecks({
                 'v-toolbar': true,
-                'elevation-0': this.flat || !this.isActive && !this.tabs && !this.scrollToolbarOffScreen,
+                'elevation-0': this.flat || !this.isActive && !this.tabs && this.canScroll,
                 'v-toolbar--absolute': this.absolute,
                 'v-toolbar--card': this.card,
                 'v-toolbar--clipped': this.clippedLeft || this.clippedRight,
@@ -77677,7 +77801,7 @@ __webpack_require__.r(__webpack_exports__);
             return this.$vuetify.application.right;
         },
         computedTransform: function computedTransform() {
-            return !this.isActive ? this.scrollToolbarOffScreen ? -this.computedContentHeight : -this.computedHeight : 0;
+            return !this.isActive ? this.canScroll ? -this.computedContentHeight : -this.computedHeight : 0;
         },
         currentThreshold: function currentThreshold() {
             return Math.abs(this.currentScroll - this.savedScroll);
@@ -77723,7 +77847,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     methods: {
         onScroll: function onScroll() {
-            if (!this.scrollOffScreen && !this.scrollToolbarOffScreen || this.manualScroll || typeof window === 'undefined') return;
+            if (!this.canScroll || this.manualScroll || typeof window === 'undefined') return;
             var target = this.target || window;
             this.currentScroll = this.scrollTarget ? target.scrollTop : target.pageYOffset || document.documentElement.scrollTop;
             this.isScrollingUp = this.currentScroll < this.previousScroll;
@@ -78043,13 +78167,15 @@ _VTooltip__WEBPACK_IMPORTED_MODULE_0__["default"].install = function install(Vue
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "checkVueVersion", function() { return checkVueVersion; });
-/* harmony import */ var _mixins_application__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mixins/application */ "./src/components/Vuetify/mixins/application.js");
-/* harmony import */ var _mixins_theme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mixins/theme */ "./src/components/Vuetify/mixins/theme.ts");
-/* harmony import */ var _mixins_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./mixins/icons */ "./src/components/Vuetify/mixins/icons.js");
-/* harmony import */ var _mixins_options__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./mixins/options */ "./src/components/Vuetify/mixins/options.js");
-/* harmony import */ var _mixins_lang__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./mixins/lang */ "./src/components/Vuetify/mixins/lang.ts");
-/* harmony import */ var _util_console__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../util/console */ "./src/util/console.ts");
-/* harmony import */ var _util_goTo__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./util/goTo */ "./src/components/Vuetify/util/goTo.js");
+/* harmony import */ var _mixins_application__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mixins/application */ "./src/components/Vuetify/mixins/application.ts");
+/* harmony import */ var _mixins_breakpoint__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mixins/breakpoint */ "./src/components/Vuetify/mixins/breakpoint.ts");
+/* harmony import */ var _mixins_theme__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./mixins/theme */ "./src/components/Vuetify/mixins/theme.ts");
+/* harmony import */ var _mixins_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./mixins/icons */ "./src/components/Vuetify/mixins/icons.js");
+/* harmony import */ var _mixins_options__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./mixins/options */ "./src/components/Vuetify/mixins/options.js");
+/* harmony import */ var _mixins_lang__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./mixins/lang */ "./src/components/Vuetify/mixins/lang.ts");
+/* harmony import */ var _util_console__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../util/console */ "./src/util/console.ts");
+/* harmony import */ var _util_goTo__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./util/goTo */ "./src/components/Vuetify/util/goTo.js");
+
 
 
 
@@ -78065,20 +78191,20 @@ var Vuetify = {
         if (this.installed) return;
         this.installed = true;
         checkVueVersion(Vue);
-        var lang = Object(_mixins_lang__WEBPACK_IMPORTED_MODULE_4__["default"])(opts.lang);
+        var lang = Object(_mixins_lang__WEBPACK_IMPORTED_MODULE_5__["default"])(opts.lang);
         Vue.prototype.$vuetify = new Vue({
+            mixins: [_mixins_breakpoint__WEBPACK_IMPORTED_MODULE_1__["default"]],
             data: {
                 application: _mixins_application__WEBPACK_IMPORTED_MODULE_0__["default"],
-                breakpoint: {},
                 dark: false,
-                icons: Object(_mixins_icons__WEBPACK_IMPORTED_MODULE_2__["default"])(opts.iconfont, opts.icons),
+                icons: Object(_mixins_icons__WEBPACK_IMPORTED_MODULE_3__["default"])(opts.iconfont, opts.icons),
                 lang: lang,
-                options: Object(_mixins_options__WEBPACK_IMPORTED_MODULE_3__["default"])(opts.options),
+                options: Object(_mixins_options__WEBPACK_IMPORTED_MODULE_4__["default"])(opts.options),
                 rtl: opts.rtl,
-                theme: Object(_mixins_theme__WEBPACK_IMPORTED_MODULE_1__["default"])(opts.theme)
+                theme: Object(_mixins_theme__WEBPACK_IMPORTED_MODULE_2__["default"])(opts.theme)
             },
             methods: {
-                goTo: _util_goTo__WEBPACK_IMPORTED_MODULE_6__["default"],
+                goTo: _util_goTo__WEBPACK_IMPORTED_MODULE_7__["default"],
                 t: lang.t.bind(lang)
             }
         });
@@ -78100,7 +78226,7 @@ var Vuetify = {
             });
         }
     },
-    version: '1.1.1'
+    version: '1.1.9'
 };
 function checkVueVersion(Vue, requiredVue) {
     var vueDep = requiredVue || '^2.5.10';
@@ -78116,16 +78242,16 @@ function checkVueVersion(Vue, requiredVue) {
     actual[1] === required[1] && actual[2] >= required[2] // or minor is eq and patch is >=
     );
     if (!passes) {
-        Object(_util_console__WEBPACK_IMPORTED_MODULE_5__["consoleWarn"])("Vuetify requires Vue version " + vueDep);
+        Object(_util_console__WEBPACK_IMPORTED_MODULE_6__["consoleWarn"])("Vuetify requires Vue version " + vueDep);
     }
 }
 /* harmony default export */ __webpack_exports__["default"] = (Vuetify);
 
 /***/ }),
 
-/***/ "./src/components/Vuetify/mixins/application.js":
+/***/ "./src/components/Vuetify/mixins/application.ts":
 /*!******************************************************!*\
-  !*** ./src/components/Vuetify/mixins/application.js ***!
+  !*** ./src/components/Vuetify/mixins/application.ts ***!
   \******************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -78164,6 +78290,134 @@ __webpack_require__.r(__webpack_exports__);
         }, 0);
     }
 });
+
+/***/ }),
+
+/***/ "./src/components/Vuetify/mixins/breakpoint.ts":
+/*!*****************************************************!*\
+  !*** ./src/components/Vuetify/mixins/breakpoint.ts ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "vue");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+
+/**
+ * A modified version of https://gist.github.com/cb109/b074a65f7595cffc21cea59ce8d15f9b
+ */
+/**
+ * A Vue mixin to get the current width/height and the associated breakpoint.
+ *
+ *   <div v-if="$breakpoint.smAndDown">...</div>
+ *
+ */
+/* harmony default export */ __webpack_exports__["default"] = (vue__WEBPACK_IMPORTED_MODULE_0___default.a.extend({
+    data: function data() {
+        return {
+            clientHeight: getClientHeight(),
+            clientWidth: getClientWidth(),
+            resizeTimeout: undefined
+        };
+    },
+    computed: {
+        breakpoint: function breakpoint() {
+            var xs = this.clientWidth < 600;
+            var sm = this.clientWidth < 960 && !xs;
+            var md = this.clientWidth < 1280 - 16 && !(sm || xs);
+            var lg = this.clientWidth < 1920 - 16 && !(md || sm || xs);
+            var xl = this.clientWidth >= 1920 - 16;
+            var xsOnly = xs;
+            var smOnly = sm;
+            var smAndDown = (xs || sm) && !(md || lg || xl);
+            var smAndUp = !xs && (sm || md || lg || xl);
+            var mdOnly = md;
+            var mdAndDown = (xs || sm || md) && !(lg || xl);
+            var mdAndUp = !(xs || sm) && (md || lg || xl);
+            var lgOnly = lg;
+            var lgAndDown = (xs || sm || md || lg) && !xl;
+            var lgAndUp = !(xs || sm || md) && (lg || xl);
+            var xlOnly = xl;
+            var name;
+            switch (true) {
+                case xs:
+                    name = 'xs';
+                    break;
+                case sm:
+                    name = 'sm';
+                    break;
+                case md:
+                    name = 'md';
+                    break;
+                case lg:
+                    name = 'lg';
+                    break;
+                default:
+                    name = 'xl';
+                    break;
+            }
+            return {
+                // Definite breakpoint.
+                xs: xs,
+                sm: sm,
+                md: md,
+                lg: lg,
+                xl: xl,
+                // Useful e.g. to construct CSS class names dynamically.
+                name: name,
+                // Breakpoint ranges.
+                xsOnly: xsOnly,
+                smOnly: smOnly,
+                smAndDown: smAndDown,
+                smAndUp: smAndUp,
+                mdOnly: mdOnly,
+                mdAndDown: mdAndDown,
+                mdAndUp: mdAndUp,
+                lgOnly: lgOnly,
+                lgAndDown: lgAndDown,
+                lgAndUp: lgAndUp,
+                xlOnly: xlOnly,
+                // For custom breakpoint logic.
+                width: this.clientWidth,
+                height: this.clientHeight
+            };
+        }
+    },
+    created: function created() {
+        if (typeof window === 'undefined') return;
+        window.addEventListener('resize', this.onResize, { passive: true });
+    },
+    beforeDestroy: function beforeDestroy() {
+        if (typeof window === 'undefined') return;
+        window.removeEventListener('resize', this.onResize);
+    },
+    methods: {
+        onResize: function onResize() {
+            clearTimeout(this.resizeTimeout);
+            // Added debounce to match what
+            // v-resize used to do but was
+            // removed due to a memory leak
+            // https://github.com/vuetifyjs/vuetify/pull/2997
+            this.resizeTimeout = window.setTimeout(this.setDimensions, 200);
+        },
+        setDimensions: function setDimensions() {
+            this.clientHeight = getClientHeight();
+            this.clientWidth = getClientWidth();
+        }
+    }
+}));
+// Cross-browser support as described in:
+// https://stackoverflow.com/questions/1248081
+function getClientWidth() {
+    if (typeof document === 'undefined') return 0; // SSR
+    return Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+}
+function getClientHeight() {
+    if (typeof document === 'undefined') return 0; // SSR
+    return Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+}
 
 /***/ }),
 
@@ -78534,19 +78788,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _VApp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./VApp */ "./src/components/VApp/index.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VApp", function() { return _VApp__WEBPACK_IMPORTED_MODULE_1__["default"]; });
 
-/* harmony import */ var _VAlert__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./VAlert */ "./src/components/VAlert/index.js");
+/* harmony import */ var _VAlert__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./VAlert */ "./src/components/VAlert/index.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VAlert", function() { return _VAlert__WEBPACK_IMPORTED_MODULE_2__["default"]; });
 
 /* harmony import */ var _VAutocomplete__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./VAutocomplete */ "./src/components/VAutocomplete/index.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VAutocomplete", function() { return _VAutocomplete__WEBPACK_IMPORTED_MODULE_3__["default"]; });
 
-/* harmony import */ var _VAvatar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./VAvatar */ "./src/components/VAvatar/index.js");
+/* harmony import */ var _VAvatar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./VAvatar */ "./src/components/VAvatar/index.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VAvatar", function() { return _VAvatar__WEBPACK_IMPORTED_MODULE_4__["default"]; });
 
-/* harmony import */ var _VBadge__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./VBadge */ "./src/components/VBadge/index.js");
+/* harmony import */ var _VBadge__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./VBadge */ "./src/components/VBadge/index.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VBadge", function() { return _VBadge__WEBPACK_IMPORTED_MODULE_5__["default"]; });
 
-/* harmony import */ var _VBottomNav__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./VBottomNav */ "./src/components/VBottomNav/index.js");
+/* harmony import */ var _VBottomNav__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./VBottomNav */ "./src/components/VBottomNav/index.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VBottomNav", function() { return _VBottomNav__WEBPACK_IMPORTED_MODULE_6__["default"]; });
 
 /* harmony import */ var _VBottomSheet__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./VBottomSheet */ "./src/components/VBottomSheet/index.js");
@@ -78561,7 +78815,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _VBtnToggle__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./VBtnToggle */ "./src/components/VBtnToggle/index.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VBtnToggle", function() { return _VBtnToggle__WEBPACK_IMPORTED_MODULE_10__["default"]; });
 
-/* harmony import */ var _VCard__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./VCard */ "./src/components/VCard/index.js");
+/* harmony import */ var _VCard__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./VCard */ "./src/components/VCard/index.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VCard", function() { return _VCard__WEBPACK_IMPORTED_MODULE_11__["default"]; });
 
 /* harmony import */ var _VCarousel__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./VCarousel */ "./src/components/VCarousel/index.js");
@@ -78570,7 +78824,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _VCheckbox__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./VCheckbox */ "./src/components/VCheckbox/index.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VCheckbox", function() { return _VCheckbox__WEBPACK_IMPORTED_MODULE_13__["default"]; });
 
-/* harmony import */ var _VChip__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./VChip */ "./src/components/VChip/index.js");
+/* harmony import */ var _VChip__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./VChip */ "./src/components/VChip/index.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VChip", function() { return _VChip__WEBPACK_IMPORTED_MODULE_14__["default"]; });
 
 /* harmony import */ var _VCombobox__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./VCombobox */ "./src/components/VCombobox/index.js");
@@ -78591,10 +78845,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _VDialog__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./VDialog */ "./src/components/VDialog/index.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VDialog", function() { return _VDialog__WEBPACK_IMPORTED_MODULE_20__["default"]; });
 
-/* harmony import */ var _VDivider__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./VDivider */ "./src/components/VDivider/index.js");
+/* harmony import */ var _VDivider__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./VDivider */ "./src/components/VDivider/index.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VDivider", function() { return _VDivider__WEBPACK_IMPORTED_MODULE_21__["default"]; });
 
-/* harmony import */ var _VExpansionPanel__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./VExpansionPanel */ "./src/components/VExpansionPanel/index.js");
+/* harmony import */ var _VExpansionPanel__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./VExpansionPanel */ "./src/components/VExpansionPanel/index.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VExpansionPanel", function() { return _VExpansionPanel__WEBPACK_IMPORTED_MODULE_22__["default"]; });
 
 /* harmony import */ var _VFooter__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./VFooter */ "./src/components/VFooter/index.js");
@@ -78636,16 +78890,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _VPagination__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./VPagination */ "./src/components/VPagination/index.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VPagination", function() { return _VPagination__WEBPACK_IMPORTED_MODULE_35__["default"]; });
 
-/* harmony import */ var _VParallax__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./VParallax */ "./src/components/VParallax/index.js");
+/* harmony import */ var _VParallax__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./VParallax */ "./src/components/VParallax/index.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VParallax", function() { return _VParallax__WEBPACK_IMPORTED_MODULE_36__["default"]; });
 
 /* harmony import */ var _VPicker__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./VPicker */ "./src/components/VPicker/index.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VPicker", function() { return _VPicker__WEBPACK_IMPORTED_MODULE_37__["default"]; });
 
-/* harmony import */ var _VProgressCircular__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./VProgressCircular */ "./src/components/VProgressCircular/index.js");
+/* harmony import */ var _VProgressCircular__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./VProgressCircular */ "./src/components/VProgressCircular/index.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VProgressCircular", function() { return _VProgressCircular__WEBPACK_IMPORTED_MODULE_38__["default"]; });
 
-/* harmony import */ var _VProgressLinear__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./VProgressLinear */ "./src/components/VProgressLinear/index.js");
+/* harmony import */ var _VProgressLinear__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./VProgressLinear */ "./src/components/VProgressLinear/index.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VProgressLinear", function() { return _VProgressLinear__WEBPACK_IMPORTED_MODULE_39__["default"]; });
 
 /* harmony import */ var _VRadioGroup__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./VRadioGroup */ "./src/components/VRadioGroup/index.js");
@@ -78660,7 +78914,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _VSlider__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./VSlider */ "./src/components/VSlider/index.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VSlider", function() { return _VSlider__WEBPACK_IMPORTED_MODULE_43__["default"]; });
 
-/* harmony import */ var _VSnackbar__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./VSnackbar */ "./src/components/VSnackbar/index.js");
+/* harmony import */ var _VSnackbar__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./VSnackbar */ "./src/components/VSnackbar/index.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VSnackbar", function() { return _VSnackbar__WEBPACK_IMPORTED_MODULE_44__["default"]; });
 
 /* harmony import */ var _VSpeedDial__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./VSpeedDial */ "./src/components/VSpeedDial/index.js");
@@ -78784,7 +79038,7 @@ __webpack_require__.r(__webpack_exports__);
             el.style.display = 'block';
             expandedParentClass && el._parent.classList.add(expandedParentClass);
             setTimeout(function () {
-                return el.style.height = el.scrollHeight + "px";
+                el.style.height = !el.scrollHeight ? 'auto' : el.scrollHeight + "px";
             }, 100);
         },
         afterEnter: function afterEnter(el) {
@@ -78796,7 +79050,7 @@ __webpack_require__.r(__webpack_exports__);
             Object(_util_helpers__WEBPACK_IMPORTED_MODULE_0__["addOnceEventListener"])(el, 'transitionend', done);
             // Set height before we transition to 0
             el.style.overflow = 'hidden';
-            el.style.height = el.offsetHeight + "px";
+            el.style.height = el.scrollHeight + "px";
             setTimeout(function () {
                 return el.style.height = 0;
             }, 100);
@@ -79390,7 +79644,7 @@ var Vuetify = {
         Vue.use(VuetifyComponent, __assign({ components: _components__WEBPACK_IMPORTED_MODULE_1__,
             directives: _directives__WEBPACK_IMPORTED_MODULE_2__ }, args));
     },
-    version: '1.1.1'
+    version: '1.1.9'
 };
 if (typeof window !== 'undefined' && window.Vue) {
     window.Vue.use(Vuetify);
@@ -79425,9 +79679,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/mixins/applicationable.js":
+/***/ "./src/mixins/applicationable.ts":
 /*!***************************************!*\
-  !*** ./src/mixins/applicationable.js ***!
+  !*** ./src/mixins/applicationable.ts ***!
   \***************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -79436,15 +79690,17 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return applicationable; });
 /* harmony import */ var _positionable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./positionable */ "./src/mixins/positionable.ts");
+/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util/mixins */ "./src/util/mixins.ts");
+
+// Util
 
 function applicationable(value, events) {
     if (events === void 0) {
         events = [];
     }
     /* @vue/component */
-    return {
+    return Object(_util_mixins__WEBPACK_IMPORTED_MODULE_1__["default"])(Object(_positionable__WEBPACK_IMPORTED_MODULE_0__["factory"])(['absolute', 'fixed'])).extend({
         name: 'applicationable',
-        mixins: [Object(_positionable__WEBPACK_IMPORTED_MODULE_0__["factory"])(['absolute', 'fixed'])],
         props: {
             app: Boolean
         },
@@ -79484,12 +79740,17 @@ function applicationable(value, events) {
                 this.$vuetify.application.bind(this._uid, this.applicationProperty, this.updateApplication());
             },
             removeApplication: function removeApplication(force) {
+                if (force === void 0) {
+                    force = false;
+                }
                 if (!force && !this.app) return;
                 this.$vuetify.application.unbind(this._uid, this.applicationProperty);
             },
-            updateApplication: function updateApplication() {}
+            updateApplication: function updateApplication() {
+                return 0;
+            }
         }
-    };
+    });
 }
 
 /***/ }),
@@ -79537,7 +79798,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     methods: {
         showLazyContent: function showLazyContent(content) {
-            return this.hasContent ? content : null;
+            return this.hasContent ? content : undefined;
         }
     }
 }));
@@ -79709,7 +79970,7 @@ var __read = undefined && undefined.__read || function (o, n) {
     },
     data: function data() {
         return {
-            defaultColor: null
+            defaultColor: undefined
         };
     },
     computed: {
@@ -80523,7 +80784,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "vue");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_VProgressLinear__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/VProgressLinear */ "./src/components/VProgressLinear/index.js");
+/* harmony import */ var _components_VProgressLinear__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/VProgressLinear */ "./src/components/VProgressLinear/index.ts");
 
 
 /**
@@ -80547,7 +80808,6 @@ __webpack_require__.r(__webpack_exports__);
     methods: {
         genProgress: function genProgress() {
             if (this.loading === false) return null;
-            // TODO: uncast
             return this.$slots.progress || this.$createElement(_components_VProgressLinear__WEBPACK_IMPORTED_MODULE_1__["default"], {
                 props: {
                     color: this.loading === true || this.loading === '' ? this.color || 'primary' : this.loading,
@@ -81056,6 +81316,8 @@ __webpack_require__.r(__webpack_exports__);
             // eslint-disable-next-line no-unused-expressions
             this.overlay.clientHeight; // Force repaint
             requestAnimationFrame(function () {
+                // https://github.com/vuetifyjs/vuetify/issues/4678
+                if (!_this.overlay) return;
                 _this.overlay.className += ' v-overlay--active';
                 if (_this.activeZIndex !== undefined) {
                     _this.overlay.style.zIndex = _this.activeZIndex - 1;
@@ -81090,7 +81352,9 @@ __webpack_require__.r(__webpack_exports__);
          */
         scrollListener: function scrollListener(e) {
             if (e.type === 'keydown') {
-                if (['INPUT', 'TEXTAREA', 'SELECT'].includes(e.target.tagName)) return;
+                if (['INPUT', 'TEXTAREA', 'SELECT'].includes(e.target.tagName) ||
+                // https://github.com/vuetifyjs/vuetify/issues/4715
+                e.target.isContentEditable) return;
                 var up = [_util_helpers__WEBPACK_IMPORTED_MODULE_1__["keyCodes"].up, _util_helpers__WEBPACK_IMPORTED_MODULE_1__["keyCodes"].pageup];
                 var down = [_util_helpers__WEBPACK_IMPORTED_MODULE_1__["keyCodes"].down, _util_helpers__WEBPACK_IMPORTED_MODULE_1__["keyCodes"].pagedown];
                 if (up.includes(e.keyCode)) {
@@ -81432,9 +81696,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/mixins/rippleable.js":
+/***/ "./src/mixins/rippleable.ts":
 /*!**********************************!*\
-  !*** ./src/mixins/rippleable.js ***!
+  !*** ./src/mixins/rippleable.ts ***!
   \**********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -81442,9 +81706,12 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _directives_ripple__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../directives/ripple */ "./src/directives/ripple.ts");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "vue");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
 
-/* @vue/component */
-/* harmony default export */ __webpack_exports__["default"] = ({
+// Types
+
+/* harmony default export */ __webpack_exports__["default"] = (vue__WEBPACK_IMPORTED_MODULE_1___default.a.extend({
     name: 'rippleable',
     directives: { Ripple: _directives_ripple__WEBPACK_IMPORTED_MODULE_0__["default"] },
     props: {
@@ -81460,7 +81727,6 @@ __webpack_require__.r(__webpack_exports__);
             }
             if (!this.ripple) return null;
             data.staticClass = 'v-input--selection-controls__ripple';
-            if (this.rippleClasses) data.staticClass += " " + this.rippleClasses;
             data.directives = data.directives || [];
             data.directives.push({
                 name: 'ripple',
@@ -81473,7 +81739,7 @@ __webpack_require__.r(__webpack_exports__);
         },
         onChange: function onChange() {}
     }
-});
+}));
 
 /***/ }),
 
@@ -81582,7 +81848,7 @@ var __assign = undefined && undefined.__assign || Object.assign || function (t) 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_VInput__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/VInput */ "./src/components/VInput/index.js");
-/* harmony import */ var _rippleable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./rippleable */ "./src/mixins/rippleable.js");
+/* harmony import */ var _rippleable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./rippleable */ "./src/mixins/rippleable.ts");
 /* harmony import */ var _comparable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./comparable */ "./src/mixins/comparable.ts");
 /* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../util/helpers */ "./src/util/helpers.ts");
 // Components
@@ -81930,6 +82196,7 @@ function factory(prop, event) {
         }, _b)
     });
 }
+/* eslint-disable-next-line no-redeclare */
 var Toggleable = factory();
 /* harmony default export */ __webpack_exports__["default"] = (Toggleable);
 
@@ -81958,26 +82225,30 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/mixins/translatable.js":
+/***/ "./src/mixins/translatable.ts":
 /*!************************************!*\
-  !*** ./src/mixins/translatable.js ***!
+  !*** ./src/mixins/translatable.ts ***!
   \************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* @vue/component */
-/* harmony default export */ __webpack_exports__["default"] = ({
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "vue");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+
+/* harmony default export */ __webpack_exports__["default"] = (vue__WEBPACK_IMPORTED_MODULE_0___default.a.extend({
     name: 'translatable',
+    props: {
+        height: Number
+    },
     data: function data() {
         return {
-            parallax: null,
-            parallaxDist: null,
-            percentScrolled: null,
-            scrollTop: null,
-            windowHeight: null,
-            windowBottom: null
+            parallax: 0,
+            parallaxDist: 0,
+            percentScrolled: 0,
+            windowHeight: 0,
+            windowBottom: 0
         };
     },
     computed: {
@@ -81990,28 +82261,26 @@ __webpack_require__.r(__webpack_exports__);
         window.removeEventListener('resize', this.translate, false);
     },
     methods: {
+        calcDimensions: function calcDimensions() {
+            this.parallaxDist = this.imgHeight - this.height;
+            this.windowHeight = window.innerHeight;
+            this.windowBottom = window.pageYOffset + this.windowHeight;
+        },
         listeners: function listeners() {
             window.addEventListener('scroll', this.translate, false);
             window.addEventListener('resize', this.translate, false);
         },
+        /** @abstract **/
+        objHeight: function objHeight() {
+            throw new Error('Not implemented !');
+        },
         translate: function translate() {
             this.calcDimensions();
-            this.percentScrolled = (this.windowBottom - this.elOffsetTop) / (parseInt(this.height) + this.windowHeight);
+            this.percentScrolled = (this.windowBottom - this.$el.offsetTop) / (parseInt(this.height) + this.windowHeight);
             this.parallax = Math.round(this.parallaxDist * this.percentScrolled);
-            if (this.translated) {
-                this.translated();
-            }
-        },
-        calcDimensions: function calcDimensions() {
-            var offset = this.$el.getBoundingClientRect();
-            this.scrollTop = window.pageYOffset;
-            this.parallaxDist = this.imgHeight - this.height;
-            this.elOffsetTop = offset.top + this.scrollTop;
-            this.windowHeight = window.innerHeight;
-            this.windowBottom = this.scrollTop + this.windowHeight;
         }
     }
-});
+}));
 
 /***/ }),
 
@@ -82024,10 +82293,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _registrable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./registrable */ "./src/mixins/registrable.ts");
-/* harmony import */ var _util_console__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util/console */ "./src/util/console.ts");
-/* harmony import */ var _colorable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./colorable */ "./src/mixins/colorable.ts");
+/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/helpers */ "./src/util/helpers.ts");
+/* harmony import */ var _registrable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./registrable */ "./src/mixins/registrable.ts");
+/* harmony import */ var _util_console__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../util/console */ "./src/util/console.ts");
+/* harmony import */ var _colorable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./colorable */ "./src/mixins/colorable.ts");
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 
 
 
@@ -82036,7 +82307,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 /* @vue/component */
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'validatable',
-    mixins: [_colorable__WEBPACK_IMPORTED_MODULE_2__["default"], Object(_registrable__WEBPACK_IMPORTED_MODULE_0__["inject"])('form')],
+    mixins: [_colorable__WEBPACK_IMPORTED_MODULE_3__["default"], Object(_registrable__WEBPACK_IMPORTED_MODULE_1__["inject"])('form')],
     props: {
         error: Boolean,
         errorCount: {
@@ -82132,9 +82403,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     watch: {
         rules: {
             handler: function handler(newVal, oldVal) {
-                // TODO: This handler seems to trigger when input changes, even though
-                // rules array stays the same? Solved it like this for now
-                if (newVal.length === oldVal.length) return;
+                if (Object(_util_helpers__WEBPACK_IMPORTED_MODULE_0__["deepEqual"])(newVal, oldVal)) return;
                 this.validate();
             },
             deep: true
@@ -82143,14 +82412,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             // If it's the first time we're setting input,
             // mark it with hasInput
             this.hasInput = true;
-            this.$nextTick(this.validate);
+            this.validateOnBlur || this.$nextTick(this.validate);
         },
         isFocused: function isFocused(val) {
-            if (!val) this.hasFocused = true;
-            // If we're not focused, and it's the first time
-            // we're defocusing, set shouldValidate to true
-            if (!val && !this.hasFocused) {
-                this.$emit('update:error', this.errorBucket.length > 0);
+            if (!val) {
+                this.hasFocused = true;
+                this.validateOnBlur && this.validate();
             }
         },
         isResetting: function isResetting() {
@@ -82196,7 +82463,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 if (valid === false || typeof valid === 'string') {
                     errorBucket.push(valid);
                 } else if (valid !== true) {
-                    Object(_util_console__WEBPACK_IMPORTED_MODULE_1__["consoleError"])("Rules should return a string or boolean, received '" + (typeof valid === 'undefined' ? 'undefined' : _typeof(valid)) + "' instead", this);
+                    Object(_util_console__WEBPACK_IMPORTED_MODULE_2__["consoleError"])("Rules should return a string or boolean, received '" + (typeof valid === 'undefined' ? 'undefined' : _typeof(valid)) + "' instead", this);
                 }
             }
             this.errorBucket = errorBucket;
@@ -83087,7 +83354,7 @@ function consoleError(message, vm, parent) {
     newMessage != null && console.error(newMessage);
 }
 function deprecate(original, replacement, vm, parent) {
-    "development" === 'development' && consoleWarn("'" + original + "' is deprecated, use '" + replacement + "' instead", vm, parent);
+    consoleWarn("'" + original + "' is deprecated, use '" + replacement + "' instead", vm, parent);
 }
 /**
  * Shamelessly stolen from vuejs/vue/blob/dev/src/core/util/debug.js
@@ -83260,12 +83527,8 @@ function createSimpleFunctional(c, el, name) {
     if (el === void 0) {
         el = 'div';
     }
-    name = name || c.replace(/__/g, '-');
-    // TODO: remove after close
-    // https://github.com/vuetifyjs/vuetify/issues/1561
-    name = name.split('-')[0] === 'v' ? name : "v-" + name;
     return {
-        name: name,
+        name: name || c.replace(/__/g, '-'),
         functional: true,
         render: function render(h, _a) {
             var data = _a.data,
@@ -83306,7 +83569,7 @@ function createSimpleTransition(name, origin, mode) {
 }
 function createJavaScriptTransition(name, functions, css, mode) {
     if (css === void 0) {
-        css = true;
+        css = false;
     }
     if (mode === void 0) {
         mode = 'in-out';
@@ -83360,6 +83623,10 @@ function getNestedValue(obj, path, fallback) {
 }
 function deepEqual(a, b) {
     if (a === b) return true;
+    if (a instanceof Date && b instanceof Date) {
+        // If the values are Date, they were convert to timestamp with getTime and compare it
+        if (a.getTime() !== b.getTime()) return false;
+    }
     if (a !== Object(a) || b !== Object(b)) {
         // If the values aren't objects, they were already checked for equality
         return false;
@@ -83647,7 +83914,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return mixins; });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "vue");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
-/* eslint-disable max-len, import/export */
+/* eslint-disable max-len, import/export, no-use-before-define */
 
 function mixins() {
     var args = [];
@@ -83775,7 +84042,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_vue__;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ckcmHelpers_auth__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__firebase__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__firebase__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
 
@@ -84966,48 +85233,23 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "/* MaterialDesignIcons.com */\n@font-face {\n  font-family: \"Material Design Icons\";\n  src: url(" + escape(__webpack_require__(250)) + ");\n  src: url(" + escape(__webpack_require__(251)) + "?#iefix&v=2.4.85) format(\"embedded-opentype\"), url(" + escape(__webpack_require__(252)) + ") format(\"woff2\"), url(" + escape(__webpack_require__(253)) + ") format(\"woff\"), url(" + escape(__webpack_require__(254)) + ") format(\"truetype\"), url(" + escape(__webpack_require__(255)) + "#materialdesigniconsregular) format(\"svg\");\n  font-weight: normal;\n  font-style: normal;\n}\n.mdi:before,\n.mdi-set {\n  display: inline-block;\n  font: normal normal normal 24px/1 \"Material Design Icons\";\n  font-size: inherit;\n  text-rendering: auto;\n  line-height: inherit;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n.mdi-access-point:before {\n  content: \"\\F002\";\n}\n\n.mdi-access-point-network:before {\n  content: \"\\F003\";\n}\n\n.mdi-account:before {\n  content: \"\\F004\";\n}\n\n.mdi-account-alert:before {\n  content: \"\\F005\";\n}\n\n.mdi-account-box:before {\n  content: \"\\F006\";\n}\n\n.mdi-account-box-multiple:before {\n  content: \"\\F933\";\n}\n\n.mdi-account-box-outline:before {\n  content: \"\\F007\";\n}\n\n.mdi-account-card-details:before {\n  content: \"\\F5D2\";\n}\n\n.mdi-account-check:before {\n  content: \"\\F008\";\n}\n\n.mdi-account-circle:before {\n  content: \"\\F009\";\n}\n\n.mdi-account-convert:before {\n  content: \"\\F00A\";\n}\n\n.mdi-account-edit:before {\n  content: \"\\F6BB\";\n}\n\n.mdi-account-group:before {\n  content: \"\\F848\";\n}\n\n.mdi-account-heart:before {\n  content: \"\\F898\";\n}\n\n.mdi-account-key:before {\n  content: \"\\F00B\";\n}\n\n.mdi-account-location:before {\n  content: \"\\F00C\";\n}\n\n.mdi-account-minus:before {\n  content: \"\\F00D\";\n}\n\n.mdi-account-multiple:before {\n  content: \"\\F00E\";\n}\n\n.mdi-account-multiple-check:before {\n  content: \"\\F8C4\";\n}\n\n.mdi-account-multiple-minus:before {\n  content: \"\\F5D3\";\n}\n\n.mdi-account-multiple-outline:before {\n  content: \"\\F00F\";\n}\n\n.mdi-account-multiple-plus:before {\n  content: \"\\F010\";\n}\n\n.mdi-account-multiple-plus-outline:before {\n  content: \"\\F7FF\";\n}\n\n.mdi-account-network:before {\n  content: \"\\F011\";\n}\n\n.mdi-account-off:before {\n  content: \"\\F012\";\n}\n\n.mdi-account-outline:before {\n  content: \"\\F013\";\n}\n\n.mdi-account-plus:before {\n  content: \"\\F014\";\n}\n\n.mdi-account-plus-outline:before {\n  content: \"\\F800\";\n}\n\n.mdi-account-remove:before {\n  content: \"\\F015\";\n}\n\n.mdi-account-search:before {\n  content: \"\\F016\";\n}\n\n.mdi-account-search-outline:before {\n  content: \"\\F934\";\n}\n\n.mdi-account-settings:before {\n  content: \"\\F630\";\n}\n\n.mdi-account-settings-variant:before {\n  content: \"\\F631\";\n}\n\n.mdi-account-star:before {\n  content: \"\\F017\";\n}\n\n.mdi-account-switch:before {\n  content: \"\\F019\";\n}\n\n.mdi-accusoft:before {\n  content: \"\\F849\";\n}\n\n.mdi-adjust:before {\n  content: \"\\F01A\";\n}\n\n.mdi-adobe:before {\n  content: \"\\F935\";\n}\n\n.mdi-air-conditioner:before {\n  content: \"\\F01B\";\n}\n\n.mdi-airballoon:before {\n  content: \"\\F01C\";\n}\n\n.mdi-airplane:before {\n  content: \"\\F01D\";\n}\n\n.mdi-airplane-landing:before {\n  content: \"\\F5D4\";\n}\n\n.mdi-airplane-off:before {\n  content: \"\\F01E\";\n}\n\n.mdi-airplane-takeoff:before {\n  content: \"\\F5D5\";\n}\n\n.mdi-airplay:before {\n  content: \"\\F01F\";\n}\n\n.mdi-airport:before {\n  content: \"\\F84A\";\n}\n\n.mdi-alarm:before {\n  content: \"\\F020\";\n}\n\n.mdi-alarm-bell:before {\n  content: \"\\F78D\";\n}\n\n.mdi-alarm-check:before {\n  content: \"\\F021\";\n}\n\n.mdi-alarm-light:before {\n  content: \"\\F78E\";\n}\n\n.mdi-alarm-multiple:before {\n  content: \"\\F022\";\n}\n\n.mdi-alarm-off:before {\n  content: \"\\F023\";\n}\n\n.mdi-alarm-plus:before {\n  content: \"\\F024\";\n}\n\n.mdi-alarm-snooze:before {\n  content: \"\\F68D\";\n}\n\n.mdi-album:before {\n  content: \"\\F025\";\n}\n\n.mdi-alert:before {\n  content: \"\\F026\";\n}\n\n.mdi-alert-box:before {\n  content: \"\\F027\";\n}\n\n.mdi-alert-circle:before {\n  content: \"\\F028\";\n}\n\n.mdi-alert-circle-outline:before {\n  content: \"\\F5D6\";\n}\n\n.mdi-alert-decagram:before {\n  content: \"\\F6BC\";\n}\n\n.mdi-alert-octagon:before {\n  content: \"\\F029\";\n}\n\n.mdi-alert-octagram:before {\n  content: \"\\F766\";\n}\n\n.mdi-alert-outline:before {\n  content: \"\\F02A\";\n}\n\n.mdi-alien:before {\n  content: \"\\F899\";\n}\n\n.mdi-all-inclusive:before {\n  content: \"\\F6BD\";\n}\n\n.mdi-alpha:before {\n  content: \"\\F02B\";\n}\n\n.mdi-alphabetical:before {\n  content: \"\\F02C\";\n}\n\n.mdi-altimeter:before {\n  content: \"\\F5D7\";\n}\n\n.mdi-amazon:before {\n  content: \"\\F02D\";\n}\n\n.mdi-amazon-alexa:before {\n  content: \"\\F8C5\";\n}\n\n.mdi-amazon-drive:before {\n  content: \"\\F02E\";\n}\n\n.mdi-ambulance:before {\n  content: \"\\F02F\";\n}\n\n.mdi-amplifier:before {\n  content: \"\\F030\";\n}\n\n.mdi-anchor:before {\n  content: \"\\F031\";\n}\n\n.mdi-android:before {\n  content: \"\\F032\";\n}\n\n.mdi-android-debug-bridge:before {\n  content: \"\\F033\";\n}\n\n.mdi-android-head:before {\n  content: \"\\F78F\";\n}\n\n.mdi-android-studio:before {\n  content: \"\\F034\";\n}\n\n.mdi-angle-acute:before {\n  content: \"\\F936\";\n}\n\n.mdi-angle-obtuse:before {\n  content: \"\\F937\";\n}\n\n.mdi-angle-right:before {\n  content: \"\\F938\";\n}\n\n.mdi-angular:before {\n  content: \"\\F6B1\";\n}\n\n.mdi-angularjs:before {\n  content: \"\\F6BE\";\n}\n\n.mdi-animation:before {\n  content: \"\\F5D8\";\n}\n\n.mdi-animation-play:before {\n  content: \"\\F939\";\n}\n\n.mdi-anvil:before {\n  content: \"\\F89A\";\n}\n\n.mdi-apple:before {\n  content: \"\\F035\";\n}\n\n.mdi-apple-finder:before {\n  content: \"\\F036\";\n}\n\n.mdi-apple-icloud:before {\n  content: \"\\F038\";\n}\n\n.mdi-apple-ios:before {\n  content: \"\\F037\";\n}\n\n.mdi-apple-keyboard-caps:before {\n  content: \"\\F632\";\n}\n\n.mdi-apple-keyboard-command:before {\n  content: \"\\F633\";\n}\n\n.mdi-apple-keyboard-control:before {\n  content: \"\\F634\";\n}\n\n.mdi-apple-keyboard-option:before {\n  content: \"\\F635\";\n}\n\n.mdi-apple-keyboard-shift:before {\n  content: \"\\F636\";\n}\n\n.mdi-apple-safari:before {\n  content: \"\\F039\";\n}\n\n.mdi-application:before {\n  content: \"\\F614\";\n}\n\n.mdi-approval:before {\n  content: \"\\F790\";\n}\n\n.mdi-apps:before {\n  content: \"\\F03B\";\n}\n\n.mdi-arch:before {\n  content: \"\\F8C6\";\n}\n\n.mdi-archive:before {\n  content: \"\\F03C\";\n}\n\n.mdi-arrange-bring-forward:before {\n  content: \"\\F03D\";\n}\n\n.mdi-arrange-bring-to-front:before {\n  content: \"\\F03E\";\n}\n\n.mdi-arrange-send-backward:before {\n  content: \"\\F03F\";\n}\n\n.mdi-arrange-send-to-back:before {\n  content: \"\\F040\";\n}\n\n.mdi-arrow-all:before {\n  content: \"\\F041\";\n}\n\n.mdi-arrow-bottom-left:before {\n  content: \"\\F042\";\n}\n\n.mdi-arrow-bottom-right:before {\n  content: \"\\F043\";\n}\n\n.mdi-arrow-collapse:before {\n  content: \"\\F615\";\n}\n\n.mdi-arrow-collapse-all:before {\n  content: \"\\F044\";\n}\n\n.mdi-arrow-collapse-down:before {\n  content: \"\\F791\";\n}\n\n.mdi-arrow-collapse-horizontal:before {\n  content: \"\\F84B\";\n}\n\n.mdi-arrow-collapse-left:before {\n  content: \"\\F792\";\n}\n\n.mdi-arrow-collapse-right:before {\n  content: \"\\F793\";\n}\n\n.mdi-arrow-collapse-up:before {\n  content: \"\\F794\";\n}\n\n.mdi-arrow-collapse-vertical:before {\n  content: \"\\F84C\";\n}\n\n.mdi-arrow-down:before {\n  content: \"\\F045\";\n}\n\n.mdi-arrow-down-bold:before {\n  content: \"\\F72D\";\n}\n\n.mdi-arrow-down-bold-box:before {\n  content: \"\\F72E\";\n}\n\n.mdi-arrow-down-bold-box-outline:before {\n  content: \"\\F72F\";\n}\n\n.mdi-arrow-down-bold-circle:before {\n  content: \"\\F047\";\n}\n\n.mdi-arrow-down-bold-circle-outline:before {\n  content: \"\\F048\";\n}\n\n.mdi-arrow-down-bold-hexagon-outline:before {\n  content: \"\\F049\";\n}\n\n.mdi-arrow-down-box:before {\n  content: \"\\F6BF\";\n}\n\n.mdi-arrow-down-drop-circle:before {\n  content: \"\\F04A\";\n}\n\n.mdi-arrow-down-drop-circle-outline:before {\n  content: \"\\F04B\";\n}\n\n.mdi-arrow-down-thick:before {\n  content: \"\\F046\";\n}\n\n.mdi-arrow-expand:before {\n  content: \"\\F616\";\n}\n\n.mdi-arrow-expand-all:before {\n  content: \"\\F04C\";\n}\n\n.mdi-arrow-expand-down:before {\n  content: \"\\F795\";\n}\n\n.mdi-arrow-expand-horizontal:before {\n  content: \"\\F84D\";\n}\n\n.mdi-arrow-expand-left:before {\n  content: \"\\F796\";\n}\n\n.mdi-arrow-expand-right:before {\n  content: \"\\F797\";\n}\n\n.mdi-arrow-expand-up:before {\n  content: \"\\F798\";\n}\n\n.mdi-arrow-expand-vertical:before {\n  content: \"\\F84E\";\n}\n\n.mdi-arrow-left:before {\n  content: \"\\F04D\";\n}\n\n.mdi-arrow-left-bold:before {\n  content: \"\\F730\";\n}\n\n.mdi-arrow-left-bold-box:before {\n  content: \"\\F731\";\n}\n\n.mdi-arrow-left-bold-box-outline:before {\n  content: \"\\F732\";\n}\n\n.mdi-arrow-left-bold-circle:before {\n  content: \"\\F04F\";\n}\n\n.mdi-arrow-left-bold-circle-outline:before {\n  content: \"\\F050\";\n}\n\n.mdi-arrow-left-bold-hexagon-outline:before {\n  content: \"\\F051\";\n}\n\n.mdi-arrow-left-box:before {\n  content: \"\\F6C0\";\n}\n\n.mdi-arrow-left-drop-circle:before {\n  content: \"\\F052\";\n}\n\n.mdi-arrow-left-drop-circle-outline:before {\n  content: \"\\F053\";\n}\n\n.mdi-arrow-left-thick:before {\n  content: \"\\F04E\";\n}\n\n.mdi-arrow-right:before {\n  content: \"\\F054\";\n}\n\n.mdi-arrow-right-bold:before {\n  content: \"\\F733\";\n}\n\n.mdi-arrow-right-bold-box:before {\n  content: \"\\F734\";\n}\n\n.mdi-arrow-right-bold-box-outline:before {\n  content: \"\\F735\";\n}\n\n.mdi-arrow-right-bold-circle:before {\n  content: \"\\F056\";\n}\n\n.mdi-arrow-right-bold-circle-outline:before {\n  content: \"\\F057\";\n}\n\n.mdi-arrow-right-bold-hexagon-outline:before {\n  content: \"\\F058\";\n}\n\n.mdi-arrow-right-box:before {\n  content: \"\\F6C1\";\n}\n\n.mdi-arrow-right-drop-circle:before {\n  content: \"\\F059\";\n}\n\n.mdi-arrow-right-drop-circle-outline:before {\n  content: \"\\F05A\";\n}\n\n.mdi-arrow-right-thick:before {\n  content: \"\\F055\";\n}\n\n.mdi-arrow-split-horizontal:before {\n  content: \"\\F93A\";\n}\n\n.mdi-arrow-split-vertical:before {\n  content: \"\\F93B\";\n}\n\n.mdi-arrow-top-left:before {\n  content: \"\\F05B\";\n}\n\n.mdi-arrow-top-right:before {\n  content: \"\\F05C\";\n}\n\n.mdi-arrow-up:before {\n  content: \"\\F05D\";\n}\n\n.mdi-arrow-up-bold:before {\n  content: \"\\F736\";\n}\n\n.mdi-arrow-up-bold-box:before {\n  content: \"\\F737\";\n}\n\n.mdi-arrow-up-bold-box-outline:before {\n  content: \"\\F738\";\n}\n\n.mdi-arrow-up-bold-circle:before {\n  content: \"\\F05F\";\n}\n\n.mdi-arrow-up-bold-circle-outline:before {\n  content: \"\\F060\";\n}\n\n.mdi-arrow-up-bold-hexagon-outline:before {\n  content: \"\\F061\";\n}\n\n.mdi-arrow-up-box:before {\n  content: \"\\F6C2\";\n}\n\n.mdi-arrow-up-drop-circle:before {\n  content: \"\\F062\";\n}\n\n.mdi-arrow-up-drop-circle-outline:before {\n  content: \"\\F063\";\n}\n\n.mdi-arrow-up-thick:before {\n  content: \"\\F05E\";\n}\n\n.mdi-artist:before {\n  content: \"\\F802\";\n}\n\n.mdi-assistant:before {\n  content: \"\\F064\";\n}\n\n.mdi-asterisk:before {\n  content: \"\\F6C3\";\n}\n\n.mdi-at:before {\n  content: \"\\F065\";\n}\n\n.mdi-atlassian:before {\n  content: \"\\F803\";\n}\n\n.mdi-atom:before {\n  content: \"\\F767\";\n}\n\n.mdi-attachment:before {\n  content: \"\\F066\";\n}\n\n.mdi-audio-video:before {\n  content: \"\\F93C\";\n}\n\n.mdi-audiobook:before {\n  content: \"\\F067\";\n}\n\n.mdi-augmented-reality:before {\n  content: \"\\F84F\";\n}\n\n.mdi-auto-fix:before {\n  content: \"\\F068\";\n}\n\n.mdi-auto-upload:before {\n  content: \"\\F069\";\n}\n\n.mdi-autorenew:before {\n  content: \"\\F06A\";\n}\n\n.mdi-av-timer:before {\n  content: \"\\F06B\";\n}\n\n.mdi-axe:before {\n  content: \"\\F8C7\";\n}\n\n.mdi-azure:before {\n  content: \"\\F804\";\n}\n\n.mdi-baby:before {\n  content: \"\\F06C\";\n}\n\n.mdi-baby-buggy:before {\n  content: \"\\F68E\";\n}\n\n.mdi-backburger:before {\n  content: \"\\F06D\";\n}\n\n.mdi-backspace:before {\n  content: \"\\F06E\";\n}\n\n.mdi-backup-restore:before {\n  content: \"\\F06F\";\n}\n\n.mdi-badminton:before {\n  content: \"\\F850\";\n}\n\n.mdi-bandcamp:before {\n  content: \"\\F674\";\n}\n\n.mdi-bank:before {\n  content: \"\\F070\";\n}\n\n.mdi-barcode:before {\n  content: \"\\F071\";\n}\n\n.mdi-barcode-scan:before {\n  content: \"\\F072\";\n}\n\n.mdi-barley:before {\n  content: \"\\F073\";\n}\n\n.mdi-barrel:before {\n  content: \"\\F074\";\n}\n\n.mdi-baseball:before {\n  content: \"\\F851\";\n}\n\n.mdi-baseball-bat:before {\n  content: \"\\F852\";\n}\n\n.mdi-basecamp:before {\n  content: \"\\F075\";\n}\n\n.mdi-basket:before {\n  content: \"\\F076\";\n}\n\n.mdi-basket-fill:before {\n  content: \"\\F077\";\n}\n\n.mdi-basket-unfill:before {\n  content: \"\\F078\";\n}\n\n.mdi-basketball:before {\n  content: \"\\F805\";\n}\n\n.mdi-battery:before {\n  content: \"\\F079\";\n}\n\n.mdi-battery-10:before {\n  content: \"\\F07A\";\n}\n\n.mdi-battery-10-bluetooth:before {\n  content: \"\\F93D\";\n}\n\n.mdi-battery-20:before {\n  content: \"\\F07B\";\n}\n\n.mdi-battery-20-bluetooth:before {\n  content: \"\\F93E\";\n}\n\n.mdi-battery-30:before {\n  content: \"\\F07C\";\n}\n\n.mdi-battery-30-bluetooth:before {\n  content: \"\\F93F\";\n}\n\n.mdi-battery-40:before {\n  content: \"\\F07D\";\n}\n\n.mdi-battery-40-bluetooth:before {\n  content: \"\\F940\";\n}\n\n.mdi-battery-50:before {\n  content: \"\\F07E\";\n}\n\n.mdi-battery-50-bluetooth:before {\n  content: \"\\F941\";\n}\n\n.mdi-battery-60:before {\n  content: \"\\F07F\";\n}\n\n.mdi-battery-60-bluetooth:before {\n  content: \"\\F942\";\n}\n\n.mdi-battery-70:before {\n  content: \"\\F080\";\n}\n\n.mdi-battery-70-bluetooth:before {\n  content: \"\\F943\";\n}\n\n.mdi-battery-80:before {\n  content: \"\\F081\";\n}\n\n.mdi-battery-80-bluetooth:before {\n  content: \"\\F944\";\n}\n\n.mdi-battery-90:before {\n  content: \"\\F082\";\n}\n\n.mdi-battery-90-bluetooth:before {\n  content: \"\\F945\";\n}\n\n.mdi-battery-alert:before {\n  content: \"\\F083\";\n}\n\n.mdi-battery-alert-bluetooth:before {\n  content: \"\\F946\";\n}\n\n.mdi-battery-bluetooth:before {\n  content: \"\\F947\";\n}\n\n.mdi-battery-bluetooth-variant:before {\n  content: \"\\F948\";\n}\n\n.mdi-battery-charging:before {\n  content: \"\\F084\";\n}\n\n.mdi-battery-charging-10:before {\n  content: \"\\F89B\";\n}\n\n.mdi-battery-charging-100:before {\n  content: \"\\F085\";\n}\n\n.mdi-battery-charging-20:before {\n  content: \"\\F086\";\n}\n\n.mdi-battery-charging-30:before {\n  content: \"\\F087\";\n}\n\n.mdi-battery-charging-40:before {\n  content: \"\\F088\";\n}\n\n.mdi-battery-charging-50:before {\n  content: \"\\F89C\";\n}\n\n.mdi-battery-charging-60:before {\n  content: \"\\F089\";\n}\n\n.mdi-battery-charging-70:before {\n  content: \"\\F89D\";\n}\n\n.mdi-battery-charging-80:before {\n  content: \"\\F08A\";\n}\n\n.mdi-battery-charging-90:before {\n  content: \"\\F08B\";\n}\n\n.mdi-battery-charging-outline:before {\n  content: \"\\F89E\";\n}\n\n.mdi-battery-charging-wireless:before {\n  content: \"\\F806\";\n}\n\n.mdi-battery-charging-wireless-10:before {\n  content: \"\\F807\";\n}\n\n.mdi-battery-charging-wireless-20:before {\n  content: \"\\F808\";\n}\n\n.mdi-battery-charging-wireless-30:before {\n  content: \"\\F809\";\n}\n\n.mdi-battery-charging-wireless-40:before {\n  content: \"\\F80A\";\n}\n\n.mdi-battery-charging-wireless-50:before {\n  content: \"\\F80B\";\n}\n\n.mdi-battery-charging-wireless-60:before {\n  content: \"\\F80C\";\n}\n\n.mdi-battery-charging-wireless-70:before {\n  content: \"\\F80D\";\n}\n\n.mdi-battery-charging-wireless-80:before {\n  content: \"\\F80E\";\n}\n\n.mdi-battery-charging-wireless-90:before {\n  content: \"\\F80F\";\n}\n\n.mdi-battery-charging-wireless-alert:before {\n  content: \"\\F810\";\n}\n\n.mdi-battery-charging-wireless-outline:before {\n  content: \"\\F811\";\n}\n\n.mdi-battery-minus:before {\n  content: \"\\F08C\";\n}\n\n.mdi-battery-negative:before {\n  content: \"\\F08D\";\n}\n\n.mdi-battery-outline:before {\n  content: \"\\F08E\";\n}\n\n.mdi-battery-plus:before {\n  content: \"\\F08F\";\n}\n\n.mdi-battery-positive:before {\n  content: \"\\F090\";\n}\n\n.mdi-battery-unknown:before {\n  content: \"\\F091\";\n}\n\n.mdi-battery-unknown-bluetooth:before {\n  content: \"\\F949\";\n}\n\n.mdi-beach:before {\n  content: \"\\F092\";\n}\n\n.mdi-beaker:before {\n  content: \"\\F68F\";\n}\n\n.mdi-beats:before {\n  content: \"\\F097\";\n}\n\n.mdi-bed-empty:before {\n  content: \"\\F89F\";\n}\n\n.mdi-beer:before {\n  content: \"\\F098\";\n}\n\n.mdi-behance:before {\n  content: \"\\F099\";\n}\n\n.mdi-bell:before {\n  content: \"\\F09A\";\n}\n\n.mdi-bell-off:before {\n  content: \"\\F09B\";\n}\n\n.mdi-bell-outline:before {\n  content: \"\\F09C\";\n}\n\n.mdi-bell-plus:before {\n  content: \"\\F09D\";\n}\n\n.mdi-bell-ring:before {\n  content: \"\\F09E\";\n}\n\n.mdi-bell-ring-outline:before {\n  content: \"\\F09F\";\n}\n\n.mdi-bell-sleep:before {\n  content: \"\\F0A0\";\n}\n\n.mdi-beta:before {\n  content: \"\\F0A1\";\n}\n\n.mdi-bible:before {\n  content: \"\\F0A2\";\n}\n\n.mdi-bike:before {\n  content: \"\\F0A3\";\n}\n\n.mdi-bing:before {\n  content: \"\\F0A4\";\n}\n\n.mdi-binoculars:before {\n  content: \"\\F0A5\";\n}\n\n.mdi-bio:before {\n  content: \"\\F0A6\";\n}\n\n.mdi-biohazard:before {\n  content: \"\\F0A7\";\n}\n\n.mdi-bitbucket:before {\n  content: \"\\F0A8\";\n}\n\n.mdi-bitcoin:before {\n  content: \"\\F812\";\n}\n\n.mdi-black-mesa:before {\n  content: \"\\F0A9\";\n}\n\n.mdi-blackberry:before {\n  content: \"\\F0AA\";\n}\n\n.mdi-blender:before {\n  content: \"\\F0AB\";\n}\n\n.mdi-blinds:before {\n  content: \"\\F0AC\";\n}\n\n.mdi-block-helper:before {\n  content: \"\\F0AD\";\n}\n\n.mdi-blogger:before {\n  content: \"\\F0AE\";\n}\n\n.mdi-bluetooth:before {\n  content: \"\\F0AF\";\n}\n\n.mdi-bluetooth-audio:before {\n  content: \"\\F0B0\";\n}\n\n.mdi-bluetooth-connect:before {\n  content: \"\\F0B1\";\n}\n\n.mdi-bluetooth-off:before {\n  content: \"\\F0B2\";\n}\n\n.mdi-bluetooth-settings:before {\n  content: \"\\F0B3\";\n}\n\n.mdi-bluetooth-transfer:before {\n  content: \"\\F0B4\";\n}\n\n.mdi-blur:before {\n  content: \"\\F0B5\";\n}\n\n.mdi-blur-linear:before {\n  content: \"\\F0B6\";\n}\n\n.mdi-blur-off:before {\n  content: \"\\F0B7\";\n}\n\n.mdi-blur-radial:before {\n  content: \"\\F0B8\";\n}\n\n.mdi-bomb:before {\n  content: \"\\F690\";\n}\n\n.mdi-bomb-off:before {\n  content: \"\\F6C4\";\n}\n\n.mdi-bone:before {\n  content: \"\\F0B9\";\n}\n\n.mdi-book:before {\n  content: \"\\F0BA\";\n}\n\n.mdi-book-minus:before {\n  content: \"\\F5D9\";\n}\n\n.mdi-book-multiple:before {\n  content: \"\\F0BB\";\n}\n\n.mdi-book-multiple-variant:before {\n  content: \"\\F0BC\";\n}\n\n.mdi-book-open:before {\n  content: \"\\F0BD\";\n}\n\n.mdi-book-open-page-variant:before {\n  content: \"\\F5DA\";\n}\n\n.mdi-book-open-variant:before {\n  content: \"\\F0BE\";\n}\n\n.mdi-book-plus:before {\n  content: \"\\F5DB\";\n}\n\n.mdi-book-secure:before {\n  content: \"\\F799\";\n}\n\n.mdi-book-unsecure:before {\n  content: \"\\F79A\";\n}\n\n.mdi-book-variant:before {\n  content: \"\\F0BF\";\n}\n\n.mdi-bookmark:before {\n  content: \"\\F0C0\";\n}\n\n.mdi-bookmark-check:before {\n  content: \"\\F0C1\";\n}\n\n.mdi-bookmark-music:before {\n  content: \"\\F0C2\";\n}\n\n.mdi-bookmark-outline:before {\n  content: \"\\F0C3\";\n}\n\n.mdi-bookmark-plus:before {\n  content: \"\\F0C5\";\n}\n\n.mdi-bookmark-plus-outline:before {\n  content: \"\\F0C4\";\n}\n\n.mdi-bookmark-remove:before {\n  content: \"\\F0C6\";\n}\n\n.mdi-boombox:before {\n  content: \"\\F5DC\";\n}\n\n.mdi-bootstrap:before {\n  content: \"\\F6C5\";\n}\n\n.mdi-border-all:before {\n  content: \"\\F0C7\";\n}\n\n.mdi-border-all-variant:before {\n  content: \"\\F8A0\";\n}\n\n.mdi-border-bottom:before {\n  content: \"\\F0C8\";\n}\n\n.mdi-border-bottom-variant:before {\n  content: \"\\F8A1\";\n}\n\n.mdi-border-color:before {\n  content: \"\\F0C9\";\n}\n\n.mdi-border-horizontal:before {\n  content: \"\\F0CA\";\n}\n\n.mdi-border-inside:before {\n  content: \"\\F0CB\";\n}\n\n.mdi-border-left:before {\n  content: \"\\F0CC\";\n}\n\n.mdi-border-left-variant:before {\n  content: \"\\F8A2\";\n}\n\n.mdi-border-none:before {\n  content: \"\\F0CD\";\n}\n\n.mdi-border-none-variant:before {\n  content: \"\\F8A3\";\n}\n\n.mdi-border-outside:before {\n  content: \"\\F0CE\";\n}\n\n.mdi-border-right:before {\n  content: \"\\F0CF\";\n}\n\n.mdi-border-right-variant:before {\n  content: \"\\F8A4\";\n}\n\n.mdi-border-style:before {\n  content: \"\\F0D0\";\n}\n\n.mdi-border-top:before {\n  content: \"\\F0D1\";\n}\n\n.mdi-border-top-variant:before {\n  content: \"\\F8A5\";\n}\n\n.mdi-border-vertical:before {\n  content: \"\\F0D2\";\n}\n\n.mdi-bottle-wine:before {\n  content: \"\\F853\";\n}\n\n.mdi-bow-tie:before {\n  content: \"\\F677\";\n}\n\n.mdi-bowl:before {\n  content: \"\\F617\";\n}\n\n.mdi-bowling:before {\n  content: \"\\F0D3\";\n}\n\n.mdi-box:before {\n  content: \"\\F0D4\";\n}\n\n.mdi-box-cutter:before {\n  content: \"\\F0D5\";\n}\n\n.mdi-box-shadow:before {\n  content: \"\\F637\";\n}\n\n.mdi-bridge:before {\n  content: \"\\F618\";\n}\n\n.mdi-briefcase:before {\n  content: \"\\F0D6\";\n}\n\n.mdi-briefcase-check:before {\n  content: \"\\F0D7\";\n}\n\n.mdi-briefcase-download:before {\n  content: \"\\F0D8\";\n}\n\n.mdi-briefcase-outline:before {\n  content: \"\\F813\";\n}\n\n.mdi-briefcase-upload:before {\n  content: \"\\F0D9\";\n}\n\n.mdi-brightness-1:before {\n  content: \"\\F0DA\";\n}\n\n.mdi-brightness-2:before {\n  content: \"\\F0DB\";\n}\n\n.mdi-brightness-3:before {\n  content: \"\\F0DC\";\n}\n\n.mdi-brightness-4:before {\n  content: \"\\F0DD\";\n}\n\n.mdi-brightness-5:before {\n  content: \"\\F0DE\";\n}\n\n.mdi-brightness-6:before {\n  content: \"\\F0DF\";\n}\n\n.mdi-brightness-7:before {\n  content: \"\\F0E0\";\n}\n\n.mdi-brightness-auto:before {\n  content: \"\\F0E1\";\n}\n\n.mdi-broom:before {\n  content: \"\\F0E2\";\n}\n\n.mdi-brush:before {\n  content: \"\\F0E3\";\n}\n\n.mdi-buddhism:before {\n  content: \"\\F94A\";\n}\n\n.mdi-buffer:before {\n  content: \"\\F619\";\n}\n\n.mdi-bug:before {\n  content: \"\\F0E4\";\n}\n\n.mdi-bulletin-board:before {\n  content: \"\\F0E5\";\n}\n\n.mdi-bullhorn:before {\n  content: \"\\F0E6\";\n}\n\n.mdi-bullseye:before {\n  content: \"\\F5DD\";\n}\n\n.mdi-bullseye-arrow:before {\n  content: \"\\F8C8\";\n}\n\n.mdi-bus:before {\n  content: \"\\F0E7\";\n}\n\n.mdi-bus-articulated-end:before {\n  content: \"\\F79B\";\n}\n\n.mdi-bus-articulated-front:before {\n  content: \"\\F79C\";\n}\n\n.mdi-bus-clock:before {\n  content: \"\\F8C9\";\n}\n\n.mdi-bus-double-decker:before {\n  content: \"\\F79D\";\n}\n\n.mdi-bus-school:before {\n  content: \"\\F79E\";\n}\n\n.mdi-bus-side:before {\n  content: \"\\F79F\";\n}\n\n.mdi-cached:before {\n  content: \"\\F0E8\";\n}\n\n.mdi-cake:before {\n  content: \"\\F0E9\";\n}\n\n.mdi-cake-layered:before {\n  content: \"\\F0EA\";\n}\n\n.mdi-cake-variant:before {\n  content: \"\\F0EB\";\n}\n\n.mdi-calculator:before {\n  content: \"\\F0EC\";\n}\n\n.mdi-calendar:before {\n  content: \"\\F0ED\";\n}\n\n.mdi-calendar-blank:before {\n  content: \"\\F0EE\";\n}\n\n.mdi-calendar-check:before {\n  content: \"\\F0EF\";\n}\n\n.mdi-calendar-clock:before {\n  content: \"\\F0F0\";\n}\n\n.mdi-calendar-edit:before {\n  content: \"\\F8A6\";\n}\n\n.mdi-calendar-multiple:before {\n  content: \"\\F0F1\";\n}\n\n.mdi-calendar-multiple-check:before {\n  content: \"\\F0F2\";\n}\n\n.mdi-calendar-plus:before {\n  content: \"\\F0F3\";\n}\n\n.mdi-calendar-question:before {\n  content: \"\\F691\";\n}\n\n.mdi-calendar-range:before {\n  content: \"\\F678\";\n}\n\n.mdi-calendar-remove:before {\n  content: \"\\F0F4\";\n}\n\n.mdi-calendar-search:before {\n  content: \"\\F94B\";\n}\n\n.mdi-calendar-text:before {\n  content: \"\\F0F5\";\n}\n\n.mdi-calendar-today:before {\n  content: \"\\F0F6\";\n}\n\n.mdi-call-made:before {\n  content: \"\\F0F7\";\n}\n\n.mdi-call-merge:before {\n  content: \"\\F0F8\";\n}\n\n.mdi-call-missed:before {\n  content: \"\\F0F9\";\n}\n\n.mdi-call-received:before {\n  content: \"\\F0FA\";\n}\n\n.mdi-call-split:before {\n  content: \"\\F0FB\";\n}\n\n.mdi-camcorder:before {\n  content: \"\\F0FC\";\n}\n\n.mdi-camcorder-box:before {\n  content: \"\\F0FD\";\n}\n\n.mdi-camcorder-box-off:before {\n  content: \"\\F0FE\";\n}\n\n.mdi-camcorder-off:before {\n  content: \"\\F0FF\";\n}\n\n.mdi-camera:before {\n  content: \"\\F100\";\n}\n\n.mdi-camera-account:before {\n  content: \"\\F8CA\";\n}\n\n.mdi-camera-burst:before {\n  content: \"\\F692\";\n}\n\n.mdi-camera-enhance:before {\n  content: \"\\F101\";\n}\n\n.mdi-camera-front:before {\n  content: \"\\F102\";\n}\n\n.mdi-camera-front-variant:before {\n  content: \"\\F103\";\n}\n\n.mdi-camera-gopro:before {\n  content: \"\\F7A0\";\n}\n\n.mdi-camera-image:before {\n  content: \"\\F8CB\";\n}\n\n.mdi-camera-iris:before {\n  content: \"\\F104\";\n}\n\n.mdi-camera-metering-center:before {\n  content: \"\\F7A1\";\n}\n\n.mdi-camera-metering-matrix:before {\n  content: \"\\F7A2\";\n}\n\n.mdi-camera-metering-partial:before {\n  content: \"\\F7A3\";\n}\n\n.mdi-camera-metering-spot:before {\n  content: \"\\F7A4\";\n}\n\n.mdi-camera-off:before {\n  content: \"\\F5DF\";\n}\n\n.mdi-camera-party-mode:before {\n  content: \"\\F105\";\n}\n\n.mdi-camera-rear:before {\n  content: \"\\F106\";\n}\n\n.mdi-camera-rear-variant:before {\n  content: \"\\F107\";\n}\n\n.mdi-camera-switch:before {\n  content: \"\\F108\";\n}\n\n.mdi-camera-timer:before {\n  content: \"\\F109\";\n}\n\n.mdi-cancel:before {\n  content: \"\\F739\";\n}\n\n.mdi-candle:before {\n  content: \"\\F5E2\";\n}\n\n.mdi-candycane:before {\n  content: \"\\F10A\";\n}\n\n.mdi-cannabis:before {\n  content: \"\\F7A5\";\n}\n\n.mdi-car:before {\n  content: \"\\F10B\";\n}\n\n.mdi-car-battery:before {\n  content: \"\\F10C\";\n}\n\n.mdi-car-connected:before {\n  content: \"\\F10D\";\n}\n\n.mdi-car-convertible:before {\n  content: \"\\F7A6\";\n}\n\n.mdi-car-estate:before {\n  content: \"\\F7A7\";\n}\n\n.mdi-car-hatchback:before {\n  content: \"\\F7A8\";\n}\n\n.mdi-car-limousine:before {\n  content: \"\\F8CC\";\n}\n\n.mdi-car-pickup:before {\n  content: \"\\F7A9\";\n}\n\n.mdi-car-side:before {\n  content: \"\\F7AA\";\n}\n\n.mdi-car-sports:before {\n  content: \"\\F7AB\";\n}\n\n.mdi-car-wash:before {\n  content: \"\\F10E\";\n}\n\n.mdi-caravan:before {\n  content: \"\\F7AC\";\n}\n\n.mdi-cards:before {\n  content: \"\\F638\";\n}\n\n.mdi-cards-club:before {\n  content: \"\\F8CD\";\n}\n\n.mdi-cards-diamond:before {\n  content: \"\\F8CE\";\n}\n\n.mdi-cards-heart:before {\n  content: \"\\F8CF\";\n}\n\n.mdi-cards-outline:before {\n  content: \"\\F639\";\n}\n\n.mdi-cards-playing-outline:before {\n  content: \"\\F63A\";\n}\n\n.mdi-cards-spade:before {\n  content: \"\\F8D0\";\n}\n\n.mdi-cards-variant:before {\n  content: \"\\F6C6\";\n}\n\n.mdi-carrot:before {\n  content: \"\\F10F\";\n}\n\n.mdi-cart:before {\n  content: \"\\F110\";\n}\n\n.mdi-cart-off:before {\n  content: \"\\F66B\";\n}\n\n.mdi-cart-outline:before {\n  content: \"\\F111\";\n}\n\n.mdi-cart-plus:before {\n  content: \"\\F112\";\n}\n\n.mdi-case-sensitive-alt:before {\n  content: \"\\F113\";\n}\n\n.mdi-cash:before {\n  content: \"\\F114\";\n}\n\n.mdi-cash-100:before {\n  content: \"\\F115\";\n}\n\n.mdi-cash-multiple:before {\n  content: \"\\F116\";\n}\n\n.mdi-cash-usd:before {\n  content: \"\\F117\";\n}\n\n.mdi-cast:before {\n  content: \"\\F118\";\n}\n\n.mdi-cast-connected:before {\n  content: \"\\F119\";\n}\n\n.mdi-cast-off:before {\n  content: \"\\F789\";\n}\n\n.mdi-castle:before {\n  content: \"\\F11A\";\n}\n\n.mdi-cat:before {\n  content: \"\\F11B\";\n}\n\n.mdi-cctv:before {\n  content: \"\\F7AD\";\n}\n\n.mdi-ceiling-light:before {\n  content: \"\\F768\";\n}\n\n.mdi-cellphone:before {\n  content: \"\\F11C\";\n}\n\n.mdi-cellphone-android:before {\n  content: \"\\F11D\";\n}\n\n.mdi-cellphone-basic:before {\n  content: \"\\F11E\";\n}\n\n.mdi-cellphone-dock:before {\n  content: \"\\F11F\";\n}\n\n.mdi-cellphone-erase:before {\n  content: \"\\F94C\";\n}\n\n.mdi-cellphone-iphone:before {\n  content: \"\\F120\";\n}\n\n.mdi-cellphone-key:before {\n  content: \"\\F94D\";\n}\n\n.mdi-cellphone-link:before {\n  content: \"\\F121\";\n}\n\n.mdi-cellphone-link-off:before {\n  content: \"\\F122\";\n}\n\n.mdi-cellphone-lock:before {\n  content: \"\\F94E\";\n}\n\n.mdi-cellphone-message:before {\n  content: \"\\F8D2\";\n}\n\n.mdi-cellphone-off:before {\n  content: \"\\F94F\";\n}\n\n.mdi-cellphone-settings:before {\n  content: \"\\F123\";\n}\n\n.mdi-cellphone-settings-variant:before {\n  content: \"\\F950\";\n}\n\n.mdi-cellphone-sound:before {\n  content: \"\\F951\";\n}\n\n.mdi-cellphone-text:before {\n  content: \"\\F8D1\";\n}\n\n.mdi-cellphone-wireless:before {\n  content: \"\\F814\";\n}\n\n.mdi-certificate:before {\n  content: \"\\F124\";\n}\n\n.mdi-chair-school:before {\n  content: \"\\F125\";\n}\n\n.mdi-chart-arc:before {\n  content: \"\\F126\";\n}\n\n.mdi-chart-areaspline:before {\n  content: \"\\F127\";\n}\n\n.mdi-chart-bar:before {\n  content: \"\\F128\";\n}\n\n.mdi-chart-bar-stacked:before {\n  content: \"\\F769\";\n}\n\n.mdi-chart-bubble:before {\n  content: \"\\F5E3\";\n}\n\n.mdi-chart-donut:before {\n  content: \"\\F7AE\";\n}\n\n.mdi-chart-donut-variant:before {\n  content: \"\\F7AF\";\n}\n\n.mdi-chart-gantt:before {\n  content: \"\\F66C\";\n}\n\n.mdi-chart-histogram:before {\n  content: \"\\F129\";\n}\n\n.mdi-chart-line:before {\n  content: \"\\F12A\";\n}\n\n.mdi-chart-line-stacked:before {\n  content: \"\\F76A\";\n}\n\n.mdi-chart-line-variant:before {\n  content: \"\\F7B0\";\n}\n\n.mdi-chart-multiline:before {\n  content: \"\\F8D3\";\n}\n\n.mdi-chart-pie:before {\n  content: \"\\F12B\";\n}\n\n.mdi-chart-scatterplot-hexbin:before {\n  content: \"\\F66D\";\n}\n\n.mdi-chart-timeline:before {\n  content: \"\\F66E\";\n}\n\n.mdi-check:before {\n  content: \"\\F12C\";\n}\n\n.mdi-check-all:before {\n  content: \"\\F12D\";\n}\n\n.mdi-check-circle:before {\n  content: \"\\F5E0\";\n}\n\n.mdi-check-circle-outline:before {\n  content: \"\\F5E1\";\n}\n\n.mdi-check-outline:before {\n  content: \"\\F854\";\n}\n\n.mdi-checkbox-blank:before {\n  content: \"\\F12E\";\n}\n\n.mdi-checkbox-blank-circle:before {\n  content: \"\\F12F\";\n}\n\n.mdi-checkbox-blank-circle-outline:before {\n  content: \"\\F130\";\n}\n\n.mdi-checkbox-blank-outline:before {\n  content: \"\\F131\";\n}\n\n.mdi-checkbox-intermediate:before {\n  content: \"\\F855\";\n}\n\n.mdi-checkbox-marked:before {\n  content: \"\\F132\";\n}\n\n.mdi-checkbox-marked-circle:before {\n  content: \"\\F133\";\n}\n\n.mdi-checkbox-marked-circle-outline:before {\n  content: \"\\F134\";\n}\n\n.mdi-checkbox-marked-outline:before {\n  content: \"\\F135\";\n}\n\n.mdi-checkbox-multiple-blank:before {\n  content: \"\\F136\";\n}\n\n.mdi-checkbox-multiple-blank-circle:before {\n  content: \"\\F63B\";\n}\n\n.mdi-checkbox-multiple-blank-circle-outline:before {\n  content: \"\\F63C\";\n}\n\n.mdi-checkbox-multiple-blank-outline:before {\n  content: \"\\F137\";\n}\n\n.mdi-checkbox-multiple-marked:before {\n  content: \"\\F138\";\n}\n\n.mdi-checkbox-multiple-marked-circle:before {\n  content: \"\\F63D\";\n}\n\n.mdi-checkbox-multiple-marked-circle-outline:before {\n  content: \"\\F63E\";\n}\n\n.mdi-checkbox-multiple-marked-outline:before {\n  content: \"\\F139\";\n}\n\n.mdi-checkerboard:before {\n  content: \"\\F13A\";\n}\n\n.mdi-chemical-weapon:before {\n  content: \"\\F13B\";\n}\n\n.mdi-chess-bishop:before {\n  content: \"\\F85B\";\n}\n\n.mdi-chess-king:before {\n  content: \"\\F856\";\n}\n\n.mdi-chess-knight:before {\n  content: \"\\F857\";\n}\n\n.mdi-chess-pawn:before {\n  content: \"\\F858\";\n}\n\n.mdi-chess-queen:before {\n  content: \"\\F859\";\n}\n\n.mdi-chess-rook:before {\n  content: \"\\F85A\";\n}\n\n.mdi-chevron-double-down:before {\n  content: \"\\F13C\";\n}\n\n.mdi-chevron-double-left:before {\n  content: \"\\F13D\";\n}\n\n.mdi-chevron-double-right:before {\n  content: \"\\F13E\";\n}\n\n.mdi-chevron-double-up:before {\n  content: \"\\F13F\";\n}\n\n.mdi-chevron-down:before {\n  content: \"\\F140\";\n}\n\n.mdi-chevron-left:before {\n  content: \"\\F141\";\n}\n\n.mdi-chevron-right:before {\n  content: \"\\F142\";\n}\n\n.mdi-chevron-up:before {\n  content: \"\\F143\";\n}\n\n.mdi-chili-hot:before {\n  content: \"\\F7B1\";\n}\n\n.mdi-chili-medium:before {\n  content: \"\\F7B2\";\n}\n\n.mdi-chili-mild:before {\n  content: \"\\F7B3\";\n}\n\n.mdi-chip:before {\n  content: \"\\F61A\";\n}\n\n.mdi-christiantiy:before {\n  content: \"\\F952\";\n}\n\n.mdi-church:before {\n  content: \"\\F144\";\n}\n\n.mdi-circle:before {\n  content: \"\\F764\";\n}\n\n.mdi-circle-edit-outline:before {\n  content: \"\\F8D4\";\n}\n\n.mdi-circle-outline:before {\n  content: \"\\F765\";\n}\n\n.mdi-cisco-webex:before {\n  content: \"\\F145\";\n}\n\n.mdi-city:before {\n  content: \"\\F146\";\n}\n\n.mdi-clipboard:before {\n  content: \"\\F147\";\n}\n\n.mdi-clipboard-account:before {\n  content: \"\\F148\";\n}\n\n.mdi-clipboard-alert:before {\n  content: \"\\F149\";\n}\n\n.mdi-clipboard-arrow-down:before {\n  content: \"\\F14A\";\n}\n\n.mdi-clipboard-arrow-left:before {\n  content: \"\\F14B\";\n}\n\n.mdi-clipboard-check:before {\n  content: \"\\F14C\";\n}\n\n.mdi-clipboard-check-outline:before {\n  content: \"\\F8A7\";\n}\n\n.mdi-clipboard-flow:before {\n  content: \"\\F6C7\";\n}\n\n.mdi-clipboard-outline:before {\n  content: \"\\F14D\";\n}\n\n.mdi-clipboard-plus:before {\n  content: \"\\F750\";\n}\n\n.mdi-clipboard-pulse:before {\n  content: \"\\F85C\";\n}\n\n.mdi-clipboard-pulse-outline:before {\n  content: \"\\F85D\";\n}\n\n.mdi-clipboard-text:before {\n  content: \"\\F14E\";\n}\n\n.mdi-clippy:before {\n  content: \"\\F14F\";\n}\n\n.mdi-clock:before {\n  content: \"\\F953\";\n}\n\n.mdi-clock-alert:before {\n  content: \"\\F954\";\n}\n\n.mdi-clock-alert-outline:before {\n  content: \"\\F5CE\";\n}\n\n.mdi-clock-end:before {\n  content: \"\\F151\";\n}\n\n.mdi-clock-fast:before {\n  content: \"\\F152\";\n}\n\n.mdi-clock-in:before {\n  content: \"\\F153\";\n}\n\n.mdi-clock-out:before {\n  content: \"\\F154\";\n}\n\n.mdi-clock-outline:before {\n  content: \"\\F150\";\n}\n\n.mdi-clock-start:before {\n  content: \"\\F155\";\n}\n\n.mdi-close:before {\n  content: \"\\F156\";\n}\n\n.mdi-close-box:before {\n  content: \"\\F157\";\n}\n\n.mdi-close-box-outline:before {\n  content: \"\\F158\";\n}\n\n.mdi-close-circle:before {\n  content: \"\\F159\";\n}\n\n.mdi-close-circle-outline:before {\n  content: \"\\F15A\";\n}\n\n.mdi-close-network:before {\n  content: \"\\F15B\";\n}\n\n.mdi-close-octagon:before {\n  content: \"\\F15C\";\n}\n\n.mdi-close-octagon-outline:before {\n  content: \"\\F15D\";\n}\n\n.mdi-close-outline:before {\n  content: \"\\F6C8\";\n}\n\n.mdi-closed-caption:before {\n  content: \"\\F15E\";\n}\n\n.mdi-cloud:before {\n  content: \"\\F15F\";\n}\n\n.mdi-cloud-braces:before {\n  content: \"\\F7B4\";\n}\n\n.mdi-cloud-check:before {\n  content: \"\\F160\";\n}\n\n.mdi-cloud-circle:before {\n  content: \"\\F161\";\n}\n\n.mdi-cloud-download:before {\n  content: \"\\F162\";\n}\n\n.mdi-cloud-off-outline:before {\n  content: \"\\F164\";\n}\n\n.mdi-cloud-outline:before {\n  content: \"\\F163\";\n}\n\n.mdi-cloud-print:before {\n  content: \"\\F165\";\n}\n\n.mdi-cloud-print-outline:before {\n  content: \"\\F166\";\n}\n\n.mdi-cloud-search:before {\n  content: \"\\F955\";\n}\n\n.mdi-cloud-search-outline:before {\n  content: \"\\F956\";\n}\n\n.mdi-cloud-sync:before {\n  content: \"\\F63F\";\n}\n\n.mdi-cloud-tags:before {\n  content: \"\\F7B5\";\n}\n\n.mdi-cloud-upload:before {\n  content: \"\\F167\";\n}\n\n.mdi-clover:before {\n  content: \"\\F815\";\n}\n\n.mdi-code-array:before {\n  content: \"\\F168\";\n}\n\n.mdi-code-braces:before {\n  content: \"\\F169\";\n}\n\n.mdi-code-brackets:before {\n  content: \"\\F16A\";\n}\n\n.mdi-code-equal:before {\n  content: \"\\F16B\";\n}\n\n.mdi-code-greater-than:before {\n  content: \"\\F16C\";\n}\n\n.mdi-code-greater-than-or-equal:before {\n  content: \"\\F16D\";\n}\n\n.mdi-code-less-than:before {\n  content: \"\\F16E\";\n}\n\n.mdi-code-less-than-or-equal:before {\n  content: \"\\F16F\";\n}\n\n.mdi-code-not-equal:before {\n  content: \"\\F170\";\n}\n\n.mdi-code-not-equal-variant:before {\n  content: \"\\F171\";\n}\n\n.mdi-code-parentheses:before {\n  content: \"\\F172\";\n}\n\n.mdi-code-string:before {\n  content: \"\\F173\";\n}\n\n.mdi-code-tags:before {\n  content: \"\\F174\";\n}\n\n.mdi-code-tags-check:before {\n  content: \"\\F693\";\n}\n\n.mdi-codepen:before {\n  content: \"\\F175\";\n}\n\n.mdi-coffee:before {\n  content: \"\\F176\";\n}\n\n.mdi-coffee-outline:before {\n  content: \"\\F6C9\";\n}\n\n.mdi-coffee-to-go:before {\n  content: \"\\F177\";\n}\n\n.mdi-cogs:before {\n  content: \"\\F8D5\";\n}\n\n.mdi-coin:before {\n  content: \"\\F178\";\n}\n\n.mdi-coins:before {\n  content: \"\\F694\";\n}\n\n.mdi-collage:before {\n  content: \"\\F640\";\n}\n\n.mdi-color-helper:before {\n  content: \"\\F179\";\n}\n\n.mdi-comment:before {\n  content: \"\\F17A\";\n}\n\n.mdi-comment-account:before {\n  content: \"\\F17B\";\n}\n\n.mdi-comment-account-outline:before {\n  content: \"\\F17C\";\n}\n\n.mdi-comment-alert:before {\n  content: \"\\F17D\";\n}\n\n.mdi-comment-alert-outline:before {\n  content: \"\\F17E\";\n}\n\n.mdi-comment-check:before {\n  content: \"\\F17F\";\n}\n\n.mdi-comment-check-outline:before {\n  content: \"\\F180\";\n}\n\n.mdi-comment-multiple:before {\n  content: \"\\F85E\";\n}\n\n.mdi-comment-multiple-outline:before {\n  content: \"\\F181\";\n}\n\n.mdi-comment-outline:before {\n  content: \"\\F182\";\n}\n\n.mdi-comment-plus-outline:before {\n  content: \"\\F183\";\n}\n\n.mdi-comment-processing:before {\n  content: \"\\F184\";\n}\n\n.mdi-comment-processing-outline:before {\n  content: \"\\F185\";\n}\n\n.mdi-comment-question:before {\n  content: \"\\F816\";\n}\n\n.mdi-comment-question-outline:before {\n  content: \"\\F186\";\n}\n\n.mdi-comment-remove:before {\n  content: \"\\F5DE\";\n}\n\n.mdi-comment-remove-outline:before {\n  content: \"\\F187\";\n}\n\n.mdi-comment-text:before {\n  content: \"\\F188\";\n}\n\n.mdi-comment-text-multiple:before {\n  content: \"\\F85F\";\n}\n\n.mdi-comment-text-multiple-outline:before {\n  content: \"\\F860\";\n}\n\n.mdi-comment-text-outline:before {\n  content: \"\\F189\";\n}\n\n.mdi-compare:before {\n  content: \"\\F18A\";\n}\n\n.mdi-compass:before {\n  content: \"\\F18B\";\n}\n\n.mdi-compass-outline:before {\n  content: \"\\F18C\";\n}\n\n.mdi-console:before {\n  content: \"\\F18D\";\n}\n\n.mdi-console-line:before {\n  content: \"\\F7B6\";\n}\n\n.mdi-console-network:before {\n  content: \"\\F8A8\";\n}\n\n.mdi-contact-mail:before {\n  content: \"\\F18E\";\n}\n\n.mdi-contacts:before {\n  content: \"\\F6CA\";\n}\n\n.mdi-content-copy:before {\n  content: \"\\F18F\";\n}\n\n.mdi-content-cut:before {\n  content: \"\\F190\";\n}\n\n.mdi-content-duplicate:before {\n  content: \"\\F191\";\n}\n\n.mdi-content-paste:before {\n  content: \"\\F192\";\n}\n\n.mdi-content-save:before {\n  content: \"\\F193\";\n}\n\n.mdi-content-save-all:before {\n  content: \"\\F194\";\n}\n\n.mdi-content-save-outline:before {\n  content: \"\\F817\";\n}\n\n.mdi-content-save-settings:before {\n  content: \"\\F61B\";\n}\n\n.mdi-contrast:before {\n  content: \"\\F195\";\n}\n\n.mdi-contrast-box:before {\n  content: \"\\F196\";\n}\n\n.mdi-contrast-circle:before {\n  content: \"\\F197\";\n}\n\n.mdi-cookie:before {\n  content: \"\\F198\";\n}\n\n.mdi-copyright:before {\n  content: \"\\F5E6\";\n}\n\n.mdi-cordova:before {\n  content: \"\\F957\";\n}\n\n.mdi-corn:before {\n  content: \"\\F7B7\";\n}\n\n.mdi-counter:before {\n  content: \"\\F199\";\n}\n\n.mdi-cow:before {\n  content: \"\\F19A\";\n}\n\n.mdi-crane:before {\n  content: \"\\F861\";\n}\n\n.mdi-creation:before {\n  content: \"\\F1C9\";\n}\n\n.mdi-credit-card:before {\n  content: \"\\F19B\";\n}\n\n.mdi-credit-card-multiple:before {\n  content: \"\\F19C\";\n}\n\n.mdi-credit-card-off:before {\n  content: \"\\F5E4\";\n}\n\n.mdi-credit-card-plus:before {\n  content: \"\\F675\";\n}\n\n.mdi-credit-card-scan:before {\n  content: \"\\F19D\";\n}\n\n.mdi-credit-card-settings:before {\n  content: \"\\F8D6\";\n}\n\n.mdi-crop:before {\n  content: \"\\F19E\";\n}\n\n.mdi-crop-free:before {\n  content: \"\\F19F\";\n}\n\n.mdi-crop-landscape:before {\n  content: \"\\F1A0\";\n}\n\n.mdi-crop-portrait:before {\n  content: \"\\F1A1\";\n}\n\n.mdi-crop-rotate:before {\n  content: \"\\F695\";\n}\n\n.mdi-crop-square:before {\n  content: \"\\F1A2\";\n}\n\n.mdi-crosshairs:before {\n  content: \"\\F1A3\";\n}\n\n.mdi-crosshairs-gps:before {\n  content: \"\\F1A4\";\n}\n\n.mdi-crown:before {\n  content: \"\\F1A5\";\n}\n\n.mdi-cryengine:before {\n  content: \"\\F958\";\n}\n\n.mdi-cube:before {\n  content: \"\\F1A6\";\n}\n\n.mdi-cube-outline:before {\n  content: \"\\F1A7\";\n}\n\n.mdi-cube-send:before {\n  content: \"\\F1A8\";\n}\n\n.mdi-cube-unfolded:before {\n  content: \"\\F1A9\";\n}\n\n.mdi-cup:before {\n  content: \"\\F1AA\";\n}\n\n.mdi-cup-off:before {\n  content: \"\\F5E5\";\n}\n\n.mdi-cup-water:before {\n  content: \"\\F1AB\";\n}\n\n.mdi-cupcake:before {\n  content: \"\\F959\";\n}\n\n.mdi-curling:before {\n  content: \"\\F862\";\n}\n\n.mdi-currency-bdt:before {\n  content: \"\\F863\";\n}\n\n.mdi-currency-btc:before {\n  content: \"\\F1AC\";\n}\n\n.mdi-currency-chf:before {\n  content: \"\\F7B8\";\n}\n\n.mdi-currency-cny:before {\n  content: \"\\F7B9\";\n}\n\n.mdi-currency-eth:before {\n  content: \"\\F7BA\";\n}\n\n.mdi-currency-eur:before {\n  content: \"\\F1AD\";\n}\n\n.mdi-currency-gbp:before {\n  content: \"\\F1AE\";\n}\n\n.mdi-currency-inr:before {\n  content: \"\\F1AF\";\n}\n\n.mdi-currency-jpy:before {\n  content: \"\\F7BB\";\n}\n\n.mdi-currency-krw:before {\n  content: \"\\F7BC\";\n}\n\n.mdi-currency-kzt:before {\n  content: \"\\F864\";\n}\n\n.mdi-currency-ngn:before {\n  content: \"\\F1B0\";\n}\n\n.mdi-currency-rub:before {\n  content: \"\\F1B1\";\n}\n\n.mdi-currency-sign:before {\n  content: \"\\F7BD\";\n}\n\n.mdi-currency-try:before {\n  content: \"\\F1B2\";\n}\n\n.mdi-currency-twd:before {\n  content: \"\\F7BE\";\n}\n\n.mdi-currency-usd:before {\n  content: \"\\F1B3\";\n}\n\n.mdi-currency-usd-off:before {\n  content: \"\\F679\";\n}\n\n.mdi-current-ac:before {\n  content: \"\\F95A\";\n}\n\n.mdi-current-dc:before {\n  content: \"\\F95B\";\n}\n\n.mdi-cursor-default:before {\n  content: \"\\F1B4\";\n}\n\n.mdi-cursor-default-outline:before {\n  content: \"\\F1B5\";\n}\n\n.mdi-cursor-move:before {\n  content: \"\\F1B6\";\n}\n\n.mdi-cursor-pointer:before {\n  content: \"\\F1B7\";\n}\n\n.mdi-cursor-text:before {\n  content: \"\\F5E7\";\n}\n\n.mdi-database:before {\n  content: \"\\F1B8\";\n}\n\n.mdi-database-export:before {\n  content: \"\\F95D\";\n}\n\n.mdi-database-import:before {\n  content: \"\\F95C\";\n}\n\n.mdi-database-minus:before {\n  content: \"\\F1B9\";\n}\n\n.mdi-database-plus:before {\n  content: \"\\F1BA\";\n}\n\n.mdi-database-search:before {\n  content: \"\\F865\";\n}\n\n.mdi-death-star:before {\n  content: \"\\F8D7\";\n}\n\n.mdi-death-star-variant:before {\n  content: \"\\F8D8\";\n}\n\n.mdi-debian:before {\n  content: \"\\F8D9\";\n}\n\n.mdi-debug-step-into:before {\n  content: \"\\F1BB\";\n}\n\n.mdi-debug-step-out:before {\n  content: \"\\F1BC\";\n}\n\n.mdi-debug-step-over:before {\n  content: \"\\F1BD\";\n}\n\n.mdi-decagram:before {\n  content: \"\\F76B\";\n}\n\n.mdi-decagram-outline:before {\n  content: \"\\F76C\";\n}\n\n.mdi-decimal-decrease:before {\n  content: \"\\F1BE\";\n}\n\n.mdi-decimal-increase:before {\n  content: \"\\F1BF\";\n}\n\n.mdi-delete:before {\n  content: \"\\F1C0\";\n}\n\n.mdi-delete-circle:before {\n  content: \"\\F682\";\n}\n\n.mdi-delete-empty:before {\n  content: \"\\F6CB\";\n}\n\n.mdi-delete-forever:before {\n  content: \"\\F5E8\";\n}\n\n.mdi-delete-restore:before {\n  content: \"\\F818\";\n}\n\n.mdi-delete-sweep:before {\n  content: \"\\F5E9\";\n}\n\n.mdi-delete-variant:before {\n  content: \"\\F1C1\";\n}\n\n.mdi-delta:before {\n  content: \"\\F1C2\";\n}\n\n.mdi-desk-lamp:before {\n  content: \"\\F95E\";\n}\n\n.mdi-deskphone:before {\n  content: \"\\F1C3\";\n}\n\n.mdi-desktop-classic:before {\n  content: \"\\F7BF\";\n}\n\n.mdi-desktop-mac:before {\n  content: \"\\F1C4\";\n}\n\n.mdi-desktop-tower:before {\n  content: \"\\F1C5\";\n}\n\n.mdi-details:before {\n  content: \"\\F1C6\";\n}\n\n.mdi-developer-board:before {\n  content: \"\\F696\";\n}\n\n.mdi-deviantart:before {\n  content: \"\\F1C7\";\n}\n\n.mdi-dialpad:before {\n  content: \"\\F61C\";\n}\n\n.mdi-diamond:before {\n  content: \"\\F1C8\";\n}\n\n.mdi-dice-1:before {\n  content: \"\\F1CA\";\n}\n\n.mdi-dice-2:before {\n  content: \"\\F1CB\";\n}\n\n.mdi-dice-3:before {\n  content: \"\\F1CC\";\n}\n\n.mdi-dice-4:before {\n  content: \"\\F1CD\";\n}\n\n.mdi-dice-5:before {\n  content: \"\\F1CE\";\n}\n\n.mdi-dice-6:before {\n  content: \"\\F1CF\";\n}\n\n.mdi-dice-d10:before {\n  content: \"\\F76E\";\n}\n\n.mdi-dice-d12:before {\n  content: \"\\F866\";\n}\n\n.mdi-dice-d20:before {\n  content: \"\\F5EA\";\n}\n\n.mdi-dice-d4:before {\n  content: \"\\F5EB\";\n}\n\n.mdi-dice-d6:before {\n  content: \"\\F5EC\";\n}\n\n.mdi-dice-d8:before {\n  content: \"\\F5ED\";\n}\n\n.mdi-dice-multiple:before {\n  content: \"\\F76D\";\n}\n\n.mdi-dictionary:before {\n  content: \"\\F61D\";\n}\n\n.mdi-dip-switch:before {\n  content: \"\\F7C0\";\n}\n\n.mdi-directions:before {\n  content: \"\\F1D0\";\n}\n\n.mdi-directions-fork:before {\n  content: \"\\F641\";\n}\n\n.mdi-discord:before {\n  content: \"\\F66F\";\n}\n\n.mdi-disk:before {\n  content: \"\\F5EE\";\n}\n\n.mdi-disk-alert:before {\n  content: \"\\F1D1\";\n}\n\n.mdi-disk-player:before {\n  content: \"\\F95F\";\n}\n\n.mdi-disqus:before {\n  content: \"\\F1D2\";\n}\n\n.mdi-disqus-outline:before {\n  content: \"\\F1D3\";\n}\n\n.mdi-division:before {\n  content: \"\\F1D4\";\n}\n\n.mdi-division-box:before {\n  content: \"\\F1D5\";\n}\n\n.mdi-dna:before {\n  content: \"\\F683\";\n}\n\n.mdi-dns:before {\n  content: \"\\F1D6\";\n}\n\n.mdi-do-not-disturb:before {\n  content: \"\\F697\";\n}\n\n.mdi-do-not-disturb-off:before {\n  content: \"\\F698\";\n}\n\n.mdi-docker:before {\n  content: \"\\F867\";\n}\n\n.mdi-dolby:before {\n  content: \"\\F6B2\";\n}\n\n.mdi-domain:before {\n  content: \"\\F1D7\";\n}\n\n.mdi-donkey:before {\n  content: \"\\F7C1\";\n}\n\n.mdi-door:before {\n  content: \"\\F819\";\n}\n\n.mdi-door-closed:before {\n  content: \"\\F81A\";\n}\n\n.mdi-door-open:before {\n  content: \"\\F81B\";\n}\n\n.mdi-doorbell-video:before {\n  content: \"\\F868\";\n}\n\n.mdi-dots-horizontal:before {\n  content: \"\\F1D8\";\n}\n\n.mdi-dots-horizontal-circle:before {\n  content: \"\\F7C2\";\n}\n\n.mdi-dots-vertical:before {\n  content: \"\\F1D9\";\n}\n\n.mdi-dots-vertical-circle:before {\n  content: \"\\F7C3\";\n}\n\n.mdi-douban:before {\n  content: \"\\F699\";\n}\n\n.mdi-download:before {\n  content: \"\\F1DA\";\n}\n\n.mdi-download-network:before {\n  content: \"\\F6F3\";\n}\n\n.mdi-drag:before {\n  content: \"\\F1DB\";\n}\n\n.mdi-drag-horizontal:before {\n  content: \"\\F1DC\";\n}\n\n.mdi-drag-vertical:before {\n  content: \"\\F1DD\";\n}\n\n.mdi-drawing:before {\n  content: \"\\F1DE\";\n}\n\n.mdi-drawing-box:before {\n  content: \"\\F1DF\";\n}\n\n.mdi-dribbble:before {\n  content: \"\\F1E0\";\n}\n\n.mdi-dribbble-box:before {\n  content: \"\\F1E1\";\n}\n\n.mdi-drone:before {\n  content: \"\\F1E2\";\n}\n\n.mdi-dropbox:before {\n  content: \"\\F1E3\";\n}\n\n.mdi-drupal:before {\n  content: \"\\F1E4\";\n}\n\n.mdi-duck:before {\n  content: \"\\F1E5\";\n}\n\n.mdi-dumbbell:before {\n  content: \"\\F1E6\";\n}\n\n.mdi-ear-hearing:before {\n  content: \"\\F7C4\";\n}\n\n.mdi-earth:before {\n  content: \"\\F1E7\";\n}\n\n.mdi-earth-box:before {\n  content: \"\\F6CC\";\n}\n\n.mdi-earth-box-off:before {\n  content: \"\\F6CD\";\n}\n\n.mdi-earth-off:before {\n  content: \"\\F1E8\";\n}\n\n.mdi-edge:before {\n  content: \"\\F1E9\";\n}\n\n.mdi-eject:before {\n  content: \"\\F1EA\";\n}\n\n.mdi-elephant:before {\n  content: \"\\F7C5\";\n}\n\n.mdi-elevation-decline:before {\n  content: \"\\F1EB\";\n}\n\n.mdi-elevation-rise:before {\n  content: \"\\F1EC\";\n}\n\n.mdi-elevator:before {\n  content: \"\\F1ED\";\n}\n\n.mdi-email:before {\n  content: \"\\F1EE\";\n}\n\n.mdi-email-alert:before {\n  content: \"\\F6CE\";\n}\n\n.mdi-email-open:before {\n  content: \"\\F1EF\";\n}\n\n.mdi-email-open-outline:before {\n  content: \"\\F5EF\";\n}\n\n.mdi-email-outline:before {\n  content: \"\\F1F0\";\n}\n\n.mdi-email-search:before {\n  content: \"\\F960\";\n}\n\n.mdi-email-search-outline:before {\n  content: \"\\F961\";\n}\n\n.mdi-email-secure:before {\n  content: \"\\F1F1\";\n}\n\n.mdi-email-variant:before {\n  content: \"\\F5F0\";\n}\n\n.mdi-emby:before {\n  content: \"\\F6B3\";\n}\n\n.mdi-emoticon:before {\n  content: \"\\F1F2\";\n}\n\n.mdi-emoticon-cool:before {\n  content: \"\\F1F3\";\n}\n\n.mdi-emoticon-dead:before {\n  content: \"\\F69A\";\n}\n\n.mdi-emoticon-devil:before {\n  content: \"\\F1F4\";\n}\n\n.mdi-emoticon-excited:before {\n  content: \"\\F69B\";\n}\n\n.mdi-emoticon-happy:before {\n  content: \"\\F1F5\";\n}\n\n.mdi-emoticon-neutral:before {\n  content: \"\\F1F6\";\n}\n\n.mdi-emoticon-poop:before {\n  content: \"\\F1F7\";\n}\n\n.mdi-emoticon-sad:before {\n  content: \"\\F1F8\";\n}\n\n.mdi-emoticon-tongue:before {\n  content: \"\\F1F9\";\n}\n\n.mdi-engine:before {\n  content: \"\\F1FA\";\n}\n\n.mdi-engine-outline:before {\n  content: \"\\F1FB\";\n}\n\n.mdi-equal:before {\n  content: \"\\F1FC\";\n}\n\n.mdi-equal-box:before {\n  content: \"\\F1FD\";\n}\n\n.mdi-eraser:before {\n  content: \"\\F1FE\";\n}\n\n.mdi-eraser-variant:before {\n  content: \"\\F642\";\n}\n\n.mdi-escalator:before {\n  content: \"\\F1FF\";\n}\n\n.mdi-ethereum:before {\n  content: \"\\F869\";\n}\n\n.mdi-ethernet:before {\n  content: \"\\F200\";\n}\n\n.mdi-ethernet-cable:before {\n  content: \"\\F201\";\n}\n\n.mdi-ethernet-cable-off:before {\n  content: \"\\F202\";\n}\n\n.mdi-etsy:before {\n  content: \"\\F203\";\n}\n\n.mdi-ev-station:before {\n  content: \"\\F5F1\";\n}\n\n.mdi-eventbrite:before {\n  content: \"\\F7C6\";\n}\n\n.mdi-evernote:before {\n  content: \"\\F204\";\n}\n\n.mdi-exclamation:before {\n  content: \"\\F205\";\n}\n\n.mdi-exit-to-app:before {\n  content: \"\\F206\";\n}\n\n.mdi-exponent:before {\n  content: \"\\F962\";\n}\n\n.mdi-exponent-box:before {\n  content: \"\\F963\";\n}\n\n.mdi-export:before {\n  content: \"\\F207\";\n}\n\n.mdi-eye:before {\n  content: \"\\F208\";\n}\n\n.mdi-eye-off:before {\n  content: \"\\F209\";\n}\n\n.mdi-eye-off-outline:before {\n  content: \"\\F6D0\";\n}\n\n.mdi-eye-outline:before {\n  content: \"\\F6CF\";\n}\n\n.mdi-eye-plus:before {\n  content: \"\\F86A\";\n}\n\n.mdi-eye-plus-outline:before {\n  content: \"\\F86B\";\n}\n\n.mdi-eye-settings:before {\n  content: \"\\F86C\";\n}\n\n.mdi-eye-settings-outline:before {\n  content: \"\\F86D\";\n}\n\n.mdi-eyedropper:before {\n  content: \"\\F20A\";\n}\n\n.mdi-eyedropper-variant:before {\n  content: \"\\F20B\";\n}\n\n.mdi-face:before {\n  content: \"\\F643\";\n}\n\n.mdi-face-profile:before {\n  content: \"\\F644\";\n}\n\n.mdi-facebook:before {\n  content: \"\\F20C\";\n}\n\n.mdi-facebook-box:before {\n  content: \"\\F20D\";\n}\n\n.mdi-facebook-messenger:before {\n  content: \"\\F20E\";\n}\n\n.mdi-factory:before {\n  content: \"\\F20F\";\n}\n\n.mdi-fan:before {\n  content: \"\\F210\";\n}\n\n.mdi-fan-off:before {\n  content: \"\\F81C\";\n}\n\n.mdi-fast-forward:before {\n  content: \"\\F211\";\n}\n\n.mdi-fast-forward-outline:before {\n  content: \"\\F6D1\";\n}\n\n.mdi-fax:before {\n  content: \"\\F212\";\n}\n\n.mdi-feather:before {\n  content: \"\\F6D2\";\n}\n\n.mdi-fedora:before {\n  content: \"\\F8DA\";\n}\n\n.mdi-ferry:before {\n  content: \"\\F213\";\n}\n\n.mdi-file:before {\n  content: \"\\F214\";\n}\n\n.mdi-file-account:before {\n  content: \"\\F73A\";\n}\n\n.mdi-file-chart:before {\n  content: \"\\F215\";\n}\n\n.mdi-file-check:before {\n  content: \"\\F216\";\n}\n\n.mdi-file-cloud:before {\n  content: \"\\F217\";\n}\n\n.mdi-file-compare:before {\n  content: \"\\F8A9\";\n}\n\n.mdi-file-delimited:before {\n  content: \"\\F218\";\n}\n\n.mdi-file-document:before {\n  content: \"\\F219\";\n}\n\n.mdi-file-document-box:before {\n  content: \"\\F21A\";\n}\n\n.mdi-file-download:before {\n  content: \"\\F964\";\n}\n\n.mdi-file-download-outline:before {\n  content: \"\\F965\";\n}\n\n.mdi-file-excel:before {\n  content: \"\\F21B\";\n}\n\n.mdi-file-excel-box:before {\n  content: \"\\F21C\";\n}\n\n.mdi-file-export:before {\n  content: \"\\F21D\";\n}\n\n.mdi-file-find:before {\n  content: \"\\F21E\";\n}\n\n.mdi-file-hidden:before {\n  content: \"\\F613\";\n}\n\n.mdi-file-image:before {\n  content: \"\\F21F\";\n}\n\n.mdi-file-import:before {\n  content: \"\\F220\";\n}\n\n.mdi-file-lock:before {\n  content: \"\\F221\";\n}\n\n.mdi-file-multiple:before {\n  content: \"\\F222\";\n}\n\n.mdi-file-music:before {\n  content: \"\\F223\";\n}\n\n.mdi-file-outline:before {\n  content: \"\\F224\";\n}\n\n.mdi-file-pdf:before {\n  content: \"\\F225\";\n}\n\n.mdi-file-pdf-box:before {\n  content: \"\\F226\";\n}\n\n.mdi-file-percent:before {\n  content: \"\\F81D\";\n}\n\n.mdi-file-plus:before {\n  content: \"\\F751\";\n}\n\n.mdi-file-powerpoint:before {\n  content: \"\\F227\";\n}\n\n.mdi-file-powerpoint-box:before {\n  content: \"\\F228\";\n}\n\n.mdi-file-presentation-box:before {\n  content: \"\\F229\";\n}\n\n.mdi-file-question:before {\n  content: \"\\F86E\";\n}\n\n.mdi-file-restore:before {\n  content: \"\\F670\";\n}\n\n.mdi-file-send:before {\n  content: \"\\F22A\";\n}\n\n.mdi-file-tree:before {\n  content: \"\\F645\";\n}\n\n.mdi-file-undo:before {\n  content: \"\\F8DB\";\n}\n\n.mdi-file-video:before {\n  content: \"\\F22B\";\n}\n\n.mdi-file-word:before {\n  content: \"\\F22C\";\n}\n\n.mdi-file-word-box:before {\n  content: \"\\F22D\";\n}\n\n.mdi-file-xml:before {\n  content: \"\\F22E\";\n}\n\n.mdi-film:before {\n  content: \"\\F22F\";\n}\n\n.mdi-filmstrip:before {\n  content: \"\\F230\";\n}\n\n.mdi-filmstrip-off:before {\n  content: \"\\F231\";\n}\n\n.mdi-filter:before {\n  content: \"\\F232\";\n}\n\n.mdi-filter-outline:before {\n  content: \"\\F233\";\n}\n\n.mdi-filter-remove:before {\n  content: \"\\F234\";\n}\n\n.mdi-filter-remove-outline:before {\n  content: \"\\F235\";\n}\n\n.mdi-filter-variant:before {\n  content: \"\\F236\";\n}\n\n.mdi-finance:before {\n  content: \"\\F81E\";\n}\n\n.mdi-find-replace:before {\n  content: \"\\F6D3\";\n}\n\n.mdi-fingerprint:before {\n  content: \"\\F237\";\n}\n\n.mdi-fire:before {\n  content: \"\\F238\";\n}\n\n.mdi-fire-truck:before {\n  content: \"\\F8AA\";\n}\n\n.mdi-firebase:before {\n  content: \"\\F966\";\n}\n\n.mdi-firefox:before {\n  content: \"\\F239\";\n}\n\n.mdi-fish:before {\n  content: \"\\F23A\";\n}\n\n.mdi-flag:before {\n  content: \"\\F23B\";\n}\n\n.mdi-flag-checkered:before {\n  content: \"\\F23C\";\n}\n\n.mdi-flag-outline:before {\n  content: \"\\F23D\";\n}\n\n.mdi-flag-triangle:before {\n  content: \"\\F23F\";\n}\n\n.mdi-flag-variant:before {\n  content: \"\\F240\";\n}\n\n.mdi-flag-variant-outline:before {\n  content: \"\\F23E\";\n}\n\n.mdi-flash:before {\n  content: \"\\F241\";\n}\n\n.mdi-flash-auto:before {\n  content: \"\\F242\";\n}\n\n.mdi-flash-circle:before {\n  content: \"\\F81F\";\n}\n\n.mdi-flash-off:before {\n  content: \"\\F243\";\n}\n\n.mdi-flash-outline:before {\n  content: \"\\F6D4\";\n}\n\n.mdi-flash-red-eye:before {\n  content: \"\\F67A\";\n}\n\n.mdi-flashlight:before {\n  content: \"\\F244\";\n}\n\n.mdi-flashlight-off:before {\n  content: \"\\F245\";\n}\n\n.mdi-flask:before {\n  content: \"\\F093\";\n}\n\n.mdi-flask-empty:before {\n  content: \"\\F094\";\n}\n\n.mdi-flask-empty-outline:before {\n  content: \"\\F095\";\n}\n\n.mdi-flask-outline:before {\n  content: \"\\F096\";\n}\n\n.mdi-flattr:before {\n  content: \"\\F246\";\n}\n\n.mdi-flip-to-back:before {\n  content: \"\\F247\";\n}\n\n.mdi-flip-to-front:before {\n  content: \"\\F248\";\n}\n\n.mdi-floor-lamp:before {\n  content: \"\\F8DC\";\n}\n\n.mdi-floor-plan:before {\n  content: \"\\F820\";\n}\n\n.mdi-floppy:before {\n  content: \"\\F249\";\n}\n\n.mdi-flower:before {\n  content: \"\\F24A\";\n}\n\n.mdi-folder:before {\n  content: \"\\F24B\";\n}\n\n.mdi-folder-account:before {\n  content: \"\\F24C\";\n}\n\n.mdi-folder-download:before {\n  content: \"\\F24D\";\n}\n\n.mdi-folder-edit:before {\n  content: \"\\F8DD\";\n}\n\n.mdi-folder-google-drive:before {\n  content: \"\\F24E\";\n}\n\n.mdi-folder-image:before {\n  content: \"\\F24F\";\n}\n\n.mdi-folder-key:before {\n  content: \"\\F8AB\";\n}\n\n.mdi-folder-key-network:before {\n  content: \"\\F8AC\";\n}\n\n.mdi-folder-lock:before {\n  content: \"\\F250\";\n}\n\n.mdi-folder-lock-open:before {\n  content: \"\\F251\";\n}\n\n.mdi-folder-move:before {\n  content: \"\\F252\";\n}\n\n.mdi-folder-multiple:before {\n  content: \"\\F253\";\n}\n\n.mdi-folder-multiple-image:before {\n  content: \"\\F254\";\n}\n\n.mdi-folder-multiple-outline:before {\n  content: \"\\F255\";\n}\n\n.mdi-folder-network:before {\n  content: \"\\F86F\";\n}\n\n.mdi-folder-open:before {\n  content: \"\\F76F\";\n}\n\n.mdi-folder-outline:before {\n  content: \"\\F256\";\n}\n\n.mdi-folder-plus:before {\n  content: \"\\F257\";\n}\n\n.mdi-folder-remove:before {\n  content: \"\\F258\";\n}\n\n.mdi-folder-search:before {\n  content: \"\\F967\";\n}\n\n.mdi-folder-search-outline:before {\n  content: \"\\F968\";\n}\n\n.mdi-folder-star:before {\n  content: \"\\F69C\";\n}\n\n.mdi-folder-upload:before {\n  content: \"\\F259\";\n}\n\n.mdi-font-awesome:before {\n  content: \"\\F03A\";\n}\n\n.mdi-food:before {\n  content: \"\\F25A\";\n}\n\n.mdi-food-apple:before {\n  content: \"\\F25B\";\n}\n\n.mdi-food-croissant:before {\n  content: \"\\F7C7\";\n}\n\n.mdi-food-fork-drink:before {\n  content: \"\\F5F2\";\n}\n\n.mdi-food-off:before {\n  content: \"\\F5F3\";\n}\n\n.mdi-food-variant:before {\n  content: \"\\F25C\";\n}\n\n.mdi-football:before {\n  content: \"\\F25D\";\n}\n\n.mdi-football-australian:before {\n  content: \"\\F25E\";\n}\n\n.mdi-football-helmet:before {\n  content: \"\\F25F\";\n}\n\n.mdi-forklift:before {\n  content: \"\\F7C8\";\n}\n\n.mdi-format-align-bottom:before {\n  content: \"\\F752\";\n}\n\n.mdi-format-align-center:before {\n  content: \"\\F260\";\n}\n\n.mdi-format-align-justify:before {\n  content: \"\\F261\";\n}\n\n.mdi-format-align-left:before {\n  content: \"\\F262\";\n}\n\n.mdi-format-align-middle:before {\n  content: \"\\F753\";\n}\n\n.mdi-format-align-right:before {\n  content: \"\\F263\";\n}\n\n.mdi-format-align-top:before {\n  content: \"\\F754\";\n}\n\n.mdi-format-annotation-plus:before {\n  content: \"\\F646\";\n}\n\n.mdi-format-bold:before {\n  content: \"\\F264\";\n}\n\n.mdi-format-clear:before {\n  content: \"\\F265\";\n}\n\n.mdi-format-color-fill:before {\n  content: \"\\F266\";\n}\n\n.mdi-format-color-text:before {\n  content: \"\\F69D\";\n}\n\n.mdi-format-columns:before {\n  content: \"\\F8DE\";\n}\n\n.mdi-format-float-center:before {\n  content: \"\\F267\";\n}\n\n.mdi-format-float-left:before {\n  content: \"\\F268\";\n}\n\n.mdi-format-float-none:before {\n  content: \"\\F269\";\n}\n\n.mdi-format-float-right:before {\n  content: \"\\F26A\";\n}\n\n.mdi-format-font:before {\n  content: \"\\F6D5\";\n}\n\n.mdi-format-header-1:before {\n  content: \"\\F26B\";\n}\n\n.mdi-format-header-2:before {\n  content: \"\\F26C\";\n}\n\n.mdi-format-header-3:before {\n  content: \"\\F26D\";\n}\n\n.mdi-format-header-4:before {\n  content: \"\\F26E\";\n}\n\n.mdi-format-header-5:before {\n  content: \"\\F26F\";\n}\n\n.mdi-format-header-6:before {\n  content: \"\\F270\";\n}\n\n.mdi-format-header-decrease:before {\n  content: \"\\F271\";\n}\n\n.mdi-format-header-equal:before {\n  content: \"\\F272\";\n}\n\n.mdi-format-header-increase:before {\n  content: \"\\F273\";\n}\n\n.mdi-format-header-pound:before {\n  content: \"\\F274\";\n}\n\n.mdi-format-horizontal-align-center:before {\n  content: \"\\F61E\";\n}\n\n.mdi-format-horizontal-align-left:before {\n  content: \"\\F61F\";\n}\n\n.mdi-format-horizontal-align-right:before {\n  content: \"\\F620\";\n}\n\n.mdi-format-indent-decrease:before {\n  content: \"\\F275\";\n}\n\n.mdi-format-indent-increase:before {\n  content: \"\\F276\";\n}\n\n.mdi-format-italic:before {\n  content: \"\\F277\";\n}\n\n.mdi-format-line-spacing:before {\n  content: \"\\F278\";\n}\n\n.mdi-format-line-style:before {\n  content: \"\\F5C8\";\n}\n\n.mdi-format-line-weight:before {\n  content: \"\\F5C9\";\n}\n\n.mdi-format-list-bulleted:before {\n  content: \"\\F279\";\n}\n\n.mdi-format-list-bulleted-type:before {\n  content: \"\\F27A\";\n}\n\n.mdi-format-list-checkbox:before {\n  content: \"\\F969\";\n}\n\n.mdi-format-list-checks:before {\n  content: \"\\F755\";\n}\n\n.mdi-format-list-numbers:before {\n  content: \"\\F27B\";\n}\n\n.mdi-format-page-break:before {\n  content: \"\\F6D6\";\n}\n\n.mdi-format-paint:before {\n  content: \"\\F27C\";\n}\n\n.mdi-format-paragraph:before {\n  content: \"\\F27D\";\n}\n\n.mdi-format-pilcrow:before {\n  content: \"\\F6D7\";\n}\n\n.mdi-format-quote-close:before {\n  content: \"\\F27E\";\n}\n\n.mdi-format-quote-open:before {\n  content: \"\\F756\";\n}\n\n.mdi-format-rotate-90:before {\n  content: \"\\F6A9\";\n}\n\n.mdi-format-section:before {\n  content: \"\\F69E\";\n}\n\n.mdi-format-size:before {\n  content: \"\\F27F\";\n}\n\n.mdi-format-strikethrough:before {\n  content: \"\\F280\";\n}\n\n.mdi-format-strikethrough-variant:before {\n  content: \"\\F281\";\n}\n\n.mdi-format-subscript:before {\n  content: \"\\F282\";\n}\n\n.mdi-format-superscript:before {\n  content: \"\\F283\";\n}\n\n.mdi-format-text:before {\n  content: \"\\F284\";\n}\n\n.mdi-format-textdirection-l-to-r:before {\n  content: \"\\F285\";\n}\n\n.mdi-format-textdirection-r-to-l:before {\n  content: \"\\F286\";\n}\n\n.mdi-format-title:before {\n  content: \"\\F5F4\";\n}\n\n.mdi-format-underline:before {\n  content: \"\\F287\";\n}\n\n.mdi-format-vertical-align-bottom:before {\n  content: \"\\F621\";\n}\n\n.mdi-format-vertical-align-center:before {\n  content: \"\\F622\";\n}\n\n.mdi-format-vertical-align-top:before {\n  content: \"\\F623\";\n}\n\n.mdi-format-wrap-inline:before {\n  content: \"\\F288\";\n}\n\n.mdi-format-wrap-square:before {\n  content: \"\\F289\";\n}\n\n.mdi-format-wrap-tight:before {\n  content: \"\\F28A\";\n}\n\n.mdi-format-wrap-top-bottom:before {\n  content: \"\\F28B\";\n}\n\n.mdi-forum:before {\n  content: \"\\F28C\";\n}\n\n.mdi-forum-outline:before {\n  content: \"\\F821\";\n}\n\n.mdi-forward:before {\n  content: \"\\F28D\";\n}\n\n.mdi-fountain:before {\n  content: \"\\F96A\";\n}\n\n.mdi-foursquare:before {\n  content: \"\\F28E\";\n}\n\n.mdi-freebsd:before {\n  content: \"\\F8DF\";\n}\n\n.mdi-fridge:before {\n  content: \"\\F28F\";\n}\n\n.mdi-fridge-filled:before {\n  content: \"\\F290\";\n}\n\n.mdi-fridge-filled-bottom:before {\n  content: \"\\F291\";\n}\n\n.mdi-fridge-filled-top:before {\n  content: \"\\F292\";\n}\n\n.mdi-fuel:before {\n  content: \"\\F7C9\";\n}\n\n.mdi-fullscreen:before {\n  content: \"\\F293\";\n}\n\n.mdi-fullscreen-exit:before {\n  content: \"\\F294\";\n}\n\n.mdi-function:before {\n  content: \"\\F295\";\n}\n\n.mdi-function-variant:before {\n  content: \"\\F870\";\n}\n\n.mdi-gamepad:before {\n  content: \"\\F296\";\n}\n\n.mdi-gamepad-variant:before {\n  content: \"\\F297\";\n}\n\n.mdi-garage:before {\n  content: \"\\F6D8\";\n}\n\n.mdi-garage-alert:before {\n  content: \"\\F871\";\n}\n\n.mdi-garage-open:before {\n  content: \"\\F6D9\";\n}\n\n.mdi-gas-cylinder:before {\n  content: \"\\F647\";\n}\n\n.mdi-gas-station:before {\n  content: \"\\F298\";\n}\n\n.mdi-gate:before {\n  content: \"\\F299\";\n}\n\n.mdi-gate-and:before {\n  content: \"\\F8E0\";\n}\n\n.mdi-gate-nand:before {\n  content: \"\\F8E1\";\n}\n\n.mdi-gate-nor:before {\n  content: \"\\F8E2\";\n}\n\n.mdi-gate-not:before {\n  content: \"\\F8E3\";\n}\n\n.mdi-gate-or:before {\n  content: \"\\F8E4\";\n}\n\n.mdi-gate-xnor:before {\n  content: \"\\F8E5\";\n}\n\n.mdi-gate-xor:before {\n  content: \"\\F8E6\";\n}\n\n.mdi-gauge:before {\n  content: \"\\F29A\";\n}\n\n.mdi-gauge-empty:before {\n  content: \"\\F872\";\n}\n\n.mdi-gauge-full:before {\n  content: \"\\F873\";\n}\n\n.mdi-gauge-low:before {\n  content: \"\\F874\";\n}\n\n.mdi-gavel:before {\n  content: \"\\F29B\";\n}\n\n.mdi-gender-female:before {\n  content: \"\\F29C\";\n}\n\n.mdi-gender-male:before {\n  content: \"\\F29D\";\n}\n\n.mdi-gender-male-female:before {\n  content: \"\\F29E\";\n}\n\n.mdi-gender-transgender:before {\n  content: \"\\F29F\";\n}\n\n.mdi-gentoo:before {\n  content: \"\\F8E7\";\n}\n\n.mdi-gesture:before {\n  content: \"\\F7CA\";\n}\n\n.mdi-gesture-double-tap:before {\n  content: \"\\F73B\";\n}\n\n.mdi-gesture-swipe-down:before {\n  content: \"\\F73C\";\n}\n\n.mdi-gesture-swipe-left:before {\n  content: \"\\F73D\";\n}\n\n.mdi-gesture-swipe-right:before {\n  content: \"\\F73E\";\n}\n\n.mdi-gesture-swipe-up:before {\n  content: \"\\F73F\";\n}\n\n.mdi-gesture-tap:before {\n  content: \"\\F740\";\n}\n\n.mdi-gesture-two-double-tap:before {\n  content: \"\\F741\";\n}\n\n.mdi-gesture-two-tap:before {\n  content: \"\\F742\";\n}\n\n.mdi-ghost:before {\n  content: \"\\F2A0\";\n}\n\n.mdi-gift:before {\n  content: \"\\F2A1\";\n}\n\n.mdi-git:before {\n  content: \"\\F2A2\";\n}\n\n.mdi-github-box:before {\n  content: \"\\F2A3\";\n}\n\n.mdi-github-circle:before {\n  content: \"\\F2A4\";\n}\n\n.mdi-github-face:before {\n  content: \"\\F6DA\";\n}\n\n.mdi-glass-cocktail:before {\n  content: \"\\F356\";\n}\n\n.mdi-glass-flute:before {\n  content: \"\\F2A5\";\n}\n\n.mdi-glass-mug:before {\n  content: \"\\F2A6\";\n}\n\n.mdi-glass-stange:before {\n  content: \"\\F2A7\";\n}\n\n.mdi-glass-tulip:before {\n  content: \"\\F2A8\";\n}\n\n.mdi-glass-wine:before {\n  content: \"\\F875\";\n}\n\n.mdi-glassdoor:before {\n  content: \"\\F2A9\";\n}\n\n.mdi-glasses:before {\n  content: \"\\F2AA\";\n}\n\n.mdi-globe-model:before {\n  content: \"\\F8E8\";\n}\n\n.mdi-gmail:before {\n  content: \"\\F2AB\";\n}\n\n.mdi-gnome:before {\n  content: \"\\F2AC\";\n}\n\n.mdi-golf:before {\n  content: \"\\F822\";\n}\n\n.mdi-gondola:before {\n  content: \"\\F685\";\n}\n\n.mdi-google:before {\n  content: \"\\F2AD\";\n}\n\n.mdi-google-allo:before {\n  content: \"\\F801\";\n}\n\n.mdi-google-analytics:before {\n  content: \"\\F7CB\";\n}\n\n.mdi-google-assistant:before {\n  content: \"\\F7CC\";\n}\n\n.mdi-google-cardboard:before {\n  content: \"\\F2AE\";\n}\n\n.mdi-google-chrome:before {\n  content: \"\\F2AF\";\n}\n\n.mdi-google-circles:before {\n  content: \"\\F2B0\";\n}\n\n.mdi-google-circles-communities:before {\n  content: \"\\F2B1\";\n}\n\n.mdi-google-circles-extended:before {\n  content: \"\\F2B2\";\n}\n\n.mdi-google-circles-group:before {\n  content: \"\\F2B3\";\n}\n\n.mdi-google-controller:before {\n  content: \"\\F2B4\";\n}\n\n.mdi-google-controller-off:before {\n  content: \"\\F2B5\";\n}\n\n.mdi-google-drive:before {\n  content: \"\\F2B6\";\n}\n\n.mdi-google-earth:before {\n  content: \"\\F2B7\";\n}\n\n.mdi-google-fit:before {\n  content: \"\\F96B\";\n}\n\n.mdi-google-glass:before {\n  content: \"\\F2B8\";\n}\n\n.mdi-google-hangouts:before {\n  content: \"\\F2C9\";\n}\n\n.mdi-google-home:before {\n  content: \"\\F823\";\n}\n\n.mdi-google-keep:before {\n  content: \"\\F6DB\";\n}\n\n.mdi-google-maps:before {\n  content: \"\\F5F5\";\n}\n\n.mdi-google-nearby:before {\n  content: \"\\F2B9\";\n}\n\n.mdi-google-pages:before {\n  content: \"\\F2BA\";\n}\n\n.mdi-google-photos:before {\n  content: \"\\F6DC\";\n}\n\n.mdi-google-physical-web:before {\n  content: \"\\F2BB\";\n}\n\n.mdi-google-play:before {\n  content: \"\\F2BC\";\n}\n\n.mdi-google-plus:before {\n  content: \"\\F2BD\";\n}\n\n.mdi-google-plus-box:before {\n  content: \"\\F2BE\";\n}\n\n.mdi-google-translate:before {\n  content: \"\\F2BF\";\n}\n\n.mdi-google-wallet:before {\n  content: \"\\F2C0\";\n}\n\n.mdi-gpu:before {\n  content: \"\\F8AD\";\n}\n\n.mdi-gradient:before {\n  content: \"\\F69F\";\n}\n\n.mdi-graphql:before {\n  content: \"\\F876\";\n}\n\n.mdi-grease-pencil:before {\n  content: \"\\F648\";\n}\n\n.mdi-greater-than:before {\n  content: \"\\F96C\";\n}\n\n.mdi-greater-than-or-equal:before {\n  content: \"\\F96D\";\n}\n\n.mdi-grid:before {\n  content: \"\\F2C1\";\n}\n\n.mdi-grid-large:before {\n  content: \"\\F757\";\n}\n\n.mdi-grid-off:before {\n  content: \"\\F2C2\";\n}\n\n.mdi-group:before {\n  content: \"\\F2C3\";\n}\n\n.mdi-guitar-acoustic:before {\n  content: \"\\F770\";\n}\n\n.mdi-guitar-electric:before {\n  content: \"\\F2C4\";\n}\n\n.mdi-guitar-pick:before {\n  content: \"\\F2C5\";\n}\n\n.mdi-guitar-pick-outline:before {\n  content: \"\\F2C6\";\n}\n\n.mdi-guy-fawkes-mask:before {\n  content: \"\\F824\";\n}\n\n.mdi-hackernews:before {\n  content: \"\\F624\";\n}\n\n.mdi-hamburger:before {\n  content: \"\\F684\";\n}\n\n.mdi-hammer:before {\n  content: \"\\F8E9\";\n}\n\n.mdi-hand-pointing-right:before {\n  content: \"\\F2C7\";\n}\n\n.mdi-hanger:before {\n  content: \"\\F2C8\";\n}\n\n.mdi-hard-hat:before {\n  content: \"\\F96E\";\n}\n\n.mdi-harddisk:before {\n  content: \"\\F2CA\";\n}\n\n.mdi-headphones:before {\n  content: \"\\F2CB\";\n}\n\n.mdi-headphones-bluetooth:before {\n  content: \"\\F96F\";\n}\n\n.mdi-headphones-box:before {\n  content: \"\\F2CC\";\n}\n\n.mdi-headphones-off:before {\n  content: \"\\F7CD\";\n}\n\n.mdi-headphones-settings:before {\n  content: \"\\F2CD\";\n}\n\n.mdi-headset:before {\n  content: \"\\F2CE\";\n}\n\n.mdi-headset-dock:before {\n  content: \"\\F2CF\";\n}\n\n.mdi-headset-off:before {\n  content: \"\\F2D0\";\n}\n\n.mdi-heart:before {\n  content: \"\\F2D1\";\n}\n\n.mdi-heart-box:before {\n  content: \"\\F2D2\";\n}\n\n.mdi-heart-box-outline:before {\n  content: \"\\F2D3\";\n}\n\n.mdi-heart-broken:before {\n  content: \"\\F2D4\";\n}\n\n.mdi-heart-circle:before {\n  content: \"\\F970\";\n}\n\n.mdi-heart-circle-outline:before {\n  content: \"\\F971\";\n}\n\n.mdi-heart-half:before {\n  content: \"\\F6DE\";\n}\n\n.mdi-heart-half-full:before {\n  content: \"\\F6DD\";\n}\n\n.mdi-heart-half-outline:before {\n  content: \"\\F6DF\";\n}\n\n.mdi-heart-off:before {\n  content: \"\\F758\";\n}\n\n.mdi-heart-outline:before {\n  content: \"\\F2D5\";\n}\n\n.mdi-heart-pulse:before {\n  content: \"\\F5F6\";\n}\n\n.mdi-help:before {\n  content: \"\\F2D6\";\n}\n\n.mdi-help-box:before {\n  content: \"\\F78A\";\n}\n\n.mdi-help-circle:before {\n  content: \"\\F2D7\";\n}\n\n.mdi-help-circle-outline:before {\n  content: \"\\F625\";\n}\n\n.mdi-help-network:before {\n  content: \"\\F6F4\";\n}\n\n.mdi-hexagon:before {\n  content: \"\\F2D8\";\n}\n\n.mdi-hexagon-multiple:before {\n  content: \"\\F6E0\";\n}\n\n.mdi-hexagon-outline:before {\n  content: \"\\F2D9\";\n}\n\n.mdi-high-definition:before {\n  content: \"\\F7CE\";\n}\n\n.mdi-high-definition-box:before {\n  content: \"\\F877\";\n}\n\n.mdi-highway:before {\n  content: \"\\F5F7\";\n}\n\n.mdi-hinduism:before {\n  content: \"\\F972\";\n}\n\n.mdi-history:before {\n  content: \"\\F2DA\";\n}\n\n.mdi-hockey-puck:before {\n  content: \"\\F878\";\n}\n\n.mdi-hockey-sticks:before {\n  content: \"\\F879\";\n}\n\n.mdi-hololens:before {\n  content: \"\\F2DB\";\n}\n\n.mdi-home:before {\n  content: \"\\F2DC\";\n}\n\n.mdi-home-account:before {\n  content: \"\\F825\";\n}\n\n.mdi-home-alert:before {\n  content: \"\\F87A\";\n}\n\n.mdi-home-assistant:before {\n  content: \"\\F7CF\";\n}\n\n.mdi-home-automation:before {\n  content: \"\\F7D0\";\n}\n\n.mdi-home-circle:before {\n  content: \"\\F7D1\";\n}\n\n.mdi-home-currency-usd:before {\n  content: \"\\F8AE\";\n}\n\n.mdi-home-heart:before {\n  content: \"\\F826\";\n}\n\n.mdi-home-lock:before {\n  content: \"\\F8EA\";\n}\n\n.mdi-home-lock-open:before {\n  content: \"\\F8EB\";\n}\n\n.mdi-home-map-marker:before {\n  content: \"\\F5F8\";\n}\n\n.mdi-home-minus:before {\n  content: \"\\F973\";\n}\n\n.mdi-home-modern:before {\n  content: \"\\F2DD\";\n}\n\n.mdi-home-outline:before {\n  content: \"\\F6A0\";\n}\n\n.mdi-home-plus:before {\n  content: \"\\F974\";\n}\n\n.mdi-home-variant:before {\n  content: \"\\F2DE\";\n}\n\n.mdi-hook:before {\n  content: \"\\F6E1\";\n}\n\n.mdi-hook-off:before {\n  content: \"\\F6E2\";\n}\n\n.mdi-hops:before {\n  content: \"\\F2DF\";\n}\n\n.mdi-hospital:before {\n  content: \"\\F2E0\";\n}\n\n.mdi-hospital-building:before {\n  content: \"\\F2E1\";\n}\n\n.mdi-hospital-marker:before {\n  content: \"\\F2E2\";\n}\n\n.mdi-hot-tub:before {\n  content: \"\\F827\";\n}\n\n.mdi-hotel:before {\n  content: \"\\F2E3\";\n}\n\n.mdi-houzz:before {\n  content: \"\\F2E4\";\n}\n\n.mdi-houzz-box:before {\n  content: \"\\F2E5\";\n}\n\n.mdi-hulu:before {\n  content: \"\\F828\";\n}\n\n.mdi-human:before {\n  content: \"\\F2E6\";\n}\n\n.mdi-human-child:before {\n  content: \"\\F2E7\";\n}\n\n.mdi-human-female:before {\n  content: \"\\F649\";\n}\n\n.mdi-human-greeting:before {\n  content: \"\\F64A\";\n}\n\n.mdi-human-handsdown:before {\n  content: \"\\F64B\";\n}\n\n.mdi-human-handsup:before {\n  content: \"\\F64C\";\n}\n\n.mdi-human-male:before {\n  content: \"\\F64D\";\n}\n\n.mdi-human-male-female:before {\n  content: \"\\F2E8\";\n}\n\n.mdi-human-pregnant:before {\n  content: \"\\F5CF\";\n}\n\n.mdi-humble-bundle:before {\n  content: \"\\F743\";\n}\n\n.mdi-ice-cream:before {\n  content: \"\\F829\";\n}\n\n.mdi-image:before {\n  content: \"\\F2E9\";\n}\n\n.mdi-image-album:before {\n  content: \"\\F2EA\";\n}\n\n.mdi-image-area:before {\n  content: \"\\F2EB\";\n}\n\n.mdi-image-area-close:before {\n  content: \"\\F2EC\";\n}\n\n.mdi-image-broken:before {\n  content: \"\\F2ED\";\n}\n\n.mdi-image-broken-variant:before {\n  content: \"\\F2EE\";\n}\n\n.mdi-image-filter:before {\n  content: \"\\F2EF\";\n}\n\n.mdi-image-filter-black-white:before {\n  content: \"\\F2F0\";\n}\n\n.mdi-image-filter-center-focus:before {\n  content: \"\\F2F1\";\n}\n\n.mdi-image-filter-center-focus-weak:before {\n  content: \"\\F2F2\";\n}\n\n.mdi-image-filter-drama:before {\n  content: \"\\F2F3\";\n}\n\n.mdi-image-filter-frames:before {\n  content: \"\\F2F4\";\n}\n\n.mdi-image-filter-hdr:before {\n  content: \"\\F2F5\";\n}\n\n.mdi-image-filter-none:before {\n  content: \"\\F2F6\";\n}\n\n.mdi-image-filter-tilt-shift:before {\n  content: \"\\F2F7\";\n}\n\n.mdi-image-filter-vintage:before {\n  content: \"\\F2F8\";\n}\n\n.mdi-image-multiple:before {\n  content: \"\\F2F9\";\n}\n\n.mdi-image-off:before {\n  content: \"\\F82A\";\n}\n\n.mdi-image-outline:before {\n  content: \"\\F975\";\n}\n\n.mdi-image-plus:before {\n  content: \"\\F87B\";\n}\n\n.mdi-image-search:before {\n  content: \"\\F976\";\n}\n\n.mdi-image-search-outline:before {\n  content: \"\\F977\";\n}\n\n.mdi-import:before {\n  content: \"\\F2FA\";\n}\n\n.mdi-inbox:before {\n  content: \"\\F686\";\n}\n\n.mdi-inbox-arrow-down:before {\n  content: \"\\F2FB\";\n}\n\n.mdi-inbox-arrow-up:before {\n  content: \"\\F3D1\";\n}\n\n.mdi-inbox-multiple:before {\n  content: \"\\F8AF\";\n}\n\n.mdi-incognito:before {\n  content: \"\\F5F9\";\n}\n\n.mdi-infinity:before {\n  content: \"\\F6E3\";\n}\n\n.mdi-information:before {\n  content: \"\\F2FC\";\n}\n\n.mdi-information-outline:before {\n  content: \"\\F2FD\";\n}\n\n.mdi-information-variant:before {\n  content: \"\\F64E\";\n}\n\n.mdi-instagram:before {\n  content: \"\\F2FE\";\n}\n\n.mdi-instapaper:before {\n  content: \"\\F2FF\";\n}\n\n.mdi-internet-explorer:before {\n  content: \"\\F300\";\n}\n\n.mdi-invert-colors:before {\n  content: \"\\F301\";\n}\n\n.mdi-islam:before {\n  content: \"\\F978\";\n}\n\n.mdi-itunes:before {\n  content: \"\\F676\";\n}\n\n.mdi-jeepney:before {\n  content: \"\\F302\";\n}\n\n.mdi-jira:before {\n  content: \"\\F303\";\n}\n\n.mdi-jquery:before {\n  content: \"\\F87C\";\n}\n\n.mdi-jsfiddle:before {\n  content: \"\\F304\";\n}\n\n.mdi-json:before {\n  content: \"\\F626\";\n}\n\n.mdi-judaism:before {\n  content: \"\\F979\";\n}\n\n.mdi-karate:before {\n  content: \"\\F82B\";\n}\n\n.mdi-keg:before {\n  content: \"\\F305\";\n}\n\n.mdi-kettle:before {\n  content: \"\\F5FA\";\n}\n\n.mdi-key:before {\n  content: \"\\F306\";\n}\n\n.mdi-key-change:before {\n  content: \"\\F307\";\n}\n\n.mdi-key-minus:before {\n  content: \"\\F308\";\n}\n\n.mdi-key-plus:before {\n  content: \"\\F309\";\n}\n\n.mdi-key-remove:before {\n  content: \"\\F30A\";\n}\n\n.mdi-key-variant:before {\n  content: \"\\F30B\";\n}\n\n.mdi-keyboard:before {\n  content: \"\\F30C\";\n}\n\n.mdi-keyboard-backspace:before {\n  content: \"\\F30D\";\n}\n\n.mdi-keyboard-caps:before {\n  content: \"\\F30E\";\n}\n\n.mdi-keyboard-close:before {\n  content: \"\\F30F\";\n}\n\n.mdi-keyboard-off:before {\n  content: \"\\F310\";\n}\n\n.mdi-keyboard-outline:before {\n  content: \"\\F97A\";\n}\n\n.mdi-keyboard-return:before {\n  content: \"\\F311\";\n}\n\n.mdi-keyboard-tab:before {\n  content: \"\\F312\";\n}\n\n.mdi-keyboard-variant:before {\n  content: \"\\F313\";\n}\n\n.mdi-kickstarter:before {\n  content: \"\\F744\";\n}\n\n.mdi-kodi:before {\n  content: \"\\F314\";\n}\n\n.mdi-label:before {\n  content: \"\\F315\";\n}\n\n.mdi-label-outline:before {\n  content: \"\\F316\";\n}\n\n.mdi-ladybug:before {\n  content: \"\\F82C\";\n}\n\n.mdi-lambda:before {\n  content: \"\\F627\";\n}\n\n.mdi-lamp:before {\n  content: \"\\F6B4\";\n}\n\n.mdi-lan:before {\n  content: \"\\F317\";\n}\n\n.mdi-lan-connect:before {\n  content: \"\\F318\";\n}\n\n.mdi-lan-disconnect:before {\n  content: \"\\F319\";\n}\n\n.mdi-lan-pending:before {\n  content: \"\\F31A\";\n}\n\n.mdi-language-c:before {\n  content: \"\\F671\";\n}\n\n.mdi-language-cpp:before {\n  content: \"\\F672\";\n}\n\n.mdi-language-csharp:before {\n  content: \"\\F31B\";\n}\n\n.mdi-language-css3:before {\n  content: \"\\F31C\";\n}\n\n.mdi-language-go:before {\n  content: \"\\F7D2\";\n}\n\n.mdi-language-html5:before {\n  content: \"\\F31D\";\n}\n\n.mdi-language-javascript:before {\n  content: \"\\F31E\";\n}\n\n.mdi-language-lua:before {\n  content: \"\\F8B0\";\n}\n\n.mdi-language-php:before {\n  content: \"\\F31F\";\n}\n\n.mdi-language-python:before {\n  content: \"\\F320\";\n}\n\n.mdi-language-python-text:before {\n  content: \"\\F321\";\n}\n\n.mdi-language-r:before {\n  content: \"\\F7D3\";\n}\n\n.mdi-language-swift:before {\n  content: \"\\F6E4\";\n}\n\n.mdi-language-typescript:before {\n  content: \"\\F6E5\";\n}\n\n.mdi-laptop:before {\n  content: \"\\F322\";\n}\n\n.mdi-laptop-chromebook:before {\n  content: \"\\F323\";\n}\n\n.mdi-laptop-mac:before {\n  content: \"\\F324\";\n}\n\n.mdi-laptop-off:before {\n  content: \"\\F6E6\";\n}\n\n.mdi-laptop-windows:before {\n  content: \"\\F325\";\n}\n\n.mdi-lastfm:before {\n  content: \"\\F326\";\n}\n\n.mdi-lastpass:before {\n  content: \"\\F446\";\n}\n\n.mdi-launch:before {\n  content: \"\\F327\";\n}\n\n.mdi-lava-lamp:before {\n  content: \"\\F7D4\";\n}\n\n.mdi-layers:before {\n  content: \"\\F328\";\n}\n\n.mdi-layers-off:before {\n  content: \"\\F329\";\n}\n\n.mdi-lead-pencil:before {\n  content: \"\\F64F\";\n}\n\n.mdi-leaf:before {\n  content: \"\\F32A\";\n}\n\n.mdi-led-off:before {\n  content: \"\\F32B\";\n}\n\n.mdi-led-on:before {\n  content: \"\\F32C\";\n}\n\n.mdi-led-outline:before {\n  content: \"\\F32D\";\n}\n\n.mdi-led-strip:before {\n  content: \"\\F7D5\";\n}\n\n.mdi-led-variant-off:before {\n  content: \"\\F32E\";\n}\n\n.mdi-led-variant-on:before {\n  content: \"\\F32F\";\n}\n\n.mdi-led-variant-outline:before {\n  content: \"\\F330\";\n}\n\n.mdi-less-than:before {\n  content: \"\\F97B\";\n}\n\n.mdi-less-than-or-equal:before {\n  content: \"\\F97C\";\n}\n\n.mdi-library:before {\n  content: \"\\F331\";\n}\n\n.mdi-library-books:before {\n  content: \"\\F332\";\n}\n\n.mdi-library-music:before {\n  content: \"\\F333\";\n}\n\n.mdi-library-plus:before {\n  content: \"\\F334\";\n}\n\n.mdi-lifebuoy:before {\n  content: \"\\F87D\";\n}\n\n.mdi-light-switch:before {\n  content: \"\\F97D\";\n}\n\n.mdi-lightbulb:before {\n  content: \"\\F335\";\n}\n\n.mdi-lightbulb-on:before {\n  content: \"\\F6E7\";\n}\n\n.mdi-lightbulb-on-outline:before {\n  content: \"\\F6E8\";\n}\n\n.mdi-lightbulb-outline:before {\n  content: \"\\F336\";\n}\n\n.mdi-link:before {\n  content: \"\\F337\";\n}\n\n.mdi-link-off:before {\n  content: \"\\F338\";\n}\n\n.mdi-link-variant:before {\n  content: \"\\F339\";\n}\n\n.mdi-link-variant-off:before {\n  content: \"\\F33A\";\n}\n\n.mdi-linkedin:before {\n  content: \"\\F33B\";\n}\n\n.mdi-linkedin-box:before {\n  content: \"\\F33C\";\n}\n\n.mdi-linux:before {\n  content: \"\\F33D\";\n}\n\n.mdi-linux-mint:before {\n  content: \"\\F8EC\";\n}\n\n.mdi-loading:before {\n  content: \"\\F771\";\n}\n\n.mdi-lock:before {\n  content: \"\\F33E\";\n}\n\n.mdi-lock-alert:before {\n  content: \"\\F8ED\";\n}\n\n.mdi-lock-clock:before {\n  content: \"\\F97E\";\n}\n\n.mdi-lock-open:before {\n  content: \"\\F33F\";\n}\n\n.mdi-lock-open-outline:before {\n  content: \"\\F340\";\n}\n\n.mdi-lock-outline:before {\n  content: \"\\F341\";\n}\n\n.mdi-lock-pattern:before {\n  content: \"\\F6E9\";\n}\n\n.mdi-lock-plus:before {\n  content: \"\\F5FB\";\n}\n\n.mdi-lock-question:before {\n  content: \"\\F8EE\";\n}\n\n.mdi-lock-reset:before {\n  content: \"\\F772\";\n}\n\n.mdi-lock-smart:before {\n  content: \"\\F8B1\";\n}\n\n.mdi-locker:before {\n  content: \"\\F7D6\";\n}\n\n.mdi-locker-multiple:before {\n  content: \"\\F7D7\";\n}\n\n.mdi-login:before {\n  content: \"\\F342\";\n}\n\n.mdi-login-variant:before {\n  content: \"\\F5FC\";\n}\n\n.mdi-logout:before {\n  content: \"\\F343\";\n}\n\n.mdi-logout-variant:before {\n  content: \"\\F5FD\";\n}\n\n.mdi-looks:before {\n  content: \"\\F344\";\n}\n\n.mdi-loop:before {\n  content: \"\\F6EA\";\n}\n\n.mdi-loupe:before {\n  content: \"\\F345\";\n}\n\n.mdi-lumx:before {\n  content: \"\\F346\";\n}\n\n.mdi-magnet:before {\n  content: \"\\F347\";\n}\n\n.mdi-magnet-on:before {\n  content: \"\\F348\";\n}\n\n.mdi-magnify:before {\n  content: \"\\F349\";\n}\n\n.mdi-magnify-close:before {\n  content: \"\\F97F\";\n}\n\n.mdi-magnify-minus:before {\n  content: \"\\F34A\";\n}\n\n.mdi-magnify-minus-outline:before {\n  content: \"\\F6EB\";\n}\n\n.mdi-magnify-plus:before {\n  content: \"\\F34B\";\n}\n\n.mdi-magnify-plus-outline:before {\n  content: \"\\F6EC\";\n}\n\n.mdi-mail-ru:before {\n  content: \"\\F34C\";\n}\n\n.mdi-mailbox:before {\n  content: \"\\F6ED\";\n}\n\n.mdi-map:before {\n  content: \"\\F34D\";\n}\n\n.mdi-map-marker:before {\n  content: \"\\F34E\";\n}\n\n.mdi-map-marker-circle:before {\n  content: \"\\F34F\";\n}\n\n.mdi-map-marker-distance:before {\n  content: \"\\F8EF\";\n}\n\n.mdi-map-marker-minus:before {\n  content: \"\\F650\";\n}\n\n.mdi-map-marker-multiple:before {\n  content: \"\\F350\";\n}\n\n.mdi-map-marker-off:before {\n  content: \"\\F351\";\n}\n\n.mdi-map-marker-outline:before {\n  content: \"\\F7D8\";\n}\n\n.mdi-map-marker-plus:before {\n  content: \"\\F651\";\n}\n\n.mdi-map-marker-radius:before {\n  content: \"\\F352\";\n}\n\n.mdi-map-minus:before {\n  content: \"\\F980\";\n}\n\n.mdi-map-outline:before {\n  content: \"\\F981\";\n}\n\n.mdi-map-plus:before {\n  content: \"\\F982\";\n}\n\n.mdi-map-search:before {\n  content: \"\\F983\";\n}\n\n.mdi-map-search-outline:before {\n  content: \"\\F984\";\n}\n\n.mdi-margin:before {\n  content: \"\\F353\";\n}\n\n.mdi-markdown:before {\n  content: \"\\F354\";\n}\n\n.mdi-marker:before {\n  content: \"\\F652\";\n}\n\n.mdi-marker-check:before {\n  content: \"\\F355\";\n}\n\n.mdi-material-design:before {\n  content: \"\\F985\";\n}\n\n.mdi-material-ui:before {\n  content: \"\\F357\";\n}\n\n.mdi-math-compass:before {\n  content: \"\\F358\";\n}\n\n.mdi-matrix:before {\n  content: \"\\F628\";\n}\n\n.mdi-maxcdn:before {\n  content: \"\\F359\";\n}\n\n.mdi-medal:before {\n  content: \"\\F986\";\n}\n\n.mdi-medical-bag:before {\n  content: \"\\F6EE\";\n}\n\n.mdi-medium:before {\n  content: \"\\F35A\";\n}\n\n.mdi-memory:before {\n  content: \"\\F35B\";\n}\n\n.mdi-menu:before {\n  content: \"\\F35C\";\n}\n\n.mdi-menu-down:before {\n  content: \"\\F35D\";\n}\n\n.mdi-menu-down-outline:before {\n  content: \"\\F6B5\";\n}\n\n.mdi-menu-left:before {\n  content: \"\\F35E\";\n}\n\n.mdi-menu-right:before {\n  content: \"\\F35F\";\n}\n\n.mdi-menu-up:before {\n  content: \"\\F360\";\n}\n\n.mdi-menu-up-outline:before {\n  content: \"\\F6B6\";\n}\n\n.mdi-message:before {\n  content: \"\\F361\";\n}\n\n.mdi-message-alert:before {\n  content: \"\\F362\";\n}\n\n.mdi-message-bulleted:before {\n  content: \"\\F6A1\";\n}\n\n.mdi-message-bulleted-off:before {\n  content: \"\\F6A2\";\n}\n\n.mdi-message-draw:before {\n  content: \"\\F363\";\n}\n\n.mdi-message-image:before {\n  content: \"\\F364\";\n}\n\n.mdi-message-outline:before {\n  content: \"\\F365\";\n}\n\n.mdi-message-plus:before {\n  content: \"\\F653\";\n}\n\n.mdi-message-processing:before {\n  content: \"\\F366\";\n}\n\n.mdi-message-reply:before {\n  content: \"\\F367\";\n}\n\n.mdi-message-reply-text:before {\n  content: \"\\F368\";\n}\n\n.mdi-message-settings:before {\n  content: \"\\F6EF\";\n}\n\n.mdi-message-settings-variant:before {\n  content: \"\\F6F0\";\n}\n\n.mdi-message-text:before {\n  content: \"\\F369\";\n}\n\n.mdi-message-text-outline:before {\n  content: \"\\F36A\";\n}\n\n.mdi-message-video:before {\n  content: \"\\F36B\";\n}\n\n.mdi-meteor:before {\n  content: \"\\F629\";\n}\n\n.mdi-metronome:before {\n  content: \"\\F7D9\";\n}\n\n.mdi-metronome-tick:before {\n  content: \"\\F7DA\";\n}\n\n.mdi-micro-sd:before {\n  content: \"\\F7DB\";\n}\n\n.mdi-microphone:before {\n  content: \"\\F36C\";\n}\n\n.mdi-microphone-minus:before {\n  content: \"\\F8B2\";\n}\n\n.mdi-microphone-off:before {\n  content: \"\\F36D\";\n}\n\n.mdi-microphone-outline:before {\n  content: \"\\F36E\";\n}\n\n.mdi-microphone-plus:before {\n  content: \"\\F8B3\";\n}\n\n.mdi-microphone-settings:before {\n  content: \"\\F36F\";\n}\n\n.mdi-microphone-variant:before {\n  content: \"\\F370\";\n}\n\n.mdi-microphone-variant-off:before {\n  content: \"\\F371\";\n}\n\n.mdi-microscope:before {\n  content: \"\\F654\";\n}\n\n.mdi-microsoft:before {\n  content: \"\\F372\";\n}\n\n.mdi-microsoft-dynamics:before {\n  content: \"\\F987\";\n}\n\n.mdi-midi:before {\n  content: \"\\F8F0\";\n}\n\n.mdi-midi-port:before {\n  content: \"\\F8F1\";\n}\n\n.mdi-minecraft:before {\n  content: \"\\F373\";\n}\n\n.mdi-minus:before {\n  content: \"\\F374\";\n}\n\n.mdi-minus-box:before {\n  content: \"\\F375\";\n}\n\n.mdi-minus-box-outline:before {\n  content: \"\\F6F1\";\n}\n\n.mdi-minus-circle:before {\n  content: \"\\F376\";\n}\n\n.mdi-minus-circle-outline:before {\n  content: \"\\F377\";\n}\n\n.mdi-minus-network:before {\n  content: \"\\F378\";\n}\n\n.mdi-mixcloud:before {\n  content: \"\\F62A\";\n}\n\n.mdi-mixed-reality:before {\n  content: \"\\F87E\";\n}\n\n.mdi-mixer:before {\n  content: \"\\F7DC\";\n}\n\n.mdi-monitor:before {\n  content: \"\\F379\";\n}\n\n.mdi-monitor-cellphone:before {\n  content: \"\\F988\";\n}\n\n.mdi-monitor-cellphone-star:before {\n  content: \"\\F989\";\n}\n\n.mdi-monitor-multiple:before {\n  content: \"\\F37A\";\n}\n\n.mdi-more:before {\n  content: \"\\F37B\";\n}\n\n.mdi-motorbike:before {\n  content: \"\\F37C\";\n}\n\n.mdi-mouse:before {\n  content: \"\\F37D\";\n}\n\n.mdi-mouse-bluetooth:before {\n  content: \"\\F98A\";\n}\n\n.mdi-mouse-off:before {\n  content: \"\\F37E\";\n}\n\n.mdi-mouse-variant:before {\n  content: \"\\F37F\";\n}\n\n.mdi-mouse-variant-off:before {\n  content: \"\\F380\";\n}\n\n.mdi-move-resize:before {\n  content: \"\\F655\";\n}\n\n.mdi-move-resize-variant:before {\n  content: \"\\F656\";\n}\n\n.mdi-movie:before {\n  content: \"\\F381\";\n}\n\n.mdi-movie-roll:before {\n  content: \"\\F7DD\";\n}\n\n.mdi-muffin:before {\n  content: \"\\F98B\";\n}\n\n.mdi-multiplication:before {\n  content: \"\\F382\";\n}\n\n.mdi-multiplication-box:before {\n  content: \"\\F383\";\n}\n\n.mdi-mushroom:before {\n  content: \"\\F7DE\";\n}\n\n.mdi-mushroom-outline:before {\n  content: \"\\F7DF\";\n}\n\n.mdi-music:before {\n  content: \"\\F759\";\n}\n\n.mdi-music-box:before {\n  content: \"\\F384\";\n}\n\n.mdi-music-box-outline:before {\n  content: \"\\F385\";\n}\n\n.mdi-music-circle:before {\n  content: \"\\F386\";\n}\n\n.mdi-music-note:before {\n  content: \"\\F387\";\n}\n\n.mdi-music-note-bluetooth:before {\n  content: \"\\F5FE\";\n}\n\n.mdi-music-note-bluetooth-off:before {\n  content: \"\\F5FF\";\n}\n\n.mdi-music-note-eighth:before {\n  content: \"\\F388\";\n}\n\n.mdi-music-note-half:before {\n  content: \"\\F389\";\n}\n\n.mdi-music-note-off:before {\n  content: \"\\F38A\";\n}\n\n.mdi-music-note-quarter:before {\n  content: \"\\F38B\";\n}\n\n.mdi-music-note-sixteenth:before {\n  content: \"\\F38C\";\n}\n\n.mdi-music-note-whole:before {\n  content: \"\\F38D\";\n}\n\n.mdi-music-off:before {\n  content: \"\\F75A\";\n}\n\n.mdi-nas:before {\n  content: \"\\F8F2\";\n}\n\n.mdi-nativescript:before {\n  content: \"\\F87F\";\n}\n\n.mdi-nature:before {\n  content: \"\\F38E\";\n}\n\n.mdi-nature-people:before {\n  content: \"\\F38F\";\n}\n\n.mdi-navigation:before {\n  content: \"\\F390\";\n}\n\n.mdi-near-me:before {\n  content: \"\\F5CD\";\n}\n\n.mdi-needle:before {\n  content: \"\\F391\";\n}\n\n.mdi-netflix:before {\n  content: \"\\F745\";\n}\n\n.mdi-network:before {\n  content: \"\\F6F2\";\n}\n\n.mdi-network-strength-1:before {\n  content: \"\\F8F3\";\n}\n\n.mdi-network-strength-1-alert:before {\n  content: \"\\F8F4\";\n}\n\n.mdi-network-strength-2:before {\n  content: \"\\F8F5\";\n}\n\n.mdi-network-strength-2-alert:before {\n  content: \"\\F8F6\";\n}\n\n.mdi-network-strength-3:before {\n  content: \"\\F8F7\";\n}\n\n.mdi-network-strength-3-alert:before {\n  content: \"\\F8F8\";\n}\n\n.mdi-network-strength-4:before {\n  content: \"\\F8F9\";\n}\n\n.mdi-network-strength-4-alert:before {\n  content: \"\\F8FA\";\n}\n\n.mdi-network-strength-off:before {\n  content: \"\\F8FB\";\n}\n\n.mdi-network-strength-off-outline:before {\n  content: \"\\F8FC\";\n}\n\n.mdi-network-strength-outline:before {\n  content: \"\\F8FD\";\n}\n\n.mdi-new-box:before {\n  content: \"\\F394\";\n}\n\n.mdi-newspaper:before {\n  content: \"\\F395\";\n}\n\n.mdi-nfc:before {\n  content: \"\\F396\";\n}\n\n.mdi-nfc-tap:before {\n  content: \"\\F397\";\n}\n\n.mdi-nfc-variant:before {\n  content: \"\\F398\";\n}\n\n.mdi-ninja:before {\n  content: \"\\F773\";\n}\n\n.mdi-nintendo-switch:before {\n  content: \"\\F7E0\";\n}\n\n.mdi-nodejs:before {\n  content: \"\\F399\";\n}\n\n.mdi-not-equal:before {\n  content: \"\\F98C\";\n}\n\n.mdi-not-equal-variant:before {\n  content: \"\\F98D\";\n}\n\n.mdi-note:before {\n  content: \"\\F39A\";\n}\n\n.mdi-note-multiple:before {\n  content: \"\\F6B7\";\n}\n\n.mdi-note-multiple-outline:before {\n  content: \"\\F6B8\";\n}\n\n.mdi-note-outline:before {\n  content: \"\\F39B\";\n}\n\n.mdi-note-plus:before {\n  content: \"\\F39C\";\n}\n\n.mdi-note-plus-outline:before {\n  content: \"\\F39D\";\n}\n\n.mdi-note-text:before {\n  content: \"\\F39E\";\n}\n\n.mdi-notebook:before {\n  content: \"\\F82D\";\n}\n\n.mdi-notification-clear-all:before {\n  content: \"\\F39F\";\n}\n\n.mdi-npm:before {\n  content: \"\\F6F6\";\n}\n\n.mdi-npm-variant:before {\n  content: \"\\F98E\";\n}\n\n.mdi-npm-variant-outline:before {\n  content: \"\\F98F\";\n}\n\n.mdi-nuke:before {\n  content: \"\\F6A3\";\n}\n\n.mdi-null:before {\n  content: \"\\F7E1\";\n}\n\n.mdi-numeric:before {\n  content: \"\\F3A0\";\n}\n\n.mdi-numeric-0-box:before {\n  content: \"\\F3A1\";\n}\n\n.mdi-numeric-0-box-multiple-outline:before {\n  content: \"\\F3A2\";\n}\n\n.mdi-numeric-0-box-outline:before {\n  content: \"\\F3A3\";\n}\n\n.mdi-numeric-1-box:before {\n  content: \"\\F3A4\";\n}\n\n.mdi-numeric-1-box-multiple-outline:before {\n  content: \"\\F3A5\";\n}\n\n.mdi-numeric-1-box-outline:before {\n  content: \"\\F3A6\";\n}\n\n.mdi-numeric-2-box:before {\n  content: \"\\F3A7\";\n}\n\n.mdi-numeric-2-box-multiple-outline:before {\n  content: \"\\F3A8\";\n}\n\n.mdi-numeric-2-box-outline:before {\n  content: \"\\F3A9\";\n}\n\n.mdi-numeric-3-box:before {\n  content: \"\\F3AA\";\n}\n\n.mdi-numeric-3-box-multiple-outline:before {\n  content: \"\\F3AB\";\n}\n\n.mdi-numeric-3-box-outline:before {\n  content: \"\\F3AC\";\n}\n\n.mdi-numeric-4-box:before {\n  content: \"\\F3AD\";\n}\n\n.mdi-numeric-4-box-multiple-outline:before {\n  content: \"\\F3AE\";\n}\n\n.mdi-numeric-4-box-outline:before {\n  content: \"\\F3AF\";\n}\n\n.mdi-numeric-5-box:before {\n  content: \"\\F3B0\";\n}\n\n.mdi-numeric-5-box-multiple-outline:before {\n  content: \"\\F3B1\";\n}\n\n.mdi-numeric-5-box-outline:before {\n  content: \"\\F3B2\";\n}\n\n.mdi-numeric-6-box:before {\n  content: \"\\F3B3\";\n}\n\n.mdi-numeric-6-box-multiple-outline:before {\n  content: \"\\F3B4\";\n}\n\n.mdi-numeric-6-box-outline:before {\n  content: \"\\F3B5\";\n}\n\n.mdi-numeric-7-box:before {\n  content: \"\\F3B6\";\n}\n\n.mdi-numeric-7-box-multiple-outline:before {\n  content: \"\\F3B7\";\n}\n\n.mdi-numeric-7-box-outline:before {\n  content: \"\\F3B8\";\n}\n\n.mdi-numeric-8-box:before {\n  content: \"\\F3B9\";\n}\n\n.mdi-numeric-8-box-multiple-outline:before {\n  content: \"\\F3BA\";\n}\n\n.mdi-numeric-8-box-outline:before {\n  content: \"\\F3BB\";\n}\n\n.mdi-numeric-9-box:before {\n  content: \"\\F3BC\";\n}\n\n.mdi-numeric-9-box-multiple-outline:before {\n  content: \"\\F3BD\";\n}\n\n.mdi-numeric-9-box-outline:before {\n  content: \"\\F3BE\";\n}\n\n.mdi-numeric-9-plus-box:before {\n  content: \"\\F3BF\";\n}\n\n.mdi-numeric-9-plus-box-multiple-outline:before {\n  content: \"\\F3C0\";\n}\n\n.mdi-numeric-9-plus-box-outline:before {\n  content: \"\\F3C1\";\n}\n\n.mdi-nut:before {\n  content: \"\\F6F7\";\n}\n\n.mdi-nutrition:before {\n  content: \"\\F3C2\";\n}\n\n.mdi-oar:before {\n  content: \"\\F67B\";\n}\n\n.mdi-octagon:before {\n  content: \"\\F3C3\";\n}\n\n.mdi-octagon-outline:before {\n  content: \"\\F3C4\";\n}\n\n.mdi-octagram:before {\n  content: \"\\F6F8\";\n}\n\n.mdi-octagram-outline:before {\n  content: \"\\F774\";\n}\n\n.mdi-odnoklassniki:before {\n  content: \"\\F3C5\";\n}\n\n.mdi-office:before {\n  content: \"\\F3C6\";\n}\n\n.mdi-office-building:before {\n  content: \"\\F990\";\n}\n\n.mdi-oil:before {\n  content: \"\\F3C7\";\n}\n\n.mdi-oil-temperature:before {\n  content: \"\\F3C8\";\n}\n\n.mdi-omega:before {\n  content: \"\\F3C9\";\n}\n\n.mdi-onedrive:before {\n  content: \"\\F3CA\";\n}\n\n.mdi-onenote:before {\n  content: \"\\F746\";\n}\n\n.mdi-onepassword:before {\n  content: \"\\F880\";\n}\n\n.mdi-opacity:before {\n  content: \"\\F5CC\";\n}\n\n.mdi-open-in-app:before {\n  content: \"\\F3CB\";\n}\n\n.mdi-open-in-new:before {\n  content: \"\\F3CC\";\n}\n\n.mdi-openid:before {\n  content: \"\\F3CD\";\n}\n\n.mdi-opera:before {\n  content: \"\\F3CE\";\n}\n\n.mdi-orbit:before {\n  content: \"\\F018\";\n}\n\n.mdi-ornament:before {\n  content: \"\\F3CF\";\n}\n\n.mdi-ornament-variant:before {\n  content: \"\\F3D0\";\n}\n\n.mdi-owl:before {\n  content: \"\\F3D2\";\n}\n\n.mdi-package:before {\n  content: \"\\F3D3\";\n}\n\n.mdi-package-down:before {\n  content: \"\\F3D4\";\n}\n\n.mdi-package-up:before {\n  content: \"\\F3D5\";\n}\n\n.mdi-package-variant:before {\n  content: \"\\F3D6\";\n}\n\n.mdi-package-variant-closed:before {\n  content: \"\\F3D7\";\n}\n\n.mdi-page-first:before {\n  content: \"\\F600\";\n}\n\n.mdi-page-last:before {\n  content: \"\\F601\";\n}\n\n.mdi-page-layout-body:before {\n  content: \"\\F6F9\";\n}\n\n.mdi-page-layout-footer:before {\n  content: \"\\F6FA\";\n}\n\n.mdi-page-layout-header:before {\n  content: \"\\F6FB\";\n}\n\n.mdi-page-layout-sidebar-left:before {\n  content: \"\\F6FC\";\n}\n\n.mdi-page-layout-sidebar-right:before {\n  content: \"\\F6FD\";\n}\n\n.mdi-palette:before {\n  content: \"\\F3D8\";\n}\n\n.mdi-palette-advanced:before {\n  content: \"\\F3D9\";\n}\n\n.mdi-palette-swatch:before {\n  content: \"\\F8B4\";\n}\n\n.mdi-panda:before {\n  content: \"\\F3DA\";\n}\n\n.mdi-pandora:before {\n  content: \"\\F3DB\";\n}\n\n.mdi-panorama:before {\n  content: \"\\F3DC\";\n}\n\n.mdi-panorama-fisheye:before {\n  content: \"\\F3DD\";\n}\n\n.mdi-panorama-horizontal:before {\n  content: \"\\F3DE\";\n}\n\n.mdi-panorama-vertical:before {\n  content: \"\\F3DF\";\n}\n\n.mdi-panorama-wide-angle:before {\n  content: \"\\F3E0\";\n}\n\n.mdi-paper-cut-vertical:before {\n  content: \"\\F3E1\";\n}\n\n.mdi-paperclip:before {\n  content: \"\\F3E2\";\n}\n\n.mdi-parking:before {\n  content: \"\\F3E3\";\n}\n\n.mdi-passport:before {\n  content: \"\\F7E2\";\n}\n\n.mdi-patreon:before {\n  content: \"\\F881\";\n}\n\n.mdi-pause:before {\n  content: \"\\F3E4\";\n}\n\n.mdi-pause-circle:before {\n  content: \"\\F3E5\";\n}\n\n.mdi-pause-circle-outline:before {\n  content: \"\\F3E6\";\n}\n\n.mdi-pause-octagon:before {\n  content: \"\\F3E7\";\n}\n\n.mdi-pause-octagon-outline:before {\n  content: \"\\F3E8\";\n}\n\n.mdi-paw:before {\n  content: \"\\F3E9\";\n}\n\n.mdi-paw-off:before {\n  content: \"\\F657\";\n}\n\n.mdi-paypal:before {\n  content: \"\\F882\";\n}\n\n.mdi-peace:before {\n  content: \"\\F883\";\n}\n\n.mdi-pen:before {\n  content: \"\\F3EA\";\n}\n\n.mdi-pencil:before {\n  content: \"\\F3EB\";\n}\n\n.mdi-pencil-box:before {\n  content: \"\\F3EC\";\n}\n\n.mdi-pencil-box-outline:before {\n  content: \"\\F3ED\";\n}\n\n.mdi-pencil-circle:before {\n  content: \"\\F6FE\";\n}\n\n.mdi-pencil-circle-outline:before {\n  content: \"\\F775\";\n}\n\n.mdi-pencil-lock:before {\n  content: \"\\F3EE\";\n}\n\n.mdi-pencil-off:before {\n  content: \"\\F3EF\";\n}\n\n.mdi-pentagon:before {\n  content: \"\\F6FF\";\n}\n\n.mdi-pentagon-outline:before {\n  content: \"\\F700\";\n}\n\n.mdi-percent:before {\n  content: \"\\F3F0\";\n}\n\n.mdi-periodic-table:before {\n  content: \"\\F8B5\";\n}\n\n.mdi-periodic-table-co2:before {\n  content: \"\\F7E3\";\n}\n\n.mdi-periscope:before {\n  content: \"\\F747\";\n}\n\n.mdi-pharmacy:before {\n  content: \"\\F3F1\";\n}\n\n.mdi-phone:before {\n  content: \"\\F3F2\";\n}\n\n.mdi-phone-bluetooth:before {\n  content: \"\\F3F3\";\n}\n\n.mdi-phone-classic:before {\n  content: \"\\F602\";\n}\n\n.mdi-phone-forward:before {\n  content: \"\\F3F4\";\n}\n\n.mdi-phone-hangup:before {\n  content: \"\\F3F5\";\n}\n\n.mdi-phone-in-talk:before {\n  content: \"\\F3F6\";\n}\n\n.mdi-phone-incoming:before {\n  content: \"\\F3F7\";\n}\n\n.mdi-phone-locked:before {\n  content: \"\\F3F8\";\n}\n\n.mdi-phone-log:before {\n  content: \"\\F3F9\";\n}\n\n.mdi-phone-minus:before {\n  content: \"\\F658\";\n}\n\n.mdi-phone-missed:before {\n  content: \"\\F3FA\";\n}\n\n.mdi-phone-outgoing:before {\n  content: \"\\F3FB\";\n}\n\n.mdi-phone-paused:before {\n  content: \"\\F3FC\";\n}\n\n.mdi-phone-plus:before {\n  content: \"\\F659\";\n}\n\n.mdi-phone-return:before {\n  content: \"\\F82E\";\n}\n\n.mdi-phone-rotate-landscape:before {\n  content: \"\\F884\";\n}\n\n.mdi-phone-rotate-portrait:before {\n  content: \"\\F885\";\n}\n\n.mdi-phone-settings:before {\n  content: \"\\F3FD\";\n}\n\n.mdi-phone-voip:before {\n  content: \"\\F3FE\";\n}\n\n.mdi-pi:before {\n  content: \"\\F3FF\";\n}\n\n.mdi-pi-box:before {\n  content: \"\\F400\";\n}\n\n.mdi-piano:before {\n  content: \"\\F67C\";\n}\n\n.mdi-pickaxe:before {\n  content: \"\\F8B6\";\n}\n\n.mdi-pier:before {\n  content: \"\\F886\";\n}\n\n.mdi-pier-crane:before {\n  content: \"\\F887\";\n}\n\n.mdi-pig:before {\n  content: \"\\F401\";\n}\n\n.mdi-pill:before {\n  content: \"\\F402\";\n}\n\n.mdi-pillar:before {\n  content: \"\\F701\";\n}\n\n.mdi-pin:before {\n  content: \"\\F403\";\n}\n\n.mdi-pin-off:before {\n  content: \"\\F404\";\n}\n\n.mdi-pin-off-outline:before {\n  content: \"\\F92F\";\n}\n\n.mdi-pin-outline:before {\n  content: \"\\F930\";\n}\n\n.mdi-pine-tree:before {\n  content: \"\\F405\";\n}\n\n.mdi-pine-tree-box:before {\n  content: \"\\F406\";\n}\n\n.mdi-pinterest:before {\n  content: \"\\F407\";\n}\n\n.mdi-pinterest-box:before {\n  content: \"\\F408\";\n}\n\n.mdi-pipe:before {\n  content: \"\\F7E4\";\n}\n\n.mdi-pipe-disconnected:before {\n  content: \"\\F7E5\";\n}\n\n.mdi-pipe-leak:before {\n  content: \"\\F888\";\n}\n\n.mdi-pistol:before {\n  content: \"\\F702\";\n}\n\n.mdi-piston:before {\n  content: \"\\F889\";\n}\n\n.mdi-pizza:before {\n  content: \"\\F409\";\n}\n\n.mdi-plane-shield:before {\n  content: \"\\F6BA\";\n}\n\n.mdi-play:before {\n  content: \"\\F40A\";\n}\n\n.mdi-play-box-outline:before {\n  content: \"\\F40B\";\n}\n\n.mdi-play-circle:before {\n  content: \"\\F40C\";\n}\n\n.mdi-play-circle-outline:before {\n  content: \"\\F40D\";\n}\n\n.mdi-play-network:before {\n  content: \"\\F88A\";\n}\n\n.mdi-play-pause:before {\n  content: \"\\F40E\";\n}\n\n.mdi-play-protected-content:before {\n  content: \"\\F40F\";\n}\n\n.mdi-play-speed:before {\n  content: \"\\F8FE\";\n}\n\n.mdi-playlist-check:before {\n  content: \"\\F5C7\";\n}\n\n.mdi-playlist-edit:before {\n  content: \"\\F8FF\";\n}\n\n.mdi-playlist-minus:before {\n  content: \"\\F410\";\n}\n\n.mdi-playlist-play:before {\n  content: \"\\F411\";\n}\n\n.mdi-playlist-plus:before {\n  content: \"\\F412\";\n}\n\n.mdi-playlist-remove:before {\n  content: \"\\F413\";\n}\n\n.mdi-playstation:before {\n  content: \"\\F414\";\n}\n\n.mdi-plex:before {\n  content: \"\\F6B9\";\n}\n\n.mdi-plus:before {\n  content: \"\\F415\";\n}\n\n.mdi-plus-box:before {\n  content: \"\\F416\";\n}\n\n.mdi-plus-box-outline:before {\n  content: \"\\F703\";\n}\n\n.mdi-plus-circle:before {\n  content: \"\\F417\";\n}\n\n.mdi-plus-circle-multiple-outline:before {\n  content: \"\\F418\";\n}\n\n.mdi-plus-circle-outline:before {\n  content: \"\\F419\";\n}\n\n.mdi-plus-minus:before {\n  content: \"\\F991\";\n}\n\n.mdi-plus-minus-box:before {\n  content: \"\\F992\";\n}\n\n.mdi-plus-network:before {\n  content: \"\\F41A\";\n}\n\n.mdi-plus-one:before {\n  content: \"\\F41B\";\n}\n\n.mdi-plus-outline:before {\n  content: \"\\F704\";\n}\n\n.mdi-pocket:before {\n  content: \"\\F41C\";\n}\n\n.mdi-podcast:before {\n  content: \"\\F993\";\n}\n\n.mdi-pokeball:before {\n  content: \"\\F41D\";\n}\n\n.mdi-poker-chip:before {\n  content: \"\\F82F\";\n}\n\n.mdi-polaroid:before {\n  content: \"\\F41E\";\n}\n\n.mdi-poll:before {\n  content: \"\\F41F\";\n}\n\n.mdi-poll-box:before {\n  content: \"\\F420\";\n}\n\n.mdi-polymer:before {\n  content: \"\\F421\";\n}\n\n.mdi-pool:before {\n  content: \"\\F606\";\n}\n\n.mdi-popcorn:before {\n  content: \"\\F422\";\n}\n\n.mdi-pot:before {\n  content: \"\\F65A\";\n}\n\n.mdi-pot-mix:before {\n  content: \"\\F65B\";\n}\n\n.mdi-pound:before {\n  content: \"\\F423\";\n}\n\n.mdi-pound-box:before {\n  content: \"\\F424\";\n}\n\n.mdi-power:before {\n  content: \"\\F425\";\n}\n\n.mdi-power-cycle:before {\n  content: \"\\F900\";\n}\n\n.mdi-power-off:before {\n  content: \"\\F901\";\n}\n\n.mdi-power-on:before {\n  content: \"\\F902\";\n}\n\n.mdi-power-plug:before {\n  content: \"\\F6A4\";\n}\n\n.mdi-power-plug-off:before {\n  content: \"\\F6A5\";\n}\n\n.mdi-power-settings:before {\n  content: \"\\F426\";\n}\n\n.mdi-power-sleep:before {\n  content: \"\\F903\";\n}\n\n.mdi-power-socket:before {\n  content: \"\\F427\";\n}\n\n.mdi-power-socket-au:before {\n  content: \"\\F904\";\n}\n\n.mdi-power-socket-eu:before {\n  content: \"\\F7E6\";\n}\n\n.mdi-power-socket-uk:before {\n  content: \"\\F7E7\";\n}\n\n.mdi-power-socket-us:before {\n  content: \"\\F7E8\";\n}\n\n.mdi-power-standby:before {\n  content: \"\\F905\";\n}\n\n.mdi-prescription:before {\n  content: \"\\F705\";\n}\n\n.mdi-presentation:before {\n  content: \"\\F428\";\n}\n\n.mdi-presentation-play:before {\n  content: \"\\F429\";\n}\n\n.mdi-printer:before {\n  content: \"\\F42A\";\n}\n\n.mdi-printer-3d:before {\n  content: \"\\F42B\";\n}\n\n.mdi-printer-alert:before {\n  content: \"\\F42C\";\n}\n\n.mdi-printer-settings:before {\n  content: \"\\F706\";\n}\n\n.mdi-priority-high:before {\n  content: \"\\F603\";\n}\n\n.mdi-priority-low:before {\n  content: \"\\F604\";\n}\n\n.mdi-professional-hexagon:before {\n  content: \"\\F42D\";\n}\n\n.mdi-progress-check:before {\n  content: \"\\F994\";\n}\n\n.mdi-progress-clock:before {\n  content: \"\\F995\";\n}\n\n.mdi-progress-download:before {\n  content: \"\\F996\";\n}\n\n.mdi-progress-upload:before {\n  content: \"\\F997\";\n}\n\n.mdi-projector:before {\n  content: \"\\F42E\";\n}\n\n.mdi-projector-screen:before {\n  content: \"\\F42F\";\n}\n\n.mdi-publish:before {\n  content: \"\\F6A6\";\n}\n\n.mdi-pulse:before {\n  content: \"\\F430\";\n}\n\n.mdi-puzzle:before {\n  content: \"\\F431\";\n}\n\n.mdi-qi:before {\n  content: \"\\F998\";\n}\n\n.mdi-qqchat:before {\n  content: \"\\F605\";\n}\n\n.mdi-qrcode:before {\n  content: \"\\F432\";\n}\n\n.mdi-qrcode-edit:before {\n  content: \"\\F8B7\";\n}\n\n.mdi-qrcode-scan:before {\n  content: \"\\F433\";\n}\n\n.mdi-quadcopter:before {\n  content: \"\\F434\";\n}\n\n.mdi-quality-high:before {\n  content: \"\\F435\";\n}\n\n.mdi-quicktime:before {\n  content: \"\\F436\";\n}\n\n.mdi-rabbit:before {\n  content: \"\\F906\";\n}\n\n.mdi-radar:before {\n  content: \"\\F437\";\n}\n\n.mdi-radiator:before {\n  content: \"\\F438\";\n}\n\n.mdi-radio:before {\n  content: \"\\F439\";\n}\n\n.mdi-radio-handheld:before {\n  content: \"\\F43A\";\n}\n\n.mdi-radio-tower:before {\n  content: \"\\F43B\";\n}\n\n.mdi-radioactive:before {\n  content: \"\\F43C\";\n}\n\n.mdi-radiobox-blank:before {\n  content: \"\\F43D\";\n}\n\n.mdi-radiobox-marked:before {\n  content: \"\\F43E\";\n}\n\n.mdi-raspberrypi:before {\n  content: \"\\F43F\";\n}\n\n.mdi-ray-end:before {\n  content: \"\\F440\";\n}\n\n.mdi-ray-end-arrow:before {\n  content: \"\\F441\";\n}\n\n.mdi-ray-start:before {\n  content: \"\\F442\";\n}\n\n.mdi-ray-start-arrow:before {\n  content: \"\\F443\";\n}\n\n.mdi-ray-start-end:before {\n  content: \"\\F444\";\n}\n\n.mdi-ray-vertex:before {\n  content: \"\\F445\";\n}\n\n.mdi-react:before {\n  content: \"\\F707\";\n}\n\n.mdi-read:before {\n  content: \"\\F447\";\n}\n\n.mdi-receipt:before {\n  content: \"\\F449\";\n}\n\n.mdi-record:before {\n  content: \"\\F44A\";\n}\n\n.mdi-record-player:before {\n  content: \"\\F999\";\n}\n\n.mdi-record-rec:before {\n  content: \"\\F44B\";\n}\n\n.mdi-recycle:before {\n  content: \"\\F44C\";\n}\n\n.mdi-reddit:before {\n  content: \"\\F44D\";\n}\n\n.mdi-redo:before {\n  content: \"\\F44E\";\n}\n\n.mdi-redo-variant:before {\n  content: \"\\F44F\";\n}\n\n.mdi-refresh:before {\n  content: \"\\F450\";\n}\n\n.mdi-regex:before {\n  content: \"\\F451\";\n}\n\n.mdi-relative-scale:before {\n  content: \"\\F452\";\n}\n\n.mdi-reload:before {\n  content: \"\\F453\";\n}\n\n.mdi-reminder:before {\n  content: \"\\F88B\";\n}\n\n.mdi-remote:before {\n  content: \"\\F454\";\n}\n\n.mdi-remote-desktop:before {\n  content: \"\\F8B8\";\n}\n\n.mdi-rename-box:before {\n  content: \"\\F455\";\n}\n\n.mdi-reorder-horizontal:before {\n  content: \"\\F687\";\n}\n\n.mdi-reorder-vertical:before {\n  content: \"\\F688\";\n}\n\n.mdi-repeat:before {\n  content: \"\\F456\";\n}\n\n.mdi-repeat-off:before {\n  content: \"\\F457\";\n}\n\n.mdi-repeat-once:before {\n  content: \"\\F458\";\n}\n\n.mdi-replay:before {\n  content: \"\\F459\";\n}\n\n.mdi-reply:before {\n  content: \"\\F45A\";\n}\n\n.mdi-reply-all:before {\n  content: \"\\F45B\";\n}\n\n.mdi-reproduction:before {\n  content: \"\\F45C\";\n}\n\n.mdi-resize-bottom-right:before {\n  content: \"\\F45D\";\n}\n\n.mdi-responsive:before {\n  content: \"\\F45E\";\n}\n\n.mdi-restart:before {\n  content: \"\\F708\";\n}\n\n.mdi-restore:before {\n  content: \"\\F99A\";\n}\n\n.mdi-restore-clock:before {\n  content: \"\\F6A7\";\n}\n\n.mdi-rewind:before {\n  content: \"\\F45F\";\n}\n\n.mdi-rewind-outline:before {\n  content: \"\\F709\";\n}\n\n.mdi-rhombus:before {\n  content: \"\\F70A\";\n}\n\n.mdi-rhombus-outline:before {\n  content: \"\\F70B\";\n}\n\n.mdi-ribbon:before {\n  content: \"\\F460\";\n}\n\n.mdi-rice:before {\n  content: \"\\F7E9\";\n}\n\n.mdi-ring:before {\n  content: \"\\F7EA\";\n}\n\n.mdi-road:before {\n  content: \"\\F461\";\n}\n\n.mdi-road-variant:before {\n  content: \"\\F462\";\n}\n\n.mdi-robot:before {\n  content: \"\\F6A8\";\n}\n\n.mdi-robot-vacuum:before {\n  content: \"\\F70C\";\n}\n\n.mdi-robot-vacuum-variant:before {\n  content: \"\\F907\";\n}\n\n.mdi-rocket:before {\n  content: \"\\F463\";\n}\n\n.mdi-room-service:before {\n  content: \"\\F88C\";\n}\n\n.mdi-rotate-3d:before {\n  content: \"\\F464\";\n}\n\n.mdi-rotate-left:before {\n  content: \"\\F465\";\n}\n\n.mdi-rotate-left-variant:before {\n  content: \"\\F466\";\n}\n\n.mdi-rotate-right:before {\n  content: \"\\F467\";\n}\n\n.mdi-rotate-right-variant:before {\n  content: \"\\F468\";\n}\n\n.mdi-rounded-corner:before {\n  content: \"\\F607\";\n}\n\n.mdi-router-wireless:before {\n  content: \"\\F469\";\n}\n\n.mdi-routes:before {\n  content: \"\\F46A\";\n}\n\n.mdi-rowing:before {\n  content: \"\\F608\";\n}\n\n.mdi-rss:before {\n  content: \"\\F46B\";\n}\n\n.mdi-rss-box:before {\n  content: \"\\F46C\";\n}\n\n.mdi-ruler:before {\n  content: \"\\F46D\";\n}\n\n.mdi-run:before {\n  content: \"\\F70D\";\n}\n\n.mdi-run-fast:before {\n  content: \"\\F46E\";\n}\n\n.mdi-sale:before {\n  content: \"\\F46F\";\n}\n\n.mdi-salesforce:before {\n  content: \"\\F88D\";\n}\n\n.mdi-sass:before {\n  content: \"\\F7EB\";\n}\n\n.mdi-satellite:before {\n  content: \"\\F470\";\n}\n\n.mdi-satellite-uplink:before {\n  content: \"\\F908\";\n}\n\n.mdi-satellite-variant:before {\n  content: \"\\F471\";\n}\n\n.mdi-sausage:before {\n  content: \"\\F8B9\";\n}\n\n.mdi-saxophone:before {\n  content: \"\\F609\";\n}\n\n.mdi-scale:before {\n  content: \"\\F472\";\n}\n\n.mdi-scale-balance:before {\n  content: \"\\F5D1\";\n}\n\n.mdi-scale-bathroom:before {\n  content: \"\\F473\";\n}\n\n.mdi-scanner:before {\n  content: \"\\F6AA\";\n}\n\n.mdi-scanner-off:before {\n  content: \"\\F909\";\n}\n\n.mdi-school:before {\n  content: \"\\F474\";\n}\n\n.mdi-screen-rotation:before {\n  content: \"\\F475\";\n}\n\n.mdi-screen-rotation-lock:before {\n  content: \"\\F476\";\n}\n\n.mdi-screwdriver:before {\n  content: \"\\F477\";\n}\n\n.mdi-script:before {\n  content: \"\\F478\";\n}\n\n.mdi-sd:before {\n  content: \"\\F479\";\n}\n\n.mdi-seal:before {\n  content: \"\\F47A\";\n}\n\n.mdi-search-web:before {\n  content: \"\\F70E\";\n}\n\n.mdi-seat-flat:before {\n  content: \"\\F47B\";\n}\n\n.mdi-seat-flat-angled:before {\n  content: \"\\F47C\";\n}\n\n.mdi-seat-individual-suite:before {\n  content: \"\\F47D\";\n}\n\n.mdi-seat-legroom-extra:before {\n  content: \"\\F47E\";\n}\n\n.mdi-seat-legroom-normal:before {\n  content: \"\\F47F\";\n}\n\n.mdi-seat-legroom-reduced:before {\n  content: \"\\F480\";\n}\n\n.mdi-seat-recline-extra:before {\n  content: \"\\F481\";\n}\n\n.mdi-seat-recline-normal:before {\n  content: \"\\F482\";\n}\n\n.mdi-security:before {\n  content: \"\\F483\";\n}\n\n.mdi-security-account:before {\n  content: \"\\F88E\";\n}\n\n.mdi-security-close:before {\n  content: \"\\F99B\";\n}\n\n.mdi-security-home:before {\n  content: \"\\F689\";\n}\n\n.mdi-security-lock:before {\n  content: \"\\F99C\";\n}\n\n.mdi-security-network:before {\n  content: \"\\F484\";\n}\n\n.mdi-security-off:before {\n  content: \"\\F99D\";\n}\n\n.mdi-select:before {\n  content: \"\\F485\";\n}\n\n.mdi-select-all:before {\n  content: \"\\F486\";\n}\n\n.mdi-select-inverse:before {\n  content: \"\\F487\";\n}\n\n.mdi-select-off:before {\n  content: \"\\F488\";\n}\n\n.mdi-selection:before {\n  content: \"\\F489\";\n}\n\n.mdi-selection-off:before {\n  content: \"\\F776\";\n}\n\n.mdi-send:before {\n  content: \"\\F48A\";\n}\n\n.mdi-send-secure:before {\n  content: \"\\F7EC\";\n}\n\n.mdi-serial-port:before {\n  content: \"\\F65C\";\n}\n\n.mdi-server:before {\n  content: \"\\F48B\";\n}\n\n.mdi-server-minus:before {\n  content: \"\\F48C\";\n}\n\n.mdi-server-network:before {\n  content: \"\\F48D\";\n}\n\n.mdi-server-network-off:before {\n  content: \"\\F48E\";\n}\n\n.mdi-server-off:before {\n  content: \"\\F48F\";\n}\n\n.mdi-server-plus:before {\n  content: \"\\F490\";\n}\n\n.mdi-server-remove:before {\n  content: \"\\F491\";\n}\n\n.mdi-server-security:before {\n  content: \"\\F492\";\n}\n\n.mdi-set-all:before {\n  content: \"\\F777\";\n}\n\n.mdi-set-center:before {\n  content: \"\\F778\";\n}\n\n.mdi-set-center-right:before {\n  content: \"\\F779\";\n}\n\n.mdi-set-left:before {\n  content: \"\\F77A\";\n}\n\n.mdi-set-left-center:before {\n  content: \"\\F77B\";\n}\n\n.mdi-set-left-right:before {\n  content: \"\\F77C\";\n}\n\n.mdi-set-none:before {\n  content: \"\\F77D\";\n}\n\n.mdi-set-right:before {\n  content: \"\\F77E\";\n}\n\n.mdi-set-top-box:before {\n  content: \"\\F99E\";\n}\n\n.mdi-settings:before {\n  content: \"\\F493\";\n}\n\n.mdi-settings-box:before {\n  content: \"\\F494\";\n}\n\n.mdi-settings-outline:before {\n  content: \"\\F8BA\";\n}\n\n.mdi-shape:before {\n  content: \"\\F830\";\n}\n\n.mdi-shape-circle-plus:before {\n  content: \"\\F65D\";\n}\n\n.mdi-shape-outline:before {\n  content: \"\\F831\";\n}\n\n.mdi-shape-plus:before {\n  content: \"\\F495\";\n}\n\n.mdi-shape-polygon-plus:before {\n  content: \"\\F65E\";\n}\n\n.mdi-shape-rectangle-plus:before {\n  content: \"\\F65F\";\n}\n\n.mdi-shape-square-plus:before {\n  content: \"\\F660\";\n}\n\n.mdi-share:before {\n  content: \"\\F496\";\n}\n\n.mdi-share-outline:before {\n  content: \"\\F931\";\n}\n\n.mdi-share-variant:before {\n  content: \"\\F497\";\n}\n\n.mdi-shield:before {\n  content: \"\\F498\";\n}\n\n.mdi-shield-half-full:before {\n  content: \"\\F77F\";\n}\n\n.mdi-shield-outline:before {\n  content: \"\\F499\";\n}\n\n.mdi-ship-wheel:before {\n  content: \"\\F832\";\n}\n\n.mdi-shopping:before {\n  content: \"\\F49A\";\n}\n\n.mdi-shopping-music:before {\n  content: \"\\F49B\";\n}\n\n.mdi-shovel:before {\n  content: \"\\F70F\";\n}\n\n.mdi-shovel-off:before {\n  content: \"\\F710\";\n}\n\n.mdi-shower:before {\n  content: \"\\F99F\";\n}\n\n.mdi-shower-head:before {\n  content: \"\\F9A0\";\n}\n\n.mdi-shredder:before {\n  content: \"\\F49C\";\n}\n\n.mdi-shuffle:before {\n  content: \"\\F49D\";\n}\n\n.mdi-shuffle-disabled:before {\n  content: \"\\F49E\";\n}\n\n.mdi-shuffle-variant:before {\n  content: \"\\F49F\";\n}\n\n.mdi-sigma:before {\n  content: \"\\F4A0\";\n}\n\n.mdi-sigma-lower:before {\n  content: \"\\F62B\";\n}\n\n.mdi-sign-caution:before {\n  content: \"\\F4A1\";\n}\n\n.mdi-sign-direction:before {\n  content: \"\\F780\";\n}\n\n.mdi-sign-text:before {\n  content: \"\\F781\";\n}\n\n.mdi-signal:before {\n  content: \"\\F4A2\";\n}\n\n.mdi-signal-2g:before {\n  content: \"\\F711\";\n}\n\n.mdi-signal-3g:before {\n  content: \"\\F712\";\n}\n\n.mdi-signal-4g:before {\n  content: \"\\F713\";\n}\n\n.mdi-signal-cellular-1:before {\n  content: \"\\F8BB\";\n}\n\n.mdi-signal-cellular-2:before {\n  content: \"\\F8BC\";\n}\n\n.mdi-signal-cellular-3:before {\n  content: \"\\F8BD\";\n}\n\n.mdi-signal-cellular-outline:before {\n  content: \"\\F8BE\";\n}\n\n.mdi-signal-hspa:before {\n  content: \"\\F714\";\n}\n\n.mdi-signal-hspa-plus:before {\n  content: \"\\F715\";\n}\n\n.mdi-signal-off:before {\n  content: \"\\F782\";\n}\n\n.mdi-signal-variant:before {\n  content: \"\\F60A\";\n}\n\n.mdi-silverware:before {\n  content: \"\\F4A3\";\n}\n\n.mdi-silverware-fork:before {\n  content: \"\\F4A4\";\n}\n\n.mdi-silverware-spoon:before {\n  content: \"\\F4A5\";\n}\n\n.mdi-silverware-variant:before {\n  content: \"\\F4A6\";\n}\n\n.mdi-sim:before {\n  content: \"\\F4A7\";\n}\n\n.mdi-sim-alert:before {\n  content: \"\\F4A8\";\n}\n\n.mdi-sim-off:before {\n  content: \"\\F4A9\";\n}\n\n.mdi-sitemap:before {\n  content: \"\\F4AA\";\n}\n\n.mdi-skip-backward:before {\n  content: \"\\F4AB\";\n}\n\n.mdi-skip-forward:before {\n  content: \"\\F4AC\";\n}\n\n.mdi-skip-next:before {\n  content: \"\\F4AD\";\n}\n\n.mdi-skip-next-circle:before {\n  content: \"\\F661\";\n}\n\n.mdi-skip-next-circle-outline:before {\n  content: \"\\F662\";\n}\n\n.mdi-skip-previous:before {\n  content: \"\\F4AE\";\n}\n\n.mdi-skip-previous-circle:before {\n  content: \"\\F663\";\n}\n\n.mdi-skip-previous-circle-outline:before {\n  content: \"\\F664\";\n}\n\n.mdi-skull:before {\n  content: \"\\F68B\";\n}\n\n.mdi-skype:before {\n  content: \"\\F4AF\";\n}\n\n.mdi-skype-business:before {\n  content: \"\\F4B0\";\n}\n\n.mdi-slack:before {\n  content: \"\\F4B1\";\n}\n\n.mdi-slackware:before {\n  content: \"\\F90A\";\n}\n\n.mdi-sleep:before {\n  content: \"\\F4B2\";\n}\n\n.mdi-sleep-off:before {\n  content: \"\\F4B3\";\n}\n\n.mdi-smoke-detector:before {\n  content: \"\\F392\";\n}\n\n.mdi-smoking:before {\n  content: \"\\F4B4\";\n}\n\n.mdi-smoking-off:before {\n  content: \"\\F4B5\";\n}\n\n.mdi-snapchat:before {\n  content: \"\\F4B6\";\n}\n\n.mdi-snowflake:before {\n  content: \"\\F716\";\n}\n\n.mdi-snowman:before {\n  content: \"\\F4B7\";\n}\n\n.mdi-soccer:before {\n  content: \"\\F4B8\";\n}\n\n.mdi-soccer-field:before {\n  content: \"\\F833\";\n}\n\n.mdi-sofa:before {\n  content: \"\\F4B9\";\n}\n\n.mdi-solid:before {\n  content: \"\\F68C\";\n}\n\n.mdi-sort:before {\n  content: \"\\F4BA\";\n}\n\n.mdi-sort-alphabetical:before {\n  content: \"\\F4BB\";\n}\n\n.mdi-sort-ascending:before {\n  content: \"\\F4BC\";\n}\n\n.mdi-sort-descending:before {\n  content: \"\\F4BD\";\n}\n\n.mdi-sort-numeric:before {\n  content: \"\\F4BE\";\n}\n\n.mdi-sort-variant:before {\n  content: \"\\F4BF\";\n}\n\n.mdi-soundcloud:before {\n  content: \"\\F4C0\";\n}\n\n.mdi-source-branch:before {\n  content: \"\\F62C\";\n}\n\n.mdi-source-commit:before {\n  content: \"\\F717\";\n}\n\n.mdi-source-commit-end:before {\n  content: \"\\F718\";\n}\n\n.mdi-source-commit-end-local:before {\n  content: \"\\F719\";\n}\n\n.mdi-source-commit-local:before {\n  content: \"\\F71A\";\n}\n\n.mdi-source-commit-next-local:before {\n  content: \"\\F71B\";\n}\n\n.mdi-source-commit-start:before {\n  content: \"\\F71C\";\n}\n\n.mdi-source-commit-start-next-local:before {\n  content: \"\\F71D\";\n}\n\n.mdi-source-fork:before {\n  content: \"\\F4C1\";\n}\n\n.mdi-source-merge:before {\n  content: \"\\F62D\";\n}\n\n.mdi-source-pull:before {\n  content: \"\\F4C2\";\n}\n\n.mdi-soy-sauce:before {\n  content: \"\\F7ED\";\n}\n\n.mdi-speaker:before {\n  content: \"\\F4C3\";\n}\n\n.mdi-speaker-bluetooth:before {\n  content: \"\\F9A1\";\n}\n\n.mdi-speaker-off:before {\n  content: \"\\F4C4\";\n}\n\n.mdi-speaker-wireless:before {\n  content: \"\\F71E\";\n}\n\n.mdi-speedometer:before {\n  content: \"\\F4C5\";\n}\n\n.mdi-spellcheck:before {\n  content: \"\\F4C6\";\n}\n\n.mdi-spotify:before {\n  content: \"\\F4C7\";\n}\n\n.mdi-spotlight:before {\n  content: \"\\F4C8\";\n}\n\n.mdi-spotlight-beam:before {\n  content: \"\\F4C9\";\n}\n\n.mdi-spray:before {\n  content: \"\\F665\";\n}\n\n.mdi-square:before {\n  content: \"\\F763\";\n}\n\n.mdi-square-edit-outline:before {\n  content: \"\\F90B\";\n}\n\n.mdi-square-inc:before {\n  content: \"\\F4CA\";\n}\n\n.mdi-square-inc-cash:before {\n  content: \"\\F4CB\";\n}\n\n.mdi-square-outline:before {\n  content: \"\\F762\";\n}\n\n.mdi-square-root:before {\n  content: \"\\F783\";\n}\n\n.mdi-square-root-box:before {\n  content: \"\\F9A2\";\n}\n\n.mdi-ssh:before {\n  content: \"\\F8BF\";\n}\n\n.mdi-stack-exchange:before {\n  content: \"\\F60B\";\n}\n\n.mdi-stack-overflow:before {\n  content: \"\\F4CC\";\n}\n\n.mdi-stadium:before {\n  content: \"\\F71F\";\n}\n\n.mdi-stairs:before {\n  content: \"\\F4CD\";\n}\n\n.mdi-standard-definition:before {\n  content: \"\\F7EE\";\n}\n\n.mdi-star:before {\n  content: \"\\F4CE\";\n}\n\n.mdi-star-circle:before {\n  content: \"\\F4CF\";\n}\n\n.mdi-star-circle-outline:before {\n  content: \"\\F9A3\";\n}\n\n.mdi-star-face:before {\n  content: \"\\F9A4\";\n}\n\n.mdi-star-half:before {\n  content: \"\\F4D0\";\n}\n\n.mdi-star-off:before {\n  content: \"\\F4D1\";\n}\n\n.mdi-star-outline:before {\n  content: \"\\F4D2\";\n}\n\n.mdi-steam:before {\n  content: \"\\F4D3\";\n}\n\n.mdi-steam-box:before {\n  content: \"\\F90C\";\n}\n\n.mdi-steering:before {\n  content: \"\\F4D4\";\n}\n\n.mdi-steering-off:before {\n  content: \"\\F90D\";\n}\n\n.mdi-step-backward:before {\n  content: \"\\F4D5\";\n}\n\n.mdi-step-backward-2:before {\n  content: \"\\F4D6\";\n}\n\n.mdi-step-forward:before {\n  content: \"\\F4D7\";\n}\n\n.mdi-step-forward-2:before {\n  content: \"\\F4D8\";\n}\n\n.mdi-stethoscope:before {\n  content: \"\\F4D9\";\n}\n\n.mdi-sticker:before {\n  content: \"\\F5D0\";\n}\n\n.mdi-sticker-emoji:before {\n  content: \"\\F784\";\n}\n\n.mdi-stocking:before {\n  content: \"\\F4DA\";\n}\n\n.mdi-stop:before {\n  content: \"\\F4DB\";\n}\n\n.mdi-stop-circle:before {\n  content: \"\\F666\";\n}\n\n.mdi-stop-circle-outline:before {\n  content: \"\\F667\";\n}\n\n.mdi-store:before {\n  content: \"\\F4DC\";\n}\n\n.mdi-store-24-hour:before {\n  content: \"\\F4DD\";\n}\n\n.mdi-stove:before {\n  content: \"\\F4DE\";\n}\n\n.mdi-subdirectory-arrow-left:before {\n  content: \"\\F60C\";\n}\n\n.mdi-subdirectory-arrow-right:before {\n  content: \"\\F60D\";\n}\n\n.mdi-subway:before {\n  content: \"\\F6AB\";\n}\n\n.mdi-subway-variant:before {\n  content: \"\\F4DF\";\n}\n\n.mdi-summit:before {\n  content: \"\\F785\";\n}\n\n.mdi-sunglasses:before {\n  content: \"\\F4E0\";\n}\n\n.mdi-surround-sound:before {\n  content: \"\\F5C5\";\n}\n\n.mdi-surround-sound-2-0:before {\n  content: \"\\F7EF\";\n}\n\n.mdi-surround-sound-3-1:before {\n  content: \"\\F7F0\";\n}\n\n.mdi-surround-sound-5-1:before {\n  content: \"\\F7F1\";\n}\n\n.mdi-surround-sound-7-1:before {\n  content: \"\\F7F2\";\n}\n\n.mdi-svg:before {\n  content: \"\\F720\";\n}\n\n.mdi-swap-horizontal:before {\n  content: \"\\F4E1\";\n}\n\n.mdi-swap-horizontal-variant:before {\n  content: \"\\F8C0\";\n}\n\n.mdi-swap-vertical:before {\n  content: \"\\F4E2\";\n}\n\n.mdi-swap-vertical-variant:before {\n  content: \"\\F8C1\";\n}\n\n.mdi-swim:before {\n  content: \"\\F4E3\";\n}\n\n.mdi-switch:before {\n  content: \"\\F4E4\";\n}\n\n.mdi-sword:before {\n  content: \"\\F4E5\";\n}\n\n.mdi-sword-cross:before {\n  content: \"\\F786\";\n}\n\n.mdi-sync:before {\n  content: \"\\F4E6\";\n}\n\n.mdi-sync-alert:before {\n  content: \"\\F4E7\";\n}\n\n.mdi-sync-off:before {\n  content: \"\\F4E8\";\n}\n\n.mdi-tab:before {\n  content: \"\\F4E9\";\n}\n\n.mdi-tab-plus:before {\n  content: \"\\F75B\";\n}\n\n.mdi-tab-unselected:before {\n  content: \"\\F4EA\";\n}\n\n.mdi-table:before {\n  content: \"\\F4EB\";\n}\n\n.mdi-table-column:before {\n  content: \"\\F834\";\n}\n\n.mdi-table-column-plus-after:before {\n  content: \"\\F4EC\";\n}\n\n.mdi-table-column-plus-before:before {\n  content: \"\\F4ED\";\n}\n\n.mdi-table-column-remove:before {\n  content: \"\\F4EE\";\n}\n\n.mdi-table-column-width:before {\n  content: \"\\F4EF\";\n}\n\n.mdi-table-edit:before {\n  content: \"\\F4F0\";\n}\n\n.mdi-table-large:before {\n  content: \"\\F4F1\";\n}\n\n.mdi-table-merge-cells:before {\n  content: \"\\F9A5\";\n}\n\n.mdi-table-of-contents:before {\n  content: \"\\F835\";\n}\n\n.mdi-table-row:before {\n  content: \"\\F836\";\n}\n\n.mdi-table-row-height:before {\n  content: \"\\F4F2\";\n}\n\n.mdi-table-row-plus-after:before {\n  content: \"\\F4F3\";\n}\n\n.mdi-table-row-plus-before:before {\n  content: \"\\F4F4\";\n}\n\n.mdi-table-row-remove:before {\n  content: \"\\F4F5\";\n}\n\n.mdi-table-search:before {\n  content: \"\\F90E\";\n}\n\n.mdi-table-settings:before {\n  content: \"\\F837\";\n}\n\n.mdi-tablet:before {\n  content: \"\\F4F6\";\n}\n\n.mdi-tablet-android:before {\n  content: \"\\F4F7\";\n}\n\n.mdi-tablet-cellphone:before {\n  content: \"\\F9A6\";\n}\n\n.mdi-tablet-ipad:before {\n  content: \"\\F4F8\";\n}\n\n.mdi-taco:before {\n  content: \"\\F761\";\n}\n\n.mdi-tag:before {\n  content: \"\\F4F9\";\n}\n\n.mdi-tag-faces:before {\n  content: \"\\F4FA\";\n}\n\n.mdi-tag-heart:before {\n  content: \"\\F68A\";\n}\n\n.mdi-tag-minus:before {\n  content: \"\\F90F\";\n}\n\n.mdi-tag-multiple:before {\n  content: \"\\F4FB\";\n}\n\n.mdi-tag-outline:before {\n  content: \"\\F4FC\";\n}\n\n.mdi-tag-plus:before {\n  content: \"\\F721\";\n}\n\n.mdi-tag-remove:before {\n  content: \"\\F722\";\n}\n\n.mdi-tag-text-outline:before {\n  content: \"\\F4FD\";\n}\n\n.mdi-target:before {\n  content: \"\\F4FE\";\n}\n\n.mdi-taxi:before {\n  content: \"\\F4FF\";\n}\n\n.mdi-teach:before {\n  content: \"\\F88F\";\n}\n\n.mdi-teamviewer:before {\n  content: \"\\F500\";\n}\n\n.mdi-telegram:before {\n  content: \"\\F501\";\n}\n\n.mdi-television:before {\n  content: \"\\F502\";\n}\n\n.mdi-television-box:before {\n  content: \"\\F838\";\n}\n\n.mdi-television-classic:before {\n  content: \"\\F7F3\";\n}\n\n.mdi-television-classic-off:before {\n  content: \"\\F839\";\n}\n\n.mdi-television-guide:before {\n  content: \"\\F503\";\n}\n\n.mdi-television-off:before {\n  content: \"\\F83A\";\n}\n\n.mdi-temperature-celsius:before {\n  content: \"\\F504\";\n}\n\n.mdi-temperature-fahrenheit:before {\n  content: \"\\F505\";\n}\n\n.mdi-temperature-kelvin:before {\n  content: \"\\F506\";\n}\n\n.mdi-tennis:before {\n  content: \"\\F507\";\n}\n\n.mdi-tent:before {\n  content: \"\\F508\";\n}\n\n.mdi-terrain:before {\n  content: \"\\F509\";\n}\n\n.mdi-test-tube:before {\n  content: \"\\F668\";\n}\n\n.mdi-test-tube-empty:before {\n  content: \"\\F910\";\n}\n\n.mdi-test-tube-off:before {\n  content: \"\\F911\";\n}\n\n.mdi-text:before {\n  content: \"\\F9A7\";\n}\n\n.mdi-text-shadow:before {\n  content: \"\\F669\";\n}\n\n.mdi-text-short:before {\n  content: \"\\F9A8\";\n}\n\n.mdi-text-subject:before {\n  content: \"\\F9A9\";\n}\n\n.mdi-text-to-speech:before {\n  content: \"\\F50A\";\n}\n\n.mdi-text-to-speech-off:before {\n  content: \"\\F50B\";\n}\n\n.mdi-textbox:before {\n  content: \"\\F60E\";\n}\n\n.mdi-textbox-password:before {\n  content: \"\\F7F4\";\n}\n\n.mdi-texture:before {\n  content: \"\\F50C\";\n}\n\n.mdi-theater:before {\n  content: \"\\F50D\";\n}\n\n.mdi-theme-light-dark:before {\n  content: \"\\F50E\";\n}\n\n.mdi-thermometer:before {\n  content: \"\\F50F\";\n}\n\n.mdi-thermometer-lines:before {\n  content: \"\\F510\";\n}\n\n.mdi-thermostat:before {\n  content: \"\\F393\";\n}\n\n.mdi-thermostat-box:before {\n  content: \"\\F890\";\n}\n\n.mdi-thought-bubble:before {\n  content: \"\\F7F5\";\n}\n\n.mdi-thought-bubble-outline:before {\n  content: \"\\F7F6\";\n}\n\n.mdi-thumb-down:before {\n  content: \"\\F511\";\n}\n\n.mdi-thumb-down-outline:before {\n  content: \"\\F512\";\n}\n\n.mdi-thumb-up:before {\n  content: \"\\F513\";\n}\n\n.mdi-thumb-up-outline:before {\n  content: \"\\F514\";\n}\n\n.mdi-thumbs-up-down:before {\n  content: \"\\F515\";\n}\n\n.mdi-ticket:before {\n  content: \"\\F516\";\n}\n\n.mdi-ticket-account:before {\n  content: \"\\F517\";\n}\n\n.mdi-ticket-confirmation:before {\n  content: \"\\F518\";\n}\n\n.mdi-ticket-outline:before {\n  content: \"\\F912\";\n}\n\n.mdi-ticket-percent:before {\n  content: \"\\F723\";\n}\n\n.mdi-tie:before {\n  content: \"\\F519\";\n}\n\n.mdi-tilde:before {\n  content: \"\\F724\";\n}\n\n.mdi-timelapse:before {\n  content: \"\\F51A\";\n}\n\n.mdi-timer:before {\n  content: \"\\F51B\";\n}\n\n.mdi-timer-10:before {\n  content: \"\\F51C\";\n}\n\n.mdi-timer-3:before {\n  content: \"\\F51D\";\n}\n\n.mdi-timer-off:before {\n  content: \"\\F51E\";\n}\n\n.mdi-timer-sand:before {\n  content: \"\\F51F\";\n}\n\n.mdi-timer-sand-empty:before {\n  content: \"\\F6AC\";\n}\n\n.mdi-timer-sand-full:before {\n  content: \"\\F78B\";\n}\n\n.mdi-timetable:before {\n  content: \"\\F520\";\n}\n\n.mdi-toggle-switch:before {\n  content: \"\\F521\";\n}\n\n.mdi-toggle-switch-off:before {\n  content: \"\\F522\";\n}\n\n.mdi-toilet:before {\n  content: \"\\F9AA\";\n}\n\n.mdi-toolbox:before {\n  content: \"\\F9AB\";\n}\n\n.mdi-toolbox-outline:before {\n  content: \"\\F9AC\";\n}\n\n.mdi-tooltip:before {\n  content: \"\\F523\";\n}\n\n.mdi-tooltip-edit:before {\n  content: \"\\F524\";\n}\n\n.mdi-tooltip-image:before {\n  content: \"\\F525\";\n}\n\n.mdi-tooltip-outline:before {\n  content: \"\\F526\";\n}\n\n.mdi-tooltip-outline-plus:before {\n  content: \"\\F527\";\n}\n\n.mdi-tooltip-text:before {\n  content: \"\\F528\";\n}\n\n.mdi-tooth:before {\n  content: \"\\F8C2\";\n}\n\n.mdi-tooth-outline:before {\n  content: \"\\F529\";\n}\n\n.mdi-tor:before {\n  content: \"\\F52A\";\n}\n\n.mdi-tournament:before {\n  content: \"\\F9AD\";\n}\n\n.mdi-tower-beach:before {\n  content: \"\\F680\";\n}\n\n.mdi-tower-fire:before {\n  content: \"\\F681\";\n}\n\n.mdi-towing:before {\n  content: \"\\F83B\";\n}\n\n.mdi-track-light:before {\n  content: \"\\F913\";\n}\n\n.mdi-trackpad:before {\n  content: \"\\F7F7\";\n}\n\n.mdi-trackpad-lock:before {\n  content: \"\\F932\";\n}\n\n.mdi-tractor:before {\n  content: \"\\F891\";\n}\n\n.mdi-traffic-light:before {\n  content: \"\\F52B\";\n}\n\n.mdi-train:before {\n  content: \"\\F52C\";\n}\n\n.mdi-train-variant:before {\n  content: \"\\F8C3\";\n}\n\n.mdi-tram:before {\n  content: \"\\F52D\";\n}\n\n.mdi-transcribe:before {\n  content: \"\\F52E\";\n}\n\n.mdi-transcribe-close:before {\n  content: \"\\F52F\";\n}\n\n.mdi-transfer:before {\n  content: \"\\F530\";\n}\n\n.mdi-transit-transfer:before {\n  content: \"\\F6AD\";\n}\n\n.mdi-transition:before {\n  content: \"\\F914\";\n}\n\n.mdi-transition-masked:before {\n  content: \"\\F915\";\n}\n\n.mdi-translate:before {\n  content: \"\\F5CA\";\n}\n\n.mdi-treasure-chest:before {\n  content: \"\\F725\";\n}\n\n.mdi-tree:before {\n  content: \"\\F531\";\n}\n\n.mdi-trello:before {\n  content: \"\\F532\";\n}\n\n.mdi-trending-down:before {\n  content: \"\\F533\";\n}\n\n.mdi-trending-neutral:before {\n  content: \"\\F534\";\n}\n\n.mdi-trending-up:before {\n  content: \"\\F535\";\n}\n\n.mdi-triangle:before {\n  content: \"\\F536\";\n}\n\n.mdi-triangle-outline:before {\n  content: \"\\F537\";\n}\n\n.mdi-trophy:before {\n  content: \"\\F538\";\n}\n\n.mdi-trophy-award:before {\n  content: \"\\F539\";\n}\n\n.mdi-trophy-outline:before {\n  content: \"\\F53A\";\n}\n\n.mdi-trophy-variant:before {\n  content: \"\\F53B\";\n}\n\n.mdi-trophy-variant-outline:before {\n  content: \"\\F53C\";\n}\n\n.mdi-truck:before {\n  content: \"\\F53D\";\n}\n\n.mdi-truck-delivery:before {\n  content: \"\\F53E\";\n}\n\n.mdi-truck-fast:before {\n  content: \"\\F787\";\n}\n\n.mdi-truck-trailer:before {\n  content: \"\\F726\";\n}\n\n.mdi-tshirt-crew:before {\n  content: \"\\F53F\";\n}\n\n.mdi-tshirt-v:before {\n  content: \"\\F540\";\n}\n\n.mdi-tumble-dryer:before {\n  content: \"\\F916\";\n}\n\n.mdi-tumblr:before {\n  content: \"\\F541\";\n}\n\n.mdi-tumblr-box:before {\n  content: \"\\F917\";\n}\n\n.mdi-tumblr-reblog:before {\n  content: \"\\F542\";\n}\n\n.mdi-tune:before {\n  content: \"\\F62E\";\n}\n\n.mdi-tune-vertical:before {\n  content: \"\\F66A\";\n}\n\n.mdi-twitch:before {\n  content: \"\\F543\";\n}\n\n.mdi-twitter:before {\n  content: \"\\F544\";\n}\n\n.mdi-twitter-box:before {\n  content: \"\\F545\";\n}\n\n.mdi-twitter-circle:before {\n  content: \"\\F546\";\n}\n\n.mdi-twitter-retweet:before {\n  content: \"\\F547\";\n}\n\n.mdi-two-factor-authentication:before {\n  content: \"\\F9AE\";\n}\n\n.mdi-uber:before {\n  content: \"\\F748\";\n}\n\n.mdi-ubuntu:before {\n  content: \"\\F548\";\n}\n\n.mdi-ultra-high-definition:before {\n  content: \"\\F7F8\";\n}\n\n.mdi-umbraco:before {\n  content: \"\\F549\";\n}\n\n.mdi-umbrella:before {\n  content: \"\\F54A\";\n}\n\n.mdi-umbrella-closed:before {\n  content: \"\\F9AF\";\n}\n\n.mdi-umbrella-outline:before {\n  content: \"\\F54B\";\n}\n\n.mdi-undo:before {\n  content: \"\\F54C\";\n}\n\n.mdi-undo-variant:before {\n  content: \"\\F54D\";\n}\n\n.mdi-unfold-less-horizontal:before {\n  content: \"\\F54E\";\n}\n\n.mdi-unfold-less-vertical:before {\n  content: \"\\F75F\";\n}\n\n.mdi-unfold-more-horizontal:before {\n  content: \"\\F54F\";\n}\n\n.mdi-unfold-more-vertical:before {\n  content: \"\\F760\";\n}\n\n.mdi-ungroup:before {\n  content: \"\\F550\";\n}\n\n.mdi-unity:before {\n  content: \"\\F6AE\";\n}\n\n.mdi-unreal:before {\n  content: \"\\F9B0\";\n}\n\n.mdi-untappd:before {\n  content: \"\\F551\";\n}\n\n.mdi-update:before {\n  content: \"\\F6AF\";\n}\n\n.mdi-upload:before {\n  content: \"\\F552\";\n}\n\n.mdi-upload-multiple:before {\n  content: \"\\F83C\";\n}\n\n.mdi-upload-network:before {\n  content: \"\\F6F5\";\n}\n\n.mdi-usb:before {\n  content: \"\\F553\";\n}\n\n.mdi-van-passenger:before {\n  content: \"\\F7F9\";\n}\n\n.mdi-van-utility:before {\n  content: \"\\F7FA\";\n}\n\n.mdi-vanish:before {\n  content: \"\\F7FB\";\n}\n\n.mdi-vector-arrange-above:before {\n  content: \"\\F554\";\n}\n\n.mdi-vector-arrange-below:before {\n  content: \"\\F555\";\n}\n\n.mdi-vector-circle:before {\n  content: \"\\F556\";\n}\n\n.mdi-vector-circle-variant:before {\n  content: \"\\F557\";\n}\n\n.mdi-vector-combine:before {\n  content: \"\\F558\";\n}\n\n.mdi-vector-curve:before {\n  content: \"\\F559\";\n}\n\n.mdi-vector-difference:before {\n  content: \"\\F55A\";\n}\n\n.mdi-vector-difference-ab:before {\n  content: \"\\F55B\";\n}\n\n.mdi-vector-difference-ba:before {\n  content: \"\\F55C\";\n}\n\n.mdi-vector-ellipse:before {\n  content: \"\\F892\";\n}\n\n.mdi-vector-intersection:before {\n  content: \"\\F55D\";\n}\n\n.mdi-vector-line:before {\n  content: \"\\F55E\";\n}\n\n.mdi-vector-point:before {\n  content: \"\\F55F\";\n}\n\n.mdi-vector-polygon:before {\n  content: \"\\F560\";\n}\n\n.mdi-vector-polyline:before {\n  content: \"\\F561\";\n}\n\n.mdi-vector-radius:before {\n  content: \"\\F749\";\n}\n\n.mdi-vector-rectangle:before {\n  content: \"\\F5C6\";\n}\n\n.mdi-vector-selection:before {\n  content: \"\\F562\";\n}\n\n.mdi-vector-square:before {\n  content: \"\\F001\";\n}\n\n.mdi-vector-triangle:before {\n  content: \"\\F563\";\n}\n\n.mdi-vector-union:before {\n  content: \"\\F564\";\n}\n\n.mdi-venmo:before {\n  content: \"\\F578\";\n}\n\n.mdi-verified:before {\n  content: \"\\F565\";\n}\n\n.mdi-vibrate:before {\n  content: \"\\F566\";\n}\n\n.mdi-video:before {\n  content: \"\\F567\";\n}\n\n.mdi-video-3d:before {\n  content: \"\\F7FC\";\n}\n\n.mdi-video-4k-box:before {\n  content: \"\\F83D\";\n}\n\n.mdi-video-account:before {\n  content: \"\\F918\";\n}\n\n.mdi-video-image:before {\n  content: \"\\F919\";\n}\n\n.mdi-video-input-antenna:before {\n  content: \"\\F83E\";\n}\n\n.mdi-video-input-component:before {\n  content: \"\\F83F\";\n}\n\n.mdi-video-input-hdmi:before {\n  content: \"\\F840\";\n}\n\n.mdi-video-input-svideo:before {\n  content: \"\\F841\";\n}\n\n.mdi-video-minus:before {\n  content: \"\\F9B1\";\n}\n\n.mdi-video-off:before {\n  content: \"\\F568\";\n}\n\n.mdi-video-plus:before {\n  content: \"\\F9B2\";\n}\n\n.mdi-video-stabilization:before {\n  content: \"\\F91A\";\n}\n\n.mdi-video-switch:before {\n  content: \"\\F569\";\n}\n\n.mdi-view-agenda:before {\n  content: \"\\F56A\";\n}\n\n.mdi-view-array:before {\n  content: \"\\F56B\";\n}\n\n.mdi-view-carousel:before {\n  content: \"\\F56C\";\n}\n\n.mdi-view-column:before {\n  content: \"\\F56D\";\n}\n\n.mdi-view-dashboard:before {\n  content: \"\\F56E\";\n}\n\n.mdi-view-dashboard-variant:before {\n  content: \"\\F842\";\n}\n\n.mdi-view-day:before {\n  content: \"\\F56F\";\n}\n\n.mdi-view-grid:before {\n  content: \"\\F570\";\n}\n\n.mdi-view-headline:before {\n  content: \"\\F571\";\n}\n\n.mdi-view-list:before {\n  content: \"\\F572\";\n}\n\n.mdi-view-module:before {\n  content: \"\\F573\";\n}\n\n.mdi-view-parallel:before {\n  content: \"\\F727\";\n}\n\n.mdi-view-quilt:before {\n  content: \"\\F574\";\n}\n\n.mdi-view-sequential:before {\n  content: \"\\F728\";\n}\n\n.mdi-view-stream:before {\n  content: \"\\F575\";\n}\n\n.mdi-view-week:before {\n  content: \"\\F576\";\n}\n\n.mdi-vimeo:before {\n  content: \"\\F577\";\n}\n\n.mdi-violin:before {\n  content: \"\\F60F\";\n}\n\n.mdi-virtual-reality:before {\n  content: \"\\F893\";\n}\n\n.mdi-visualstudio:before {\n  content: \"\\F610\";\n}\n\n.mdi-vk:before {\n  content: \"\\F579\";\n}\n\n.mdi-vk-box:before {\n  content: \"\\F57A\";\n}\n\n.mdi-vk-circle:before {\n  content: \"\\F57B\";\n}\n\n.mdi-vlc:before {\n  content: \"\\F57C\";\n}\n\n.mdi-voice:before {\n  content: \"\\F5CB\";\n}\n\n.mdi-voicemail:before {\n  content: \"\\F57D\";\n}\n\n.mdi-volleyball:before {\n  content: \"\\F9B3\";\n}\n\n.mdi-volume-high:before {\n  content: \"\\F57E\";\n}\n\n.mdi-volume-low:before {\n  content: \"\\F57F\";\n}\n\n.mdi-volume-medium:before {\n  content: \"\\F580\";\n}\n\n.mdi-volume-minus:before {\n  content: \"\\F75D\";\n}\n\n.mdi-volume-mute:before {\n  content: \"\\F75E\";\n}\n\n.mdi-volume-off:before {\n  content: \"\\F581\";\n}\n\n.mdi-volume-plus:before {\n  content: \"\\F75C\";\n}\n\n.mdi-vpn:before {\n  content: \"\\F582\";\n}\n\n.mdi-vuejs:before {\n  content: \"\\F843\";\n}\n\n.mdi-walk:before {\n  content: \"\\F583\";\n}\n\n.mdi-wall:before {\n  content: \"\\F7FD\";\n}\n\n.mdi-wall-sconce:before {\n  content: \"\\F91B\";\n}\n\n.mdi-wall-sconce-flat:before {\n  content: \"\\F91C\";\n}\n\n.mdi-wall-sconce-variant:before {\n  content: \"\\F91D\";\n}\n\n.mdi-wallet:before {\n  content: \"\\F584\";\n}\n\n.mdi-wallet-giftcard:before {\n  content: \"\\F585\";\n}\n\n.mdi-wallet-membership:before {\n  content: \"\\F586\";\n}\n\n.mdi-wallet-travel:before {\n  content: \"\\F587\";\n}\n\n.mdi-wan:before {\n  content: \"\\F588\";\n}\n\n.mdi-washing-machine:before {\n  content: \"\\F729\";\n}\n\n.mdi-watch:before {\n  content: \"\\F589\";\n}\n\n.mdi-watch-export:before {\n  content: \"\\F58A\";\n}\n\n.mdi-watch-export-variant:before {\n  content: \"\\F894\";\n}\n\n.mdi-watch-import:before {\n  content: \"\\F58B\";\n}\n\n.mdi-watch-import-variant:before {\n  content: \"\\F895\";\n}\n\n.mdi-watch-variant:before {\n  content: \"\\F896\";\n}\n\n.mdi-watch-vibrate:before {\n  content: \"\\F6B0\";\n}\n\n.mdi-water:before {\n  content: \"\\F58C\";\n}\n\n.mdi-water-off:before {\n  content: \"\\F58D\";\n}\n\n.mdi-water-percent:before {\n  content: \"\\F58E\";\n}\n\n.mdi-water-pump:before {\n  content: \"\\F58F\";\n}\n\n.mdi-watermark:before {\n  content: \"\\F612\";\n}\n\n.mdi-waves:before {\n  content: \"\\F78C\";\n}\n\n.mdi-weather-cloudy:before {\n  content: \"\\F590\";\n}\n\n.mdi-weather-fog:before {\n  content: \"\\F591\";\n}\n\n.mdi-weather-hail:before {\n  content: \"\\F592\";\n}\n\n.mdi-weather-hurricane:before {\n  content: \"\\F897\";\n}\n\n.mdi-weather-lightning:before {\n  content: \"\\F593\";\n}\n\n.mdi-weather-lightning-rainy:before {\n  content: \"\\F67D\";\n}\n\n.mdi-weather-night:before {\n  content: \"\\F594\";\n}\n\n.mdi-weather-partlycloudy:before {\n  content: \"\\F595\";\n}\n\n.mdi-weather-pouring:before {\n  content: \"\\F596\";\n}\n\n.mdi-weather-rainy:before {\n  content: \"\\F597\";\n}\n\n.mdi-weather-snowy:before {\n  content: \"\\F598\";\n}\n\n.mdi-weather-snowy-rainy:before {\n  content: \"\\F67E\";\n}\n\n.mdi-weather-sunny:before {\n  content: \"\\F599\";\n}\n\n.mdi-weather-sunset:before {\n  content: \"\\F59A\";\n}\n\n.mdi-weather-sunset-down:before {\n  content: \"\\F59B\";\n}\n\n.mdi-weather-sunset-up:before {\n  content: \"\\F59C\";\n}\n\n.mdi-weather-windy:before {\n  content: \"\\F59D\";\n}\n\n.mdi-weather-windy-variant:before {\n  content: \"\\F59E\";\n}\n\n.mdi-web:before {\n  content: \"\\F59F\";\n}\n\n.mdi-webcam:before {\n  content: \"\\F5A0\";\n}\n\n.mdi-webhook:before {\n  content: \"\\F62F\";\n}\n\n.mdi-webpack:before {\n  content: \"\\F72A\";\n}\n\n.mdi-wechat:before {\n  content: \"\\F611\";\n}\n\n.mdi-weight:before {\n  content: \"\\F5A1\";\n}\n\n.mdi-weight-kilogram:before {\n  content: \"\\F5A2\";\n}\n\n.mdi-weight-pound:before {\n  content: \"\\F9B4\";\n}\n\n.mdi-whatsapp:before {\n  content: \"\\F5A3\";\n}\n\n.mdi-wheelchair-accessibility:before {\n  content: \"\\F5A4\";\n}\n\n.mdi-whistle:before {\n  content: \"\\F9B5\";\n}\n\n.mdi-white-balance-auto:before {\n  content: \"\\F5A5\";\n}\n\n.mdi-white-balance-incandescent:before {\n  content: \"\\F5A6\";\n}\n\n.mdi-white-balance-iridescent:before {\n  content: \"\\F5A7\";\n}\n\n.mdi-white-balance-sunny:before {\n  content: \"\\F5A8\";\n}\n\n.mdi-widgets:before {\n  content: \"\\F72B\";\n}\n\n.mdi-wifi:before {\n  content: \"\\F5A9\";\n}\n\n.mdi-wifi-off:before {\n  content: \"\\F5AA\";\n}\n\n.mdi-wifi-strength-1:before {\n  content: \"\\F91E\";\n}\n\n.mdi-wifi-strength-1-alert:before {\n  content: \"\\F91F\";\n}\n\n.mdi-wifi-strength-1-lock:before {\n  content: \"\\F920\";\n}\n\n.mdi-wifi-strength-2:before {\n  content: \"\\F921\";\n}\n\n.mdi-wifi-strength-2-alert:before {\n  content: \"\\F922\";\n}\n\n.mdi-wifi-strength-2-lock:before {\n  content: \"\\F923\";\n}\n\n.mdi-wifi-strength-3:before {\n  content: \"\\F924\";\n}\n\n.mdi-wifi-strength-3-alert:before {\n  content: \"\\F925\";\n}\n\n.mdi-wifi-strength-3-lock:before {\n  content: \"\\F926\";\n}\n\n.mdi-wifi-strength-4:before {\n  content: \"\\F927\";\n}\n\n.mdi-wifi-strength-4-alert:before {\n  content: \"\\F928\";\n}\n\n.mdi-wifi-strength-4-lock:before {\n  content: \"\\F929\";\n}\n\n.mdi-wifi-strength-alert-outline:before {\n  content: \"\\F92A\";\n}\n\n.mdi-wifi-strength-lock-outline:before {\n  content: \"\\F92B\";\n}\n\n.mdi-wifi-strength-off:before {\n  content: \"\\F92C\";\n}\n\n.mdi-wifi-strength-off-outline:before {\n  content: \"\\F92D\";\n}\n\n.mdi-wifi-strength-outline:before {\n  content: \"\\F92E\";\n}\n\n.mdi-wii:before {\n  content: \"\\F5AB\";\n}\n\n.mdi-wiiu:before {\n  content: \"\\F72C\";\n}\n\n.mdi-wikipedia:before {\n  content: \"\\F5AC\";\n}\n\n.mdi-window-close:before {\n  content: \"\\F5AD\";\n}\n\n.mdi-window-closed:before {\n  content: \"\\F5AE\";\n}\n\n.mdi-window-maximize:before {\n  content: \"\\F5AF\";\n}\n\n.mdi-window-minimize:before {\n  content: \"\\F5B0\";\n}\n\n.mdi-window-open:before {\n  content: \"\\F5B1\";\n}\n\n.mdi-window-restore:before {\n  content: \"\\F5B2\";\n}\n\n.mdi-windows:before {\n  content: \"\\F5B3\";\n}\n\n.mdi-wordpress:before {\n  content: \"\\F5B4\";\n}\n\n.mdi-worker:before {\n  content: \"\\F5B5\";\n}\n\n.mdi-wrap:before {\n  content: \"\\F5B6\";\n}\n\n.mdi-wrench:before {\n  content: \"\\F5B7\";\n}\n\n.mdi-wunderlist:before {\n  content: \"\\F5B8\";\n}\n\n.mdi-xamarin:before {\n  content: \"\\F844\";\n}\n\n.mdi-xamarin-outline:before {\n  content: \"\\F845\";\n}\n\n.mdi-xaml:before {\n  content: \"\\F673\";\n}\n\n.mdi-xbox:before {\n  content: \"\\F5B9\";\n}\n\n.mdi-xbox-controller:before {\n  content: \"\\F5BA\";\n}\n\n.mdi-xbox-controller-battery-alert:before {\n  content: \"\\F74A\";\n}\n\n.mdi-xbox-controller-battery-empty:before {\n  content: \"\\F74B\";\n}\n\n.mdi-xbox-controller-battery-full:before {\n  content: \"\\F74C\";\n}\n\n.mdi-xbox-controller-battery-low:before {\n  content: \"\\F74D\";\n}\n\n.mdi-xbox-controller-battery-medium:before {\n  content: \"\\F74E\";\n}\n\n.mdi-xbox-controller-battery-unknown:before {\n  content: \"\\F74F\";\n}\n\n.mdi-xbox-controller-off:before {\n  content: \"\\F5BB\";\n}\n\n.mdi-xda:before {\n  content: \"\\F5BC\";\n}\n\n.mdi-xing:before {\n  content: \"\\F5BD\";\n}\n\n.mdi-xing-box:before {\n  content: \"\\F5BE\";\n}\n\n.mdi-xing-circle:before {\n  content: \"\\F5BF\";\n}\n\n.mdi-xml:before {\n  content: \"\\F5C0\";\n}\n\n.mdi-xmpp:before {\n  content: \"\\F7FE\";\n}\n\n.mdi-yammer:before {\n  content: \"\\F788\";\n}\n\n.mdi-yeast:before {\n  content: \"\\F5C1\";\n}\n\n.mdi-yelp:before {\n  content: \"\\F5C2\";\n}\n\n.mdi-yin-yang:before {\n  content: \"\\F67F\";\n}\n\n.mdi-youtube:before {\n  content: \"\\F5C3\";\n}\n\n.mdi-youtube-creator-studio:before {\n  content: \"\\F846\";\n}\n\n.mdi-youtube-gaming:before {\n  content: \"\\F847\";\n}\n\n.mdi-youtube-tv:before {\n  content: \"\\F448\";\n}\n\n.mdi-zip-box:before {\n  content: \"\\F5C4\";\n}\n\n.mdi-blank:before {\n  content: \"\\F68C\";\n  visibility: hidden;\n}\n\n.mdi-18px.mdi-set, .mdi-18px.mdi:before {\n  font-size: 18px;\n}\n\n.mdi-24px.mdi-set, .mdi-24px.mdi:before {\n  font-size: 24px;\n}\n\n.mdi-36px.mdi-set, .mdi-36px.mdi:before {\n  font-size: 36px;\n}\n\n.mdi-48px.mdi-set, .mdi-48px.mdi:before {\n  font-size: 48px;\n}\n\n.mdi-dark:before {\n  color: rgba(0, 0, 0, 0.54);\n}\n.mdi-dark.mdi-inactive:before {\n  color: rgba(0, 0, 0, 0.26);\n}\n\n.mdi-light:before {\n  color: white;\n}\n.mdi-light.mdi-inactive:before {\n  color: rgba(255, 255, 255, 0.3);\n}\n\n.mdi-rotate-45 {\n  /*\n  // Not included in production\n  &.mdi-flip-h:before {\n      -webkit-transform: scaleX(-1) rotate(45deg);\n      transform: scaleX(-1) rotate(45deg);\n      filter: FlipH;\n      -ms-filter: \"FlipH\";\n  }\n  &.mdi-flip-v:before {\n      -webkit-transform: scaleY(-1) rotate(45deg);\n      -ms-transform: rotate(45deg);\n      transform: scaleY(-1) rotate(45deg);\n      filter: FlipV;\n      -ms-filter: \"FlipV\";\n  }\n  */\n}\n.mdi-rotate-45:before {\n  -webkit-transform: rotate(45deg);\n  -ms-transform: rotate(45deg);\n  transform: rotate(45deg);\n}\n\n.mdi-rotate-90 {\n  /*\n  // Not included in production\n  &.mdi-flip-h:before {\n      -webkit-transform: scaleX(-1) rotate(90deg);\n      transform: scaleX(-1) rotate(90deg);\n      filter: FlipH;\n      -ms-filter: \"FlipH\";\n  }\n  &.mdi-flip-v:before {\n      -webkit-transform: scaleY(-1) rotate(90deg);\n      -ms-transform: rotate(90deg);\n      transform: scaleY(-1) rotate(90deg);\n      filter: FlipV;\n      -ms-filter: \"FlipV\";\n  }\n  */\n}\n.mdi-rotate-90:before {\n  -webkit-transform: rotate(90deg);\n  -ms-transform: rotate(90deg);\n  transform: rotate(90deg);\n}\n\n.mdi-rotate-135 {\n  /*\n  // Not included in production\n  &.mdi-flip-h:before {\n      -webkit-transform: scaleX(-1) rotate(135deg);\n      transform: scaleX(-1) rotate(135deg);\n      filter: FlipH;\n      -ms-filter: \"FlipH\";\n  }\n  &.mdi-flip-v:before {\n      -webkit-transform: scaleY(-1) rotate(135deg);\n      -ms-transform: rotate(135deg);\n      transform: scaleY(-1) rotate(135deg);\n      filter: FlipV;\n      -ms-filter: \"FlipV\";\n  }\n  */\n}\n.mdi-rotate-135:before {\n  -webkit-transform: rotate(135deg);\n  -ms-transform: rotate(135deg);\n  transform: rotate(135deg);\n}\n\n.mdi-rotate-180 {\n  /*\n  // Not included in production\n  &.mdi-flip-h:before {\n      -webkit-transform: scaleX(-1) rotate(180deg);\n      transform: scaleX(-1) rotate(180deg);\n      filter: FlipH;\n      -ms-filter: \"FlipH\";\n  }\n  &.mdi-flip-v:before {\n      -webkit-transform: scaleY(-1) rotate(180deg);\n      -ms-transform: rotate(180deg);\n      transform: scaleY(-1) rotate(180deg);\n      filter: FlipV;\n      -ms-filter: \"FlipV\";\n  }\n  */\n}\n.mdi-rotate-180:before {\n  -webkit-transform: rotate(180deg);\n  -ms-transform: rotate(180deg);\n  transform: rotate(180deg);\n}\n\n.mdi-rotate-225 {\n  /*\n  // Not included in production\n  &.mdi-flip-h:before {\n      -webkit-transform: scaleX(-1) rotate(225deg);\n      transform: scaleX(-1) rotate(225deg);\n      filter: FlipH;\n      -ms-filter: \"FlipH\";\n  }\n  &.mdi-flip-v:before {\n      -webkit-transform: scaleY(-1) rotate(225deg);\n      -ms-transform: rotate(225deg);\n      transform: scaleY(-1) rotate(225deg);\n      filter: FlipV;\n      -ms-filter: \"FlipV\";\n  }\n  */\n}\n.mdi-rotate-225:before {\n  -webkit-transform: rotate(225deg);\n  -ms-transform: rotate(225deg);\n  transform: rotate(225deg);\n}\n\n.mdi-rotate-270 {\n  /*\n  // Not included in production\n  &.mdi-flip-h:before {\n      -webkit-transform: scaleX(-1) rotate(270deg);\n      transform: scaleX(-1) rotate(270deg);\n      filter: FlipH;\n      -ms-filter: \"FlipH\";\n  }\n  &.mdi-flip-v:before {\n      -webkit-transform: scaleY(-1) rotate(270deg);\n      -ms-transform: rotate(270deg);\n      transform: scaleY(-1) rotate(270deg);\n      filter: FlipV;\n      -ms-filter: \"FlipV\";\n  }\n  */\n}\n.mdi-rotate-270:before {\n  -webkit-transform: rotate(270deg);\n  -ms-transform: rotate(270deg);\n  transform: rotate(270deg);\n}\n\n.mdi-rotate-315 {\n  /*\n  // Not included in production\n  &.mdi-flip-h:before {\n      -webkit-transform: scaleX(-1) rotate(315deg);\n      transform: scaleX(-1) rotate(315deg);\n      filter: FlipH;\n      -ms-filter: \"FlipH\";\n  }\n  &.mdi-flip-v:before {\n      -webkit-transform: scaleY(-1) rotate(315deg);\n      -ms-transform: rotate(315deg);\n      transform: scaleY(-1) rotate(315deg);\n      filter: FlipV;\n      -ms-filter: \"FlipV\";\n  }\n  */\n}\n.mdi-rotate-315:before {\n  -webkit-transform: rotate(315deg);\n  -ms-transform: rotate(315deg);\n  transform: rotate(315deg);\n}\n\n.mdi-flip-h:before {\n  -webkit-transform: scaleX(-1);\n  transform: scaleX(-1);\n  filter: FlipH;\n  -ms-filter: \"FlipH\";\n}\n\n.mdi-flip-v:before {\n  -webkit-transform: scaleY(-1);\n  transform: scaleY(-1);\n  filter: FlipV;\n  -ms-filter: \"FlipV\";\n}\n\n.mdi-spin:before {\n  -webkit-animation: mdi-spin 2s infinite linear;\n  animation: mdi-spin 2s infinite linear;\n}\n\n@-webkit-keyframes mdi-spin {\n  0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n  100% {\n    -webkit-transform: rotate(359deg);\n    transform: rotate(359deg);\n  }\n}\n@keyframes mdi-spin {\n  0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n  100% {\n    -webkit-transform: rotate(359deg);\n    transform: rotate(359deg);\n  }\n}\n", ""]);
+exports.push([module.i, "/* MaterialDesignIcons.com */\n@font-face {\n  font-family: \"Material Design Icons\";\n  src: url(" + escape(__webpack_require__(266)) + ");\n  src: url(" + escape(__webpack_require__(251)) + "?#iefix&v=2.5.94) format(\"embedded-opentype\"), url(" + escape(__webpack_require__(267)) + ") format(\"woff2\"), url(" + escape(__webpack_require__(268)) + ") format(\"woff\"), url(" + escape(__webpack_require__(269)) + ") format(\"truetype\"), url(" + escape(__webpack_require__(270)) + "#materialdesigniconsregular) format(\"svg\");\n  font-weight: normal;\n  font-style: normal;\n}\n.mdi:before,\n.mdi-set {\n  display: inline-block;\n  font: normal normal normal 24px/1 \"Material Design Icons\";\n  font-size: inherit;\n  text-rendering: auto;\n  line-height: inherit;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n.mdi-access-point:before {\n  content: \"\\F002\";\n}\n\n.mdi-access-point-network:before {\n  content: \"\\F003\";\n}\n\n.mdi-account:before {\n  content: \"\\F004\";\n}\n\n.mdi-account-alert:before {\n  content: \"\\F005\";\n}\n\n.mdi-account-box:before {\n  content: \"\\F006\";\n}\n\n.mdi-account-box-multiple:before {\n  content: \"\\F933\";\n}\n\n.mdi-account-box-outline:before {\n  content: \"\\F007\";\n}\n\n.mdi-account-card-details:before {\n  content: \"\\F5D2\";\n}\n\n.mdi-account-check:before {\n  content: \"\\F008\";\n}\n\n.mdi-account-circle:before {\n  content: \"\\F009\";\n}\n\n.mdi-account-convert:before {\n  content: \"\\F00A\";\n}\n\n.mdi-account-edit:before {\n  content: \"\\F6BB\";\n}\n\n.mdi-account-group:before {\n  content: \"\\F848\";\n}\n\n.mdi-account-heart:before {\n  content: \"\\F898\";\n}\n\n.mdi-account-key:before {\n  content: \"\\F00B\";\n}\n\n.mdi-account-location:before {\n  content: \"\\F00C\";\n}\n\n.mdi-account-minus:before {\n  content: \"\\F00D\";\n}\n\n.mdi-account-multiple:before {\n  content: \"\\F00E\";\n}\n\n.mdi-account-multiple-check:before {\n  content: \"\\F8C4\";\n}\n\n.mdi-account-multiple-minus:before {\n  content: \"\\F5D3\";\n}\n\n.mdi-account-multiple-outline:before {\n  content: \"\\F00F\";\n}\n\n.mdi-account-multiple-plus:before {\n  content: \"\\F010\";\n}\n\n.mdi-account-multiple-plus-outline:before {\n  content: \"\\F7FF\";\n}\n\n.mdi-account-network:before {\n  content: \"\\F011\";\n}\n\n.mdi-account-off:before {\n  content: \"\\F012\";\n}\n\n.mdi-account-outline:before {\n  content: \"\\F013\";\n}\n\n.mdi-account-plus:before {\n  content: \"\\F014\";\n}\n\n.mdi-account-plus-outline:before {\n  content: \"\\F800\";\n}\n\n.mdi-account-remove:before {\n  content: \"\\F015\";\n}\n\n.mdi-account-search:before {\n  content: \"\\F016\";\n}\n\n.mdi-account-search-outline:before {\n  content: \"\\F934\";\n}\n\n.mdi-account-settings:before {\n  content: \"\\F630\";\n}\n\n.mdi-account-settings-variant:before {\n  content: \"\\F631\";\n}\n\n.mdi-account-star:before {\n  content: \"\\F017\";\n}\n\n.mdi-account-switch:before {\n  content: \"\\F019\";\n}\n\n.mdi-accusoft:before {\n  content: \"\\F849\";\n}\n\n.mdi-adjust:before {\n  content: \"\\F01A\";\n}\n\n.mdi-adobe:before {\n  content: \"\\F935\";\n}\n\n.mdi-air-conditioner:before {\n  content: \"\\F01B\";\n}\n\n.mdi-airballoon:before {\n  content: \"\\F01C\";\n}\n\n.mdi-airplane:before {\n  content: \"\\F01D\";\n}\n\n.mdi-airplane-landing:before {\n  content: \"\\F5D4\";\n}\n\n.mdi-airplane-off:before {\n  content: \"\\F01E\";\n}\n\n.mdi-airplane-takeoff:before {\n  content: \"\\F5D5\";\n}\n\n.mdi-airplay:before {\n  content: \"\\F01F\";\n}\n\n.mdi-airport:before {\n  content: \"\\F84A\";\n}\n\n.mdi-alarm:before {\n  content: \"\\F020\";\n}\n\n.mdi-alarm-bell:before {\n  content: \"\\F78D\";\n}\n\n.mdi-alarm-check:before {\n  content: \"\\F021\";\n}\n\n.mdi-alarm-light:before {\n  content: \"\\F78E\";\n}\n\n.mdi-alarm-multiple:before {\n  content: \"\\F022\";\n}\n\n.mdi-alarm-off:before {\n  content: \"\\F023\";\n}\n\n.mdi-alarm-plus:before {\n  content: \"\\F024\";\n}\n\n.mdi-alarm-snooze:before {\n  content: \"\\F68D\";\n}\n\n.mdi-album:before {\n  content: \"\\F025\";\n}\n\n.mdi-alert:before {\n  content: \"\\F026\";\n}\n\n.mdi-alert-box:before {\n  content: \"\\F027\";\n}\n\n.mdi-alert-circle:before {\n  content: \"\\F028\";\n}\n\n.mdi-alert-circle-outline:before {\n  content: \"\\F5D6\";\n}\n\n.mdi-alert-decagram:before {\n  content: \"\\F6BC\";\n}\n\n.mdi-alert-octagon:before {\n  content: \"\\F029\";\n}\n\n.mdi-alert-octagram:before {\n  content: \"\\F766\";\n}\n\n.mdi-alert-outline:before {\n  content: \"\\F02A\";\n}\n\n.mdi-alien:before {\n  content: \"\\F899\";\n}\n\n.mdi-all-inclusive:before {\n  content: \"\\F6BD\";\n}\n\n.mdi-alpha:before {\n  content: \"\\F02B\";\n}\n\n.mdi-alphabetical:before {\n  content: \"\\F02C\";\n}\n\n.mdi-altimeter:before {\n  content: \"\\F5D7\";\n}\n\n.mdi-amazon:before {\n  content: \"\\F02D\";\n}\n\n.mdi-amazon-alexa:before {\n  content: \"\\F8C5\";\n}\n\n.mdi-amazon-drive:before {\n  content: \"\\F02E\";\n}\n\n.mdi-ambulance:before {\n  content: \"\\F02F\";\n}\n\n.mdi-amplifier:before {\n  content: \"\\F030\";\n}\n\n.mdi-anchor:before {\n  content: \"\\F031\";\n}\n\n.mdi-android:before {\n  content: \"\\F032\";\n}\n\n.mdi-android-debug-bridge:before {\n  content: \"\\F033\";\n}\n\n.mdi-android-head:before {\n  content: \"\\F78F\";\n}\n\n.mdi-android-studio:before {\n  content: \"\\F034\";\n}\n\n.mdi-angle-acute:before {\n  content: \"\\F936\";\n}\n\n.mdi-angle-obtuse:before {\n  content: \"\\F937\";\n}\n\n.mdi-angle-right:before {\n  content: \"\\F938\";\n}\n\n.mdi-angular:before {\n  content: \"\\F6B1\";\n}\n\n.mdi-angularjs:before {\n  content: \"\\F6BE\";\n}\n\n.mdi-animation:before {\n  content: \"\\F5D8\";\n}\n\n.mdi-animation-play:before {\n  content: \"\\F939\";\n}\n\n.mdi-anvil:before {\n  content: \"\\F89A\";\n}\n\n.mdi-apple:before {\n  content: \"\\F035\";\n}\n\n.mdi-apple-finder:before {\n  content: \"\\F036\";\n}\n\n.mdi-apple-icloud:before {\n  content: \"\\F038\";\n}\n\n.mdi-apple-ios:before {\n  content: \"\\F037\";\n}\n\n.mdi-apple-keyboard-caps:before {\n  content: \"\\F632\";\n}\n\n.mdi-apple-keyboard-command:before {\n  content: \"\\F633\";\n}\n\n.mdi-apple-keyboard-control:before {\n  content: \"\\F634\";\n}\n\n.mdi-apple-keyboard-option:before {\n  content: \"\\F635\";\n}\n\n.mdi-apple-keyboard-shift:before {\n  content: \"\\F636\";\n}\n\n.mdi-apple-safari:before {\n  content: \"\\F039\";\n}\n\n.mdi-application:before {\n  content: \"\\F614\";\n}\n\n.mdi-approval:before {\n  content: \"\\F790\";\n}\n\n.mdi-apps:before {\n  content: \"\\F03B\";\n}\n\n.mdi-arch:before {\n  content: \"\\F8C6\";\n}\n\n.mdi-archive:before {\n  content: \"\\F03C\";\n}\n\n.mdi-arrange-bring-forward:before {\n  content: \"\\F03D\";\n}\n\n.mdi-arrange-bring-to-front:before {\n  content: \"\\F03E\";\n}\n\n.mdi-arrange-send-backward:before {\n  content: \"\\F03F\";\n}\n\n.mdi-arrange-send-to-back:before {\n  content: \"\\F040\";\n}\n\n.mdi-arrow-all:before {\n  content: \"\\F041\";\n}\n\n.mdi-arrow-bottom-left:before {\n  content: \"\\F042\";\n}\n\n.mdi-arrow-bottom-left-bold-outline:before {\n  content: \"\\F9B6\";\n}\n\n.mdi-arrow-bottom-left-thick:before {\n  content: \"\\F9B7\";\n}\n\n.mdi-arrow-bottom-right:before {\n  content: \"\\F043\";\n}\n\n.mdi-arrow-bottom-right-bold-outline:before {\n  content: \"\\F9B8\";\n}\n\n.mdi-arrow-bottom-right-thick:before {\n  content: \"\\F9B9\";\n}\n\n.mdi-arrow-collapse:before {\n  content: \"\\F615\";\n}\n\n.mdi-arrow-collapse-all:before {\n  content: \"\\F044\";\n}\n\n.mdi-arrow-collapse-down:before {\n  content: \"\\F791\";\n}\n\n.mdi-arrow-collapse-horizontal:before {\n  content: \"\\F84B\";\n}\n\n.mdi-arrow-collapse-left:before {\n  content: \"\\F792\";\n}\n\n.mdi-arrow-collapse-right:before {\n  content: \"\\F793\";\n}\n\n.mdi-arrow-collapse-up:before {\n  content: \"\\F794\";\n}\n\n.mdi-arrow-collapse-vertical:before {\n  content: \"\\F84C\";\n}\n\n.mdi-arrow-decision:before {\n  content: \"\\F9BA\";\n}\n\n.mdi-arrow-decision-auto:before {\n  content: \"\\F9BB\";\n}\n\n.mdi-arrow-decision-auto-outline:before {\n  content: \"\\F9BC\";\n}\n\n.mdi-arrow-decision-outline:before {\n  content: \"\\F9BD\";\n}\n\n.mdi-arrow-down:before {\n  content: \"\\F045\";\n}\n\n.mdi-arrow-down-bold:before {\n  content: \"\\F72D\";\n}\n\n.mdi-arrow-down-bold-box:before {\n  content: \"\\F72E\";\n}\n\n.mdi-arrow-down-bold-box-outline:before {\n  content: \"\\F72F\";\n}\n\n.mdi-arrow-down-bold-circle:before {\n  content: \"\\F047\";\n}\n\n.mdi-arrow-down-bold-circle-outline:before {\n  content: \"\\F048\";\n}\n\n.mdi-arrow-down-bold-hexagon-outline:before {\n  content: \"\\F049\";\n}\n\n.mdi-arrow-down-bold-outline:before {\n  content: \"\\F9BE\";\n}\n\n.mdi-arrow-down-box:before {\n  content: \"\\F6BF\";\n}\n\n.mdi-arrow-down-drop-circle:before {\n  content: \"\\F04A\";\n}\n\n.mdi-arrow-down-drop-circle-outline:before {\n  content: \"\\F04B\";\n}\n\n.mdi-arrow-down-thick:before {\n  content: \"\\F046\";\n}\n\n.mdi-arrow-expand:before {\n  content: \"\\F616\";\n}\n\n.mdi-arrow-expand-all:before {\n  content: \"\\F04C\";\n}\n\n.mdi-arrow-expand-down:before {\n  content: \"\\F795\";\n}\n\n.mdi-arrow-expand-horizontal:before {\n  content: \"\\F84D\";\n}\n\n.mdi-arrow-expand-left:before {\n  content: \"\\F796\";\n}\n\n.mdi-arrow-expand-right:before {\n  content: \"\\F797\";\n}\n\n.mdi-arrow-expand-up:before {\n  content: \"\\F798\";\n}\n\n.mdi-arrow-expand-vertical:before {\n  content: \"\\F84E\";\n}\n\n.mdi-arrow-left:before {\n  content: \"\\F04D\";\n}\n\n.mdi-arrow-left-bold:before {\n  content: \"\\F730\";\n}\n\n.mdi-arrow-left-bold-box:before {\n  content: \"\\F731\";\n}\n\n.mdi-arrow-left-bold-box-outline:before {\n  content: \"\\F732\";\n}\n\n.mdi-arrow-left-bold-circle:before {\n  content: \"\\F04F\";\n}\n\n.mdi-arrow-left-bold-circle-outline:before {\n  content: \"\\F050\";\n}\n\n.mdi-arrow-left-bold-hexagon-outline:before {\n  content: \"\\F051\";\n}\n\n.mdi-arrow-left-bold-outline:before {\n  content: \"\\F9BF\";\n}\n\n.mdi-arrow-left-box:before {\n  content: \"\\F6C0\";\n}\n\n.mdi-arrow-left-drop-circle:before {\n  content: \"\\F052\";\n}\n\n.mdi-arrow-left-drop-circle-outline:before {\n  content: \"\\F053\";\n}\n\n.mdi-arrow-left-right-bold-outline:before {\n  content: \"\\F9C0\";\n}\n\n.mdi-arrow-left-thick:before {\n  content: \"\\F04E\";\n}\n\n.mdi-arrow-right:before {\n  content: \"\\F054\";\n}\n\n.mdi-arrow-right-bold:before {\n  content: \"\\F733\";\n}\n\n.mdi-arrow-right-bold-box:before {\n  content: \"\\F734\";\n}\n\n.mdi-arrow-right-bold-box-outline:before {\n  content: \"\\F735\";\n}\n\n.mdi-arrow-right-bold-circle:before {\n  content: \"\\F056\";\n}\n\n.mdi-arrow-right-bold-circle-outline:before {\n  content: \"\\F057\";\n}\n\n.mdi-arrow-right-bold-hexagon-outline:before {\n  content: \"\\F058\";\n}\n\n.mdi-arrow-right-bold-outline:before {\n  content: \"\\F9C1\";\n}\n\n.mdi-arrow-right-box:before {\n  content: \"\\F6C1\";\n}\n\n.mdi-arrow-right-drop-circle:before {\n  content: \"\\F059\";\n}\n\n.mdi-arrow-right-drop-circle-outline:before {\n  content: \"\\F05A\";\n}\n\n.mdi-arrow-right-thick:before {\n  content: \"\\F055\";\n}\n\n.mdi-arrow-split-horizontal:before {\n  content: \"\\F93A\";\n}\n\n.mdi-arrow-split-vertical:before {\n  content: \"\\F93B\";\n}\n\n.mdi-arrow-top-left:before {\n  content: \"\\F05B\";\n}\n\n.mdi-arrow-top-left-bold-outline:before {\n  content: \"\\F9C2\";\n}\n\n.mdi-arrow-top-left-thick:before {\n  content: \"\\F9C3\";\n}\n\n.mdi-arrow-top-right:before {\n  content: \"\\F05C\";\n}\n\n.mdi-arrow-top-right-bold-outline:before {\n  content: \"\\F9C4\";\n}\n\n.mdi-arrow-top-right-thick:before {\n  content: \"\\F9C5\";\n}\n\n.mdi-arrow-up:before {\n  content: \"\\F05D\";\n}\n\n.mdi-arrow-up-bold:before {\n  content: \"\\F736\";\n}\n\n.mdi-arrow-up-bold-box:before {\n  content: \"\\F737\";\n}\n\n.mdi-arrow-up-bold-box-outline:before {\n  content: \"\\F738\";\n}\n\n.mdi-arrow-up-bold-circle:before {\n  content: \"\\F05F\";\n}\n\n.mdi-arrow-up-bold-circle-outline:before {\n  content: \"\\F060\";\n}\n\n.mdi-arrow-up-bold-hexagon-outline:before {\n  content: \"\\F061\";\n}\n\n.mdi-arrow-up-bold-outline:before {\n  content: \"\\F9C6\";\n}\n\n.mdi-arrow-up-box:before {\n  content: \"\\F6C2\";\n}\n\n.mdi-arrow-up-down-bold-outline:before {\n  content: \"\\F9C7\";\n}\n\n.mdi-arrow-up-drop-circle:before {\n  content: \"\\F062\";\n}\n\n.mdi-arrow-up-drop-circle-outline:before {\n  content: \"\\F063\";\n}\n\n.mdi-arrow-up-thick:before {\n  content: \"\\F05E\";\n}\n\n.mdi-artist:before {\n  content: \"\\F802\";\n}\n\n.mdi-assistant:before {\n  content: \"\\F064\";\n}\n\n.mdi-asterisk:before {\n  content: \"\\F6C3\";\n}\n\n.mdi-at:before {\n  content: \"\\F065\";\n}\n\n.mdi-atlassian:before {\n  content: \"\\F803\";\n}\n\n.mdi-atom:before {\n  content: \"\\F767\";\n}\n\n.mdi-attachment:before {\n  content: \"\\F066\";\n}\n\n.mdi-audio-video:before {\n  content: \"\\F93C\";\n}\n\n.mdi-audiobook:before {\n  content: \"\\F067\";\n}\n\n.mdi-augmented-reality:before {\n  content: \"\\F84F\";\n}\n\n.mdi-auto-fix:before {\n  content: \"\\F068\";\n}\n\n.mdi-auto-upload:before {\n  content: \"\\F069\";\n}\n\n.mdi-autorenew:before {\n  content: \"\\F06A\";\n}\n\n.mdi-av-timer:before {\n  content: \"\\F06B\";\n}\n\n.mdi-axe:before {\n  content: \"\\F8C7\";\n}\n\n.mdi-azure:before {\n  content: \"\\F804\";\n}\n\n.mdi-baby:before {\n  content: \"\\F06C\";\n}\n\n.mdi-baby-buggy:before {\n  content: \"\\F68E\";\n}\n\n.mdi-backburger:before {\n  content: \"\\F06D\";\n}\n\n.mdi-backspace:before {\n  content: \"\\F06E\";\n}\n\n.mdi-backup-restore:before {\n  content: \"\\F06F\";\n}\n\n.mdi-badminton:before {\n  content: \"\\F850\";\n}\n\n.mdi-ballot:before {\n  content: \"\\F9C8\";\n}\n\n.mdi-ballot-outline:before {\n  content: \"\\F9C9\";\n}\n\n.mdi-bandcamp:before {\n  content: \"\\F674\";\n}\n\n.mdi-bank:before {\n  content: \"\\F070\";\n}\n\n.mdi-barcode:before {\n  content: \"\\F071\";\n}\n\n.mdi-barcode-scan:before {\n  content: \"\\F072\";\n}\n\n.mdi-barley:before {\n  content: \"\\F073\";\n}\n\n.mdi-barrel:before {\n  content: \"\\F074\";\n}\n\n.mdi-baseball:before {\n  content: \"\\F851\";\n}\n\n.mdi-baseball-bat:before {\n  content: \"\\F852\";\n}\n\n.mdi-basecamp:before {\n  content: \"\\F075\";\n}\n\n.mdi-basket:before {\n  content: \"\\F076\";\n}\n\n.mdi-basket-fill:before {\n  content: \"\\F077\";\n}\n\n.mdi-basket-unfill:before {\n  content: \"\\F078\";\n}\n\n.mdi-basketball:before {\n  content: \"\\F805\";\n}\n\n.mdi-battery:before {\n  content: \"\\F079\";\n}\n\n.mdi-battery-10:before {\n  content: \"\\F07A\";\n}\n\n.mdi-battery-10-bluetooth:before {\n  content: \"\\F93D\";\n}\n\n.mdi-battery-20:before {\n  content: \"\\F07B\";\n}\n\n.mdi-battery-20-bluetooth:before {\n  content: \"\\F93E\";\n}\n\n.mdi-battery-30:before {\n  content: \"\\F07C\";\n}\n\n.mdi-battery-30-bluetooth:before {\n  content: \"\\F93F\";\n}\n\n.mdi-battery-40:before {\n  content: \"\\F07D\";\n}\n\n.mdi-battery-40-bluetooth:before {\n  content: \"\\F940\";\n}\n\n.mdi-battery-50:before {\n  content: \"\\F07E\";\n}\n\n.mdi-battery-50-bluetooth:before {\n  content: \"\\F941\";\n}\n\n.mdi-battery-60:before {\n  content: \"\\F07F\";\n}\n\n.mdi-battery-60-bluetooth:before {\n  content: \"\\F942\";\n}\n\n.mdi-battery-70:before {\n  content: \"\\F080\";\n}\n\n.mdi-battery-70-bluetooth:before {\n  content: \"\\F943\";\n}\n\n.mdi-battery-80:before {\n  content: \"\\F081\";\n}\n\n.mdi-battery-80-bluetooth:before {\n  content: \"\\F944\";\n}\n\n.mdi-battery-90:before {\n  content: \"\\F082\";\n}\n\n.mdi-battery-90-bluetooth:before {\n  content: \"\\F945\";\n}\n\n.mdi-battery-alert:before {\n  content: \"\\F083\";\n}\n\n.mdi-battery-alert-bluetooth:before {\n  content: \"\\F946\";\n}\n\n.mdi-battery-bluetooth:before {\n  content: \"\\F947\";\n}\n\n.mdi-battery-bluetooth-variant:before {\n  content: \"\\F948\";\n}\n\n.mdi-battery-charging:before {\n  content: \"\\F084\";\n}\n\n.mdi-battery-charging-10:before {\n  content: \"\\F89B\";\n}\n\n.mdi-battery-charging-100:before {\n  content: \"\\F085\";\n}\n\n.mdi-battery-charging-20:before {\n  content: \"\\F086\";\n}\n\n.mdi-battery-charging-30:before {\n  content: \"\\F087\";\n}\n\n.mdi-battery-charging-40:before {\n  content: \"\\F088\";\n}\n\n.mdi-battery-charging-50:before {\n  content: \"\\F89C\";\n}\n\n.mdi-battery-charging-60:before {\n  content: \"\\F089\";\n}\n\n.mdi-battery-charging-70:before {\n  content: \"\\F89D\";\n}\n\n.mdi-battery-charging-80:before {\n  content: \"\\F08A\";\n}\n\n.mdi-battery-charging-90:before {\n  content: \"\\F08B\";\n}\n\n.mdi-battery-charging-outline:before {\n  content: \"\\F89E\";\n}\n\n.mdi-battery-charging-wireless:before {\n  content: \"\\F806\";\n}\n\n.mdi-battery-charging-wireless-10:before {\n  content: \"\\F807\";\n}\n\n.mdi-battery-charging-wireless-20:before {\n  content: \"\\F808\";\n}\n\n.mdi-battery-charging-wireless-30:before {\n  content: \"\\F809\";\n}\n\n.mdi-battery-charging-wireless-40:before {\n  content: \"\\F80A\";\n}\n\n.mdi-battery-charging-wireless-50:before {\n  content: \"\\F80B\";\n}\n\n.mdi-battery-charging-wireless-60:before {\n  content: \"\\F80C\";\n}\n\n.mdi-battery-charging-wireless-70:before {\n  content: \"\\F80D\";\n}\n\n.mdi-battery-charging-wireless-80:before {\n  content: \"\\F80E\";\n}\n\n.mdi-battery-charging-wireless-90:before {\n  content: \"\\F80F\";\n}\n\n.mdi-battery-charging-wireless-alert:before {\n  content: \"\\F810\";\n}\n\n.mdi-battery-charging-wireless-outline:before {\n  content: \"\\F811\";\n}\n\n.mdi-battery-minus:before {\n  content: \"\\F08C\";\n}\n\n.mdi-battery-negative:before {\n  content: \"\\F08D\";\n}\n\n.mdi-battery-outline:before {\n  content: \"\\F08E\";\n}\n\n.mdi-battery-plus:before {\n  content: \"\\F08F\";\n}\n\n.mdi-battery-positive:before {\n  content: \"\\F090\";\n}\n\n.mdi-battery-unknown:before {\n  content: \"\\F091\";\n}\n\n.mdi-battery-unknown-bluetooth:before {\n  content: \"\\F949\";\n}\n\n.mdi-beach:before {\n  content: \"\\F092\";\n}\n\n.mdi-beaker:before {\n  content: \"\\F68F\";\n}\n\n.mdi-beats:before {\n  content: \"\\F097\";\n}\n\n.mdi-bed-empty:before {\n  content: \"\\F89F\";\n}\n\n.mdi-beer:before {\n  content: \"\\F098\";\n}\n\n.mdi-behance:before {\n  content: \"\\F099\";\n}\n\n.mdi-bell:before {\n  content: \"\\F09A\";\n}\n\n.mdi-bell-off:before {\n  content: \"\\F09B\";\n}\n\n.mdi-bell-outline:before {\n  content: \"\\F09C\";\n}\n\n.mdi-bell-plus:before {\n  content: \"\\F09D\";\n}\n\n.mdi-bell-ring:before {\n  content: \"\\F09E\";\n}\n\n.mdi-bell-ring-outline:before {\n  content: \"\\F09F\";\n}\n\n.mdi-bell-sleep:before {\n  content: \"\\F0A0\";\n}\n\n.mdi-beta:before {\n  content: \"\\F0A1\";\n}\n\n.mdi-betamax:before {\n  content: \"\\F9CA\";\n}\n\n.mdi-bible:before {\n  content: \"\\F0A2\";\n}\n\n.mdi-bike:before {\n  content: \"\\F0A3\";\n}\n\n.mdi-bing:before {\n  content: \"\\F0A4\";\n}\n\n.mdi-binoculars:before {\n  content: \"\\F0A5\";\n}\n\n.mdi-bio:before {\n  content: \"\\F0A6\";\n}\n\n.mdi-biohazard:before {\n  content: \"\\F0A7\";\n}\n\n.mdi-bitbucket:before {\n  content: \"\\F0A8\";\n}\n\n.mdi-bitcoin:before {\n  content: \"\\F812\";\n}\n\n.mdi-black-mesa:before {\n  content: \"\\F0A9\";\n}\n\n.mdi-blackberry:before {\n  content: \"\\F0AA\";\n}\n\n.mdi-blender:before {\n  content: \"\\F0AB\";\n}\n\n.mdi-blinds:before {\n  content: \"\\F0AC\";\n}\n\n.mdi-block-helper:before {\n  content: \"\\F0AD\";\n}\n\n.mdi-blogger:before {\n  content: \"\\F0AE\";\n}\n\n.mdi-bluetooth:before {\n  content: \"\\F0AF\";\n}\n\n.mdi-bluetooth-audio:before {\n  content: \"\\F0B0\";\n}\n\n.mdi-bluetooth-connect:before {\n  content: \"\\F0B1\";\n}\n\n.mdi-bluetooth-off:before {\n  content: \"\\F0B2\";\n}\n\n.mdi-bluetooth-settings:before {\n  content: \"\\F0B3\";\n}\n\n.mdi-bluetooth-transfer:before {\n  content: \"\\F0B4\";\n}\n\n.mdi-blur:before {\n  content: \"\\F0B5\";\n}\n\n.mdi-blur-linear:before {\n  content: \"\\F0B6\";\n}\n\n.mdi-blur-off:before {\n  content: \"\\F0B7\";\n}\n\n.mdi-blur-radial:before {\n  content: \"\\F0B8\";\n}\n\n.mdi-bomb:before {\n  content: \"\\F690\";\n}\n\n.mdi-bomb-off:before {\n  content: \"\\F6C4\";\n}\n\n.mdi-bone:before {\n  content: \"\\F0B9\";\n}\n\n.mdi-book:before {\n  content: \"\\F0BA\";\n}\n\n.mdi-book-minus:before {\n  content: \"\\F5D9\";\n}\n\n.mdi-book-multiple:before {\n  content: \"\\F0BB\";\n}\n\n.mdi-book-multiple-variant:before {\n  content: \"\\F0BC\";\n}\n\n.mdi-book-open:before {\n  content: \"\\F0BD\";\n}\n\n.mdi-book-open-page-variant:before {\n  content: \"\\F5DA\";\n}\n\n.mdi-book-open-variant:before {\n  content: \"\\F0BE\";\n}\n\n.mdi-book-plus:before {\n  content: \"\\F5DB\";\n}\n\n.mdi-book-secure:before {\n  content: \"\\F799\";\n}\n\n.mdi-book-unsecure:before {\n  content: \"\\F79A\";\n}\n\n.mdi-book-variant:before {\n  content: \"\\F0BF\";\n}\n\n.mdi-bookmark:before {\n  content: \"\\F0C0\";\n}\n\n.mdi-bookmark-check:before {\n  content: \"\\F0C1\";\n}\n\n.mdi-bookmark-minus:before {\n  content: \"\\F9CB\";\n}\n\n.mdi-bookmark-minus-outline:before {\n  content: \"\\F9CC\";\n}\n\n.mdi-bookmark-music:before {\n  content: \"\\F0C2\";\n}\n\n.mdi-bookmark-off:before {\n  content: \"\\F9CD\";\n}\n\n.mdi-bookmark-off-outline:before {\n  content: \"\\F9CE\";\n}\n\n.mdi-bookmark-outline:before {\n  content: \"\\F0C3\";\n}\n\n.mdi-bookmark-plus:before {\n  content: \"\\F0C5\";\n}\n\n.mdi-bookmark-plus-outline:before {\n  content: \"\\F0C4\";\n}\n\n.mdi-bookmark-remove:before {\n  content: \"\\F0C6\";\n}\n\n.mdi-boombox:before {\n  content: \"\\F5DC\";\n}\n\n.mdi-bootstrap:before {\n  content: \"\\F6C5\";\n}\n\n.mdi-border-all:before {\n  content: \"\\F0C7\";\n}\n\n.mdi-border-all-variant:before {\n  content: \"\\F8A0\";\n}\n\n.mdi-border-bottom:before {\n  content: \"\\F0C8\";\n}\n\n.mdi-border-bottom-variant:before {\n  content: \"\\F8A1\";\n}\n\n.mdi-border-color:before {\n  content: \"\\F0C9\";\n}\n\n.mdi-border-horizontal:before {\n  content: \"\\F0CA\";\n}\n\n.mdi-border-inside:before {\n  content: \"\\F0CB\";\n}\n\n.mdi-border-left:before {\n  content: \"\\F0CC\";\n}\n\n.mdi-border-left-variant:before {\n  content: \"\\F8A2\";\n}\n\n.mdi-border-none:before {\n  content: \"\\F0CD\";\n}\n\n.mdi-border-none-variant:before {\n  content: \"\\F8A3\";\n}\n\n.mdi-border-outside:before {\n  content: \"\\F0CE\";\n}\n\n.mdi-border-right:before {\n  content: \"\\F0CF\";\n}\n\n.mdi-border-right-variant:before {\n  content: \"\\F8A4\";\n}\n\n.mdi-border-style:before {\n  content: \"\\F0D0\";\n}\n\n.mdi-border-top:before {\n  content: \"\\F0D1\";\n}\n\n.mdi-border-top-variant:before {\n  content: \"\\F8A5\";\n}\n\n.mdi-border-vertical:before {\n  content: \"\\F0D2\";\n}\n\n.mdi-bottle-wine:before {\n  content: \"\\F853\";\n}\n\n.mdi-bow-tie:before {\n  content: \"\\F677\";\n}\n\n.mdi-bowl:before {\n  content: \"\\F617\";\n}\n\n.mdi-bowling:before {\n  content: \"\\F0D3\";\n}\n\n.mdi-box:before {\n  content: \"\\F0D4\";\n}\n\n.mdi-box-cutter:before {\n  content: \"\\F0D5\";\n}\n\n.mdi-box-shadow:before {\n  content: \"\\F637\";\n}\n\n.mdi-braille:before {\n  content: \"\\F9CF\";\n}\n\n.mdi-brain:before {\n  content: \"\\F9D0\";\n}\n\n.mdi-bridge:before {\n  content: \"\\F618\";\n}\n\n.mdi-briefcase:before {\n  content: \"\\F0D6\";\n}\n\n.mdi-briefcase-check:before {\n  content: \"\\F0D7\";\n}\n\n.mdi-briefcase-download:before {\n  content: \"\\F0D8\";\n}\n\n.mdi-briefcase-outline:before {\n  content: \"\\F813\";\n}\n\n.mdi-briefcase-upload:before {\n  content: \"\\F0D9\";\n}\n\n.mdi-brightness-1:before {\n  content: \"\\F0DA\";\n}\n\n.mdi-brightness-2:before {\n  content: \"\\F0DB\";\n}\n\n.mdi-brightness-3:before {\n  content: \"\\F0DC\";\n}\n\n.mdi-brightness-4:before {\n  content: \"\\F0DD\";\n}\n\n.mdi-brightness-5:before {\n  content: \"\\F0DE\";\n}\n\n.mdi-brightness-6:before {\n  content: \"\\F0DF\";\n}\n\n.mdi-brightness-7:before {\n  content: \"\\F0E0\";\n}\n\n.mdi-brightness-auto:before {\n  content: \"\\F0E1\";\n}\n\n.mdi-broom:before {\n  content: \"\\F0E2\";\n}\n\n.mdi-brush:before {\n  content: \"\\F0E3\";\n}\n\n.mdi-buddhism:before {\n  content: \"\\F94A\";\n}\n\n.mdi-buffer:before {\n  content: \"\\F619\";\n}\n\n.mdi-bug:before {\n  content: \"\\F0E4\";\n}\n\n.mdi-bulletin-board:before {\n  content: \"\\F0E5\";\n}\n\n.mdi-bullhorn:before {\n  content: \"\\F0E6\";\n}\n\n.mdi-bullseye:before {\n  content: \"\\F5DD\";\n}\n\n.mdi-bullseye-arrow:before {\n  content: \"\\F8C8\";\n}\n\n.mdi-bus:before {\n  content: \"\\F0E7\";\n}\n\n.mdi-bus-articulated-end:before {\n  content: \"\\F79B\";\n}\n\n.mdi-bus-articulated-front:before {\n  content: \"\\F79C\";\n}\n\n.mdi-bus-clock:before {\n  content: \"\\F8C9\";\n}\n\n.mdi-bus-double-decker:before {\n  content: \"\\F79D\";\n}\n\n.mdi-bus-school:before {\n  content: \"\\F79E\";\n}\n\n.mdi-bus-side:before {\n  content: \"\\F79F\";\n}\n\n.mdi-cached:before {\n  content: \"\\F0E8\";\n}\n\n.mdi-cake:before {\n  content: \"\\F0E9\";\n}\n\n.mdi-cake-layered:before {\n  content: \"\\F0EA\";\n}\n\n.mdi-cake-variant:before {\n  content: \"\\F0EB\";\n}\n\n.mdi-calculator:before {\n  content: \"\\F0EC\";\n}\n\n.mdi-calendar:before {\n  content: \"\\F0ED\";\n}\n\n.mdi-calendar-blank:before {\n  content: \"\\F0EE\";\n}\n\n.mdi-calendar-check:before {\n  content: \"\\F0EF\";\n}\n\n.mdi-calendar-clock:before {\n  content: \"\\F0F0\";\n}\n\n.mdi-calendar-edit:before {\n  content: \"\\F8A6\";\n}\n\n.mdi-calendar-heart:before {\n  content: \"\\F9D1\";\n}\n\n.mdi-calendar-multiple:before {\n  content: \"\\F0F1\";\n}\n\n.mdi-calendar-multiple-check:before {\n  content: \"\\F0F2\";\n}\n\n.mdi-calendar-plus:before {\n  content: \"\\F0F3\";\n}\n\n.mdi-calendar-question:before {\n  content: \"\\F691\";\n}\n\n.mdi-calendar-range:before {\n  content: \"\\F678\";\n}\n\n.mdi-calendar-remove:before {\n  content: \"\\F0F4\";\n}\n\n.mdi-calendar-search:before {\n  content: \"\\F94B\";\n}\n\n.mdi-calendar-star:before {\n  content: \"\\F9D2\";\n}\n\n.mdi-calendar-text:before {\n  content: \"\\F0F5\";\n}\n\n.mdi-calendar-today:before {\n  content: \"\\F0F6\";\n}\n\n.mdi-call-made:before {\n  content: \"\\F0F7\";\n}\n\n.mdi-call-merge:before {\n  content: \"\\F0F8\";\n}\n\n.mdi-call-missed:before {\n  content: \"\\F0F9\";\n}\n\n.mdi-call-received:before {\n  content: \"\\F0FA\";\n}\n\n.mdi-call-split:before {\n  content: \"\\F0FB\";\n}\n\n.mdi-camcorder:before {\n  content: \"\\F0FC\";\n}\n\n.mdi-camcorder-box:before {\n  content: \"\\F0FD\";\n}\n\n.mdi-camcorder-box-off:before {\n  content: \"\\F0FE\";\n}\n\n.mdi-camcorder-off:before {\n  content: \"\\F0FF\";\n}\n\n.mdi-camera:before {\n  content: \"\\F100\";\n}\n\n.mdi-camera-account:before {\n  content: \"\\F8CA\";\n}\n\n.mdi-camera-burst:before {\n  content: \"\\F692\";\n}\n\n.mdi-camera-enhance:before {\n  content: \"\\F101\";\n}\n\n.mdi-camera-front:before {\n  content: \"\\F102\";\n}\n\n.mdi-camera-front-variant:before {\n  content: \"\\F103\";\n}\n\n.mdi-camera-gopro:before {\n  content: \"\\F7A0\";\n}\n\n.mdi-camera-image:before {\n  content: \"\\F8CB\";\n}\n\n.mdi-camera-iris:before {\n  content: \"\\F104\";\n}\n\n.mdi-camera-metering-center:before {\n  content: \"\\F7A1\";\n}\n\n.mdi-camera-metering-matrix:before {\n  content: \"\\F7A2\";\n}\n\n.mdi-camera-metering-partial:before {\n  content: \"\\F7A3\";\n}\n\n.mdi-camera-metering-spot:before {\n  content: \"\\F7A4\";\n}\n\n.mdi-camera-off:before {\n  content: \"\\F5DF\";\n}\n\n.mdi-camera-party-mode:before {\n  content: \"\\F105\";\n}\n\n.mdi-camera-rear:before {\n  content: \"\\F106\";\n}\n\n.mdi-camera-rear-variant:before {\n  content: \"\\F107\";\n}\n\n.mdi-camera-switch:before {\n  content: \"\\F108\";\n}\n\n.mdi-camera-timer:before {\n  content: \"\\F109\";\n}\n\n.mdi-cancel:before {\n  content: \"\\F739\";\n}\n\n.mdi-candle:before {\n  content: \"\\F5E2\";\n}\n\n.mdi-candycane:before {\n  content: \"\\F10A\";\n}\n\n.mdi-cannabis:before {\n  content: \"\\F7A5\";\n}\n\n.mdi-car:before {\n  content: \"\\F10B\";\n}\n\n.mdi-car-battery:before {\n  content: \"\\F10C\";\n}\n\n.mdi-car-connected:before {\n  content: \"\\F10D\";\n}\n\n.mdi-car-convertible:before {\n  content: \"\\F7A6\";\n}\n\n.mdi-car-estate:before {\n  content: \"\\F7A7\";\n}\n\n.mdi-car-hatchback:before {\n  content: \"\\F7A8\";\n}\n\n.mdi-car-limousine:before {\n  content: \"\\F8CC\";\n}\n\n.mdi-car-pickup:before {\n  content: \"\\F7A9\";\n}\n\n.mdi-car-side:before {\n  content: \"\\F7AA\";\n}\n\n.mdi-car-sports:before {\n  content: \"\\F7AB\";\n}\n\n.mdi-car-wash:before {\n  content: \"\\F10E\";\n}\n\n.mdi-caravan:before {\n  content: \"\\F7AC\";\n}\n\n.mdi-cards:before {\n  content: \"\\F638\";\n}\n\n.mdi-cards-club:before {\n  content: \"\\F8CD\";\n}\n\n.mdi-cards-diamond:before {\n  content: \"\\F8CE\";\n}\n\n.mdi-cards-heart:before {\n  content: \"\\F8CF\";\n}\n\n.mdi-cards-outline:before {\n  content: \"\\F639\";\n}\n\n.mdi-cards-playing-outline:before {\n  content: \"\\F63A\";\n}\n\n.mdi-cards-spade:before {\n  content: \"\\F8D0\";\n}\n\n.mdi-cards-variant:before {\n  content: \"\\F6C6\";\n}\n\n.mdi-carrot:before {\n  content: \"\\F10F\";\n}\n\n.mdi-cart:before {\n  content: \"\\F110\";\n}\n\n.mdi-cart-off:before {\n  content: \"\\F66B\";\n}\n\n.mdi-cart-outline:before {\n  content: \"\\F111\";\n}\n\n.mdi-cart-plus:before {\n  content: \"\\F112\";\n}\n\n.mdi-case-sensitive-alt:before {\n  content: \"\\F113\";\n}\n\n.mdi-cash:before {\n  content: \"\\F114\";\n}\n\n.mdi-cash-100:before {\n  content: \"\\F115\";\n}\n\n.mdi-cash-multiple:before {\n  content: \"\\F116\";\n}\n\n.mdi-cash-usd:before {\n  content: \"\\F117\";\n}\n\n.mdi-cassette:before {\n  content: \"\\F9D3\";\n}\n\n.mdi-cast:before {\n  content: \"\\F118\";\n}\n\n.mdi-cast-connected:before {\n  content: \"\\F119\";\n}\n\n.mdi-cast-off:before {\n  content: \"\\F789\";\n}\n\n.mdi-castle:before {\n  content: \"\\F11A\";\n}\n\n.mdi-cat:before {\n  content: \"\\F11B\";\n}\n\n.mdi-cctv:before {\n  content: \"\\F7AD\";\n}\n\n.mdi-ceiling-light:before {\n  content: \"\\F768\";\n}\n\n.mdi-cellphone:before {\n  content: \"\\F11C\";\n}\n\n.mdi-cellphone-android:before {\n  content: \"\\F11D\";\n}\n\n.mdi-cellphone-arrow-down:before {\n  content: \"\\F9D4\";\n}\n\n.mdi-cellphone-basic:before {\n  content: \"\\F11E\";\n}\n\n.mdi-cellphone-dock:before {\n  content: \"\\F11F\";\n}\n\n.mdi-cellphone-erase:before {\n  content: \"\\F94C\";\n}\n\n.mdi-cellphone-iphone:before {\n  content: \"\\F120\";\n}\n\n.mdi-cellphone-key:before {\n  content: \"\\F94D\";\n}\n\n.mdi-cellphone-link:before {\n  content: \"\\F121\";\n}\n\n.mdi-cellphone-link-off:before {\n  content: \"\\F122\";\n}\n\n.mdi-cellphone-lock:before {\n  content: \"\\F94E\";\n}\n\n.mdi-cellphone-message:before {\n  content: \"\\F8D2\";\n}\n\n.mdi-cellphone-off:before {\n  content: \"\\F94F\";\n}\n\n.mdi-cellphone-settings:before {\n  content: \"\\F123\";\n}\n\n.mdi-cellphone-settings-variant:before {\n  content: \"\\F950\";\n}\n\n.mdi-cellphone-sound:before {\n  content: \"\\F951\";\n}\n\n.mdi-cellphone-text:before {\n  content: \"\\F8D1\";\n}\n\n.mdi-cellphone-wireless:before {\n  content: \"\\F814\";\n}\n\n.mdi-certificate:before {\n  content: \"\\F124\";\n}\n\n.mdi-chair-school:before {\n  content: \"\\F125\";\n}\n\n.mdi-chart-arc:before {\n  content: \"\\F126\";\n}\n\n.mdi-chart-areaspline:before {\n  content: \"\\F127\";\n}\n\n.mdi-chart-bar:before {\n  content: \"\\F128\";\n}\n\n.mdi-chart-bar-stacked:before {\n  content: \"\\F769\";\n}\n\n.mdi-chart-bubble:before {\n  content: \"\\F5E3\";\n}\n\n.mdi-chart-donut:before {\n  content: \"\\F7AE\";\n}\n\n.mdi-chart-donut-variant:before {\n  content: \"\\F7AF\";\n}\n\n.mdi-chart-gantt:before {\n  content: \"\\F66C\";\n}\n\n.mdi-chart-histogram:before {\n  content: \"\\F129\";\n}\n\n.mdi-chart-line:before {\n  content: \"\\F12A\";\n}\n\n.mdi-chart-line-stacked:before {\n  content: \"\\F76A\";\n}\n\n.mdi-chart-line-variant:before {\n  content: \"\\F7B0\";\n}\n\n.mdi-chart-multiline:before {\n  content: \"\\F8D3\";\n}\n\n.mdi-chart-pie:before {\n  content: \"\\F12B\";\n}\n\n.mdi-chart-scatterplot-hexbin:before {\n  content: \"\\F66D\";\n}\n\n.mdi-chart-timeline:before {\n  content: \"\\F66E\";\n}\n\n.mdi-check:before {\n  content: \"\\F12C\";\n}\n\n.mdi-check-all:before {\n  content: \"\\F12D\";\n}\n\n.mdi-check-circle:before {\n  content: \"\\F5E0\";\n}\n\n.mdi-check-circle-outline:before {\n  content: \"\\F5E1\";\n}\n\n.mdi-check-outline:before {\n  content: \"\\F854\";\n}\n\n.mdi-checkbox-blank:before {\n  content: \"\\F12E\";\n}\n\n.mdi-checkbox-blank-circle:before {\n  content: \"\\F12F\";\n}\n\n.mdi-checkbox-blank-circle-outline:before {\n  content: \"\\F130\";\n}\n\n.mdi-checkbox-blank-outline:before {\n  content: \"\\F131\";\n}\n\n.mdi-checkbox-intermediate:before {\n  content: \"\\F855\";\n}\n\n.mdi-checkbox-marked:before {\n  content: \"\\F132\";\n}\n\n.mdi-checkbox-marked-circle:before {\n  content: \"\\F133\";\n}\n\n.mdi-checkbox-marked-circle-outline:before {\n  content: \"\\F134\";\n}\n\n.mdi-checkbox-marked-outline:before {\n  content: \"\\F135\";\n}\n\n.mdi-checkbox-multiple-blank:before {\n  content: \"\\F136\";\n}\n\n.mdi-checkbox-multiple-blank-circle:before {\n  content: \"\\F63B\";\n}\n\n.mdi-checkbox-multiple-blank-circle-outline:before {\n  content: \"\\F63C\";\n}\n\n.mdi-checkbox-multiple-blank-outline:before {\n  content: \"\\F137\";\n}\n\n.mdi-checkbox-multiple-marked:before {\n  content: \"\\F138\";\n}\n\n.mdi-checkbox-multiple-marked-circle:before {\n  content: \"\\F63D\";\n}\n\n.mdi-checkbox-multiple-marked-circle-outline:before {\n  content: \"\\F63E\";\n}\n\n.mdi-checkbox-multiple-marked-outline:before {\n  content: \"\\F139\";\n}\n\n.mdi-checkerboard:before {\n  content: \"\\F13A\";\n}\n\n.mdi-chemical-weapon:before {\n  content: \"\\F13B\";\n}\n\n.mdi-chess-bishop:before {\n  content: \"\\F85B\";\n}\n\n.mdi-chess-king:before {\n  content: \"\\F856\";\n}\n\n.mdi-chess-knight:before {\n  content: \"\\F857\";\n}\n\n.mdi-chess-pawn:before {\n  content: \"\\F858\";\n}\n\n.mdi-chess-queen:before {\n  content: \"\\F859\";\n}\n\n.mdi-chess-rook:before {\n  content: \"\\F85A\";\n}\n\n.mdi-chevron-double-down:before {\n  content: \"\\F13C\";\n}\n\n.mdi-chevron-double-left:before {\n  content: \"\\F13D\";\n}\n\n.mdi-chevron-double-right:before {\n  content: \"\\F13E\";\n}\n\n.mdi-chevron-double-up:before {\n  content: \"\\F13F\";\n}\n\n.mdi-chevron-down:before {\n  content: \"\\F140\";\n}\n\n.mdi-chevron-down-box:before {\n  content: \"\\F9D5\";\n}\n\n.mdi-chevron-down-box-outline:before {\n  content: \"\\F9D6\";\n}\n\n.mdi-chevron-left:before {\n  content: \"\\F141\";\n}\n\n.mdi-chevron-left-box:before {\n  content: \"\\F9D7\";\n}\n\n.mdi-chevron-left-box-outline:before {\n  content: \"\\F9D8\";\n}\n\n.mdi-chevron-right:before {\n  content: \"\\F142\";\n}\n\n.mdi-chevron-right-box:before {\n  content: \"\\F9D9\";\n}\n\n.mdi-chevron-right-box-outline:before {\n  content: \"\\F9DA\";\n}\n\n.mdi-chevron-up:before {\n  content: \"\\F143\";\n}\n\n.mdi-chevron-up-box:before {\n  content: \"\\F9DB\";\n}\n\n.mdi-chevron-up-box-outline:before {\n  content: \"\\F9DC\";\n}\n\n.mdi-chili-hot:before {\n  content: \"\\F7B1\";\n}\n\n.mdi-chili-medium:before {\n  content: \"\\F7B2\";\n}\n\n.mdi-chili-mild:before {\n  content: \"\\F7B3\";\n}\n\n.mdi-chip:before {\n  content: \"\\F61A\";\n}\n\n.mdi-christianity:before {\n  content: \"\\F952\";\n}\n\n.mdi-church:before {\n  content: \"\\F144\";\n}\n\n.mdi-circle:before {\n  content: \"\\F764\";\n}\n\n.mdi-circle-edit-outline:before {\n  content: \"\\F8D4\";\n}\n\n.mdi-circle-medium:before {\n  content: \"\\F9DD\";\n}\n\n.mdi-circle-outline:before {\n  content: \"\\F765\";\n}\n\n.mdi-circle-small:before {\n  content: \"\\F9DE\";\n}\n\n.mdi-cisco-webex:before {\n  content: \"\\F145\";\n}\n\n.mdi-city:before {\n  content: \"\\F146\";\n}\n\n.mdi-clipboard:before {\n  content: \"\\F147\";\n}\n\n.mdi-clipboard-account:before {\n  content: \"\\F148\";\n}\n\n.mdi-clipboard-alert:before {\n  content: \"\\F149\";\n}\n\n.mdi-clipboard-arrow-down:before {\n  content: \"\\F14A\";\n}\n\n.mdi-clipboard-arrow-left:before {\n  content: \"\\F14B\";\n}\n\n.mdi-clipboard-check:before {\n  content: \"\\F14C\";\n}\n\n.mdi-clipboard-check-outline:before {\n  content: \"\\F8A7\";\n}\n\n.mdi-clipboard-flow:before {\n  content: \"\\F6C7\";\n}\n\n.mdi-clipboard-outline:before {\n  content: \"\\F14D\";\n}\n\n.mdi-clipboard-plus:before {\n  content: \"\\F750\";\n}\n\n.mdi-clipboard-pulse:before {\n  content: \"\\F85C\";\n}\n\n.mdi-clipboard-pulse-outline:before {\n  content: \"\\F85D\";\n}\n\n.mdi-clipboard-text:before {\n  content: \"\\F14E\";\n}\n\n.mdi-clippy:before {\n  content: \"\\F14F\";\n}\n\n.mdi-clock:before {\n  content: \"\\F953\";\n}\n\n.mdi-clock-alert:before {\n  content: \"\\F954\";\n}\n\n.mdi-clock-alert-outline:before {\n  content: \"\\F5CE\";\n}\n\n.mdi-clock-end:before {\n  content: \"\\F151\";\n}\n\n.mdi-clock-fast:before {\n  content: \"\\F152\";\n}\n\n.mdi-clock-in:before {\n  content: \"\\F153\";\n}\n\n.mdi-clock-out:before {\n  content: \"\\F154\";\n}\n\n.mdi-clock-outline:before {\n  content: \"\\F150\";\n}\n\n.mdi-clock-start:before {\n  content: \"\\F155\";\n}\n\n.mdi-close:before {\n  content: \"\\F156\";\n}\n\n.mdi-close-box:before {\n  content: \"\\F157\";\n}\n\n.mdi-close-box-outline:before {\n  content: \"\\F158\";\n}\n\n.mdi-close-circle:before {\n  content: \"\\F159\";\n}\n\n.mdi-close-circle-outline:before {\n  content: \"\\F15A\";\n}\n\n.mdi-close-network:before {\n  content: \"\\F15B\";\n}\n\n.mdi-close-octagon:before {\n  content: \"\\F15C\";\n}\n\n.mdi-close-octagon-outline:before {\n  content: \"\\F15D\";\n}\n\n.mdi-close-outline:before {\n  content: \"\\F6C8\";\n}\n\n.mdi-closed-caption:before {\n  content: \"\\F15E\";\n}\n\n.mdi-cloud:before {\n  content: \"\\F15F\";\n}\n\n.mdi-cloud-alert:before {\n  content: \"\\F9DF\";\n}\n\n.mdi-cloud-braces:before {\n  content: \"\\F7B4\";\n}\n\n.mdi-cloud-check:before {\n  content: \"\\F160\";\n}\n\n.mdi-cloud-circle:before {\n  content: \"\\F161\";\n}\n\n.mdi-cloud-download:before {\n  content: \"\\F162\";\n}\n\n.mdi-cloud-off-outline:before {\n  content: \"\\F164\";\n}\n\n.mdi-cloud-outline:before {\n  content: \"\\F163\";\n}\n\n.mdi-cloud-print:before {\n  content: \"\\F165\";\n}\n\n.mdi-cloud-print-outline:before {\n  content: \"\\F166\";\n}\n\n.mdi-cloud-search:before {\n  content: \"\\F955\";\n}\n\n.mdi-cloud-search-outline:before {\n  content: \"\\F956\";\n}\n\n.mdi-cloud-sync:before {\n  content: \"\\F63F\";\n}\n\n.mdi-cloud-tags:before {\n  content: \"\\F7B5\";\n}\n\n.mdi-cloud-upload:before {\n  content: \"\\F167\";\n}\n\n.mdi-clover:before {\n  content: \"\\F815\";\n}\n\n.mdi-code-array:before {\n  content: \"\\F168\";\n}\n\n.mdi-code-braces:before {\n  content: \"\\F169\";\n}\n\n.mdi-code-brackets:before {\n  content: \"\\F16A\";\n}\n\n.mdi-code-equal:before {\n  content: \"\\F16B\";\n}\n\n.mdi-code-greater-than:before {\n  content: \"\\F16C\";\n}\n\n.mdi-code-greater-than-or-equal:before {\n  content: \"\\F16D\";\n}\n\n.mdi-code-less-than:before {\n  content: \"\\F16E\";\n}\n\n.mdi-code-less-than-or-equal:before {\n  content: \"\\F16F\";\n}\n\n.mdi-code-not-equal:before {\n  content: \"\\F170\";\n}\n\n.mdi-code-not-equal-variant:before {\n  content: \"\\F171\";\n}\n\n.mdi-code-parentheses:before {\n  content: \"\\F172\";\n}\n\n.mdi-code-string:before {\n  content: \"\\F173\";\n}\n\n.mdi-code-tags:before {\n  content: \"\\F174\";\n}\n\n.mdi-code-tags-check:before {\n  content: \"\\F693\";\n}\n\n.mdi-codepen:before {\n  content: \"\\F175\";\n}\n\n.mdi-coffee:before {\n  content: \"\\F176\";\n}\n\n.mdi-coffee-outline:before {\n  content: \"\\F6C9\";\n}\n\n.mdi-coffee-to-go:before {\n  content: \"\\F177\";\n}\n\n.mdi-cogs:before {\n  content: \"\\F8D5\";\n}\n\n.mdi-coin:before {\n  content: \"\\F178\";\n}\n\n.mdi-coins:before {\n  content: \"\\F694\";\n}\n\n.mdi-collage:before {\n  content: \"\\F640\";\n}\n\n.mdi-color-helper:before {\n  content: \"\\F179\";\n}\n\n.mdi-comment:before {\n  content: \"\\F17A\";\n}\n\n.mdi-comment-account:before {\n  content: \"\\F17B\";\n}\n\n.mdi-comment-account-outline:before {\n  content: \"\\F17C\";\n}\n\n.mdi-comment-alert:before {\n  content: \"\\F17D\";\n}\n\n.mdi-comment-alert-outline:before {\n  content: \"\\F17E\";\n}\n\n.mdi-comment-arrow-left:before {\n  content: \"\\F9E0\";\n}\n\n.mdi-comment-arrow-left-outline:before {\n  content: \"\\F9E1\";\n}\n\n.mdi-comment-arrow-right:before {\n  content: \"\\F9E2\";\n}\n\n.mdi-comment-arrow-right-outline:before {\n  content: \"\\F9E3\";\n}\n\n.mdi-comment-check:before {\n  content: \"\\F17F\";\n}\n\n.mdi-comment-check-outline:before {\n  content: \"\\F180\";\n}\n\n.mdi-comment-multiple:before {\n  content: \"\\F85E\";\n}\n\n.mdi-comment-multiple-outline:before {\n  content: \"\\F181\";\n}\n\n.mdi-comment-outline:before {\n  content: \"\\F182\";\n}\n\n.mdi-comment-plus:before {\n  content: \"\\F9E4\";\n}\n\n.mdi-comment-plus-outline:before {\n  content: \"\\F183\";\n}\n\n.mdi-comment-processing:before {\n  content: \"\\F184\";\n}\n\n.mdi-comment-processing-outline:before {\n  content: \"\\F185\";\n}\n\n.mdi-comment-question:before {\n  content: \"\\F816\";\n}\n\n.mdi-comment-question-outline:before {\n  content: \"\\F186\";\n}\n\n.mdi-comment-remove:before {\n  content: \"\\F5DE\";\n}\n\n.mdi-comment-remove-outline:before {\n  content: \"\\F187\";\n}\n\n.mdi-comment-text:before {\n  content: \"\\F188\";\n}\n\n.mdi-comment-text-multiple:before {\n  content: \"\\F85F\";\n}\n\n.mdi-comment-text-multiple-outline:before {\n  content: \"\\F860\";\n}\n\n.mdi-comment-text-outline:before {\n  content: \"\\F189\";\n}\n\n.mdi-compare:before {\n  content: \"\\F18A\";\n}\n\n.mdi-compass:before {\n  content: \"\\F18B\";\n}\n\n.mdi-compass-outline:before {\n  content: \"\\F18C\";\n}\n\n.mdi-console:before {\n  content: \"\\F18D\";\n}\n\n.mdi-console-line:before {\n  content: \"\\F7B6\";\n}\n\n.mdi-console-network:before {\n  content: \"\\F8A8\";\n}\n\n.mdi-contact-mail:before {\n  content: \"\\F18E\";\n}\n\n.mdi-contacts:before {\n  content: \"\\F6CA\";\n}\n\n.mdi-content-copy:before {\n  content: \"\\F18F\";\n}\n\n.mdi-content-cut:before {\n  content: \"\\F190\";\n}\n\n.mdi-content-duplicate:before {\n  content: \"\\F191\";\n}\n\n.mdi-content-paste:before {\n  content: \"\\F192\";\n}\n\n.mdi-content-save:before {\n  content: \"\\F193\";\n}\n\n.mdi-content-save-all:before {\n  content: \"\\F194\";\n}\n\n.mdi-content-save-outline:before {\n  content: \"\\F817\";\n}\n\n.mdi-content-save-settings:before {\n  content: \"\\F61B\";\n}\n\n.mdi-contrast:before {\n  content: \"\\F195\";\n}\n\n.mdi-contrast-box:before {\n  content: \"\\F196\";\n}\n\n.mdi-contrast-circle:before {\n  content: \"\\F197\";\n}\n\n.mdi-cookie:before {\n  content: \"\\F198\";\n}\n\n.mdi-copyright:before {\n  content: \"\\F5E6\";\n}\n\n.mdi-cordova:before {\n  content: \"\\F957\";\n}\n\n.mdi-corn:before {\n  content: \"\\F7B7\";\n}\n\n.mdi-counter:before {\n  content: \"\\F199\";\n}\n\n.mdi-cow:before {\n  content: \"\\F19A\";\n}\n\n.mdi-crane:before {\n  content: \"\\F861\";\n}\n\n.mdi-creation:before {\n  content: \"\\F1C9\";\n}\n\n.mdi-credit-card:before {\n  content: \"\\F19B\";\n}\n\n.mdi-credit-card-multiple:before {\n  content: \"\\F19C\";\n}\n\n.mdi-credit-card-off:before {\n  content: \"\\F5E4\";\n}\n\n.mdi-credit-card-plus:before {\n  content: \"\\F675\";\n}\n\n.mdi-credit-card-scan:before {\n  content: \"\\F19D\";\n}\n\n.mdi-credit-card-settings:before {\n  content: \"\\F8D6\";\n}\n\n.mdi-crop:before {\n  content: \"\\F19E\";\n}\n\n.mdi-crop-free:before {\n  content: \"\\F19F\";\n}\n\n.mdi-crop-landscape:before {\n  content: \"\\F1A0\";\n}\n\n.mdi-crop-portrait:before {\n  content: \"\\F1A1\";\n}\n\n.mdi-crop-rotate:before {\n  content: \"\\F695\";\n}\n\n.mdi-crop-square:before {\n  content: \"\\F1A2\";\n}\n\n.mdi-crosshairs:before {\n  content: \"\\F1A3\";\n}\n\n.mdi-crosshairs-gps:before {\n  content: \"\\F1A4\";\n}\n\n.mdi-crown:before {\n  content: \"\\F1A5\";\n}\n\n.mdi-cryengine:before {\n  content: \"\\F958\";\n}\n\n.mdi-cube:before {\n  content: \"\\F1A6\";\n}\n\n.mdi-cube-outline:before {\n  content: \"\\F1A7\";\n}\n\n.mdi-cube-send:before {\n  content: \"\\F1A8\";\n}\n\n.mdi-cube-unfolded:before {\n  content: \"\\F1A9\";\n}\n\n.mdi-cup:before {\n  content: \"\\F1AA\";\n}\n\n.mdi-cup-off:before {\n  content: \"\\F5E5\";\n}\n\n.mdi-cup-water:before {\n  content: \"\\F1AB\";\n}\n\n.mdi-cupcake:before {\n  content: \"\\F959\";\n}\n\n.mdi-curling:before {\n  content: \"\\F862\";\n}\n\n.mdi-currency-bdt:before {\n  content: \"\\F863\";\n}\n\n.mdi-currency-btc:before {\n  content: \"\\F1AC\";\n}\n\n.mdi-currency-chf:before {\n  content: \"\\F7B8\";\n}\n\n.mdi-currency-cny:before {\n  content: \"\\F7B9\";\n}\n\n.mdi-currency-eth:before {\n  content: \"\\F7BA\";\n}\n\n.mdi-currency-eur:before {\n  content: \"\\F1AD\";\n}\n\n.mdi-currency-gbp:before {\n  content: \"\\F1AE\";\n}\n\n.mdi-currency-inr:before {\n  content: \"\\F1AF\";\n}\n\n.mdi-currency-jpy:before {\n  content: \"\\F7BB\";\n}\n\n.mdi-currency-krw:before {\n  content: \"\\F7BC\";\n}\n\n.mdi-currency-kzt:before {\n  content: \"\\F864\";\n}\n\n.mdi-currency-ngn:before {\n  content: \"\\F1B0\";\n}\n\n.mdi-currency-php:before {\n  content: \"\\F9E5\";\n}\n\n.mdi-currency-rub:before {\n  content: \"\\F1B1\";\n}\n\n.mdi-currency-sign:before {\n  content: \"\\F7BD\";\n}\n\n.mdi-currency-try:before {\n  content: \"\\F1B2\";\n}\n\n.mdi-currency-twd:before {\n  content: \"\\F7BE\";\n}\n\n.mdi-currency-usd:before {\n  content: \"\\F1B3\";\n}\n\n.mdi-currency-usd-off:before {\n  content: \"\\F679\";\n}\n\n.mdi-current-ac:before {\n  content: \"\\F95A\";\n}\n\n.mdi-current-dc:before {\n  content: \"\\F95B\";\n}\n\n.mdi-cursor-default:before {\n  content: \"\\F1B4\";\n}\n\n.mdi-cursor-default-outline:before {\n  content: \"\\F1B5\";\n}\n\n.mdi-cursor-move:before {\n  content: \"\\F1B6\";\n}\n\n.mdi-cursor-pointer:before {\n  content: \"\\F1B7\";\n}\n\n.mdi-cursor-text:before {\n  content: \"\\F5E7\";\n}\n\n.mdi-database:before {\n  content: \"\\F1B8\";\n}\n\n.mdi-database-export:before {\n  content: \"\\F95D\";\n}\n\n.mdi-database-import:before {\n  content: \"\\F95C\";\n}\n\n.mdi-database-minus:before {\n  content: \"\\F1B9\";\n}\n\n.mdi-database-plus:before {\n  content: \"\\F1BA\";\n}\n\n.mdi-database-search:before {\n  content: \"\\F865\";\n}\n\n.mdi-death-star:before {\n  content: \"\\F8D7\";\n}\n\n.mdi-death-star-variant:before {\n  content: \"\\F8D8\";\n}\n\n.mdi-debian:before {\n  content: \"\\F8D9\";\n}\n\n.mdi-debug-step-into:before {\n  content: \"\\F1BB\";\n}\n\n.mdi-debug-step-out:before {\n  content: \"\\F1BC\";\n}\n\n.mdi-debug-step-over:before {\n  content: \"\\F1BD\";\n}\n\n.mdi-decagram:before {\n  content: \"\\F76B\";\n}\n\n.mdi-decagram-outline:before {\n  content: \"\\F76C\";\n}\n\n.mdi-decimal-decrease:before {\n  content: \"\\F1BE\";\n}\n\n.mdi-decimal-increase:before {\n  content: \"\\F1BF\";\n}\n\n.mdi-delete:before {\n  content: \"\\F1C0\";\n}\n\n.mdi-delete-circle:before {\n  content: \"\\F682\";\n}\n\n.mdi-delete-empty:before {\n  content: \"\\F6CB\";\n}\n\n.mdi-delete-forever:before {\n  content: \"\\F5E8\";\n}\n\n.mdi-delete-outline:before {\n  content: \"\\F9E6\";\n}\n\n.mdi-delete-restore:before {\n  content: \"\\F818\";\n}\n\n.mdi-delete-sweep:before {\n  content: \"\\F5E9\";\n}\n\n.mdi-delete-variant:before {\n  content: \"\\F1C1\";\n}\n\n.mdi-delta:before {\n  content: \"\\F1C2\";\n}\n\n.mdi-desk-lamp:before {\n  content: \"\\F95E\";\n}\n\n.mdi-deskphone:before {\n  content: \"\\F1C3\";\n}\n\n.mdi-desktop-classic:before {\n  content: \"\\F7BF\";\n}\n\n.mdi-desktop-mac:before {\n  content: \"\\F1C4\";\n}\n\n.mdi-desktop-mac-dashboard:before {\n  content: \"\\F9E7\";\n}\n\n.mdi-desktop-tower:before {\n  content: \"\\F1C5\";\n}\n\n.mdi-details:before {\n  content: \"\\F1C6\";\n}\n\n.mdi-developer-board:before {\n  content: \"\\F696\";\n}\n\n.mdi-deviantart:before {\n  content: \"\\F1C7\";\n}\n\n.mdi-dialpad:before {\n  content: \"\\F61C\";\n}\n\n.mdi-diamond:before {\n  content: \"\\F1C8\";\n}\n\n.mdi-dice-1:before {\n  content: \"\\F1CA\";\n}\n\n.mdi-dice-2:before {\n  content: \"\\F1CB\";\n}\n\n.mdi-dice-3:before {\n  content: \"\\F1CC\";\n}\n\n.mdi-dice-4:before {\n  content: \"\\F1CD\";\n}\n\n.mdi-dice-5:before {\n  content: \"\\F1CE\";\n}\n\n.mdi-dice-6:before {\n  content: \"\\F1CF\";\n}\n\n.mdi-dice-d10:before {\n  content: \"\\F76E\";\n}\n\n.mdi-dice-d12:before {\n  content: \"\\F866\";\n}\n\n.mdi-dice-d20:before {\n  content: \"\\F5EA\";\n}\n\n.mdi-dice-d4:before {\n  content: \"\\F5EB\";\n}\n\n.mdi-dice-d6:before {\n  content: \"\\F5EC\";\n}\n\n.mdi-dice-d8:before {\n  content: \"\\F5ED\";\n}\n\n.mdi-dice-multiple:before {\n  content: \"\\F76D\";\n}\n\n.mdi-dictionary:before {\n  content: \"\\F61D\";\n}\n\n.mdi-dip-switch:before {\n  content: \"\\F7C0\";\n}\n\n.mdi-directions:before {\n  content: \"\\F1D0\";\n}\n\n.mdi-directions-fork:before {\n  content: \"\\F641\";\n}\n\n.mdi-disc:before {\n  content: \"\\F5EE\";\n}\n\n.mdi-disc-alert:before {\n  content: \"\\F1D1\";\n}\n\n.mdi-disc-player:before {\n  content: \"\\F95F\";\n}\n\n.mdi-discord:before {\n  content: \"\\F66F\";\n}\n\n.mdi-disqus:before {\n  content: \"\\F1D2\";\n}\n\n.mdi-disqus-outline:before {\n  content: \"\\F1D3\";\n}\n\n.mdi-division:before {\n  content: \"\\F1D4\";\n}\n\n.mdi-division-box:before {\n  content: \"\\F1D5\";\n}\n\n.mdi-dna:before {\n  content: \"\\F683\";\n}\n\n.mdi-dns:before {\n  content: \"\\F1D6\";\n}\n\n.mdi-do-not-disturb:before {\n  content: \"\\F697\";\n}\n\n.mdi-do-not-disturb-off:before {\n  content: \"\\F698\";\n}\n\n.mdi-docker:before {\n  content: \"\\F867\";\n}\n\n.mdi-dolby:before {\n  content: \"\\F6B2\";\n}\n\n.mdi-domain:before {\n  content: \"\\F1D7\";\n}\n\n.mdi-donkey:before {\n  content: \"\\F7C1\";\n}\n\n.mdi-door:before {\n  content: \"\\F819\";\n}\n\n.mdi-door-closed:before {\n  content: \"\\F81A\";\n}\n\n.mdi-door-open:before {\n  content: \"\\F81B\";\n}\n\n.mdi-doorbell-video:before {\n  content: \"\\F868\";\n}\n\n.mdi-dots-horizontal:before {\n  content: \"\\F1D8\";\n}\n\n.mdi-dots-horizontal-circle:before {\n  content: \"\\F7C2\";\n}\n\n.mdi-dots-vertical:before {\n  content: \"\\F1D9\";\n}\n\n.mdi-dots-vertical-circle:before {\n  content: \"\\F7C3\";\n}\n\n.mdi-douban:before {\n  content: \"\\F699\";\n}\n\n.mdi-download:before {\n  content: \"\\F1DA\";\n}\n\n.mdi-download-multiple:before {\n  content: \"\\F9E8\";\n}\n\n.mdi-download-network:before {\n  content: \"\\F6F3\";\n}\n\n.mdi-drag:before {\n  content: \"\\F1DB\";\n}\n\n.mdi-drag-horizontal:before {\n  content: \"\\F1DC\";\n}\n\n.mdi-drag-vertical:before {\n  content: \"\\F1DD\";\n}\n\n.mdi-drawing:before {\n  content: \"\\F1DE\";\n}\n\n.mdi-drawing-box:before {\n  content: \"\\F1DF\";\n}\n\n.mdi-dribbble:before {\n  content: \"\\F1E0\";\n}\n\n.mdi-dribbble-box:before {\n  content: \"\\F1E1\";\n}\n\n.mdi-drone:before {\n  content: \"\\F1E2\";\n}\n\n.mdi-dropbox:before {\n  content: \"\\F1E3\";\n}\n\n.mdi-drupal:before {\n  content: \"\\F1E4\";\n}\n\n.mdi-duck:before {\n  content: \"\\F1E5\";\n}\n\n.mdi-dumbbell:before {\n  content: \"\\F1E6\";\n}\n\n.mdi-ear-hearing:before {\n  content: \"\\F7C4\";\n}\n\n.mdi-earth:before {\n  content: \"\\F1E7\";\n}\n\n.mdi-earth-box:before {\n  content: \"\\F6CC\";\n}\n\n.mdi-earth-box-off:before {\n  content: \"\\F6CD\";\n}\n\n.mdi-earth-off:before {\n  content: \"\\F1E8\";\n}\n\n.mdi-edge:before {\n  content: \"\\F1E9\";\n}\n\n.mdi-eight-track:before {\n  content: \"\\F9E9\";\n}\n\n.mdi-eject:before {\n  content: \"\\F1EA\";\n}\n\n.mdi-elephant:before {\n  content: \"\\F7C5\";\n}\n\n.mdi-elevation-decline:before {\n  content: \"\\F1EB\";\n}\n\n.mdi-elevation-rise:before {\n  content: \"\\F1EC\";\n}\n\n.mdi-elevator:before {\n  content: \"\\F1ED\";\n}\n\n.mdi-email:before {\n  content: \"\\F1EE\";\n}\n\n.mdi-email-alert:before {\n  content: \"\\F6CE\";\n}\n\n.mdi-email-open:before {\n  content: \"\\F1EF\";\n}\n\n.mdi-email-open-outline:before {\n  content: \"\\F5EF\";\n}\n\n.mdi-email-outline:before {\n  content: \"\\F1F0\";\n}\n\n.mdi-email-plus:before {\n  content: \"\\F9EA\";\n}\n\n.mdi-email-plus-outline:before {\n  content: \"\\F9EB\";\n}\n\n.mdi-email-search:before {\n  content: \"\\F960\";\n}\n\n.mdi-email-search-outline:before {\n  content: \"\\F961\";\n}\n\n.mdi-email-secure:before {\n  content: \"\\F1F1\";\n}\n\n.mdi-email-variant:before {\n  content: \"\\F5F0\";\n}\n\n.mdi-emby:before {\n  content: \"\\F6B3\";\n}\n\n.mdi-emoticon:before {\n  content: \"\\F1F2\";\n}\n\n.mdi-emoticon-cool:before {\n  content: \"\\F1F3\";\n}\n\n.mdi-emoticon-dead:before {\n  content: \"\\F69A\";\n}\n\n.mdi-emoticon-devil:before {\n  content: \"\\F1F4\";\n}\n\n.mdi-emoticon-excited:before {\n  content: \"\\F69B\";\n}\n\n.mdi-emoticon-happy:before {\n  content: \"\\F1F5\";\n}\n\n.mdi-emoticon-neutral:before {\n  content: \"\\F1F6\";\n}\n\n.mdi-emoticon-poop:before {\n  content: \"\\F1F7\";\n}\n\n.mdi-emoticon-sad:before {\n  content: \"\\F1F8\";\n}\n\n.mdi-emoticon-tongue:before {\n  content: \"\\F1F9\";\n}\n\n.mdi-engine:before {\n  content: \"\\F1FA\";\n}\n\n.mdi-engine-outline:before {\n  content: \"\\F1FB\";\n}\n\n.mdi-equal:before {\n  content: \"\\F1FC\";\n}\n\n.mdi-equal-box:before {\n  content: \"\\F1FD\";\n}\n\n.mdi-eraser:before {\n  content: \"\\F1FE\";\n}\n\n.mdi-eraser-variant:before {\n  content: \"\\F642\";\n}\n\n.mdi-escalator:before {\n  content: \"\\F1FF\";\n}\n\n.mdi-ethereum:before {\n  content: \"\\F869\";\n}\n\n.mdi-ethernet:before {\n  content: \"\\F200\";\n}\n\n.mdi-ethernet-cable:before {\n  content: \"\\F201\";\n}\n\n.mdi-ethernet-cable-off:before {\n  content: \"\\F202\";\n}\n\n.mdi-etsy:before {\n  content: \"\\F203\";\n}\n\n.mdi-ev-station:before {\n  content: \"\\F5F1\";\n}\n\n.mdi-eventbrite:before {\n  content: \"\\F7C6\";\n}\n\n.mdi-evernote:before {\n  content: \"\\F204\";\n}\n\n.mdi-exclamation:before {\n  content: \"\\F205\";\n}\n\n.mdi-exit-to-app:before {\n  content: \"\\F206\";\n}\n\n.mdi-exponent:before {\n  content: \"\\F962\";\n}\n\n.mdi-exponent-box:before {\n  content: \"\\F963\";\n}\n\n.mdi-export:before {\n  content: \"\\F207\";\n}\n\n.mdi-eye:before {\n  content: \"\\F208\";\n}\n\n.mdi-eye-off:before {\n  content: \"\\F209\";\n}\n\n.mdi-eye-off-outline:before {\n  content: \"\\F6D0\";\n}\n\n.mdi-eye-outline:before {\n  content: \"\\F6CF\";\n}\n\n.mdi-eye-plus:before {\n  content: \"\\F86A\";\n}\n\n.mdi-eye-plus-outline:before {\n  content: \"\\F86B\";\n}\n\n.mdi-eye-settings:before {\n  content: \"\\F86C\";\n}\n\n.mdi-eye-settings-outline:before {\n  content: \"\\F86D\";\n}\n\n.mdi-eyedropper:before {\n  content: \"\\F20A\";\n}\n\n.mdi-eyedropper-variant:before {\n  content: \"\\F20B\";\n}\n\n.mdi-face:before {\n  content: \"\\F643\";\n}\n\n.mdi-face-profile:before {\n  content: \"\\F644\";\n}\n\n.mdi-facebook:before {\n  content: \"\\F20C\";\n}\n\n.mdi-facebook-box:before {\n  content: \"\\F20D\";\n}\n\n.mdi-facebook-messenger:before {\n  content: \"\\F20E\";\n}\n\n.mdi-factory:before {\n  content: \"\\F20F\";\n}\n\n.mdi-fan:before {\n  content: \"\\F210\";\n}\n\n.mdi-fan-off:before {\n  content: \"\\F81C\";\n}\n\n.mdi-fast-forward:before {\n  content: \"\\F211\";\n}\n\n.mdi-fast-forward-outline:before {\n  content: \"\\F6D1\";\n}\n\n.mdi-fax:before {\n  content: \"\\F212\";\n}\n\n.mdi-feather:before {\n  content: \"\\F6D2\";\n}\n\n.mdi-fedora:before {\n  content: \"\\F8DA\";\n}\n\n.mdi-ferry:before {\n  content: \"\\F213\";\n}\n\n.mdi-file:before {\n  content: \"\\F214\";\n}\n\n.mdi-file-account:before {\n  content: \"\\F73A\";\n}\n\n.mdi-file-chart:before {\n  content: \"\\F215\";\n}\n\n.mdi-file-check:before {\n  content: \"\\F216\";\n}\n\n.mdi-file-cloud:before {\n  content: \"\\F217\";\n}\n\n.mdi-file-compare:before {\n  content: \"\\F8A9\";\n}\n\n.mdi-file-delimited:before {\n  content: \"\\F218\";\n}\n\n.mdi-file-document:before {\n  content: \"\\F219\";\n}\n\n.mdi-file-document-box:before {\n  content: \"\\F21A\";\n}\n\n.mdi-file-document-box-outline:before {\n  content: \"\\F9EC\";\n}\n\n.mdi-file-document-outline:before {\n  content: \"\\F9ED\";\n}\n\n.mdi-file-download:before {\n  content: \"\\F964\";\n}\n\n.mdi-file-download-outline:before {\n  content: \"\\F965\";\n}\n\n.mdi-file-excel:before {\n  content: \"\\F21B\";\n}\n\n.mdi-file-excel-box:before {\n  content: \"\\F21C\";\n}\n\n.mdi-file-export:before {\n  content: \"\\F21D\";\n}\n\n.mdi-file-find:before {\n  content: \"\\F21E\";\n}\n\n.mdi-file-hidden:before {\n  content: \"\\F613\";\n}\n\n.mdi-file-image:before {\n  content: \"\\F21F\";\n}\n\n.mdi-file-import:before {\n  content: \"\\F220\";\n}\n\n.mdi-file-lock:before {\n  content: \"\\F221\";\n}\n\n.mdi-file-multiple:before {\n  content: \"\\F222\";\n}\n\n.mdi-file-music:before {\n  content: \"\\F223\";\n}\n\n.mdi-file-outline:before {\n  content: \"\\F224\";\n}\n\n.mdi-file-pdf:before {\n  content: \"\\F225\";\n}\n\n.mdi-file-pdf-box:before {\n  content: \"\\F226\";\n}\n\n.mdi-file-percent:before {\n  content: \"\\F81D\";\n}\n\n.mdi-file-plus:before {\n  content: \"\\F751\";\n}\n\n.mdi-file-powerpoint:before {\n  content: \"\\F227\";\n}\n\n.mdi-file-powerpoint-box:before {\n  content: \"\\F228\";\n}\n\n.mdi-file-presentation-box:before {\n  content: \"\\F229\";\n}\n\n.mdi-file-question:before {\n  content: \"\\F86E\";\n}\n\n.mdi-file-restore:before {\n  content: \"\\F670\";\n}\n\n.mdi-file-send:before {\n  content: \"\\F22A\";\n}\n\n.mdi-file-tree:before {\n  content: \"\\F645\";\n}\n\n.mdi-file-undo:before {\n  content: \"\\F8DB\";\n}\n\n.mdi-file-video:before {\n  content: \"\\F22B\";\n}\n\n.mdi-file-word:before {\n  content: \"\\F22C\";\n}\n\n.mdi-file-word-box:before {\n  content: \"\\F22D\";\n}\n\n.mdi-file-xml:before {\n  content: \"\\F22E\";\n}\n\n.mdi-film:before {\n  content: \"\\F22F\";\n}\n\n.mdi-filmstrip:before {\n  content: \"\\F230\";\n}\n\n.mdi-filmstrip-off:before {\n  content: \"\\F231\";\n}\n\n.mdi-filter:before {\n  content: \"\\F232\";\n}\n\n.mdi-filter-outline:before {\n  content: \"\\F233\";\n}\n\n.mdi-filter-remove:before {\n  content: \"\\F234\";\n}\n\n.mdi-filter-remove-outline:before {\n  content: \"\\F235\";\n}\n\n.mdi-filter-variant:before {\n  content: \"\\F236\";\n}\n\n.mdi-finance:before {\n  content: \"\\F81E\";\n}\n\n.mdi-find-replace:before {\n  content: \"\\F6D3\";\n}\n\n.mdi-fingerprint:before {\n  content: \"\\F237\";\n}\n\n.mdi-fire:before {\n  content: \"\\F238\";\n}\n\n.mdi-fire-truck:before {\n  content: \"\\F8AA\";\n}\n\n.mdi-firebase:before {\n  content: \"\\F966\";\n}\n\n.mdi-firefox:before {\n  content: \"\\F239\";\n}\n\n.mdi-fish:before {\n  content: \"\\F23A\";\n}\n\n.mdi-flag:before {\n  content: \"\\F23B\";\n}\n\n.mdi-flag-checkered:before {\n  content: \"\\F23C\";\n}\n\n.mdi-flag-outline:before {\n  content: \"\\F23D\";\n}\n\n.mdi-flag-triangle:before {\n  content: \"\\F23F\";\n}\n\n.mdi-flag-variant:before {\n  content: \"\\F240\";\n}\n\n.mdi-flag-variant-outline:before {\n  content: \"\\F23E\";\n}\n\n.mdi-flash:before {\n  content: \"\\F241\";\n}\n\n.mdi-flash-auto:before {\n  content: \"\\F242\";\n}\n\n.mdi-flash-circle:before {\n  content: \"\\F81F\";\n}\n\n.mdi-flash-off:before {\n  content: \"\\F243\";\n}\n\n.mdi-flash-outline:before {\n  content: \"\\F6D4\";\n}\n\n.mdi-flash-red-eye:before {\n  content: \"\\F67A\";\n}\n\n.mdi-flashlight:before {\n  content: \"\\F244\";\n}\n\n.mdi-flashlight-off:before {\n  content: \"\\F245\";\n}\n\n.mdi-flask:before {\n  content: \"\\F093\";\n}\n\n.mdi-flask-empty:before {\n  content: \"\\F094\";\n}\n\n.mdi-flask-empty-outline:before {\n  content: \"\\F095\";\n}\n\n.mdi-flask-outline:before {\n  content: \"\\F096\";\n}\n\n.mdi-flattr:before {\n  content: \"\\F246\";\n}\n\n.mdi-flip-to-back:before {\n  content: \"\\F247\";\n}\n\n.mdi-flip-to-front:before {\n  content: \"\\F248\";\n}\n\n.mdi-floor-lamp:before {\n  content: \"\\F8DC\";\n}\n\n.mdi-floor-plan:before {\n  content: \"\\F820\";\n}\n\n.mdi-floppy:before {\n  content: \"\\F249\";\n}\n\n.mdi-floppy-variant:before {\n  content: \"\\F9EE\";\n}\n\n.mdi-flower:before {\n  content: \"\\F24A\";\n}\n\n.mdi-flower-outline:before {\n  content: \"\\F9EF\";\n}\n\n.mdi-flower-tulip:before {\n  content: \"\\F9F0\";\n}\n\n.mdi-flower-tulip-outline:before {\n  content: \"\\F9F1\";\n}\n\n.mdi-folder:before {\n  content: \"\\F24B\";\n}\n\n.mdi-folder-account:before {\n  content: \"\\F24C\";\n}\n\n.mdi-folder-download:before {\n  content: \"\\F24D\";\n}\n\n.mdi-folder-edit:before {\n  content: \"\\F8DD\";\n}\n\n.mdi-folder-google-drive:before {\n  content: \"\\F24E\";\n}\n\n.mdi-folder-image:before {\n  content: \"\\F24F\";\n}\n\n.mdi-folder-key:before {\n  content: \"\\F8AB\";\n}\n\n.mdi-folder-key-network:before {\n  content: \"\\F8AC\";\n}\n\n.mdi-folder-lock:before {\n  content: \"\\F250\";\n}\n\n.mdi-folder-lock-open:before {\n  content: \"\\F251\";\n}\n\n.mdi-folder-move:before {\n  content: \"\\F252\";\n}\n\n.mdi-folder-multiple:before {\n  content: \"\\F253\";\n}\n\n.mdi-folder-multiple-image:before {\n  content: \"\\F254\";\n}\n\n.mdi-folder-multiple-outline:before {\n  content: \"\\F255\";\n}\n\n.mdi-folder-network:before {\n  content: \"\\F86F\";\n}\n\n.mdi-folder-open:before {\n  content: \"\\F76F\";\n}\n\n.mdi-folder-outline:before {\n  content: \"\\F256\";\n}\n\n.mdi-folder-plus:before {\n  content: \"\\F257\";\n}\n\n.mdi-folder-remove:before {\n  content: \"\\F258\";\n}\n\n.mdi-folder-search:before {\n  content: \"\\F967\";\n}\n\n.mdi-folder-search-outline:before {\n  content: \"\\F968\";\n}\n\n.mdi-folder-star:before {\n  content: \"\\F69C\";\n}\n\n.mdi-folder-upload:before {\n  content: \"\\F259\";\n}\n\n.mdi-font-awesome:before {\n  content: \"\\F03A\";\n}\n\n.mdi-food:before {\n  content: \"\\F25A\";\n}\n\n.mdi-food-apple:before {\n  content: \"\\F25B\";\n}\n\n.mdi-food-croissant:before {\n  content: \"\\F7C7\";\n}\n\n.mdi-food-fork-drink:before {\n  content: \"\\F5F2\";\n}\n\n.mdi-food-off:before {\n  content: \"\\F5F3\";\n}\n\n.mdi-food-variant:before {\n  content: \"\\F25C\";\n}\n\n.mdi-football:before {\n  content: \"\\F25D\";\n}\n\n.mdi-football-australian:before {\n  content: \"\\F25E\";\n}\n\n.mdi-football-helmet:before {\n  content: \"\\F25F\";\n}\n\n.mdi-forklift:before {\n  content: \"\\F7C8\";\n}\n\n.mdi-format-align-bottom:before {\n  content: \"\\F752\";\n}\n\n.mdi-format-align-center:before {\n  content: \"\\F260\";\n}\n\n.mdi-format-align-justify:before {\n  content: \"\\F261\";\n}\n\n.mdi-format-align-left:before {\n  content: \"\\F262\";\n}\n\n.mdi-format-align-middle:before {\n  content: \"\\F753\";\n}\n\n.mdi-format-align-right:before {\n  content: \"\\F263\";\n}\n\n.mdi-format-align-top:before {\n  content: \"\\F754\";\n}\n\n.mdi-format-annotation-plus:before {\n  content: \"\\F646\";\n}\n\n.mdi-format-bold:before {\n  content: \"\\F264\";\n}\n\n.mdi-format-clear:before {\n  content: \"\\F265\";\n}\n\n.mdi-format-color-fill:before {\n  content: \"\\F266\";\n}\n\n.mdi-format-color-text:before {\n  content: \"\\F69D\";\n}\n\n.mdi-format-columns:before {\n  content: \"\\F8DE\";\n}\n\n.mdi-format-float-center:before {\n  content: \"\\F267\";\n}\n\n.mdi-format-float-left:before {\n  content: \"\\F268\";\n}\n\n.mdi-format-float-none:before {\n  content: \"\\F269\";\n}\n\n.mdi-format-float-right:before {\n  content: \"\\F26A\";\n}\n\n.mdi-format-font:before {\n  content: \"\\F6D5\";\n}\n\n.mdi-format-font-size-decrease:before {\n  content: \"\\F9F2\";\n}\n\n.mdi-format-font-size-increase:before {\n  content: \"\\F9F3\";\n}\n\n.mdi-format-header-1:before {\n  content: \"\\F26B\";\n}\n\n.mdi-format-header-2:before {\n  content: \"\\F26C\";\n}\n\n.mdi-format-header-3:before {\n  content: \"\\F26D\";\n}\n\n.mdi-format-header-4:before {\n  content: \"\\F26E\";\n}\n\n.mdi-format-header-5:before {\n  content: \"\\F26F\";\n}\n\n.mdi-format-header-6:before {\n  content: \"\\F270\";\n}\n\n.mdi-format-header-decrease:before {\n  content: \"\\F271\";\n}\n\n.mdi-format-header-equal:before {\n  content: \"\\F272\";\n}\n\n.mdi-format-header-increase:before {\n  content: \"\\F273\";\n}\n\n.mdi-format-header-pound:before {\n  content: \"\\F274\";\n}\n\n.mdi-format-horizontal-align-center:before {\n  content: \"\\F61E\";\n}\n\n.mdi-format-horizontal-align-left:before {\n  content: \"\\F61F\";\n}\n\n.mdi-format-horizontal-align-right:before {\n  content: \"\\F620\";\n}\n\n.mdi-format-indent-decrease:before {\n  content: \"\\F275\";\n}\n\n.mdi-format-indent-increase:before {\n  content: \"\\F276\";\n}\n\n.mdi-format-italic:before {\n  content: \"\\F277\";\n}\n\n.mdi-format-line-spacing:before {\n  content: \"\\F278\";\n}\n\n.mdi-format-line-style:before {\n  content: \"\\F5C8\";\n}\n\n.mdi-format-line-weight:before {\n  content: \"\\F5C9\";\n}\n\n.mdi-format-list-bulleted:before {\n  content: \"\\F279\";\n}\n\n.mdi-format-list-bulleted-type:before {\n  content: \"\\F27A\";\n}\n\n.mdi-format-list-checkbox:before {\n  content: \"\\F969\";\n}\n\n.mdi-format-list-checks:before {\n  content: \"\\F755\";\n}\n\n.mdi-format-list-numbers:before {\n  content: \"\\F27B\";\n}\n\n.mdi-format-page-break:before {\n  content: \"\\F6D6\";\n}\n\n.mdi-format-paint:before {\n  content: \"\\F27C\";\n}\n\n.mdi-format-paragraph:before {\n  content: \"\\F27D\";\n}\n\n.mdi-format-pilcrow:before {\n  content: \"\\F6D7\";\n}\n\n.mdi-format-quote-close:before {\n  content: \"\\F27E\";\n}\n\n.mdi-format-quote-open:before {\n  content: \"\\F756\";\n}\n\n.mdi-format-rotate-90:before {\n  content: \"\\F6A9\";\n}\n\n.mdi-format-section:before {\n  content: \"\\F69E\";\n}\n\n.mdi-format-size:before {\n  content: \"\\F27F\";\n}\n\n.mdi-format-strikethrough:before {\n  content: \"\\F280\";\n}\n\n.mdi-format-strikethrough-variant:before {\n  content: \"\\F281\";\n}\n\n.mdi-format-subscript:before {\n  content: \"\\F282\";\n}\n\n.mdi-format-superscript:before {\n  content: \"\\F283\";\n}\n\n.mdi-format-text:before {\n  content: \"\\F284\";\n}\n\n.mdi-format-textdirection-l-to-r:before {\n  content: \"\\F285\";\n}\n\n.mdi-format-textdirection-r-to-l:before {\n  content: \"\\F286\";\n}\n\n.mdi-format-title:before {\n  content: \"\\F5F4\";\n}\n\n.mdi-format-underline:before {\n  content: \"\\F287\";\n}\n\n.mdi-format-vertical-align-bottom:before {\n  content: \"\\F621\";\n}\n\n.mdi-format-vertical-align-center:before {\n  content: \"\\F622\";\n}\n\n.mdi-format-vertical-align-top:before {\n  content: \"\\F623\";\n}\n\n.mdi-format-wrap-inline:before {\n  content: \"\\F288\";\n}\n\n.mdi-format-wrap-square:before {\n  content: \"\\F289\";\n}\n\n.mdi-format-wrap-tight:before {\n  content: \"\\F28A\";\n}\n\n.mdi-format-wrap-top-bottom:before {\n  content: \"\\F28B\";\n}\n\n.mdi-forum:before {\n  content: \"\\F28C\";\n}\n\n.mdi-forum-outline:before {\n  content: \"\\F821\";\n}\n\n.mdi-forward:before {\n  content: \"\\F28D\";\n}\n\n.mdi-fountain:before {\n  content: \"\\F96A\";\n}\n\n.mdi-foursquare:before {\n  content: \"\\F28E\";\n}\n\n.mdi-freebsd:before {\n  content: \"\\F8DF\";\n}\n\n.mdi-fridge:before {\n  content: \"\\F28F\";\n}\n\n.mdi-fridge-filled:before {\n  content: \"\\F290\";\n}\n\n.mdi-fridge-filled-bottom:before {\n  content: \"\\F291\";\n}\n\n.mdi-fridge-filled-top:before {\n  content: \"\\F292\";\n}\n\n.mdi-fuel:before {\n  content: \"\\F7C9\";\n}\n\n.mdi-fullscreen:before {\n  content: \"\\F293\";\n}\n\n.mdi-fullscreen-exit:before {\n  content: \"\\F294\";\n}\n\n.mdi-function:before {\n  content: \"\\F295\";\n}\n\n.mdi-function-variant:before {\n  content: \"\\F870\";\n}\n\n.mdi-gamepad:before {\n  content: \"\\F296\";\n}\n\n.mdi-gamepad-variant:before {\n  content: \"\\F297\";\n}\n\n.mdi-garage:before {\n  content: \"\\F6D8\";\n}\n\n.mdi-garage-alert:before {\n  content: \"\\F871\";\n}\n\n.mdi-garage-open:before {\n  content: \"\\F6D9\";\n}\n\n.mdi-gas-cylinder:before {\n  content: \"\\F647\";\n}\n\n.mdi-gas-station:before {\n  content: \"\\F298\";\n}\n\n.mdi-gate:before {\n  content: \"\\F299\";\n}\n\n.mdi-gate-and:before {\n  content: \"\\F8E0\";\n}\n\n.mdi-gate-nand:before {\n  content: \"\\F8E1\";\n}\n\n.mdi-gate-nor:before {\n  content: \"\\F8E2\";\n}\n\n.mdi-gate-not:before {\n  content: \"\\F8E3\";\n}\n\n.mdi-gate-or:before {\n  content: \"\\F8E4\";\n}\n\n.mdi-gate-xnor:before {\n  content: \"\\F8E5\";\n}\n\n.mdi-gate-xor:before {\n  content: \"\\F8E6\";\n}\n\n.mdi-gauge:before {\n  content: \"\\F29A\";\n}\n\n.mdi-gauge-empty:before {\n  content: \"\\F872\";\n}\n\n.mdi-gauge-full:before {\n  content: \"\\F873\";\n}\n\n.mdi-gauge-low:before {\n  content: \"\\F874\";\n}\n\n.mdi-gavel:before {\n  content: \"\\F29B\";\n}\n\n.mdi-gender-female:before {\n  content: \"\\F29C\";\n}\n\n.mdi-gender-male:before {\n  content: \"\\F29D\";\n}\n\n.mdi-gender-male-female:before {\n  content: \"\\F29E\";\n}\n\n.mdi-gender-transgender:before {\n  content: \"\\F29F\";\n}\n\n.mdi-gentoo:before {\n  content: \"\\F8E7\";\n}\n\n.mdi-gesture:before {\n  content: \"\\F7CA\";\n}\n\n.mdi-gesture-double-tap:before {\n  content: \"\\F73B\";\n}\n\n.mdi-gesture-swipe-down:before {\n  content: \"\\F73C\";\n}\n\n.mdi-gesture-swipe-left:before {\n  content: \"\\F73D\";\n}\n\n.mdi-gesture-swipe-right:before {\n  content: \"\\F73E\";\n}\n\n.mdi-gesture-swipe-up:before {\n  content: \"\\F73F\";\n}\n\n.mdi-gesture-tap:before {\n  content: \"\\F740\";\n}\n\n.mdi-gesture-two-double-tap:before {\n  content: \"\\F741\";\n}\n\n.mdi-gesture-two-tap:before {\n  content: \"\\F742\";\n}\n\n.mdi-ghost:before {\n  content: \"\\F2A0\";\n}\n\n.mdi-ghost-off:before {\n  content: \"\\F9F4\";\n}\n\n.mdi-gift:before {\n  content: \"\\F2A1\";\n}\n\n.mdi-git:before {\n  content: \"\\F2A2\";\n}\n\n.mdi-github-box:before {\n  content: \"\\F2A3\";\n}\n\n.mdi-github-circle:before {\n  content: \"\\F2A4\";\n}\n\n.mdi-github-face:before {\n  content: \"\\F6DA\";\n}\n\n.mdi-glass-cocktail:before {\n  content: \"\\F356\";\n}\n\n.mdi-glass-flute:before {\n  content: \"\\F2A5\";\n}\n\n.mdi-glass-mug:before {\n  content: \"\\F2A6\";\n}\n\n.mdi-glass-stange:before {\n  content: \"\\F2A7\";\n}\n\n.mdi-glass-tulip:before {\n  content: \"\\F2A8\";\n}\n\n.mdi-glass-wine:before {\n  content: \"\\F875\";\n}\n\n.mdi-glassdoor:before {\n  content: \"\\F2A9\";\n}\n\n.mdi-glasses:before {\n  content: \"\\F2AA\";\n}\n\n.mdi-globe-model:before {\n  content: \"\\F8E8\";\n}\n\n.mdi-gmail:before {\n  content: \"\\F2AB\";\n}\n\n.mdi-gnome:before {\n  content: \"\\F2AC\";\n}\n\n.mdi-golf:before {\n  content: \"\\F822\";\n}\n\n.mdi-gondola:before {\n  content: \"\\F685\";\n}\n\n.mdi-google:before {\n  content: \"\\F2AD\";\n}\n\n.mdi-google-allo:before {\n  content: \"\\F801\";\n}\n\n.mdi-google-analytics:before {\n  content: \"\\F7CB\";\n}\n\n.mdi-google-assistant:before {\n  content: \"\\F7CC\";\n}\n\n.mdi-google-cardboard:before {\n  content: \"\\F2AE\";\n}\n\n.mdi-google-chrome:before {\n  content: \"\\F2AF\";\n}\n\n.mdi-google-circles:before {\n  content: \"\\F2B0\";\n}\n\n.mdi-google-circles-communities:before {\n  content: \"\\F2B1\";\n}\n\n.mdi-google-circles-extended:before {\n  content: \"\\F2B2\";\n}\n\n.mdi-google-circles-group:before {\n  content: \"\\F2B3\";\n}\n\n.mdi-google-controller:before {\n  content: \"\\F2B4\";\n}\n\n.mdi-google-controller-off:before {\n  content: \"\\F2B5\";\n}\n\n.mdi-google-drive:before {\n  content: \"\\F2B6\";\n}\n\n.mdi-google-earth:before {\n  content: \"\\F2B7\";\n}\n\n.mdi-google-fit:before {\n  content: \"\\F96B\";\n}\n\n.mdi-google-glass:before {\n  content: \"\\F2B8\";\n}\n\n.mdi-google-hangouts:before {\n  content: \"\\F2C9\";\n}\n\n.mdi-google-home:before {\n  content: \"\\F823\";\n}\n\n.mdi-google-keep:before {\n  content: \"\\F6DB\";\n}\n\n.mdi-google-lens:before {\n  content: \"\\F9F5\";\n}\n\n.mdi-google-maps:before {\n  content: \"\\F5F5\";\n}\n\n.mdi-google-nearby:before {\n  content: \"\\F2B9\";\n}\n\n.mdi-google-pages:before {\n  content: \"\\F2BA\";\n}\n\n.mdi-google-photos:before {\n  content: \"\\F6DC\";\n}\n\n.mdi-google-physical-web:before {\n  content: \"\\F2BB\";\n}\n\n.mdi-google-play:before {\n  content: \"\\F2BC\";\n}\n\n.mdi-google-plus:before {\n  content: \"\\F2BD\";\n}\n\n.mdi-google-plus-box:before {\n  content: \"\\F2BE\";\n}\n\n.mdi-google-spreadsheet:before {\n  content: \"\\F9F6\";\n}\n\n.mdi-google-translate:before {\n  content: \"\\F2BF\";\n}\n\n.mdi-google-wallet:before {\n  content: \"\\F2C0\";\n}\n\n.mdi-gpu:before {\n  content: \"\\F8AD\";\n}\n\n.mdi-gradient:before {\n  content: \"\\F69F\";\n}\n\n.mdi-graphql:before {\n  content: \"\\F876\";\n}\n\n.mdi-grease-pencil:before {\n  content: \"\\F648\";\n}\n\n.mdi-greater-than:before {\n  content: \"\\F96C\";\n}\n\n.mdi-greater-than-or-equal:before {\n  content: \"\\F96D\";\n}\n\n.mdi-grid:before {\n  content: \"\\F2C1\";\n}\n\n.mdi-grid-large:before {\n  content: \"\\F757\";\n}\n\n.mdi-grid-off:before {\n  content: \"\\F2C2\";\n}\n\n.mdi-group:before {\n  content: \"\\F2C3\";\n}\n\n.mdi-guitar-acoustic:before {\n  content: \"\\F770\";\n}\n\n.mdi-guitar-electric:before {\n  content: \"\\F2C4\";\n}\n\n.mdi-guitar-pick:before {\n  content: \"\\F2C5\";\n}\n\n.mdi-guitar-pick-outline:before {\n  content: \"\\F2C6\";\n}\n\n.mdi-guy-fawkes-mask:before {\n  content: \"\\F824\";\n}\n\n.mdi-hackernews:before {\n  content: \"\\F624\";\n}\n\n.mdi-hamburger:before {\n  content: \"\\F684\";\n}\n\n.mdi-hammer:before {\n  content: \"\\F8E9\";\n}\n\n.mdi-hand-pointing-right:before {\n  content: \"\\F2C7\";\n}\n\n.mdi-hanger:before {\n  content: \"\\F2C8\";\n}\n\n.mdi-hard-hat:before {\n  content: \"\\F96E\";\n}\n\n.mdi-harddisk:before {\n  content: \"\\F2CA\";\n}\n\n.mdi-headphones:before {\n  content: \"\\F2CB\";\n}\n\n.mdi-headphones-bluetooth:before {\n  content: \"\\F96F\";\n}\n\n.mdi-headphones-box:before {\n  content: \"\\F2CC\";\n}\n\n.mdi-headphones-off:before {\n  content: \"\\F7CD\";\n}\n\n.mdi-headphones-settings:before {\n  content: \"\\F2CD\";\n}\n\n.mdi-headset:before {\n  content: \"\\F2CE\";\n}\n\n.mdi-headset-dock:before {\n  content: \"\\F2CF\";\n}\n\n.mdi-headset-off:before {\n  content: \"\\F2D0\";\n}\n\n.mdi-heart:before {\n  content: \"\\F2D1\";\n}\n\n.mdi-heart-box:before {\n  content: \"\\F2D2\";\n}\n\n.mdi-heart-box-outline:before {\n  content: \"\\F2D3\";\n}\n\n.mdi-heart-broken:before {\n  content: \"\\F2D4\";\n}\n\n.mdi-heart-circle:before {\n  content: \"\\F970\";\n}\n\n.mdi-heart-circle-outline:before {\n  content: \"\\F971\";\n}\n\n.mdi-heart-half:before {\n  content: \"\\F6DE\";\n}\n\n.mdi-heart-half-full:before {\n  content: \"\\F6DD\";\n}\n\n.mdi-heart-half-outline:before {\n  content: \"\\F6DF\";\n}\n\n.mdi-heart-off:before {\n  content: \"\\F758\";\n}\n\n.mdi-heart-outline:before {\n  content: \"\\F2D5\";\n}\n\n.mdi-heart-pulse:before {\n  content: \"\\F5F6\";\n}\n\n.mdi-help:before {\n  content: \"\\F2D6\";\n}\n\n.mdi-help-box:before {\n  content: \"\\F78A\";\n}\n\n.mdi-help-circle:before {\n  content: \"\\F2D7\";\n}\n\n.mdi-help-circle-outline:before {\n  content: \"\\F625\";\n}\n\n.mdi-help-network:before {\n  content: \"\\F6F4\";\n}\n\n.mdi-hexagon:before {\n  content: \"\\F2D8\";\n}\n\n.mdi-hexagon-multiple:before {\n  content: \"\\F6E0\";\n}\n\n.mdi-hexagon-outline:before {\n  content: \"\\F2D9\";\n}\n\n.mdi-high-definition:before {\n  content: \"\\F7CE\";\n}\n\n.mdi-high-definition-box:before {\n  content: \"\\F877\";\n}\n\n.mdi-highway:before {\n  content: \"\\F5F7\";\n}\n\n.mdi-hinduism:before {\n  content: \"\\F972\";\n}\n\n.mdi-history:before {\n  content: \"\\F2DA\";\n}\n\n.mdi-hockey-puck:before {\n  content: \"\\F878\";\n}\n\n.mdi-hockey-sticks:before {\n  content: \"\\F879\";\n}\n\n.mdi-hololens:before {\n  content: \"\\F2DB\";\n}\n\n.mdi-home:before {\n  content: \"\\F2DC\";\n}\n\n.mdi-home-account:before {\n  content: \"\\F825\";\n}\n\n.mdi-home-alert:before {\n  content: \"\\F87A\";\n}\n\n.mdi-home-assistant:before {\n  content: \"\\F7CF\";\n}\n\n.mdi-home-automation:before {\n  content: \"\\F7D0\";\n}\n\n.mdi-home-circle:before {\n  content: \"\\F7D1\";\n}\n\n.mdi-home-currency-usd:before {\n  content: \"\\F8AE\";\n}\n\n.mdi-home-heart:before {\n  content: \"\\F826\";\n}\n\n.mdi-home-lock:before {\n  content: \"\\F8EA\";\n}\n\n.mdi-home-lock-open:before {\n  content: \"\\F8EB\";\n}\n\n.mdi-home-map-marker:before {\n  content: \"\\F5F8\";\n}\n\n.mdi-home-minus:before {\n  content: \"\\F973\";\n}\n\n.mdi-home-modern:before {\n  content: \"\\F2DD\";\n}\n\n.mdi-home-outline:before {\n  content: \"\\F6A0\";\n}\n\n.mdi-home-plus:before {\n  content: \"\\F974\";\n}\n\n.mdi-home-variant:before {\n  content: \"\\F2DE\";\n}\n\n.mdi-hook:before {\n  content: \"\\F6E1\";\n}\n\n.mdi-hook-off:before {\n  content: \"\\F6E2\";\n}\n\n.mdi-hops:before {\n  content: \"\\F2DF\";\n}\n\n.mdi-hospital:before {\n  content: \"\\F2E0\";\n}\n\n.mdi-hospital-building:before {\n  content: \"\\F2E1\";\n}\n\n.mdi-hospital-marker:before {\n  content: \"\\F2E2\";\n}\n\n.mdi-hot-tub:before {\n  content: \"\\F827\";\n}\n\n.mdi-hotel:before {\n  content: \"\\F2E3\";\n}\n\n.mdi-houzz:before {\n  content: \"\\F2E4\";\n}\n\n.mdi-houzz-box:before {\n  content: \"\\F2E5\";\n}\n\n.mdi-hulu:before {\n  content: \"\\F828\";\n}\n\n.mdi-human:before {\n  content: \"\\F2E6\";\n}\n\n.mdi-human-child:before {\n  content: \"\\F2E7\";\n}\n\n.mdi-human-female:before {\n  content: \"\\F649\";\n}\n\n.mdi-human-greeting:before {\n  content: \"\\F64A\";\n}\n\n.mdi-human-handsdown:before {\n  content: \"\\F64B\";\n}\n\n.mdi-human-handsup:before {\n  content: \"\\F64C\";\n}\n\n.mdi-human-male:before {\n  content: \"\\F64D\";\n}\n\n.mdi-human-male-female:before {\n  content: \"\\F2E8\";\n}\n\n.mdi-human-pregnant:before {\n  content: \"\\F5CF\";\n}\n\n.mdi-humble-bundle:before {\n  content: \"\\F743\";\n}\n\n.mdi-ice-cream:before {\n  content: \"\\F829\";\n}\n\n.mdi-image:before {\n  content: \"\\F2E9\";\n}\n\n.mdi-image-album:before {\n  content: \"\\F2EA\";\n}\n\n.mdi-image-area:before {\n  content: \"\\F2EB\";\n}\n\n.mdi-image-area-close:before {\n  content: \"\\F2EC\";\n}\n\n.mdi-image-broken:before {\n  content: \"\\F2ED\";\n}\n\n.mdi-image-broken-variant:before {\n  content: \"\\F2EE\";\n}\n\n.mdi-image-filter:before {\n  content: \"\\F2EF\";\n}\n\n.mdi-image-filter-black-white:before {\n  content: \"\\F2F0\";\n}\n\n.mdi-image-filter-center-focus:before {\n  content: \"\\F2F1\";\n}\n\n.mdi-image-filter-center-focus-weak:before {\n  content: \"\\F2F2\";\n}\n\n.mdi-image-filter-drama:before {\n  content: \"\\F2F3\";\n}\n\n.mdi-image-filter-frames:before {\n  content: \"\\F2F4\";\n}\n\n.mdi-image-filter-hdr:before {\n  content: \"\\F2F5\";\n}\n\n.mdi-image-filter-none:before {\n  content: \"\\F2F6\";\n}\n\n.mdi-image-filter-tilt-shift:before {\n  content: \"\\F2F7\";\n}\n\n.mdi-image-filter-vintage:before {\n  content: \"\\F2F8\";\n}\n\n.mdi-image-move:before {\n  content: \"\\F9F7\";\n}\n\n.mdi-image-multiple:before {\n  content: \"\\F2F9\";\n}\n\n.mdi-image-off:before {\n  content: \"\\F82A\";\n}\n\n.mdi-image-outline:before {\n  content: \"\\F975\";\n}\n\n.mdi-image-plus:before {\n  content: \"\\F87B\";\n}\n\n.mdi-image-search:before {\n  content: \"\\F976\";\n}\n\n.mdi-image-search-outline:before {\n  content: \"\\F977\";\n}\n\n.mdi-import:before {\n  content: \"\\F2FA\";\n}\n\n.mdi-inbox:before {\n  content: \"\\F686\";\n}\n\n.mdi-inbox-arrow-down:before {\n  content: \"\\F2FB\";\n}\n\n.mdi-inbox-arrow-up:before {\n  content: \"\\F3D1\";\n}\n\n.mdi-inbox-multiple:before {\n  content: \"\\F8AF\";\n}\n\n.mdi-incognito:before {\n  content: \"\\F5F9\";\n}\n\n.mdi-infinity:before {\n  content: \"\\F6E3\";\n}\n\n.mdi-information:before {\n  content: \"\\F2FC\";\n}\n\n.mdi-information-outline:before {\n  content: \"\\F2FD\";\n}\n\n.mdi-information-variant:before {\n  content: \"\\F64E\";\n}\n\n.mdi-instagram:before {\n  content: \"\\F2FE\";\n}\n\n.mdi-instapaper:before {\n  content: \"\\F2FF\";\n}\n\n.mdi-internet-explorer:before {\n  content: \"\\F300\";\n}\n\n.mdi-invert-colors:before {\n  content: \"\\F301\";\n}\n\n.mdi-islam:before {\n  content: \"\\F978\";\n}\n\n.mdi-itunes:before {\n  content: \"\\F676\";\n}\n\n.mdi-jeepney:before {\n  content: \"\\F302\";\n}\n\n.mdi-jira:before {\n  content: \"\\F303\";\n}\n\n.mdi-jquery:before {\n  content: \"\\F87C\";\n}\n\n.mdi-jsfiddle:before {\n  content: \"\\F304\";\n}\n\n.mdi-json:before {\n  content: \"\\F626\";\n}\n\n.mdi-judaism:before {\n  content: \"\\F979\";\n}\n\n.mdi-karate:before {\n  content: \"\\F82B\";\n}\n\n.mdi-keg:before {\n  content: \"\\F305\";\n}\n\n.mdi-kettle:before {\n  content: \"\\F5FA\";\n}\n\n.mdi-key:before {\n  content: \"\\F306\";\n}\n\n.mdi-key-change:before {\n  content: \"\\F307\";\n}\n\n.mdi-key-minus:before {\n  content: \"\\F308\";\n}\n\n.mdi-key-plus:before {\n  content: \"\\F309\";\n}\n\n.mdi-key-remove:before {\n  content: \"\\F30A\";\n}\n\n.mdi-key-variant:before {\n  content: \"\\F30B\";\n}\n\n.mdi-keyboard:before {\n  content: \"\\F30C\";\n}\n\n.mdi-keyboard-backspace:before {\n  content: \"\\F30D\";\n}\n\n.mdi-keyboard-caps:before {\n  content: \"\\F30E\";\n}\n\n.mdi-keyboard-close:before {\n  content: \"\\F30F\";\n}\n\n.mdi-keyboard-off:before {\n  content: \"\\F310\";\n}\n\n.mdi-keyboard-outline:before {\n  content: \"\\F97A\";\n}\n\n.mdi-keyboard-return:before {\n  content: \"\\F311\";\n}\n\n.mdi-keyboard-settings:before {\n  content: \"\\F9F8\";\n}\n\n.mdi-keyboard-settings-outline:before {\n  content: \"\\F9F9\";\n}\n\n.mdi-keyboard-tab:before {\n  content: \"\\F312\";\n}\n\n.mdi-keyboard-variant:before {\n  content: \"\\F313\";\n}\n\n.mdi-kickstarter:before {\n  content: \"\\F744\";\n}\n\n.mdi-knife:before {\n  content: \"\\F9FA\";\n}\n\n.mdi-knife-military:before {\n  content: \"\\F9FB\";\n}\n\n.mdi-kodi:before {\n  content: \"\\F314\";\n}\n\n.mdi-label:before {\n  content: \"\\F315\";\n}\n\n.mdi-label-outline:before {\n  content: \"\\F316\";\n}\n\n.mdi-ladybug:before {\n  content: \"\\F82C\";\n}\n\n.mdi-lambda:before {\n  content: \"\\F627\";\n}\n\n.mdi-lamp:before {\n  content: \"\\F6B4\";\n}\n\n.mdi-lan:before {\n  content: \"\\F317\";\n}\n\n.mdi-lan-connect:before {\n  content: \"\\F318\";\n}\n\n.mdi-lan-disconnect:before {\n  content: \"\\F319\";\n}\n\n.mdi-lan-pending:before {\n  content: \"\\F31A\";\n}\n\n.mdi-language-c:before {\n  content: \"\\F671\";\n}\n\n.mdi-language-cpp:before {\n  content: \"\\F672\";\n}\n\n.mdi-language-csharp:before {\n  content: \"\\F31B\";\n}\n\n.mdi-language-css3:before {\n  content: \"\\F31C\";\n}\n\n.mdi-language-go:before {\n  content: \"\\F7D2\";\n}\n\n.mdi-language-html5:before {\n  content: \"\\F31D\";\n}\n\n.mdi-language-javascript:before {\n  content: \"\\F31E\";\n}\n\n.mdi-language-lua:before {\n  content: \"\\F8B0\";\n}\n\n.mdi-language-php:before {\n  content: \"\\F31F\";\n}\n\n.mdi-language-python:before {\n  content: \"\\F320\";\n}\n\n.mdi-language-python-text:before {\n  content: \"\\F321\";\n}\n\n.mdi-language-r:before {\n  content: \"\\F7D3\";\n}\n\n.mdi-language-swift:before {\n  content: \"\\F6E4\";\n}\n\n.mdi-language-typescript:before {\n  content: \"\\F6E5\";\n}\n\n.mdi-laptop:before {\n  content: \"\\F322\";\n}\n\n.mdi-laptop-chromebook:before {\n  content: \"\\F323\";\n}\n\n.mdi-laptop-mac:before {\n  content: \"\\F324\";\n}\n\n.mdi-laptop-off:before {\n  content: \"\\F6E6\";\n}\n\n.mdi-laptop-windows:before {\n  content: \"\\F325\";\n}\n\n.mdi-lastfm:before {\n  content: \"\\F326\";\n}\n\n.mdi-lastpass:before {\n  content: \"\\F446\";\n}\n\n.mdi-launch:before {\n  content: \"\\F327\";\n}\n\n.mdi-lava-lamp:before {\n  content: \"\\F7D4\";\n}\n\n.mdi-layers:before {\n  content: \"\\F328\";\n}\n\n.mdi-layers-off:before {\n  content: \"\\F329\";\n}\n\n.mdi-layers-off-outline:before {\n  content: \"\\F9FC\";\n}\n\n.mdi-layers-outline:before {\n  content: \"\\F9FD\";\n}\n\n.mdi-lead-pencil:before {\n  content: \"\\F64F\";\n}\n\n.mdi-leaf:before {\n  content: \"\\F32A\";\n}\n\n.mdi-led-off:before {\n  content: \"\\F32B\";\n}\n\n.mdi-led-on:before {\n  content: \"\\F32C\";\n}\n\n.mdi-led-outline:before {\n  content: \"\\F32D\";\n}\n\n.mdi-led-strip:before {\n  content: \"\\F7D5\";\n}\n\n.mdi-led-variant-off:before {\n  content: \"\\F32E\";\n}\n\n.mdi-led-variant-on:before {\n  content: \"\\F32F\";\n}\n\n.mdi-led-variant-outline:before {\n  content: \"\\F330\";\n}\n\n.mdi-less-than:before {\n  content: \"\\F97B\";\n}\n\n.mdi-less-than-or-equal:before {\n  content: \"\\F97C\";\n}\n\n.mdi-library:before {\n  content: \"\\F331\";\n}\n\n.mdi-library-books:before {\n  content: \"\\F332\";\n}\n\n.mdi-library-music:before {\n  content: \"\\F333\";\n}\n\n.mdi-library-plus:before {\n  content: \"\\F334\";\n}\n\n.mdi-lifebuoy:before {\n  content: \"\\F87D\";\n}\n\n.mdi-light-switch:before {\n  content: \"\\F97D\";\n}\n\n.mdi-lightbulb:before {\n  content: \"\\F335\";\n}\n\n.mdi-lightbulb-on:before {\n  content: \"\\F6E7\";\n}\n\n.mdi-lightbulb-on-outline:before {\n  content: \"\\F6E8\";\n}\n\n.mdi-lightbulb-outline:before {\n  content: \"\\F336\";\n}\n\n.mdi-lighthouse:before {\n  content: \"\\F9FE\";\n}\n\n.mdi-lighthouse-on:before {\n  content: \"\\F9FF\";\n}\n\n.mdi-link:before {\n  content: \"\\F337\";\n}\n\n.mdi-link-off:before {\n  content: \"\\F338\";\n}\n\n.mdi-link-variant:before {\n  content: \"\\F339\";\n}\n\n.mdi-link-variant-off:before {\n  content: \"\\F33A\";\n}\n\n.mdi-linkedin:before {\n  content: \"\\F33B\";\n}\n\n.mdi-linkedin-box:before {\n  content: \"\\F33C\";\n}\n\n.mdi-linux:before {\n  content: \"\\F33D\";\n}\n\n.mdi-linux-mint:before {\n  content: \"\\F8EC\";\n}\n\n.mdi-loading:before {\n  content: \"\\F771\";\n}\n\n.mdi-lock:before {\n  content: \"\\F33E\";\n}\n\n.mdi-lock-alert:before {\n  content: \"\\F8ED\";\n}\n\n.mdi-lock-clock:before {\n  content: \"\\F97E\";\n}\n\n.mdi-lock-open:before {\n  content: \"\\F33F\";\n}\n\n.mdi-lock-open-outline:before {\n  content: \"\\F340\";\n}\n\n.mdi-lock-outline:before {\n  content: \"\\F341\";\n}\n\n.mdi-lock-pattern:before {\n  content: \"\\F6E9\";\n}\n\n.mdi-lock-plus:before {\n  content: \"\\F5FB\";\n}\n\n.mdi-lock-question:before {\n  content: \"\\F8EE\";\n}\n\n.mdi-lock-reset:before {\n  content: \"\\F772\";\n}\n\n.mdi-lock-smart:before {\n  content: \"\\F8B1\";\n}\n\n.mdi-locker:before {\n  content: \"\\F7D6\";\n}\n\n.mdi-locker-multiple:before {\n  content: \"\\F7D7\";\n}\n\n.mdi-login:before {\n  content: \"\\F342\";\n}\n\n.mdi-login-variant:before {\n  content: \"\\F5FC\";\n}\n\n.mdi-logout:before {\n  content: \"\\F343\";\n}\n\n.mdi-logout-variant:before {\n  content: \"\\F5FD\";\n}\n\n.mdi-looks:before {\n  content: \"\\F344\";\n}\n\n.mdi-loop:before {\n  content: \"\\F6EA\";\n}\n\n.mdi-loupe:before {\n  content: \"\\F345\";\n}\n\n.mdi-lumx:before {\n  content: \"\\F346\";\n}\n\n.mdi-magnet:before {\n  content: \"\\F347\";\n}\n\n.mdi-magnet-on:before {\n  content: \"\\F348\";\n}\n\n.mdi-magnify:before {\n  content: \"\\F349\";\n}\n\n.mdi-magnify-close:before {\n  content: \"\\F97F\";\n}\n\n.mdi-magnify-minus:before {\n  content: \"\\F34A\";\n}\n\n.mdi-magnify-minus-outline:before {\n  content: \"\\F6EB\";\n}\n\n.mdi-magnify-plus:before {\n  content: \"\\F34B\";\n}\n\n.mdi-magnify-plus-outline:before {\n  content: \"\\F6EC\";\n}\n\n.mdi-mail-ru:before {\n  content: \"\\F34C\";\n}\n\n.mdi-mailbox:before {\n  content: \"\\F6ED\";\n}\n\n.mdi-map:before {\n  content: \"\\F34D\";\n}\n\n.mdi-map-legend:before {\n  content: \"\\FA00\";\n}\n\n.mdi-map-marker:before {\n  content: \"\\F34E\";\n}\n\n.mdi-map-marker-circle:before {\n  content: \"\\F34F\";\n}\n\n.mdi-map-marker-distance:before {\n  content: \"\\F8EF\";\n}\n\n.mdi-map-marker-minus:before {\n  content: \"\\F650\";\n}\n\n.mdi-map-marker-multiple:before {\n  content: \"\\F350\";\n}\n\n.mdi-map-marker-off:before {\n  content: \"\\F351\";\n}\n\n.mdi-map-marker-outline:before {\n  content: \"\\F7D8\";\n}\n\n.mdi-map-marker-plus:before {\n  content: \"\\F651\";\n}\n\n.mdi-map-marker-radius:before {\n  content: \"\\F352\";\n}\n\n.mdi-map-minus:before {\n  content: \"\\F980\";\n}\n\n.mdi-map-outline:before {\n  content: \"\\F981\";\n}\n\n.mdi-map-plus:before {\n  content: \"\\F982\";\n}\n\n.mdi-map-search:before {\n  content: \"\\F983\";\n}\n\n.mdi-map-search-outline:before {\n  content: \"\\F984\";\n}\n\n.mdi-margin:before {\n  content: \"\\F353\";\n}\n\n.mdi-markdown:before {\n  content: \"\\F354\";\n}\n\n.mdi-marker:before {\n  content: \"\\F652\";\n}\n\n.mdi-marker-check:before {\n  content: \"\\F355\";\n}\n\n.mdi-material-design:before {\n  content: \"\\F985\";\n}\n\n.mdi-material-ui:before {\n  content: \"\\F357\";\n}\n\n.mdi-math-compass:before {\n  content: \"\\F358\";\n}\n\n.mdi-matrix:before {\n  content: \"\\F628\";\n}\n\n.mdi-maxcdn:before {\n  content: \"\\F359\";\n}\n\n.mdi-medal:before {\n  content: \"\\F986\";\n}\n\n.mdi-medical-bag:before {\n  content: \"\\F6EE\";\n}\n\n.mdi-medium:before {\n  content: \"\\F35A\";\n}\n\n.mdi-memory:before {\n  content: \"\\F35B\";\n}\n\n.mdi-menu:before {\n  content: \"\\F35C\";\n}\n\n.mdi-menu-down:before {\n  content: \"\\F35D\";\n}\n\n.mdi-menu-down-outline:before {\n  content: \"\\F6B5\";\n}\n\n.mdi-menu-left:before {\n  content: \"\\F35E\";\n}\n\n.mdi-menu-left-outline:before {\n  content: \"\\FA01\";\n}\n\n.mdi-menu-right:before {\n  content: \"\\F35F\";\n}\n\n.mdi-menu-right-outline:before {\n  content: \"\\FA02\";\n}\n\n.mdi-menu-up:before {\n  content: \"\\F360\";\n}\n\n.mdi-menu-up-outline:before {\n  content: \"\\F6B6\";\n}\n\n.mdi-message:before {\n  content: \"\\F361\";\n}\n\n.mdi-message-alert:before {\n  content: \"\\F362\";\n}\n\n.mdi-message-alert-outline:before {\n  content: \"\\FA03\";\n}\n\n.mdi-message-bulleted:before {\n  content: \"\\F6A1\";\n}\n\n.mdi-message-bulleted-off:before {\n  content: \"\\F6A2\";\n}\n\n.mdi-message-draw:before {\n  content: \"\\F363\";\n}\n\n.mdi-message-image:before {\n  content: \"\\F364\";\n}\n\n.mdi-message-outline:before {\n  content: \"\\F365\";\n}\n\n.mdi-message-plus:before {\n  content: \"\\F653\";\n}\n\n.mdi-message-processing:before {\n  content: \"\\F366\";\n}\n\n.mdi-message-reply:before {\n  content: \"\\F367\";\n}\n\n.mdi-message-reply-text:before {\n  content: \"\\F368\";\n}\n\n.mdi-message-settings:before {\n  content: \"\\F6EF\";\n}\n\n.mdi-message-settings-variant:before {\n  content: \"\\F6F0\";\n}\n\n.mdi-message-text:before {\n  content: \"\\F369\";\n}\n\n.mdi-message-text-outline:before {\n  content: \"\\F36A\";\n}\n\n.mdi-message-video:before {\n  content: \"\\F36B\";\n}\n\n.mdi-meteor:before {\n  content: \"\\F629\";\n}\n\n.mdi-metronome:before {\n  content: \"\\F7D9\";\n}\n\n.mdi-metronome-tick:before {\n  content: \"\\F7DA\";\n}\n\n.mdi-micro-sd:before {\n  content: \"\\F7DB\";\n}\n\n.mdi-microphone:before {\n  content: \"\\F36C\";\n}\n\n.mdi-microphone-minus:before {\n  content: \"\\F8B2\";\n}\n\n.mdi-microphone-off:before {\n  content: \"\\F36D\";\n}\n\n.mdi-microphone-outline:before {\n  content: \"\\F36E\";\n}\n\n.mdi-microphone-plus:before {\n  content: \"\\F8B3\";\n}\n\n.mdi-microphone-settings:before {\n  content: \"\\F36F\";\n}\n\n.mdi-microphone-variant:before {\n  content: \"\\F370\";\n}\n\n.mdi-microphone-variant-off:before {\n  content: \"\\F371\";\n}\n\n.mdi-microscope:before {\n  content: \"\\F654\";\n}\n\n.mdi-microsoft:before {\n  content: \"\\F372\";\n}\n\n.mdi-microsoft-dynamics:before {\n  content: \"\\F987\";\n}\n\n.mdi-midi:before {\n  content: \"\\F8F0\";\n}\n\n.mdi-midi-port:before {\n  content: \"\\F8F1\";\n}\n\n.mdi-minecraft:before {\n  content: \"\\F373\";\n}\n\n.mdi-mini-sd:before {\n  content: \"\\FA04\";\n}\n\n.mdi-minidisc:before {\n  content: \"\\FA05\";\n}\n\n.mdi-minus:before {\n  content: \"\\F374\";\n}\n\n.mdi-minus-box:before {\n  content: \"\\F375\";\n}\n\n.mdi-minus-box-outline:before {\n  content: \"\\F6F1\";\n}\n\n.mdi-minus-circle:before {\n  content: \"\\F376\";\n}\n\n.mdi-minus-circle-outline:before {\n  content: \"\\F377\";\n}\n\n.mdi-minus-network:before {\n  content: \"\\F378\";\n}\n\n.mdi-mixcloud:before {\n  content: \"\\F62A\";\n}\n\n.mdi-mixed-reality:before {\n  content: \"\\F87E\";\n}\n\n.mdi-mixer:before {\n  content: \"\\F7DC\";\n}\n\n.mdi-monitor:before {\n  content: \"\\F379\";\n}\n\n.mdi-monitor-cellphone:before {\n  content: \"\\F988\";\n}\n\n.mdi-monitor-cellphone-star:before {\n  content: \"\\F989\";\n}\n\n.mdi-monitor-dashboard:before {\n  content: \"\\FA06\";\n}\n\n.mdi-monitor-multiple:before {\n  content: \"\\F37A\";\n}\n\n.mdi-more:before {\n  content: \"\\F37B\";\n}\n\n.mdi-motorbike:before {\n  content: \"\\F37C\";\n}\n\n.mdi-mouse:before {\n  content: \"\\F37D\";\n}\n\n.mdi-mouse-bluetooth:before {\n  content: \"\\F98A\";\n}\n\n.mdi-mouse-off:before {\n  content: \"\\F37E\";\n}\n\n.mdi-mouse-variant:before {\n  content: \"\\F37F\";\n}\n\n.mdi-mouse-variant-off:before {\n  content: \"\\F380\";\n}\n\n.mdi-move-resize:before {\n  content: \"\\F655\";\n}\n\n.mdi-move-resize-variant:before {\n  content: \"\\F656\";\n}\n\n.mdi-movie:before {\n  content: \"\\F381\";\n}\n\n.mdi-movie-roll:before {\n  content: \"\\F7DD\";\n}\n\n.mdi-muffin:before {\n  content: \"\\F98B\";\n}\n\n.mdi-multiplication:before {\n  content: \"\\F382\";\n}\n\n.mdi-multiplication-box:before {\n  content: \"\\F383\";\n}\n\n.mdi-mushroom:before {\n  content: \"\\F7DE\";\n}\n\n.mdi-mushroom-outline:before {\n  content: \"\\F7DF\";\n}\n\n.mdi-music:before {\n  content: \"\\F759\";\n}\n\n.mdi-music-box:before {\n  content: \"\\F384\";\n}\n\n.mdi-music-box-outline:before {\n  content: \"\\F385\";\n}\n\n.mdi-music-circle:before {\n  content: \"\\F386\";\n}\n\n.mdi-music-note:before {\n  content: \"\\F387\";\n}\n\n.mdi-music-note-bluetooth:before {\n  content: \"\\F5FE\";\n}\n\n.mdi-music-note-bluetooth-off:before {\n  content: \"\\F5FF\";\n}\n\n.mdi-music-note-eighth:before {\n  content: \"\\F388\";\n}\n\n.mdi-music-note-half:before {\n  content: \"\\F389\";\n}\n\n.mdi-music-note-off:before {\n  content: \"\\F38A\";\n}\n\n.mdi-music-note-quarter:before {\n  content: \"\\F38B\";\n}\n\n.mdi-music-note-sixteenth:before {\n  content: \"\\F38C\";\n}\n\n.mdi-music-note-whole:before {\n  content: \"\\F38D\";\n}\n\n.mdi-music-off:before {\n  content: \"\\F75A\";\n}\n\n.mdi-nas:before {\n  content: \"\\F8F2\";\n}\n\n.mdi-nativescript:before {\n  content: \"\\F87F\";\n}\n\n.mdi-nature:before {\n  content: \"\\F38E\";\n}\n\n.mdi-nature-people:before {\n  content: \"\\F38F\";\n}\n\n.mdi-navigation:before {\n  content: \"\\F390\";\n}\n\n.mdi-near-me:before {\n  content: \"\\F5CD\";\n}\n\n.mdi-needle:before {\n  content: \"\\F391\";\n}\n\n.mdi-netflix:before {\n  content: \"\\F745\";\n}\n\n.mdi-network:before {\n  content: \"\\F6F2\";\n}\n\n.mdi-network-strength-1:before {\n  content: \"\\F8F3\";\n}\n\n.mdi-network-strength-1-alert:before {\n  content: \"\\F8F4\";\n}\n\n.mdi-network-strength-2:before {\n  content: \"\\F8F5\";\n}\n\n.mdi-network-strength-2-alert:before {\n  content: \"\\F8F6\";\n}\n\n.mdi-network-strength-3:before {\n  content: \"\\F8F7\";\n}\n\n.mdi-network-strength-3-alert:before {\n  content: \"\\F8F8\";\n}\n\n.mdi-network-strength-4:before {\n  content: \"\\F8F9\";\n}\n\n.mdi-network-strength-4-alert:before {\n  content: \"\\F8FA\";\n}\n\n.mdi-network-strength-off:before {\n  content: \"\\F8FB\";\n}\n\n.mdi-network-strength-off-outline:before {\n  content: \"\\F8FC\";\n}\n\n.mdi-network-strength-outline:before {\n  content: \"\\F8FD\";\n}\n\n.mdi-new-box:before {\n  content: \"\\F394\";\n}\n\n.mdi-newspaper:before {\n  content: \"\\F395\";\n}\n\n.mdi-nfc:before {\n  content: \"\\F396\";\n}\n\n.mdi-nfc-tap:before {\n  content: \"\\F397\";\n}\n\n.mdi-nfc-variant:before {\n  content: \"\\F398\";\n}\n\n.mdi-ninja:before {\n  content: \"\\F773\";\n}\n\n.mdi-nintendo-switch:before {\n  content: \"\\F7E0\";\n}\n\n.mdi-nodejs:before {\n  content: \"\\F399\";\n}\n\n.mdi-not-equal:before {\n  content: \"\\F98C\";\n}\n\n.mdi-not-equal-variant:before {\n  content: \"\\F98D\";\n}\n\n.mdi-note:before {\n  content: \"\\F39A\";\n}\n\n.mdi-note-multiple:before {\n  content: \"\\F6B7\";\n}\n\n.mdi-note-multiple-outline:before {\n  content: \"\\F6B8\";\n}\n\n.mdi-note-outline:before {\n  content: \"\\F39B\";\n}\n\n.mdi-note-plus:before {\n  content: \"\\F39C\";\n}\n\n.mdi-note-plus-outline:before {\n  content: \"\\F39D\";\n}\n\n.mdi-note-text:before {\n  content: \"\\F39E\";\n}\n\n.mdi-notebook:before {\n  content: \"\\F82D\";\n}\n\n.mdi-notification-clear-all:before {\n  content: \"\\F39F\";\n}\n\n.mdi-npm:before {\n  content: \"\\F6F6\";\n}\n\n.mdi-npm-variant:before {\n  content: \"\\F98E\";\n}\n\n.mdi-npm-variant-outline:before {\n  content: \"\\F98F\";\n}\n\n.mdi-nuke:before {\n  content: \"\\F6A3\";\n}\n\n.mdi-null:before {\n  content: \"\\F7E1\";\n}\n\n.mdi-numeric:before {\n  content: \"\\F3A0\";\n}\n\n.mdi-numeric-0-box:before {\n  content: \"\\F3A1\";\n}\n\n.mdi-numeric-0-box-multiple-outline:before {\n  content: \"\\F3A2\";\n}\n\n.mdi-numeric-0-box-outline:before {\n  content: \"\\F3A3\";\n}\n\n.mdi-numeric-1-box:before {\n  content: \"\\F3A4\";\n}\n\n.mdi-numeric-1-box-multiple-outline:before {\n  content: \"\\F3A5\";\n}\n\n.mdi-numeric-1-box-outline:before {\n  content: \"\\F3A6\";\n}\n\n.mdi-numeric-2-box:before {\n  content: \"\\F3A7\";\n}\n\n.mdi-numeric-2-box-multiple-outline:before {\n  content: \"\\F3A8\";\n}\n\n.mdi-numeric-2-box-outline:before {\n  content: \"\\F3A9\";\n}\n\n.mdi-numeric-3-box:before {\n  content: \"\\F3AA\";\n}\n\n.mdi-numeric-3-box-multiple-outline:before {\n  content: \"\\F3AB\";\n}\n\n.mdi-numeric-3-box-outline:before {\n  content: \"\\F3AC\";\n}\n\n.mdi-numeric-4-box:before {\n  content: \"\\F3AD\";\n}\n\n.mdi-numeric-4-box-multiple-outline:before {\n  content: \"\\F3AE\";\n}\n\n.mdi-numeric-4-box-outline:before {\n  content: \"\\F3AF\";\n}\n\n.mdi-numeric-5-box:before {\n  content: \"\\F3B0\";\n}\n\n.mdi-numeric-5-box-multiple-outline:before {\n  content: \"\\F3B1\";\n}\n\n.mdi-numeric-5-box-outline:before {\n  content: \"\\F3B2\";\n}\n\n.mdi-numeric-6-box:before {\n  content: \"\\F3B3\";\n}\n\n.mdi-numeric-6-box-multiple-outline:before {\n  content: \"\\F3B4\";\n}\n\n.mdi-numeric-6-box-outline:before {\n  content: \"\\F3B5\";\n}\n\n.mdi-numeric-7-box:before {\n  content: \"\\F3B6\";\n}\n\n.mdi-numeric-7-box-multiple-outline:before {\n  content: \"\\F3B7\";\n}\n\n.mdi-numeric-7-box-outline:before {\n  content: \"\\F3B8\";\n}\n\n.mdi-numeric-8-box:before {\n  content: \"\\F3B9\";\n}\n\n.mdi-numeric-8-box-multiple-outline:before {\n  content: \"\\F3BA\";\n}\n\n.mdi-numeric-8-box-outline:before {\n  content: \"\\F3BB\";\n}\n\n.mdi-numeric-9-box:before {\n  content: \"\\F3BC\";\n}\n\n.mdi-numeric-9-box-multiple-outline:before {\n  content: \"\\F3BD\";\n}\n\n.mdi-numeric-9-box-outline:before {\n  content: \"\\F3BE\";\n}\n\n.mdi-numeric-9-plus-box:before {\n  content: \"\\F3BF\";\n}\n\n.mdi-numeric-9-plus-box-multiple-outline:before {\n  content: \"\\F3C0\";\n}\n\n.mdi-numeric-9-plus-box-outline:before {\n  content: \"\\F3C1\";\n}\n\n.mdi-nut:before {\n  content: \"\\F6F7\";\n}\n\n.mdi-nutrition:before {\n  content: \"\\F3C2\";\n}\n\n.mdi-oar:before {\n  content: \"\\F67B\";\n}\n\n.mdi-octagon:before {\n  content: \"\\F3C3\";\n}\n\n.mdi-octagon-outline:before {\n  content: \"\\F3C4\";\n}\n\n.mdi-octagram:before {\n  content: \"\\F6F8\";\n}\n\n.mdi-octagram-outline:before {\n  content: \"\\F774\";\n}\n\n.mdi-odnoklassniki:before {\n  content: \"\\F3C5\";\n}\n\n.mdi-office:before {\n  content: \"\\F3C6\";\n}\n\n.mdi-office-building:before {\n  content: \"\\F990\";\n}\n\n.mdi-oil:before {\n  content: \"\\F3C7\";\n}\n\n.mdi-oil-temperature:before {\n  content: \"\\F3C8\";\n}\n\n.mdi-omega:before {\n  content: \"\\F3C9\";\n}\n\n.mdi-onedrive:before {\n  content: \"\\F3CA\";\n}\n\n.mdi-onenote:before {\n  content: \"\\F746\";\n}\n\n.mdi-onepassword:before {\n  content: \"\\F880\";\n}\n\n.mdi-opacity:before {\n  content: \"\\F5CC\";\n}\n\n.mdi-open-in-app:before {\n  content: \"\\F3CB\";\n}\n\n.mdi-open-in-new:before {\n  content: \"\\F3CC\";\n}\n\n.mdi-openid:before {\n  content: \"\\F3CD\";\n}\n\n.mdi-opera:before {\n  content: \"\\F3CE\";\n}\n\n.mdi-orbit:before {\n  content: \"\\F018\";\n}\n\n.mdi-ornament:before {\n  content: \"\\F3CF\";\n}\n\n.mdi-ornament-variant:before {\n  content: \"\\F3D0\";\n}\n\n.mdi-owl:before {\n  content: \"\\F3D2\";\n}\n\n.mdi-package:before {\n  content: \"\\F3D3\";\n}\n\n.mdi-package-down:before {\n  content: \"\\F3D4\";\n}\n\n.mdi-package-up:before {\n  content: \"\\F3D5\";\n}\n\n.mdi-package-variant:before {\n  content: \"\\F3D6\";\n}\n\n.mdi-package-variant-closed:before {\n  content: \"\\F3D7\";\n}\n\n.mdi-page-first:before {\n  content: \"\\F600\";\n}\n\n.mdi-page-last:before {\n  content: \"\\F601\";\n}\n\n.mdi-page-layout-body:before {\n  content: \"\\F6F9\";\n}\n\n.mdi-page-layout-footer:before {\n  content: \"\\F6FA\";\n}\n\n.mdi-page-layout-header:before {\n  content: \"\\F6FB\";\n}\n\n.mdi-page-layout-sidebar-left:before {\n  content: \"\\F6FC\";\n}\n\n.mdi-page-layout-sidebar-right:before {\n  content: \"\\F6FD\";\n}\n\n.mdi-palette:before {\n  content: \"\\F3D8\";\n}\n\n.mdi-palette-advanced:before {\n  content: \"\\F3D9\";\n}\n\n.mdi-palette-swatch:before {\n  content: \"\\F8B4\";\n}\n\n.mdi-panda:before {\n  content: \"\\F3DA\";\n}\n\n.mdi-pandora:before {\n  content: \"\\F3DB\";\n}\n\n.mdi-panorama:before {\n  content: \"\\F3DC\";\n}\n\n.mdi-panorama-fisheye:before {\n  content: \"\\F3DD\";\n}\n\n.mdi-panorama-horizontal:before {\n  content: \"\\F3DE\";\n}\n\n.mdi-panorama-vertical:before {\n  content: \"\\F3DF\";\n}\n\n.mdi-panorama-wide-angle:before {\n  content: \"\\F3E0\";\n}\n\n.mdi-paper-cut-vertical:before {\n  content: \"\\F3E1\";\n}\n\n.mdi-paperclip:before {\n  content: \"\\F3E2\";\n}\n\n.mdi-parking:before {\n  content: \"\\F3E3\";\n}\n\n.mdi-passport:before {\n  content: \"\\F7E2\";\n}\n\n.mdi-patreon:before {\n  content: \"\\F881\";\n}\n\n.mdi-pause:before {\n  content: \"\\F3E4\";\n}\n\n.mdi-pause-circle:before {\n  content: \"\\F3E5\";\n}\n\n.mdi-pause-circle-outline:before {\n  content: \"\\F3E6\";\n}\n\n.mdi-pause-octagon:before {\n  content: \"\\F3E7\";\n}\n\n.mdi-pause-octagon-outline:before {\n  content: \"\\F3E8\";\n}\n\n.mdi-paw:before {\n  content: \"\\F3E9\";\n}\n\n.mdi-paw-off:before {\n  content: \"\\F657\";\n}\n\n.mdi-paypal:before {\n  content: \"\\F882\";\n}\n\n.mdi-peace:before {\n  content: \"\\F883\";\n}\n\n.mdi-pen:before {\n  content: \"\\F3EA\";\n}\n\n.mdi-pencil:before {\n  content: \"\\F3EB\";\n}\n\n.mdi-pencil-box:before {\n  content: \"\\F3EC\";\n}\n\n.mdi-pencil-box-outline:before {\n  content: \"\\F3ED\";\n}\n\n.mdi-pencil-circle:before {\n  content: \"\\F6FE\";\n}\n\n.mdi-pencil-circle-outline:before {\n  content: \"\\F775\";\n}\n\n.mdi-pencil-lock:before {\n  content: \"\\F3EE\";\n}\n\n.mdi-pencil-off:before {\n  content: \"\\F3EF\";\n}\n\n.mdi-pentagon:before {\n  content: \"\\F6FF\";\n}\n\n.mdi-pentagon-outline:before {\n  content: \"\\F700\";\n}\n\n.mdi-percent:before {\n  content: \"\\F3F0\";\n}\n\n.mdi-periodic-table:before {\n  content: \"\\F8B5\";\n}\n\n.mdi-periodic-table-co2:before {\n  content: \"\\F7E3\";\n}\n\n.mdi-periscope:before {\n  content: \"\\F747\";\n}\n\n.mdi-pharmacy:before {\n  content: \"\\F3F1\";\n}\n\n.mdi-phone:before {\n  content: \"\\F3F2\";\n}\n\n.mdi-phone-bluetooth:before {\n  content: \"\\F3F3\";\n}\n\n.mdi-phone-classic:before {\n  content: \"\\F602\";\n}\n\n.mdi-phone-forward:before {\n  content: \"\\F3F4\";\n}\n\n.mdi-phone-hangup:before {\n  content: \"\\F3F5\";\n}\n\n.mdi-phone-in-talk:before {\n  content: \"\\F3F6\";\n}\n\n.mdi-phone-incoming:before {\n  content: \"\\F3F7\";\n}\n\n.mdi-phone-locked:before {\n  content: \"\\F3F8\";\n}\n\n.mdi-phone-log:before {\n  content: \"\\F3F9\";\n}\n\n.mdi-phone-minus:before {\n  content: \"\\F658\";\n}\n\n.mdi-phone-missed:before {\n  content: \"\\F3FA\";\n}\n\n.mdi-phone-outgoing:before {\n  content: \"\\F3FB\";\n}\n\n.mdi-phone-paused:before {\n  content: \"\\F3FC\";\n}\n\n.mdi-phone-plus:before {\n  content: \"\\F659\";\n}\n\n.mdi-phone-return:before {\n  content: \"\\F82E\";\n}\n\n.mdi-phone-rotate-landscape:before {\n  content: \"\\F884\";\n}\n\n.mdi-phone-rotate-portrait:before {\n  content: \"\\F885\";\n}\n\n.mdi-phone-settings:before {\n  content: \"\\F3FD\";\n}\n\n.mdi-phone-voip:before {\n  content: \"\\F3FE\";\n}\n\n.mdi-pi:before {\n  content: \"\\F3FF\";\n}\n\n.mdi-pi-box:before {\n  content: \"\\F400\";\n}\n\n.mdi-piano:before {\n  content: \"\\F67C\";\n}\n\n.mdi-pickaxe:before {\n  content: \"\\F8B6\";\n}\n\n.mdi-pier:before {\n  content: \"\\F886\";\n}\n\n.mdi-pier-crane:before {\n  content: \"\\F887\";\n}\n\n.mdi-pig:before {\n  content: \"\\F401\";\n}\n\n.mdi-pill:before {\n  content: \"\\F402\";\n}\n\n.mdi-pillar:before {\n  content: \"\\F701\";\n}\n\n.mdi-pin:before {\n  content: \"\\F403\";\n}\n\n.mdi-pin-off:before {\n  content: \"\\F404\";\n}\n\n.mdi-pin-off-outline:before {\n  content: \"\\F92F\";\n}\n\n.mdi-pin-outline:before {\n  content: \"\\F930\";\n}\n\n.mdi-pine-tree:before {\n  content: \"\\F405\";\n}\n\n.mdi-pine-tree-box:before {\n  content: \"\\F406\";\n}\n\n.mdi-pinterest:before {\n  content: \"\\F407\";\n}\n\n.mdi-pinterest-box:before {\n  content: \"\\F408\";\n}\n\n.mdi-pipe:before {\n  content: \"\\F7E4\";\n}\n\n.mdi-pipe-disconnected:before {\n  content: \"\\F7E5\";\n}\n\n.mdi-pipe-leak:before {\n  content: \"\\F888\";\n}\n\n.mdi-pirate:before {\n  content: \"\\FA07\";\n}\n\n.mdi-pistol:before {\n  content: \"\\F702\";\n}\n\n.mdi-piston:before {\n  content: \"\\F889\";\n}\n\n.mdi-pizza:before {\n  content: \"\\F409\";\n}\n\n.mdi-plane-shield:before {\n  content: \"\\F6BA\";\n}\n\n.mdi-play:before {\n  content: \"\\F40A\";\n}\n\n.mdi-play-box-outline:before {\n  content: \"\\F40B\";\n}\n\n.mdi-play-circle:before {\n  content: \"\\F40C\";\n}\n\n.mdi-play-circle-outline:before {\n  content: \"\\F40D\";\n}\n\n.mdi-play-network:before {\n  content: \"\\F88A\";\n}\n\n.mdi-play-pause:before {\n  content: \"\\F40E\";\n}\n\n.mdi-play-protected-content:before {\n  content: \"\\F40F\";\n}\n\n.mdi-play-speed:before {\n  content: \"\\F8FE\";\n}\n\n.mdi-playlist-check:before {\n  content: \"\\F5C7\";\n}\n\n.mdi-playlist-edit:before {\n  content: \"\\F8FF\";\n}\n\n.mdi-playlist-minus:before {\n  content: \"\\F410\";\n}\n\n.mdi-playlist-play:before {\n  content: \"\\F411\";\n}\n\n.mdi-playlist-plus:before {\n  content: \"\\F412\";\n}\n\n.mdi-playlist-remove:before {\n  content: \"\\F413\";\n}\n\n.mdi-playstation:before {\n  content: \"\\F414\";\n}\n\n.mdi-plex:before {\n  content: \"\\F6B9\";\n}\n\n.mdi-plus:before {\n  content: \"\\F415\";\n}\n\n.mdi-plus-box:before {\n  content: \"\\F416\";\n}\n\n.mdi-plus-box-outline:before {\n  content: \"\\F703\";\n}\n\n.mdi-plus-circle:before {\n  content: \"\\F417\";\n}\n\n.mdi-plus-circle-multiple-outline:before {\n  content: \"\\F418\";\n}\n\n.mdi-plus-circle-outline:before {\n  content: \"\\F419\";\n}\n\n.mdi-plus-minus:before {\n  content: \"\\F991\";\n}\n\n.mdi-plus-minus-box:before {\n  content: \"\\F992\";\n}\n\n.mdi-plus-network:before {\n  content: \"\\F41A\";\n}\n\n.mdi-plus-one:before {\n  content: \"\\F41B\";\n}\n\n.mdi-plus-outline:before {\n  content: \"\\F704\";\n}\n\n.mdi-pocket:before {\n  content: \"\\F41C\";\n}\n\n.mdi-podcast:before {\n  content: \"\\F993\";\n}\n\n.mdi-pokeball:before {\n  content: \"\\F41D\";\n}\n\n.mdi-pokemon-go:before {\n  content: \"\\FA08\";\n}\n\n.mdi-poker-chip:before {\n  content: \"\\F82F\";\n}\n\n.mdi-polaroid:before {\n  content: \"\\F41E\";\n}\n\n.mdi-poll:before {\n  content: \"\\F41F\";\n}\n\n.mdi-poll-box:before {\n  content: \"\\F420\";\n}\n\n.mdi-polymer:before {\n  content: \"\\F421\";\n}\n\n.mdi-pool:before {\n  content: \"\\F606\";\n}\n\n.mdi-popcorn:before {\n  content: \"\\F422\";\n}\n\n.mdi-pot:before {\n  content: \"\\F65A\";\n}\n\n.mdi-pot-mix:before {\n  content: \"\\F65B\";\n}\n\n.mdi-pound:before {\n  content: \"\\F423\";\n}\n\n.mdi-pound-box:before {\n  content: \"\\F424\";\n}\n\n.mdi-power:before {\n  content: \"\\F425\";\n}\n\n.mdi-power-cycle:before {\n  content: \"\\F900\";\n}\n\n.mdi-power-off:before {\n  content: \"\\F901\";\n}\n\n.mdi-power-on:before {\n  content: \"\\F902\";\n}\n\n.mdi-power-plug:before {\n  content: \"\\F6A4\";\n}\n\n.mdi-power-plug-off:before {\n  content: \"\\F6A5\";\n}\n\n.mdi-power-settings:before {\n  content: \"\\F426\";\n}\n\n.mdi-power-sleep:before {\n  content: \"\\F903\";\n}\n\n.mdi-power-socket:before {\n  content: \"\\F427\";\n}\n\n.mdi-power-socket-au:before {\n  content: \"\\F904\";\n}\n\n.mdi-power-socket-eu:before {\n  content: \"\\F7E6\";\n}\n\n.mdi-power-socket-uk:before {\n  content: \"\\F7E7\";\n}\n\n.mdi-power-socket-us:before {\n  content: \"\\F7E8\";\n}\n\n.mdi-power-standby:before {\n  content: \"\\F905\";\n}\n\n.mdi-powershell:before {\n  content: \"\\FA09\";\n}\n\n.mdi-prescription:before {\n  content: \"\\F705\";\n}\n\n.mdi-presentation:before {\n  content: \"\\F428\";\n}\n\n.mdi-presentation-play:before {\n  content: \"\\F429\";\n}\n\n.mdi-printer:before {\n  content: \"\\F42A\";\n}\n\n.mdi-printer-3d:before {\n  content: \"\\F42B\";\n}\n\n.mdi-printer-alert:before {\n  content: \"\\F42C\";\n}\n\n.mdi-printer-settings:before {\n  content: \"\\F706\";\n}\n\n.mdi-printer-wireless:before {\n  content: \"\\FA0A\";\n}\n\n.mdi-priority-high:before {\n  content: \"\\F603\";\n}\n\n.mdi-priority-low:before {\n  content: \"\\F604\";\n}\n\n.mdi-professional-hexagon:before {\n  content: \"\\F42D\";\n}\n\n.mdi-progress-check:before {\n  content: \"\\F994\";\n}\n\n.mdi-progress-clock:before {\n  content: \"\\F995\";\n}\n\n.mdi-progress-download:before {\n  content: \"\\F996\";\n}\n\n.mdi-progress-upload:before {\n  content: \"\\F997\";\n}\n\n.mdi-projector:before {\n  content: \"\\F42E\";\n}\n\n.mdi-projector-screen:before {\n  content: \"\\F42F\";\n}\n\n.mdi-publish:before {\n  content: \"\\F6A6\";\n}\n\n.mdi-pulse:before {\n  content: \"\\F430\";\n}\n\n.mdi-puzzle:before {\n  content: \"\\F431\";\n}\n\n.mdi-qi:before {\n  content: \"\\F998\";\n}\n\n.mdi-qqchat:before {\n  content: \"\\F605\";\n}\n\n.mdi-qrcode:before {\n  content: \"\\F432\";\n}\n\n.mdi-qrcode-edit:before {\n  content: \"\\F8B7\";\n}\n\n.mdi-qrcode-scan:before {\n  content: \"\\F433\";\n}\n\n.mdi-quadcopter:before {\n  content: \"\\F434\";\n}\n\n.mdi-quality-high:before {\n  content: \"\\F435\";\n}\n\n.mdi-quality-low:before {\n  content: \"\\FA0B\";\n}\n\n.mdi-quality-medium:before {\n  content: \"\\FA0C\";\n}\n\n.mdi-quicktime:before {\n  content: \"\\F436\";\n}\n\n.mdi-rabbit:before {\n  content: \"\\F906\";\n}\n\n.mdi-radar:before {\n  content: \"\\F437\";\n}\n\n.mdi-radiator:before {\n  content: \"\\F438\";\n}\n\n.mdi-radio:before {\n  content: \"\\F439\";\n}\n\n.mdi-radio-handheld:before {\n  content: \"\\F43A\";\n}\n\n.mdi-radio-tower:before {\n  content: \"\\F43B\";\n}\n\n.mdi-radioactive:before {\n  content: \"\\F43C\";\n}\n\n.mdi-radiobox-blank:before {\n  content: \"\\F43D\";\n}\n\n.mdi-radiobox-marked:before {\n  content: \"\\F43E\";\n}\n\n.mdi-raspberrypi:before {\n  content: \"\\F43F\";\n}\n\n.mdi-ray-end:before {\n  content: \"\\F440\";\n}\n\n.mdi-ray-end-arrow:before {\n  content: \"\\F441\";\n}\n\n.mdi-ray-start:before {\n  content: \"\\F442\";\n}\n\n.mdi-ray-start-arrow:before {\n  content: \"\\F443\";\n}\n\n.mdi-ray-start-end:before {\n  content: \"\\F444\";\n}\n\n.mdi-ray-vertex:before {\n  content: \"\\F445\";\n}\n\n.mdi-react:before {\n  content: \"\\F707\";\n}\n\n.mdi-read:before {\n  content: \"\\F447\";\n}\n\n.mdi-receipt:before {\n  content: \"\\F449\";\n}\n\n.mdi-record:before {\n  content: \"\\F44A\";\n}\n\n.mdi-record-player:before {\n  content: \"\\F999\";\n}\n\n.mdi-record-rec:before {\n  content: \"\\F44B\";\n}\n\n.mdi-recycle:before {\n  content: \"\\F44C\";\n}\n\n.mdi-reddit:before {\n  content: \"\\F44D\";\n}\n\n.mdi-redo:before {\n  content: \"\\F44E\";\n}\n\n.mdi-redo-variant:before {\n  content: \"\\F44F\";\n}\n\n.mdi-reflect-horizontal:before {\n  content: \"\\FA0D\";\n}\n\n.mdi-reflect-vertical:before {\n  content: \"\\FA0E\";\n}\n\n.mdi-refresh:before {\n  content: \"\\F450\";\n}\n\n.mdi-regex:before {\n  content: \"\\F451\";\n}\n\n.mdi-relative-scale:before {\n  content: \"\\F452\";\n}\n\n.mdi-reload:before {\n  content: \"\\F453\";\n}\n\n.mdi-reminder:before {\n  content: \"\\F88B\";\n}\n\n.mdi-remote:before {\n  content: \"\\F454\";\n}\n\n.mdi-remote-desktop:before {\n  content: \"\\F8B8\";\n}\n\n.mdi-rename-box:before {\n  content: \"\\F455\";\n}\n\n.mdi-reorder-horizontal:before {\n  content: \"\\F687\";\n}\n\n.mdi-reorder-vertical:before {\n  content: \"\\F688\";\n}\n\n.mdi-repeat:before {\n  content: \"\\F456\";\n}\n\n.mdi-repeat-off:before {\n  content: \"\\F457\";\n}\n\n.mdi-repeat-once:before {\n  content: \"\\F458\";\n}\n\n.mdi-replay:before {\n  content: \"\\F459\";\n}\n\n.mdi-reply:before {\n  content: \"\\F45A\";\n}\n\n.mdi-reply-all:before {\n  content: \"\\F45B\";\n}\n\n.mdi-reproduction:before {\n  content: \"\\F45C\";\n}\n\n.mdi-resize-bottom-right:before {\n  content: \"\\F45D\";\n}\n\n.mdi-responsive:before {\n  content: \"\\F45E\";\n}\n\n.mdi-restart:before {\n  content: \"\\F708\";\n}\n\n.mdi-restore:before {\n  content: \"\\F99A\";\n}\n\n.mdi-restore-clock:before {\n  content: \"\\F6A7\";\n}\n\n.mdi-rewind:before {\n  content: \"\\F45F\";\n}\n\n.mdi-rewind-outline:before {\n  content: \"\\F709\";\n}\n\n.mdi-rhombus:before {\n  content: \"\\F70A\";\n}\n\n.mdi-rhombus-medium:before {\n  content: \"\\FA0F\";\n}\n\n.mdi-rhombus-outline:before {\n  content: \"\\F70B\";\n}\n\n.mdi-rhombus-split:before {\n  content: \"\\FA10\";\n}\n\n.mdi-ribbon:before {\n  content: \"\\F460\";\n}\n\n.mdi-rice:before {\n  content: \"\\F7E9\";\n}\n\n.mdi-ring:before {\n  content: \"\\F7EA\";\n}\n\n.mdi-road:before {\n  content: \"\\F461\";\n}\n\n.mdi-road-variant:before {\n  content: \"\\F462\";\n}\n\n.mdi-robot:before {\n  content: \"\\F6A8\";\n}\n\n.mdi-robot-vacuum:before {\n  content: \"\\F70C\";\n}\n\n.mdi-robot-vacuum-variant:before {\n  content: \"\\F907\";\n}\n\n.mdi-rocket:before {\n  content: \"\\F463\";\n}\n\n.mdi-room-service:before {\n  content: \"\\F88C\";\n}\n\n.mdi-rotate-3d:before {\n  content: \"\\F464\";\n}\n\n.mdi-rotate-left:before {\n  content: \"\\F465\";\n}\n\n.mdi-rotate-left-variant:before {\n  content: \"\\F466\";\n}\n\n.mdi-rotate-right:before {\n  content: \"\\F467\";\n}\n\n.mdi-rotate-right-variant:before {\n  content: \"\\F468\";\n}\n\n.mdi-rounded-corner:before {\n  content: \"\\F607\";\n}\n\n.mdi-router-wireless:before {\n  content: \"\\F469\";\n}\n\n.mdi-routes:before {\n  content: \"\\F46A\";\n}\n\n.mdi-rowing:before {\n  content: \"\\F608\";\n}\n\n.mdi-rss:before {\n  content: \"\\F46B\";\n}\n\n.mdi-rss-box:before {\n  content: \"\\F46C\";\n}\n\n.mdi-ruler:before {\n  content: \"\\F46D\";\n}\n\n.mdi-run:before {\n  content: \"\\F70D\";\n}\n\n.mdi-run-fast:before {\n  content: \"\\F46E\";\n}\n\n.mdi-sale:before {\n  content: \"\\F46F\";\n}\n\n.mdi-salesforce:before {\n  content: \"\\F88D\";\n}\n\n.mdi-sass:before {\n  content: \"\\F7EB\";\n}\n\n.mdi-satellite:before {\n  content: \"\\F470\";\n}\n\n.mdi-satellite-uplink:before {\n  content: \"\\F908\";\n}\n\n.mdi-satellite-variant:before {\n  content: \"\\F471\";\n}\n\n.mdi-sausage:before {\n  content: \"\\F8B9\";\n}\n\n.mdi-saxophone:before {\n  content: \"\\F609\";\n}\n\n.mdi-scale:before {\n  content: \"\\F472\";\n}\n\n.mdi-scale-balance:before {\n  content: \"\\F5D1\";\n}\n\n.mdi-scale-bathroom:before {\n  content: \"\\F473\";\n}\n\n.mdi-scanner:before {\n  content: \"\\F6AA\";\n}\n\n.mdi-scanner-off:before {\n  content: \"\\F909\";\n}\n\n.mdi-school:before {\n  content: \"\\F474\";\n}\n\n.mdi-screen-rotation:before {\n  content: \"\\F475\";\n}\n\n.mdi-screen-rotation-lock:before {\n  content: \"\\F476\";\n}\n\n.mdi-screwdriver:before {\n  content: \"\\F477\";\n}\n\n.mdi-script:before {\n  content: \"\\F478\";\n}\n\n.mdi-sd:before {\n  content: \"\\F479\";\n}\n\n.mdi-seal:before {\n  content: \"\\F47A\";\n}\n\n.mdi-search-web:before {\n  content: \"\\F70E\";\n}\n\n.mdi-seat-flat:before {\n  content: \"\\F47B\";\n}\n\n.mdi-seat-flat-angled:before {\n  content: \"\\F47C\";\n}\n\n.mdi-seat-individual-suite:before {\n  content: \"\\F47D\";\n}\n\n.mdi-seat-legroom-extra:before {\n  content: \"\\F47E\";\n}\n\n.mdi-seat-legroom-normal:before {\n  content: \"\\F47F\";\n}\n\n.mdi-seat-legroom-reduced:before {\n  content: \"\\F480\";\n}\n\n.mdi-seat-recline-extra:before {\n  content: \"\\F481\";\n}\n\n.mdi-seat-recline-normal:before {\n  content: \"\\F482\";\n}\n\n.mdi-security:before {\n  content: \"\\F483\";\n}\n\n.mdi-security-account:before {\n  content: \"\\F88E\";\n}\n\n.mdi-security-account-outline:before {\n  content: \"\\FA11\";\n}\n\n.mdi-security-close:before {\n  content: \"\\F99B\";\n}\n\n.mdi-security-home:before {\n  content: \"\\F689\";\n}\n\n.mdi-security-lock:before {\n  content: \"\\F99C\";\n}\n\n.mdi-security-network:before {\n  content: \"\\F484\";\n}\n\n.mdi-security-off:before {\n  content: \"\\F99D\";\n}\n\n.mdi-select:before {\n  content: \"\\F485\";\n}\n\n.mdi-select-all:before {\n  content: \"\\F486\";\n}\n\n.mdi-select-inverse:before {\n  content: \"\\F487\";\n}\n\n.mdi-select-off:before {\n  content: \"\\F488\";\n}\n\n.mdi-selection:before {\n  content: \"\\F489\";\n}\n\n.mdi-selection-off:before {\n  content: \"\\F776\";\n}\n\n.mdi-send:before {\n  content: \"\\F48A\";\n}\n\n.mdi-send-secure:before {\n  content: \"\\F7EC\";\n}\n\n.mdi-serial-port:before {\n  content: \"\\F65C\";\n}\n\n.mdi-server:before {\n  content: \"\\F48B\";\n}\n\n.mdi-server-minus:before {\n  content: \"\\F48C\";\n}\n\n.mdi-server-network:before {\n  content: \"\\F48D\";\n}\n\n.mdi-server-network-off:before {\n  content: \"\\F48E\";\n}\n\n.mdi-server-off:before {\n  content: \"\\F48F\";\n}\n\n.mdi-server-plus:before {\n  content: \"\\F490\";\n}\n\n.mdi-server-remove:before {\n  content: \"\\F491\";\n}\n\n.mdi-server-security:before {\n  content: \"\\F492\";\n}\n\n.mdi-set-all:before {\n  content: \"\\F777\";\n}\n\n.mdi-set-center:before {\n  content: \"\\F778\";\n}\n\n.mdi-set-center-right:before {\n  content: \"\\F779\";\n}\n\n.mdi-set-left:before {\n  content: \"\\F77A\";\n}\n\n.mdi-set-left-center:before {\n  content: \"\\F77B\";\n}\n\n.mdi-set-left-right:before {\n  content: \"\\F77C\";\n}\n\n.mdi-set-none:before {\n  content: \"\\F77D\";\n}\n\n.mdi-set-right:before {\n  content: \"\\F77E\";\n}\n\n.mdi-set-top-box:before {\n  content: \"\\F99E\";\n}\n\n.mdi-settings:before {\n  content: \"\\F493\";\n}\n\n.mdi-settings-box:before {\n  content: \"\\F494\";\n}\n\n.mdi-settings-outline:before {\n  content: \"\\F8BA\";\n}\n\n.mdi-shape:before {\n  content: \"\\F830\";\n}\n\n.mdi-shape-circle-plus:before {\n  content: \"\\F65D\";\n}\n\n.mdi-shape-outline:before {\n  content: \"\\F831\";\n}\n\n.mdi-shape-plus:before {\n  content: \"\\F495\";\n}\n\n.mdi-shape-polygon-plus:before {\n  content: \"\\F65E\";\n}\n\n.mdi-shape-rectangle-plus:before {\n  content: \"\\F65F\";\n}\n\n.mdi-shape-square-plus:before {\n  content: \"\\F660\";\n}\n\n.mdi-share:before {\n  content: \"\\F496\";\n}\n\n.mdi-share-outline:before {\n  content: \"\\F931\";\n}\n\n.mdi-share-variant:before {\n  content: \"\\F497\";\n}\n\n.mdi-shield:before {\n  content: \"\\F498\";\n}\n\n.mdi-shield-half-full:before {\n  content: \"\\F77F\";\n}\n\n.mdi-shield-outline:before {\n  content: \"\\F499\";\n}\n\n.mdi-ship-wheel:before {\n  content: \"\\F832\";\n}\n\n.mdi-shopping:before {\n  content: \"\\F49A\";\n}\n\n.mdi-shopping-music:before {\n  content: \"\\F49B\";\n}\n\n.mdi-shovel:before {\n  content: \"\\F70F\";\n}\n\n.mdi-shovel-off:before {\n  content: \"\\F710\";\n}\n\n.mdi-shower:before {\n  content: \"\\F99F\";\n}\n\n.mdi-shower-head:before {\n  content: \"\\F9A0\";\n}\n\n.mdi-shredder:before {\n  content: \"\\F49C\";\n}\n\n.mdi-shuffle:before {\n  content: \"\\F49D\";\n}\n\n.mdi-shuffle-disabled:before {\n  content: \"\\F49E\";\n}\n\n.mdi-shuffle-variant:before {\n  content: \"\\F49F\";\n}\n\n.mdi-sigma:before {\n  content: \"\\F4A0\";\n}\n\n.mdi-sigma-lower:before {\n  content: \"\\F62B\";\n}\n\n.mdi-sign-caution:before {\n  content: \"\\F4A1\";\n}\n\n.mdi-sign-direction:before {\n  content: \"\\F780\";\n}\n\n.mdi-sign-text:before {\n  content: \"\\F781\";\n}\n\n.mdi-signal:before {\n  content: \"\\F4A2\";\n}\n\n.mdi-signal-2g:before {\n  content: \"\\F711\";\n}\n\n.mdi-signal-3g:before {\n  content: \"\\F712\";\n}\n\n.mdi-signal-4g:before {\n  content: \"\\F713\";\n}\n\n.mdi-signal-cellular-1:before {\n  content: \"\\F8BB\";\n}\n\n.mdi-signal-cellular-2:before {\n  content: \"\\F8BC\";\n}\n\n.mdi-signal-cellular-3:before {\n  content: \"\\F8BD\";\n}\n\n.mdi-signal-cellular-outline:before {\n  content: \"\\F8BE\";\n}\n\n.mdi-signal-hspa:before {\n  content: \"\\F714\";\n}\n\n.mdi-signal-hspa-plus:before {\n  content: \"\\F715\";\n}\n\n.mdi-signal-off:before {\n  content: \"\\F782\";\n}\n\n.mdi-signal-variant:before {\n  content: \"\\F60A\";\n}\n\n.mdi-silverware:before {\n  content: \"\\F4A3\";\n}\n\n.mdi-silverware-fork:before {\n  content: \"\\F4A4\";\n}\n\n.mdi-silverware-spoon:before {\n  content: \"\\F4A5\";\n}\n\n.mdi-silverware-variant:before {\n  content: \"\\F4A6\";\n}\n\n.mdi-sim:before {\n  content: \"\\F4A7\";\n}\n\n.mdi-sim-alert:before {\n  content: \"\\F4A8\";\n}\n\n.mdi-sim-off:before {\n  content: \"\\F4A9\";\n}\n\n.mdi-sitemap:before {\n  content: \"\\F4AA\";\n}\n\n.mdi-skip-backward:before {\n  content: \"\\F4AB\";\n}\n\n.mdi-skip-forward:before {\n  content: \"\\F4AC\";\n}\n\n.mdi-skip-next:before {\n  content: \"\\F4AD\";\n}\n\n.mdi-skip-next-circle:before {\n  content: \"\\F661\";\n}\n\n.mdi-skip-next-circle-outline:before {\n  content: \"\\F662\";\n}\n\n.mdi-skip-previous:before {\n  content: \"\\F4AE\";\n}\n\n.mdi-skip-previous-circle:before {\n  content: \"\\F663\";\n}\n\n.mdi-skip-previous-circle-outline:before {\n  content: \"\\F664\";\n}\n\n.mdi-skull:before {\n  content: \"\\F68B\";\n}\n\n.mdi-skype:before {\n  content: \"\\F4AF\";\n}\n\n.mdi-skype-business:before {\n  content: \"\\F4B0\";\n}\n\n.mdi-slack:before {\n  content: \"\\F4B1\";\n}\n\n.mdi-slackware:before {\n  content: \"\\F90A\";\n}\n\n.mdi-sleep:before {\n  content: \"\\F4B2\";\n}\n\n.mdi-sleep-off:before {\n  content: \"\\F4B3\";\n}\n\n.mdi-smoke-detector:before {\n  content: \"\\F392\";\n}\n\n.mdi-smoking:before {\n  content: \"\\F4B4\";\n}\n\n.mdi-smoking-off:before {\n  content: \"\\F4B5\";\n}\n\n.mdi-snapchat:before {\n  content: \"\\F4B6\";\n}\n\n.mdi-snowflake:before {\n  content: \"\\F716\";\n}\n\n.mdi-snowman:before {\n  content: \"\\F4B7\";\n}\n\n.mdi-soccer:before {\n  content: \"\\F4B8\";\n}\n\n.mdi-soccer-field:before {\n  content: \"\\F833\";\n}\n\n.mdi-sofa:before {\n  content: \"\\F4B9\";\n}\n\n.mdi-solid:before {\n  content: \"\\F68C\";\n}\n\n.mdi-sort:before {\n  content: \"\\F4BA\";\n}\n\n.mdi-sort-alphabetical:before {\n  content: \"\\F4BB\";\n}\n\n.mdi-sort-ascending:before {\n  content: \"\\F4BC\";\n}\n\n.mdi-sort-descending:before {\n  content: \"\\F4BD\";\n}\n\n.mdi-sort-numeric:before {\n  content: \"\\F4BE\";\n}\n\n.mdi-sort-variant:before {\n  content: \"\\F4BF\";\n}\n\n.mdi-soundcloud:before {\n  content: \"\\F4C0\";\n}\n\n.mdi-source-branch:before {\n  content: \"\\F62C\";\n}\n\n.mdi-source-commit:before {\n  content: \"\\F717\";\n}\n\n.mdi-source-commit-end:before {\n  content: \"\\F718\";\n}\n\n.mdi-source-commit-end-local:before {\n  content: \"\\F719\";\n}\n\n.mdi-source-commit-local:before {\n  content: \"\\F71A\";\n}\n\n.mdi-source-commit-next-local:before {\n  content: \"\\F71B\";\n}\n\n.mdi-source-commit-start:before {\n  content: \"\\F71C\";\n}\n\n.mdi-source-commit-start-next-local:before {\n  content: \"\\F71D\";\n}\n\n.mdi-source-fork:before {\n  content: \"\\F4C1\";\n}\n\n.mdi-source-merge:before {\n  content: \"\\F62D\";\n}\n\n.mdi-source-pull:before {\n  content: \"\\F4C2\";\n}\n\n.mdi-soy-sauce:before {\n  content: \"\\F7ED\";\n}\n\n.mdi-speaker:before {\n  content: \"\\F4C3\";\n}\n\n.mdi-speaker-bluetooth:before {\n  content: \"\\F9A1\";\n}\n\n.mdi-speaker-off:before {\n  content: \"\\F4C4\";\n}\n\n.mdi-speaker-wireless:before {\n  content: \"\\F71E\";\n}\n\n.mdi-speedometer:before {\n  content: \"\\F4C5\";\n}\n\n.mdi-spellcheck:before {\n  content: \"\\F4C6\";\n}\n\n.mdi-spotify:before {\n  content: \"\\F4C7\";\n}\n\n.mdi-spotlight:before {\n  content: \"\\F4C8\";\n}\n\n.mdi-spotlight-beam:before {\n  content: \"\\F4C9\";\n}\n\n.mdi-spray:before {\n  content: \"\\F665\";\n}\n\n.mdi-square:before {\n  content: \"\\F763\";\n}\n\n.mdi-square-edit-outline:before {\n  content: \"\\F90B\";\n}\n\n.mdi-square-inc:before {\n  content: \"\\F4CA\";\n}\n\n.mdi-square-inc-cash:before {\n  content: \"\\F4CB\";\n}\n\n.mdi-square-medium:before {\n  content: \"\\FA12\";\n}\n\n.mdi-square-medium-outline:before {\n  content: \"\\FA13\";\n}\n\n.mdi-square-outline:before {\n  content: \"\\F762\";\n}\n\n.mdi-square-root:before {\n  content: \"\\F783\";\n}\n\n.mdi-square-root-box:before {\n  content: \"\\F9A2\";\n}\n\n.mdi-square-small:before {\n  content: \"\\FA14\";\n}\n\n.mdi-ssh:before {\n  content: \"\\F8BF\";\n}\n\n.mdi-stack-exchange:before {\n  content: \"\\F60B\";\n}\n\n.mdi-stack-overflow:before {\n  content: \"\\F4CC\";\n}\n\n.mdi-stadium:before {\n  content: \"\\F71F\";\n}\n\n.mdi-stairs:before {\n  content: \"\\F4CD\";\n}\n\n.mdi-standard-definition:before {\n  content: \"\\F7EE\";\n}\n\n.mdi-star:before {\n  content: \"\\F4CE\";\n}\n\n.mdi-star-circle:before {\n  content: \"\\F4CF\";\n}\n\n.mdi-star-circle-outline:before {\n  content: \"\\F9A3\";\n}\n\n.mdi-star-face:before {\n  content: \"\\F9A4\";\n}\n\n.mdi-star-half:before {\n  content: \"\\F4D0\";\n}\n\n.mdi-star-off:before {\n  content: \"\\F4D1\";\n}\n\n.mdi-star-outline:before {\n  content: \"\\F4D2\";\n}\n\n.mdi-steam:before {\n  content: \"\\F4D3\";\n}\n\n.mdi-steam-box:before {\n  content: \"\\F90C\";\n}\n\n.mdi-steering:before {\n  content: \"\\F4D4\";\n}\n\n.mdi-steering-off:before {\n  content: \"\\F90D\";\n}\n\n.mdi-step-backward:before {\n  content: \"\\F4D5\";\n}\n\n.mdi-step-backward-2:before {\n  content: \"\\F4D6\";\n}\n\n.mdi-step-forward:before {\n  content: \"\\F4D7\";\n}\n\n.mdi-step-forward-2:before {\n  content: \"\\F4D8\";\n}\n\n.mdi-stethoscope:before {\n  content: \"\\F4D9\";\n}\n\n.mdi-sticker:before {\n  content: \"\\F5D0\";\n}\n\n.mdi-sticker-emoji:before {\n  content: \"\\F784\";\n}\n\n.mdi-stocking:before {\n  content: \"\\F4DA\";\n}\n\n.mdi-stop:before {\n  content: \"\\F4DB\";\n}\n\n.mdi-stop-circle:before {\n  content: \"\\F666\";\n}\n\n.mdi-stop-circle-outline:before {\n  content: \"\\F667\";\n}\n\n.mdi-store:before {\n  content: \"\\F4DC\";\n}\n\n.mdi-store-24-hour:before {\n  content: \"\\F4DD\";\n}\n\n.mdi-stove:before {\n  content: \"\\F4DE\";\n}\n\n.mdi-subdirectory-arrow-left:before {\n  content: \"\\F60C\";\n}\n\n.mdi-subdirectory-arrow-right:before {\n  content: \"\\F60D\";\n}\n\n.mdi-subtitles:before {\n  content: \"\\FA15\";\n}\n\n.mdi-subtitles-outline:before {\n  content: \"\\FA16\";\n}\n\n.mdi-subway:before {\n  content: \"\\F6AB\";\n}\n\n.mdi-subway-variant:before {\n  content: \"\\F4DF\";\n}\n\n.mdi-summit:before {\n  content: \"\\F785\";\n}\n\n.mdi-sunglasses:before {\n  content: \"\\F4E0\";\n}\n\n.mdi-surround-sound:before {\n  content: \"\\F5C5\";\n}\n\n.mdi-surround-sound-2-0:before {\n  content: \"\\F7EF\";\n}\n\n.mdi-surround-sound-3-1:before {\n  content: \"\\F7F0\";\n}\n\n.mdi-surround-sound-5-1:before {\n  content: \"\\F7F1\";\n}\n\n.mdi-surround-sound-7-1:before {\n  content: \"\\F7F2\";\n}\n\n.mdi-svg:before {\n  content: \"\\F720\";\n}\n\n.mdi-swap-horizontal:before {\n  content: \"\\F4E1\";\n}\n\n.mdi-swap-horizontal-variant:before {\n  content: \"\\F8C0\";\n}\n\n.mdi-swap-vertical:before {\n  content: \"\\F4E2\";\n}\n\n.mdi-swap-vertical-variant:before {\n  content: \"\\F8C1\";\n}\n\n.mdi-swim:before {\n  content: \"\\F4E3\";\n}\n\n.mdi-switch:before {\n  content: \"\\F4E4\";\n}\n\n.mdi-sword:before {\n  content: \"\\F4E5\";\n}\n\n.mdi-sword-cross:before {\n  content: \"\\F786\";\n}\n\n.mdi-sync:before {\n  content: \"\\F4E6\";\n}\n\n.mdi-sync-alert:before {\n  content: \"\\F4E7\";\n}\n\n.mdi-sync-off:before {\n  content: \"\\F4E8\";\n}\n\n.mdi-tab:before {\n  content: \"\\F4E9\";\n}\n\n.mdi-tab-plus:before {\n  content: \"\\F75B\";\n}\n\n.mdi-tab-unselected:before {\n  content: \"\\F4EA\";\n}\n\n.mdi-table:before {\n  content: \"\\F4EB\";\n}\n\n.mdi-table-border:before {\n  content: \"\\FA17\";\n}\n\n.mdi-table-column:before {\n  content: \"\\F834\";\n}\n\n.mdi-table-column-plus-after:before {\n  content: \"\\F4EC\";\n}\n\n.mdi-table-column-plus-before:before {\n  content: \"\\F4ED\";\n}\n\n.mdi-table-column-remove:before {\n  content: \"\\F4EE\";\n}\n\n.mdi-table-column-width:before {\n  content: \"\\F4EF\";\n}\n\n.mdi-table-edit:before {\n  content: \"\\F4F0\";\n}\n\n.mdi-table-large:before {\n  content: \"\\F4F1\";\n}\n\n.mdi-table-merge-cells:before {\n  content: \"\\F9A5\";\n}\n\n.mdi-table-of-contents:before {\n  content: \"\\F835\";\n}\n\n.mdi-table-row:before {\n  content: \"\\F836\";\n}\n\n.mdi-table-row-height:before {\n  content: \"\\F4F2\";\n}\n\n.mdi-table-row-plus-after:before {\n  content: \"\\F4F3\";\n}\n\n.mdi-table-row-plus-before:before {\n  content: \"\\F4F4\";\n}\n\n.mdi-table-row-remove:before {\n  content: \"\\F4F5\";\n}\n\n.mdi-table-search:before {\n  content: \"\\F90E\";\n}\n\n.mdi-table-settings:before {\n  content: \"\\F837\";\n}\n\n.mdi-tablet:before {\n  content: \"\\F4F6\";\n}\n\n.mdi-tablet-android:before {\n  content: \"\\F4F7\";\n}\n\n.mdi-tablet-cellphone:before {\n  content: \"\\F9A6\";\n}\n\n.mdi-tablet-ipad:before {\n  content: \"\\F4F8\";\n}\n\n.mdi-taco:before {\n  content: \"\\F761\";\n}\n\n.mdi-tag:before {\n  content: \"\\F4F9\";\n}\n\n.mdi-tag-faces:before {\n  content: \"\\F4FA\";\n}\n\n.mdi-tag-heart:before {\n  content: \"\\F68A\";\n}\n\n.mdi-tag-minus:before {\n  content: \"\\F90F\";\n}\n\n.mdi-tag-multiple:before {\n  content: \"\\F4FB\";\n}\n\n.mdi-tag-outline:before {\n  content: \"\\F4FC\";\n}\n\n.mdi-tag-plus:before {\n  content: \"\\F721\";\n}\n\n.mdi-tag-remove:before {\n  content: \"\\F722\";\n}\n\n.mdi-tag-text-outline:before {\n  content: \"\\F4FD\";\n}\n\n.mdi-target:before {\n  content: \"\\F4FE\";\n}\n\n.mdi-taxi:before {\n  content: \"\\F4FF\";\n}\n\n.mdi-teach:before {\n  content: \"\\F88F\";\n}\n\n.mdi-teamviewer:before {\n  content: \"\\F500\";\n}\n\n.mdi-telegram:before {\n  content: \"\\F501\";\n}\n\n.mdi-television:before {\n  content: \"\\F502\";\n}\n\n.mdi-television-box:before {\n  content: \"\\F838\";\n}\n\n.mdi-television-classic:before {\n  content: \"\\F7F3\";\n}\n\n.mdi-television-classic-off:before {\n  content: \"\\F839\";\n}\n\n.mdi-television-guide:before {\n  content: \"\\F503\";\n}\n\n.mdi-television-off:before {\n  content: \"\\F83A\";\n}\n\n.mdi-temperature-celsius:before {\n  content: \"\\F504\";\n}\n\n.mdi-temperature-fahrenheit:before {\n  content: \"\\F505\";\n}\n\n.mdi-temperature-kelvin:before {\n  content: \"\\F506\";\n}\n\n.mdi-tennis:before {\n  content: \"\\F507\";\n}\n\n.mdi-tent:before {\n  content: \"\\F508\";\n}\n\n.mdi-terrain:before {\n  content: \"\\F509\";\n}\n\n.mdi-test-tube:before {\n  content: \"\\F668\";\n}\n\n.mdi-test-tube-empty:before {\n  content: \"\\F910\";\n}\n\n.mdi-test-tube-off:before {\n  content: \"\\F911\";\n}\n\n.mdi-text:before {\n  content: \"\\F9A7\";\n}\n\n.mdi-text-shadow:before {\n  content: \"\\F669\";\n}\n\n.mdi-text-short:before {\n  content: \"\\F9A8\";\n}\n\n.mdi-text-subject:before {\n  content: \"\\F9A9\";\n}\n\n.mdi-text-to-speech:before {\n  content: \"\\F50A\";\n}\n\n.mdi-text-to-speech-off:before {\n  content: \"\\F50B\";\n}\n\n.mdi-textbox:before {\n  content: \"\\F60E\";\n}\n\n.mdi-textbox-password:before {\n  content: \"\\F7F4\";\n}\n\n.mdi-texture:before {\n  content: \"\\F50C\";\n}\n\n.mdi-theater:before {\n  content: \"\\F50D\";\n}\n\n.mdi-theme-light-dark:before {\n  content: \"\\F50E\";\n}\n\n.mdi-thermometer:before {\n  content: \"\\F50F\";\n}\n\n.mdi-thermometer-lines:before {\n  content: \"\\F510\";\n}\n\n.mdi-thermostat:before {\n  content: \"\\F393\";\n}\n\n.mdi-thermostat-box:before {\n  content: \"\\F890\";\n}\n\n.mdi-thought-bubble:before {\n  content: \"\\F7F5\";\n}\n\n.mdi-thought-bubble-outline:before {\n  content: \"\\F7F6\";\n}\n\n.mdi-thumb-down:before {\n  content: \"\\F511\";\n}\n\n.mdi-thumb-down-outline:before {\n  content: \"\\F512\";\n}\n\n.mdi-thumb-up:before {\n  content: \"\\F513\";\n}\n\n.mdi-thumb-up-outline:before {\n  content: \"\\F514\";\n}\n\n.mdi-thumbs-up-down:before {\n  content: \"\\F515\";\n}\n\n.mdi-ticket:before {\n  content: \"\\F516\";\n}\n\n.mdi-ticket-account:before {\n  content: \"\\F517\";\n}\n\n.mdi-ticket-confirmation:before {\n  content: \"\\F518\";\n}\n\n.mdi-ticket-outline:before {\n  content: \"\\F912\";\n}\n\n.mdi-ticket-percent:before {\n  content: \"\\F723\";\n}\n\n.mdi-tie:before {\n  content: \"\\F519\";\n}\n\n.mdi-tilde:before {\n  content: \"\\F724\";\n}\n\n.mdi-timelapse:before {\n  content: \"\\F51A\";\n}\n\n.mdi-timer:before {\n  content: \"\\F51B\";\n}\n\n.mdi-timer-10:before {\n  content: \"\\F51C\";\n}\n\n.mdi-timer-3:before {\n  content: \"\\F51D\";\n}\n\n.mdi-timer-off:before {\n  content: \"\\F51E\";\n}\n\n.mdi-timer-sand:before {\n  content: \"\\F51F\";\n}\n\n.mdi-timer-sand-empty:before {\n  content: \"\\F6AC\";\n}\n\n.mdi-timer-sand-full:before {\n  content: \"\\F78B\";\n}\n\n.mdi-timetable:before {\n  content: \"\\F520\";\n}\n\n.mdi-toggle-switch:before {\n  content: \"\\F521\";\n}\n\n.mdi-toggle-switch-off:before {\n  content: \"\\F522\";\n}\n\n.mdi-toggle-switch-off-outline:before {\n  content: \"\\FA18\";\n}\n\n.mdi-toggle-switch-outline:before {\n  content: \"\\FA19\";\n}\n\n.mdi-toilet:before {\n  content: \"\\F9AA\";\n}\n\n.mdi-toolbox:before {\n  content: \"\\F9AB\";\n}\n\n.mdi-toolbox-outline:before {\n  content: \"\\F9AC\";\n}\n\n.mdi-tooltip:before {\n  content: \"\\F523\";\n}\n\n.mdi-tooltip-edit:before {\n  content: \"\\F524\";\n}\n\n.mdi-tooltip-image:before {\n  content: \"\\F525\";\n}\n\n.mdi-tooltip-outline:before {\n  content: \"\\F526\";\n}\n\n.mdi-tooltip-outline-plus:before {\n  content: \"\\F527\";\n}\n\n.mdi-tooltip-text:before {\n  content: \"\\F528\";\n}\n\n.mdi-tooth:before {\n  content: \"\\F8C2\";\n}\n\n.mdi-tooth-outline:before {\n  content: \"\\F529\";\n}\n\n.mdi-tor:before {\n  content: \"\\F52A\";\n}\n\n.mdi-tournament:before {\n  content: \"\\F9AD\";\n}\n\n.mdi-tower-beach:before {\n  content: \"\\F680\";\n}\n\n.mdi-tower-fire:before {\n  content: \"\\F681\";\n}\n\n.mdi-towing:before {\n  content: \"\\F83B\";\n}\n\n.mdi-track-light:before {\n  content: \"\\F913\";\n}\n\n.mdi-trackpad:before {\n  content: \"\\F7F7\";\n}\n\n.mdi-trackpad-lock:before {\n  content: \"\\F932\";\n}\n\n.mdi-tractor:before {\n  content: \"\\F891\";\n}\n\n.mdi-traffic-light:before {\n  content: \"\\F52B\";\n}\n\n.mdi-train:before {\n  content: \"\\F52C\";\n}\n\n.mdi-train-variant:before {\n  content: \"\\F8C3\";\n}\n\n.mdi-tram:before {\n  content: \"\\F52D\";\n}\n\n.mdi-transcribe:before {\n  content: \"\\F52E\";\n}\n\n.mdi-transcribe-close:before {\n  content: \"\\F52F\";\n}\n\n.mdi-transfer:before {\n  content: \"\\F530\";\n}\n\n.mdi-transit-transfer:before {\n  content: \"\\F6AD\";\n}\n\n.mdi-transition:before {\n  content: \"\\F914\";\n}\n\n.mdi-transition-masked:before {\n  content: \"\\F915\";\n}\n\n.mdi-translate:before {\n  content: \"\\F5CA\";\n}\n\n.mdi-treasure-chest:before {\n  content: \"\\F725\";\n}\n\n.mdi-tree:before {\n  content: \"\\F531\";\n}\n\n.mdi-trello:before {\n  content: \"\\F532\";\n}\n\n.mdi-trending-down:before {\n  content: \"\\F533\";\n}\n\n.mdi-trending-neutral:before {\n  content: \"\\F534\";\n}\n\n.mdi-trending-up:before {\n  content: \"\\F535\";\n}\n\n.mdi-triangle:before {\n  content: \"\\F536\";\n}\n\n.mdi-triangle-outline:before {\n  content: \"\\F537\";\n}\n\n.mdi-trophy:before {\n  content: \"\\F538\";\n}\n\n.mdi-trophy-award:before {\n  content: \"\\F539\";\n}\n\n.mdi-trophy-outline:before {\n  content: \"\\F53A\";\n}\n\n.mdi-trophy-variant:before {\n  content: \"\\F53B\";\n}\n\n.mdi-trophy-variant-outline:before {\n  content: \"\\F53C\";\n}\n\n.mdi-truck:before {\n  content: \"\\F53D\";\n}\n\n.mdi-truck-delivery:before {\n  content: \"\\F53E\";\n}\n\n.mdi-truck-fast:before {\n  content: \"\\F787\";\n}\n\n.mdi-truck-trailer:before {\n  content: \"\\F726\";\n}\n\n.mdi-tshirt-crew:before {\n  content: \"\\F53F\";\n}\n\n.mdi-tshirt-v:before {\n  content: \"\\F540\";\n}\n\n.mdi-tumble-dryer:before {\n  content: \"\\F916\";\n}\n\n.mdi-tumblr:before {\n  content: \"\\F541\";\n}\n\n.mdi-tumblr-box:before {\n  content: \"\\F917\";\n}\n\n.mdi-tumblr-reblog:before {\n  content: \"\\F542\";\n}\n\n.mdi-tune:before {\n  content: \"\\F62E\";\n}\n\n.mdi-tune-vertical:before {\n  content: \"\\F66A\";\n}\n\n.mdi-twitch:before {\n  content: \"\\F543\";\n}\n\n.mdi-twitter:before {\n  content: \"\\F544\";\n}\n\n.mdi-twitter-box:before {\n  content: \"\\F545\";\n}\n\n.mdi-twitter-circle:before {\n  content: \"\\F546\";\n}\n\n.mdi-twitter-retweet:before {\n  content: \"\\F547\";\n}\n\n.mdi-two-factor-authentication:before {\n  content: \"\\F9AE\";\n}\n\n.mdi-uber:before {\n  content: \"\\F748\";\n}\n\n.mdi-ubuntu:before {\n  content: \"\\F548\";\n}\n\n.mdi-ultra-high-definition:before {\n  content: \"\\F7F8\";\n}\n\n.mdi-umbraco:before {\n  content: \"\\F549\";\n}\n\n.mdi-umbrella:before {\n  content: \"\\F54A\";\n}\n\n.mdi-umbrella-closed:before {\n  content: \"\\F9AF\";\n}\n\n.mdi-umbrella-outline:before {\n  content: \"\\F54B\";\n}\n\n.mdi-undo:before {\n  content: \"\\F54C\";\n}\n\n.mdi-undo-variant:before {\n  content: \"\\F54D\";\n}\n\n.mdi-unfold-less-horizontal:before {\n  content: \"\\F54E\";\n}\n\n.mdi-unfold-less-vertical:before {\n  content: \"\\F75F\";\n}\n\n.mdi-unfold-more-horizontal:before {\n  content: \"\\F54F\";\n}\n\n.mdi-unfold-more-vertical:before {\n  content: \"\\F760\";\n}\n\n.mdi-ungroup:before {\n  content: \"\\F550\";\n}\n\n.mdi-unity:before {\n  content: \"\\F6AE\";\n}\n\n.mdi-unreal:before {\n  content: \"\\F9B0\";\n}\n\n.mdi-untappd:before {\n  content: \"\\F551\";\n}\n\n.mdi-update:before {\n  content: \"\\F6AF\";\n}\n\n.mdi-upload:before {\n  content: \"\\F552\";\n}\n\n.mdi-upload-multiple:before {\n  content: \"\\F83C\";\n}\n\n.mdi-upload-network:before {\n  content: \"\\F6F5\";\n}\n\n.mdi-usb:before {\n  content: \"\\F553\";\n}\n\n.mdi-van-passenger:before {\n  content: \"\\F7F9\";\n}\n\n.mdi-van-utility:before {\n  content: \"\\F7FA\";\n}\n\n.mdi-vanish:before {\n  content: \"\\F7FB\";\n}\n\n.mdi-vector-arrange-above:before {\n  content: \"\\F554\";\n}\n\n.mdi-vector-arrange-below:before {\n  content: \"\\F555\";\n}\n\n.mdi-vector-circle:before {\n  content: \"\\F556\";\n}\n\n.mdi-vector-circle-variant:before {\n  content: \"\\F557\";\n}\n\n.mdi-vector-combine:before {\n  content: \"\\F558\";\n}\n\n.mdi-vector-curve:before {\n  content: \"\\F559\";\n}\n\n.mdi-vector-difference:before {\n  content: \"\\F55A\";\n}\n\n.mdi-vector-difference-ab:before {\n  content: \"\\F55B\";\n}\n\n.mdi-vector-difference-ba:before {\n  content: \"\\F55C\";\n}\n\n.mdi-vector-ellipse:before {\n  content: \"\\F892\";\n}\n\n.mdi-vector-intersection:before {\n  content: \"\\F55D\";\n}\n\n.mdi-vector-line:before {\n  content: \"\\F55E\";\n}\n\n.mdi-vector-point:before {\n  content: \"\\F55F\";\n}\n\n.mdi-vector-polygon:before {\n  content: \"\\F560\";\n}\n\n.mdi-vector-polyline:before {\n  content: \"\\F561\";\n}\n\n.mdi-vector-radius:before {\n  content: \"\\F749\";\n}\n\n.mdi-vector-rectangle:before {\n  content: \"\\F5C6\";\n}\n\n.mdi-vector-selection:before {\n  content: \"\\F562\";\n}\n\n.mdi-vector-square:before {\n  content: \"\\F001\";\n}\n\n.mdi-vector-triangle:before {\n  content: \"\\F563\";\n}\n\n.mdi-vector-union:before {\n  content: \"\\F564\";\n}\n\n.mdi-venmo:before {\n  content: \"\\F578\";\n}\n\n.mdi-verified:before {\n  content: \"\\F565\";\n}\n\n.mdi-vhs:before {\n  content: \"\\FA1A\";\n}\n\n.mdi-vibrate:before {\n  content: \"\\F566\";\n}\n\n.mdi-video:before {\n  content: \"\\F567\";\n}\n\n.mdi-video-3d:before {\n  content: \"\\F7FC\";\n}\n\n.mdi-video-4k-box:before {\n  content: \"\\F83D\";\n}\n\n.mdi-video-account:before {\n  content: \"\\F918\";\n}\n\n.mdi-video-image:before {\n  content: \"\\F919\";\n}\n\n.mdi-video-input-antenna:before {\n  content: \"\\F83E\";\n}\n\n.mdi-video-input-component:before {\n  content: \"\\F83F\";\n}\n\n.mdi-video-input-hdmi:before {\n  content: \"\\F840\";\n}\n\n.mdi-video-input-svideo:before {\n  content: \"\\F841\";\n}\n\n.mdi-video-minus:before {\n  content: \"\\F9B1\";\n}\n\n.mdi-video-off:before {\n  content: \"\\F568\";\n}\n\n.mdi-video-plus:before {\n  content: \"\\F9B2\";\n}\n\n.mdi-video-stabilization:before {\n  content: \"\\F91A\";\n}\n\n.mdi-video-switch:before {\n  content: \"\\F569\";\n}\n\n.mdi-video-vintage:before {\n  content: \"\\FA1B\";\n}\n\n.mdi-view-agenda:before {\n  content: \"\\F56A\";\n}\n\n.mdi-view-array:before {\n  content: \"\\F56B\";\n}\n\n.mdi-view-carousel:before {\n  content: \"\\F56C\";\n}\n\n.mdi-view-column:before {\n  content: \"\\F56D\";\n}\n\n.mdi-view-dashboard:before {\n  content: \"\\F56E\";\n}\n\n.mdi-view-dashboard-outline:before {\n  content: \"\\FA1C\";\n}\n\n.mdi-view-dashboard-variant:before {\n  content: \"\\F842\";\n}\n\n.mdi-view-day:before {\n  content: \"\\F56F\";\n}\n\n.mdi-view-grid:before {\n  content: \"\\F570\";\n}\n\n.mdi-view-headline:before {\n  content: \"\\F571\";\n}\n\n.mdi-view-list:before {\n  content: \"\\F572\";\n}\n\n.mdi-view-module:before {\n  content: \"\\F573\";\n}\n\n.mdi-view-parallel:before {\n  content: \"\\F727\";\n}\n\n.mdi-view-quilt:before {\n  content: \"\\F574\";\n}\n\n.mdi-view-sequential:before {\n  content: \"\\F728\";\n}\n\n.mdi-view-stream:before {\n  content: \"\\F575\";\n}\n\n.mdi-view-week:before {\n  content: \"\\F576\";\n}\n\n.mdi-vimeo:before {\n  content: \"\\F577\";\n}\n\n.mdi-violin:before {\n  content: \"\\F60F\";\n}\n\n.mdi-virtual-reality:before {\n  content: \"\\F893\";\n}\n\n.mdi-visual-studio:before {\n  content: \"\\F610\";\n}\n\n.mdi-visual-studio-code:before {\n  content: \"\\FA1D\";\n}\n\n.mdi-vk:before {\n  content: \"\\F579\";\n}\n\n.mdi-vk-box:before {\n  content: \"\\F57A\";\n}\n\n.mdi-vk-circle:before {\n  content: \"\\F57B\";\n}\n\n.mdi-vlc:before {\n  content: \"\\F57C\";\n}\n\n.mdi-voice:before {\n  content: \"\\F5CB\";\n}\n\n.mdi-voicemail:before {\n  content: \"\\F57D\";\n}\n\n.mdi-volleyball:before {\n  content: \"\\F9B3\";\n}\n\n.mdi-volume-high:before {\n  content: \"\\F57E\";\n}\n\n.mdi-volume-low:before {\n  content: \"\\F57F\";\n}\n\n.mdi-volume-medium:before {\n  content: \"\\F580\";\n}\n\n.mdi-volume-minus:before {\n  content: \"\\F75D\";\n}\n\n.mdi-volume-mute:before {\n  content: \"\\F75E\";\n}\n\n.mdi-volume-off:before {\n  content: \"\\F581\";\n}\n\n.mdi-volume-plus:before {\n  content: \"\\F75C\";\n}\n\n.mdi-vote:before {\n  content: \"\\FA1E\";\n}\n\n.mdi-vote-outline:before {\n  content: \"\\FA1F\";\n}\n\n.mdi-vpn:before {\n  content: \"\\F582\";\n}\n\n.mdi-vuejs:before {\n  content: \"\\F843\";\n}\n\n.mdi-walk:before {\n  content: \"\\F583\";\n}\n\n.mdi-wall:before {\n  content: \"\\F7FD\";\n}\n\n.mdi-wall-sconce:before {\n  content: \"\\F91B\";\n}\n\n.mdi-wall-sconce-flat:before {\n  content: \"\\F91C\";\n}\n\n.mdi-wall-sconce-variant:before {\n  content: \"\\F91D\";\n}\n\n.mdi-wallet:before {\n  content: \"\\F584\";\n}\n\n.mdi-wallet-giftcard:before {\n  content: \"\\F585\";\n}\n\n.mdi-wallet-membership:before {\n  content: \"\\F586\";\n}\n\n.mdi-wallet-travel:before {\n  content: \"\\F587\";\n}\n\n.mdi-wan:before {\n  content: \"\\F588\";\n}\n\n.mdi-washing-machine:before {\n  content: \"\\F729\";\n}\n\n.mdi-watch:before {\n  content: \"\\F589\";\n}\n\n.mdi-watch-export:before {\n  content: \"\\F58A\";\n}\n\n.mdi-watch-export-variant:before {\n  content: \"\\F894\";\n}\n\n.mdi-watch-import:before {\n  content: \"\\F58B\";\n}\n\n.mdi-watch-import-variant:before {\n  content: \"\\F895\";\n}\n\n.mdi-watch-variant:before {\n  content: \"\\F896\";\n}\n\n.mdi-watch-vibrate:before {\n  content: \"\\F6B0\";\n}\n\n.mdi-water:before {\n  content: \"\\F58C\";\n}\n\n.mdi-water-off:before {\n  content: \"\\F58D\";\n}\n\n.mdi-water-percent:before {\n  content: \"\\F58E\";\n}\n\n.mdi-water-pump:before {\n  content: \"\\F58F\";\n}\n\n.mdi-watermark:before {\n  content: \"\\F612\";\n}\n\n.mdi-waves:before {\n  content: \"\\F78C\";\n}\n\n.mdi-weather-cloudy:before {\n  content: \"\\F590\";\n}\n\n.mdi-weather-fog:before {\n  content: \"\\F591\";\n}\n\n.mdi-weather-hail:before {\n  content: \"\\F592\";\n}\n\n.mdi-weather-hurricane:before {\n  content: \"\\F897\";\n}\n\n.mdi-weather-lightning:before {\n  content: \"\\F593\";\n}\n\n.mdi-weather-lightning-rainy:before {\n  content: \"\\F67D\";\n}\n\n.mdi-weather-night:before {\n  content: \"\\F594\";\n}\n\n.mdi-weather-partlycloudy:before {\n  content: \"\\F595\";\n}\n\n.mdi-weather-pouring:before {\n  content: \"\\F596\";\n}\n\n.mdi-weather-rainy:before {\n  content: \"\\F597\";\n}\n\n.mdi-weather-snowy:before {\n  content: \"\\F598\";\n}\n\n.mdi-weather-snowy-rainy:before {\n  content: \"\\F67E\";\n}\n\n.mdi-weather-sunny:before {\n  content: \"\\F599\";\n}\n\n.mdi-weather-sunset:before {\n  content: \"\\F59A\";\n}\n\n.mdi-weather-sunset-down:before {\n  content: \"\\F59B\";\n}\n\n.mdi-weather-sunset-up:before {\n  content: \"\\F59C\";\n}\n\n.mdi-weather-windy:before {\n  content: \"\\F59D\";\n}\n\n.mdi-weather-windy-variant:before {\n  content: \"\\F59E\";\n}\n\n.mdi-web:before {\n  content: \"\\F59F\";\n}\n\n.mdi-webcam:before {\n  content: \"\\F5A0\";\n}\n\n.mdi-webhook:before {\n  content: \"\\F62F\";\n}\n\n.mdi-webpack:before {\n  content: \"\\F72A\";\n}\n\n.mdi-wechat:before {\n  content: \"\\F611\";\n}\n\n.mdi-weight:before {\n  content: \"\\F5A1\";\n}\n\n.mdi-weight-kilogram:before {\n  content: \"\\F5A2\";\n}\n\n.mdi-weight-pound:before {\n  content: \"\\F9B4\";\n}\n\n.mdi-whatsapp:before {\n  content: \"\\F5A3\";\n}\n\n.mdi-wheelchair-accessibility:before {\n  content: \"\\F5A4\";\n}\n\n.mdi-whistle:before {\n  content: \"\\F9B5\";\n}\n\n.mdi-white-balance-auto:before {\n  content: \"\\F5A5\";\n}\n\n.mdi-white-balance-incandescent:before {\n  content: \"\\F5A6\";\n}\n\n.mdi-white-balance-iridescent:before {\n  content: \"\\F5A7\";\n}\n\n.mdi-white-balance-sunny:before {\n  content: \"\\F5A8\";\n}\n\n.mdi-widgets:before {\n  content: \"\\F72B\";\n}\n\n.mdi-wifi:before {\n  content: \"\\F5A9\";\n}\n\n.mdi-wifi-off:before {\n  content: \"\\F5AA\";\n}\n\n.mdi-wifi-strength-1:before {\n  content: \"\\F91E\";\n}\n\n.mdi-wifi-strength-1-alert:before {\n  content: \"\\F91F\";\n}\n\n.mdi-wifi-strength-1-lock:before {\n  content: \"\\F920\";\n}\n\n.mdi-wifi-strength-2:before {\n  content: \"\\F921\";\n}\n\n.mdi-wifi-strength-2-alert:before {\n  content: \"\\F922\";\n}\n\n.mdi-wifi-strength-2-lock:before {\n  content: \"\\F923\";\n}\n\n.mdi-wifi-strength-3:before {\n  content: \"\\F924\";\n}\n\n.mdi-wifi-strength-3-alert:before {\n  content: \"\\F925\";\n}\n\n.mdi-wifi-strength-3-lock:before {\n  content: \"\\F926\";\n}\n\n.mdi-wifi-strength-4:before {\n  content: \"\\F927\";\n}\n\n.mdi-wifi-strength-4-alert:before {\n  content: \"\\F928\";\n}\n\n.mdi-wifi-strength-4-lock:before {\n  content: \"\\F929\";\n}\n\n.mdi-wifi-strength-alert-outline:before {\n  content: \"\\F92A\";\n}\n\n.mdi-wifi-strength-lock-outline:before {\n  content: \"\\F92B\";\n}\n\n.mdi-wifi-strength-off:before {\n  content: \"\\F92C\";\n}\n\n.mdi-wifi-strength-off-outline:before {\n  content: \"\\F92D\";\n}\n\n.mdi-wifi-strength-outline:before {\n  content: \"\\F92E\";\n}\n\n.mdi-wii:before {\n  content: \"\\F5AB\";\n}\n\n.mdi-wiiu:before {\n  content: \"\\F72C\";\n}\n\n.mdi-wikipedia:before {\n  content: \"\\F5AC\";\n}\n\n.mdi-window-close:before {\n  content: \"\\F5AD\";\n}\n\n.mdi-window-closed:before {\n  content: \"\\F5AE\";\n}\n\n.mdi-window-maximize:before {\n  content: \"\\F5AF\";\n}\n\n.mdi-window-minimize:before {\n  content: \"\\F5B0\";\n}\n\n.mdi-window-open:before {\n  content: \"\\F5B1\";\n}\n\n.mdi-window-restore:before {\n  content: \"\\F5B2\";\n}\n\n.mdi-windows:before {\n  content: \"\\F5B3\";\n}\n\n.mdi-windows-classic:before {\n  content: \"\\FA20\";\n}\n\n.mdi-wordpress:before {\n  content: \"\\F5B4\";\n}\n\n.mdi-worker:before {\n  content: \"\\F5B5\";\n}\n\n.mdi-wrap:before {\n  content: \"\\F5B6\";\n}\n\n.mdi-wrench:before {\n  content: \"\\F5B7\";\n}\n\n.mdi-wunderlist:before {\n  content: \"\\F5B8\";\n}\n\n.mdi-xamarin:before {\n  content: \"\\F844\";\n}\n\n.mdi-xamarin-outline:before {\n  content: \"\\F845\";\n}\n\n.mdi-xaml:before {\n  content: \"\\F673\";\n}\n\n.mdi-xbox:before {\n  content: \"\\F5B9\";\n}\n\n.mdi-xbox-controller:before {\n  content: \"\\F5BA\";\n}\n\n.mdi-xbox-controller-battery-alert:before {\n  content: \"\\F74A\";\n}\n\n.mdi-xbox-controller-battery-charging:before {\n  content: \"\\FA21\";\n}\n\n.mdi-xbox-controller-battery-empty:before {\n  content: \"\\F74B\";\n}\n\n.mdi-xbox-controller-battery-full:before {\n  content: \"\\F74C\";\n}\n\n.mdi-xbox-controller-battery-low:before {\n  content: \"\\F74D\";\n}\n\n.mdi-xbox-controller-battery-medium:before {\n  content: \"\\F74E\";\n}\n\n.mdi-xbox-controller-battery-unknown:before {\n  content: \"\\F74F\";\n}\n\n.mdi-xbox-controller-off:before {\n  content: \"\\F5BB\";\n}\n\n.mdi-xda:before {\n  content: \"\\F5BC\";\n}\n\n.mdi-xing:before {\n  content: \"\\F5BD\";\n}\n\n.mdi-xing-box:before {\n  content: \"\\F5BE\";\n}\n\n.mdi-xing-circle:before {\n  content: \"\\F5BF\";\n}\n\n.mdi-xml:before {\n  content: \"\\F5C0\";\n}\n\n.mdi-xmpp:before {\n  content: \"\\F7FE\";\n}\n\n.mdi-yammer:before {\n  content: \"\\F788\";\n}\n\n.mdi-yeast:before {\n  content: \"\\F5C1\";\n}\n\n.mdi-yelp:before {\n  content: \"\\F5C2\";\n}\n\n.mdi-yin-yang:before {\n  content: \"\\F67F\";\n}\n\n.mdi-youtube:before {\n  content: \"\\F5C3\";\n}\n\n.mdi-youtube-creator-studio:before {\n  content: \"\\F846\";\n}\n\n.mdi-youtube-gaming:before {\n  content: \"\\F847\";\n}\n\n.mdi-youtube-tv:before {\n  content: \"\\F448\";\n}\n\n.mdi-zip-box:before {\n  content: \"\\F5C4\";\n}\n\n.mdi-zip-disk:before {\n  content: \"\\FA22\";\n}\n\n.mdi-blank:before {\n  content: \"\\F68C\";\n  visibility: hidden;\n}\n\n.mdi-18px.mdi-set, .mdi-18px.mdi:before {\n  font-size: 18px;\n}\n\n.mdi-24px.mdi-set, .mdi-24px.mdi:before {\n  font-size: 24px;\n}\n\n.mdi-36px.mdi-set, .mdi-36px.mdi:before {\n  font-size: 36px;\n}\n\n.mdi-48px.mdi-set, .mdi-48px.mdi:before {\n  font-size: 48px;\n}\n\n.mdi-dark:before {\n  color: rgba(0, 0, 0, 0.54);\n}\n.mdi-dark.mdi-inactive:before {\n  color: rgba(0, 0, 0, 0.26);\n}\n\n.mdi-light:before {\n  color: white;\n}\n.mdi-light.mdi-inactive:before {\n  color: rgba(255, 255, 255, 0.3);\n}\n\n.mdi-rotate-45 {\n  /*\n  // Not included in production\n  &.mdi-flip-h:before {\n      -webkit-transform: scaleX(-1) rotate(45deg);\n      transform: scaleX(-1) rotate(45deg);\n      filter: FlipH;\n      -ms-filter: \"FlipH\";\n  }\n  &.mdi-flip-v:before {\n      -webkit-transform: scaleY(-1) rotate(45deg);\n      -ms-transform: rotate(45deg);\n      transform: scaleY(-1) rotate(45deg);\n      filter: FlipV;\n      -ms-filter: \"FlipV\";\n  }\n  */\n}\n.mdi-rotate-45:before {\n  -webkit-transform: rotate(45deg);\n  -ms-transform: rotate(45deg);\n  transform: rotate(45deg);\n}\n\n.mdi-rotate-90 {\n  /*\n  // Not included in production\n  &.mdi-flip-h:before {\n      -webkit-transform: scaleX(-1) rotate(90deg);\n      transform: scaleX(-1) rotate(90deg);\n      filter: FlipH;\n      -ms-filter: \"FlipH\";\n  }\n  &.mdi-flip-v:before {\n      -webkit-transform: scaleY(-1) rotate(90deg);\n      -ms-transform: rotate(90deg);\n      transform: scaleY(-1) rotate(90deg);\n      filter: FlipV;\n      -ms-filter: \"FlipV\";\n  }\n  */\n}\n.mdi-rotate-90:before {\n  -webkit-transform: rotate(90deg);\n  -ms-transform: rotate(90deg);\n  transform: rotate(90deg);\n}\n\n.mdi-rotate-135 {\n  /*\n  // Not included in production\n  &.mdi-flip-h:before {\n      -webkit-transform: scaleX(-1) rotate(135deg);\n      transform: scaleX(-1) rotate(135deg);\n      filter: FlipH;\n      -ms-filter: \"FlipH\";\n  }\n  &.mdi-flip-v:before {\n      -webkit-transform: scaleY(-1) rotate(135deg);\n      -ms-transform: rotate(135deg);\n      transform: scaleY(-1) rotate(135deg);\n      filter: FlipV;\n      -ms-filter: \"FlipV\";\n  }\n  */\n}\n.mdi-rotate-135:before {\n  -webkit-transform: rotate(135deg);\n  -ms-transform: rotate(135deg);\n  transform: rotate(135deg);\n}\n\n.mdi-rotate-180 {\n  /*\n  // Not included in production\n  &.mdi-flip-h:before {\n      -webkit-transform: scaleX(-1) rotate(180deg);\n      transform: scaleX(-1) rotate(180deg);\n      filter: FlipH;\n      -ms-filter: \"FlipH\";\n  }\n  &.mdi-flip-v:before {\n      -webkit-transform: scaleY(-1) rotate(180deg);\n      -ms-transform: rotate(180deg);\n      transform: scaleY(-1) rotate(180deg);\n      filter: FlipV;\n      -ms-filter: \"FlipV\";\n  }\n  */\n}\n.mdi-rotate-180:before {\n  -webkit-transform: rotate(180deg);\n  -ms-transform: rotate(180deg);\n  transform: rotate(180deg);\n}\n\n.mdi-rotate-225 {\n  /*\n  // Not included in production\n  &.mdi-flip-h:before {\n      -webkit-transform: scaleX(-1) rotate(225deg);\n      transform: scaleX(-1) rotate(225deg);\n      filter: FlipH;\n      -ms-filter: \"FlipH\";\n  }\n  &.mdi-flip-v:before {\n      -webkit-transform: scaleY(-1) rotate(225deg);\n      -ms-transform: rotate(225deg);\n      transform: scaleY(-1) rotate(225deg);\n      filter: FlipV;\n      -ms-filter: \"FlipV\";\n  }\n  */\n}\n.mdi-rotate-225:before {\n  -webkit-transform: rotate(225deg);\n  -ms-transform: rotate(225deg);\n  transform: rotate(225deg);\n}\n\n.mdi-rotate-270 {\n  /*\n  // Not included in production\n  &.mdi-flip-h:before {\n      -webkit-transform: scaleX(-1) rotate(270deg);\n      transform: scaleX(-1) rotate(270deg);\n      filter: FlipH;\n      -ms-filter: \"FlipH\";\n  }\n  &.mdi-flip-v:before {\n      -webkit-transform: scaleY(-1) rotate(270deg);\n      -ms-transform: rotate(270deg);\n      transform: scaleY(-1) rotate(270deg);\n      filter: FlipV;\n      -ms-filter: \"FlipV\";\n  }\n  */\n}\n.mdi-rotate-270:before {\n  -webkit-transform: rotate(270deg);\n  -ms-transform: rotate(270deg);\n  transform: rotate(270deg);\n}\n\n.mdi-rotate-315 {\n  /*\n  // Not included in production\n  &.mdi-flip-h:before {\n      -webkit-transform: scaleX(-1) rotate(315deg);\n      transform: scaleX(-1) rotate(315deg);\n      filter: FlipH;\n      -ms-filter: \"FlipH\";\n  }\n  &.mdi-flip-v:before {\n      -webkit-transform: scaleY(-1) rotate(315deg);\n      -ms-transform: rotate(315deg);\n      transform: scaleY(-1) rotate(315deg);\n      filter: FlipV;\n      -ms-filter: \"FlipV\";\n  }\n  */\n}\n.mdi-rotate-315:before {\n  -webkit-transform: rotate(315deg);\n  -ms-transform: rotate(315deg);\n  transform: rotate(315deg);\n}\n\n.mdi-flip-h:before {\n  -webkit-transform: scaleX(-1);\n  transform: scaleX(-1);\n  filter: FlipH;\n  -ms-filter: \"FlipH\";\n}\n\n.mdi-flip-v:before {\n  -webkit-transform: scaleY(-1);\n  transform: scaleY(-1);\n  filter: FlipV;\n  -ms-filter: \"FlipV\";\n}\n\n.mdi-spin:before {\n  -webkit-animation: mdi-spin 2s infinite linear;\n  animation: mdi-spin 2s infinite linear;\n}\n\n@-webkit-keyframes mdi-spin {\n  0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n  100% {\n    -webkit-transform: rotate(359deg);\n    transform: rotate(359deg);\n  }\n}\n@keyframes mdi-spin {\n  0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n  100% {\n    -webkit-transform: rotate(359deg);\n    transform: rotate(359deg);\n  }\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 250 */
-/***/ (function(module, exports) {
-
-module.exports = "/fonts/vendor/@mdi/materialdesignicons-webfont.eot?777d5eed5d8ac5f3ac5f9326a8144d62";
-
-/***/ }),
+/* 250 */,
 /* 251 */
 /***/ (function(module, exports) {
 
-module.exports = "/fonts/vendor/@mdi/materialdesignicons-webfont.eot?777d5eed5d8ac5f3ac5f9326a8144d62";
+module.exports = "/fonts/vendor/@mdi/materialdesignicons-webfont.eot?af48cb7231242b5abcf43e13ac62dfec";
 
 /***/ }),
-/* 252 */
-/***/ (function(module, exports) {
-
-module.exports = "/fonts/vendor/@mdi/materialdesignicons-webfont.woff2?098aafda4b974d4a6432c25c0e7b59a3";
-
-/***/ }),
-/* 253 */
-/***/ (function(module, exports) {
-
-module.exports = "/fonts/vendor/@mdi/materialdesignicons-webfont.woff?24a45ab82bdfa1fcc91c73c710129905";
-
-/***/ }),
-/* 254 */
-/***/ (function(module, exports) {
-
-module.exports = "/fonts/vendor/@mdi/materialdesignicons-webfont.ttf?66bb70332c3ba8ade908e1dffe4f0c2a";
-
-/***/ }),
-/* 255 */
-/***/ (function(module, exports) {
-
-module.exports = "/fonts/vendor/@mdi/materialdesignicons-webfont.svg?dee67d25e601b5777eebe2abed2ea1f2";
-
-/***/ }),
+/* 252 */,
+/* 253 */,
+/* 254 */,
+/* 255 */,
 /* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -86309,6 +86551,6438 @@ module.exports = {"version":"2018e","zones":["Africa/Abidjan|LMT GMT|g.8 0|01|-2
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 264 */,
+/* 265 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {(function (global, factory) {
+	 true ? factory(exports) :
+	typeof define === 'function' && define.amd ? define(['exports'], factory) :
+	(factory((global.vueMoment = {})));
+}(this, (function (exports) { 'use strict';
+
+var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+
+function commonjsRequire () {
+	throw new Error('Dynamic requires are not currently supported by rollup-plugin-commonjs');
+}
+
+
+
+function createCommonjsModule(fn, module) {
+	return module = { exports: {} }, fn(module, module.exports), module.exports;
+}
+
+var moment = createCommonjsModule(function (module, exports) {
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+//! moment.js
+//! version : 2.19.1
+//! authors : Tim Wood, Iskren Chernev, Moment.js contributors
+//! license : MIT
+//! momentjs.com
+
+(function (global, factory) {
+    (_typeof(exports)) === 'object' && 'object' !== 'undefined' ? module.exports = factory() :  false ? undefined(factory) : global.moment = factory();
+})(commonjsGlobal, function () {
+    var hookCallback;
+
+    function hooks() {
+        return hookCallback.apply(null, arguments);
+    }
+
+    // This is done to register the method called with moment()
+    // without creating circular dependencies.
+    function setHookCallback(callback) {
+        hookCallback = callback;
+    }
+
+    function isArray(input) {
+        return input instanceof Array || Object.prototype.toString.call(input) === '[object Array]';
+    }
+
+    function isObject(input) {
+        // IE8 will treat undefined and null as object if it wasn't for
+        // input != null
+        return input != null && Object.prototype.toString.call(input) === '[object Object]';
+    }
+
+    function isObjectEmpty(obj) {
+        if (Object.getOwnPropertyNames) {
+            return Object.getOwnPropertyNames(obj).length === 0;
+        } else {
+            var k;
+            for (k in obj) {
+                if (obj.hasOwnProperty(k)) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+
+    function isUndefined(input) {
+        return input === void 0;
+    }
+
+    function isNumber(input) {
+        return typeof input === 'number' || Object.prototype.toString.call(input) === '[object Number]';
+    }
+
+    function isDate(input) {
+        return input instanceof Date || Object.prototype.toString.call(input) === '[object Date]';
+    }
+
+    function map(arr, fn) {
+        var res = [],
+            i;
+        for (i = 0; i < arr.length; ++i) {
+            res.push(fn(arr[i], i));
+        }
+        return res;
+    }
+
+    function hasOwnProp(a, b) {
+        return Object.prototype.hasOwnProperty.call(a, b);
+    }
+
+    function extend(a, b) {
+        for (var i in b) {
+            if (hasOwnProp(b, i)) {
+                a[i] = b[i];
+            }
+        }
+
+        if (hasOwnProp(b, 'toString')) {
+            a.toString = b.toString;
+        }
+
+        if (hasOwnProp(b, 'valueOf')) {
+            a.valueOf = b.valueOf;
+        }
+
+        return a;
+    }
+
+    function createUTC(input, format, locale, strict) {
+        return createLocalOrUTC(input, format, locale, strict, true).utc();
+    }
+
+    function defaultParsingFlags() {
+        // We need to deep clone this object.
+        return {
+            empty: false,
+            unusedTokens: [],
+            unusedInput: [],
+            overflow: -2,
+            charsLeftOver: 0,
+            nullInput: false,
+            invalidMonth: null,
+            invalidFormat: false,
+            userInvalidated: false,
+            iso: false,
+            parsedDateParts: [],
+            meridiem: null,
+            rfc2822: false,
+            weekdayMismatch: false
+        };
+    }
+
+    function getParsingFlags(m) {
+        if (m._pf == null) {
+            m._pf = defaultParsingFlags();
+        }
+        return m._pf;
+    }
+
+    var some;
+    if (Array.prototype.some) {
+        some = Array.prototype.some;
+    } else {
+        some = function some(fun) {
+            var t = Object(this);
+            var len = t.length >>> 0;
+
+            for (var i = 0; i < len; i++) {
+                if (i in t && fun.call(this, t[i], i, t)) {
+                    return true;
+                }
+            }
+
+            return false;
+        };
+    }
+
+    function isValid(m) {
+        if (m._isValid == null) {
+            var flags = getParsingFlags(m);
+            var parsedParts = some.call(flags.parsedDateParts, function (i) {
+                return i != null;
+            });
+            var isNowValid = !isNaN(m._d.getTime()) && flags.overflow < 0 && !flags.empty && !flags.invalidMonth && !flags.invalidWeekday && !flags.weekdayMismatch && !flags.nullInput && !flags.invalidFormat && !flags.userInvalidated && (!flags.meridiem || flags.meridiem && parsedParts);
+
+            if (m._strict) {
+                isNowValid = isNowValid && flags.charsLeftOver === 0 && flags.unusedTokens.length === 0 && flags.bigHour === undefined;
+            }
+
+            if (Object.isFrozen == null || !Object.isFrozen(m)) {
+                m._isValid = isNowValid;
+            } else {
+                return isNowValid;
+            }
+        }
+        return m._isValid;
+    }
+
+    function createInvalid(flags) {
+        var m = createUTC(NaN);
+        if (flags != null) {
+            extend(getParsingFlags(m), flags);
+        } else {
+            getParsingFlags(m).userInvalidated = true;
+        }
+
+        return m;
+    }
+
+    // Plugins that add properties should also add the key here (null value),
+    // so we can properly clone ourselves.
+    var momentProperties = hooks.momentProperties = [];
+
+    function copyConfig(to, from) {
+        var i, prop, val;
+
+        if (!isUndefined(from._isAMomentObject)) {
+            to._isAMomentObject = from._isAMomentObject;
+        }
+        if (!isUndefined(from._i)) {
+            to._i = from._i;
+        }
+        if (!isUndefined(from._f)) {
+            to._f = from._f;
+        }
+        if (!isUndefined(from._l)) {
+            to._l = from._l;
+        }
+        if (!isUndefined(from._strict)) {
+            to._strict = from._strict;
+        }
+        if (!isUndefined(from._tzm)) {
+            to._tzm = from._tzm;
+        }
+        if (!isUndefined(from._isUTC)) {
+            to._isUTC = from._isUTC;
+        }
+        if (!isUndefined(from._offset)) {
+            to._offset = from._offset;
+        }
+        if (!isUndefined(from._pf)) {
+            to._pf = getParsingFlags(from);
+        }
+        if (!isUndefined(from._locale)) {
+            to._locale = from._locale;
+        }
+
+        if (momentProperties.length > 0) {
+            for (i = 0; i < momentProperties.length; i++) {
+                prop = momentProperties[i];
+                val = from[prop];
+                if (!isUndefined(val)) {
+                    to[prop] = val;
+                }
+            }
+        }
+
+        return to;
+    }
+
+    var updateInProgress = false;
+
+    // Moment prototype object
+    function Moment(config) {
+        copyConfig(this, config);
+        this._d = new Date(config._d != null ? config._d.getTime() : NaN);
+        if (!this.isValid()) {
+            this._d = new Date(NaN);
+        }
+        // Prevent infinite loop in case updateOffset creates new moment
+        // objects.
+        if (updateInProgress === false) {
+            updateInProgress = true;
+            hooks.updateOffset(this);
+            updateInProgress = false;
+        }
+    }
+
+    function isMoment(obj) {
+        return obj instanceof Moment || obj != null && obj._isAMomentObject != null;
+    }
+
+    function absFloor(number) {
+        if (number < 0) {
+            // -0 -> 0
+            return Math.ceil(number) || 0;
+        } else {
+            return Math.floor(number);
+        }
+    }
+
+    function toInt(argumentForCoercion) {
+        var coercedNumber = +argumentForCoercion,
+            value = 0;
+
+        if (coercedNumber !== 0 && isFinite(coercedNumber)) {
+            value = absFloor(coercedNumber);
+        }
+
+        return value;
+    }
+
+    // compare two arrays, return the number of differences
+    function compareArrays(array1, array2, dontConvert) {
+        var len = Math.min(array1.length, array2.length),
+            lengthDiff = Math.abs(array1.length - array2.length),
+            diffs = 0,
+            i;
+        for (i = 0; i < len; i++) {
+            if (dontConvert && array1[i] !== array2[i] || !dontConvert && toInt(array1[i]) !== toInt(array2[i])) {
+                diffs++;
+            }
+        }
+        return diffs + lengthDiff;
+    }
+
+    function warn(msg) {
+        if (hooks.suppressDeprecationWarnings === false && typeof console !== 'undefined' && console.warn) {
+            console.warn('Deprecation warning: ' + msg);
+        }
+    }
+
+    function deprecate(msg, fn) {
+        var firstTime = true;
+
+        return extend(function () {
+            if (hooks.deprecationHandler != null) {
+                hooks.deprecationHandler(null, msg);
+            }
+            if (firstTime) {
+                var args = [];
+                var arg;
+                for (var i = 0; i < arguments.length; i++) {
+                    arg = '';
+                    if (_typeof(arguments[i]) === 'object') {
+                        arg += '\n[' + i + '] ';
+                        for (var key in arguments[0]) {
+                            arg += key + ': ' + arguments[0][key] + ', ';
+                        }
+                        arg = arg.slice(0, -2); // Remove trailing comma and space
+                    } else {
+                        arg = arguments[i];
+                    }
+                    args.push(arg);
+                }
+                warn(msg + '\nArguments: ' + Array.prototype.slice.call(args).join('') + '\n' + new Error().stack);
+                firstTime = false;
+            }
+            return fn.apply(this, arguments);
+        }, fn);
+    }
+
+    var deprecations = {};
+
+    function deprecateSimple(name, msg) {
+        if (hooks.deprecationHandler != null) {
+            hooks.deprecationHandler(name, msg);
+        }
+        if (!deprecations[name]) {
+            warn(msg);
+            deprecations[name] = true;
+        }
+    }
+
+    hooks.suppressDeprecationWarnings = false;
+    hooks.deprecationHandler = null;
+
+    function isFunction(input) {
+        return input instanceof Function || Object.prototype.toString.call(input) === '[object Function]';
+    }
+
+    function set(config) {
+        var prop, i;
+        for (i in config) {
+            prop = config[i];
+            if (isFunction(prop)) {
+                this[i] = prop;
+            } else {
+                this['_' + i] = prop;
+            }
+        }
+        this._config = config;
+        // Lenient ordinal parsing accepts just a number in addition to
+        // number + (possibly) stuff coming from _dayOfMonthOrdinalParse.
+        // TODO: Remove "ordinalParse" fallback in next major release.
+        this._dayOfMonthOrdinalParseLenient = new RegExp((this._dayOfMonthOrdinalParse.source || this._ordinalParse.source) + '|' + /\d{1,2}/.source);
+    }
+
+    function mergeConfigs(parentConfig, childConfig) {
+        var res = extend({}, parentConfig),
+            prop;
+        for (prop in childConfig) {
+            if (hasOwnProp(childConfig, prop)) {
+                if (isObject(parentConfig[prop]) && isObject(childConfig[prop])) {
+                    res[prop] = {};
+                    extend(res[prop], parentConfig[prop]);
+                    extend(res[prop], childConfig[prop]);
+                } else if (childConfig[prop] != null) {
+                    res[prop] = childConfig[prop];
+                } else {
+                    delete res[prop];
+                }
+            }
+        }
+        for (prop in parentConfig) {
+            if (hasOwnProp(parentConfig, prop) && !hasOwnProp(childConfig, prop) && isObject(parentConfig[prop])) {
+                // make sure changes to properties don't modify parent config
+                res[prop] = extend({}, res[prop]);
+            }
+        }
+        return res;
+    }
+
+    function Locale(config) {
+        if (config != null) {
+            this.set(config);
+        }
+    }
+
+    var keys;
+
+    if (Object.keys) {
+        keys = Object.keys;
+    } else {
+        keys = function keys(obj) {
+            var i,
+                res = [];
+            for (i in obj) {
+                if (hasOwnProp(obj, i)) {
+                    res.push(i);
+                }
+            }
+            return res;
+        };
+    }
+
+    var defaultCalendar = {
+        sameDay: '[Today at] LT',
+        nextDay: '[Tomorrow at] LT',
+        nextWeek: 'dddd [at] LT',
+        lastDay: '[Yesterday at] LT',
+        lastWeek: '[Last] dddd [at] LT',
+        sameElse: 'L'
+    };
+
+    function calendar(key, mom, now) {
+        var output = this._calendar[key] || this._calendar['sameElse'];
+        return isFunction(output) ? output.call(mom, now) : output;
+    }
+
+    var defaultLongDateFormat = {
+        LTS: 'h:mm:ss A',
+        LT: 'h:mm A',
+        L: 'MM/DD/YYYY',
+        LL: 'MMMM D, YYYY',
+        LLL: 'MMMM D, YYYY h:mm A',
+        LLLL: 'dddd, MMMM D, YYYY h:mm A'
+    };
+
+    function longDateFormat(key) {
+        var format = this._longDateFormat[key],
+            formatUpper = this._longDateFormat[key.toUpperCase()];
+
+        if (format || !formatUpper) {
+            return format;
+        }
+
+        this._longDateFormat[key] = formatUpper.replace(/MMMM|MM|DD|dddd/g, function (val) {
+            return val.slice(1);
+        });
+
+        return this._longDateFormat[key];
+    }
+
+    var defaultInvalidDate = 'Invalid date';
+
+    function invalidDate() {
+        return this._invalidDate;
+    }
+
+    var defaultOrdinal = '%d';
+    var defaultDayOfMonthOrdinalParse = /\d{1,2}/;
+
+    function ordinal(number) {
+        return this._ordinal.replace('%d', number);
+    }
+
+    var defaultRelativeTime = {
+        future: 'in %s',
+        past: '%s ago',
+        s: 'a few seconds',
+        ss: '%d seconds',
+        m: 'a minute',
+        mm: '%d minutes',
+        h: 'an hour',
+        hh: '%d hours',
+        d: 'a day',
+        dd: '%d days',
+        M: 'a month',
+        MM: '%d months',
+        y: 'a year',
+        yy: '%d years'
+    };
+
+    function relativeTime(number, withoutSuffix, string, isFuture) {
+        var output = this._relativeTime[string];
+        return isFunction(output) ? output(number, withoutSuffix, string, isFuture) : output.replace(/%d/i, number);
+    }
+
+    function pastFuture(diff, output) {
+        var format = this._relativeTime[diff > 0 ? 'future' : 'past'];
+        return isFunction(format) ? format(output) : format.replace(/%s/i, output);
+    }
+
+    var aliases = {};
+
+    function addUnitAlias(unit, shorthand) {
+        var lowerCase = unit.toLowerCase();
+        aliases[lowerCase] = aliases[lowerCase + 's'] = aliases[shorthand] = unit;
+    }
+
+    function normalizeUnits(units) {
+        return typeof units === 'string' ? aliases[units] || aliases[units.toLowerCase()] : undefined;
+    }
+
+    function normalizeObjectUnits(inputObject) {
+        var normalizedInput = {},
+            normalizedProp,
+            prop;
+
+        for (prop in inputObject) {
+            if (hasOwnProp(inputObject, prop)) {
+                normalizedProp = normalizeUnits(prop);
+                if (normalizedProp) {
+                    normalizedInput[normalizedProp] = inputObject[prop];
+                }
+            }
+        }
+
+        return normalizedInput;
+    }
+
+    var priorities = {};
+
+    function addUnitPriority(unit, priority) {
+        priorities[unit] = priority;
+    }
+
+    function getPrioritizedUnits(unitsObj) {
+        var units = [];
+        for (var u in unitsObj) {
+            units.push({ unit: u, priority: priorities[u] });
+        }
+        units.sort(function (a, b) {
+            return a.priority - b.priority;
+        });
+        return units;
+    }
+
+    function zeroFill(number, targetLength, forceSign) {
+        var absNumber = '' + Math.abs(number),
+            zerosToFill = targetLength - absNumber.length,
+            sign = number >= 0;
+        return (sign ? forceSign ? '+' : '' : '-') + Math.pow(10, Math.max(0, zerosToFill)).toString().substr(1) + absNumber;
+    }
+
+    var formattingTokens = /(\[[^\[]*\])|(\\)?([Hh]mm(ss)?|Mo|MM?M?M?|Do|DDDo|DD?D?D?|ddd?d?|do?|w[o|w]?|W[o|W]?|Qo?|YYYYYY|YYYYY|YYYY|YY|gg(ggg?)?|GG(GGG?)?|e|E|a|A|hh?|HH?|kk?|mm?|ss?|S{1,9}|x|X|zz?|ZZ?|.)/g;
+
+    var localFormattingTokens = /(\[[^\[]*\])|(\\)?(LTS|LT|LL?L?L?|l{1,4})/g;
+
+    var formatFunctions = {};
+
+    var formatTokenFunctions = {};
+
+    // token:    'M'
+    // padded:   ['MM', 2]
+    // ordinal:  'Mo'
+    // callback: function () { this.month() + 1 }
+    function addFormatToken(token, padded, ordinal, callback) {
+        var func = callback;
+        if (typeof callback === 'string') {
+            func = function func() {
+                return this[callback]();
+            };
+        }
+        if (token) {
+            formatTokenFunctions[token] = func;
+        }
+        if (padded) {
+            formatTokenFunctions[padded[0]] = function () {
+                return zeroFill(func.apply(this, arguments), padded[1], padded[2]);
+            };
+        }
+        if (ordinal) {
+            formatTokenFunctions[ordinal] = function () {
+                return this.localeData().ordinal(func.apply(this, arguments), token);
+            };
+        }
+    }
+
+    function removeFormattingTokens(input) {
+        if (input.match(/\[[\s\S]/)) {
+            return input.replace(/^\[|\]$/g, '');
+        }
+        return input.replace(/\\/g, '');
+    }
+
+    function makeFormatFunction(format) {
+        var array = format.match(formattingTokens),
+            i,
+            length;
+
+        for (i = 0, length = array.length; i < length; i++) {
+            if (formatTokenFunctions[array[i]]) {
+                array[i] = formatTokenFunctions[array[i]];
+            } else {
+                array[i] = removeFormattingTokens(array[i]);
+            }
+        }
+
+        return function (mom) {
+            var output = '',
+                i;
+            for (i = 0; i < length; i++) {
+                output += isFunction(array[i]) ? array[i].call(mom, format) : array[i];
+            }
+            return output;
+        };
+    }
+
+    // format date using native date object
+    function formatMoment(m, format) {
+        if (!m.isValid()) {
+            return m.localeData().invalidDate();
+        }
+
+        format = expandFormat(format, m.localeData());
+        formatFunctions[format] = formatFunctions[format] || makeFormatFunction(format);
+
+        return formatFunctions[format](m);
+    }
+
+    function expandFormat(format, locale) {
+        var i = 5;
+
+        function replaceLongDateFormatTokens(input) {
+            return locale.longDateFormat(input) || input;
+        }
+
+        localFormattingTokens.lastIndex = 0;
+        while (i >= 0 && localFormattingTokens.test(format)) {
+            format = format.replace(localFormattingTokens, replaceLongDateFormatTokens);
+            localFormattingTokens.lastIndex = 0;
+            i -= 1;
+        }
+
+        return format;
+    }
+
+    var match1 = /\d/; //       0 - 9
+    var match2 = /\d\d/; //      00 - 99
+    var match3 = /\d{3}/; //     000 - 999
+    var match4 = /\d{4}/; //    0000 - 9999
+    var match6 = /[+-]?\d{6}/; // -999999 - 999999
+    var match1to2 = /\d\d?/; //       0 - 99
+    var match3to4 = /\d\d\d\d?/; //     999 - 9999
+    var match5to6 = /\d\d\d\d\d\d?/; //   99999 - 999999
+    var match1to3 = /\d{1,3}/; //       0 - 999
+    var match1to4 = /\d{1,4}/; //       0 - 9999
+    var match1to6 = /[+-]?\d{1,6}/; // -999999 - 999999
+
+    var matchUnsigned = /\d+/; //       0 - inf
+    var matchSigned = /[+-]?\d+/; //    -inf - inf
+
+    var matchOffset = /Z|[+-]\d\d:?\d\d/gi; // +00:00 -00:00 +0000 -0000 or Z
+    var matchShortOffset = /Z|[+-]\d\d(?::?\d\d)?/gi; // +00 -00 +00:00 -00:00 +0000 -0000 or Z
+
+    var matchTimestamp = /[+-]?\d+(\.\d{1,3})?/; // 123456789 123456789.123
+
+    // any word (or two) characters or numbers including two/three word month in arabic.
+    // includes scottish gaelic two word and hyphenated months
+    var matchWord = /[0-9]*['a-z\u00A0-\u05FF\u0700-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+|[\u0600-\u06FF\/]+(\s*?[\u0600-\u06FF]+){1,2}/i;
+
+    var regexes = {};
+
+    function addRegexToken(token, regex, strictRegex) {
+        regexes[token] = isFunction(regex) ? regex : function (isStrict, localeData) {
+            return isStrict && strictRegex ? strictRegex : regex;
+        };
+    }
+
+    function getParseRegexForToken(token, config) {
+        if (!hasOwnProp(regexes, token)) {
+            return new RegExp(unescapeFormat(token));
+        }
+
+        return regexes[token](config._strict, config._locale);
+    }
+
+    // Code from http://stackoverflow.com/questions/3561493/is-there-a-regexp-escape-function-in-javascript
+    function unescapeFormat(s) {
+        return regexEscape(s.replace('\\', '').replace(/\\(\[)|\\(\])|\[([^\]\[]*)\]|\\(.)/g, function (matched, p1, p2, p3, p4) {
+            return p1 || p2 || p3 || p4;
+        }));
+    }
+
+    function regexEscape(s) {
+        return s.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+    }
+
+    var tokens = {};
+
+    function addParseToken(token, callback) {
+        var i,
+            func = callback;
+        if (typeof token === 'string') {
+            token = [token];
+        }
+        if (isNumber(callback)) {
+            func = function func(input, array) {
+                array[callback] = toInt(input);
+            };
+        }
+        for (i = 0; i < token.length; i++) {
+            tokens[token[i]] = func;
+        }
+    }
+
+    function addWeekParseToken(token, callback) {
+        addParseToken(token, function (input, array, config, token) {
+            config._w = config._w || {};
+            callback(input, config._w, config, token);
+        });
+    }
+
+    function addTimeToArrayFromToken(token, input, config) {
+        if (input != null && hasOwnProp(tokens, token)) {
+            tokens[token](input, config._a, config, token);
+        }
+    }
+
+    var YEAR = 0;
+    var MONTH = 1;
+    var DATE = 2;
+    var HOUR = 3;
+    var MINUTE = 4;
+    var SECOND = 5;
+    var MILLISECOND = 6;
+    var WEEK = 7;
+    var WEEKDAY = 8;
+
+    // FORMATTING
+
+    addFormatToken('Y', 0, 0, function () {
+        var y = this.year();
+        return y <= 9999 ? '' + y : '+' + y;
+    });
+
+    addFormatToken(0, ['YY', 2], 0, function () {
+        return this.year() % 100;
+    });
+
+    addFormatToken(0, ['YYYY', 4], 0, 'year');
+    addFormatToken(0, ['YYYYY', 5], 0, 'year');
+    addFormatToken(0, ['YYYYYY', 6, true], 0, 'year');
+
+    // ALIASES
+
+    addUnitAlias('year', 'y');
+
+    // PRIORITIES
+
+    addUnitPriority('year', 1);
+
+    // PARSING
+
+    addRegexToken('Y', matchSigned);
+    addRegexToken('YY', match1to2, match2);
+    addRegexToken('YYYY', match1to4, match4);
+    addRegexToken('YYYYY', match1to6, match6);
+    addRegexToken('YYYYYY', match1to6, match6);
+
+    addParseToken(['YYYYY', 'YYYYYY'], YEAR);
+    addParseToken('YYYY', function (input, array) {
+        array[YEAR] = input.length === 2 ? hooks.parseTwoDigitYear(input) : toInt(input);
+    });
+    addParseToken('YY', function (input, array) {
+        array[YEAR] = hooks.parseTwoDigitYear(input);
+    });
+    addParseToken('Y', function (input, array) {
+        array[YEAR] = parseInt(input, 10);
+    });
+
+    // HELPERS
+
+    function daysInYear(year) {
+        return isLeapYear(year) ? 366 : 365;
+    }
+
+    function isLeapYear(year) {
+        return year % 4 === 0 && year % 100 !== 0 || year % 400 === 0;
+    }
+
+    // HOOKS
+
+    hooks.parseTwoDigitYear = function (input) {
+        return toInt(input) + (toInt(input) > 68 ? 1900 : 2000);
+    };
+
+    // MOMENTS
+
+    var getSetYear = makeGetSet('FullYear', true);
+
+    function getIsLeapYear() {
+        return isLeapYear(this.year());
+    }
+
+    function makeGetSet(unit, keepTime) {
+        return function (value) {
+            if (value != null) {
+                set$1(this, unit, value);
+                hooks.updateOffset(this, keepTime);
+                return this;
+            } else {
+                return get(this, unit);
+            }
+        };
+    }
+
+    function get(mom, unit) {
+        return mom.isValid() ? mom._d['get' + (mom._isUTC ? 'UTC' : '') + unit]() : NaN;
+    }
+
+    function set$1(mom, unit, value) {
+        if (mom.isValid() && !isNaN(value)) {
+            if (unit === 'FullYear' && isLeapYear(mom.year())) {
+                mom._d['set' + (mom._isUTC ? 'UTC' : '') + unit](value, mom.month(), daysInMonth(value, mom.month()));
+            } else {
+                mom._d['set' + (mom._isUTC ? 'UTC' : '') + unit](value);
+            }
+        }
+    }
+
+    // MOMENTS
+
+    function stringGet(units) {
+        units = normalizeUnits(units);
+        if (isFunction(this[units])) {
+            return this[units]();
+        }
+        return this;
+    }
+
+    function stringSet(units, value) {
+        if ((typeof units === 'undefined' ? 'undefined' : _typeof(units)) === 'object') {
+            units = normalizeObjectUnits(units);
+            var prioritized = getPrioritizedUnits(units);
+            for (var i = 0; i < prioritized.length; i++) {
+                this[prioritized[i].unit](units[prioritized[i].unit]);
+            }
+        } else {
+            units = normalizeUnits(units);
+            if (isFunction(this[units])) {
+                return this[units](value);
+            }
+        }
+        return this;
+    }
+
+    function mod(n, x) {
+        return (n % x + x) % x;
+    }
+
+    var indexOf;
+
+    if (Array.prototype.indexOf) {
+        indexOf = Array.prototype.indexOf;
+    } else {
+        indexOf = function indexOf(o) {
+            // I know
+            var i;
+            for (i = 0; i < this.length; ++i) {
+                if (this[i] === o) {
+                    return i;
+                }
+            }
+            return -1;
+        };
+    }
+
+    function daysInMonth(year, month) {
+        if (isNaN(year) || isNaN(month)) {
+            return NaN;
+        }
+        var modMonth = mod(month, 12);
+        year += (month - modMonth) / 12;
+        return modMonth === 1 ? isLeapYear(year) ? 29 : 28 : 31 - modMonth % 7 % 2;
+    }
+
+    // FORMATTING
+
+    addFormatToken('M', ['MM', 2], 'Mo', function () {
+        return this.month() + 1;
+    });
+
+    addFormatToken('MMM', 0, 0, function (format) {
+        return this.localeData().monthsShort(this, format);
+    });
+
+    addFormatToken('MMMM', 0, 0, function (format) {
+        return this.localeData().months(this, format);
+    });
+
+    // ALIASES
+
+    addUnitAlias('month', 'M');
+
+    // PRIORITY
+
+    addUnitPriority('month', 8);
+
+    // PARSING
+
+    addRegexToken('M', match1to2);
+    addRegexToken('MM', match1to2, match2);
+    addRegexToken('MMM', function (isStrict, locale) {
+        return locale.monthsShortRegex(isStrict);
+    });
+    addRegexToken('MMMM', function (isStrict, locale) {
+        return locale.monthsRegex(isStrict);
+    });
+
+    addParseToken(['M', 'MM'], function (input, array) {
+        array[MONTH] = toInt(input) - 1;
+    });
+
+    addParseToken(['MMM', 'MMMM'], function (input, array, config, token) {
+        var month = config._locale.monthsParse(input, token, config._strict);
+        // if we didn't find a month name, mark the date as invalid.
+        if (month != null) {
+            array[MONTH] = month;
+        } else {
+            getParsingFlags(config).invalidMonth = input;
+        }
+    });
+
+    // LOCALES
+
+    var MONTHS_IN_FORMAT = /D[oD]?(\[[^\[\]]*\]|\s)+MMMM?/;
+    var defaultLocaleMonths = 'January_February_March_April_May_June_July_August_September_October_November_December'.split('_');
+    function localeMonths(m, format) {
+        if (!m) {
+            return isArray(this._months) ? this._months : this._months['standalone'];
+        }
+        return isArray(this._months) ? this._months[m.month()] : this._months[(this._months.isFormat || MONTHS_IN_FORMAT).test(format) ? 'format' : 'standalone'][m.month()];
+    }
+
+    var defaultLocaleMonthsShort = 'Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec'.split('_');
+    function localeMonthsShort(m, format) {
+        if (!m) {
+            return isArray(this._monthsShort) ? this._monthsShort : this._monthsShort['standalone'];
+        }
+        return isArray(this._monthsShort) ? this._monthsShort[m.month()] : this._monthsShort[MONTHS_IN_FORMAT.test(format) ? 'format' : 'standalone'][m.month()];
+    }
+
+    function handleStrictParse(monthName, format, strict) {
+        var i,
+            ii,
+            mom,
+            llc = monthName.toLocaleLowerCase();
+        if (!this._monthsParse) {
+            // this is not used
+            this._monthsParse = [];
+            this._longMonthsParse = [];
+            this._shortMonthsParse = [];
+            for (i = 0; i < 12; ++i) {
+                mom = createUTC([2000, i]);
+                this._shortMonthsParse[i] = this.monthsShort(mom, '').toLocaleLowerCase();
+                this._longMonthsParse[i] = this.months(mom, '').toLocaleLowerCase();
+            }
+        }
+
+        if (strict) {
+            if (format === 'MMM') {
+                ii = indexOf.call(this._shortMonthsParse, llc);
+                return ii !== -1 ? ii : null;
+            } else {
+                ii = indexOf.call(this._longMonthsParse, llc);
+                return ii !== -1 ? ii : null;
+            }
+        } else {
+            if (format === 'MMM') {
+                ii = indexOf.call(this._shortMonthsParse, llc);
+                if (ii !== -1) {
+                    return ii;
+                }
+                ii = indexOf.call(this._longMonthsParse, llc);
+                return ii !== -1 ? ii : null;
+            } else {
+                ii = indexOf.call(this._longMonthsParse, llc);
+                if (ii !== -1) {
+                    return ii;
+                }
+                ii = indexOf.call(this._shortMonthsParse, llc);
+                return ii !== -1 ? ii : null;
+            }
+        }
+    }
+
+    function localeMonthsParse(monthName, format, strict) {
+        var i, mom, regex;
+
+        if (this._monthsParseExact) {
+            return handleStrictParse.call(this, monthName, format, strict);
+        }
+
+        if (!this._monthsParse) {
+            this._monthsParse = [];
+            this._longMonthsParse = [];
+            this._shortMonthsParse = [];
+        }
+
+        // TODO: add sorting
+        // Sorting makes sure if one month (or abbr) is a prefix of another
+        // see sorting in computeMonthsParse
+        for (i = 0; i < 12; i++) {
+            // make the regex if we don't have it already
+            mom = createUTC([2000, i]);
+            if (strict && !this._longMonthsParse[i]) {
+                this._longMonthsParse[i] = new RegExp('^' + this.months(mom, '').replace('.', '') + '$', 'i');
+                this._shortMonthsParse[i] = new RegExp('^' + this.monthsShort(mom, '').replace('.', '') + '$', 'i');
+            }
+            if (!strict && !this._monthsParse[i]) {
+                regex = '^' + this.months(mom, '') + '|^' + this.monthsShort(mom, '');
+                this._monthsParse[i] = new RegExp(regex.replace('.', ''), 'i');
+            }
+            // test the regex
+            if (strict && format === 'MMMM' && this._longMonthsParse[i].test(monthName)) {
+                return i;
+            } else if (strict && format === 'MMM' && this._shortMonthsParse[i].test(monthName)) {
+                return i;
+            } else if (!strict && this._monthsParse[i].test(monthName)) {
+                return i;
+            }
+        }
+    }
+
+    // MOMENTS
+
+    function setMonth(mom, value) {
+        var dayOfMonth;
+
+        if (!mom.isValid()) {
+            // No op
+            return mom;
+        }
+
+        if (typeof value === 'string') {
+            if (/^\d+$/.test(value)) {
+                value = toInt(value);
+            } else {
+                value = mom.localeData().monthsParse(value);
+                // TODO: Another silent failure?
+                if (!isNumber(value)) {
+                    return mom;
+                }
+            }
+        }
+
+        dayOfMonth = Math.min(mom.date(), daysInMonth(mom.year(), value));
+        mom._d['set' + (mom._isUTC ? 'UTC' : '') + 'Month'](value, dayOfMonth);
+        return mom;
+    }
+
+    function getSetMonth(value) {
+        if (value != null) {
+            setMonth(this, value);
+            hooks.updateOffset(this, true);
+            return this;
+        } else {
+            return get(this, 'Month');
+        }
+    }
+
+    function getDaysInMonth() {
+        return daysInMonth(this.year(), this.month());
+    }
+
+    var defaultMonthsShortRegex = matchWord;
+    function monthsShortRegex(isStrict) {
+        if (this._monthsParseExact) {
+            if (!hasOwnProp(this, '_monthsRegex')) {
+                computeMonthsParse.call(this);
+            }
+            if (isStrict) {
+                return this._monthsShortStrictRegex;
+            } else {
+                return this._monthsShortRegex;
+            }
+        } else {
+            if (!hasOwnProp(this, '_monthsShortRegex')) {
+                this._monthsShortRegex = defaultMonthsShortRegex;
+            }
+            return this._monthsShortStrictRegex && isStrict ? this._monthsShortStrictRegex : this._monthsShortRegex;
+        }
+    }
+
+    var defaultMonthsRegex = matchWord;
+    function monthsRegex(isStrict) {
+        if (this._monthsParseExact) {
+            if (!hasOwnProp(this, '_monthsRegex')) {
+                computeMonthsParse.call(this);
+            }
+            if (isStrict) {
+                return this._monthsStrictRegex;
+            } else {
+                return this._monthsRegex;
+            }
+        } else {
+            if (!hasOwnProp(this, '_monthsRegex')) {
+                this._monthsRegex = defaultMonthsRegex;
+            }
+            return this._monthsStrictRegex && isStrict ? this._monthsStrictRegex : this._monthsRegex;
+        }
+    }
+
+    function computeMonthsParse() {
+        function cmpLenRev(a, b) {
+            return b.length - a.length;
+        }
+
+        var shortPieces = [],
+            longPieces = [],
+            mixedPieces = [],
+            i,
+            mom;
+        for (i = 0; i < 12; i++) {
+            // make the regex if we don't have it already
+            mom = createUTC([2000, i]);
+            shortPieces.push(this.monthsShort(mom, ''));
+            longPieces.push(this.months(mom, ''));
+            mixedPieces.push(this.months(mom, ''));
+            mixedPieces.push(this.monthsShort(mom, ''));
+        }
+        // Sorting makes sure if one month (or abbr) is a prefix of another it
+        // will match the longer piece.
+        shortPieces.sort(cmpLenRev);
+        longPieces.sort(cmpLenRev);
+        mixedPieces.sort(cmpLenRev);
+        for (i = 0; i < 12; i++) {
+            shortPieces[i] = regexEscape(shortPieces[i]);
+            longPieces[i] = regexEscape(longPieces[i]);
+        }
+        for (i = 0; i < 24; i++) {
+            mixedPieces[i] = regexEscape(mixedPieces[i]);
+        }
+
+        this._monthsRegex = new RegExp('^(' + mixedPieces.join('|') + ')', 'i');
+        this._monthsShortRegex = this._monthsRegex;
+        this._monthsStrictRegex = new RegExp('^(' + longPieces.join('|') + ')', 'i');
+        this._monthsShortStrictRegex = new RegExp('^(' + shortPieces.join('|') + ')', 'i');
+    }
+
+    function createDate(y, m, d, h, M, s, ms) {
+        // can't just apply() to create a date:
+        // https://stackoverflow.com/q/181348
+        var date = new Date(y, m, d, h, M, s, ms);
+
+        // the date constructor remaps years 0-99 to 1900-1999
+        if (y < 100 && y >= 0 && isFinite(date.getFullYear())) {
+            date.setFullYear(y);
+        }
+        return date;
+    }
+
+    function createUTCDate(y) {
+        var date = new Date(Date.UTC.apply(null, arguments));
+
+        // the Date.UTC function remaps years 0-99 to 1900-1999
+        if (y < 100 && y >= 0 && isFinite(date.getUTCFullYear())) {
+            date.setUTCFullYear(y);
+        }
+        return date;
+    }
+
+    // start-of-first-week - start-of-year
+    function firstWeekOffset(year, dow, doy) {
+        var // first-week day -- which january is always in the first week (4 for iso, 1 for other)
+        fwd = 7 + dow - doy,
+
+        // first-week day local weekday -- which local weekday is fwd
+        fwdlw = (7 + createUTCDate(year, 0, fwd).getUTCDay() - dow) % 7;
+
+        return -fwdlw + fwd - 1;
+    }
+
+    // https://en.wikipedia.org/wiki/ISO_week_date#Calculating_a_date_given_the_year.2C_week_number_and_weekday
+    function dayOfYearFromWeeks(year, week, weekday, dow, doy) {
+        var localWeekday = (7 + weekday - dow) % 7,
+            weekOffset = firstWeekOffset(year, dow, doy),
+            dayOfYear = 1 + 7 * (week - 1) + localWeekday + weekOffset,
+            resYear,
+            resDayOfYear;
+
+        if (dayOfYear <= 0) {
+            resYear = year - 1;
+            resDayOfYear = daysInYear(resYear) + dayOfYear;
+        } else if (dayOfYear > daysInYear(year)) {
+            resYear = year + 1;
+            resDayOfYear = dayOfYear - daysInYear(year);
+        } else {
+            resYear = year;
+            resDayOfYear = dayOfYear;
+        }
+
+        return {
+            year: resYear,
+            dayOfYear: resDayOfYear
+        };
+    }
+
+    function weekOfYear(mom, dow, doy) {
+        var weekOffset = firstWeekOffset(mom.year(), dow, doy),
+            week = Math.floor((mom.dayOfYear() - weekOffset - 1) / 7) + 1,
+            resWeek,
+            resYear;
+
+        if (week < 1) {
+            resYear = mom.year() - 1;
+            resWeek = week + weeksInYear(resYear, dow, doy);
+        } else if (week > weeksInYear(mom.year(), dow, doy)) {
+            resWeek = week - weeksInYear(mom.year(), dow, doy);
+            resYear = mom.year() + 1;
+        } else {
+            resYear = mom.year();
+            resWeek = week;
+        }
+
+        return {
+            week: resWeek,
+            year: resYear
+        };
+    }
+
+    function weeksInYear(year, dow, doy) {
+        var weekOffset = firstWeekOffset(year, dow, doy),
+            weekOffsetNext = firstWeekOffset(year + 1, dow, doy);
+        return (daysInYear(year) - weekOffset + weekOffsetNext) / 7;
+    }
+
+    // FORMATTING
+
+    addFormatToken('w', ['ww', 2], 'wo', 'week');
+    addFormatToken('W', ['WW', 2], 'Wo', 'isoWeek');
+
+    // ALIASES
+
+    addUnitAlias('week', 'w');
+    addUnitAlias('isoWeek', 'W');
+
+    // PRIORITIES
+
+    addUnitPriority('week', 5);
+    addUnitPriority('isoWeek', 5);
+
+    // PARSING
+
+    addRegexToken('w', match1to2);
+    addRegexToken('ww', match1to2, match2);
+    addRegexToken('W', match1to2);
+    addRegexToken('WW', match1to2, match2);
+
+    addWeekParseToken(['w', 'ww', 'W', 'WW'], function (input, week, config, token) {
+        week[token.substr(0, 1)] = toInt(input);
+    });
+
+    // HELPERS
+
+    // LOCALES
+
+    function localeWeek(mom) {
+        return weekOfYear(mom, this._week.dow, this._week.doy).week;
+    }
+
+    var defaultLocaleWeek = {
+        dow: 0, // Sunday is the first day of the week.
+        doy: 6 // The week that contains Jan 1st is the first week of the year.
+    };
+
+    function localeFirstDayOfWeek() {
+        return this._week.dow;
+    }
+
+    function localeFirstDayOfYear() {
+        return this._week.doy;
+    }
+
+    // MOMENTS
+
+    function getSetWeek(input) {
+        var week = this.localeData().week(this);
+        return input == null ? week : this.add((input - week) * 7, 'd');
+    }
+
+    function getSetISOWeek(input) {
+        var week = weekOfYear(this, 1, 4).week;
+        return input == null ? week : this.add((input - week) * 7, 'd');
+    }
+
+    // FORMATTING
+
+    addFormatToken('d', 0, 'do', 'day');
+
+    addFormatToken('dd', 0, 0, function (format) {
+        return this.localeData().weekdaysMin(this, format);
+    });
+
+    addFormatToken('ddd', 0, 0, function (format) {
+        return this.localeData().weekdaysShort(this, format);
+    });
+
+    addFormatToken('dddd', 0, 0, function (format) {
+        return this.localeData().weekdays(this, format);
+    });
+
+    addFormatToken('e', 0, 0, 'weekday');
+    addFormatToken('E', 0, 0, 'isoWeekday');
+
+    // ALIASES
+
+    addUnitAlias('day', 'd');
+    addUnitAlias('weekday', 'e');
+    addUnitAlias('isoWeekday', 'E');
+
+    // PRIORITY
+    addUnitPriority('day', 11);
+    addUnitPriority('weekday', 11);
+    addUnitPriority('isoWeekday', 11);
+
+    // PARSING
+
+    addRegexToken('d', match1to2);
+    addRegexToken('e', match1to2);
+    addRegexToken('E', match1to2);
+    addRegexToken('dd', function (isStrict, locale) {
+        return locale.weekdaysMinRegex(isStrict);
+    });
+    addRegexToken('ddd', function (isStrict, locale) {
+        return locale.weekdaysShortRegex(isStrict);
+    });
+    addRegexToken('dddd', function (isStrict, locale) {
+        return locale.weekdaysRegex(isStrict);
+    });
+
+    addWeekParseToken(['dd', 'ddd', 'dddd'], function (input, week, config, token) {
+        var weekday = config._locale.weekdaysParse(input, token, config._strict);
+        // if we didn't get a weekday name, mark the date as invalid
+        if (weekday != null) {
+            week.d = weekday;
+        } else {
+            getParsingFlags(config).invalidWeekday = input;
+        }
+    });
+
+    addWeekParseToken(['d', 'e', 'E'], function (input, week, config, token) {
+        week[token] = toInt(input);
+    });
+
+    // HELPERS
+
+    function parseWeekday(input, locale) {
+        if (typeof input !== 'string') {
+            return input;
+        }
+
+        if (!isNaN(input)) {
+            return parseInt(input, 10);
+        }
+
+        input = locale.weekdaysParse(input);
+        if (typeof input === 'number') {
+            return input;
+        }
+
+        return null;
+    }
+
+    function parseIsoWeekday(input, locale) {
+        if (typeof input === 'string') {
+            return locale.weekdaysParse(input) % 7 || 7;
+        }
+        return isNaN(input) ? null : input;
+    }
+
+    // LOCALES
+
+    var defaultLocaleWeekdays = 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split('_');
+    function localeWeekdays(m, format) {
+        if (!m) {
+            return isArray(this._weekdays) ? this._weekdays : this._weekdays['standalone'];
+        }
+        return isArray(this._weekdays) ? this._weekdays[m.day()] : this._weekdays[this._weekdays.isFormat.test(format) ? 'format' : 'standalone'][m.day()];
+    }
+
+    var defaultLocaleWeekdaysShort = 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_');
+    function localeWeekdaysShort(m) {
+        return m ? this._weekdaysShort[m.day()] : this._weekdaysShort;
+    }
+
+    var defaultLocaleWeekdaysMin = 'Su_Mo_Tu_We_Th_Fr_Sa'.split('_');
+    function localeWeekdaysMin(m) {
+        return m ? this._weekdaysMin[m.day()] : this._weekdaysMin;
+    }
+
+    function handleStrictParse$1(weekdayName, format, strict) {
+        var i,
+            ii,
+            mom,
+            llc = weekdayName.toLocaleLowerCase();
+        if (!this._weekdaysParse) {
+            this._weekdaysParse = [];
+            this._shortWeekdaysParse = [];
+            this._minWeekdaysParse = [];
+
+            for (i = 0; i < 7; ++i) {
+                mom = createUTC([2000, 1]).day(i);
+                this._minWeekdaysParse[i] = this.weekdaysMin(mom, '').toLocaleLowerCase();
+                this._shortWeekdaysParse[i] = this.weekdaysShort(mom, '').toLocaleLowerCase();
+                this._weekdaysParse[i] = this.weekdays(mom, '').toLocaleLowerCase();
+            }
+        }
+
+        if (strict) {
+            if (format === 'dddd') {
+                ii = indexOf.call(this._weekdaysParse, llc);
+                return ii !== -1 ? ii : null;
+            } else if (format === 'ddd') {
+                ii = indexOf.call(this._shortWeekdaysParse, llc);
+                return ii !== -1 ? ii : null;
+            } else {
+                ii = indexOf.call(this._minWeekdaysParse, llc);
+                return ii !== -1 ? ii : null;
+            }
+        } else {
+            if (format === 'dddd') {
+                ii = indexOf.call(this._weekdaysParse, llc);
+                if (ii !== -1) {
+                    return ii;
+                }
+                ii = indexOf.call(this._shortWeekdaysParse, llc);
+                if (ii !== -1) {
+                    return ii;
+                }
+                ii = indexOf.call(this._minWeekdaysParse, llc);
+                return ii !== -1 ? ii : null;
+            } else if (format === 'ddd') {
+                ii = indexOf.call(this._shortWeekdaysParse, llc);
+                if (ii !== -1) {
+                    return ii;
+                }
+                ii = indexOf.call(this._weekdaysParse, llc);
+                if (ii !== -1) {
+                    return ii;
+                }
+                ii = indexOf.call(this._minWeekdaysParse, llc);
+                return ii !== -1 ? ii : null;
+            } else {
+                ii = indexOf.call(this._minWeekdaysParse, llc);
+                if (ii !== -1) {
+                    return ii;
+                }
+                ii = indexOf.call(this._weekdaysParse, llc);
+                if (ii !== -1) {
+                    return ii;
+                }
+                ii = indexOf.call(this._shortWeekdaysParse, llc);
+                return ii !== -1 ? ii : null;
+            }
+        }
+    }
+
+    function localeWeekdaysParse(weekdayName, format, strict) {
+        var i, mom, regex;
+
+        if (this._weekdaysParseExact) {
+            return handleStrictParse$1.call(this, weekdayName, format, strict);
+        }
+
+        if (!this._weekdaysParse) {
+            this._weekdaysParse = [];
+            this._minWeekdaysParse = [];
+            this._shortWeekdaysParse = [];
+            this._fullWeekdaysParse = [];
+        }
+
+        for (i = 0; i < 7; i++) {
+            // make the regex if we don't have it already
+
+            mom = createUTC([2000, 1]).day(i);
+            if (strict && !this._fullWeekdaysParse[i]) {
+                this._fullWeekdaysParse[i] = new RegExp('^' + this.weekdays(mom, '').replace('.', '\.?') + '$', 'i');
+                this._shortWeekdaysParse[i] = new RegExp('^' + this.weekdaysShort(mom, '').replace('.', '\.?') + '$', 'i');
+                this._minWeekdaysParse[i] = new RegExp('^' + this.weekdaysMin(mom, '').replace('.', '\.?') + '$', 'i');
+            }
+            if (!this._weekdaysParse[i]) {
+                regex = '^' + this.weekdays(mom, '') + '|^' + this.weekdaysShort(mom, '') + '|^' + this.weekdaysMin(mom, '');
+                this._weekdaysParse[i] = new RegExp(regex.replace('.', ''), 'i');
+            }
+            // test the regex
+            if (strict && format === 'dddd' && this._fullWeekdaysParse[i].test(weekdayName)) {
+                return i;
+            } else if (strict && format === 'ddd' && this._shortWeekdaysParse[i].test(weekdayName)) {
+                return i;
+            } else if (strict && format === 'dd' && this._minWeekdaysParse[i].test(weekdayName)) {
+                return i;
+            } else if (!strict && this._weekdaysParse[i].test(weekdayName)) {
+                return i;
+            }
+        }
+    }
+
+    // MOMENTS
+
+    function getSetDayOfWeek(input) {
+        if (!this.isValid()) {
+            return input != null ? this : NaN;
+        }
+        var day = this._isUTC ? this._d.getUTCDay() : this._d.getDay();
+        if (input != null) {
+            input = parseWeekday(input, this.localeData());
+            return this.add(input - day, 'd');
+        } else {
+            return day;
+        }
+    }
+
+    function getSetLocaleDayOfWeek(input) {
+        if (!this.isValid()) {
+            return input != null ? this : NaN;
+        }
+        var weekday = (this.day() + 7 - this.localeData()._week.dow) % 7;
+        return input == null ? weekday : this.add(input - weekday, 'd');
+    }
+
+    function getSetISODayOfWeek(input) {
+        if (!this.isValid()) {
+            return input != null ? this : NaN;
+        }
+
+        // behaves the same as moment#day except
+        // as a getter, returns 7 instead of 0 (1-7 range instead of 0-6)
+        // as a setter, sunday should belong to the previous week.
+
+        if (input != null) {
+            var weekday = parseIsoWeekday(input, this.localeData());
+            return this.day(this.day() % 7 ? weekday : weekday - 7);
+        } else {
+            return this.day() || 7;
+        }
+    }
+
+    var defaultWeekdaysRegex = matchWord;
+    function weekdaysRegex(isStrict) {
+        if (this._weekdaysParseExact) {
+            if (!hasOwnProp(this, '_weekdaysRegex')) {
+                computeWeekdaysParse.call(this);
+            }
+            if (isStrict) {
+                return this._weekdaysStrictRegex;
+            } else {
+                return this._weekdaysRegex;
+            }
+        } else {
+            if (!hasOwnProp(this, '_weekdaysRegex')) {
+                this._weekdaysRegex = defaultWeekdaysRegex;
+            }
+            return this._weekdaysStrictRegex && isStrict ? this._weekdaysStrictRegex : this._weekdaysRegex;
+        }
+    }
+
+    var defaultWeekdaysShortRegex = matchWord;
+    function weekdaysShortRegex(isStrict) {
+        if (this._weekdaysParseExact) {
+            if (!hasOwnProp(this, '_weekdaysRegex')) {
+                computeWeekdaysParse.call(this);
+            }
+            if (isStrict) {
+                return this._weekdaysShortStrictRegex;
+            } else {
+                return this._weekdaysShortRegex;
+            }
+        } else {
+            if (!hasOwnProp(this, '_weekdaysShortRegex')) {
+                this._weekdaysShortRegex = defaultWeekdaysShortRegex;
+            }
+            return this._weekdaysShortStrictRegex && isStrict ? this._weekdaysShortStrictRegex : this._weekdaysShortRegex;
+        }
+    }
+
+    var defaultWeekdaysMinRegex = matchWord;
+    function weekdaysMinRegex(isStrict) {
+        if (this._weekdaysParseExact) {
+            if (!hasOwnProp(this, '_weekdaysRegex')) {
+                computeWeekdaysParse.call(this);
+            }
+            if (isStrict) {
+                return this._weekdaysMinStrictRegex;
+            } else {
+                return this._weekdaysMinRegex;
+            }
+        } else {
+            if (!hasOwnProp(this, '_weekdaysMinRegex')) {
+                this._weekdaysMinRegex = defaultWeekdaysMinRegex;
+            }
+            return this._weekdaysMinStrictRegex && isStrict ? this._weekdaysMinStrictRegex : this._weekdaysMinRegex;
+        }
+    }
+
+    function computeWeekdaysParse() {
+        function cmpLenRev(a, b) {
+            return b.length - a.length;
+        }
+
+        var minPieces = [],
+            shortPieces = [],
+            longPieces = [],
+            mixedPieces = [],
+            i,
+            mom,
+            minp,
+            shortp,
+            longp;
+        for (i = 0; i < 7; i++) {
+            // make the regex if we don't have it already
+            mom = createUTC([2000, 1]).day(i);
+            minp = this.weekdaysMin(mom, '');
+            shortp = this.weekdaysShort(mom, '');
+            longp = this.weekdays(mom, '');
+            minPieces.push(minp);
+            shortPieces.push(shortp);
+            longPieces.push(longp);
+            mixedPieces.push(minp);
+            mixedPieces.push(shortp);
+            mixedPieces.push(longp);
+        }
+        // Sorting makes sure if one weekday (or abbr) is a prefix of another it
+        // will match the longer piece.
+        minPieces.sort(cmpLenRev);
+        shortPieces.sort(cmpLenRev);
+        longPieces.sort(cmpLenRev);
+        mixedPieces.sort(cmpLenRev);
+        for (i = 0; i < 7; i++) {
+            shortPieces[i] = regexEscape(shortPieces[i]);
+            longPieces[i] = regexEscape(longPieces[i]);
+            mixedPieces[i] = regexEscape(mixedPieces[i]);
+        }
+
+        this._weekdaysRegex = new RegExp('^(' + mixedPieces.join('|') + ')', 'i');
+        this._weekdaysShortRegex = this._weekdaysRegex;
+        this._weekdaysMinRegex = this._weekdaysRegex;
+
+        this._weekdaysStrictRegex = new RegExp('^(' + longPieces.join('|') + ')', 'i');
+        this._weekdaysShortStrictRegex = new RegExp('^(' + shortPieces.join('|') + ')', 'i');
+        this._weekdaysMinStrictRegex = new RegExp('^(' + minPieces.join('|') + ')', 'i');
+    }
+
+    // FORMATTING
+
+    function hFormat() {
+        return this.hours() % 12 || 12;
+    }
+
+    function kFormat() {
+        return this.hours() || 24;
+    }
+
+    addFormatToken('H', ['HH', 2], 0, 'hour');
+    addFormatToken('h', ['hh', 2], 0, hFormat);
+    addFormatToken('k', ['kk', 2], 0, kFormat);
+
+    addFormatToken('hmm', 0, 0, function () {
+        return '' + hFormat.apply(this) + zeroFill(this.minutes(), 2);
+    });
+
+    addFormatToken('hmmss', 0, 0, function () {
+        return '' + hFormat.apply(this) + zeroFill(this.minutes(), 2) + zeroFill(this.seconds(), 2);
+    });
+
+    addFormatToken('Hmm', 0, 0, function () {
+        return '' + this.hours() + zeroFill(this.minutes(), 2);
+    });
+
+    addFormatToken('Hmmss', 0, 0, function () {
+        return '' + this.hours() + zeroFill(this.minutes(), 2) + zeroFill(this.seconds(), 2);
+    });
+
+    function meridiem(token, lowercase) {
+        addFormatToken(token, 0, 0, function () {
+            return this.localeData().meridiem(this.hours(), this.minutes(), lowercase);
+        });
+    }
+
+    meridiem('a', true);
+    meridiem('A', false);
+
+    // ALIASES
+
+    addUnitAlias('hour', 'h');
+
+    // PRIORITY
+    addUnitPriority('hour', 13);
+
+    // PARSING
+
+    function matchMeridiem(isStrict, locale) {
+        return locale._meridiemParse;
+    }
+
+    addRegexToken('a', matchMeridiem);
+    addRegexToken('A', matchMeridiem);
+    addRegexToken('H', match1to2);
+    addRegexToken('h', match1to2);
+    addRegexToken('k', match1to2);
+    addRegexToken('HH', match1to2, match2);
+    addRegexToken('hh', match1to2, match2);
+    addRegexToken('kk', match1to2, match2);
+
+    addRegexToken('hmm', match3to4);
+    addRegexToken('hmmss', match5to6);
+    addRegexToken('Hmm', match3to4);
+    addRegexToken('Hmmss', match5to6);
+
+    addParseToken(['H', 'HH'], HOUR);
+    addParseToken(['k', 'kk'], function (input, array, config) {
+        var kInput = toInt(input);
+        array[HOUR] = kInput === 24 ? 0 : kInput;
+    });
+    addParseToken(['a', 'A'], function (input, array, config) {
+        config._isPm = config._locale.isPM(input);
+        config._meridiem = input;
+    });
+    addParseToken(['h', 'hh'], function (input, array, config) {
+        array[HOUR] = toInt(input);
+        getParsingFlags(config).bigHour = true;
+    });
+    addParseToken('hmm', function (input, array, config) {
+        var pos = input.length - 2;
+        array[HOUR] = toInt(input.substr(0, pos));
+        array[MINUTE] = toInt(input.substr(pos));
+        getParsingFlags(config).bigHour = true;
+    });
+    addParseToken('hmmss', function (input, array, config) {
+        var pos1 = input.length - 4;
+        var pos2 = input.length - 2;
+        array[HOUR] = toInt(input.substr(0, pos1));
+        array[MINUTE] = toInt(input.substr(pos1, 2));
+        array[SECOND] = toInt(input.substr(pos2));
+        getParsingFlags(config).bigHour = true;
+    });
+    addParseToken('Hmm', function (input, array, config) {
+        var pos = input.length - 2;
+        array[HOUR] = toInt(input.substr(0, pos));
+        array[MINUTE] = toInt(input.substr(pos));
+    });
+    addParseToken('Hmmss', function (input, array, config) {
+        var pos1 = input.length - 4;
+        var pos2 = input.length - 2;
+        array[HOUR] = toInt(input.substr(0, pos1));
+        array[MINUTE] = toInt(input.substr(pos1, 2));
+        array[SECOND] = toInt(input.substr(pos2));
+    });
+
+    // LOCALES
+
+    function localeIsPM(input) {
+        // IE8 Quirks Mode & IE7 Standards Mode do not allow accessing strings like arrays
+        // Using charAt should be more compatible.
+        return (input + '').toLowerCase().charAt(0) === 'p';
+    }
+
+    var defaultLocaleMeridiemParse = /[ap]\.?m?\.?/i;
+    function localeMeridiem(hours, minutes, isLower) {
+        if (hours > 11) {
+            return isLower ? 'pm' : 'PM';
+        } else {
+            return isLower ? 'am' : 'AM';
+        }
+    }
+
+    // MOMENTS
+
+    // Setting the hour should keep the time, because the user explicitly
+    // specified which hour he wants. So trying to maintain the same hour (in
+    // a new timezone) makes sense. Adding/subtracting hours does not follow
+    // this rule.
+    var getSetHour = makeGetSet('Hours', true);
+
+    // months
+    // week
+    // weekdays
+    // meridiem
+    var baseConfig = {
+        calendar: defaultCalendar,
+        longDateFormat: defaultLongDateFormat,
+        invalidDate: defaultInvalidDate,
+        ordinal: defaultOrdinal,
+        dayOfMonthOrdinalParse: defaultDayOfMonthOrdinalParse,
+        relativeTime: defaultRelativeTime,
+
+        months: defaultLocaleMonths,
+        monthsShort: defaultLocaleMonthsShort,
+
+        week: defaultLocaleWeek,
+
+        weekdays: defaultLocaleWeekdays,
+        weekdaysMin: defaultLocaleWeekdaysMin,
+        weekdaysShort: defaultLocaleWeekdaysShort,
+
+        meridiemParse: defaultLocaleMeridiemParse
+    };
+
+    // internal storage for locale config files
+    var locales = {};
+    var localeFamilies = {};
+    var globalLocale;
+
+    function normalizeLocale(key) {
+        return key ? key.toLowerCase().replace('_', '-') : key;
+    }
+
+    // pick the locale from the array
+    // try ['en-au', 'en-gb'] as 'en-au', 'en-gb', 'en', as in move through the list trying each
+    // substring from most specific to least, but move to the next array item if it's a more specific variant than the current root
+    function chooseLocale(names) {
+        var i = 0,
+            j,
+            next,
+            locale,
+            split;
+
+        while (i < names.length) {
+            split = normalizeLocale(names[i]).split('-');
+            j = split.length;
+            next = normalizeLocale(names[i + 1]);
+            next = next ? next.split('-') : null;
+            while (j > 0) {
+                locale = loadLocale(split.slice(0, j).join('-'));
+                if (locale) {
+                    return locale;
+                }
+                if (next && next.length >= j && compareArrays(split, next, true) >= j - 1) {
+                    //the next array item is better than a shallower substring of this one
+                    break;
+                }
+                j--;
+            }
+            i++;
+        }
+        return null;
+    }
+
+    function loadLocale(name) {
+        var oldLocale = null;
+        // TODO: Find a better way to register and load all the locales in Node
+        if (!locales[name] && 'object' !== 'undefined' && module && module.exports) {
+            try {
+                oldLocale = globalLocale._abbr;
+                var aliasedRequire = commonjsRequire;
+                aliasedRequire('./locale/' + name);
+                getSetGlobalLocale(oldLocale);
+            } catch (e) {}
+        }
+        return locales[name];
+    }
+
+    // This function will load locale and then set the global locale.  If
+    // no arguments are passed in, it will simply return the current global
+    // locale key.
+    function getSetGlobalLocale(key, values) {
+        var data;
+        if (key) {
+            if (isUndefined(values)) {
+                data = getLocale(key);
+            } else {
+                data = defineLocale(key, values);
+            }
+
+            if (data) {
+                // moment.duration._locale = moment._locale = data;
+                globalLocale = data;
+            }
+        }
+
+        return globalLocale._abbr;
+    }
+
+    function defineLocale(name, config) {
+        if (config !== null) {
+            var parentConfig = baseConfig;
+            config.abbr = name;
+            if (locales[name] != null) {
+                deprecateSimple('defineLocaleOverride', 'use moment.updateLocale(localeName, config) to change ' + 'an existing locale. moment.defineLocale(localeName, ' + 'config) should only be used for creating a new locale ' + 'See http://momentjs.com/guides/#/warnings/define-locale/ for more info.');
+                parentConfig = locales[name]._config;
+            } else if (config.parentLocale != null) {
+                if (locales[config.parentLocale] != null) {
+                    parentConfig = locales[config.parentLocale]._config;
+                } else {
+                    if (!localeFamilies[config.parentLocale]) {
+                        localeFamilies[config.parentLocale] = [];
+                    }
+                    localeFamilies[config.parentLocale].push({
+                        name: name,
+                        config: config
+                    });
+                    return null;
+                }
+            }
+            locales[name] = new Locale(mergeConfigs(parentConfig, config));
+
+            if (localeFamilies[name]) {
+                localeFamilies[name].forEach(function (x) {
+                    defineLocale(x.name, x.config);
+                });
+            }
+
+            // backwards compat for now: also set the locale
+            // make sure we set the locale AFTER all child locales have been
+            // created, so we won't end up with the child locale set.
+            getSetGlobalLocale(name);
+
+            return locales[name];
+        } else {
+            // useful for testing
+            delete locales[name];
+            return null;
+        }
+    }
+
+    function updateLocale(name, config) {
+        if (config != null) {
+            var locale,
+                parentConfig = baseConfig;
+            // MERGE
+            if (locales[name] != null) {
+                parentConfig = locales[name]._config;
+            }
+            config = mergeConfigs(parentConfig, config);
+            locale = new Locale(config);
+            locale.parentLocale = locales[name];
+            locales[name] = locale;
+
+            // backwards compat for now: also set the locale
+            getSetGlobalLocale(name);
+        } else {
+            // pass null for config to unupdate, useful for tests
+            if (locales[name] != null) {
+                if (locales[name].parentLocale != null) {
+                    locales[name] = locales[name].parentLocale;
+                } else if (locales[name] != null) {
+                    delete locales[name];
+                }
+            }
+        }
+        return locales[name];
+    }
+
+    // returns locale data
+    function getLocale(key) {
+        var locale;
+
+        if (key && key._locale && key._locale._abbr) {
+            key = key._locale._abbr;
+        }
+
+        if (!key) {
+            return globalLocale;
+        }
+
+        if (!isArray(key)) {
+            //short-circuit everything else
+            locale = loadLocale(key);
+            if (locale) {
+                return locale;
+            }
+            key = [key];
+        }
+
+        return chooseLocale(key);
+    }
+
+    function listLocales() {
+        return keys(locales);
+    }
+
+    function checkOverflow(m) {
+        var overflow;
+        var a = m._a;
+
+        if (a && getParsingFlags(m).overflow === -2) {
+            overflow = a[MONTH] < 0 || a[MONTH] > 11 ? MONTH : a[DATE] < 1 || a[DATE] > daysInMonth(a[YEAR], a[MONTH]) ? DATE : a[HOUR] < 0 || a[HOUR] > 24 || a[HOUR] === 24 && (a[MINUTE] !== 0 || a[SECOND] !== 0 || a[MILLISECOND] !== 0) ? HOUR : a[MINUTE] < 0 || a[MINUTE] > 59 ? MINUTE : a[SECOND] < 0 || a[SECOND] > 59 ? SECOND : a[MILLISECOND] < 0 || a[MILLISECOND] > 999 ? MILLISECOND : -1;
+
+            if (getParsingFlags(m)._overflowDayOfYear && (overflow < YEAR || overflow > DATE)) {
+                overflow = DATE;
+            }
+            if (getParsingFlags(m)._overflowWeeks && overflow === -1) {
+                overflow = WEEK;
+            }
+            if (getParsingFlags(m)._overflowWeekday && overflow === -1) {
+                overflow = WEEKDAY;
+            }
+
+            getParsingFlags(m).overflow = overflow;
+        }
+
+        return m;
+    }
+
+    // Pick the first defined of two or three arguments.
+    function defaults(a, b, c) {
+        if (a != null) {
+            return a;
+        }
+        if (b != null) {
+            return b;
+        }
+        return c;
+    }
+
+    function currentDateArray(config) {
+        // hooks is actually the exported moment object
+        var nowValue = new Date(hooks.now());
+        if (config._useUTC) {
+            return [nowValue.getUTCFullYear(), nowValue.getUTCMonth(), nowValue.getUTCDate()];
+        }
+        return [nowValue.getFullYear(), nowValue.getMonth(), nowValue.getDate()];
+    }
+
+    // convert an array to a date.
+    // the array should mirror the parameters below
+    // note: all values past the year are optional and will default to the lowest possible value.
+    // [year, month, day , hour, minute, second, millisecond]
+    function configFromArray(config) {
+        var i,
+            date,
+            input = [],
+            currentDate,
+            yearToUse;
+
+        if (config._d) {
+            return;
+        }
+
+        currentDate = currentDateArray(config);
+
+        //compute day of the year from weeks and weekdays
+        if (config._w && config._a[DATE] == null && config._a[MONTH] == null) {
+            dayOfYearFromWeekInfo(config);
+        }
+
+        //if the day of the year is set, figure out what it is
+        if (config._dayOfYear != null) {
+            yearToUse = defaults(config._a[YEAR], currentDate[YEAR]);
+
+            if (config._dayOfYear > daysInYear(yearToUse) || config._dayOfYear === 0) {
+                getParsingFlags(config)._overflowDayOfYear = true;
+            }
+
+            date = createUTCDate(yearToUse, 0, config._dayOfYear);
+            config._a[MONTH] = date.getUTCMonth();
+            config._a[DATE] = date.getUTCDate();
+        }
+
+        // Default to current date.
+        // * if no year, month, day of month are given, default to today
+        // * if day of month is given, default month and year
+        // * if month is given, default only year
+        // * if year is given, don't default anything
+        for (i = 0; i < 3 && config._a[i] == null; ++i) {
+            config._a[i] = input[i] = currentDate[i];
+        }
+
+        // Zero out whatever was not defaulted, including time
+        for (; i < 7; i++) {
+            config._a[i] = input[i] = config._a[i] == null ? i === 2 ? 1 : 0 : config._a[i];
+        }
+
+        // Check for 24:00:00.000
+        if (config._a[HOUR] === 24 && config._a[MINUTE] === 0 && config._a[SECOND] === 0 && config._a[MILLISECOND] === 0) {
+            config._nextDay = true;
+            config._a[HOUR] = 0;
+        }
+
+        config._d = (config._useUTC ? createUTCDate : createDate).apply(null, input);
+        // Apply timezone offset from input. The actual utcOffset can be changed
+        // with parseZone.
+        if (config._tzm != null) {
+            config._d.setUTCMinutes(config._d.getUTCMinutes() - config._tzm);
+        }
+
+        if (config._nextDay) {
+            config._a[HOUR] = 24;
+        }
+
+        // check for mismatching day of week
+        if (config._w && typeof config._w.d !== 'undefined' && config._w.d !== config._d.getDay()) {
+            getParsingFlags(config).weekdayMismatch = true;
+        }
+    }
+
+    function dayOfYearFromWeekInfo(config) {
+        var w, weekYear, week, weekday, dow, doy, temp, weekdayOverflow;
+
+        w = config._w;
+        if (w.GG != null || w.W != null || w.E != null) {
+            dow = 1;
+            doy = 4;
+
+            // TODO: We need to take the current isoWeekYear, but that depends on
+            // how we interpret now (local, utc, fixed offset). So create
+            // a now version of current config (take local/utc/offset flags, and
+            // create now).
+            weekYear = defaults(w.GG, config._a[YEAR], weekOfYear(createLocal(), 1, 4).year);
+            week = defaults(w.W, 1);
+            weekday = defaults(w.E, 1);
+            if (weekday < 1 || weekday > 7) {
+                weekdayOverflow = true;
+            }
+        } else {
+            dow = config._locale._week.dow;
+            doy = config._locale._week.doy;
+
+            var curWeek = weekOfYear(createLocal(), dow, doy);
+
+            weekYear = defaults(w.gg, config._a[YEAR], curWeek.year);
+
+            // Default to current week.
+            week = defaults(w.w, curWeek.week);
+
+            if (w.d != null) {
+                // weekday -- low day numbers are considered next week
+                weekday = w.d;
+                if (weekday < 0 || weekday > 6) {
+                    weekdayOverflow = true;
+                }
+            } else if (w.e != null) {
+                // local weekday -- counting starts from begining of week
+                weekday = w.e + dow;
+                if (w.e < 0 || w.e > 6) {
+                    weekdayOverflow = true;
+                }
+            } else {
+                // default to begining of week
+                weekday = dow;
+            }
+        }
+        if (week < 1 || week > weeksInYear(weekYear, dow, doy)) {
+            getParsingFlags(config)._overflowWeeks = true;
+        } else if (weekdayOverflow != null) {
+            getParsingFlags(config)._overflowWeekday = true;
+        } else {
+            temp = dayOfYearFromWeeks(weekYear, week, weekday, dow, doy);
+            config._a[YEAR] = temp.year;
+            config._dayOfYear = temp.dayOfYear;
+        }
+    }
+
+    // iso 8601 regex
+    // 0000-00-00 0000-W00 or 0000-W00-0 + T + 00 or 00:00 or 00:00:00 or 00:00:00.000 + +00:00 or +0000 or +00)
+    var extendedIsoRegex = /^\s*((?:[+-]\d{6}|\d{4})-(?:\d\d-\d\d|W\d\d-\d|W\d\d|\d\d\d|\d\d))(?:(T| )(\d\d(?::\d\d(?::\d\d(?:[.,]\d+)?)?)?)([\+\-]\d\d(?::?\d\d)?|\s*Z)?)?$/;
+    var basicIsoRegex = /^\s*((?:[+-]\d{6}|\d{4})(?:\d\d\d\d|W\d\d\d|W\d\d|\d\d\d|\d\d))(?:(T| )(\d\d(?:\d\d(?:\d\d(?:[.,]\d+)?)?)?)([\+\-]\d\d(?::?\d\d)?|\s*Z)?)?$/;
+
+    var tzRegex = /Z|[+-]\d\d(?::?\d\d)?/;
+
+    var isoDates = [['YYYYYY-MM-DD', /[+-]\d{6}-\d\d-\d\d/], ['YYYY-MM-DD', /\d{4}-\d\d-\d\d/], ['GGGG-[W]WW-E', /\d{4}-W\d\d-\d/], ['GGGG-[W]WW', /\d{4}-W\d\d/, false], ['YYYY-DDD', /\d{4}-\d{3}/], ['YYYY-MM', /\d{4}-\d\d/, false], ['YYYYYYMMDD', /[+-]\d{10}/], ['YYYYMMDD', /\d{8}/],
+    // YYYYMM is NOT allowed by the standard
+    ['GGGG[W]WWE', /\d{4}W\d{3}/], ['GGGG[W]WW', /\d{4}W\d{2}/, false], ['YYYYDDD', /\d{7}/]];
+
+    // iso time formats and regexes
+    var isoTimes = [['HH:mm:ss.SSSS', /\d\d:\d\d:\d\d\.\d+/], ['HH:mm:ss,SSSS', /\d\d:\d\d:\d\d,\d+/], ['HH:mm:ss', /\d\d:\d\d:\d\d/], ['HH:mm', /\d\d:\d\d/], ['HHmmss.SSSS', /\d\d\d\d\d\d\.\d+/], ['HHmmss,SSSS', /\d\d\d\d\d\d,\d+/], ['HHmmss', /\d\d\d\d\d\d/], ['HHmm', /\d\d\d\d/], ['HH', /\d\d/]];
+
+    var aspNetJsonRegex = /^\/?Date\((\-?\d+)/i;
+
+    // date from iso format
+    function configFromISO(config) {
+        var i,
+            l,
+            string = config._i,
+            match = extendedIsoRegex.exec(string) || basicIsoRegex.exec(string),
+            allowTime,
+            dateFormat,
+            timeFormat,
+            tzFormat;
+
+        if (match) {
+            getParsingFlags(config).iso = true;
+
+            for (i = 0, l = isoDates.length; i < l; i++) {
+                if (isoDates[i][1].exec(match[1])) {
+                    dateFormat = isoDates[i][0];
+                    allowTime = isoDates[i][2] !== false;
+                    break;
+                }
+            }
+            if (dateFormat == null) {
+                config._isValid = false;
+                return;
+            }
+            if (match[3]) {
+                for (i = 0, l = isoTimes.length; i < l; i++) {
+                    if (isoTimes[i][1].exec(match[3])) {
+                        // match[2] should be 'T' or space
+                        timeFormat = (match[2] || ' ') + isoTimes[i][0];
+                        break;
+                    }
+                }
+                if (timeFormat == null) {
+                    config._isValid = false;
+                    return;
+                }
+            }
+            if (!allowTime && timeFormat != null) {
+                config._isValid = false;
+                return;
+            }
+            if (match[4]) {
+                if (tzRegex.exec(match[4])) {
+                    tzFormat = 'Z';
+                } else {
+                    config._isValid = false;
+                    return;
+                }
+            }
+            config._f = dateFormat + (timeFormat || '') + (tzFormat || '');
+            configFromStringAndFormat(config);
+        } else {
+            config._isValid = false;
+        }
+    }
+
+    // RFC 2822 regex: For details see https://tools.ietf.org/html/rfc2822#section-3.3
+    var rfc2822 = /^(?:(Mon|Tue|Wed|Thu|Fri|Sat|Sun),?\s)?(\d{1,2})\s(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s(\d{2,4})\s(\d\d):(\d\d)(?::(\d\d))?\s(?:(UT|GMT|[ECMP][SD]T)|([Zz])|([+-]\d{4}))$/;
+
+    function extractFromRFC2822Strings(yearStr, monthStr, dayStr, hourStr, minuteStr, secondStr) {
+        var result = [untruncateYear(yearStr), defaultLocaleMonthsShort.indexOf(monthStr), parseInt(dayStr, 10), parseInt(hourStr, 10), parseInt(minuteStr, 10)];
+
+        if (secondStr) {
+            result.push(parseInt(secondStr, 10));
+        }
+
+        return result;
+    }
+
+    function untruncateYear(yearStr) {
+        var year = parseInt(yearStr, 10);
+        if (year <= 49) {
+            return 2000 + year;
+        } else if (year <= 999) {
+            return 1900 + year;
+        }
+        return year;
+    }
+
+    function preprocessRFC2822(s) {
+        // Remove comments and folding whitespace and replace multiple-spaces with a single space
+        return s.replace(/\([^)]*\)|[\n\t]/g, ' ').replace(/(\s\s+)/g, ' ').trim();
+    }
+
+    function checkWeekday(weekdayStr, parsedInput, config) {
+        if (weekdayStr) {
+            // TODO: Replace the vanilla JS Date object with an indepentent day-of-week check.
+            var weekdayProvided = defaultLocaleWeekdaysShort.indexOf(weekdayStr),
+                weekdayActual = new Date(parsedInput[0], parsedInput[1], parsedInput[2]).getDay();
+            if (weekdayProvided !== weekdayActual) {
+                getParsingFlags(config).weekdayMismatch = true;
+                config._isValid = false;
+                return false;
+            }
+        }
+        return true;
+    }
+
+    var obsOffsets = {
+        UT: 0,
+        GMT: 0,
+        EDT: -4 * 60,
+        EST: -5 * 60,
+        CDT: -5 * 60,
+        CST: -6 * 60,
+        MDT: -6 * 60,
+        MST: -7 * 60,
+        PDT: -7 * 60,
+        PST: -8 * 60
+    };
+
+    function calculateOffset(obsOffset, militaryOffset, numOffset) {
+        if (obsOffset) {
+            return obsOffsets[obsOffset];
+        } else if (militaryOffset) {
+            // the only allowed military tz is Z
+            return 0;
+        } else {
+            var hm = parseInt(numOffset, 10);
+            var m = hm % 100,
+                h = (hm - m) / 100;
+            return h * 60 + m;
+        }
+    }
+
+    // date and time from ref 2822 format
+    function configFromRFC2822(config) {
+        var match = rfc2822.exec(preprocessRFC2822(config._i));
+        if (match) {
+            var parsedArray = extractFromRFC2822Strings(match[4], match[3], match[2], match[5], match[6], match[7]);
+            if (!checkWeekday(match[1], parsedArray, config)) {
+                return;
+            }
+
+            config._a = parsedArray;
+            config._tzm = calculateOffset(match[8], match[9], match[10]);
+
+            config._d = createUTCDate.apply(null, config._a);
+            config._d.setUTCMinutes(config._d.getUTCMinutes() - config._tzm);
+
+            getParsingFlags(config).rfc2822 = true;
+        } else {
+            config._isValid = false;
+        }
+    }
+
+    // date from iso format or fallback
+    function configFromString(config) {
+        var matched = aspNetJsonRegex.exec(config._i);
+
+        if (matched !== null) {
+            config._d = new Date(+matched[1]);
+            return;
+        }
+
+        configFromISO(config);
+        if (config._isValid === false) {
+            delete config._isValid;
+        } else {
+            return;
+        }
+
+        configFromRFC2822(config);
+        if (config._isValid === false) {
+            delete config._isValid;
+        } else {
+            return;
+        }
+
+        // Final attempt, use Input Fallback
+        hooks.createFromInputFallback(config);
+    }
+
+    hooks.createFromInputFallback = deprecate('value provided is not in a recognized RFC2822 or ISO format. moment construction falls back to js Date(), ' + 'which is not reliable across all browsers and versions. Non RFC2822/ISO date formats are ' + 'discouraged and will be removed in an upcoming major release. Please refer to ' + 'http://momentjs.com/guides/#/warnings/js-date/ for more info.', function (config) {
+        config._d = new Date(config._i + (config._useUTC ? ' UTC' : ''));
+    });
+
+    // constant that refers to the ISO standard
+    hooks.ISO_8601 = function () {};
+
+    // constant that refers to the RFC 2822 form
+    hooks.RFC_2822 = function () {};
+
+    // date from string and format string
+    function configFromStringAndFormat(config) {
+        // TODO: Move this to another part of the creation flow to prevent circular deps
+        if (config._f === hooks.ISO_8601) {
+            configFromISO(config);
+            return;
+        }
+        if (config._f === hooks.RFC_2822) {
+            configFromRFC2822(config);
+            return;
+        }
+        config._a = [];
+        getParsingFlags(config).empty = true;
+
+        // This array is used to make a Date, either with `new Date` or `Date.UTC`
+        var string = '' + config._i,
+            i,
+            parsedInput,
+            tokens,
+            token,
+            skipped,
+            stringLength = string.length,
+            totalParsedInputLength = 0;
+
+        tokens = expandFormat(config._f, config._locale).match(formattingTokens) || [];
+
+        for (i = 0; i < tokens.length; i++) {
+            token = tokens[i];
+            parsedInput = (string.match(getParseRegexForToken(token, config)) || [])[0];
+            // console.log('token', token, 'parsedInput', parsedInput,
+            //         'regex', getParseRegexForToken(token, config));
+            if (parsedInput) {
+                skipped = string.substr(0, string.indexOf(parsedInput));
+                if (skipped.length > 0) {
+                    getParsingFlags(config).unusedInput.push(skipped);
+                }
+                string = string.slice(string.indexOf(parsedInput) + parsedInput.length);
+                totalParsedInputLength += parsedInput.length;
+            }
+            // don't parse if it's not a known token
+            if (formatTokenFunctions[token]) {
+                if (parsedInput) {
+                    getParsingFlags(config).empty = false;
+                } else {
+                    getParsingFlags(config).unusedTokens.push(token);
+                }
+                addTimeToArrayFromToken(token, parsedInput, config);
+            } else if (config._strict && !parsedInput) {
+                getParsingFlags(config).unusedTokens.push(token);
+            }
+        }
+
+        // add remaining unparsed input length to the string
+        getParsingFlags(config).charsLeftOver = stringLength - totalParsedInputLength;
+        if (string.length > 0) {
+            getParsingFlags(config).unusedInput.push(string);
+        }
+
+        // clear _12h flag if hour is <= 12
+        if (config._a[HOUR] <= 12 && getParsingFlags(config).bigHour === true && config._a[HOUR] > 0) {
+            getParsingFlags(config).bigHour = undefined;
+        }
+
+        getParsingFlags(config).parsedDateParts = config._a.slice(0);
+        getParsingFlags(config).meridiem = config._meridiem;
+        // handle meridiem
+        config._a[HOUR] = meridiemFixWrap(config._locale, config._a[HOUR], config._meridiem);
+
+        configFromArray(config);
+        checkOverflow(config);
+    }
+
+    function meridiemFixWrap(locale, hour, meridiem) {
+        var isPm;
+
+        if (meridiem == null) {
+            // nothing to do
+            return hour;
+        }
+        if (locale.meridiemHour != null) {
+            return locale.meridiemHour(hour, meridiem);
+        } else if (locale.isPM != null) {
+            // Fallback
+            isPm = locale.isPM(meridiem);
+            if (isPm && hour < 12) {
+                hour += 12;
+            }
+            if (!isPm && hour === 12) {
+                hour = 0;
+            }
+            return hour;
+        } else {
+            // this is not supposed to happen
+            return hour;
+        }
+    }
+
+    // date from string and array of format strings
+    function configFromStringAndArray(config) {
+        var tempConfig, bestMoment, scoreToBeat, i, currentScore;
+
+        if (config._f.length === 0) {
+            getParsingFlags(config).invalidFormat = true;
+            config._d = new Date(NaN);
+            return;
+        }
+
+        for (i = 0; i < config._f.length; i++) {
+            currentScore = 0;
+            tempConfig = copyConfig({}, config);
+            if (config._useUTC != null) {
+                tempConfig._useUTC = config._useUTC;
+            }
+            tempConfig._f = config._f[i];
+            configFromStringAndFormat(tempConfig);
+
+            if (!isValid(tempConfig)) {
+                continue;
+            }
+
+            // if there is any input that was not parsed add a penalty for that format
+            currentScore += getParsingFlags(tempConfig).charsLeftOver;
+
+            //or tokens
+            currentScore += getParsingFlags(tempConfig).unusedTokens.length * 10;
+
+            getParsingFlags(tempConfig).score = currentScore;
+
+            if (scoreToBeat == null || currentScore < scoreToBeat) {
+                scoreToBeat = currentScore;
+                bestMoment = tempConfig;
+            }
+        }
+
+        extend(config, bestMoment || tempConfig);
+    }
+
+    function configFromObject(config) {
+        if (config._d) {
+            return;
+        }
+
+        var i = normalizeObjectUnits(config._i);
+        config._a = map([i.year, i.month, i.day || i.date, i.hour, i.minute, i.second, i.millisecond], function (obj) {
+            return obj && parseInt(obj, 10);
+        });
+
+        configFromArray(config);
+    }
+
+    function createFromConfig(config) {
+        var res = new Moment(checkOverflow(prepareConfig(config)));
+        if (res._nextDay) {
+            // Adding is smart enough around DST
+            res.add(1, 'd');
+            res._nextDay = undefined;
+        }
+
+        return res;
+    }
+
+    function prepareConfig(config) {
+        var input = config._i,
+            format = config._f;
+
+        config._locale = config._locale || getLocale(config._l);
+
+        if (input === null || format === undefined && input === '') {
+            return createInvalid({ nullInput: true });
+        }
+
+        if (typeof input === 'string') {
+            config._i = input = config._locale.preparse(input);
+        }
+
+        if (isMoment(input)) {
+            return new Moment(checkOverflow(input));
+        } else if (isDate(input)) {
+            config._d = input;
+        } else if (isArray(format)) {
+            configFromStringAndArray(config);
+        } else if (format) {
+            configFromStringAndFormat(config);
+        } else {
+            configFromInput(config);
+        }
+
+        if (!isValid(config)) {
+            config._d = null;
+        }
+
+        return config;
+    }
+
+    function configFromInput(config) {
+        var input = config._i;
+        if (isUndefined(input)) {
+            config._d = new Date(hooks.now());
+        } else if (isDate(input)) {
+            config._d = new Date(input.valueOf());
+        } else if (typeof input === 'string') {
+            configFromString(config);
+        } else if (isArray(input)) {
+            config._a = map(input.slice(0), function (obj) {
+                return parseInt(obj, 10);
+            });
+            configFromArray(config);
+        } else if (isObject(input)) {
+            configFromObject(config);
+        } else if (isNumber(input)) {
+            // from milliseconds
+            config._d = new Date(input);
+        } else {
+            hooks.createFromInputFallback(config);
+        }
+    }
+
+    function createLocalOrUTC(input, format, locale, strict, isUTC) {
+        var c = {};
+
+        if (locale === true || locale === false) {
+            strict = locale;
+            locale = undefined;
+        }
+
+        if (isObject(input) && isObjectEmpty(input) || isArray(input) && input.length === 0) {
+            input = undefined;
+        }
+        // object construction must be done this way.
+        // https://github.com/moment/moment/issues/1423
+        c._isAMomentObject = true;
+        c._useUTC = c._isUTC = isUTC;
+        c._l = locale;
+        c._i = input;
+        c._f = format;
+        c._strict = strict;
+
+        return createFromConfig(c);
+    }
+
+    function createLocal(input, format, locale, strict) {
+        return createLocalOrUTC(input, format, locale, strict, false);
+    }
+
+    var prototypeMin = deprecate('moment().min is deprecated, use moment.max instead. http://momentjs.com/guides/#/warnings/min-max/', function () {
+        var other = createLocal.apply(null, arguments);
+        if (this.isValid() && other.isValid()) {
+            return other < this ? this : other;
+        } else {
+            return createInvalid();
+        }
+    });
+
+    var prototypeMax = deprecate('moment().max is deprecated, use moment.min instead. http://momentjs.com/guides/#/warnings/min-max/', function () {
+        var other = createLocal.apply(null, arguments);
+        if (this.isValid() && other.isValid()) {
+            return other > this ? this : other;
+        } else {
+            return createInvalid();
+        }
+    });
+
+    // Pick a moment m from moments so that m[fn](other) is true for all
+    // other. This relies on the function fn to be transitive.
+    //
+    // moments should either be an array of moment objects or an array, whose
+    // first element is an array of moment objects.
+    function pickBy(fn, moments) {
+        var res, i;
+        if (moments.length === 1 && isArray(moments[0])) {
+            moments = moments[0];
+        }
+        if (!moments.length) {
+            return createLocal();
+        }
+        res = moments[0];
+        for (i = 1; i < moments.length; ++i) {
+            if (!moments[i].isValid() || moments[i][fn](res)) {
+                res = moments[i];
+            }
+        }
+        return res;
+    }
+
+    // TODO: Use [].sort instead?
+    function min() {
+        var args = [].slice.call(arguments, 0);
+
+        return pickBy('isBefore', args);
+    }
+
+    function max() {
+        var args = [].slice.call(arguments, 0);
+
+        return pickBy('isAfter', args);
+    }
+
+    var now = function now() {
+        return Date.now ? Date.now() : +new Date();
+    };
+
+    var ordering = ['year', 'quarter', 'month', 'week', 'day', 'hour', 'minute', 'second', 'millisecond'];
+
+    function isDurationValid(m) {
+        for (var key in m) {
+            if (!(indexOf.call(ordering, key) !== -1 && (m[key] == null || !isNaN(m[key])))) {
+                return false;
+            }
+        }
+
+        var unitHasDecimal = false;
+        for (var i = 0; i < ordering.length; ++i) {
+            if (m[ordering[i]]) {
+                if (unitHasDecimal) {
+                    return false; // only allow non-integers for smallest unit
+                }
+                if (parseFloat(m[ordering[i]]) !== toInt(m[ordering[i]])) {
+                    unitHasDecimal = true;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    function isValid$1() {
+        return this._isValid;
+    }
+
+    function createInvalid$1() {
+        return createDuration(NaN);
+    }
+
+    function Duration(duration) {
+        var normalizedInput = normalizeObjectUnits(duration),
+            years = normalizedInput.year || 0,
+            quarters = normalizedInput.quarter || 0,
+            months = normalizedInput.month || 0,
+            weeks = normalizedInput.week || 0,
+            days = normalizedInput.day || 0,
+            hours = normalizedInput.hour || 0,
+            minutes = normalizedInput.minute || 0,
+            seconds = normalizedInput.second || 0,
+            milliseconds = normalizedInput.millisecond || 0;
+
+        this._isValid = isDurationValid(normalizedInput);
+
+        // representation for dateAddRemove
+        this._milliseconds = +milliseconds + seconds * 1e3 + // 1000
+        minutes * 6e4 + // 1000 * 60
+        hours * 1000 * 60 * 60; //using 1000 * 60 * 60 instead of 36e5 to avoid floating point rounding errors https://github.com/moment/moment/issues/2978
+        // Because of dateAddRemove treats 24 hours as different from a
+        // day when working around DST, we need to store them separately
+        this._days = +days + weeks * 7;
+        // It is impossible to translate months into days without knowing
+        // which months you are are talking about, so we have to store
+        // it separately.
+        this._months = +months + quarters * 3 + years * 12;
+
+        this._data = {};
+
+        this._locale = getLocale();
+
+        this._bubble();
+    }
+
+    function isDuration(obj) {
+        return obj instanceof Duration;
+    }
+
+    function absRound(number) {
+        if (number < 0) {
+            return Math.round(-1 * number) * -1;
+        } else {
+            return Math.round(number);
+        }
+    }
+
+    // FORMATTING
+
+    function offset(token, separator) {
+        addFormatToken(token, 0, 0, function () {
+            var offset = this.utcOffset();
+            var sign = '+';
+            if (offset < 0) {
+                offset = -offset;
+                sign = '-';
+            }
+            return sign + zeroFill(~~(offset / 60), 2) + separator + zeroFill(~~offset % 60, 2);
+        });
+    }
+
+    offset('Z', ':');
+    offset('ZZ', '');
+
+    // PARSING
+
+    addRegexToken('Z', matchShortOffset);
+    addRegexToken('ZZ', matchShortOffset);
+    addParseToken(['Z', 'ZZ'], function (input, array, config) {
+        config._useUTC = true;
+        config._tzm = offsetFromString(matchShortOffset, input);
+    });
+
+    // HELPERS
+
+    // timezone chunker
+    // '+10:00' > ['10',  '00']
+    // '-1530'  > ['-15', '30']
+    var chunkOffset = /([\+\-]|\d\d)/gi;
+
+    function offsetFromString(matcher, string) {
+        var matches = (string || '').match(matcher);
+
+        if (matches === null) {
+            return null;
+        }
+
+        var chunk = matches[matches.length - 1] || [];
+        var parts = (chunk + '').match(chunkOffset) || ['-', 0, 0];
+        var minutes = +(parts[1] * 60) + toInt(parts[2]);
+
+        return minutes === 0 ? 0 : parts[0] === '+' ? minutes : -minutes;
+    }
+
+    // Return a moment from input, that is local/utc/zone equivalent to model.
+    function cloneWithOffset(input, model) {
+        var res, diff;
+        if (model._isUTC) {
+            res = model.clone();
+            diff = (isMoment(input) || isDate(input) ? input.valueOf() : createLocal(input).valueOf()) - res.valueOf();
+            // Use low-level api, because this fn is low-level api.
+            res._d.setTime(res._d.valueOf() + diff);
+            hooks.updateOffset(res, false);
+            return res;
+        } else {
+            return createLocal(input).local();
+        }
+    }
+
+    function getDateOffset(m) {
+        // On Firefox.24 Date#getTimezoneOffset returns a floating point.
+        // https://github.com/moment/moment/pull/1871
+        return -Math.round(m._d.getTimezoneOffset() / 15) * 15;
+    }
+
+    // HOOKS
+
+    // This function will be called whenever a moment is mutated.
+    // It is intended to keep the offset in sync with the timezone.
+    hooks.updateOffset = function () {};
+
+    // MOMENTS
+
+    // keepLocalTime = true means only change the timezone, without
+    // affecting the local hour. So 5:31:26 +0300 --[utcOffset(2, true)]-->
+    // 5:31:26 +0200 It is possible that 5:31:26 doesn't exist with offset
+    // +0200, so we adjust the time as needed, to be valid.
+    //
+    // Keeping the time actually adds/subtracts (one hour)
+    // from the actual represented time. That is why we call updateOffset
+    // a second time. In case it wants us to change the offset again
+    // _changeInProgress == true case, then we have to adjust, because
+    // there is no such time in the given timezone.
+    function getSetOffset(input, keepLocalTime, keepMinutes) {
+        var offset = this._offset || 0,
+            localAdjust;
+        if (!this.isValid()) {
+            return input != null ? this : NaN;
+        }
+        if (input != null) {
+            if (typeof input === 'string') {
+                input = offsetFromString(matchShortOffset, input);
+                if (input === null) {
+                    return this;
+                }
+            } else if (Math.abs(input) < 16 && !keepMinutes) {
+                input = input * 60;
+            }
+            if (!this._isUTC && keepLocalTime) {
+                localAdjust = getDateOffset(this);
+            }
+            this._offset = input;
+            this._isUTC = true;
+            if (localAdjust != null) {
+                this.add(localAdjust, 'm');
+            }
+            if (offset !== input) {
+                if (!keepLocalTime || this._changeInProgress) {
+                    addSubtract(this, createDuration(input - offset, 'm'), 1, false);
+                } else if (!this._changeInProgress) {
+                    this._changeInProgress = true;
+                    hooks.updateOffset(this, true);
+                    this._changeInProgress = null;
+                }
+            }
+            return this;
+        } else {
+            return this._isUTC ? offset : getDateOffset(this);
+        }
+    }
+
+    function getSetZone(input, keepLocalTime) {
+        if (input != null) {
+            if (typeof input !== 'string') {
+                input = -input;
+            }
+
+            this.utcOffset(input, keepLocalTime);
+
+            return this;
+        } else {
+            return -this.utcOffset();
+        }
+    }
+
+    function setOffsetToUTC(keepLocalTime) {
+        return this.utcOffset(0, keepLocalTime);
+    }
+
+    function setOffsetToLocal(keepLocalTime) {
+        if (this._isUTC) {
+            this.utcOffset(0, keepLocalTime);
+            this._isUTC = false;
+
+            if (keepLocalTime) {
+                this.subtract(getDateOffset(this), 'm');
+            }
+        }
+        return this;
+    }
+
+    function setOffsetToParsedOffset() {
+        if (this._tzm != null) {
+            this.utcOffset(this._tzm, false, true);
+        } else if (typeof this._i === 'string') {
+            var tZone = offsetFromString(matchOffset, this._i);
+            if (tZone != null) {
+                this.utcOffset(tZone);
+            } else {
+                this.utcOffset(0, true);
+            }
+        }
+        return this;
+    }
+
+    function hasAlignedHourOffset(input) {
+        if (!this.isValid()) {
+            return false;
+        }
+        input = input ? createLocal(input).utcOffset() : 0;
+
+        return (this.utcOffset() - input) % 60 === 0;
+    }
+
+    function isDaylightSavingTime() {
+        return this.utcOffset() > this.clone().month(0).utcOffset() || this.utcOffset() > this.clone().month(5).utcOffset();
+    }
+
+    function isDaylightSavingTimeShifted() {
+        if (!isUndefined(this._isDSTShifted)) {
+            return this._isDSTShifted;
+        }
+
+        var c = {};
+
+        copyConfig(c, this);
+        c = prepareConfig(c);
+
+        if (c._a) {
+            var other = c._isUTC ? createUTC(c._a) : createLocal(c._a);
+            this._isDSTShifted = this.isValid() && compareArrays(c._a, other.toArray()) > 0;
+        } else {
+            this._isDSTShifted = false;
+        }
+
+        return this._isDSTShifted;
+    }
+
+    function isLocal() {
+        return this.isValid() ? !this._isUTC : false;
+    }
+
+    function isUtcOffset() {
+        return this.isValid() ? this._isUTC : false;
+    }
+
+    function isUtc() {
+        return this.isValid() ? this._isUTC && this._offset === 0 : false;
+    }
+
+    // ASP.NET json date format regex
+    var aspNetRegex = /^(\-|\+)?(?:(\d*)[. ])?(\d+)\:(\d+)(?:\:(\d+)(\.\d*)?)?$/;
+
+    // from http://docs.closure-library.googlecode.com/git/closure_goog_date_date.js.source.html
+    // somewhat more in line with 4.4.3.2 2004 spec, but allows decimal anywhere
+    // and further modified to allow for strings containing both week and day
+    var isoRegex = /^(-|\+)?P(?:([-+]?[0-9,.]*)Y)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)W)?(?:([-+]?[0-9,.]*)D)?(?:T(?:([-+]?[0-9,.]*)H)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)S)?)?$/;
+
+    function createDuration(input, key) {
+        var duration = input,
+
+        // matching against regexp is expensive, do it on demand
+        match = null,
+            sign,
+            ret,
+            diffRes;
+
+        if (isDuration(input)) {
+            duration = {
+                ms: input._milliseconds,
+                d: input._days,
+                M: input._months
+            };
+        } else if (isNumber(input)) {
+            duration = {};
+            if (key) {
+                duration[key] = input;
+            } else {
+                duration.milliseconds = input;
+            }
+        } else if (!!(match = aspNetRegex.exec(input))) {
+            sign = match[1] === '-' ? -1 : 1;
+            duration = {
+                y: 0,
+                d: toInt(match[DATE]) * sign,
+                h: toInt(match[HOUR]) * sign,
+                m: toInt(match[MINUTE]) * sign,
+                s: toInt(match[SECOND]) * sign,
+                ms: toInt(absRound(match[MILLISECOND] * 1000)) * sign // the millisecond decimal point is included in the match
+            };
+        } else if (!!(match = isoRegex.exec(input))) {
+            sign = match[1] === '-' ? -1 : match[1] === '+' ? 1 : 1;
+            duration = {
+                y: parseIso(match[2], sign),
+                M: parseIso(match[3], sign),
+                w: parseIso(match[4], sign),
+                d: parseIso(match[5], sign),
+                h: parseIso(match[6], sign),
+                m: parseIso(match[7], sign),
+                s: parseIso(match[8], sign)
+            };
+        } else if (duration == null) {
+            // checks for null or undefined
+            duration = {};
+        } else if ((typeof duration === 'undefined' ? 'undefined' : _typeof(duration)) === 'object' && ('from' in duration || 'to' in duration)) {
+            diffRes = momentsDifference(createLocal(duration.from), createLocal(duration.to));
+
+            duration = {};
+            duration.ms = diffRes.milliseconds;
+            duration.M = diffRes.months;
+        }
+
+        ret = new Duration(duration);
+
+        if (isDuration(input) && hasOwnProp(input, '_locale')) {
+            ret._locale = input._locale;
+        }
+
+        return ret;
+    }
+
+    createDuration.fn = Duration.prototype;
+    createDuration.invalid = createInvalid$1;
+
+    function parseIso(inp, sign) {
+        // We'd normally use ~~inp for this, but unfortunately it also
+        // converts floats to ints.
+        // inp may be undefined, so careful calling replace on it.
+        var res = inp && parseFloat(inp.replace(',', '.'));
+        // apply sign while we're at it
+        return (isNaN(res) ? 0 : res) * sign;
+    }
+
+    function positiveMomentsDifference(base, other) {
+        var res = { milliseconds: 0, months: 0 };
+
+        res.months = other.month() - base.month() + (other.year() - base.year()) * 12;
+        if (base.clone().add(res.months, 'M').isAfter(other)) {
+            --res.months;
+        }
+
+        res.milliseconds = +other - +base.clone().add(res.months, 'M');
+
+        return res;
+    }
+
+    function momentsDifference(base, other) {
+        var res;
+        if (!(base.isValid() && other.isValid())) {
+            return { milliseconds: 0, months: 0 };
+        }
+
+        other = cloneWithOffset(other, base);
+        if (base.isBefore(other)) {
+            res = positiveMomentsDifference(base, other);
+        } else {
+            res = positiveMomentsDifference(other, base);
+            res.milliseconds = -res.milliseconds;
+            res.months = -res.months;
+        }
+
+        return res;
+    }
+
+    // TODO: remove 'name' arg after deprecation is removed
+    function createAdder(direction, name) {
+        return function (val, period) {
+            var dur, tmp;
+            //invert the arguments, but complain about it
+            if (period !== null && !isNaN(+period)) {
+                deprecateSimple(name, 'moment().' + name + '(period, number) is deprecated. Please use moment().' + name + '(number, period). ' + 'See http://momentjs.com/guides/#/warnings/add-inverted-param/ for more info.');
+                tmp = val;val = period;period = tmp;
+            }
+
+            val = typeof val === 'string' ? +val : val;
+            dur = createDuration(val, period);
+            addSubtract(this, dur, direction);
+            return this;
+        };
+    }
+
+    function addSubtract(mom, duration, isAdding, updateOffset) {
+        var milliseconds = duration._milliseconds,
+            days = absRound(duration._days),
+            months = absRound(duration._months);
+
+        if (!mom.isValid()) {
+            // No op
+            return;
+        }
+
+        updateOffset = updateOffset == null ? true : updateOffset;
+
+        if (months) {
+            setMonth(mom, get(mom, 'Month') + months * isAdding);
+        }
+        if (days) {
+            set$1(mom, 'Date', get(mom, 'Date') + days * isAdding);
+        }
+        if (milliseconds) {
+            mom._d.setTime(mom._d.valueOf() + milliseconds * isAdding);
+        }
+        if (updateOffset) {
+            hooks.updateOffset(mom, days || months);
+        }
+    }
+
+    var add = createAdder(1, 'add');
+    var subtract = createAdder(-1, 'subtract');
+
+    function getCalendarFormat(myMoment, now) {
+        var diff = myMoment.diff(now, 'days', true);
+        return diff < -6 ? 'sameElse' : diff < -1 ? 'lastWeek' : diff < 0 ? 'lastDay' : diff < 1 ? 'sameDay' : diff < 2 ? 'nextDay' : diff < 7 ? 'nextWeek' : 'sameElse';
+    }
+
+    function calendar$1(time, formats) {
+        // We want to compare the start of today, vs this.
+        // Getting start-of-today depends on whether we're local/utc/offset or not.
+        var now = time || createLocal(),
+            sod = cloneWithOffset(now, this).startOf('day'),
+            format = hooks.calendarFormat(this, sod) || 'sameElse';
+
+        var output = formats && (isFunction(formats[format]) ? formats[format].call(this, now) : formats[format]);
+
+        return this.format(output || this.localeData().calendar(format, this, createLocal(now)));
+    }
+
+    function clone() {
+        return new Moment(this);
+    }
+
+    function isAfter(input, units) {
+        var localInput = isMoment(input) ? input : createLocal(input);
+        if (!(this.isValid() && localInput.isValid())) {
+            return false;
+        }
+        units = normalizeUnits(!isUndefined(units) ? units : 'millisecond');
+        if (units === 'millisecond') {
+            return this.valueOf() > localInput.valueOf();
+        } else {
+            return localInput.valueOf() < this.clone().startOf(units).valueOf();
+        }
+    }
+
+    function isBefore(input, units) {
+        var localInput = isMoment(input) ? input : createLocal(input);
+        if (!(this.isValid() && localInput.isValid())) {
+            return false;
+        }
+        units = normalizeUnits(!isUndefined(units) ? units : 'millisecond');
+        if (units === 'millisecond') {
+            return this.valueOf() < localInput.valueOf();
+        } else {
+            return this.clone().endOf(units).valueOf() < localInput.valueOf();
+        }
+    }
+
+    function isBetween(from, to, units, inclusivity) {
+        inclusivity = inclusivity || '()';
+        return (inclusivity[0] === '(' ? this.isAfter(from, units) : !this.isBefore(from, units)) && (inclusivity[1] === ')' ? this.isBefore(to, units) : !this.isAfter(to, units));
+    }
+
+    function isSame(input, units) {
+        var localInput = isMoment(input) ? input : createLocal(input),
+            inputMs;
+        if (!(this.isValid() && localInput.isValid())) {
+            return false;
+        }
+        units = normalizeUnits(units || 'millisecond');
+        if (units === 'millisecond') {
+            return this.valueOf() === localInput.valueOf();
+        } else {
+            inputMs = localInput.valueOf();
+            return this.clone().startOf(units).valueOf() <= inputMs && inputMs <= this.clone().endOf(units).valueOf();
+        }
+    }
+
+    function isSameOrAfter(input, units) {
+        return this.isSame(input, units) || this.isAfter(input, units);
+    }
+
+    function isSameOrBefore(input, units) {
+        return this.isSame(input, units) || this.isBefore(input, units);
+    }
+
+    function diff(input, units, asFloat) {
+        var that, zoneDelta, delta, output;
+
+        if (!this.isValid()) {
+            return NaN;
+        }
+
+        that = cloneWithOffset(input, this);
+
+        if (!that.isValid()) {
+            return NaN;
+        }
+
+        zoneDelta = (that.utcOffset() - this.utcOffset()) * 6e4;
+
+        units = normalizeUnits(units);
+
+        switch (units) {
+            case 'year':
+                output = monthDiff(this, that) / 12;break;
+            case 'month':
+                output = monthDiff(this, that);break;
+            case 'quarter':
+                output = monthDiff(this, that) / 3;break;
+            case 'second':
+                output = (this - that) / 1e3;break; // 1000
+            case 'minute':
+                output = (this - that) / 6e4;break; // 1000 * 60
+            case 'hour':
+                output = (this - that) / 36e5;break; // 1000 * 60 * 60
+            case 'day':
+                output = (this - that - zoneDelta) / 864e5;break; // 1000 * 60 * 60 * 24, negate dst
+            case 'week':
+                output = (this - that - zoneDelta) / 6048e5;break; // 1000 * 60 * 60 * 24 * 7, negate dst
+            default:
+                output = this - that;
+        }
+
+        return asFloat ? output : absFloor(output);
+    }
+
+    function monthDiff(a, b) {
+        // difference in months
+        var wholeMonthDiff = (b.year() - a.year()) * 12 + (b.month() - a.month()),
+
+        // b is in (anchor - 1 month, anchor + 1 month)
+        anchor = a.clone().add(wholeMonthDiff, 'months'),
+            anchor2,
+            adjust;
+
+        if (b - anchor < 0) {
+            anchor2 = a.clone().add(wholeMonthDiff - 1, 'months');
+            // linear across the month
+            adjust = (b - anchor) / (anchor - anchor2);
+        } else {
+            anchor2 = a.clone().add(wholeMonthDiff + 1, 'months');
+            // linear across the month
+            adjust = (b - anchor) / (anchor2 - anchor);
+        }
+
+        //check for negative zero, return zero if negative zero
+        return -(wholeMonthDiff + adjust) || 0;
+    }
+
+    hooks.defaultFormat = 'YYYY-MM-DDTHH:mm:ssZ';
+    hooks.defaultFormatUtc = 'YYYY-MM-DDTHH:mm:ss[Z]';
+
+    function toString() {
+        return this.clone().locale('en').format('ddd MMM DD YYYY HH:mm:ss [GMT]ZZ');
+    }
+
+    function toISOString() {
+        if (!this.isValid()) {
+            return null;
+        }
+        var m = this.clone().utc();
+        if (m.year() < 0 || m.year() > 9999) {
+            return formatMoment(m, 'YYYYYY-MM-DD[T]HH:mm:ss.SSS[Z]');
+        }
+        if (isFunction(Date.prototype.toISOString)) {
+            // native implementation is ~50x faster, use it when we can
+            return this.toDate().toISOString();
+        }
+        return formatMoment(m, 'YYYY-MM-DD[T]HH:mm:ss.SSS[Z]');
+    }
+
+    /**
+     * Return a human readable representation of a moment that can
+     * also be evaluated to get a new moment which is the same
+     *
+     * @link https://nodejs.org/dist/latest/docs/api/util.html#util_custom_inspect_function_on_objects
+     */
+    function inspect() {
+        if (!this.isValid()) {
+            return 'moment.invalid(/* ' + this._i + ' */)';
+        }
+        var func = 'moment';
+        var zone = '';
+        if (!this.isLocal()) {
+            func = this.utcOffset() === 0 ? 'moment.utc' : 'moment.parseZone';
+            zone = 'Z';
+        }
+        var prefix = '[' + func + '("]';
+        var year = 0 <= this.year() && this.year() <= 9999 ? 'YYYY' : 'YYYYYY';
+        var datetime = '-MM-DD[T]HH:mm:ss.SSS';
+        var suffix = zone + '[")]';
+
+        return this.format(prefix + year + datetime + suffix);
+    }
+
+    function format(inputString) {
+        if (!inputString) {
+            inputString = this.isUtc() ? hooks.defaultFormatUtc : hooks.defaultFormat;
+        }
+        var output = formatMoment(this, inputString);
+        return this.localeData().postformat(output);
+    }
+
+    function from(time, withoutSuffix) {
+        if (this.isValid() && (isMoment(time) && time.isValid() || createLocal(time).isValid())) {
+            return createDuration({ to: this, from: time }).locale(this.locale()).humanize(!withoutSuffix);
+        } else {
+            return this.localeData().invalidDate();
+        }
+    }
+
+    function fromNow(withoutSuffix) {
+        return this.from(createLocal(), withoutSuffix);
+    }
+
+    function to(time, withoutSuffix) {
+        if (this.isValid() && (isMoment(time) && time.isValid() || createLocal(time).isValid())) {
+            return createDuration({ from: this, to: time }).locale(this.locale()).humanize(!withoutSuffix);
+        } else {
+            return this.localeData().invalidDate();
+        }
+    }
+
+    function toNow(withoutSuffix) {
+        return this.to(createLocal(), withoutSuffix);
+    }
+
+    // If passed a locale key, it will set the locale for this
+    // instance.  Otherwise, it will return the locale configuration
+    // variables for this instance.
+    function locale(key) {
+        var newLocaleData;
+
+        if (key === undefined) {
+            return this._locale._abbr;
+        } else {
+            newLocaleData = getLocale(key);
+            if (newLocaleData != null) {
+                this._locale = newLocaleData;
+            }
+            return this;
+        }
+    }
+
+    var lang = deprecate('moment().lang() is deprecated. Instead, use moment().localeData() to get the language configuration. Use moment().locale() to change languages.', function (key) {
+        if (key === undefined) {
+            return this.localeData();
+        } else {
+            return this.locale(key);
+        }
+    });
+
+    function localeData() {
+        return this._locale;
+    }
+
+    function startOf(units) {
+        units = normalizeUnits(units);
+        // the following switch intentionally omits break keywords
+        // to utilize falling through the cases.
+        switch (units) {
+            case 'year':
+                this.month(0);
+            /* falls through */
+            case 'quarter':
+            case 'month':
+                this.date(1);
+            /* falls through */
+            case 'week':
+            case 'isoWeek':
+            case 'day':
+            case 'date':
+                this.hours(0);
+            /* falls through */
+            case 'hour':
+                this.minutes(0);
+            /* falls through */
+            case 'minute':
+                this.seconds(0);
+            /* falls through */
+            case 'second':
+                this.milliseconds(0);
+        }
+
+        // weeks are a special case
+        if (units === 'week') {
+            this.weekday(0);
+        }
+        if (units === 'isoWeek') {
+            this.isoWeekday(1);
+        }
+
+        // quarters are also special
+        if (units === 'quarter') {
+            this.month(Math.floor(this.month() / 3) * 3);
+        }
+
+        return this;
+    }
+
+    function endOf(units) {
+        units = normalizeUnits(units);
+        if (units === undefined || units === 'millisecond') {
+            return this;
+        }
+
+        // 'date' is an alias for 'day', so it should be considered as such.
+        if (units === 'date') {
+            units = 'day';
+        }
+
+        return this.startOf(units).add(1, units === 'isoWeek' ? 'week' : units).subtract(1, 'ms');
+    }
+
+    function valueOf() {
+        return this._d.valueOf() - (this._offset || 0) * 60000;
+    }
+
+    function unix() {
+        return Math.floor(this.valueOf() / 1000);
+    }
+
+    function toDate() {
+        return new Date(this.valueOf());
+    }
+
+    function toArray() {
+        var m = this;
+        return [m.year(), m.month(), m.date(), m.hour(), m.minute(), m.second(), m.millisecond()];
+    }
+
+    function toObject() {
+        var m = this;
+        return {
+            years: m.year(),
+            months: m.month(),
+            date: m.date(),
+            hours: m.hours(),
+            minutes: m.minutes(),
+            seconds: m.seconds(),
+            milliseconds: m.milliseconds()
+        };
+    }
+
+    function toJSON() {
+        // new Date(NaN).toJSON() === null
+        return this.isValid() ? this.toISOString() : null;
+    }
+
+    function isValid$2() {
+        return isValid(this);
+    }
+
+    function parsingFlags() {
+        return extend({}, getParsingFlags(this));
+    }
+
+    function invalidAt() {
+        return getParsingFlags(this).overflow;
+    }
+
+    function creationData() {
+        return {
+            input: this._i,
+            format: this._f,
+            locale: this._locale,
+            isUTC: this._isUTC,
+            strict: this._strict
+        };
+    }
+
+    // FORMATTING
+
+    addFormatToken(0, ['gg', 2], 0, function () {
+        return this.weekYear() % 100;
+    });
+
+    addFormatToken(0, ['GG', 2], 0, function () {
+        return this.isoWeekYear() % 100;
+    });
+
+    function addWeekYearFormatToken(token, getter) {
+        addFormatToken(0, [token, token.length], 0, getter);
+    }
+
+    addWeekYearFormatToken('gggg', 'weekYear');
+    addWeekYearFormatToken('ggggg', 'weekYear');
+    addWeekYearFormatToken('GGGG', 'isoWeekYear');
+    addWeekYearFormatToken('GGGGG', 'isoWeekYear');
+
+    // ALIASES
+
+    addUnitAlias('weekYear', 'gg');
+    addUnitAlias('isoWeekYear', 'GG');
+
+    // PRIORITY
+
+    addUnitPriority('weekYear', 1);
+    addUnitPriority('isoWeekYear', 1);
+
+    // PARSING
+
+    addRegexToken('G', matchSigned);
+    addRegexToken('g', matchSigned);
+    addRegexToken('GG', match1to2, match2);
+    addRegexToken('gg', match1to2, match2);
+    addRegexToken('GGGG', match1to4, match4);
+    addRegexToken('gggg', match1to4, match4);
+    addRegexToken('GGGGG', match1to6, match6);
+    addRegexToken('ggggg', match1to6, match6);
+
+    addWeekParseToken(['gggg', 'ggggg', 'GGGG', 'GGGGG'], function (input, week, config, token) {
+        week[token.substr(0, 2)] = toInt(input);
+    });
+
+    addWeekParseToken(['gg', 'GG'], function (input, week, config, token) {
+        week[token] = hooks.parseTwoDigitYear(input);
+    });
+
+    // MOMENTS
+
+    function getSetWeekYear(input) {
+        return getSetWeekYearHelper.call(this, input, this.week(), this.weekday(), this.localeData()._week.dow, this.localeData()._week.doy);
+    }
+
+    function getSetISOWeekYear(input) {
+        return getSetWeekYearHelper.call(this, input, this.isoWeek(), this.isoWeekday(), 1, 4);
+    }
+
+    function getISOWeeksInYear() {
+        return weeksInYear(this.year(), 1, 4);
+    }
+
+    function getWeeksInYear() {
+        var weekInfo = this.localeData()._week;
+        return weeksInYear(this.year(), weekInfo.dow, weekInfo.doy);
+    }
+
+    function getSetWeekYearHelper(input, week, weekday, dow, doy) {
+        var weeksTarget;
+        if (input == null) {
+            return weekOfYear(this, dow, doy).year;
+        } else {
+            weeksTarget = weeksInYear(input, dow, doy);
+            if (week > weeksTarget) {
+                week = weeksTarget;
+            }
+            return setWeekAll.call(this, input, week, weekday, dow, doy);
+        }
+    }
+
+    function setWeekAll(weekYear, week, weekday, dow, doy) {
+        var dayOfYearData = dayOfYearFromWeeks(weekYear, week, weekday, dow, doy),
+            date = createUTCDate(dayOfYearData.year, 0, dayOfYearData.dayOfYear);
+
+        this.year(date.getUTCFullYear());
+        this.month(date.getUTCMonth());
+        this.date(date.getUTCDate());
+        return this;
+    }
+
+    // FORMATTING
+
+    addFormatToken('Q', 0, 'Qo', 'quarter');
+
+    // ALIASES
+
+    addUnitAlias('quarter', 'Q');
+
+    // PRIORITY
+
+    addUnitPriority('quarter', 7);
+
+    // PARSING
+
+    addRegexToken('Q', match1);
+    addParseToken('Q', function (input, array) {
+        array[MONTH] = (toInt(input) - 1) * 3;
+    });
+
+    // MOMENTS
+
+    function getSetQuarter(input) {
+        return input == null ? Math.ceil((this.month() + 1) / 3) : this.month((input - 1) * 3 + this.month() % 3);
+    }
+
+    // FORMATTING
+
+    addFormatToken('D', ['DD', 2], 'Do', 'date');
+
+    // ALIASES
+
+    addUnitAlias('date', 'D');
+
+    // PRIOROITY
+    addUnitPriority('date', 9);
+
+    // PARSING
+
+    addRegexToken('D', match1to2);
+    addRegexToken('DD', match1to2, match2);
+    addRegexToken('Do', function (isStrict, locale) {
+        // TODO: Remove "ordinalParse" fallback in next major release.
+        return isStrict ? locale._dayOfMonthOrdinalParse || locale._ordinalParse : locale._dayOfMonthOrdinalParseLenient;
+    });
+
+    addParseToken(['D', 'DD'], DATE);
+    addParseToken('Do', function (input, array) {
+        array[DATE] = toInt(input.match(match1to2)[0], 10);
+    });
+
+    // MOMENTS
+
+    var getSetDayOfMonth = makeGetSet('Date', true);
+
+    // FORMATTING
+
+    addFormatToken('DDD', ['DDDD', 3], 'DDDo', 'dayOfYear');
+
+    // ALIASES
+
+    addUnitAlias('dayOfYear', 'DDD');
+
+    // PRIORITY
+    addUnitPriority('dayOfYear', 4);
+
+    // PARSING
+
+    addRegexToken('DDD', match1to3);
+    addRegexToken('DDDD', match3);
+    addParseToken(['DDD', 'DDDD'], function (input, array, config) {
+        config._dayOfYear = toInt(input);
+    });
+
+    // HELPERS
+
+    // MOMENTS
+
+    function getSetDayOfYear(input) {
+        var dayOfYear = Math.round((this.clone().startOf('day') - this.clone().startOf('year')) / 864e5) + 1;
+        return input == null ? dayOfYear : this.add(input - dayOfYear, 'd');
+    }
+
+    // FORMATTING
+
+    addFormatToken('m', ['mm', 2], 0, 'minute');
+
+    // ALIASES
+
+    addUnitAlias('minute', 'm');
+
+    // PRIORITY
+
+    addUnitPriority('minute', 14);
+
+    // PARSING
+
+    addRegexToken('m', match1to2);
+    addRegexToken('mm', match1to2, match2);
+    addParseToken(['m', 'mm'], MINUTE);
+
+    // MOMENTS
+
+    var getSetMinute = makeGetSet('Minutes', false);
+
+    // FORMATTING
+
+    addFormatToken('s', ['ss', 2], 0, 'second');
+
+    // ALIASES
+
+    addUnitAlias('second', 's');
+
+    // PRIORITY
+
+    addUnitPriority('second', 15);
+
+    // PARSING
+
+    addRegexToken('s', match1to2);
+    addRegexToken('ss', match1to2, match2);
+    addParseToken(['s', 'ss'], SECOND);
+
+    // MOMENTS
+
+    var getSetSecond = makeGetSet('Seconds', false);
+
+    // FORMATTING
+
+    addFormatToken('S', 0, 0, function () {
+        return ~~(this.millisecond() / 100);
+    });
+
+    addFormatToken(0, ['SS', 2], 0, function () {
+        return ~~(this.millisecond() / 10);
+    });
+
+    addFormatToken(0, ['SSS', 3], 0, 'millisecond');
+    addFormatToken(0, ['SSSS', 4], 0, function () {
+        return this.millisecond() * 10;
+    });
+    addFormatToken(0, ['SSSSS', 5], 0, function () {
+        return this.millisecond() * 100;
+    });
+    addFormatToken(0, ['SSSSSS', 6], 0, function () {
+        return this.millisecond() * 1000;
+    });
+    addFormatToken(0, ['SSSSSSS', 7], 0, function () {
+        return this.millisecond() * 10000;
+    });
+    addFormatToken(0, ['SSSSSSSS', 8], 0, function () {
+        return this.millisecond() * 100000;
+    });
+    addFormatToken(0, ['SSSSSSSSS', 9], 0, function () {
+        return this.millisecond() * 1000000;
+    });
+
+    // ALIASES
+
+    addUnitAlias('millisecond', 'ms');
+
+    // PRIORITY
+
+    addUnitPriority('millisecond', 16);
+
+    // PARSING
+
+    addRegexToken('S', match1to3, match1);
+    addRegexToken('SS', match1to3, match2);
+    addRegexToken('SSS', match1to3, match3);
+
+    var token;
+    for (token = 'SSSS'; token.length <= 9; token += 'S') {
+        addRegexToken(token, matchUnsigned);
+    }
+
+    function parseMs(input, array) {
+        array[MILLISECOND] = toInt(('0.' + input) * 1000);
+    }
+
+    for (token = 'S'; token.length <= 9; token += 'S') {
+        addParseToken(token, parseMs);
+    }
+    // MOMENTS
+
+    var getSetMillisecond = makeGetSet('Milliseconds', false);
+
+    // FORMATTING
+
+    addFormatToken('z', 0, 0, 'zoneAbbr');
+    addFormatToken('zz', 0, 0, 'zoneName');
+
+    // MOMENTS
+
+    function getZoneAbbr() {
+        return this._isUTC ? 'UTC' : '';
+    }
+
+    function getZoneName() {
+        return this._isUTC ? 'Coordinated Universal Time' : '';
+    }
+
+    var proto = Moment.prototype;
+
+    proto.add = add;
+    proto.calendar = calendar$1;
+    proto.clone = clone;
+    proto.diff = diff;
+    proto.endOf = endOf;
+    proto.format = format;
+    proto.from = from;
+    proto.fromNow = fromNow;
+    proto.to = to;
+    proto.toNow = toNow;
+    proto.get = stringGet;
+    proto.invalidAt = invalidAt;
+    proto.isAfter = isAfter;
+    proto.isBefore = isBefore;
+    proto.isBetween = isBetween;
+    proto.isSame = isSame;
+    proto.isSameOrAfter = isSameOrAfter;
+    proto.isSameOrBefore = isSameOrBefore;
+    proto.isValid = isValid$2;
+    proto.lang = lang;
+    proto.locale = locale;
+    proto.localeData = localeData;
+    proto.max = prototypeMax;
+    proto.min = prototypeMin;
+    proto.parsingFlags = parsingFlags;
+    proto.set = stringSet;
+    proto.startOf = startOf;
+    proto.subtract = subtract;
+    proto.toArray = toArray;
+    proto.toObject = toObject;
+    proto.toDate = toDate;
+    proto.toISOString = toISOString;
+    proto.inspect = inspect;
+    proto.toJSON = toJSON;
+    proto.toString = toString;
+    proto.unix = unix;
+    proto.valueOf = valueOf;
+    proto.creationData = creationData;
+
+    // Year
+    proto.year = getSetYear;
+    proto.isLeapYear = getIsLeapYear;
+
+    // Week Year
+    proto.weekYear = getSetWeekYear;
+    proto.isoWeekYear = getSetISOWeekYear;
+
+    // Quarter
+    proto.quarter = proto.quarters = getSetQuarter;
+
+    // Month
+    proto.month = getSetMonth;
+    proto.daysInMonth = getDaysInMonth;
+
+    // Week
+    proto.week = proto.weeks = getSetWeek;
+    proto.isoWeek = proto.isoWeeks = getSetISOWeek;
+    proto.weeksInYear = getWeeksInYear;
+    proto.isoWeeksInYear = getISOWeeksInYear;
+
+    // Day
+    proto.date = getSetDayOfMonth;
+    proto.day = proto.days = getSetDayOfWeek;
+    proto.weekday = getSetLocaleDayOfWeek;
+    proto.isoWeekday = getSetISODayOfWeek;
+    proto.dayOfYear = getSetDayOfYear;
+
+    // Hour
+    proto.hour = proto.hours = getSetHour;
+
+    // Minute
+    proto.minute = proto.minutes = getSetMinute;
+
+    // Second
+    proto.second = proto.seconds = getSetSecond;
+
+    // Millisecond
+    proto.millisecond = proto.milliseconds = getSetMillisecond;
+
+    // Offset
+    proto.utcOffset = getSetOffset;
+    proto.utc = setOffsetToUTC;
+    proto.local = setOffsetToLocal;
+    proto.parseZone = setOffsetToParsedOffset;
+    proto.hasAlignedHourOffset = hasAlignedHourOffset;
+    proto.isDST = isDaylightSavingTime;
+    proto.isLocal = isLocal;
+    proto.isUtcOffset = isUtcOffset;
+    proto.isUtc = isUtc;
+    proto.isUTC = isUtc;
+
+    // Timezone
+    proto.zoneAbbr = getZoneAbbr;
+    proto.zoneName = getZoneName;
+
+    // Deprecations
+    proto.dates = deprecate('dates accessor is deprecated. Use date instead.', getSetDayOfMonth);
+    proto.months = deprecate('months accessor is deprecated. Use month instead', getSetMonth);
+    proto.years = deprecate('years accessor is deprecated. Use year instead', getSetYear);
+    proto.zone = deprecate('moment().zone is deprecated, use moment().utcOffset instead. http://momentjs.com/guides/#/warnings/zone/', getSetZone);
+    proto.isDSTShifted = deprecate('isDSTShifted is deprecated. See http://momentjs.com/guides/#/warnings/dst-shifted/ for more information', isDaylightSavingTimeShifted);
+
+    function createUnix(input) {
+        return createLocal(input * 1000);
+    }
+
+    function createInZone() {
+        return createLocal.apply(null, arguments).parseZone();
+    }
+
+    function preParsePostFormat(string) {
+        return string;
+    }
+
+    var proto$1 = Locale.prototype;
+
+    proto$1.calendar = calendar;
+    proto$1.longDateFormat = longDateFormat;
+    proto$1.invalidDate = invalidDate;
+    proto$1.ordinal = ordinal;
+    proto$1.preparse = preParsePostFormat;
+    proto$1.postformat = preParsePostFormat;
+    proto$1.relativeTime = relativeTime;
+    proto$1.pastFuture = pastFuture;
+    proto$1.set = set;
+
+    // Month
+    proto$1.months = localeMonths;
+    proto$1.monthsShort = localeMonthsShort;
+    proto$1.monthsParse = localeMonthsParse;
+    proto$1.monthsRegex = monthsRegex;
+    proto$1.monthsShortRegex = monthsShortRegex;
+
+    // Week
+    proto$1.week = localeWeek;
+    proto$1.firstDayOfYear = localeFirstDayOfYear;
+    proto$1.firstDayOfWeek = localeFirstDayOfWeek;
+
+    // Day of Week
+    proto$1.weekdays = localeWeekdays;
+    proto$1.weekdaysMin = localeWeekdaysMin;
+    proto$1.weekdaysShort = localeWeekdaysShort;
+    proto$1.weekdaysParse = localeWeekdaysParse;
+
+    proto$1.weekdaysRegex = weekdaysRegex;
+    proto$1.weekdaysShortRegex = weekdaysShortRegex;
+    proto$1.weekdaysMinRegex = weekdaysMinRegex;
+
+    // Hours
+    proto$1.isPM = localeIsPM;
+    proto$1.meridiem = localeMeridiem;
+
+    function get$1(format, index, field, setter) {
+        var locale = getLocale();
+        var utc = createUTC().set(setter, index);
+        return locale[field](utc, format);
+    }
+
+    function listMonthsImpl(format, index, field) {
+        if (isNumber(format)) {
+            index = format;
+            format = undefined;
+        }
+
+        format = format || '';
+
+        if (index != null) {
+            return get$1(format, index, field, 'month');
+        }
+
+        var i;
+        var out = [];
+        for (i = 0; i < 12; i++) {
+            out[i] = get$1(format, i, field, 'month');
+        }
+        return out;
+    }
+
+    // ()
+    // (5)
+    // (fmt, 5)
+    // (fmt)
+    // (true)
+    // (true, 5)
+    // (true, fmt, 5)
+    // (true, fmt)
+    function listWeekdaysImpl(localeSorted, format, index, field) {
+        if (typeof localeSorted === 'boolean') {
+            if (isNumber(format)) {
+                index = format;
+                format = undefined;
+            }
+
+            format = format || '';
+        } else {
+            format = localeSorted;
+            index = format;
+            localeSorted = false;
+
+            if (isNumber(format)) {
+                index = format;
+                format = undefined;
+            }
+
+            format = format || '';
+        }
+
+        var locale = getLocale(),
+            shift = localeSorted ? locale._week.dow : 0;
+
+        if (index != null) {
+            return get$1(format, (index + shift) % 7, field, 'day');
+        }
+
+        var i;
+        var out = [];
+        for (i = 0; i < 7; i++) {
+            out[i] = get$1(format, (i + shift) % 7, field, 'day');
+        }
+        return out;
+    }
+
+    function listMonths(format, index) {
+        return listMonthsImpl(format, index, 'months');
+    }
+
+    function listMonthsShort(format, index) {
+        return listMonthsImpl(format, index, 'monthsShort');
+    }
+
+    function listWeekdays(localeSorted, format, index) {
+        return listWeekdaysImpl(localeSorted, format, index, 'weekdays');
+    }
+
+    function listWeekdaysShort(localeSorted, format, index) {
+        return listWeekdaysImpl(localeSorted, format, index, 'weekdaysShort');
+    }
+
+    function listWeekdaysMin(localeSorted, format, index) {
+        return listWeekdaysImpl(localeSorted, format, index, 'weekdaysMin');
+    }
+
+    getSetGlobalLocale('en', {
+        dayOfMonthOrdinalParse: /\d{1,2}(th|st|nd|rd)/,
+        ordinal: function ordinal(number) {
+            var b = number % 10,
+                output = toInt(number % 100 / 10) === 1 ? 'th' : b === 1 ? 'st' : b === 2 ? 'nd' : b === 3 ? 'rd' : 'th';
+            return number + output;
+        }
+    });
+
+    // Side effect imports
+    hooks.lang = deprecate('moment.lang is deprecated. Use moment.locale instead.', getSetGlobalLocale);
+    hooks.langData = deprecate('moment.langData is deprecated. Use moment.localeData instead.', getLocale);
+
+    var mathAbs = Math.abs;
+
+    function abs() {
+        var data = this._data;
+
+        this._milliseconds = mathAbs(this._milliseconds);
+        this._days = mathAbs(this._days);
+        this._months = mathAbs(this._months);
+
+        data.milliseconds = mathAbs(data.milliseconds);
+        data.seconds = mathAbs(data.seconds);
+        data.minutes = mathAbs(data.minutes);
+        data.hours = mathAbs(data.hours);
+        data.months = mathAbs(data.months);
+        data.years = mathAbs(data.years);
+
+        return this;
+    }
+
+    function addSubtract$1(duration, input, value, direction) {
+        var other = createDuration(input, value);
+
+        duration._milliseconds += direction * other._milliseconds;
+        duration._days += direction * other._days;
+        duration._months += direction * other._months;
+
+        return duration._bubble();
+    }
+
+    // supports only 2.0-style add(1, 's') or add(duration)
+    function add$1(input, value) {
+        return addSubtract$1(this, input, value, 1);
+    }
+
+    // supports only 2.0-style subtract(1, 's') or subtract(duration)
+    function subtract$1(input, value) {
+        return addSubtract$1(this, input, value, -1);
+    }
+
+    function absCeil(number) {
+        if (number < 0) {
+            return Math.floor(number);
+        } else {
+            return Math.ceil(number);
+        }
+    }
+
+    function bubble() {
+        var milliseconds = this._milliseconds;
+        var days = this._days;
+        var months = this._months;
+        var data = this._data;
+        var seconds, minutes, hours, years, monthsFromDays;
+
+        // if we have a mix of positive and negative values, bubble down first
+        // check: https://github.com/moment/moment/issues/2166
+        if (!(milliseconds >= 0 && days >= 0 && months >= 0 || milliseconds <= 0 && days <= 0 && months <= 0)) {
+            milliseconds += absCeil(monthsToDays(months) + days) * 864e5;
+            days = 0;
+            months = 0;
+        }
+
+        // The following code bubbles up values, see the tests for
+        // examples of what that means.
+        data.milliseconds = milliseconds % 1000;
+
+        seconds = absFloor(milliseconds / 1000);
+        data.seconds = seconds % 60;
+
+        minutes = absFloor(seconds / 60);
+        data.minutes = minutes % 60;
+
+        hours = absFloor(minutes / 60);
+        data.hours = hours % 24;
+
+        days += absFloor(hours / 24);
+
+        // convert days to months
+        monthsFromDays = absFloor(daysToMonths(days));
+        months += monthsFromDays;
+        days -= absCeil(monthsToDays(monthsFromDays));
+
+        // 12 months -> 1 year
+        years = absFloor(months / 12);
+        months %= 12;
+
+        data.days = days;
+        data.months = months;
+        data.years = years;
+
+        return this;
+    }
+
+    function daysToMonths(days) {
+        // 400 years have 146097 days (taking into account leap year rules)
+        // 400 years have 12 months === 4800
+        return days * 4800 / 146097;
+    }
+
+    function monthsToDays(months) {
+        // the reverse of daysToMonths
+        return months * 146097 / 4800;
+    }
+
+    function as(units) {
+        if (!this.isValid()) {
+            return NaN;
+        }
+        var days;
+        var months;
+        var milliseconds = this._milliseconds;
+
+        units = normalizeUnits(units);
+
+        if (units === 'month' || units === 'year') {
+            days = this._days + milliseconds / 864e5;
+            months = this._months + daysToMonths(days);
+            return units === 'month' ? months : months / 12;
+        } else {
+            // handle milliseconds separately because of floating point math errors (issue #1867)
+            days = this._days + Math.round(monthsToDays(this._months));
+            switch (units) {
+                case 'week':
+                    return days / 7 + milliseconds / 6048e5;
+                case 'day':
+                    return days + milliseconds / 864e5;
+                case 'hour':
+                    return days * 24 + milliseconds / 36e5;
+                case 'minute':
+                    return days * 1440 + milliseconds / 6e4;
+                case 'second':
+                    return days * 86400 + milliseconds / 1000;
+                // Math.floor prevents floating point math errors here
+                case 'millisecond':
+                    return Math.floor(days * 864e5) + milliseconds;
+                default:
+                    throw new Error('Unknown unit ' + units);
+            }
+        }
+    }
+
+    // TODO: Use this.as('ms')?
+    function valueOf$1() {
+        if (!this.isValid()) {
+            return NaN;
+        }
+        return this._milliseconds + this._days * 864e5 + this._months % 12 * 2592e6 + toInt(this._months / 12) * 31536e6;
+    }
+
+    function makeAs(alias) {
+        return function () {
+            return this.as(alias);
+        };
+    }
+
+    var asMilliseconds = makeAs('ms');
+    var asSeconds = makeAs('s');
+    var asMinutes = makeAs('m');
+    var asHours = makeAs('h');
+    var asDays = makeAs('d');
+    var asWeeks = makeAs('w');
+    var asMonths = makeAs('M');
+    var asYears = makeAs('y');
+
+    function clone$1() {
+        return createDuration(this);
+    }
+
+    function get$2(units) {
+        units = normalizeUnits(units);
+        return this.isValid() ? this[units + 's']() : NaN;
+    }
+
+    function makeGetter(name) {
+        return function () {
+            return this.isValid() ? this._data[name] : NaN;
+        };
+    }
+
+    var milliseconds = makeGetter('milliseconds');
+    var seconds = makeGetter('seconds');
+    var minutes = makeGetter('minutes');
+    var hours = makeGetter('hours');
+    var days = makeGetter('days');
+    var months = makeGetter('months');
+    var years = makeGetter('years');
+
+    function weeks() {
+        return absFloor(this.days() / 7);
+    }
+
+    var round = Math.round;
+    var thresholds = {
+        ss: 44, // a few seconds to seconds
+        s: 45, // seconds to minute
+        m: 45, // minutes to hour
+        h: 22, // hours to day
+        d: 26, // days to month
+        M: 11 // months to year
+    };
+
+    // helper function for moment.fn.from, moment.fn.fromNow, and moment.duration.fn.humanize
+    function substituteTimeAgo(string, number, withoutSuffix, isFuture, locale) {
+        return locale.relativeTime(number || 1, !!withoutSuffix, string, isFuture);
+    }
+
+    function relativeTime$1(posNegDuration, withoutSuffix, locale) {
+        var duration = createDuration(posNegDuration).abs();
+        var seconds = round(duration.as('s'));
+        var minutes = round(duration.as('m'));
+        var hours = round(duration.as('h'));
+        var days = round(duration.as('d'));
+        var months = round(duration.as('M'));
+        var years = round(duration.as('y'));
+
+        var a = seconds <= thresholds.ss && ['s', seconds] || seconds < thresholds.s && ['ss', seconds] || minutes <= 1 && ['m'] || minutes < thresholds.m && ['mm', minutes] || hours <= 1 && ['h'] || hours < thresholds.h && ['hh', hours] || days <= 1 && ['d'] || days < thresholds.d && ['dd', days] || months <= 1 && ['M'] || months < thresholds.M && ['MM', months] || years <= 1 && ['y'] || ['yy', years];
+
+        a[2] = withoutSuffix;
+        a[3] = +posNegDuration > 0;
+        a[4] = locale;
+        return substituteTimeAgo.apply(null, a);
+    }
+
+    // This function allows you to set the rounding function for relative time strings
+    function getSetRelativeTimeRounding(roundingFunction) {
+        if (roundingFunction === undefined) {
+            return round;
+        }
+        if (typeof roundingFunction === 'function') {
+            round = roundingFunction;
+            return true;
+        }
+        return false;
+    }
+
+    // This function allows you to set a threshold for relative time strings
+    function getSetRelativeTimeThreshold(threshold, limit) {
+        if (thresholds[threshold] === undefined) {
+            return false;
+        }
+        if (limit === undefined) {
+            return thresholds[threshold];
+        }
+        thresholds[threshold] = limit;
+        if (threshold === 's') {
+            thresholds.ss = limit - 1;
+        }
+        return true;
+    }
+
+    function humanize(withSuffix) {
+        if (!this.isValid()) {
+            return this.localeData().invalidDate();
+        }
+
+        var locale = this.localeData();
+        var output = relativeTime$1(this, !withSuffix, locale);
+
+        if (withSuffix) {
+            output = locale.pastFuture(+this, output);
+        }
+
+        return locale.postformat(output);
+    }
+
+    var abs$1 = Math.abs;
+
+    function sign(x) {
+        return (x > 0) - (x < 0) || +x;
+    }
+
+    function toISOString$1() {
+        // for ISO strings we do not use the normal bubbling rules:
+        //  * milliseconds bubble up until they become hours
+        //  * days do not bubble at all
+        //  * months bubble up until they become years
+        // This is because there is no context-free conversion between hours and days
+        // (think of clock changes)
+        // and also not between days and months (28-31 days per month)
+        if (!this.isValid()) {
+            return this.localeData().invalidDate();
+        }
+
+        var seconds = abs$1(this._milliseconds) / 1000;
+        var days = abs$1(this._days);
+        var months = abs$1(this._months);
+        var minutes, hours, years;
+
+        // 3600 seconds -> 60 minutes -> 1 hour
+        minutes = absFloor(seconds / 60);
+        hours = absFloor(minutes / 60);
+        seconds %= 60;
+        minutes %= 60;
+
+        // 12 months -> 1 year
+        years = absFloor(months / 12);
+        months %= 12;
+
+        // inspired by https://github.com/dordille/moment-isoduration/blob/master/moment.isoduration.js
+        var Y = years;
+        var M = months;
+        var D = days;
+        var h = hours;
+        var m = minutes;
+        var s = seconds ? seconds.toFixed(3).replace(/\.?0+$/, '') : '';
+        var total = this.asSeconds();
+
+        if (!total) {
+            // this is the same as C#'s (Noda) and python (isodate)...
+            // but not other JS (goog.date)
+            return 'P0D';
+        }
+
+        var totalSign = total < 0 ? '-' : '';
+        var ymSign = sign(this._months) !== sign(total) ? '-' : '';
+        var daysSign = sign(this._days) !== sign(total) ? '-' : '';
+        var hmsSign = sign(this._milliseconds) !== sign(total) ? '-' : '';
+
+        return totalSign + 'P' + (Y ? ymSign + Y + 'Y' : '') + (M ? ymSign + M + 'M' : '') + (D ? daysSign + D + 'D' : '') + (h || m || s ? 'T' : '') + (h ? hmsSign + h + 'H' : '') + (m ? hmsSign + m + 'M' : '') + (s ? hmsSign + s + 'S' : '');
+    }
+
+    var proto$2 = Duration.prototype;
+
+    proto$2.isValid = isValid$1;
+    proto$2.abs = abs;
+    proto$2.add = add$1;
+    proto$2.subtract = subtract$1;
+    proto$2.as = as;
+    proto$2.asMilliseconds = asMilliseconds;
+    proto$2.asSeconds = asSeconds;
+    proto$2.asMinutes = asMinutes;
+    proto$2.asHours = asHours;
+    proto$2.asDays = asDays;
+    proto$2.asWeeks = asWeeks;
+    proto$2.asMonths = asMonths;
+    proto$2.asYears = asYears;
+    proto$2.valueOf = valueOf$1;
+    proto$2._bubble = bubble;
+    proto$2.clone = clone$1;
+    proto$2.get = get$2;
+    proto$2.milliseconds = milliseconds;
+    proto$2.seconds = seconds;
+    proto$2.minutes = minutes;
+    proto$2.hours = hours;
+    proto$2.days = days;
+    proto$2.weeks = weeks;
+    proto$2.months = months;
+    proto$2.years = years;
+    proto$2.humanize = humanize;
+    proto$2.toISOString = toISOString$1;
+    proto$2.toString = toISOString$1;
+    proto$2.toJSON = toISOString$1;
+    proto$2.locale = locale;
+    proto$2.localeData = localeData;
+
+    // Deprecations
+    proto$2.toIsoString = deprecate('toIsoString() is deprecated. Please use toISOString() instead (notice the capitals)', toISOString$1);
+    proto$2.lang = lang;
+
+    // Side effect imports
+
+    // FORMATTING
+
+    addFormatToken('X', 0, 0, 'unix');
+    addFormatToken('x', 0, 0, 'valueOf');
+
+    // PARSING
+
+    addRegexToken('x', matchSigned);
+    addRegexToken('X', matchTimestamp);
+    addParseToken('X', function (input, array, config) {
+        config._d = new Date(parseFloat(input, 10) * 1000);
+    });
+    addParseToken('x', function (input, array, config) {
+        config._d = new Date(toInt(input));
+    });
+
+    // Side effect imports
+
+
+    hooks.version = '2.19.1';
+
+    setHookCallback(createLocal);
+
+    hooks.fn = proto;
+    hooks.min = min;
+    hooks.max = max;
+    hooks.now = now;
+    hooks.utc = createUTC;
+    hooks.unix = createUnix;
+    hooks.months = listMonths;
+    hooks.isDate = isDate;
+    hooks.locale = getSetGlobalLocale;
+    hooks.invalid = createInvalid;
+    hooks.duration = createDuration;
+    hooks.isMoment = isMoment;
+    hooks.weekdays = listWeekdays;
+    hooks.parseZone = createInZone;
+    hooks.localeData = getLocale;
+    hooks.isDuration = isDuration;
+    hooks.monthsShort = listMonthsShort;
+    hooks.weekdaysMin = listWeekdaysMin;
+    hooks.defineLocale = defineLocale;
+    hooks.updateLocale = updateLocale;
+    hooks.locales = listLocales;
+    hooks.weekdaysShort = listWeekdaysShort;
+    hooks.normalizeUnits = normalizeUnits;
+    hooks.relativeTimeRounding = getSetRelativeTimeRounding;
+    hooks.relativeTimeThreshold = getSetRelativeTimeThreshold;
+    hooks.calendarFormat = getCalendarFormat;
+    hooks.prototype = proto;
+
+    return hooks;
+});
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
+  return typeof obj;
+} : function (obj) {
+  return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+};
+
+function _toConsumableArray(arr) {
+  if (Array.isArray(arr)) {
+    for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) {
+      arr2[i] = arr[i];
+    }return arr2;
+  } else {
+    return Array.from(arr);
+  }
+}
+
+var vueMoment = {
+  install: function install(Vue, options) {
+    var moment$$1 = options && options.moment ? options.moment : moment;
+
+    Object.defineProperties(Vue.prototype, {
+      $moment: {
+        get: function get() {
+          return moment$$1;
+        }
+      }
+    });
+
+    Vue.moment = moment$$1;
+
+    Vue.filter('moment', function () {
+      var arguments$1 = arguments;
+
+      for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments$1[_key];
+      }
+
+      args = Array.prototype.slice.call(args);
+      var input = args.shift();
+      var date = void 0;
+
+      if (Array.isArray(input) && typeof input[0] === 'string') {
+        // If input is array, assume we're being passed a format pattern to parse against.
+        // Format pattern will accept an array of potential formats to parse against.
+        // Date string should be at [0], format pattern(s) should be at [1]
+        date = moment$$1(input[0], input[1], true);
+      } else if (typeof input === 'number') {
+        if (input.toString().length < 12) {
+          // If input is an integer with fewer than 12 digits, assume Unix seconds...
+          date = moment$$1.unix(input);
+        } else {
+          // ..otherwise, assume milliseconds.
+          date = moment$$1(input);
+        }
+      } else {
+        // Otherwise, throw the input at moment and see what happens...
+        date = moment$$1(input);
+      }
+
+      if (!input || !date.isValid()) {
+        // Log a warning if moment couldn't reconcile the input. Better than throwing an error?
+        console.warn('Could not build a valid `moment` object from input.');
+        return input;
+      }
+
+      function parse() {
+        var arguments$1 = arguments;
+
+        for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+          args[_key2] = arguments$1[_key2];
+        }
+
+        args = Array.prototype.slice.call(args);
+        var method = args.shift();
+
+        switch (method) {
+          case 'add':
+            {
+              /*
+              * Mutates the original moment by adding time.
+              * http://momentjs.com/docs/#/manipulating/add/
+              */
+
+              var addends = args.shift().split(',').map(Function.prototype.call, String.prototype.trim);
+              var obj = {};
+
+              for (var n = 0; n < addends.length; n++) {
+                var addend = addends[n].split(' ');
+                obj[addend[1]] = addend[0];
+              }
+              date.add(obj);
+              break;
+            }
+
+          case 'subtract':
+            {
+              /*
+              * Mutates the original moment by subtracting time.
+              * http://momentjs.com/docs/#/manipulating/subtract/
+              */
+
+              var subtrahends = args.shift().split(',').map(Function.prototype.call, String.prototype.trim);
+              var _obj = {};
+
+              for (var _n = 0; _n < subtrahends.length; _n++) {
+                var subtrahend = subtrahends[_n].split(' ');
+                _obj[subtrahend[1]] = subtrahend[0];
+              }
+              date.subtract(_obj);
+              break;
+            }
+
+          case 'from':
+            {
+              /*
+              * Display a moment in relative time, either from now or from a specified date.
+              * http://momentjs.com/docs/#/displaying/fromnow/
+              */
+
+              var from = 'now';
+              var removeSuffix = false;
+
+              if (args[0] === 'now') { args.shift(); }
+              // If valid, assume it is a date we want the output computed against.
+              if (moment$$1(args[0]).isValid()) { from = moment$$1(args.shift()); }
+
+              if (args[0] === true) {
+                args.shift();
+                removeSuffix = true;
+              }
+
+              if (from !== 'now') {
+                date = date.from(from, removeSuffix);
+              } else {
+                date = date.fromNow(removeSuffix);
+              }
+              break;
+            }
+
+          case 'diff':
+            {
+              /*
+              * Mutates the original moment by doing a difference with another date.
+              * http://momentjs.com/docs/#/displaying/difference/
+              */
+
+              var referenceTime = moment$$1();
+              var units = '';
+              var float = false;
+
+              if (moment$$1(args[0]).isValid()) {
+                // If valid, assume it is a date we want the output computed against.
+                referenceTime = moment$$1(args.shift());
+              } else if (args[0] === null || args[0] === 'now') {
+                // If null or 'now', remove argument and proceed with default referenceTime.
+                args.shift();
+              }
+
+              if (args[0]) { units = args.shift(); }
+
+              if (args[0] === true) { float = args.shift(); }
+
+              date = date.diff(referenceTime, units, float);
+              break;
+            }
+
+          case 'calendar':
+            {
+              /*
+              * Formats a date with different strings depending on how close
+              * to a certain date (today by default) the date is.
+              * http://momentjs.com/docs/#/displaying/calendar-time/
+              */
+
+              var _referenceTime = moment$$1();
+              var formats = {};
+
+              if (moment$$1(args[0]).isValid()) {
+                // If valid, assume it is a date we want the output computed against.
+                _referenceTime = moment$$1(args.shift());
+              } else if (args[0] === null || args[0] === 'now') {
+                // If null or 'now', remove argument and proceed with default referenceTime.
+                args.shift();
+              }
+
+              if (_typeof(args[0]) === 'object') { formats = args.shift(); }
+
+              date = date.calendar(_referenceTime, formats);
+              break;
+            }
+
+          case 'utc':
+            {
+              /*
+              * Mutates the original moment by converting to UTC
+              * https://momentjs.com/docs/#/manipulating/utc/
+              */
+              date.utc();
+              break;
+            }
+
+          case 'timezone':
+            {
+              /*
+              * Mutates the original moment by converting to a new timezone.
+              * https://momentjs.com/timezone/docs/#/using-timezones/converting-to-zone/
+              */
+              date.tz(args.shift());
+              break;
+            }
+
+          default:
+            {
+              /*
+              * Formats a date by taking a string of tokens and replacing
+              * them with their corresponding values.
+              * http://momentjs.com/docs/#/displaying/format/
+              */
+
+              var format = method;
+              date = date.format(format);
+            }
+        }
+
+        if (args.length) { parse.apply(parse, args); }
+      }
+
+      parse.apply(parse, args);
+
+      return date;
+    });
+
+    Vue.filter('duration', function () {
+      var arguments$1 = arguments;
+
+      for (var _len3 = arguments.length, args = Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+        args[_key3] = arguments$1[_key3];
+      }
+
+      /*
+      * Basic pass-through filter for leveraging moment.js's ability
+      * to manipulate and display durations.
+      * https://momentjs.com/docs/#/durations/
+      */
+      args = Array.prototype.slice.call(args);
+      var input = args.shift();
+      var method = args.shift();
+
+      function createDuration(time) {
+        if (!Array.isArray(time)) { time = [time]; }
+        var result = moment$$1.duration.apply(moment$$1, _toConsumableArray(time));
+        if (!result.isValid()) { console.warn('Could not build a valid `duration` object from input.'); }
+        return result;
+      }
+      var duration = createDuration(input);
+
+      if (method === 'add' || method === 'subtract') {
+        // Generates a duration object and either adds or subtracts it
+        // from our original duration.
+        var durationChange = createDuration(args);
+        duration[method](durationChange);
+      } else if (duration && duration[method]) {
+        var _duration;
+
+        // This gives a full proxy to moment.duration functions.
+        duration = (_duration = duration)[method].apply(_duration, _toConsumableArray(args));
+      }
+
+      return duration;
+    });
+  }
+};
+
+var vueMoment_1 = vueMoment.install;
+
+exports['default'] = vueMoment;
+exports.install = vueMoment_1;
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+})));
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
+
+/***/ }),
+/* 266 */
+/***/ (function(module, exports) {
+
+module.exports = "/fonts/vendor/@mdi/materialdesignicons-webfont.eot?af48cb7231242b5abcf43e13ac62dfec";
+
+/***/ }),
+/* 267 */
+/***/ (function(module, exports) {
+
+module.exports = "/fonts/vendor/@mdi/materialdesignicons-webfont.woff2?bfced7613f076eb7bc302a9652ec137d";
+
+/***/ }),
+/* 268 */
+/***/ (function(module, exports) {
+
+module.exports = "/fonts/vendor/@mdi/materialdesignicons-webfont.woff?b604eb6613e1c20325af0841b7566496";
+
+/***/ }),
+/* 269 */
+/***/ (function(module, exports) {
+
+module.exports = "/fonts/vendor/@mdi/materialdesignicons-webfont.ttf?bc8c28e6477bf74fb2b64cea10cb0a64";
+
+/***/ }),
+/* 270 */
+/***/ (function(module, exports) {
+
+module.exports = "/fonts/vendor/@mdi/materialdesignicons-webfont.svg?602efac9b8ded1dbc1162d4aaff5104e";
+
+/***/ }),
+/* 271 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isDate = __webpack_require__(277)
+
+var MILLISECONDS_IN_HOUR = 3600000
+var MILLISECONDS_IN_MINUTE = 60000
+var DEFAULT_ADDITIONAL_DIGITS = 2
+
+var parseTokenDateTimeDelimeter = /[T ]/
+var parseTokenPlainTime = /:/
+
+// year tokens
+var parseTokenYY = /^(\d{2})$/
+var parseTokensYYY = [
+  /^([+-]\d{2})$/, // 0 additional digits
+  /^([+-]\d{3})$/, // 1 additional digit
+  /^([+-]\d{4})$/ // 2 additional digits
+]
+
+var parseTokenYYYY = /^(\d{4})/
+var parseTokensYYYYY = [
+  /^([+-]\d{4})/, // 0 additional digits
+  /^([+-]\d{5})/, // 1 additional digit
+  /^([+-]\d{6})/ // 2 additional digits
+]
+
+// date tokens
+var parseTokenMM = /^-(\d{2})$/
+var parseTokenDDD = /^-?(\d{3})$/
+var parseTokenMMDD = /^-?(\d{2})-?(\d{2})$/
+var parseTokenWww = /^-?W(\d{2})$/
+var parseTokenWwwD = /^-?W(\d{2})-?(\d{1})$/
+
+// time tokens
+var parseTokenHH = /^(\d{2}([.,]\d*)?)$/
+var parseTokenHHMM = /^(\d{2}):?(\d{2}([.,]\d*)?)$/
+var parseTokenHHMMSS = /^(\d{2}):?(\d{2}):?(\d{2}([.,]\d*)?)$/
+
+// timezone tokens
+var parseTokenTimezone = /([Z+-].*)$/
+var parseTokenTimezoneZ = /^(Z)$/
+var parseTokenTimezoneHH = /^([+-])(\d{2})$/
+var parseTokenTimezoneHHMM = /^([+-])(\d{2}):?(\d{2})$/
+
+/**
+ * @category Common Helpers
+ * @summary Convert the given argument to an instance of Date.
+ *
+ * @description
+ * Convert the given argument to an instance of Date.
+ *
+ * If the argument is an instance of Date, the function returns its clone.
+ *
+ * If the argument is a number, it is treated as a timestamp.
+ *
+ * If an argument is a string, the function tries to parse it.
+ * Function accepts complete ISO 8601 formats as well as partial implementations.
+ * ISO 8601: http://en.wikipedia.org/wiki/ISO_8601
+ *
+ * If all above fails, the function passes the given argument to Date constructor.
+ *
+ * @param {Date|String|Number} argument - the value to convert
+ * @param {Object} [options] - the object with options
+ * @param {0 | 1 | 2} [options.additionalDigits=2] - the additional number of digits in the extended year format
+ * @returns {Date} the parsed date in the local time zone
+ *
+ * @example
+ * // Convert string '2014-02-11T11:30:30' to date:
+ * var result = parse('2014-02-11T11:30:30')
+ * //=> Tue Feb 11 2014 11:30:30
+ *
+ * @example
+ * // Parse string '+02014101',
+ * // if the additional number of digits in the extended year format is 1:
+ * var result = parse('+02014101', {additionalDigits: 1})
+ * //=> Fri Apr 11 2014 00:00:00
+ */
+function parse (argument, dirtyOptions) {
+  if (isDate(argument)) {
+    // Prevent the date to lose the milliseconds when passed to new Date() in IE10
+    return new Date(argument.getTime())
+  } else if (typeof argument !== 'string') {
+    return new Date(argument)
+  }
+
+  var options = dirtyOptions || {}
+  var additionalDigits = options.additionalDigits
+  if (additionalDigits == null) {
+    additionalDigits = DEFAULT_ADDITIONAL_DIGITS
+  } else {
+    additionalDigits = Number(additionalDigits)
+  }
+
+  var dateStrings = splitDateString(argument)
+
+  var parseYearResult = parseYear(dateStrings.date, additionalDigits)
+  var year = parseYearResult.year
+  var restDateString = parseYearResult.restDateString
+
+  var date = parseDate(restDateString, year)
+
+  if (date) {
+    var timestamp = date.getTime()
+    var time = 0
+    var offset
+
+    if (dateStrings.time) {
+      time = parseTime(dateStrings.time)
+    }
+
+    if (dateStrings.timezone) {
+      offset = parseTimezone(dateStrings.timezone)
+    } else {
+      // get offset accurate to hour in timezones that change offset
+      offset = new Date(timestamp + time).getTimezoneOffset()
+      offset = new Date(timestamp + time + offset * MILLISECONDS_IN_MINUTE).getTimezoneOffset()
+    }
+
+    return new Date(timestamp + time + offset * MILLISECONDS_IN_MINUTE)
+  } else {
+    return new Date(argument)
+  }
+}
+
+function splitDateString (dateString) {
+  var dateStrings = {}
+  var array = dateString.split(parseTokenDateTimeDelimeter)
+  var timeString
+
+  if (parseTokenPlainTime.test(array[0])) {
+    dateStrings.date = null
+    timeString = array[0]
+  } else {
+    dateStrings.date = array[0]
+    timeString = array[1]
+  }
+
+  if (timeString) {
+    var token = parseTokenTimezone.exec(timeString)
+    if (token) {
+      dateStrings.time = timeString.replace(token[1], '')
+      dateStrings.timezone = token[1]
+    } else {
+      dateStrings.time = timeString
+    }
+  }
+
+  return dateStrings
+}
+
+function parseYear (dateString, additionalDigits) {
+  var parseTokenYYY = parseTokensYYY[additionalDigits]
+  var parseTokenYYYYY = parseTokensYYYYY[additionalDigits]
+
+  var token
+
+  // YYYY or ±YYYYY
+  token = parseTokenYYYY.exec(dateString) || parseTokenYYYYY.exec(dateString)
+  if (token) {
+    var yearString = token[1]
+    return {
+      year: parseInt(yearString, 10),
+      restDateString: dateString.slice(yearString.length)
+    }
+  }
+
+  // YY or ±YYY
+  token = parseTokenYY.exec(dateString) || parseTokenYYY.exec(dateString)
+  if (token) {
+    var centuryString = token[1]
+    return {
+      year: parseInt(centuryString, 10) * 100,
+      restDateString: dateString.slice(centuryString.length)
+    }
+  }
+
+  // Invalid ISO-formatted year
+  return {
+    year: null
+  }
+}
+
+function parseDate (dateString, year) {
+  // Invalid ISO-formatted year
+  if (year === null) {
+    return null
+  }
+
+  var token
+  var date
+  var month
+  var week
+
+  // YYYY
+  if (dateString.length === 0) {
+    date = new Date(0)
+    date.setUTCFullYear(year)
+    return date
+  }
+
+  // YYYY-MM
+  token = parseTokenMM.exec(dateString)
+  if (token) {
+    date = new Date(0)
+    month = parseInt(token[1], 10) - 1
+    date.setUTCFullYear(year, month)
+    return date
+  }
+
+  // YYYY-DDD or YYYYDDD
+  token = parseTokenDDD.exec(dateString)
+  if (token) {
+    date = new Date(0)
+    var dayOfYear = parseInt(token[1], 10)
+    date.setUTCFullYear(year, 0, dayOfYear)
+    return date
+  }
+
+  // YYYY-MM-DD or YYYYMMDD
+  token = parseTokenMMDD.exec(dateString)
+  if (token) {
+    date = new Date(0)
+    month = parseInt(token[1], 10) - 1
+    var day = parseInt(token[2], 10)
+    date.setUTCFullYear(year, month, day)
+    return date
+  }
+
+  // YYYY-Www or YYYYWww
+  token = parseTokenWww.exec(dateString)
+  if (token) {
+    week = parseInt(token[1], 10) - 1
+    return dayOfISOYear(year, week)
+  }
+
+  // YYYY-Www-D or YYYYWwwD
+  token = parseTokenWwwD.exec(dateString)
+  if (token) {
+    week = parseInt(token[1], 10) - 1
+    var dayOfWeek = parseInt(token[2], 10) - 1
+    return dayOfISOYear(year, week, dayOfWeek)
+  }
+
+  // Invalid ISO-formatted date
+  return null
+}
+
+function parseTime (timeString) {
+  var token
+  var hours
+  var minutes
+
+  // hh
+  token = parseTokenHH.exec(timeString)
+  if (token) {
+    hours = parseFloat(token[1].replace(',', '.'))
+    return (hours % 24) * MILLISECONDS_IN_HOUR
+  }
+
+  // hh:mm or hhmm
+  token = parseTokenHHMM.exec(timeString)
+  if (token) {
+    hours = parseInt(token[1], 10)
+    minutes = parseFloat(token[2].replace(',', '.'))
+    return (hours % 24) * MILLISECONDS_IN_HOUR +
+      minutes * MILLISECONDS_IN_MINUTE
+  }
+
+  // hh:mm:ss or hhmmss
+  token = parseTokenHHMMSS.exec(timeString)
+  if (token) {
+    hours = parseInt(token[1], 10)
+    minutes = parseInt(token[2], 10)
+    var seconds = parseFloat(token[3].replace(',', '.'))
+    return (hours % 24) * MILLISECONDS_IN_HOUR +
+      minutes * MILLISECONDS_IN_MINUTE +
+      seconds * 1000
+  }
+
+  // Invalid ISO-formatted time
+  return null
+}
+
+function parseTimezone (timezoneString) {
+  var token
+  var absoluteOffset
+
+  // Z
+  token = parseTokenTimezoneZ.exec(timezoneString)
+  if (token) {
+    return 0
+  }
+
+  // ±hh
+  token = parseTokenTimezoneHH.exec(timezoneString)
+  if (token) {
+    absoluteOffset = parseInt(token[2], 10) * 60
+    return (token[1] === '+') ? -absoluteOffset : absoluteOffset
+  }
+
+  // ±hh:mm or ±hhmm
+  token = parseTokenTimezoneHHMM.exec(timezoneString)
+  if (token) {
+    absoluteOffset = parseInt(token[2], 10) * 60 + parseInt(token[3], 10)
+    return (token[1] === '+') ? -absoluteOffset : absoluteOffset
+  }
+
+  return 0
+}
+
+function dayOfISOYear (isoYear, week, day) {
+  week = week || 0
+  day = day || 0
+  var date = new Date(0)
+  date.setUTCFullYear(isoYear, 0, 4)
+  var fourthOfJanuaryDay = date.getUTCDay() || 7
+  var diff = week * 7 + day + 1 - fourthOfJanuaryDay
+  date.setUTCDate(date.getUTCDate() + diff)
+  return date
+}
+
+module.exports = parse
+
+
+/***/ }),
+/* 272 */
+/***/ (function(module, exports) {
+
+var commonFormatterKeys = [
+  'M', 'MM', 'Q', 'D', 'DD', 'DDD', 'DDDD', 'd',
+  'E', 'W', 'WW', 'YY', 'YYYY', 'GG', 'GGGG',
+  'H', 'HH', 'h', 'hh', 'm', 'mm',
+  's', 'ss', 'S', 'SS', 'SSS',
+  'Z', 'ZZ', 'X', 'x'
+]
+
+function buildFormattingTokensRegExp (formatters) {
+  var formatterKeys = []
+  for (var key in formatters) {
+    if (formatters.hasOwnProperty(key)) {
+      formatterKeys.push(key)
+    }
+  }
+
+  var formattingTokens = commonFormatterKeys
+    .concat(formatterKeys)
+    .sort()
+    .reverse()
+  var formattingTokensRegExp = new RegExp(
+    '(\\[[^\\[]*\\])|(\\\\)?' + '(' + formattingTokens.join('|') + '|.)', 'g'
+  )
+
+  return formattingTokensRegExp
+}
+
+module.exports = buildFormattingTokensRegExp
+
+
+/***/ }),
+/* 273 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export createTimeago */
+/* unused harmony export install */
+/* unused harmony export converter */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_date_fns_distance_in_words_to_now__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_date_fns_distance_in_words_to_now___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_date_fns_distance_in_words_to_now__);
+
+
+var defaultConverter = (function (date, locale, converterOptions) {
+  var includeSeconds = converterOptions.includeSeconds,
+      _converterOptions$add = converterOptions.addSuffix,
+      addSuffix = _converterOptions$add === void 0 ? true : _converterOptions$add;
+  return __WEBPACK_IMPORTED_MODULE_0_date_fns_distance_in_words_to_now___default()(date, {
+    locale: locale,
+    includeSeconds: includeSeconds,
+    addSuffix: addSuffix
+  });
+});
+
+var createTimeago = function createTimeago() {
+  var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var locales = opts.locales || {};
+  var name = opts.name || 'Timeago';
+  return {
+    name: name,
+    props: {
+      datetime: {
+        required: true
+      },
+      title: {
+        type: [String, Boolean]
+      },
+      locale: {
+        type: String
+      },
+      autoUpdate: {
+        type: [Number, Boolean]
+      },
+      converter: {
+        type: Function
+      },
+      converterOptions: {
+        type: Object
+      }
+    },
+    data: function data() {
+      return {
+        timeago: this.getTimeago()
+      };
+    },
+    mounted: function mounted() {
+      this.startUpdater();
+    },
+    beforeDestroy: function beforeDestroy() {
+      this.stopUpdater();
+    },
+    render: function render(h) {
+      return h('time', {
+        attrs: {
+          datetime: new Date(this.datetime),
+          title: typeof this.title === 'string' ? this.title : this.title === false ? null : this.timeago
+        }
+      }, [this.timeago]);
+    },
+    methods: {
+      getTimeago: function getTimeago(datetime) {
+        var converter = this.converter || opts.converter || defaultConverter;
+        return converter(datetime || this.datetime, locales[this.locale || opts.locale], this.converterOptions || {});
+      },
+      convert: function convert(datetime) {
+        this.timeago = this.getTimeago(datetime);
+      },
+      startUpdater: function startUpdater() {
+        var _this = this;
+
+        if (this.autoUpdate) {
+          var autoUpdaye = this.autoUpdate === true ? 60 : this.autoUpdate;
+          this.updater = setInterval(function () {
+            _this.convert();
+          }, autoUpdaye * 1000);
+        }
+      },
+      stopUpdater: function stopUpdater() {
+        if (this.updater) {
+          clearInterval(this.updater);
+          this.updater = null;
+        }
+      }
+    },
+    watch: {
+      autoUpdate: function autoUpdate(newValue) {
+        this.stopUpdater();
+
+        if (newValue) {
+          this.startUpdater();
+        }
+      },
+      datetime: function datetime() {
+        this.convert();
+      },
+      locale: function locale() {
+        this.convert();
+      },
+      converter: function converter() {
+        this.convert();
+      },
+      converterOptions: {
+        handler: function handler() {
+          this.convert();
+        },
+        deep: true
+      }
+    }
+  };
+};
+var install = function install(Vue, opts) {
+  var Component = createTimeago(opts);
+  Vue.component(Component.name, Component);
+};
+var converter = defaultConverter;
+
+/* harmony default export */ __webpack_exports__["a"] = (install);
+
+
+
+/***/ }),
+/* 274 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var distanceInWords = __webpack_require__(275)
+
+/**
+ * @category Common Helpers
+ * @summary Return the distance between the given date and now in words.
+ *
+ * @description
+ * Return the distance between the given date and now in words.
+ *
+ * | Distance to now                                                   | Result              |
+ * |-------------------------------------------------------------------|---------------------|
+ * | 0 ... 30 secs                                                     | less than a minute  |
+ * | 30 secs ... 1 min 30 secs                                         | 1 minute            |
+ * | 1 min 30 secs ... 44 mins 30 secs                                 | [2..44] minutes     |
+ * | 44 mins ... 30 secs ... 89 mins 30 secs                           | about 1 hour        |
+ * | 89 mins 30 secs ... 23 hrs 59 mins 30 secs                        | about [2..24] hours |
+ * | 23 hrs 59 mins 30 secs ... 41 hrs 59 mins 30 secs                 | 1 day               |
+ * | 41 hrs 59 mins 30 secs ... 29 days 23 hrs 59 mins 30 secs         | [2..30] days        |
+ * | 29 days 23 hrs 59 mins 30 secs ... 44 days 23 hrs 59 mins 30 secs | about 1 month       |
+ * | 44 days 23 hrs 59 mins 30 secs ... 59 days 23 hrs 59 mins 30 secs | about 2 months      |
+ * | 59 days 23 hrs 59 mins 30 secs ... 1 yr                           | [2..12] months      |
+ * | 1 yr ... 1 yr 3 months                                            | about 1 year        |
+ * | 1 yr 3 months ... 1 yr 9 month s                                  | over 1 year         |
+ * | 1 yr 9 months ... 2 yrs                                           | almost 2 years      |
+ * | N yrs ... N yrs 3 months                                          | about N years       |
+ * | N yrs 3 months ... N yrs 9 months                                 | over N years        |
+ * | N yrs 9 months ... N+1 yrs                                        | almost N+1 years    |
+ *
+ * With `options.includeSeconds == true`:
+ * | Distance to now     | Result               |
+ * |---------------------|----------------------|
+ * | 0 secs ... 5 secs   | less than 5 seconds  |
+ * | 5 secs ... 10 secs  | less than 10 seconds |
+ * | 10 secs ... 20 secs | less than 20 seconds |
+ * | 20 secs ... 40 secs | half a minute        |
+ * | 40 secs ... 60 secs | less than a minute   |
+ * | 60 secs ... 90 secs | 1 minute             |
+ *
+ * @param {Date|String|Number} date - the given date
+ * @param {Object} [options] - the object with options
+ * @param {Boolean} [options.includeSeconds=false] - distances less than a minute are more detailed
+ * @param {Boolean} [options.addSuffix=false] - result specifies if the second date is earlier or later than the first
+ * @param {Object} [options.locale=enLocale] - the locale object
+ * @returns {String} the distance in words
+ *
+ * @example
+ * // If today is 1 January 2015, what is the distance to 2 July 2014?
+ * var result = distanceInWordsToNow(
+ *   new Date(2014, 6, 2)
+ * )
+ * //=> '6 months'
+ *
+ * @example
+ * // If now is 1 January 2015 00:00:00,
+ * // what is the distance to 1 January 2015 00:00:15, including seconds?
+ * var result = distanceInWordsToNow(
+ *   new Date(2015, 0, 1, 0, 0, 15),
+ *   {includeSeconds: true}
+ * )
+ * //=> 'less than 20 seconds'
+ *
+ * @example
+ * // If today is 1 January 2015,
+ * // what is the distance to 1 January 2016, with a suffix?
+ * var result = distanceInWordsToNow(
+ *   new Date(2016, 0, 1),
+ *   {addSuffix: true}
+ * )
+ * //=> 'in about 1 year'
+ *
+ * @example
+ * // If today is 1 January 2015,
+ * // what is the distance to 1 August 2016 in Esperanto?
+ * var eoLocale = require('date-fns/locale/eo')
+ * var result = distanceInWordsToNow(
+ *   new Date(2016, 7, 1),
+ *   {locale: eoLocale}
+ * )
+ * //=> 'pli ol 1 jaro'
+ */
+function distanceInWordsToNow (dirtyDate, dirtyOptions) {
+  return distanceInWords(Date.now(), dirtyDate, dirtyOptions)
+}
+
+module.exports = distanceInWordsToNow
+
+
+/***/ }),
+/* 275 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var compareDesc = __webpack_require__(276)
+var parse = __webpack_require__(271)
+var differenceInSeconds = __webpack_require__(278)
+var differenceInMonths = __webpack_require__(280)
+var enLocale = __webpack_require__(283)
+
+var MINUTES_IN_DAY = 1440
+var MINUTES_IN_ALMOST_TWO_DAYS = 2520
+var MINUTES_IN_MONTH = 43200
+var MINUTES_IN_TWO_MONTHS = 86400
+
+/**
+ * @category Common Helpers
+ * @summary Return the distance between the given dates in words.
+ *
+ * @description
+ * Return the distance between the given dates in words.
+ *
+ * | Distance between dates                                            | Result              |
+ * |-------------------------------------------------------------------|---------------------|
+ * | 0 ... 30 secs                                                     | less than a minute  |
+ * | 30 secs ... 1 min 30 secs                                         | 1 minute            |
+ * | 1 min 30 secs ... 44 mins 30 secs                                 | [2..44] minutes     |
+ * | 44 mins ... 30 secs ... 89 mins 30 secs                           | about 1 hour        |
+ * | 89 mins 30 secs ... 23 hrs 59 mins 30 secs                        | about [2..24] hours |
+ * | 23 hrs 59 mins 30 secs ... 41 hrs 59 mins 30 secs                 | 1 day               |
+ * | 41 hrs 59 mins 30 secs ... 29 days 23 hrs 59 mins 30 secs         | [2..30] days        |
+ * | 29 days 23 hrs 59 mins 30 secs ... 44 days 23 hrs 59 mins 30 secs | about 1 month       |
+ * | 44 days 23 hrs 59 mins 30 secs ... 59 days 23 hrs 59 mins 30 secs | about 2 months      |
+ * | 59 days 23 hrs 59 mins 30 secs ... 1 yr                           | [2..12] months      |
+ * | 1 yr ... 1 yr 3 months                                            | about 1 year        |
+ * | 1 yr 3 months ... 1 yr 9 month s                                  | over 1 year         |
+ * | 1 yr 9 months ... 2 yrs                                           | almost 2 years      |
+ * | N yrs ... N yrs 3 months                                          | about N years       |
+ * | N yrs 3 months ... N yrs 9 months                                 | over N years        |
+ * | N yrs 9 months ... N+1 yrs                                        | almost N+1 years    |
+ *
+ * With `options.includeSeconds == true`:
+ * | Distance between dates | Result               |
+ * |------------------------|----------------------|
+ * | 0 secs ... 5 secs      | less than 5 seconds  |
+ * | 5 secs ... 10 secs     | less than 10 seconds |
+ * | 10 secs ... 20 secs    | less than 20 seconds |
+ * | 20 secs ... 40 secs    | half a minute        |
+ * | 40 secs ... 60 secs    | less than a minute   |
+ * | 60 secs ... 90 secs    | 1 minute             |
+ *
+ * @param {Date|String|Number} dateToCompare - the date to compare with
+ * @param {Date|String|Number} date - the other date
+ * @param {Object} [options] - the object with options
+ * @param {Boolean} [options.includeSeconds=false] - distances less than a minute are more detailed
+ * @param {Boolean} [options.addSuffix=false] - result indicates if the second date is earlier or later than the first
+ * @param {Object} [options.locale=enLocale] - the locale object
+ * @returns {String} the distance in words
+ *
+ * @example
+ * // What is the distance between 2 July 2014 and 1 January 2015?
+ * var result = distanceInWords(
+ *   new Date(2014, 6, 2),
+ *   new Date(2015, 0, 1)
+ * )
+ * //=> '6 months'
+ *
+ * @example
+ * // What is the distance between 1 January 2015 00:00:15
+ * // and 1 January 2015 00:00:00, including seconds?
+ * var result = distanceInWords(
+ *   new Date(2015, 0, 1, 0, 0, 15),
+ *   new Date(2015, 0, 1, 0, 0, 0),
+ *   {includeSeconds: true}
+ * )
+ * //=> 'less than 20 seconds'
+ *
+ * @example
+ * // What is the distance from 1 January 2016
+ * // to 1 January 2015, with a suffix?
+ * var result = distanceInWords(
+ *   new Date(2016, 0, 1),
+ *   new Date(2015, 0, 1),
+ *   {addSuffix: true}
+ * )
+ * //=> 'about 1 year ago'
+ *
+ * @example
+ * // What is the distance between 1 August 2016 and 1 January 2015 in Esperanto?
+ * var eoLocale = require('date-fns/locale/eo')
+ * var result = distanceInWords(
+ *   new Date(2016, 7, 1),
+ *   new Date(2015, 0, 1),
+ *   {locale: eoLocale}
+ * )
+ * //=> 'pli ol 1 jaro'
+ */
+function distanceInWords (dirtyDateToCompare, dirtyDate, dirtyOptions) {
+  var options = dirtyOptions || {}
+
+  var comparison = compareDesc(dirtyDateToCompare, dirtyDate)
+
+  var locale = options.locale
+  var localize = enLocale.distanceInWords.localize
+  if (locale && locale.distanceInWords && locale.distanceInWords.localize) {
+    localize = locale.distanceInWords.localize
+  }
+
+  var localizeOptions = {
+    addSuffix: Boolean(options.addSuffix),
+    comparison: comparison
+  }
+
+  var dateLeft, dateRight
+  if (comparison > 0) {
+    dateLeft = parse(dirtyDateToCompare)
+    dateRight = parse(dirtyDate)
+  } else {
+    dateLeft = parse(dirtyDate)
+    dateRight = parse(dirtyDateToCompare)
+  }
+
+  var seconds = differenceInSeconds(dateRight, dateLeft)
+  var offset = dateRight.getTimezoneOffset() - dateLeft.getTimezoneOffset()
+  var minutes = Math.round(seconds / 60) - offset
+  var months
+
+  // 0 up to 2 mins
+  if (minutes < 2) {
+    if (options.includeSeconds) {
+      if (seconds < 5) {
+        return localize('lessThanXSeconds', 5, localizeOptions)
+      } else if (seconds < 10) {
+        return localize('lessThanXSeconds', 10, localizeOptions)
+      } else if (seconds < 20) {
+        return localize('lessThanXSeconds', 20, localizeOptions)
+      } else if (seconds < 40) {
+        return localize('halfAMinute', null, localizeOptions)
+      } else if (seconds < 60) {
+        return localize('lessThanXMinutes', 1, localizeOptions)
+      } else {
+        return localize('xMinutes', 1, localizeOptions)
+      }
+    } else {
+      if (minutes === 0) {
+        return localize('lessThanXMinutes', 1, localizeOptions)
+      } else {
+        return localize('xMinutes', minutes, localizeOptions)
+      }
+    }
+
+  // 2 mins up to 0.75 hrs
+  } else if (minutes < 45) {
+    return localize('xMinutes', minutes, localizeOptions)
+
+  // 0.75 hrs up to 1.5 hrs
+  } else if (minutes < 90) {
+    return localize('aboutXHours', 1, localizeOptions)
+
+  // 1.5 hrs up to 24 hrs
+  } else if (minutes < MINUTES_IN_DAY) {
+    var hours = Math.round(minutes / 60)
+    return localize('aboutXHours', hours, localizeOptions)
+
+  // 1 day up to 1.75 days
+  } else if (minutes < MINUTES_IN_ALMOST_TWO_DAYS) {
+    return localize('xDays', 1, localizeOptions)
+
+  // 1.75 days up to 30 days
+  } else if (minutes < MINUTES_IN_MONTH) {
+    var days = Math.round(minutes / MINUTES_IN_DAY)
+    return localize('xDays', days, localizeOptions)
+
+  // 1 month up to 2 months
+  } else if (minutes < MINUTES_IN_TWO_MONTHS) {
+    months = Math.round(minutes / MINUTES_IN_MONTH)
+    return localize('aboutXMonths', months, localizeOptions)
+  }
+
+  months = differenceInMonths(dateRight, dateLeft)
+
+  // 2 months up to 12 months
+  if (months < 12) {
+    var nearestMonth = Math.round(minutes / MINUTES_IN_MONTH)
+    return localize('xMonths', nearestMonth, localizeOptions)
+
+  // 1 year up to max Date
+  } else {
+    var monthsSinceStartOfYear = months % 12
+    var years = Math.floor(months / 12)
+
+    // N years up to 1 years 3 months
+    if (monthsSinceStartOfYear < 3) {
+      return localize('aboutXYears', years, localizeOptions)
+
+    // N years 3 months up to N years 9 months
+    } else if (monthsSinceStartOfYear < 9) {
+      return localize('overXYears', years, localizeOptions)
+
+    // N years 9 months up to N year 12 months
+    } else {
+      return localize('almostXYears', years + 1, localizeOptions)
+    }
+  }
+}
+
+module.exports = distanceInWords
+
+
+/***/ }),
+/* 276 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(271)
+
+/**
+ * @category Common Helpers
+ * @summary Compare the two dates reverse chronologically and return -1, 0 or 1.
+ *
+ * @description
+ * Compare the two dates and return -1 if the first date is after the second,
+ * 1 if the first date is before the second or 0 if dates are equal.
+ *
+ * @param {Date|String|Number} dateLeft - the first date to compare
+ * @param {Date|String|Number} dateRight - the second date to compare
+ * @returns {Number} the result of the comparison
+ *
+ * @example
+ * // Compare 11 February 1987 and 10 July 1989 reverse chronologically:
+ * var result = compareDesc(
+ *   new Date(1987, 1, 11),
+ *   new Date(1989, 6, 10)
+ * )
+ * //=> 1
+ *
+ * @example
+ * // Sort the array of dates in reverse chronological order:
+ * var result = [
+ *   new Date(1995, 6, 2),
+ *   new Date(1987, 1, 11),
+ *   new Date(1989, 6, 10)
+ * ].sort(compareDesc)
+ * //=> [
+ * //   Sun Jul 02 1995 00:00:00,
+ * //   Mon Jul 10 1989 00:00:00,
+ * //   Wed Feb 11 1987 00:00:00
+ * // ]
+ */
+function compareDesc (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse(dirtyDateLeft)
+  var timeLeft = dateLeft.getTime()
+  var dateRight = parse(dirtyDateRight)
+  var timeRight = dateRight.getTime()
+
+  if (timeLeft > timeRight) {
+    return -1
+  } else if (timeLeft < timeRight) {
+    return 1
+  } else {
+    return 0
+  }
+}
+
+module.exports = compareDesc
+
+
+/***/ }),
+/* 277 */
+/***/ (function(module, exports) {
+
+/**
+ * @category Common Helpers
+ * @summary Is the given argument an instance of Date?
+ *
+ * @description
+ * Is the given argument an instance of Date?
+ *
+ * @param {*} argument - the argument to check
+ * @returns {Boolean} the given argument is an instance of Date
+ *
+ * @example
+ * // Is 'mayonnaise' a Date?
+ * var result = isDate('mayonnaise')
+ * //=> false
+ */
+function isDate (argument) {
+  return argument instanceof Date
+}
+
+module.exports = isDate
+
+
+/***/ }),
+/* 278 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var differenceInMilliseconds = __webpack_require__(279)
+
+/**
+ * @category Second Helpers
+ * @summary Get the number of seconds between the given dates.
+ *
+ * @description
+ * Get the number of seconds between the given dates.
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of seconds
+ *
+ * @example
+ * // How many seconds are between
+ * // 2 July 2014 12:30:07.999 and 2 July 2014 12:30:20.000?
+ * var result = differenceInSeconds(
+ *   new Date(2014, 6, 2, 12, 30, 20, 0),
+ *   new Date(2014, 6, 2, 12, 30, 7, 999)
+ * )
+ * //=> 12
+ */
+function differenceInSeconds (dirtyDateLeft, dirtyDateRight) {
+  var diff = differenceInMilliseconds(dirtyDateLeft, dirtyDateRight) / 1000
+  return diff > 0 ? Math.floor(diff) : Math.ceil(diff)
+}
+
+module.exports = differenceInSeconds
+
+
+/***/ }),
+/* 279 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(271)
+
+/**
+ * @category Millisecond Helpers
+ * @summary Get the number of milliseconds between the given dates.
+ *
+ * @description
+ * Get the number of milliseconds between the given dates.
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of milliseconds
+ *
+ * @example
+ * // How many milliseconds are between
+ * // 2 July 2014 12:30:20.600 and 2 July 2014 12:30:21.700?
+ * var result = differenceInMilliseconds(
+ *   new Date(2014, 6, 2, 12, 30, 21, 700),
+ *   new Date(2014, 6, 2, 12, 30, 20, 600)
+ * )
+ * //=> 1100
+ */
+function differenceInMilliseconds (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse(dirtyDateLeft)
+  var dateRight = parse(dirtyDateRight)
+  return dateLeft.getTime() - dateRight.getTime()
+}
+
+module.exports = differenceInMilliseconds
+
+
+/***/ }),
+/* 280 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(271)
+var differenceInCalendarMonths = __webpack_require__(281)
+var compareAsc = __webpack_require__(282)
+
+/**
+ * @category Month Helpers
+ * @summary Get the number of full months between the given dates.
+ *
+ * @description
+ * Get the number of full months between the given dates.
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of full months
+ *
+ * @example
+ * // How many full months are between 31 January 2014 and 1 September 2014?
+ * var result = differenceInMonths(
+ *   new Date(2014, 8, 1),
+ *   new Date(2014, 0, 31)
+ * )
+ * //=> 7
+ */
+function differenceInMonths (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse(dirtyDateLeft)
+  var dateRight = parse(dirtyDateRight)
+
+  var sign = compareAsc(dateLeft, dateRight)
+  var difference = Math.abs(differenceInCalendarMonths(dateLeft, dateRight))
+  dateLeft.setMonth(dateLeft.getMonth() - sign * difference)
+
+  // Math.abs(diff in full months - diff in calendar months) === 1 if last calendar month is not full
+  // If so, result must be decreased by 1 in absolute value
+  var isLastMonthNotFull = compareAsc(dateLeft, dateRight) === -sign
+  return sign * (difference - isLastMonthNotFull)
+}
+
+module.exports = differenceInMonths
+
+
+/***/ }),
+/* 281 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(271)
+
+/**
+ * @category Month Helpers
+ * @summary Get the number of calendar months between the given dates.
+ *
+ * @description
+ * Get the number of calendar months between the given dates.
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of calendar months
+ *
+ * @example
+ * // How many calendar months are between 31 January 2014 and 1 September 2014?
+ * var result = differenceInCalendarMonths(
+ *   new Date(2014, 8, 1),
+ *   new Date(2014, 0, 31)
+ * )
+ * //=> 8
+ */
+function differenceInCalendarMonths (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse(dirtyDateLeft)
+  var dateRight = parse(dirtyDateRight)
+
+  var yearDiff = dateLeft.getFullYear() - dateRight.getFullYear()
+  var monthDiff = dateLeft.getMonth() - dateRight.getMonth()
+
+  return yearDiff * 12 + monthDiff
+}
+
+module.exports = differenceInCalendarMonths
+
+
+/***/ }),
+/* 282 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(271)
+
+/**
+ * @category Common Helpers
+ * @summary Compare the two dates and return -1, 0 or 1.
+ *
+ * @description
+ * Compare the two dates and return 1 if the first date is after the second,
+ * -1 if the first date is before the second or 0 if dates are equal.
+ *
+ * @param {Date|String|Number} dateLeft - the first date to compare
+ * @param {Date|String|Number} dateRight - the second date to compare
+ * @returns {Number} the result of the comparison
+ *
+ * @example
+ * // Compare 11 February 1987 and 10 July 1989:
+ * var result = compareAsc(
+ *   new Date(1987, 1, 11),
+ *   new Date(1989, 6, 10)
+ * )
+ * //=> -1
+ *
+ * @example
+ * // Sort the array of dates:
+ * var result = [
+ *   new Date(1995, 6, 2),
+ *   new Date(1987, 1, 11),
+ *   new Date(1989, 6, 10)
+ * ].sort(compareAsc)
+ * //=> [
+ * //   Wed Feb 11 1987 00:00:00,
+ * //   Mon Jul 10 1989 00:00:00,
+ * //   Sun Jul 02 1995 00:00:00
+ * // ]
+ */
+function compareAsc (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse(dirtyDateLeft)
+  var timeLeft = dateLeft.getTime()
+  var dateRight = parse(dirtyDateRight)
+  var timeRight = dateRight.getTime()
+
+  if (timeLeft < timeRight) {
+    return -1
+  } else if (timeLeft > timeRight) {
+    return 1
+  } else {
+    return 0
+  }
+}
+
+module.exports = compareAsc
+
+
+/***/ }),
+/* 283 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(284)
+var buildFormatLocale = __webpack_require__(285)
+
+/**
+ * @category Locales
+ * @summary English locale.
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 284 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: 'less than a second',
+      other: 'less than {{count}} seconds'
+    },
+
+    xSeconds: {
+      one: '1 second',
+      other: '{{count}} seconds'
+    },
+
+    halfAMinute: 'half a minute',
+
+    lessThanXMinutes: {
+      one: 'less than a minute',
+      other: 'less than {{count}} minutes'
+    },
+
+    xMinutes: {
+      one: '1 minute',
+      other: '{{count}} minutes'
+    },
+
+    aboutXHours: {
+      one: 'about 1 hour',
+      other: 'about {{count}} hours'
+    },
+
+    xHours: {
+      one: '1 hour',
+      other: '{{count}} hours'
+    },
+
+    xDays: {
+      one: '1 day',
+      other: '{{count}} days'
+    },
+
+    aboutXMonths: {
+      one: 'about 1 month',
+      other: 'about {{count}} months'
+    },
+
+    xMonths: {
+      one: '1 month',
+      other: '{{count}} months'
+    },
+
+    aboutXYears: {
+      one: 'about 1 year',
+      other: 'about {{count}} years'
+    },
+
+    xYears: {
+      one: '1 year',
+      other: '{{count}} years'
+    },
+
+    overXYears: {
+      one: 'over 1 year',
+      other: 'over {{count}} years'
+    },
+
+    almostXYears: {
+      one: 'almost 1 year',
+      other: 'almost {{count}} years'
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var result
+    if (typeof distanceInWordsLocale[token] === 'string') {
+      result = distanceInWordsLocale[token]
+    } else if (count === 1) {
+      result = distanceInWordsLocale[token].one
+    } else {
+      result = distanceInWordsLocale[token].other.replace('{{count}}', count)
+    }
+
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        return 'in ' + result
+      } else {
+        return result + ' ago'
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 285 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(272)
+
+function buildFormatLocale () {
+  // Note: in English, the names of days of the week and months are capitalized.
+  // If you are making a new locale based on this one, check if the same is true for the language you're working on.
+  // Generally, formatted dates should look like they are in the middle of a sentence,
+  // e.g. in Spanish language the weekdays and months should be in the lowercase.
+  var months3char = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+  var monthsFull = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+  var weekdays2char = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']
+  var weekdays3char = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+  var weekdaysFull = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+  var meridiemUppercase = ['AM', 'PM']
+  var meridiemLowercase = ['am', 'pm']
+  var meridiemFull = ['a.m.', 'p.m.']
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // AM, PM
+    'A': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemUppercase[1] : meridiemUppercase[0]
+    },
+
+    // am, pm
+    'a': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemLowercase[1] : meridiemLowercase[0]
+    },
+
+    // a.m., p.m.
+    'aa': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemFull[1] : meridiemFull[0]
+    }
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return ordinal(formatters[formatterToken](date))
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+function ordinal (number) {
+  var rem100 = number % 100
+  if (rem100 > 20 || rem100 < 10) {
+    switch (rem100 % 10) {
+      case 1:
+        return number + 'st'
+      case 2:
+        return number + 'nd'
+      case 3:
+        return number + 'rd'
+    }
+  }
+  return number + 'th'
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 286 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(287)
+var buildFormatLocale = __webpack_require__(288)
+
+/**
+ * @category Locales
+ * @summary Chinese Simplified locale.
+ * @author Changyu Geng [@KingMario]{@link https://github.com/KingMario}
+ * @author Song Shuoyun [@fnlctrl]{@link https://github.com/fnlctrl}
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 287 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: '不到 1 秒',
+      other: '不到 {{count}} 秒'
+    },
+
+    xSeconds: {
+      one: '1 秒',
+      other: '{{count}} 秒'
+    },
+
+    halfAMinute: '半分钟',
+
+    lessThanXMinutes: {
+      one: '不到 1 分钟',
+      other: '不到 {{count}} 分钟'
+    },
+
+    xMinutes: {
+      one: '1 分钟',
+      other: '{{count}} 分钟'
+    },
+
+    xHours: {
+      one: '1 小时',
+      other: '{{count}} 小时'
+    },
+
+    aboutXHours: {
+      one: '大约 1 小时',
+      other: '大约 {{count}} 小时'
+    },
+
+    xDays: {
+      one: '1 天',
+      other: '{{count}} 天'
+    },
+
+    aboutXMonths: {
+      one: '大约 1 个月',
+      other: '大约 {{count}} 个月'
+    },
+
+    xMonths: {
+      one: '1 个月',
+      other: '{{count}} 个月'
+    },
+
+    aboutXYears: {
+      one: '大约 1 年',
+      other: '大约 {{count}} 年'
+    },
+
+    xYears: {
+      one: '1 年',
+      other: '{{count}} 年'
+    },
+
+    overXYears: {
+      one: '超过 1 年',
+      other: '超过 {{count}} 年'
+    },
+
+    almostXYears: {
+      one: '将近 1 年',
+      other: '将近 {{count}} 年'
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var result
+    if (typeof distanceInWordsLocale[token] === 'string') {
+      result = distanceInWordsLocale[token]
+    } else if (count === 1) {
+      result = distanceInWordsLocale[token].one
+    } else {
+      result = distanceInWordsLocale[token].other.replace('{{count}}', count)
+    }
+
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        return result + '内'
+      } else {
+        return result + '前'
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 288 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(272)
+
+function buildFormatLocale () {
+  var months3char = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+  var monthsFull = ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
+  var weekdays2char = ['日', '一', '二', '三', '四', '五', '六']
+  var weekdays3char = ['周日', '周一', '周二', '周三', '周四', '周五', '周六']
+  var weekdaysFull = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+  var meridiemFull = ['上午', '下午']
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    }
+  }
+
+  // AM, PM / am, pm / a.m., p.m. all translates to 上午, 下午
+  formatters.a = formatters.aa = formatters.A = function (date) {
+    return (date.getHours() / 12) >= 1 ? meridiemFull[1] : meridiemFull[0]
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return ordinal(formatters[formatterToken](date))
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+function ordinal (number) {
+  return number.toString()
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 289 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(290)
+var buildFormatLocale = __webpack_require__(291)
+
+/**
+ * @category Locales
+ * @summary Japanese locale.
+ * @author Thomas Eilmsteiner [@DeMuu]{@link https://github.com/DeMuu}
+ * @author Yamagishi Kazutoshi [@ykzts]{@link https://github.com/ykzts}
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 290 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: '1秒以下',
+      other: '{{count}}秒以下'
+    },
+
+    xSeconds: {
+      one: '1秒',
+      other: '{{count}}秒'
+    },
+
+    halfAMinute: '30秒ぐらい',
+
+    lessThanXMinutes: {
+      one: '1分以下',
+      other: '{{count}}分以下'
+    },
+
+    xMinutes: {
+      one: '1分',
+      other: '{{count}}分'
+    },
+
+    aboutXHours: {
+      one: '1時間ぐらい',
+      other: '{{count}}時間ぐらい'
+    },
+
+    xHours: {
+      one: '1時間',
+      other: '{{count}}時間'
+    },
+
+    xDays: {
+      one: '1日',
+      other: '{{count}}日'
+    },
+
+    aboutXMonths: {
+      one: '1ヶ月ぐらい',
+      other: '{{count}}ヶ月ぐらい'
+    },
+
+    xMonths: {
+      one: '1ヶ月',
+      other: '{{count}}ヶ月'
+    },
+
+    aboutXYears: {
+      one: '1年ぐらい',
+      other: '{{count}}年ぐらい'
+    },
+
+    xYears: {
+      one: '1年',
+      other: '{{count}}年'
+    },
+
+    overXYears: {
+      one: '1年以上',
+      other: '{{count}}年以上'
+    },
+
+    almostXYears: {
+      one: '1年以下',
+      other: '{{count}}年以下'
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var result
+    if (typeof distanceInWordsLocale[token] === 'string') {
+      result = distanceInWordsLocale[token]
+    } else if (count === 1) {
+      result = distanceInWordsLocale[token].one
+    } else {
+      result = distanceInWordsLocale[token].other.replace('{{count}}', count)
+    }
+
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        return result + '後'
+      } else {
+        return result + '前'
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 291 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(272)
+
+function buildFormatLocale () {
+  var months3char = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+  var monthsFull = ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
+  var weekdays2char = ['日', '月', '火', '水', '木', '金', '土']
+  var weekdays3char = ['日曜', '月曜', '火曜', '水曜', '木曜', '金曜', '土曜']
+  var weekdaysFull = ['日曜日', '月曜日', '火曜日', '水曜日', '木曜日', '金曜日', '土曜日']
+  var meridiemUppercase = ['午前', '午後']
+  var meridiemLowercase = ['午前', '午後']
+  var meridiemFull = ['午前', '午後']
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // AM, PM
+    'A': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemUppercase[1] : meridiemUppercase[0]
+    },
+
+    // am, pm
+    'a': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemLowercase[1] : meridiemLowercase[0]
+    },
+
+    // a.m., p.m.
+    'aa': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemFull[1] : meridiemFull[0]
+    }
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return ordinal(formatters[formatterToken](date))
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+function ordinal (number) {
+  return number + '日'
+}
+
+module.exports = buildFormatLocale
+
 
 /***/ })
 /******/ ]);

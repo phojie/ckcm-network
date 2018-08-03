@@ -80,7 +80,7 @@
 
 .jie3 .v-input__slot   {
    border:1px solid #E0E0E0 !important;
-   border-radius:20px;
+   border-radius:20px !important;
    -webkit-transition: width 2s; /* Safari */
    transition: width .2;
 }
