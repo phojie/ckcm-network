@@ -119,7 +119,7 @@
    font-size: 16px !important;
 }
 .searchfriend .v-input__control   {
-   min-height:25px !important;
+   min-height:35px !important;
 }
 /* Exit Upper toolbar Search Input */
 
@@ -128,7 +128,7 @@
    justify-content: left !important
 }
 
-/* newsFeed */
+/* ne1sFeed */
 .newsfeedScroll {
    overflow-x:hidden;
    overflow-y:scroll;

@@ -1,8 +1,8 @@
 <template>
-   <v-card app height="100%" width="100%" style="position:absolute; bottom:0" flat class="newsfeedScroll pa-0 ma-0 transparent scrollbar-primary "> 
-      <v-layout class="mt-2 justify-center justify-space-arround">
-         <v-flex style="border:1px #E0E0E0 solid;border-radius:2px" class="  mr-2 mt-2 ml-3 xs12 sm12 md8 lg7">
-            <v-card flat  class=" jieSvgBg1  " >
+   <v-card  app height="100%" width="100%" style="position:absolute; bottom:0" flat class="newsfeedScroll pa-0 ma-0 transparent scrollbar-primary "> 
+      <v-layout class="mt-2 justify-start justify-space-arround">
+         <v-flex class=" xs12 sm12 md8 lg7  mr-2 mt-2 ml-3 ">
+            <v-card flat style="border:1px #E0E0E0 solid;border-radius:2px" class="mb-1 jieSvgBg1  " >
                <v-layout wrap color="transparent" :class="whatisClass" class="px-2" >
                   <v-flex xs12  class="mb-1" >
                      <v-layout>
@@ -89,7 +89,7 @@
                </v-layout>
                <!-- <v-progress-linear  v-if="whatisFunction"  height="2" style="margin:0px !important" color="grey" :indeterminate="true"></v-progress-linear> -->
                <v-layout>
-                  <v-flex xs1 v-for="newsfeed in newsfeeds" :key="newsfeed['.key']"  class="pa-2">
+                  <v-flex  xs1 v-for="newsfeed in newsfeeds" :key="newsfeed['.key']" v-if="newsfeed.userId != userData['ckcm-network_token_id']"  class="pa-2">
                            <v-btn color="indigo" icon @click="test" class="">
                               <v-avatar class="" color="grey" size="34px">
                                  <img :src="newsfeed.photoUrl" alt="">
@@ -99,8 +99,8 @@
                </v-layout>
                <!-- </v-container> -->
             </v-card>
-            <v-card  v-for="newsfeed in newsfeeds " :key="newsfeed['.key']" flat class="jieSvgBg1" >
-               <v-progress-linear active height="2" style="margin:0px !important" color="grey lighten-2" :indeterminate="false"></v-progress-linear>
+            <v-card  style="border:1px #E0E0E0 solid;border-radius:2px" v-for="newsfeed in newsfeeds " :key="newsfeed['.key']" flat class="jieSvgBg1" >
+               <!-- <v-progress-linear active height="2" style="margin:0px !important" color="grey lighten-2" :indeterminate="false"></v-progress-linear> -->
                <v-layout wrap white class=" py-2" >
                   <v-flex xs12 class="mx-2">
                      <v-layout>
@@ -237,10 +237,21 @@
 
                               </div>
                            </v-flex>
+
                         </v-layout>
                      </v-flex>
                   </v-flex>
-
+                  <v-flex v-if="newsfeed.someoneComment.someone == true" xs12 class="mx-5 px-2 mt-2">
+                     <div xs12>
+                        <v-progress-circular
+                           :width="1"
+                           :size="13"
+                           color="indigo lighten-1"
+                           indeterminate
+                        ></v-progress-circular>
+                        <span  class="caption font-weight-thin grey--text textfm1">Someone is typing...</span>
+                     </div>
+                  </v-flex>
                   <v-flex xs12 class="mx-2">
                      <v-layout>
                         <v-card flat xs1 class=" mt-3">
@@ -269,6 +280,8 @@
                                  v-model="newsfeed.commentText"
                                  :loading="false"
                                  placeholder="Write something here.."
+                                 @blur="blurPost(newsfeed['.key'], userData, newsfeed.commentText)"
+                                 @input="inputPost(newsfeed['.key'], userData, newsfeed.commentText)"
                                  @click:append="commentPost(newsfeed['.key'], userData, newsfeed.commentText)"
                                  append-icon="mdi-send"
                                  style="font-size:13px"
@@ -308,8 +321,9 @@
                </v-card-media>
             </v-card>
          </v-flex>
-
-         <v-flex class=" mr-2   xs0 sm0 md4 lg4" >
+<!-- xs12 sm12 md8 lg7 -->
+ <!-- xs0 sm0 md4 lg4 -->
+         <v-flex  class="md4 lg4  hidden-sm-and-down  mr-2  " >
             <v-card flat class="grey lighten-4 my-2" height="50px">
             </v-card>
             <v-card flat  class="grey lighten-4 mb-2" height="150px">
@@ -375,6 +389,32 @@ export default {
       test() {
          alert("success")
       },
+      blurPost(id,user,commentText) {
+         let vm = this
+         db.ref(`Newsfeed/${id}/`).child('someoneComment').set({
+            someone:false
+         }, function(error) {
+         if (error) {
+            console.log(error)
+            // The write failed...r
+         } else {
+            // Data saved successfully!
+         }
+         });
+      },
+      inputPost(id,user,commentText) {
+         let vm = this
+         db.ref(`Newsfeed/${id}/`).child('someoneComment').set({
+            someone:true
+         }, function(error) {
+         if (error) {
+            console.log(error)
+            // The write failed...r
+         } else {
+            // Data saved successfully!
+         }
+         });
+      },
       commentPost(id,user,commentText) {
          let vm = this
          db.ref(`Newsfeed/${id}/commented`).push().set({
@@ -401,6 +441,7 @@ export default {
             data: vm.postedData,
             photoUrl: user.photoUrl,
             timestamp: vm.timestamp,
+            someoneComment: false,
             commentText: "",
             order: vm.orderValue + 1 
          }, function(error) {

@@ -26,7 +26,6 @@
     },
     "dependencies": {
         "@mdi/svg": "^2.4.85",
-        "firebase": "^5.2.0",
         "fs": "0.0.1-security",
         "laravel-echo": "^1.4.0",
         "material-design-icons-iconfont": "^3.0.3",
