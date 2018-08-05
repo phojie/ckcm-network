@@ -1,5 +1,6 @@
 
 // import { app } from 'firebase';
+import store from './store.js';
 
 const config = {
    apiKey: "AIzaSyAcYoRTQ4nmID5XjHbPXz543yG5ozz1bFM",
@@ -24,7 +25,10 @@ export const auth = app.auth();
 // export const authGoogle = firebase.auth.GoogleAuthProvider();
 export const db = app.database();
 export const usersRef = db.ref('users');
-export const newsfeedRef = db.ref('Newsfeed');
+export const  newsfeedRef = db.ref('Newsfeed').orderByChild('order');
+export const  order = db.ref('N_order/newsfeedOrder');
+
+
 // export const timestamp = app.ServerValue.TIMESTAMP();
 
 // to identify if data has change or added

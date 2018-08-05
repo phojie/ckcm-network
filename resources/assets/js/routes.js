@@ -9,6 +9,7 @@ import jieUserWelcome from './components/jieUserFolder/jieWelcome.vue';
 import jieUserHome from './components/jieUserFolder/jieHome.vue';
 import jieProfile from './components/jieUserFolder/jieProfile.vue';
 
+import api from './components/api.vue';
 export const routes = [
    {
       path:'/auth',
@@ -42,6 +43,10 @@ export const routes = [
             component: jieUserWelcome
          }
       ]
+   },
+   {
+      path:'/api',
+      component: api
    },
    {
       path:'/signup',

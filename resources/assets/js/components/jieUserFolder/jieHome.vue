@@ -88,81 +88,15 @@
                   </v-flex>
                </v-layout>
                <!-- <v-progress-linear  v-if="whatisFunction"  height="2" style="margin:0px !important" color="grey" :indeterminate="true"></v-progress-linear> -->
-               <v-flex class="pa-2">
-                  <v-btn icon small class="ma-0">
-                     <v-avatar color="red--after" size="24px">
-                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
-                     </v-avatar>
-                  </v-btn>
-                  <v-btn icon small  class="ma-0">
-                     <v-avatar class="" color="red--after" size="24px">
-                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
-                     </v-avatar>
-                  </v-btn>
-                     <v-btn icon small class="ma-0">
-                     <v-avatar color="red--after" size="24px">
-                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
-                     </v-avatar>
-                  </v-btn>
-                  <v-btn icon small  class="ma-0">
-                     <v-avatar class="" color="red--after" size="24px">
-                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36475819_1766742130062368_2660206145032945664_n.jpg?_nc_cat=0&oh=aa21af20b1f8617026868f31d44b7b72&oe=5BCD5FED" alt="">
-                     </v-avatar>
-                  </v-btn> <v-btn icon small class="ma-0">
-                     <v-avatar color="red--after" size="24px">
-                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
-                     </v-avatar>
-                  </v-btn>
-                  <v-btn icon small  class="ma-0">
-                     <v-avatar class="" color="red--after" size="24px">
-                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
-                     </v-avatar>
-                  </v-btn> <v-btn icon small class="ma-0">
-                     <v-avatar color="red--after" size="24px">
-                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
-                     </v-avatar>
-                  </v-btn>
-                  <v-btn icon small  class="ma-0">
-                     <v-avatar class="" color="red--after" size="24px">
-                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
-                     </v-avatar>
-                  </v-btn>
-                     <v-btn icon small  class="ma-0">
-                     <v-avatar class="" color="red--after" size="24px">
-                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
-                     </v-avatar>
-                  </v-btn>
-                     <v-btn icon small class="ma-0">
-                     <v-avatar color="red--after" size="24px">
-                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
-                     </v-avatar>
-                  </v-btn>
-                  <v-btn icon small  class="ma-0">
-                     <v-avatar class="" color="red--after" size="24px">
-                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36475819_1766742130062368_2660206145032945664_n.jpg?_nc_cat=0&oh=aa21af20b1f8617026868f31d44b7b72&oe=5BCD5FED" alt="">
-                     </v-avatar>
-                  </v-btn> <v-btn icon small class="ma-0">
-                     <v-avatar color="red--after" size="24px">
-                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
-                     </v-avatar>
-                  </v-btn>
-                  <v-btn icon small  class="ma-0">
-                     <v-avatar class="" color="red--after" size="24px">
-                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
-                     </v-avatar>
-                  </v-btn> <v-btn icon small class="ma-0">
-                     <v-avatar color="red--after" size="24px">
-                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/36912211_1969395993084242_2606416313920258048_n.jpg?_nc_cat=0&oh=c4962115a6dddb90e896c9d59f1812df&oe=5BDDBA2B" alt="">
-                     </v-avatar>
-                  </v-btn>
-                  <v-btn icon small  class="ma-0">
-                     <v-avatar class="" color="red--after" size="24px">
-                        <img src="https://scontent.fceb2-2.fna.fbcdn.net/v/t1.0-1/p50x50/37126995_1891538264473995_1733260840011825152_n.jpg?_nc_cat=0&oh=02bacd368ecefd1adef15d5d0b293a7b&oe=5BE80669" alt="">
-                     </v-avatar>
-                  </v-btn>
-
-
-               </v-flex>
+               <v-layout>
+                  <v-flex xs1 v-for="newsfeed in newsfeeds" :key="newsfeed['.key']"  class="pa-2">
+                           <v-btn color="indigo" icon @click="test" class="">
+                              <v-avatar class="" color="grey" size="34px">
+                                 <img :src="newsfeed.photoUrl" alt="">
+                              </v-avatar>
+                           </v-btn>
+                  </v-flex>
+               </v-layout>
                <!-- </v-container> -->
             </v-card>
             <v-card  v-for="newsfeed in newsfeeds " :key="newsfeed['.key']" flat class="jieSvgBg1" >
@@ -323,7 +257,7 @@
                         <!-- comment area -->
                        
                         <v-flex  xs11 style="margin-top:-7px;margin-left:-5px">
-                           <v-form @submit.prevent="commentPost(newsfeed['.key'], userData)">
+                           <v-form @submit.prevent="commentPost(newsfeed['.key'], userData, newsfeed.commentText)">
                               <v-text-field  
                                  background-color="grey lighten-5"
                                  single-line
@@ -332,10 +266,11 @@
                                  flat
                                  height="32"
                                  full-width
-                                 v-model="userComment"
+                                 v-model="newsfeed.commentText"
                                  :loading="false"
                                  placeholder="Write something here.."
-                                 append-icon="mdi-thought-bubble-outline"
+                                 @click:append="commentPost(newsfeed['.key'], userData, newsfeed.commentText)"
+                                 append-icon="mdi-send"
                                  style="font-size:13px"
                                  class="font-weight-thin-light jie3 textfm1  "
                               ></v-text-field>
@@ -359,19 +294,19 @@
 
             </v-card>
             
-            <!-- <v-card class="my-2" height="400">
+            <v-card class="my-2" >
                <v-card-media
-                  height="100px"
+                  height=""
                >
                   <v-container fill-height fluid>
                      <v-layout fill-height>
                      <v-flex>
-                     
+                        <v-btn small block @click="scrollLoadNews">Load More</v-btn>
                      </v-flex>
                      </v-layout>
                   </v-container>
                </v-card-media>
-            </v-card> -->
+            </v-card>
          </v-flex>
 
          <v-flex class=" mr-2   xs0 sm0 md4 lg4" >
@@ -385,15 +320,17 @@
 
 </template>
 <script>
-import { newsfeedRef, db } from '../../firebase.js';
+import {newsfeedRef, db, app, order } from '../../firebase.js';
+
 
 export default {  
-  
-   firebase: {
-      newsfeeds: newsfeedRef
+   firebase: function () {
+      return {
+         newsfeeds: newsfeedRef,
+      }
    },
-  
    data: () => ({
+      orderValue: '',
       timeDisplay: '',
       greet: '',
       worldTime: [],
@@ -411,11 +348,10 @@ export default {
          message:'', 
          image:''
       },
-
-   }),
+  }),
    computed: {
       // newsfeedsReverse() {
-      //    return this.newsfeeds.reverse();
+      //    return this.$firebaseRefs.newsfeeds.split('').reverse().join('')
       // },
       userData() {
          return this.$store.getters.accountLoginData.user
@@ -432,15 +368,19 @@ export default {
       },
    },
    methods: {
+      scrollLoadNews() {
+         alert("success")
+         // this.$store.dispatch("scrollLimitNewsAdd");
+      }, 
       test() {
          alert("success")
       },
-      commentPost(id,user) {
+      commentPost(id,user,commentText) {
          let vm = this
          db.ref(`Newsfeed/${id}/commented`).push().set({
             userId: user['ckcm-network_token_id'],
             displayName: user.displayName,
-            data: vm.userComment,
+            data: commentText,
             photoUrl: user.photoUrl,
             timestamp: "",
          }, function(error) {
@@ -448,7 +388,6 @@ export default {
             console.log(error)
             // The write failed...r
          } else {
-            vm.userComment.message = "";
             // Data saved successfully!
          }
          });
@@ -459,14 +398,19 @@ export default {
          db.ref('Newsfeed/' ).push().set({
             userId: user['ckcm-network_token_id'],
             displayName: user.displayName,
-            data: this.postedData,
+            data: vm.postedData,
             photoUrl: user.photoUrl,
-            timestamp: vm.timestamp
+            timestamp: vm.timestamp,
+            commentText: "",
+            order: vm.orderValue + 1 
          }, function(error) {
          if (error) {
             console.log(error)
             // The write failed...r
          } else {
+            db.ref('N_order/').set ({
+               newsfeedOrder: vm.orderValue-1
+            })
             vm.postedData.message = "";
             // Data saved successfully!
          }
@@ -512,7 +456,7 @@ export default {
                .then((response) =>{
                   vm.worldTime=response.data
                   vm.timeDisplay = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h:mma');
-                  vm.timestamp =  moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h:mma');
+                  vm.timestamp =  vm.worldTime.time_zone.current_time
                   let hour = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h');
                   let a = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('a');
                      if ( a == 'pm' && hour >= 1 && hour <= 5 || a == 'pm' && hour == 12) {
@@ -533,9 +477,18 @@ export default {
       // }, (60 - date.getSeconds()) * 1000);
    },
    created() {
+
       document.title = "Christ the King Network";
 
       let vm = this;
+
+      order.on("value",  function(snapshot) {
+         vm.orderValue = snapshot.val();
+      }, function (errorObject) {
+         console.log("Naa ko sa created 1 :The read failed: " + errorObject.code);
+      });
+
+
       axios.get('https://api.ipgeolocation.io/ipgeo?apiKey=90a83c7326cc475f8048cf81362e1df0')
          .then((response) =>{
             vm.worldTime=response.data

@@ -17,9 +17,13 @@ export default {
       alertLogoutDone: false,
       windowSize: [],
       leftnavDrawer: true,
-      friendList: [] //Object
+      friendList: [], //Object,
+      scrollLimitNews: 2,
    },
    getters: {
+      scrollLimitNews(state) {
+         return state.scrollLimitNews;
+      },
       isLoading(state) {
          return state.loading;
       },
@@ -50,6 +54,9 @@ export default {
       
    },
    mutations: {
+      scrollLimitNewsAdd(state) {
+         state.scrollLimitNews = 5;
+      },
       firebaseSuccess(state, fdetailsload) {
          state.fdetails = Object.assign({},{fdetailsload} );
          localStorage.setItem("fdetails", JSON.stringify(state.fdetails));
@@ -127,6 +134,9 @@ export default {
       }
    },
    actions: {
+      scrollLimitNewsAdd(context) {
+         context.commit("scrollLimitNewsAdd");
+      },
       alertLogoutDone(context) {
          context.commit("alertLogoutDone");
       },
