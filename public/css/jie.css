@@ -305,5 +305,10 @@ background-color: #2BBBAD; }
 .newslineHeight.v-textarea textarea {
    line-height:30px !important;
 }
+
+.jieTool {
+   margin-top:5px;
+   border-radius: 4px !important;
+}
 /* home */
 

@@ -84,7 +84,7 @@
                      <v-textarea 
                         background-color="transparent"
                         hide-details v-model="postedData.message" color="blue"
-                        class=" " @keyup.enter="addDiv" row-height="10"
+                        class=" " row-height="10"
                         style="font-size:15px !important" placeholder="What is your main focus for today?"
                         @click="whatisFunctionMethod" @blur="whatisFunctionMethodFalse" flat solo
                         auto-grow
@@ -164,7 +164,7 @@
                         </v-badge>
                      </v-btn> 
                      <div class="mt-2 ">
-                     <p @click="profileMenuFriend(newsfeed.displayName)" style="letter-spacing:1px; font-size:14px" class="aJie mb-0 font-weight-bold ">{{newsfeed.displayName}} </p>
+                     <p @click="profileMenuFriend(newsfeed.displayName)" style="font-size:14px" class="aJie mb-0 font-weight-bold ">{{newsfeed.displayName}} </p>
                      <p style="margin-top:-5px;font-size:11px" class="grey--text textfm2">
                         <!-- {{newsfeed.timestamp | moment("dddd, MMMM Do YYYY: h:mm:a") }}| -->
                         <Timeago :auto-update="60" :datetime="newsfeed.timestamp" :since="timeAgoFormat"></Timeago>
@@ -216,33 +216,136 @@
                         ></v-textarea>
                      </v-layout>
                      <!-- <v-divider class="grey lighten-3"> </v-divider> -->
-                     <v-layout wrap row style="margin-top:-22px" class="mx-2"> 
-                        <v-flex  class="text-xs-right">
-                           <v-btn flat large color="transparent">
-                              <v-avatar size="20" class="mr-2">
-                                 <img src="https://png.icons8.com/ios/50/666666/heart-with-arrow.png">
-                              </v-avatar>
-                              <div class="grey--text caption">28</div>
-                           </v-btn>
-                           <v-btn flat icon color="grey">
+                     <v-layout wrap row > 
+                        <v-flex class="mx-2 text-xs-left" >
+                           <v-tooltip content-class="jieTool" color="grey darken-4"  top>
+                              <v-btn v-if="newsfeed.whoLikes == userData.userId " @click="newsAtLike(newsfeed)" slot="activator" flat icon large color="transparent">
+                                 <v-avatar tile size="19" class="mr-1">
+                                    <img src="https://png.icons8.com/ios/50/333333/thumb-up.png">
+                                 </v-avatar>
+                                 <div class="grey--text text--darken-2 caption">{{newsfeed.likes}}</div>
+                              </v-btn>
+                              <v-btn v-else @click="newsAtUnlike(newsfeed)" slot="activator" flat icon large color="transparent">
+                                 <v-avatar tile size="23" class="mr-1">
+                                    <img src="https://png.icons8.com/ios/50/2196F3/good-quality-filled.png">
+                                    <!-- <img src="https://png.icons8.com/ios/50/2196F3/thumb-up-filled.png"> -->
+                                 </v-avatar>
+                                 <div v-if="newsfeed.whoLikes == userData.userId"  class="font-weight-bold grey--text text--darken-2 caption">{{newsfeed.likes}}</div>
+                                 <div v-else class="font-weight-bold blue--text caption">{{newsfeed.likes}}</div>
+
+                              </v-btn>
+                              <span v-if="newsfeed.whoLikes == userData.userId " style="margin:3px"> Like </span>
+                              <span v-else style="margin:3px " > Unlike </span>
+                                 
+                              <v-layout justify-center>
+                                 <div class="" style="
+                                    position:absolute;
+                                    margin-top:5px;
+                                    margin-bottom:5px;
+                                    width: 0;
+                                    height: 0;
+                                    border-left: 6px solid transparent;
+                                    border-right: 6px solid transparent;
+                                    border-top: 6px solid #212121;"
+                                 ></div>
+                              </v-layout> 
+                           </v-tooltip>
+                           <v-tooltip content-class="jieTool" color="grey darken-4"  top>
+                              <v-btn slot="activator" flat icon large color="transparent">
+                                 <v-avatar tile size="19" class="mr-1">
+                                    <img src="https://png.icons8.com/ios/50/333333/thumbs-down.png">
+                                 </v-avatar>
+                                 <div class="grey--text text--darken-2 caption">7</div>
+                              </v-btn>
+                              <span style="margin:3px"  > Dislike </span>
+                              <v-layout justify-center>
+                                 <div class="" style="
+                                    position:absolute;
+                                    margin-top:5px;
+                                    margin-bottom:5px;
+                                    width: 0;
+                                    height: 0;
+                                    border-left: 6px solid transparent;
+                                    border-right: 6px solid transparent;
+                                    border-top: 6px solid #212121;"
+                                 ></div>
+                              </v-layout> 
+                           </v-tooltip>
+                           <v-tooltip content-class="jieTool" color="grey darken-4"  top>
+                              <v-btn slot="activator" flat icon large color="transparent">
+                                 <v-avatar tile size="19" class="mr-1">
+                                    <img src="https://png.icons8.com/ios/50/333333/hearts.png">
+                                 </v-avatar>
+                                 <div class="grey--text text--darken-2 caption">2</div>
+                              </v-btn>
+                              <span style="margin:3px" > Love </span>
+                              <v-layout justify-center>
+                                 <div class="" style="
+                                    position:absolute;
+                                    margin-top:5px;
+                                    margin-bottom:5px;
+                                    width: 0;
+                                    height: 0;
+                                    border-left: 6px solid transparent;
+                                    border-right: 6px solid transparent;
+                                    border-top: 6px solid #212121;"
+                                 ></div>
+                              </v-layout> 
+                           </v-tooltip>
+                           <v-tooltip content-class="jieTool" color="grey darken-4"  top>
+                              <v-btn slot="activator" flat icon large color="transparent">
+                                 <v-avatar tile size="18" class="mr-1">
+                                    <img src="https://png.icons8.com/ios/50/333333/speech-bubble.png">
+                                 </v-avatar>
+                                 <div class="grey--text text--darken-2 caption">128</div>
+                              </v-btn>
+                              <span style="margin:3px" > Comment </span>
+                              <v-layout justify-center>
+                                 <div class="" style="
+                                    position:absolute;
+                                    margin-top:5px;
+                                    margin-bottom:5px;
+                                    width: 0;
+                                    height: 0;
+                                    border-left: 6px solid transparent;
+                                    border-right: 6px solid transparent;
+                                    border-top: 6px solid #212121;"
+                                 ></div>
+                              </v-layout> 
+                           </v-tooltip>
+
+                           <v-tooltip content-class="jieTool" color="grey darken-4"  top>
+                              <v-btn slot="activator" flat icon large color="transparent">
+                                 <v-avatar tile size="17" class="mr-1">
+                                    <img src="https://png.icons8.com/ios/50/333333/new-post.png">
+                                 </v-avatar>
+                              </v-btn>
+                              <span style="margin:3px" > Message </span>
+                              <v-layout justify-center>
+                                 <div class="" style="
+                                    position:absolute;
+                                    margin-top:5px;
+                                    margin-bottom:5px;
+                                    width: 0;
+                                    height: 0;
+                                    border-left: 6px solid transparent;
+                                    border-right: 6px solid transparent;
+                                    border-top: 6px solid #212121;"
+                                 ></div>
+                              </v-layout> 
+                           </v-tooltip>
+                           <!-- <v-btn flat icon color="grey">
                               <v-icon>star</v-icon>
-                           </v-btn>
-                              <v-btn flat icon color="grey">
-                            <v-icon>cached</v-icon>
-                           </v-btn>
-                           <v-btn flat icon color="grey">
-                              <v-icon>thumb_up</v-icon>
-                           </v-btn>
+                           </v-btn> -->
                         </v-flex>
-                           
                      </v-layout>
                   </v-flex>
+
                   <v-flex xs12>
                      <v-divider class="grey lighten-3"></v-divider>
                   </v-flex>
 
                   <v-flex xs12 class="mx-2 ">
-                     <!-- <li>{{newsfeed}}</li> -->
                      <v-flex xs12 v-for="commented in newsfeed.commented  " :key="commented['.key']">
                         <v-layout>
                            <div  class=" mt-3">
@@ -283,32 +386,30 @@
                         </v-layout>
                      </v-flex>
                   </v-flex>
+
                   <v-flex v-if="newsfeed.someoneComment.someone == true" xs12 class="mx-5 px-2 mt-2">
                      <div xs12>
                         <v-progress-circular
                            :width="1"
                            :size="13"
-                           color="indigo lighten-1"
+                           color="blue lighten-1"
                            indeterminate
                         ></v-progress-circular>
-                        <span  class="caption font-weight-thin grey--text textfm1">Someone is typing...</span>
+                        <span class="caption font-weight-thin grey--text textfm1">Someone is typing...</span>
                      </div>
                   </v-flex>
+<!-- .${newsfeed.keyIndex} -->
                   <v-flex xs12 class="mx-2">
                      <v-layout>
                         <v-card flat xs1 class=" mt-3">
                            <v-btn @click="profileMenu" color="" icon style="height:34px !important; width:34px !important;margin-top:-5px" class=" jieleftNav"  flat>
                               <v-badge color="white"  overlap class="jieBadgeNews">
-                                 <!-- <span  slot="badge" class="" style="font-size:16px; border-radius: 50%; border: 4.5px solid #7CB342 ;"></span> -->
                                  <v-avatar class="mr-2 " color="grey lighten-3" size="32">
                                     <img :src="userData.photoUrl" alt="">
                                  </v-avatar>
                               </v-badge>
                            </v-btn> 
                         </v-card>
-
-                        <!-- comment area -->
-                       
                         <v-flex  xs11 style="margin-top:-7px;margin-left:-5px">
                            <v-form @submit.prevent="commentPost(newsfeed.keyIndex, userData, newsfeed.commentText)">
                               <v-text-field  
@@ -403,14 +504,14 @@ export default {
       },
   }),
    computed: {
-      reloadNewsComputed() {
-         var number1 = true
-         if(number1) {
-            alert("Reload")
-         } {
-            alert("Dont")
-         }
-      },
+      // reloadNewsComputed() {
+      //    var number1 = true
+      //    if(number1) {
+      //       alert("Reload")
+      //    } {
+      //       alert("Dont")
+      //    }
+      // },
       newsfeeds() {
          // return this.newsFeedsValueRef;
          return _.orderBy(this.newsFeedsValueRef, 'order');
@@ -430,8 +531,40 @@ export default {
       },
    },
    methods: {
-      addDiv() {
-         
+      newsAtUnlike(newsfeed){
+         db.ref(`Newsfeed/${newsfeed.keyIndex}/whoLikes/rp84hDq2SEMay00D7KL3rGSuAs93`).remove();
+         db.ref(`Newsfeed/${newsfeed.keyIndex}/`).update({
+                  likes: newsfeed.likes - 1
+               })
+      },
+      newsAtLike(newsfeed) {
+         db.ref(`Newsfeed/${newsfeed.keyIndex}/`).update({
+                  likes: newsfeed.likes + 1
+               })
+         axios.get('https://api.ipgeolocation.io/ipgeo?apiKey=90a83c7326cc475f8048cf81362e1df0')
+            .then((response) =>{
+            // var now= moment(response.data.time_zone.current_time).tz(response.data.time_zone.name).format('MMMM D YYYY, kk:mm:ss');
+            var now= response.data.time_zone.current_time
+            let vm = this
+            // var now = moment().format("MMMM D YYYY, kk:mm:ss");
+            // console.log(now)
+            db.ref(`Newsfeed/${newsfeed.keyIndex}/whoLikes/${vm.userData['ckcm-network_token_id']}` ).set({
+               userId: vm.userData['ckcm-network_token_id'],
+               displayName: vm.userData.displayName,
+               photoUrl: vm.userData.photoUrl,
+               timestamp:  now,
+            }, function(error) {
+            if (error) {
+               console.log(error) 
+               db.ref(`Newsfeed/${newsfeed.keyIndex}/`).update({
+                  likes: newsfeed.likes - 1
+               })
+            } else {
+               
+               // Data saved successfully!
+            }
+            });
+         });
       },
       reloadNews() {
          let vm = this
@@ -539,6 +672,7 @@ export default {
                timestamp:  now,
                someoneComment: false,
                commentText: "",
+               likes: 0,
                order: vm.orderValue + 1 
             }, function(error) {
             if (error) {
