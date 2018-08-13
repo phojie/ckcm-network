@@ -6,7 +6,7 @@
                <!-- style="border:1px #E0E0E0 solid;border-radius:2px"   -->
                <v-layout wrap color="white" :class="whatisClass" class="py-2 px-2" >
                   <v-flex xs12 style="margin-top:-10px" >
-                     <v-layout>
+                     <v-layout row wrap>
                         <v-btn
                            round
                            color="transparent light-blue--text text--darken-1"
@@ -17,7 +17,7 @@
                            <v-avatar tile size="20">  
                               <img src="https://png.icons8.com/ios/50/039BE5/create-new.png">
                            </v-avatar>
-                           Make Post
+                           New Post
                         </v-btn>
                         <v-btn
                            round
@@ -43,6 +43,18 @@
                            </v-avatar>
                            Photo/Album
                         </v-btn>
+                        <v-btn
+                           round
+                           color="transparent indigo--text text--darken-1"
+                           depressed
+                           small
+                           class="caption font-weigth-bold  textDefault"
+                        >
+                           <v-avatar tile size="18">  
+                              <img src="https://png.icons8.com/ios/50/3949AB/about.png">
+                           </v-avatar>
+                           Make Announcement
+                        </v-btn>
                         
                        
                         <!-- <v-btn
@@ -56,19 +68,18 @@
                            <v-icon dark  color="grey darken-4" style="font-size:17px">mdi-dots-horizontal</v-icon>
                         </v-btn> -->
                      </v-layout>
-
                   </v-flex>
-                  <div  style="width:38px !important" class=" mt-3">
+                  <div  style="width:32px !important" class=" mt-3">
                      <v-btn @click="profileMenu" color="" icon style="height:34px !important; width:34px !important;margin-top:-5px" class=" jieleftNav"  flat>
                         <v-badge color="white"  overlap class="jieBadgeNews">
                            <!-- <span  slot="badge" class="" style="font-size:16px; border-radius: 50%; border: 4.5px solid #7CB342 ;"></span> -->
-                           <v-avatar class="mr-2 " color="grey lighten-3" size="38">
+                           <v-avatar class="mr-2 " color="grey lighten-3" size="32">
                               <img :src="`${userData.photoUrl}?height=10000`" alt="">
                            </v-avatar>
                         </v-badge>
                      </v-btn> 
                   </div>
-                  <v-flex style="margin-top:-10px" :class="whatisFlex">
+                  <v-flex style="margin-top:-3px" :class="whatisFlex">
                      <!-- jiew -->
                      <v-textarea 
                         background-color="transparent"
@@ -125,7 +136,7 @@
 
                   <v-flex xs11 class="text-xs-right" v-if="whatisFunction" >
                      <v-spacer></v-spacer>
-                     <v-btn small round  :disabled="postedDataNews"  depressed color="blue" @click="makePost(userData)" class="white--text font-weight-black caption textDefault"> Post </v-btn>
+                     <v-btn small round :disabled="postedDataNews"  depressed color="blue" @click="makePost(userData)" class="white--text font-weight-black caption textDefault"> Post </v-btn>
                   </v-flex>
                </v-layout>
                <!-- <v-layout>
@@ -153,7 +164,7 @@
                         </v-badge>
                      </v-btn> 
                      <div class="mt-2 ">
-                     <p @click="profileMenuFriend(newsfeed.displayName)" style="letter-spacing:1px; font-size:13px" class="aJie mb-0 font-weight-bold ">{{newsfeed.displayName}} </p>
+                     <p @click="profileMenuFriend(newsfeed.displayName)" style="letter-spacing:1px; font-size:14px" class="aJie mb-0 font-weight-bold ">{{newsfeed.displayName}} </p>
                      <p style="margin-top:-5px;font-size:11px" class="grey--text textfm2">
                         <!-- {{newsfeed.timestamp | moment("dddd, MMMM Do YYYY: h:mm:a") }}| -->
                         <Timeago :auto-update="60" :datetime="newsfeed.timestamp" :since="timeAgoFormat"></Timeago>
@@ -205,42 +216,25 @@
                         ></v-textarea>
                      </v-layout>
                      <!-- <v-divider class="grey lighten-3"> </v-divider> -->
-                     <v-layout class="mx-2"> 
-                        <v-flex xs3  >
-                           <v-btn depressed color="transparent" class=" textDefault grey--text text--darken-1 textfm1" block>
-                              <v-icon size="19" class="mr-1 --text text--darken-3" >mdi-thumb-up-outline</v-icon>
-                              Like
+                     <v-layout wrap row style="margin-top:-22px" class="mx-2"> 
+                        <v-flex  class="text-xs-right">
+                           <v-btn flat large color="transparent">
+                              <v-avatar size="20" class="mr-2">
+                                 <img src="https://png.icons8.com/ios/50/666666/heart-with-arrow.png">
+                              </v-avatar>
+                              <div class="grey--text caption">28</div>
+                           </v-btn>
+                           <v-btn flat icon color="grey">
+                              <v-icon>star</v-icon>
+                           </v-btn>
+                              <v-btn flat icon color="grey">
+                            <v-icon>cached</v-icon>
+                           </v-btn>
+                           <v-btn flat icon color="grey">
+                              <v-icon>thumb_up</v-icon>
                            </v-btn>
                         </v-flex>
-
-                        <v-flex xs3  >
-                           <v-btn depressed color="transparent" class=" textDefault grey--text text--darken-1 textfm1" block>
-                              <v-icon size="19" class="--text text--darken-3 mr-1" >mdi-thumb-down-outline</v-icon>
-                              Dislike
-                           </v-btn>
-                        </v-flex>
-
-                        <!-- <v-flex xs3  >
-                           <v-btn depressed color="transparent" class=" textDefault grey--text text--darken-1 textfm1" block>
-                              <v-icon size="19" class="--text text--darken-3 mr-1" >mdi-thumb-down-outline</v-icon>
-                              React
-                           </v-btn>
-                        </v-flex> -->
-
-                        <v-flex xs3 >
-                         <v-btn depressed color="transparent" class=" textDefault grey--text text--darken-1 textfm1" block>
-                              <v-icon size="19" class="--text text--darken-3  mr-1" >mdi-comment-outline</v-icon>
-                              Comment
-                           </v-btn>
-                        </v-flex>
-
-                        <v-flex xs3 >
-                           <v-btn depressed @click="reloadNews" color="transparent" class=" textDefault grey--text text--darken-1 textfm1" block>
-                              <v-icon size="20" class="--text text--darken-3 mr-1" >mdi-share-outline</v-icon>
-                              Share
-                           </v-btn>
-                        </v-flex>
-
+                           
                      </v-layout>
                   </v-flex>
                   <v-flex xs12>
@@ -555,6 +549,7 @@ export default {
                   newsfeedOrder: vm.orderValue-1
                })
                vm.postedData.message = "";
+               vm.whatisFunctionMethodFalse()
                // Data saved successfully!
             }
             });

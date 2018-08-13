@@ -191,8 +191,8 @@
       <v-navigation-drawer :value="leftnavDrawer" class=" transparent lighten-3 scrollbar-secondary " floating  width="300" style="overflow: auto !important;" clipped app>
          <v-card flat color="transparent" class="mt-2 ml-5">
             <v-card flat class="pb-2">
-                  <!-- src="https://scontent.fcgy1-1.fna.fbcdn.net/v/t1.0-9/29571261_1589949324387758_1953653254138362805_n.jpg?_nc_cat=0&oh=fbd784445c209ed004d49b0ea51cba32&oe=5BCADF30" -->
                <v-card-media
+                  src="https://scontent.fcgy1-1.fna.fbcdn.net/v/t1.0-9/29571261_1589949324387758_1953653254138362805_n.jpg?_nc_cat=0&oh=fbd784445c209ed004d49b0ea51cba32&oe=5BCADF30"
                   class="blue lighten-2 jieSvgBg1"
                   height="110px"
                >
@@ -214,7 +214,8 @@
                   </div>
                </div>
                <div style="font-size:10px  !important;margin-top:40px" class="ml-3 font-weight-black  blue--text text--darken-1">
-                  ROLES | ROLE
+                  ROLES 
+                  <!-- | ROLE -->
                </div>
                <v-layout class="mt-1 mx-2" row wrap>
                   <v-flex>
@@ -288,19 +289,16 @@
                
             </v-card>
             <v-divider></v-divider>
-            <v-card flat class="grey lighten-3 mt-1  ">
+            <v-card flat class="grey lighten-3  ">
                <v-list class="mx-2">
-                  <div class="font-weight-bold caption brown--text textupper">TERMS & POLICIES</div>
-                      <v-list-tile-content style="font-size:12px" class="ml-3 ">
+                  <div class="font-weight-bold brown--text textupper" style="font-size:10px" > TERMS & POLICIES</div>
+                      <v-list-tile-content style="font-size:11px">
                        <v-list-tile-title > <router-link class="aJie grey--text" to="#"> Terms of Service </router-link></v-list-tile-title>
                        <v-list-tile-title > <router-link class="aJie grey--text" to="#"> Privacy Statement </router-link></v-list-tile-title>
                        <v-list-tile-title > <router-link class="aJie grey--text" to="#"> Ckcm Cloud Security </router-link></v-list-tile-title>
                      </v-list-tile-content>
-                  <div class="mt-2 font-weight-bold caption green--text ">&copy; {{ new Date().getFullYear() }} Ckcm-Network</div>
-                      <!-- <v-list-tile-content style="font-size:12px" class="ml-3 ">
-                       <v-list-tile-title > <a class="aJie grey--text" href="http://ckcmnetwork.me"> www.ckcmnetwork.me </a></v-list-tile-title>
-                       <v-list-tile-title > <a class="aJie grey--text" to="terms" href="https://ckcm-network.com"> www.ckcm-network.com </a></v-list-tile-title>
-                     </v-list-tile-content> -->
+                  <v-divider></v-divider>
+                  <div class="mt-2 font-weight-bold green--text " style="font-size:10px" > &copy; {{ new Date().getFullYear() }} Ckcm-Network</div>
                 </v-list>
             </v-card>
          </v-card>

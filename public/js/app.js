@@ -5519,7 +5519,7 @@ module.exports = parse
 /* harmony export (immutable) */ __webpack_exports__["d"] = signUp;
 /* harmony export (immutable) */ __webpack_exports__["a"] = getLocalUser;
 /* harmony export (immutable) */ __webpack_exports__["b"] = getLocalfdetails;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 
 
@@ -5837,12 +5837,6 @@ function applyToTag (styleElement, obj) {
 /* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(155);
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
@@ -5944,7 +5938,7 @@ module.exports = defaults;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6132,7 +6126,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 13 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -16501,6 +16495,12 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(155);
 
 /***/ }),
 /* 14 */
@@ -41290,12 +41290,12 @@ var jie = new __WEBPACK_IMPORTED_MODULE_1_vue___default.a({
 /***/ (function(module, exports, __webpack_require__) {
 
 try {
-  window.$ = window.jQuery = __webpack_require__(13);
+  window.$ = window.jQuery = __webpack_require__(12);
 
   __webpack_require__(153);
 } catch (e) {}
 
-window.axios = __webpack_require__(10);
+window.axios = __webpack_require__(13);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -41326,7 +41326,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   */
 (function (global, factory) {
-   true ? factory(exports, __webpack_require__(13), __webpack_require__(154)) :
+   true ? factory(exports, __webpack_require__(12), __webpack_require__(154)) :
   typeof define === 'function' && define.amd ? define(['exports', 'jquery', 'popper.js'], factory) :
   (factory((global.bootstrap = {}),global.jQuery,global.Popper));
 }(this, (function (exports,$,Popper) { 'use strict';
@@ -47788,7 +47788,7 @@ Popper.Defaults = Defaults;
 var utils = __webpack_require__(2);
 var bind = __webpack_require__(14);
 var Axios = __webpack_require__(157);
-var defaults = __webpack_require__(11);
+var defaults = __webpack_require__(10);
 
 /**
  * Create an instance of Axios
@@ -47871,7 +47871,7 @@ function isSlowBuffer (obj) {
 "use strict";
 
 
-var defaults = __webpack_require__(11);
+var defaults = __webpack_require__(10);
 var utils = __webpack_require__(2);
 var InterceptorManager = __webpack_require__(166);
 var dispatchRequest = __webpack_require__(167);
@@ -48410,7 +48410,7 @@ module.exports = InterceptorManager;
 var utils = __webpack_require__(2);
 var transformData = __webpack_require__(168);
 var isCancel = __webpack_require__(18);
-var defaults = __webpack_require__(11);
+var defaults = __webpack_require__(10);
 var isAbsoluteURL = __webpack_require__(169);
 var combineURLs = __webpack_require__(170);
 
@@ -51938,7 +51938,7 @@ module.exports = function listToStyles (parentId, list) {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuelidate__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuelidate___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vuelidate__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ckcmHelpers_auth__ = __webpack_require__(7);
 //
@@ -54118,7 +54118,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ckcmHelpers_auth__ = __webpack_require__(7);
 //
@@ -54545,7 +54545,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ckcmHelpers_auth__ = __webpack_require__(7);
 //
@@ -54961,7 +54961,7 @@ exports = module.exports = __webpack_require__(5)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* html {\r\n   overflow: hidden !important; \r\n} */\n.fade-enter-active, .fade-leave-active {\r\n  -webkit-transition: opacity .5s;\r\n  transition: opacity .5s;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\r\n  opacity: 0;\n}\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* html {\r\n   overflow: hidden !important; \r\n} */\n.fade-enter-active, .fade-leave-active {\r\n  -webkit-transition: opacity .5s;\r\n  transition: opacity .5s;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\r\n  opacity: 0;\n}\r\n", ""]);
 
 // exports
 
@@ -54973,8 +54973,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_js__ = __webpack_require__(8);
-//
-//
 //
 //
 //
@@ -55931,7 +55929,11 @@ var render = function() {
                 [
                   _c("v-card-media", {
                     staticClass: "blue lighten-2 jieSvgBg1",
-                    attrs: { height: "110px" }
+                    attrs: {
+                      src:
+                        "https://scontent.fcgy1-1.fna.fbcdn.net/v/t1.0-9/29571261_1589949324387758_1953653254138362805_n.jpg?_nc_cat=0&oh=fbd784445c209ed004d49b0ea51cba32&oe=5BCADF30",
+                      height: "110px"
+                    }
                   }),
                   _vm._v(" "),
                   _c(
@@ -56018,7 +56020,7 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        "\r\n                  ROLES | ROLE\r\n               "
+                        "\r\n                  ROLES \r\n                  "
                       )
                     ]
                   ),
@@ -56463,7 +56465,7 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "v-card",
-                { staticClass: "grey lighten-3 mt-1  ", attrs: { flat: "" } },
+                { staticClass: "grey lighten-3  ", attrs: { flat: "" } },
                 [
                   _c(
                     "v-list",
@@ -56472,18 +56474,15 @@ var render = function() {
                       _c(
                         "div",
                         {
-                          staticClass:
-                            "font-weight-bold caption brown--text textupper"
+                          staticClass: "font-weight-bold brown--text textupper",
+                          staticStyle: { "font-size": "10px" }
                         },
-                        [_vm._v("TERMS & POLICIES")]
+                        [_vm._v(" TERMS & POLICIES")]
                       ),
                       _vm._v(" "),
                       _c(
                         "v-list-tile-content",
-                        {
-                          staticClass: "ml-3 ",
-                          staticStyle: { "font-size": "12px" }
-                        },
+                        { staticStyle: { "font-size": "11px" } },
                         [
                           _c(
                             "v-list-tile-title",
@@ -56533,15 +56532,17 @@ var render = function() {
                         1
                       ),
                       _vm._v(" "),
+                      _c("v-divider"),
+                      _vm._v(" "),
                       _c(
                         "div",
                         {
-                          staticClass:
-                            "mt-2 font-weight-bold caption green--text "
+                          staticClass: "mt-2 font-weight-bold green--text ",
+                          staticStyle: { "font-size": "10px" }
                         },
                         [
                           _vm._v(
-                            "© " +
+                            " © " +
                               _vm._s(new Date().getFullYear()) +
                               " Ckcm-Network"
                           )
@@ -57656,12 +57657,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 
 
@@ -57844,6 +57839,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                      newsfeedOrder: vm.orderValue - 1
                   });
                   vm.postedData.message = "";
+                  vm.whatisFunctionMethodFalse();
                   // Data saved successfully!
                }
             });
@@ -58011,6 +58007,7 @@ var render = function() {
                         [
                           _c(
                             "v-layout",
+                            { attrs: { row: "", wrap: "" } },
                             [
                               _c(
                                 "v-btn",
@@ -58039,7 +58036,7 @@ var render = function() {
                                     ]
                                   ),
                                   _vm._v(
-                                    "\r\n                           Make Post\r\n                        "
+                                    "\r\n                           New Post\r\n                        "
                                   )
                                 ],
                                 1
@@ -58109,6 +58106,39 @@ var render = function() {
                                   )
                                 ],
                                 1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-btn",
+                                {
+                                  staticClass:
+                                    "caption font-weigth-bold  textDefault",
+                                  attrs: {
+                                    round: "",
+                                    color:
+                                      "transparent indigo--text text--darken-1",
+                                    depressed: "",
+                                    small: ""
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "v-avatar",
+                                    { attrs: { tile: "", size: "18" } },
+                                    [
+                                      _c("img", {
+                                        attrs: {
+                                          src:
+                                            "https://png.icons8.com/ios/50/3949AB/about.png"
+                                        }
+                                      })
+                                    ]
+                                  ),
+                                  _vm._v(
+                                    "\r\n                           Make Announcement\r\n                        "
+                                  )
+                                ],
+                                1
                               )
                             ],
                             1
@@ -58121,7 +58151,7 @@ var render = function() {
                         "div",
                         {
                           staticClass: " mt-3",
-                          staticStyle: { width: "38px !important" }
+                          staticStyle: { width: "32px !important" }
                         },
                         [
                           _c(
@@ -58150,7 +58180,7 @@ var render = function() {
                                       staticClass: "mr-2 ",
                                       attrs: {
                                         color: "grey lighten-3",
-                                        size: "38"
+                                        size: "32"
                                       }
                                     },
                                     [
@@ -58178,7 +58208,7 @@ var render = function() {
                         "v-flex",
                         {
                           class: _vm.whatisFlex,
-                          staticStyle: { "margin-top": "-10px" }
+                          staticStyle: { "margin-top": "-3px" }
                         },
                         [
                           _c("v-textarea", {
@@ -58372,7 +58402,7 @@ var render = function() {
                                         "aJie mb-0 font-weight-bold ",
                                       staticStyle: {
                                         "letter-spacing": "1px",
-                                        "font-size": "13px"
+                                        "font-size": "14px"
                                       },
                                       on: {
                                         click: function($event) {
@@ -58549,143 +58579,87 @@ var render = function() {
                             _vm._v(" "),
                             _c(
                               "v-layout",
-                              { staticClass: "mx-2" },
+                              {
+                                staticClass: "mx-2",
+                                staticStyle: { "margin-top": "-22px" },
+                                attrs: { wrap: "", row: "" }
+                              },
                               [
                                 _c(
                                   "v-flex",
-                                  { attrs: { xs3: "" } },
+                                  { staticClass: "text-xs-right" },
                                   [
                                     _c(
                                       "v-btn",
                                       {
-                                        staticClass:
-                                          " textDefault grey--text text--darken-1 textfm1",
                                         attrs: {
-                                          depressed: "",
-                                          color: "transparent",
-                                          block: ""
+                                          flat: "",
+                                          large: "",
+                                          color: "transparent"
                                         }
                                       },
                                       [
                                         _c(
-                                          "v-icon",
+                                          "v-avatar",
                                           {
-                                            staticClass:
-                                              "mr-1 --text text--darken-3",
-                                            attrs: { size: "19" }
-                                          },
-                                          [_vm._v("mdi-thumb-up-outline")]
-                                        ),
-                                        _vm._v(
-                                          "\r\n                              Like\r\n                           "
-                                        )
-                                      ],
-                                      1
-                                    )
-                                  ],
-                                  1
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "v-flex",
-                                  { attrs: { xs3: "" } },
-                                  [
-                                    _c(
-                                      "v-btn",
-                                      {
-                                        staticClass:
-                                          " textDefault grey--text text--darken-1 textfm1",
-                                        attrs: {
-                                          depressed: "",
-                                          color: "transparent",
-                                          block: ""
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "v-icon",
-                                          {
-                                            staticClass:
-                                              "--text text--darken-3 mr-1",
-                                            attrs: { size: "19" }
-                                          },
-                                          [_vm._v("mdi-thumb-down-outline")]
-                                        ),
-                                        _vm._v(
-                                          "\r\n                              Dislike\r\n                           "
-                                        )
-                                      ],
-                                      1
-                                    )
-                                  ],
-                                  1
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "v-flex",
-                                  { attrs: { xs3: "" } },
-                                  [
-                                    _c(
-                                      "v-btn",
-                                      {
-                                        staticClass:
-                                          " textDefault grey--text text--darken-1 textfm1",
-                                        attrs: {
-                                          depressed: "",
-                                          color: "transparent",
-                                          block: ""
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "v-icon",
-                                          {
-                                            staticClass:
-                                              "--text text--darken-3  mr-1",
-                                            attrs: { size: "19" }
-                                          },
-                                          [_vm._v("mdi-comment-outline")]
-                                        ),
-                                        _vm._v(
-                                          "\r\n                              Comment\r\n                           "
-                                        )
-                                      ],
-                                      1
-                                    )
-                                  ],
-                                  1
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "v-flex",
-                                  { attrs: { xs3: "" } },
-                                  [
-                                    _c(
-                                      "v-btn",
-                                      {
-                                        staticClass:
-                                          " textDefault grey--text text--darken-1 textfm1",
-                                        attrs: {
-                                          depressed: "",
-                                          color: "transparent",
-                                          block: ""
-                                        },
-                                        on: { click: _vm.reloadNews }
-                                      },
-                                      [
-                                        _c(
-                                          "v-icon",
-                                          {
-                                            staticClass:
-                                              "--text text--darken-3 mr-1",
+                                            staticClass: "mr-2",
                                             attrs: { size: "20" }
                                           },
-                                          [_vm._v("mdi-share-outline")]
+                                          [
+                                            _c("img", {
+                                              attrs: {
+                                                src:
+                                                  "https://png.icons8.com/ios/50/666666/heart-with-arrow.png"
+                                              }
+                                            })
+                                          ]
                                         ),
-                                        _vm._v(
-                                          "\r\n                              Share\r\n                           "
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "grey--text caption" },
+                                          [_vm._v("28")]
                                         )
                                       ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-btn",
+                                      {
+                                        attrs: {
+                                          flat: "",
+                                          icon: "",
+                                          color: "grey"
+                                        }
+                                      },
+                                      [_c("v-icon", [_vm._v("star")])],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-btn",
+                                      {
+                                        attrs: {
+                                          flat: "",
+                                          icon: "",
+                                          color: "grey"
+                                        }
+                                      },
+                                      [_c("v-icon", [_vm._v("cached")])],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-btn",
+                                      {
+                                        attrs: {
+                                          flat: "",
+                                          icon: "",
+                                          color: "grey"
+                                        }
+                                      },
+                                      [_c("v-icon", [_vm._v("thumb_up")])],
                                       1
                                     )
                                   ],
