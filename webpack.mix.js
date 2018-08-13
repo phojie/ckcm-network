@@ -9,3 +9,4 @@ jie.stylus('resources/assets/stylus/app.styl', 'public/css', {
 });
 
 jie.browserSync('localhost');
+jie.disableNotifications();

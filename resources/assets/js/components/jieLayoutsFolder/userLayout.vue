@@ -4,7 +4,7 @@
    <v-app class="grey lighten-3"  style="overflow:hidden !important" >
     
       <!-- stateless permanent -->
-      <v-navigation-drawer right stateless permanent  class="white" floating  width="210" style="overflow: hidden !important;" clipped app>
+      <v-navigation-drawer right class="transparent "   width="220" style="overflow: hidden !important;" clipped app>
          <v-card flat color=""   style="padding-top:7px !important" class=" friendscroll scrollbar-primary ">
             <v-menu
                :close-on-content-click="false"
@@ -45,7 +45,7 @@
                               <span v-if="friendList.status == 'online'" :key="friendList['.key']" slot="badge" style="border-radius: 50%; border: 6px solid #7CB342 ;"></span>
                               <span v-if="friendList.status != 'online'" :key="friendList['.key']" slot="badge" style="border-radius: 50%; border: 6px solid #E57373 ;"></span>
                               <v-avatar   color="grey lighten-3" size="70">
-                                 <img :src="friendList.photoUrl" alt="">
+                                 <img :src="friendList.photoUrl+'?height=500'" alt="">
                               </v-avatar>
                            </v-badge>
                         </v-layout>
@@ -187,91 +187,127 @@
          </v-card>
 
       </v-navigation-drawer>
-      <v-navigation-drawer  class="grey lighten-3" floating  width="230" style="overflow: hidden !important;" clipped app>
-         <v-card flat color="transparent" class="mt-3 ml-5">
-            <v-btn @click="profileMenu" color="grey"  small class=" jieleftNav" block flat>
-               <!-- Dropdown -->
-               <v-avatar class="mr-1" color="grey lighten-3" size="20px">
-                  <img :src="userData.photoUrl" alt="">
-               </v-avatar>
-               <div style="font-size:14px;margin-left:1px letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault textfm1">{{userData.displayName}}</div> 
-               <v-spacer></v-spacer>
-               <v-icon style="font-size:15px !important" color="grey">mdi-dots-horizontal</v-icon>
-            </v-btn>
-         </v-card>
 
-         <v-card flat color="transparent" class="mt-3 ml-5">
-            <v-btn to="/" style="padding-left:9px" small :ripple="{ class: 'white--text' }"  color="grey"  class=" jieleftNav" flat depressed block >
-               <!-- Dropdown -->
-               <v-avatar class="mr-1" color="red--after" size="20px">
-                  <img src="https://png.icons8.com/color/40/B0A18E/globe.png">
-                  <!-- <img src="https://png.icons8.com/color/100/B0A18E/newsleecher.png" alt=""> -->
-               </v-avatar>
-               <div style="font-size:14px;margin-left:1px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault textfm1"> News Feed </div> 
-               <v-spacer></v-spacer>
-               <div class="textfm1 caption" >24</div>
-            </v-btn>
-            <v-btn to="/messages" small :ripple="{ class: 'white--text' }" style="margin-top:-6px" color="grey" class=" jieleftNav" flat depressed block >
-               <!-- Dropdown -->
-               <v-avatar class="mr-1 " color="red--after" size="23px">
-                  <img src="/imgs/svg/jieChat.svg">
-               </v-avatar>
-               <div style="font-size:14px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault textfm1"> Chat app </div> 
-               <v-spacer></v-spacer>
-               <div class="textfm1 caption" >2</div>
-            </v-btn>
-            <v-btn to="/announcement" small :ripple="{ class: 'white--text' }" style="margin-top:-6px"  color="grey"   class=" jieleftNav" flat depressed block >
-               <!-- Dropdown -->
-               <v-avatar class="mr-1 " color="red--after" size="23px">
-                  <img src="https://png.icons8.com/color/40/B0A18E/pin3.png">
-               </v-avatar>
-               <div style="font-size:14px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault textfm1"> Announcement </div> 
-               <v-spacer></v-spacer>
-               <div class="textfm1 caption" >2</div>
-            </v-btn>
-
-            <v-btn :to="`/welcome?sk=${code}`" style="padding-left:10px;margin-top:-6px" small :ripple="{ class: 'white--text' }"  color="grey"  class=" jieleftNav" flat depressed block >
-               <v-avatar class="mr-1" color="red--after" size="19px">
-                  <img src="/favicon.ico">
-                  <!-- <img src="https://png.icons8.com/color/100/B0A18E/newsleecher.png" alt=""> -->
-               </v-avatar>
-               <div style="font-size:14px;margin-left:1px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault textfm1"> Welcome </div> 
-               <v-spacer></v-spacer>
-               <div class="textfm1 caption" ></div>
-            </v-btn>
-            
-         </v-card>
-
+      <v-navigation-drawer :value="leftnavDrawer" class=" transparent lighten-3 scrollbar-secondary " floating  width="300" style="overflow: auto !important;" clipped app>
          <v-card flat color="transparent" class="mt-2 ml-5">
-            <div class="caption textfm1 grey--text font-weight-bold "> Explore </div>
-            <!-- <v-btn to="/1" small color="transparent"  class=" jieleftNav" depressed block >
-               <v-avatar class="mr-1 " color="red--after" size="18px">
-                  <img src="" alt="">
-               </v-avatar>
-               <div style="font-size:13px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault textfm1"> Enrollment </div> 
-               <v-spacer></v-spacer>
-            </v-btn>
-            <v-btn small to="/2" color="transparent" style="margin-top:-6px;"  class=" jieleftNav" depressed block>
-               <v-avatar class="mr-1 " color="red--after" size="18px">
-                  <img src="" alt="">
-               </v-avatar>
-               <div style="font-size:13px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault textfm1"> Club  </div> 
-               <v-spacer></v-spacer>
-            </v-btn>
-            <v-btn small to="/3" style="margin-top:-6px;" color="transparent" class=" jieleftNav" depressed block>
-               <v-avatar class="mr-1 " color="red--after" size="18px">
-                  <img src="" alt="">
-               </v-avatar>
-               <div style="font-size:13px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault textfm1">  Payroll   </div> 
-               <v-spacer></v-spacer>
-            </v-btn> -->
-         </v-card>
+            <v-card flat class="pb-2">
+               <v-card-media
+                  src="https://scontent.fcgy1-1.fna.fbcdn.net/v/t1.0-9/29571261_1589949324387758_1953653254138362805_n.jpg?_nc_cat=0&oh=fbd784445c209ed004d49b0ea51cba32&oe=5BCADF30"
+                  class="blue lighten-2 jieSvgBg1"
+                  height="110px"
+               >
+               </v-card-media>
+               <div class="ml-4" style="position:absolute !important; margin-top:-30px !important" >
+                  <v-avatar size="60" class="white">
+                     <img
+                        class="white"
+                        style="border:1px solid white;border-radius:50%;height:60px !important;width:60px !important;padding:2px !important"
+                        :src="userData.photoUrl+'?height=10000'"
+                        :alt="firstname"
+                     >
+                  </v-avatar>
+                  <div style="font-size:14px;margin-top:-32px !important;margin-left:60px" class="font-weight-bold textDefault" >
+                     {{userData.displayName}}
+                  </div>
+                  <div style="margin-top:-5px !important;margin-left:60px" class="caption font-weight-regular grey--text textlower" >
+                   @{{firstname}}
+                  </div>
+               </div>
+               <div style="font-size:10px  !important;margin-top:40px" class="ml-3 font-weight-black  blue--text text--darken-1">
+                  ROLES | ROLE
+               </div>
+               <v-layout class="mt-1 mx-2" row wrap>
+                  <v-flex>
+                     <v-chip small color="blue caption lighten-5" text-color="indigo">
+                        Vice-President
+                     </v-chip>
+                     <v-chip small color="blue caption lighten-5" text-color="teal">
+                        Student
+                     </v-chip>
+                     <v-chip small color="blue caption lighten-5" text-color="purple">
+                        Club Moderator
+                     </v-chip>
+                  </v-flex>
+               </v-layout>
+            </v-card>
 
-       
+            <v-card flat style="border-left:2px solid #64B5F6 !important" color="" class="pa-1 mt-1">
+               <v-btn to="/" style="padding-left:9px;"  :ripple="{ class: 'white--text' }"  color="blue lighten-1"  class=" jieleftNav" flat depressed block >
+                  <v-avatar tile class="mr-2" color="transparent" size="20px">
+                     <img src="https://png.icons8.com/ios/50/000000/rss.png">
+                  </v-avatar>
+                  <div style="font-size:12px;margin-left:1px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault "> News Feed </div> 
+                  <v-spacer></v-spacer>
+                  <div class="textfm1 caption" >24</div>
+               </v-btn>
+               <v-btn to="/messages" style="padding-left:9px;margin-top:-6px"  :ripple="{ class: 'white--text' }"  color="blue lighten-1"   class=" jieleftNav" flat depressed block >
+                     <v-avatar tile class="mr-2" color="transparent" size="20px">
+                     <img src="https://png.icons8.com/ios/50/000000/speech-bubble-with-dots.png">
+                  </v-avatar>
+                  <div style="font-size:12px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault "> Messaging </div> 
+                  <v-spacer></v-spacer>
+                  <div class="textfm1 caption" >2</div>
+               </v-btn>
+
+               <v-btn to="/announcement" style="padding-left:9px;margin-top:-6px"  :ripple="{ class: 'white--text' }"  color="blue lighten-1"   class=" jieleftNav" flat depressed block >
+                     <v-avatar tile class="mr-2" color="transparent" size="20px">
+                     <img src="https://png.icons8.com/ios/50/000000/billboard.png">
+                  </v-avatar>
+                  <div style="font-size:12px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault "> Announcement </div> 
+                  <v-spacer></v-spacer>
+                  <div class="textfm1 caption" >2</div>
+               </v-btn>
+
+               <v-btn :to="`/welcome?sk=${code}`" style="padding-left:10px;margin-top:-6px"  :ripple="{ class: 'white--text' }"  color="blue lighten-1"  class=" jieleftNav" flat depressed block >
+                  <v-avatar tile class="mr-2" color="grey--after" size="20px">
+                     <img src="/favicon.ico">
+                  </v-avatar>
+                  <div style="font-size:12px;margin-left:1px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault "> Welcome </div> 
+                  <v-spacer></v-spacer>
+                  <div class="textfm1 caption" ></div>
+               </v-btn>
+
+               <v-divider></v-divider>
+               <div class="ml-2 mt-1 caption font-weight-black grey--text" ><span class="blue--text">My</span>Apps</div>
+               <v-btn :to="code" style="padding-left:10px"  :ripple="{ class: 'white--text' }"  color="blue lighten-1"  class=" jieleftNav" flat depressed block >
+                  <v-avatar tile class="mr-2" color="grey--after" size="20px">
+                     <img src="https://png.icons8.com/ios/50/000000/interior-accesories.png">
+                  </v-avatar>
+                  <div style="font-size:12px;margin-left:1px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault "> VP-Office </div> 
+                  <v-spacer></v-spacer>
+                  <div class="textfm1 caption" ></div>
+               </v-btn>
+               <v-btn :to="code" style="padding-left:10px;margin-top:-6px"  :ripple="{ class: 'white--text' }"  color="blue lighten-1"  class=" jieleftNav" flat depressed block >
+                  <v-avatar tile class="mr-2" color="grey--after" size="20px">
+                     <img src="https://png.icons8.com/ios/50/000000/home-automation.png">
+                  </v-avatar>
+                  <div style="font-size:12px;margin-left:1px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault "> Club-Office </div> 
+                  <v-spacer></v-spacer>
+                  <div class="textfm1 caption" ></div>
+               </v-btn>
+               
+            </v-card>
+            <v-divider></v-divider>
+            <v-card flat class="grey lighten-3 mt-1  ">
+               <v-list class="mx-2">
+                  <div class="font-weight-bold caption brown--text textupper">TERMS & POLICIES</div>
+                      <v-list-tile-content style="font-size:12px" class="ml-3 ">
+                       <v-list-tile-title > <router-link class="aJie grey--text" to="#"> Terms of Service </router-link></v-list-tile-title>
+                       <v-list-tile-title > <router-link class="aJie grey--text" to="#"> Privacy Statement </router-link></v-list-tile-title>
+                       <v-list-tile-title > <router-link class="aJie grey--text" to="#"> Ckcm Cloud Security </router-link></v-list-tile-title>
+                     </v-list-tile-content>
+                  <div class="mt-2 font-weight-bold caption green--text ">&copy; {{ new Date().getFullYear() }} Ckcm-Network</div>
+                      <!-- <v-list-tile-content style="font-size:12px" class="ml-3 ">
+                       <v-list-tile-title > <a class="aJie grey--text" href="http://ckcmnetwork.me"> www.ckcmnetwork.me </a></v-list-tile-title>
+                       <v-list-tile-title > <a class="aJie grey--text" to="terms" href="https://ckcm-network.com"> www.ckcm-network.com </a></v-list-tile-title>
+                     </v-list-tile-content> -->
+                </v-list>
+            </v-card>
+         </v-card>
       </v-navigation-drawer>
       <!-- jieLandingBg -->
-      <!-- mycolor1 -->
-      <v-toolbar   clipped-left dark class="mr-5 mycolor3 jieLandingBg darken-5" flat app dense >
+      <!-- mycolor3 -->
+      <v-toolbar   height="43px" clipped-left dark class="mr-5 blue darken-2 jieLandingBg2" flat app dense >
          <!-- <v-toolbar-side-icon class="" @click="(mycolor1) => (showNav = !showNav)"></v-toolbar-side-icon> -->
          <v-toolbar-title class="primaryColortext--text subheading ">
             <!-- <span class="subheading white--text">Christ the King Network</span> -->
@@ -282,8 +318,8 @@
          
             <v-flex :class="md2" :style="extendSearch" align-start>
                <v-text-field  
-                  @focus="() => (md2 = 'md7', extendSearch = 'transition: .5s')"
-                  @blur="() => (md2 = 'md4')"
+                  @focus="() => (md2 = 'md4', extendSearch = 'transition: .5s')"
+                  @blur="() => (md2 = 'md3')"
                   @input="searchInput"
                   single-line
                   solo
@@ -435,7 +471,6 @@
       <v-content class="" >
          <!-- <v-container class="" app fluid> -->
             <router-view></router-view>
-            
          <!-- </v-container> -->
       </v-content>
 
@@ -475,7 +510,7 @@ export default {
       mini:true,
       showNav:true,
       progressDone: false,
-      md2: "md4",
+      md2: "md3",
       extendSearch: "",
       friendLists: []
 ,      items: [

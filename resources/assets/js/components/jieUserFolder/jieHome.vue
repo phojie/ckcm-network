@@ -1,7 +1,7 @@
 <template>
-   <v-card  app height="100%" width="100%" style="position:absolute; bottom:0" flat class="newsfeedScroll pa-0 ma-0 transparent scrollbar-primary "> 
-      <v-layout class="mt-2 justify-start justify-space-arround">
-         <v-flex class=" xs12 sm12 md8 lg7  mr-2 mt-2 ml-3 ">
+<v-card  app height="100%" width="100%" style="position:absolute; bottom:0" flat class="newsfeedScroll transparent scrollbar-primary "> 
+      <v-layout class="mt-1 mx-1 justify-center">
+         <v-flex class=" xs12 sm12 md8 lg8  mr-2 mt-1">
             <v-card flat style="border:1px #E0E0E0 solid;border-radius:2px" class="mb-1 jieSvgBg1  " >
                <v-layout wrap color="transparent" :class="whatisClass" class="px-2" >
                   <v-flex xs12  class="mb-1" >
@@ -83,23 +83,22 @@
                      <!-- </p> -->
                   </v-flex>
 
-                  <v-flex xs12  v-if="whatisFunction" >
-                     <v-btn small block :disabled="postedDataNews"  depressed color="indigo" @click="makePost(userData)" class="white--text caption textDefault"> Post </v-btn>
+                  <v-flex xs12 class="text-xs-right" v-if="whatisFunction" >
+                     <v-spacer></v-spacer>
+                     <v-btn small round  :disabled="postedDataNews"  depressed color="blue" @click="makePost(userData)" class="white--text caption textDefault"> Post </v-btn>
                   </v-flex>
                </v-layout>
-               <!-- <v-progress-linear  v-if="whatisFunction"  height="2" style="margin:0px !important" color="grey" :indeterminate="true"></v-progress-linear> -->
-               <v-layout>
-                  <v-flex  xs1 v-for="newsfeed in newsfeeds" :key="newsfeed['.key']" v-if="newsfeed.userId != userData['ckcm-network_token_id']"  class="pa-2">
+               <!-- <v-layout>
+                  <v-flex  xs1 v-for="newsfeed in newsfeeds" :key="newsfeed.keyIndex" v-if="newsfeed.userId != userData['ckcm-network_token_id']"  class="pa-2">
                            <v-btn color="indigo" icon @click="test" class="">
                               <v-avatar class="" color="grey" size="34px">
                                  <img :src="newsfeed.photoUrl" alt="">
                               </v-avatar>
                            </v-btn>
                   </v-flex>
-               </v-layout>
-               <!-- </v-container> -->
+               </v-layout> -->
             </v-card>
-            <v-card  style="border:1px #E0E0E0 solid;border-radius:2px" v-for="newsfeed in newsfeeds " :key="newsfeed['.key']" flat class="jieSvgBg1" >
+            <v-card  style="border:1px #E0E0E0 solid;border-radius:2px" v-for="newsfeed in newsfeeds " :key="newsfeed.keyIndex" flat class="jieSvgBg1" >
                <!-- <v-progress-linear active height="2" style="margin:0px !important" color="grey lighten-2" :indeterminate="false"></v-progress-linear> -->
                <v-layout wrap white class=" py-2" >
                   <v-flex xs12 class="mx-2">
@@ -115,8 +114,8 @@
                      <div class="mt-2 ">
                      <p @click="profileMenuFriend(newsfeed.displayName)" style="font-size:15px" class="aJie mb-0 indigo--text text--darken-4 font-weight-bold textfm1">{{newsfeed.displayName}} </p>
                      <p style="margin-top:-5px;font-size:13px" class="grey--text textfm2">
-                        <!-- {{ newsfeed.timestamp | moment("dddd, MMMM Do YYYY") }}| -->
-                        <span> <timeago :auto-update="60" :datetime="newsfeed.timestamp"></timeago></span>
+                        <!-- {{newsfeed.timestamp | moment("dddd, MMMM Do YYYY: h:mm:a") }}| -->
+                        <Timeago :auto-update="60" :datetime="newsfeed.timestamp" :since="timeAgoFormat"></Timeago>
                      </p>
                      </div>
 
@@ -268,7 +267,7 @@
                         <!-- comment area -->
                        
                         <v-flex  xs11 style="margin-top:-7px;margin-left:-5px">
-                           <v-form @submit.prevent="commentPost(newsfeed['.key'], userData, newsfeed.commentText)">
+                           <v-form @submit.prevent="commentPost(newsfeed.keyIndex, userData, newsfeed.commentText)">
                               <v-text-field  
                                  background-color="grey lighten-5"
                                  single-line
@@ -280,34 +279,22 @@
                                  v-model="newsfeed.commentText"
                                  :loading="false"
                                  placeholder="Write something here.."
-                                 @blur="blurPost(newsfeed['.key'], userData, newsfeed.commentText)"
-                                 @input="inputPost(newsfeed['.key'], userData, newsfeed.commentText)"
-                                 @click:append="commentPost(newsfeed['.key'], userData, newsfeed.commentText)"
+                                 @blur="blurPost(newsfeed.keyIndex, userData, newsfeed.commentText)"
+                                 @input="inputPost(newsfeed.keyIndex, userData, newsfeed.commentText)"
+                                 @click:append="commentPost(newsfeed.keyIndex, userData, newsfeed.commentText)"
                                  append-icon="mdi-send"
                                  style="font-size:13px"
                                  class="font-weight-thin-light jie3 textfm1  "
                               ></v-text-field>
                            </v-form>
                         </v-flex>
-                        <!-- <v-flex style="margin-top:2px;margin-left:-5px">
-                           <v-btn icon>
-                              <v-icon class="grey--text text--lighten-1">
-                                 mdi-camera
-                              </v-icon>   
-                           </v-btn>                           
-                        </v-flex> -->
+                      
                      </v-layout>
                   </v-flex>
-
-               <!-- <v-progress-linear active height="2" style="margin:0px !important" color="red lighten-2" :indeterminate="false"></v-progress-linear> -->
-                  <!-- <v-flex class="jieSvgBg1" xs12>
-                     footer
-                  </v-flex> -->
                </v-layout>
-
             </v-card>
-            
-            <v-card class="my-2" >
+            <infinite-loading @infinite="infiniteHandler" v-if="availableNews"></infinite-loading>
+            <!-- <v-card class="my-2" >
                <v-card-media
                   height=""
                >
@@ -319,12 +306,13 @@
                      </v-layout>
                   </v-container>
                </v-card-media>
-            </v-card>
+            </v-card> -->
          </v-flex>
+
 <!-- xs12 sm12 md8 lg7 -->
  <!-- xs0 sm0 md4 lg4 -->
-         <v-flex  class="md4 lg4  hidden-sm-and-down  mr-2  " >
-            <v-card flat class="grey lighten-4 my-2" height="50px">
+         <v-flex  class="md4 hidden-sm-and-down" >
+            <v-card flat class="grey lighten-4 my-1" height="50px">
             </v-card>
             <v-card flat  class="grey lighten-4 mb-2" height="150px">
             </v-card>
@@ -334,17 +322,24 @@
 
 </template>
 <script>
-import {newsfeedRef, db, app, order } from '../../firebase.js';
+import { db, app, order } from '../../firebase.js';
 
+import InfiniteLoading from 'vue-infinite-loading';
 
 export default {  
+   components: {
+       InfiniteLoading
+   },
    firebase: function () {
       return {
-         newsfeeds: newsfeedRef,
+         // newsfeeds: newsfeedRef,
       }
    },
    data: () => ({
-      orderValue: '',
+      timeAgoFormat: "",
+      availableNews: true,
+      newsFeedsValueRef: [],
+      newsFeedLimit: 2,
       timeDisplay: '',
       greet: '',
       worldTime: [],
@@ -364,9 +359,10 @@ export default {
       },
   }),
    computed: {
-      // newsfeedsReverse() {
-      //    return this.$firebaseRefs.newsfeeds.split('').reverse().join('')
-      // },
+      newsfeeds() {
+         // return this.newsFeedsValueRef;
+         return _.orderBy(this.newsFeedsValueRef, 'order');
+      },
       userData() {
          return this.$store.getters.accountLoginData.user
       },
@@ -382,10 +378,31 @@ export default {
       },
    },
    methods: {
-      scrollLoadNews() {
-         alert("success")
-         // this.$store.dispatch("scrollLimitNewsAdd");
-      }, 
+      infiniteHandler($state) {
+         let vm = this;
+         vm.newsFeedLimit += 4;
+         // setTimeout(() => {
+            var newsFeedsValue  = db.ref('Newsfeed').limitToLast(vm.newsFeedLimit);
+            newsFeedsValue.on('value', function(gotData) {
+               let keys = Object.keys(gotData.val())
+               // console.log(keys)
+               // gotData.val().text = "test"
+               vm.newsFeedsValueRef = gotData.val()
+               keys.forEach( function (key) {
+               //  console.log(gotData.val()[key], key)
+                  vm.newsFeedsValueRef[key].keyIndex = key
+                 })
+
+               if(vm.newsfeeds.length == vm.newsFeedLimit){
+                  vm.availableNews=true
+                  $state.loaded()
+               }else{
+                  vm.availableNews=false
+               }
+
+               });
+         // }, 1000);
+      },
       test() {
          alert("success")
       },
@@ -433,29 +450,35 @@ export default {
          });
       },
       makePost(user) {
-         let vm = this
-            // timestamp: Date.now(),
-         db.ref('Newsfeed/' ).push().set({
-            userId: user['ckcm-network_token_id'],
-            displayName: user.displayName,
-            data: vm.postedData,
-            photoUrl: user.photoUrl,
-            timestamp: vm.timestamp,
-            someoneComment: false,
-            commentText: "",
-            order: vm.orderValue + 1 
-         }, function(error) {
-         if (error) {
-            console.log(error)
-            // The write failed...r
-         } else {
-            db.ref('N_order/').set ({
-               newsfeedOrder: vm.orderValue-1
-            })
-            vm.postedData.message = "";
-            // Data saved successfully!
-         }
+         axios.get('https://api.ipgeolocation.io/ipgeo?apiKey=90a83c7326cc475f8048cf81362e1df0')
+            .then((response) =>{
+            var now= moment(response.data.time_zone.current_time).tz(response.data.time_zone.name).format('MMMM D YYYY, kk:mm:ss');
+            let vm = this
+            // var now = moment().format("MMMM D YYYY, kk:mm:ss");
+            // console.log(now)
+            db.ref('Newsfeed/' ).push().set({
+               userId: user['ckcm-network_token_id'],
+               displayName: user.displayName,
+               data: vm.postedData,
+               photoUrl: user.photoUrl,
+               timestamp:  now,
+               someoneComment: false,
+               commentText: "",
+               order: vm.orderValue + 1 
+            }, function(error) {
+            if (error) {
+               console.log(error)
+               // The write failed...r
+            } else {
+               db.ref('N_order/').set ({
+                  newsfeedOrder: vm.orderValue-1
+               })
+               vm.postedData.message = "";
+               // Data saved successfully!
+            }
+            });
          });
+
       },
       whatisFunctionMethod () {
          this.whatisClass = "mb-1 elevation-3"
@@ -520,7 +543,7 @@ export default {
    created() {
 
       document.title = "Christ the King Network";
-
+      
       let vm = this;
 
       order.on("value",  function(snapshot) {
@@ -535,6 +558,7 @@ export default {
             vm.worldTime=response.data
             vm.timeDisplay = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h:mma');
             vm.timestamp =  vm.worldTime.time_zone.current_time
+            vm.timeAgoFormat = moment(response.data.time_zone.current_time).tz(response.data.time_zone.name).format('MMMM D YYYY, kk:mm:ss');
             let hour = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('h');
             let a = moment(vm.worldTime.time_zone.current_time).tz(vm.worldTime.time_zone.name).format('a');
                if ( a == 'pm' && hour >= 1 && hour <= 5 || a == 'pm' && hour == 12) {
