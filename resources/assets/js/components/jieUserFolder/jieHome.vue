@@ -62,12 +62,12 @@
                      </v-btn> 
                   </v-flex>
                   <v-flex :class="whatisFlex">
-                  
                      <v-textarea 
                         v-model="postedData.message"
-                        class="jiew textfm1"
+                        color="blue"
+                        class="jiew"
                         row-height="10"
-                        style="font-size:16px !important"
+                        style="font-size:15px !important"
                         placeholder="What is your main focus for today?"
                         @click="whatisFunctionMethod"
                         @blur="whatisFunctionMethodFalse"
@@ -452,7 +452,8 @@ export default {
       makePost(user) {
          axios.get('https://api.ipgeolocation.io/ipgeo?apiKey=90a83c7326cc475f8048cf81362e1df0')
             .then((response) =>{
-            var now= moment(response.data.time_zone.current_time).tz(response.data.time_zone.name).format('MMMM D YYYY, kk:mm:ss');
+            // var now= moment(response.data.time_zone.current_time).tz(response.data.time_zone.name).format('MMMM D YYYY, kk:mm:ss');
+            var now= response.data.time_zone.current_time
             let vm = this
             // var now = moment().format("MMMM D YYYY, kk:mm:ss");
             // console.log(now)

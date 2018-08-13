@@ -57749,7 +57749,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          var _this = this;
 
          axios.get('https://api.ipgeolocation.io/ipgeo?apiKey=90a83c7326cc475f8048cf81362e1df0').then(function (response) {
-            var now = moment(response.data.time_zone.current_time).tz(response.data.time_zone.name).format('MMMM D YYYY, kk:mm:ss');
+            // var now= moment(response.data.time_zone.current_time).tz(response.data.time_zone.name).format('MMMM D YYYY, kk:mm:ss');
+            var now = response.data.time_zone.current_time;
             var vm = _this;
             // var now = moment().format("MMMM D YYYY, kk:mm:ss");
             // console.log(now)
@@ -58107,9 +58108,10 @@ var render = function() {
                         { class: _vm.whatisFlex },
                         [
                           _c("v-textarea", {
-                            staticClass: "jiew textfm1",
-                            staticStyle: { "font-size": "16px !important" },
+                            staticClass: "jiew",
+                            staticStyle: { "font-size": "15px !important" },
                             attrs: {
+                              color: "blue",
                               "row-height": "10",
                               placeholder: "What is your main focus for today?",
                               flat: "",
