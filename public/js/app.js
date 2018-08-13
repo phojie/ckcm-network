@@ -54961,7 +54961,7 @@ exports = module.exports = __webpack_require__(5)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* html {\r\n   overflow: hidden !important; \r\n} */\n.fade-enter-active, .fade-leave-active {\r\n  -webkit-transition: opacity .5s;\r\n  transition: opacity .5s;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\r\n  opacity: 0;\n}\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* html {\r\n   overflow: hidden !important; \r\n} */\n.fade-enter-active, .fade-leave-active {\r\n  -webkit-transition: opacity .5s;\r\n  transition: opacity .5s;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\r\n  opacity: 0;\n}\r\n", ""]);
 
 // exports
 
@@ -55549,9 +55549,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       // }
 
    },
-   mounted: function mounted() {
-      this.$store.dispatch("friendList");
-   },
+   mounted: function mounted() {},
    created: function created() {
       // this.$Progress.start()
    }
@@ -55929,11 +55927,7 @@ var render = function() {
                 [
                   _c("v-card-media", {
                     staticClass: "blue lighten-2 jieSvgBg1",
-                    attrs: {
-                      src:
-                        "https://scontent.fcgy1-1.fna.fbcdn.net/v/t1.0-9/29571261_1589949324387758_1953653254138362805_n.jpg?_nc_cat=0&oh=fbd784445c209ed004d49b0ea51cba32&oe=5BCADF30",
-                      height: "110px"
-                    }
+                    attrs: { height: "110px" }
                   }),
                   _vm._v(" "),
                   _c(
@@ -57756,8 +57750,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 
 
@@ -57774,6 +57766,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
    },
    data: function data() {
       return {
+         likeDisable: false,
          offsetTop: 0,
          timeAgoFormat: "",
          availableNews: true,
@@ -57824,7 +57817,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
    },
    methods: {
       newsAtUnlike: function newsAtUnlike(newsfeed) {
-         __WEBPACK_IMPORTED_MODULE_0__firebase_js__["b" /* db */].ref('Newsfeed/' + newsfeed.keyIndex + '/whoLikes/rp84hDq2SEMay00D7KL3rGSuAs93').remove();
+         __WEBPACK_IMPORTED_MODULE_0__firebase_js__["b" /* db */].ref('Newsfeed/' + newsfeed.keyIndex + '/whoLikes/' + this.userData['ckcm-network_token_id']).remove();
          __WEBPACK_IMPORTED_MODULE_0__firebase_js__["b" /* db */].ref('Newsfeed/' + newsfeed.keyIndex + '/').update({
             likes: newsfeed.likes - 1
          });
@@ -57832,15 +57825,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       newsAtLike: function newsAtLike(newsfeed) {
          var _this = this;
 
-         __WEBPACK_IMPORTED_MODULE_0__firebase_js__["b" /* db */].ref('Newsfeed/' + newsfeed.keyIndex + '/').update({
-            likes: newsfeed.likes + 1
-         });
+         this.likeDisable = true;
          axios.get('https://api.ipgeolocation.io/ipgeo?apiKey=90a83c7326cc475f8048cf81362e1df0').then(function (response) {
-            // var now= moment(response.data.time_zone.current_time).tz(response.data.time_zone.name).format('MMMM D YYYY, kk:mm:ss');
             var now = response.data.time_zone.current_time;
             var vm = _this;
-            // var now = moment().format("MMMM D YYYY, kk:mm:ss");
-            // console.log(now)
             __WEBPACK_IMPORTED_MODULE_0__firebase_js__["b" /* db */].ref('Newsfeed/' + newsfeed.keyIndex + '/whoLikes/' + vm.userData['ckcm-network_token_id']).set({
                userId: vm.userData['ckcm-network_token_id'],
                displayName: vm.userData.displayName,
@@ -57849,12 +57837,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }, function (error) {
                if (error) {
                   console.log(error);
-                  __WEBPACK_IMPORTED_MODULE_0__firebase_js__["b" /* db */].ref('Newsfeed/' + newsfeed.keyIndex + '/').update({
-                     likes: newsfeed.likes - 1
-                  });
                } else {
-
-                  // Data saved successfully!
+                  vm.likeDisable = false;
+                  __WEBPACK_IMPORTED_MODULE_0__firebase_js__["b" /* db */].ref('Newsfeed/' + newsfeed.keyIndex + '/').update({
+                     likes: newsfeed.likes + 1
+                  });
                }
             });
          });
@@ -57966,6 +57953,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                someoneComment: false,
                commentText: "",
                likes: 0,
+               whoLikes: { php: "php" },
                order: vm.orderValue + 1
             }, function (error) {
                if (error) {
@@ -58714,12 +58702,15 @@ var render = function() {
                                         }
                                       },
                                       [
-                                        newsfeed.whoLikes == _vm.userData.userId
+                                        newsfeed.whoLikes[
+                                          _vm.userData["ckcm-network_token_id"]
+                                        ] == null
                                           ? _c(
                                               "v-btn",
                                               {
                                                 attrs: {
                                                   slot: "activator",
+                                                  disabled: _vm.likeDisable,
                                                   flat: "",
                                                   icon: "",
                                                   large: "",
@@ -58752,18 +58743,20 @@ var render = function() {
                                                   ]
                                                 ),
                                                 _vm._v(" "),
-                                                _c(
-                                                  "div",
-                                                  {
-                                                    staticClass:
-                                                      "grey--text text--darken-2 caption"
-                                                  },
-                                                  [
-                                                    _vm._v(
-                                                      _vm._s(newsfeed.likes)
+                                                newsfeed.likes != 0
+                                                  ? _c(
+                                                      "div",
+                                                      {
+                                                        staticClass:
+                                                          "grey--text font-weight-bold text--darken-2 caption"
+                                                      },
+                                                      [
+                                                        _vm._v(
+                                                          _vm._s(newsfeed.likes)
+                                                        )
+                                                      ]
                                                     )
-                                                  ]
-                                                )
+                                                  : _vm._e()
                                               ],
                                               1
                                             )
@@ -58772,6 +58765,7 @@ var render = function() {
                                               {
                                                 attrs: {
                                                   slot: "activator",
+                                                  disabled: _vm.likeDisable,
                                                   flat: "",
                                                   icon: "",
                                                   large: "",
@@ -58804,41 +58798,34 @@ var render = function() {
                                                   ]
                                                 ),
                                                 _vm._v(" "),
-                                                newsfeed.whoLikes ==
-                                                _vm.userData.userId
-                                                  ? _c(
-                                                      "div",
-                                                      {
-                                                        staticClass:
-                                                          "font-weight-bold grey--text text--darken-2 caption"
-                                                      },
-                                                      [
-                                                        _vm._v(
-                                                          _vm._s(newsfeed.likes)
-                                                        )
-                                                      ]
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "font-weight-bold blue--text caption"
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      _vm._s(newsfeed.likes)
                                                     )
-                                                  : _c(
-                                                      "div",
-                                                      {
-                                                        staticClass:
-                                                          "font-weight-bold blue--text caption"
-                                                      },
-                                                      [
-                                                        _vm._v(
-                                                          _vm._s(newsfeed.likes)
-                                                        )
-                                                      ]
-                                                    )
+                                                  ]
+                                                )
                                               ],
                                               1
                                             ),
                                         _vm._v(" "),
-                                        newsfeed.whoLikes == _vm.userData.userId
+                                        newsfeed.whoLikes[
+                                          _vm.userData["ckcm-network_token_id"]
+                                        ] == null
                                           ? _c(
                                               "span",
                                               {
-                                                staticStyle: { margin: "3px" }
+                                                staticStyle: { margin: "3px" },
+                                                on: {
+                                                  click: function($event) {
+                                                    _vm.newsAtLike(newsfeed)
+                                                  }
+                                                }
                                               },
                                               [_vm._v(" Like ")]
                                             )

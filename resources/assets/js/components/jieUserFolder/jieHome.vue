@@ -219,22 +219,20 @@
                      <v-layout wrap row > 
                         <v-flex class="mx-2 text-xs-left" >
                            <v-tooltip content-class="jieTool" color="grey darken-4"  top>
-                              <v-btn v-if="newsfeed.whoLikes == userData.userId " @click="newsAtLike(newsfeed)" slot="activator" flat icon large color="transparent">
+                              <!-- v-if="newsfeed.whoLikes != userData.userId "  -->
+                              <v-btn :disabled="likeDisable" v-if="newsfeed.whoLikes[userData['ckcm-network_token_id']] == null" @click="newsAtLike(newsfeed)" slot="activator" flat icon large color="transparent">
                                  <v-avatar tile size="19" class="mr-1">
                                     <img src="https://png.icons8.com/ios/50/333333/thumb-up.png">
                                  </v-avatar>
-                                 <div class="grey--text text--darken-2 caption">{{newsfeed.likes}}</div>
+                                 <div v-if="newsfeed.likes != 0" class="grey--text font-weight-bold text--darken-2 caption">{{newsfeed.likes}}</div>
                               </v-btn>
-                              <v-btn v-else @click="newsAtUnlike(newsfeed)" slot="activator" flat icon large color="transparent">
+                              <v-btn :disabled="likeDisable" v-else @click="newsAtUnlike(newsfeed)" slot="activator" flat icon large color="transparent">
                                  <v-avatar tile size="23" class="mr-1">
                                     <img src="https://png.icons8.com/ios/50/2196F3/good-quality-filled.png">
-                                    <!-- <img src="https://png.icons8.com/ios/50/2196F3/thumb-up-filled.png"> -->
                                  </v-avatar>
-                                 <div v-if="newsfeed.whoLikes == userData.userId"  class="font-weight-bold grey--text text--darken-2 caption">{{newsfeed.likes}}</div>
-                                 <div v-else class="font-weight-bold blue--text caption">{{newsfeed.likes}}</div>
-
-                              </v-btn>
-                              <span v-if="newsfeed.whoLikes == userData.userId " style="margin:3px"> Like </span>
+                                 <div class="font-weight-bold blue--text caption">{{newsfeed.likes}}</div>
+                              </v-btn> 
+                              <span  v-if="newsfeed.whoLikes[userData['ckcm-network_token_id']] == null" @click="newsAtLike(newsfeed)" style="margin:3px"> Like </span>
                               <span v-else style="margin:3px " > Unlike </span>
                                  
                               <v-layout justify-center>
@@ -480,6 +478,7 @@ export default {
       }
    },
    data: () => ({
+      likeDisable: false,
       offsetTop: 0,
       timeAgoFormat: "",
       availableNews: true,
@@ -532,22 +531,17 @@ export default {
    },
    methods: {
       newsAtUnlike(newsfeed){
-         db.ref(`Newsfeed/${newsfeed.keyIndex}/whoLikes/rp84hDq2SEMay00D7KL3rGSuAs93`).remove();
+         db.ref(`Newsfeed/${newsfeed.keyIndex}/whoLikes/${this.userData['ckcm-network_token_id']}`).remove();
          db.ref(`Newsfeed/${newsfeed.keyIndex}/`).update({
-                  likes: newsfeed.likes - 1
-               })
+            likes: newsfeed.likes - 1
+         })
       },
       newsAtLike(newsfeed) {
-         db.ref(`Newsfeed/${newsfeed.keyIndex}/`).update({
-                  likes: newsfeed.likes + 1
-               })
+         this.likeDisable = true;
          axios.get('https://api.ipgeolocation.io/ipgeo?apiKey=90a83c7326cc475f8048cf81362e1df0')
             .then((response) =>{
-            // var now= moment(response.data.time_zone.current_time).tz(response.data.time_zone.name).format('MMMM D YYYY, kk:mm:ss');
             var now= response.data.time_zone.current_time
             let vm = this
-            // var now = moment().format("MMMM D YYYY, kk:mm:ss");
-            // console.log(now)
             db.ref(`Newsfeed/${newsfeed.keyIndex}/whoLikes/${vm.userData['ckcm-network_token_id']}` ).set({
                userId: vm.userData['ckcm-network_token_id'],
                displayName: vm.userData.displayName,
@@ -556,12 +550,11 @@ export default {
             }, function(error) {
             if (error) {
                console.log(error) 
-               db.ref(`Newsfeed/${newsfeed.keyIndex}/`).update({
-                  likes: newsfeed.likes - 1
-               })
             } else {
-               
-               // Data saved successfully!
+               vm.likeDisable = false;
+               db.ref(`Newsfeed/${newsfeed.keyIndex}/`).update({
+                  likes: newsfeed.likes + 1
+               })
             }
             });
          });
@@ -673,6 +666,7 @@ export default {
                someoneComment: false,
                commentText: "",
                likes: 0,
+               whoLikes: { php :"php"},
                order: vm.orderValue + 1 
             }, function(error) {
             if (error) {
