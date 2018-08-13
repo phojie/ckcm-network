@@ -2,43 +2,50 @@
 <v-card  id="scroll-target" app height="100%" width="100%" style="position:absolute; bottom:0" flat class="newsfeedScroll transparent scrollbar-primary "> 
       <v-layout v-scroll:#scroll-target="onScroll" class="mt-1 mx-1 justify-center">
          <v-flex class=" xs12 sm12 md8 lg8  mr-2 mt-1">
-            <v-card flat style="margin-bottom:1px" class="jieSvgBg1  " >
+            <v-card flat style="margin-bottom:3px" class="jieSvgBg1  " >
                <!-- style="border:1px #E0E0E0 solid;border-radius:2px"   -->
-               <v-layout wrap color="white" :class="whatisClass" class="pt-2 px-2" >
-                  <!-- <v-flex xs12  class="mb-1" >
+               <v-layout wrap color="white" :class="whatisClass" class="py-2 px-2" >
+                  <v-flex xs12 style="margin-top:-10px" >
                      <v-layout>
                         <v-btn
-                           color="grey lighten-3"
                            round
+                           color="transparent light-blue--text text--darken-1"
                            depressed
                            small
-                           style="font-size:12px" class="font-weigth-bold textfm1 textDefault"
+                           class="caption font-weigth-bold  textDefault"
                         >
-                           <v-icon dark class="mr-1" color="blue" style="font-size:15px">mdi-pencil</v-icon>
+                           <v-avatar tile size="20">  
+                              <img src="https://png.icons8.com/ios/50/039BE5/create-new.png">
+                           </v-avatar>
                            Make Post
                         </v-btn>
                         <v-btn
-                           color="grey lighten-3"
                            round
+                           color="transparent light-green--text text--darken-1"
                            depressed
                            small
-                           style="font-size:12px" class="font-weigth-bold textfm1 textDefault"
+                           class="caption font-weigth-bold  textDefault"
                         >
-                           <v-icon dark class="mr-1" color="brown" style="font-size:15px">mdi-image-album</v-icon>
+                           <v-avatar tile size="20">  
+                              <img src="https://png.icons8.com/ios/50/7CB342/poll-topic.png">
+                           </v-avatar>
+                           Add Poll
+                        </v-btn>
+                        <v-btn
+                           round
+                           color="transparent brown--text text--darken-1"
+                           depressed
+                           small
+                           class="caption font-weigth-bold  textDefault"
+                        >
+                           <v-avatar tile size="18">  
+                              <img src="https://png.icons8.com/ios/50/6D4C41/image.png">
+                           </v-avatar>
                            Photo/Album
                         </v-btn>
-                        <v-btn
-                           color="grey lighten-3"
-                           round
-                           depressed
-                           small
-                           style="font-size:12px" class="font-weigth-bold textfm1 textDefault"
-                        >
-                           <v-icon dark class="mr-1" color="green" style="font-size:15px">mdi-poll</v-icon>
-                           Poll Voting
-                        </v-btn>
-                        <v-spacer></v-spacer>
-                        <v-btn
+                        
+                       
+                        <!-- <v-btn
                            icon
                            color="grey lighten-3"
                            round
@@ -47,12 +54,11 @@
                            style="font-size:12px" class="font-weigth-bold textfm1 textDefault"
                         >
                            <v-icon dark  color="grey darken-4" style="font-size:17px">mdi-dots-horizontal</v-icon>
-                        </v-btn>
+                        </v-btn> -->
                      </v-layout>
 
-                  </v-flex> -->
-                 
-                  <v-flex  xs1 class="mt-3">
+                  </v-flex>
+                  <div  style="width:38px !important" class=" mt-3">
                      <v-btn @click="profileMenu" color="" icon style="height:34px !important; width:34px !important;margin-top:-5px" class=" jieleftNav"  flat>
                         <v-badge color="white"  overlap class="jieBadgeNews">
                            <!-- <span  slot="badge" class="" style="font-size:16px; border-radius: 50%; border: 4.5px solid #7CB342 ;"></span> -->
@@ -61,27 +67,29 @@
                            </v-avatar>
                         </v-badge>
                      </v-btn> 
-                  </v-flex>
-                  <v-flex style="margin-top:-2px" :class="whatisFlex">
+                  </div>
+                  <v-flex style="margin-top:-10px" :class="whatisFlex">
+                     <!-- jiew -->
                      <v-textarea 
+                        background-color="transparent"
                         hide-details v-model="postedData.message" color="blue"
-                        class="jiew " @keyup.enter="addDiv" row-height="10"
+                        class=" " @keyup.enter="addDiv" row-height="10"
                         style="font-size:15px !important" placeholder="What is your main focus for today?"
                         @click="whatisFunctionMethod" @blur="whatisFunctionMethodFalse" flat solo
                         auto-grow
                      ></v-textarea>
                   </v-flex>
-                  <v-flex v-if="!whatisFunction" style="margin-top:1px">
-                     <!-- <p class="text-xs-center"> -->
+                  <v-flex v-if="!whatisFunction" class="ml-2" style="margin-top:-10px">
                      <span style="font-size:28px" class="textfm2">{{timeDisplay}}</span>
                      <br>
                      <span class="textfm2 black--text" style="font-size:15px"> {{greet}}</span>
-                     <!-- </p> -->
                   </v-flex>
                   
-                  <v-flex xs9 class="mb-1" >
+                 
+
+                  <!-- <v-flex xs9 class="mb-1" >
                      <v-layout>
-                        <!-- <v-btn
+                        <v-btn
                            color="grey lighten-3"
                            round
                            depressed
@@ -90,7 +98,7 @@
                         >
                            <v-icon dark class="mr-1" color="blue" style="font-size:15px">mdi-pencil</v-icon>
                            Make Post
-                        </v-btn> -->
+                        </v-btn>
                         <v-btn
                            color="grey lighten-3"
                            round
@@ -113,9 +121,9 @@
                         </v-btn>
                      </v-layout>
 
-                  </v-flex>
+                  </v-flex> -->
 
-                  <v-flex xs3 class="text-xs-right" v-if="whatisFunction" >
+                  <v-flex xs11 class="text-xs-right" v-if="whatisFunction" >
                      <v-spacer></v-spacer>
                      <v-btn small round  :disabled="postedDataNews"  depressed color="blue" @click="makePost(userData)" class="white--text font-weight-black caption textDefault"> Post </v-btn>
                   </v-flex>
@@ -146,7 +154,7 @@
                      </v-btn> 
                      <div class="mt-2 ">
                      <p @click="profileMenuFriend(newsfeed.displayName)" style="letter-spacing:1px; font-size:13px" class="aJie mb-0 font-weight-bold ">{{newsfeed.displayName}} </p>
-                     <p style="margin-top:-5px;font-size:13px" class="grey--text textfm2">
+                     <p style="margin-top:-5px;font-size:11px" class="grey--text textfm2">
                         <!-- {{newsfeed.timestamp | moment("dddd, MMMM Do YYYY: h:mm:a") }}| -->
                         <Timeago :auto-update="60" :datetime="newsfeed.timestamp" :since="timeAgoFormat"></Timeago>
                      </p>
@@ -179,9 +187,10 @@
 
                   </v-flex>
 
-                  <v-flex class="ml-1" style="margin-top:-20px;" xs12  >
+                  <v-flex  style="margin-top:-20px;" xs12  >
+                     <v-layout class="ml-1">
                         <v-textarea
-                           v-if="newsfeed.data.message.length < 150" 
+                           v-if="newsfeed.data.message.length <= 80" 
                            flat readonly background-color="transparent"
                            hide-details rows="1" solo auto-grow
                            class="newslineHeight"
@@ -189,13 +198,14 @@
                            v-model="newsfeed.data.message"
                         ></v-textarea>
                         <v-textarea
-                           v-else-if="newsfeed.data.message.length > 150" 
+                           v-else-if="newsfeed.data.message.length > 80" 
                            flat readonly background-color="transparent"
                            hide-details rows="1" solo auto-grow
                            v-model="newsfeed.data.message"
                         ></v-textarea>
+                     </v-layout>
                      <!-- <v-divider class="grey lighten-3"> </v-divider> -->
-                     <v-layout>
+                     <v-layout class="mx-2"> 
                         <v-flex xs3  >
                            <v-btn depressed color="transparent" class=" textDefault grey--text text--darken-1 textfm1" block>
                               <v-icon size="19" class="mr-1 --text text--darken-3" >mdi-thumb-up-outline</v-icon>

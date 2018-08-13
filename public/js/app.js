@@ -57652,6 +57652,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -57980,21 +57990,139 @@ var render = function() {
                 "v-card",
                 {
                   staticClass: "jieSvgBg1  ",
-                  staticStyle: { "margin-bottom": "1px" },
+                  staticStyle: { "margin-bottom": "3px" },
                   attrs: { flat: "" }
                 },
                 [
                   _c(
                     "v-layout",
                     {
-                      staticClass: "pt-2 px-2",
+                      staticClass: "py-2 px-2",
                       class: _vm.whatisClass,
                       attrs: { wrap: "", color: "white" }
                     },
                     [
                       _c(
                         "v-flex",
-                        { staticClass: "mt-3", attrs: { xs1: "" } },
+                        {
+                          staticStyle: { "margin-top": "-10px" },
+                          attrs: { xs12: "" }
+                        },
+                        [
+                          _c(
+                            "v-layout",
+                            [
+                              _c(
+                                "v-btn",
+                                {
+                                  staticClass:
+                                    "caption font-weigth-bold  textDefault",
+                                  attrs: {
+                                    round: "",
+                                    color:
+                                      "transparent light-blue--text text--darken-1",
+                                    depressed: "",
+                                    small: ""
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "v-avatar",
+                                    { attrs: { tile: "", size: "20" } },
+                                    [
+                                      _c("img", {
+                                        attrs: {
+                                          src:
+                                            "https://png.icons8.com/ios/50/039BE5/create-new.png"
+                                        }
+                                      })
+                                    ]
+                                  ),
+                                  _vm._v(
+                                    "\r\n                           Make Post\r\n                        "
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-btn",
+                                {
+                                  staticClass:
+                                    "caption font-weigth-bold  textDefault",
+                                  attrs: {
+                                    round: "",
+                                    color:
+                                      "transparent light-green--text text--darken-1",
+                                    depressed: "",
+                                    small: ""
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "v-avatar",
+                                    { attrs: { tile: "", size: "20" } },
+                                    [
+                                      _c("img", {
+                                        attrs: {
+                                          src:
+                                            "https://png.icons8.com/ios/50/7CB342/poll-topic.png"
+                                        }
+                                      })
+                                    ]
+                                  ),
+                                  _vm._v(
+                                    "\r\n                           Add Poll\r\n                        "
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-btn",
+                                {
+                                  staticClass:
+                                    "caption font-weigth-bold  textDefault",
+                                  attrs: {
+                                    round: "",
+                                    color:
+                                      "transparent brown--text text--darken-1",
+                                    depressed: "",
+                                    small: ""
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "v-avatar",
+                                    { attrs: { tile: "", size: "18" } },
+                                    [
+                                      _c("img", {
+                                        attrs: {
+                                          src:
+                                            "https://png.icons8.com/ios/50/6D4C41/image.png"
+                                        }
+                                      })
+                                    ]
+                                  ),
+                                  _vm._v(
+                                    "\r\n                           Photo/Album\r\n                        "
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: " mt-3",
+                          staticStyle: { width: "38px !important" }
+                        },
                         [
                           _c(
                             "v-btn",
@@ -58050,13 +58178,14 @@ var render = function() {
                         "v-flex",
                         {
                           class: _vm.whatisFlex,
-                          staticStyle: { "margin-top": "-2px" }
+                          staticStyle: { "margin-top": "-10px" }
                         },
                         [
                           _c("v-textarea", {
-                            staticClass: "jiew ",
+                            staticClass: " ",
                             staticStyle: { "font-size": "15px !important" },
                             attrs: {
+                              "background-color": "transparent",
                               "hide-details": "",
                               color: "blue",
                               "row-height": "10",
@@ -58099,7 +58228,10 @@ var render = function() {
                       !_vm.whatisFunction
                         ? _c(
                             "v-flex",
-                            { staticStyle: { "margin-top": "1px" } },
+                            {
+                              staticClass: "ml-2",
+                              staticStyle: { "margin-top": "-10px" }
+                            },
                             [
                               _c(
                                 "span",
@@ -58124,85 +58256,12 @@ var render = function() {
                           )
                         : _vm._e(),
                       _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { staticClass: "mb-1", attrs: { xs9: "" } },
-                        [
-                          _c(
-                            "v-layout",
-                            [
-                              _c(
-                                "v-btn",
-                                {
-                                  staticClass:
-                                    "font-weigth-bold textfm1 textDefault",
-                                  staticStyle: { "font-size": "12px" },
-                                  attrs: {
-                                    color: "grey lighten-3",
-                                    round: "",
-                                    depressed: "",
-                                    small: ""
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "v-icon",
-                                    {
-                                      staticClass: "mr-1",
-                                      staticStyle: { "font-size": "15px" },
-                                      attrs: { dark: "", color: "brown" }
-                                    },
-                                    [_vm._v("mdi-image-album")]
-                                  ),
-                                  _vm._v(
-                                    "\r\n                           Photo/Album\r\n                        "
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-btn",
-                                {
-                                  staticClass:
-                                    "font-weigth-bold textfm1 textDefault",
-                                  staticStyle: { "font-size": "12px" },
-                                  attrs: {
-                                    color: "grey lighten-3",
-                                    round: "",
-                                    depressed: "",
-                                    small: ""
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "v-icon",
-                                    {
-                                      staticClass: "mr-1",
-                                      staticStyle: { "font-size": "15px" },
-                                      attrs: { dark: "", color: "green" }
-                                    },
-                                    [_vm._v("mdi-poll")]
-                                  ),
-                                  _vm._v(
-                                    "\r\n                           Poll Voting\r\n                        "
-                                  )
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
                       _vm.whatisFunction
                         ? _c(
                             "v-flex",
                             {
                               staticClass: "text-xs-right",
-                              attrs: { xs3: "" }
+                              attrs: { xs11: "" }
                             },
                             [
                               _c("v-spacer"),
@@ -58332,7 +58391,7 @@ var render = function() {
                                       staticClass: "grey--text textfm2",
                                       staticStyle: {
                                         "margin-top": "-5px",
-                                        "font-size": "13px"
+                                        "font-size": "11px"
                                       }
                                     },
                                     [
@@ -58425,57 +58484,72 @@ var render = function() {
                         _c(
                           "v-flex",
                           {
-                            staticClass: "ml-1",
                             staticStyle: { "margin-top": "-20px" },
                             attrs: { xs12: "" }
                           },
                           [
-                            newsfeed.data.message.length < 150
-                              ? _c("v-textarea", {
-                                  staticClass: "newslineHeight",
-                                  staticStyle: {
-                                    "font-size": "25px !important"
-                                  },
-                                  attrs: {
-                                    flat: "",
-                                    readonly: "",
-                                    "background-color": "transparent",
-                                    "hide-details": "",
-                                    rows: "1",
-                                    solo: "",
-                                    "auto-grow": ""
-                                  },
-                                  model: {
-                                    value: newsfeed.data.message,
-                                    callback: function($$v) {
-                                      _vm.$set(newsfeed.data, "message", $$v)
-                                    },
-                                    expression: "newsfeed.data.message"
-                                  }
-                                })
-                              : newsfeed.data.message.length > 150
-                                ? _c("v-textarea", {
-                                    attrs: {
-                                      flat: "",
-                                      readonly: "",
-                                      "background-color": "transparent",
-                                      "hide-details": "",
-                                      rows: "1",
-                                      solo: "",
-                                      "auto-grow": ""
-                                    },
-                                    model: {
-                                      value: newsfeed.data.message,
-                                      callback: function($$v) {
-                                        _vm.$set(newsfeed.data, "message", $$v)
+                            _c(
+                              "v-layout",
+                              { staticClass: "ml-1" },
+                              [
+                                newsfeed.data.message.length <= 80
+                                  ? _c("v-textarea", {
+                                      staticClass: "newslineHeight",
+                                      staticStyle: {
+                                        "font-size": "25px !important"
                                       },
-                                      expression: "newsfeed.data.message"
-                                    }
-                                  })
-                                : _vm._e(),
+                                      attrs: {
+                                        flat: "",
+                                        readonly: "",
+                                        "background-color": "transparent",
+                                        "hide-details": "",
+                                        rows: "1",
+                                        solo: "",
+                                        "auto-grow": ""
+                                      },
+                                      model: {
+                                        value: newsfeed.data.message,
+                                        callback: function($$v) {
+                                          _vm.$set(
+                                            newsfeed.data,
+                                            "message",
+                                            $$v
+                                          )
+                                        },
+                                        expression: "newsfeed.data.message"
+                                      }
+                                    })
+                                  : newsfeed.data.message.length > 80
+                                    ? _c("v-textarea", {
+                                        attrs: {
+                                          flat: "",
+                                          readonly: "",
+                                          "background-color": "transparent",
+                                          "hide-details": "",
+                                          rows: "1",
+                                          solo: "",
+                                          "auto-grow": ""
+                                        },
+                                        model: {
+                                          value: newsfeed.data.message,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              newsfeed.data,
+                                              "message",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "newsfeed.data.message"
+                                        }
+                                      })
+                                    : _vm._e()
+                              ],
+                              1
+                            ),
                             _vm._v(" "),
                             _c(
                               "v-layout",
+                              { staticClass: "mx-2" },
                               [
                                 _c(
                                   "v-flex",
