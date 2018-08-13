@@ -3,7 +3,6 @@ import { getLocalfdetails } from "./ckcmHelpers/auth";
 import { db } from "./firebase";
 import { auth } from "./firebase";
 
-import Axios from "axios";
 const user = getLocalUser();
 const fdetails = getLocalfdetails();
 export default {

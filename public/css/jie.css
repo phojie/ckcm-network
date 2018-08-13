@@ -17,10 +17,12 @@
 
 .aJie {
    text-decoration: none !important ;
+   cursor: pointer !important;
 }
 
 .aJie:hover{
    text-decoration: underline !important ;
+   color: #2196F3;
 }
 
 .textDefault {
@@ -300,5 +302,8 @@ background-color: #2BBBAD; }
 .jiew.v-text-field--solo .v-input__slot  {
    background: transparent !important;
 }
-
+.newslineHeight.v-textarea textarea {
+   line-height:30px !important;
+}
 /* home */
+

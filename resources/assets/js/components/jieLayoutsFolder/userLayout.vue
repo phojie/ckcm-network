@@ -191,8 +191,8 @@
       <v-navigation-drawer :value="leftnavDrawer" class=" transparent lighten-3 scrollbar-secondary " floating  width="300" style="overflow: auto !important;" clipped app>
          <v-card flat color="transparent" class="mt-2 ml-5">
             <v-card flat class="pb-2">
+                  <!-- src="https://scontent.fcgy1-1.fna.fbcdn.net/v/t1.0-9/29571261_1589949324387758_1953653254138362805_n.jpg?_nc_cat=0&oh=fbd784445c209ed004d49b0ea51cba32&oe=5BCADF30" -->
                <v-card-media
-                  src="https://scontent.fcgy1-1.fna.fbcdn.net/v/t1.0-9/29571261_1589949324387758_1953653254138362805_n.jpg?_nc_cat=0&oh=fbd784445c209ed004d49b0ea51cba32&oe=5BCADF30"
                   class="blue lighten-2 jieSvgBg1"
                   height="110px"
                >
@@ -357,7 +357,7 @@
 
          <v-divider vertical inset ></v-divider>
          
-            <v-btn small to="/" flat style="margin-right:-5px  !important;" >
+            <v-btn small @click="test" to="/" flat style="margin-right:-5px  !important;" >
                <v-icon  style="font-size:19px !important">mdi-home</v-icon>
                <div class=" ml-1 white--text caption textDefault textfm1"> Home </div> 
             </v-btn>

@@ -29096,9 +29096,6 @@ function withParams(paramsOrClosure, maybeValidator) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ckcmHelpers_auth__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__firebase__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
-
 
 
 
@@ -55934,11 +55931,7 @@ var render = function() {
                 [
                   _c("v-card-media", {
                     staticClass: "blue lighten-2 jieSvgBg1",
-                    attrs: {
-                      src:
-                        "https://scontent.fcgy1-1.fna.fbcdn.net/v/t1.0-9/29571261_1589949324387758_1953653254138362805_n.jpg?_nc_cat=0&oh=fbd784445c209ed004d49b0ea51cba32&oe=5BCADF30",
-                      height: "110px"
-                    }
+                    attrs: { height: "110px" }
                   }),
                   _vm._v(" "),
                   _c(
@@ -56631,7 +56624,8 @@ var render = function() {
             "v-btn",
             {
               staticStyle: { "margin-right": "-5px  !important" },
-              attrs: { small: "", to: "/", flat: "" }
+              attrs: { small: "", to: "/", flat: "" },
+              on: { click: _vm.test }
             },
             [
               _c(
@@ -57619,6 +57613,45 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -57635,6 +57668,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
    },
    data: function data() {
       return {
+         offsetTop: 0,
          timeAgoFormat: "",
          availableNews: true,
          newsFeedsValueRef: [],
@@ -57656,6 +57690,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       };
    },
    computed: {
+      reloadNewsComputed: function reloadNewsComputed() {
+         var number1 = true;
+         if (number1) {
+            alert("Reload");
+         }{
+            alert("Dont");
+         }
+      },
       newsfeeds: function newsfeeds() {
          // return this.newsFeedsValueRef;
          return _.orderBy(this.newsFeedsValueRef, 'order');
@@ -57675,6 +57717,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
    },
    methods: {
+      addDiv: function addDiv() {},
+      reloadNews: function reloadNews() {
+         var vm = this;
+         vm.newsFeedLimit = 1;
+         var newsFeedsValue = __WEBPACK_IMPORTED_MODULE_0__firebase_js__["b" /* db */].ref('Newsfeed').limitToLast(vm.newsFeedLimit);
+         newsFeedsValue.on('value', function (gotData) {
+            var keys = Object.keys(gotData.val());
+            // console.log(keys)
+            // gotData.val().text = "test"
+            vm.newsFeedsValueRef = gotData.val();
+            keys.forEach(function (key) {
+               //  console.log(gotData.val()[key], key)
+               vm.newsFeedsValueRef[key].keyIndex = key;
+            });
+         });
+      },
+      onScroll: function onScroll(e) {
+         this.offsetTop = e.target.scrollTop;
+         console.log(this.offsetTop);
+      },
       infiniteHandler: function infiniteHandler($state) {
          var vm = this;
          vm.newsFeedLimit += 4;
@@ -57778,7 +57840,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          });
       },
       whatisFunctionMethod: function whatisFunctionMethod() {
-         this.whatisClass = "mb-1 elevation-3";
+         this.whatisClass = "mb-1 elevation-18";
          this.whatisFunction = true;
          this.whatisFlex = "xs11";
       },
@@ -57886,12 +57948,29 @@ var render = function() {
     {
       staticClass: "newsfeedScroll transparent scrollbar-primary ",
       staticStyle: { position: "absolute", bottom: "0" },
-      attrs: { app: "", height: "100%", width: "100%", flat: "" }
+      attrs: {
+        id: "scroll-target",
+        app: "",
+        height: "100%",
+        width: "100%",
+        flat: ""
+      }
     },
     [
       _c(
         "v-layout",
-        { staticClass: "mt-1 mx-1 justify-center" },
+        {
+          directives: [
+            {
+              name: "scroll",
+              rawName: "v-scroll:#scroll-target",
+              value: _vm.onScroll,
+              expression: "onScroll",
+              arg: "#scroll-target"
+            }
+          ],
+          staticClass: "mt-1 mx-1 justify-center"
+        },
         [
           _c(
             "v-flex",
@@ -57900,59 +57979,158 @@ var render = function() {
               _c(
                 "v-card",
                 {
-                  staticClass: "mb-1 jieSvgBg1  ",
-                  staticStyle: {
-                    border: "1px #E0E0E0 solid",
-                    "border-radius": "2px"
-                  },
+                  staticClass: "jieSvgBg1  ",
+                  staticStyle: { "margin-bottom": "1px" },
                   attrs: { flat: "" }
                 },
                 [
                   _c(
                     "v-layout",
                     {
-                      staticClass: "px-2",
+                      staticClass: "pt-2 px-2",
                       class: _vm.whatisClass,
-                      attrs: { wrap: "", color: "transparent" }
+                      attrs: { wrap: "", color: "white" }
                     },
                     [
                       _c(
                         "v-flex",
-                        { staticClass: "mb-1", attrs: { xs12: "" } },
+                        { staticClass: "mt-3", attrs: { xs1: "" } },
+                        [
+                          _c(
+                            "v-btn",
+                            {
+                              staticClass: " jieleftNav",
+                              staticStyle: {
+                                height: "34px !important",
+                                width: "34px !important",
+                                "margin-top": "-5px"
+                              },
+                              attrs: { color: "", icon: "", flat: "" },
+                              on: { click: _vm.profileMenu }
+                            },
+                            [
+                              _c(
+                                "v-badge",
+                                {
+                                  staticClass: "jieBadgeNews",
+                                  attrs: { color: "white", overlap: "" }
+                                },
+                                [
+                                  _c(
+                                    "v-avatar",
+                                    {
+                                      staticClass: "mr-2 ",
+                                      attrs: {
+                                        color: "grey lighten-3",
+                                        size: "38"
+                                      }
+                                    },
+                                    [
+                                      _c("img", {
+                                        attrs: {
+                                          src:
+                                            _vm.userData.photoUrl +
+                                            "?height=10000",
+                                          alt: ""
+                                        }
+                                      })
+                                    ]
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        {
+                          class: _vm.whatisFlex,
+                          staticStyle: { "margin-top": "-2px" }
+                        },
+                        [
+                          _c("v-textarea", {
+                            staticClass: "jiew ",
+                            staticStyle: { "font-size": "15px !important" },
+                            attrs: {
+                              "hide-details": "",
+                              color: "blue",
+                              "row-height": "10",
+                              placeholder: "What is your main focus for today?",
+                              flat: "",
+                              solo: "",
+                              "auto-grow": ""
+                            },
+                            on: {
+                              keyup: function($event) {
+                                if (
+                                  !("button" in $event) &&
+                                  _vm._k(
+                                    $event.keyCode,
+                                    "enter",
+                                    13,
+                                    $event.key,
+                                    "Enter"
+                                  )
+                                ) {
+                                  return null
+                                }
+                                return _vm.addDiv($event)
+                              },
+                              click: _vm.whatisFunctionMethod,
+                              blur: _vm.whatisFunctionMethodFalse
+                            },
+                            model: {
+                              value: _vm.postedData.message,
+                              callback: function($$v) {
+                                _vm.$set(_vm.postedData, "message", $$v)
+                              },
+                              expression: "postedData.message"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      !_vm.whatisFunction
+                        ? _c(
+                            "v-flex",
+                            { staticStyle: { "margin-top": "1px" } },
+                            [
+                              _c(
+                                "span",
+                                {
+                                  staticClass: "textfm2",
+                                  staticStyle: { "font-size": "28px" }
+                                },
+                                [_vm._v(_vm._s(_vm.timeDisplay))]
+                              ),
+                              _vm._v(" "),
+                              _c("br"),
+                              _vm._v(" "),
+                              _c(
+                                "span",
+                                {
+                                  staticClass: "textfm2 black--text",
+                                  staticStyle: { "font-size": "15px" }
+                                },
+                                [_vm._v(" " + _vm._s(_vm.greet))]
+                              )
+                            ]
+                          )
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _c(
+                        "v-flex",
+                        { staticClass: "mb-1", attrs: { xs9: "" } },
                         [
                           _c(
                             "v-layout",
                             [
-                              _c(
-                                "v-btn",
-                                {
-                                  staticClass:
-                                    "font-weigth-bold textfm1 textDefault",
-                                  staticStyle: { "font-size": "12px" },
-                                  attrs: {
-                                    color: "grey lighten-3",
-                                    round: "",
-                                    depressed: "",
-                                    small: ""
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "v-icon",
-                                    {
-                                      staticClass: "mr-1",
-                                      staticStyle: { "font-size": "15px" },
-                                      attrs: { dark: "", color: "blue" }
-                                    },
-                                    [_vm._v("mdi-pencil")]
-                                  ),
-                                  _vm._v(
-                                    "\r\n                           Make Post\r\n                        "
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
                               _c(
                                 "v-btn",
                                 {
@@ -58011,38 +58189,6 @@ var render = function() {
                                   )
                                 ],
                                 1
-                              ),
-                              _vm._v(" "),
-                              _c("v-spacer"),
-                              _vm._v(" "),
-                              _c(
-                                "v-btn",
-                                {
-                                  staticClass:
-                                    "font-weigth-bold textfm1 textDefault",
-                                  staticStyle: { "font-size": "12px" },
-                                  attrs: {
-                                    icon: "",
-                                    color: "grey lighten-3",
-                                    round: "",
-                                    depressed: "",
-                                    small: ""
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "v-icon",
-                                    {
-                                      staticStyle: { "font-size": "17px" },
-                                      attrs: {
-                                        dark: "",
-                                        color: "grey darken-4"
-                                      }
-                                    },
-                                    [_vm._v("mdi-dots-horizontal")]
-                                  )
-                                ],
-                                1
                               )
                             ],
                             1
@@ -58050,124 +58196,13 @@ var render = function() {
                         ],
                         1
                       ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { staticClass: "mt-3", attrs: { xs1: "" } },
-                        [
-                          _c(
-                            "v-btn",
-                            {
-                              staticClass: " jieleftNav",
-                              staticStyle: {
-                                height: "34px !important",
-                                width: "34px !important",
-                                "margin-top": "-5px"
-                              },
-                              attrs: { color: "", icon: "", flat: "" },
-                              on: { click: _vm.profileMenu }
-                            },
-                            [
-                              _c(
-                                "v-badge",
-                                {
-                                  staticClass: "jieBadgeNews",
-                                  attrs: { color: "white", overlap: "" }
-                                },
-                                [
-                                  _c(
-                                    "v-avatar",
-                                    {
-                                      staticClass: "mr-2 ",
-                                      attrs: {
-                                        color: "grey lighten-3",
-                                        size: "35"
-                                      }
-                                    },
-                                    [
-                                      _c("img", {
-                                        attrs: {
-                                          src: _vm.userData.photoUrl,
-                                          alt: ""
-                                        }
-                                      })
-                                    ]
-                                  )
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { class: _vm.whatisFlex },
-                        [
-                          _c("v-textarea", {
-                            staticClass: "jiew",
-                            staticStyle: { "font-size": "15px !important" },
-                            attrs: {
-                              color: "blue",
-                              "row-height": "10",
-                              placeholder: "What is your main focus for today?",
-                              flat: "",
-                              solo: "",
-                              "auto-grow": ""
-                            },
-                            on: {
-                              click: _vm.whatisFunctionMethod,
-                              blur: _vm.whatisFunctionMethodFalse
-                            },
-                            model: {
-                              value: _vm.postedData.message,
-                              callback: function($$v) {
-                                _vm.$set(_vm.postedData, "message", $$v)
-                              },
-                              expression: "postedData.message"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      !_vm.whatisFunction
-                        ? _c(
-                            "v-flex",
-                            { staticStyle: { "margin-top": "1px" } },
-                            [
-                              _c(
-                                "span",
-                                {
-                                  staticClass: "textfm2",
-                                  staticStyle: { "font-size": "28px" }
-                                },
-                                [_vm._v(_vm._s(_vm.timeDisplay))]
-                              ),
-                              _vm._v(" "),
-                              _c("br"),
-                              _vm._v(" "),
-                              _c(
-                                "span",
-                                {
-                                  staticClass: "textfm2 black--text",
-                                  staticStyle: { "font-size": "15px" }
-                                },
-                                [_vm._v(" " + _vm._s(_vm.greet))]
-                              )
-                            ]
-                          )
-                        : _vm._e(),
                       _vm._v(" "),
                       _vm.whatisFunction
                         ? _c(
                             "v-flex",
                             {
                               staticClass: "text-xs-right",
-                              attrs: { xs12: "" }
+                              attrs: { xs3: "" }
                             },
                             [
                               _c("v-spacer"),
@@ -58176,7 +58211,7 @@ var render = function() {
                                 "v-btn",
                                 {
                                   staticClass:
-                                    "white--text caption textDefault",
+                                    "white--text font-weight-black caption textDefault",
                                   attrs: {
                                     small: "",
                                     round: "",
@@ -58208,11 +58243,8 @@ var render = function() {
                   "v-card",
                   {
                     key: newsfeed.keyIndex,
-                    staticClass: "jieSvgBg1",
-                    staticStyle: {
-                      border: "1px #E0E0E0 solid",
-                      "border-radius": "2px"
-                    },
+                    staticClass: " jieSvgBg1",
+                    staticStyle: { "margin-bottom": "2px" },
                     attrs: { flat: "" }
                   },
                   [
@@ -58246,30 +58278,22 @@ var render = function() {
                                         attrs: { color: "white", overlap: "" }
                                       },
                                       [
-                                        _c("span", {
-                                          staticStyle: {
-                                            "font-size": "16px",
-                                            "border-radius": "50%",
-                                            border: "4.5px solid #7CB342"
-                                          },
-                                          attrs: { slot: "badge" },
-                                          slot: "badge"
-                                        }),
-                                        _vm._v(" "),
                                         _c(
                                           "v-avatar",
                                           {
                                             staticClass: "mr-2 ",
                                             attrs: {
                                               color: "grey lighten-3",
-                                              size: "35"
+                                              size: "38"
                                             }
                                           },
                                           [
                                             _c("img", {
                                               attrs: {
-                                                src: newsfeed.photoUrl,
-                                                alt: ""
+                                                src:
+                                                  newsfeed.photoUrl +
+                                                  "?height=10000",
+                                                alt: 404
                                               }
                                             })
                                           ]
@@ -58286,8 +58310,11 @@ var render = function() {
                                     "p",
                                     {
                                       staticClass:
-                                        "aJie mb-0 indigo--text text--darken-4 font-weight-bold textfm1",
-                                      staticStyle: { "font-size": "15px" },
+                                        "aJie mb-0 font-weight-bold ",
+                                      staticStyle: {
+                                        "letter-spacing": "1px",
+                                        "font-size": "13px"
+                                      },
                                       on: {
                                         click: function($event) {
                                           _vm.profileMenuFriend(
@@ -58397,43 +58424,55 @@ var render = function() {
                         _vm._v(" "),
                         _c(
                           "v-flex",
-                          { staticClass: "mx-3", attrs: { xs12: "" } },
+                          {
+                            staticClass: "ml-1",
+                            staticStyle: { "margin-top": "-20px" },
+                            attrs: { xs12: "" }
+                          },
                           [
                             newsfeed.data.message.length < 150
-                              ? _c(
-                                  "div",
-                                  {
-                                    staticClass: "black--text textfm1",
-                                    staticStyle: { "font-size": "25px" }
+                              ? _c("v-textarea", {
+                                  staticClass: "newslineHeight",
+                                  staticStyle: {
+                                    "font-size": "25px !important"
                                   },
-                                  [
-                                    _vm._v(
-                                      "\r\n                        " +
-                                        _vm._s(newsfeed.data.message) +
-                                        "\r\n                     "
-                                    )
-                                  ]
-                                )
-                              : newsfeed.data.message.length > 150
-                                ? _c(
-                                    "div",
-                                    {
-                                      staticClass: "black--text textfm1",
-                                      staticStyle: { "font-size": "16px" }
+                                  attrs: {
+                                    flat: "",
+                                    readonly: "",
+                                    "background-color": "transparent",
+                                    "hide-details": "",
+                                    rows: "1",
+                                    solo: "",
+                                    "auto-grow": ""
+                                  },
+                                  model: {
+                                    value: newsfeed.data.message,
+                                    callback: function($$v) {
+                                      _vm.$set(newsfeed.data, "message", $$v)
                                     },
-                                    [
-                                      _vm._v(
-                                        "\r\n                        " +
-                                          _vm._s(newsfeed.data.message) +
-                                          "\r\n                     "
-                                      )
-                                    ]
-                                  )
+                                    expression: "newsfeed.data.message"
+                                  }
+                                })
+                              : newsfeed.data.message.length > 150
+                                ? _c("v-textarea", {
+                                    attrs: {
+                                      flat: "",
+                                      readonly: "",
+                                      "background-color": "transparent",
+                                      "hide-details": "",
+                                      rows: "1",
+                                      solo: "",
+                                      "auto-grow": ""
+                                    },
+                                    model: {
+                                      value: newsfeed.data.message,
+                                      callback: function($$v) {
+                                        _vm.$set(newsfeed.data, "message", $$v)
+                                      },
+                                      expression: "newsfeed.data.message"
+                                    }
+                                  })
                                 : _vm._e(),
-                            _vm._v(" "),
-                            _c("v-divider", {
-                              staticClass: "mt-3 grey lighten-3"
-                            }),
                             _vm._v(" "),
                             _c(
                               "v-layout",
@@ -58556,7 +58595,8 @@ var render = function() {
                                           depressed: "",
                                           color: "transparent",
                                           block: ""
-                                        }
+                                        },
+                                        on: { click: _vm.reloadNews }
                                       },
                                       [
                                         _c(
@@ -58684,7 +58724,7 @@ var render = function() {
                                               "router-link",
                                               {
                                                 staticClass:
-                                                  "indigo--text aJie",
+                                                  "blue--text text--darken-2 aJie",
                                                 attrs: {
                                                   to: "/profile/jiecel.marianne"
                                                 }
@@ -58720,7 +58760,7 @@ var render = function() {
                                                   "a",
                                                   {
                                                     staticClass:
-                                                      "aJie indigo--text mt-2  textfm1",
+                                                      "aJie grey--text mt-2  textfm1",
                                                     staticStyle: {
                                                       "font-size": "13px"
                                                     },
@@ -58753,7 +58793,7 @@ var render = function() {
                                                   "a",
                                                   {
                                                     staticClass:
-                                                      " aJie indigo--text mt-2  textfm1",
+                                                      " aJie grey--text mt-2  textfm1",
                                                     staticStyle: {
                                                       "font-size": "13px"
                                                     },
@@ -58786,7 +58826,7 @@ var render = function() {
                                                   "a",
                                                   {
                                                     staticClass:
-                                                      " aJie indigo--text mt-2  textfm1",
+                                                      " aJie grey--text mt-2  textfm1",
                                                     staticStyle: {
                                                       "font-size": "13px"
                                                     },

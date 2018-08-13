@@ -1,10 +1,11 @@
 <template>
-<v-card  app height="100%" width="100%" style="position:absolute; bottom:0" flat class="newsfeedScroll transparent scrollbar-primary "> 
-      <v-layout class="mt-1 mx-1 justify-center">
+<v-card  id="scroll-target" app height="100%" width="100%" style="position:absolute; bottom:0" flat class="newsfeedScroll transparent scrollbar-primary "> 
+      <v-layout v-scroll:#scroll-target="onScroll" class="mt-1 mx-1 justify-center">
          <v-flex class=" xs12 sm12 md8 lg8  mr-2 mt-1">
-            <v-card flat style="border:1px #E0E0E0 solid;border-radius:2px" class="mb-1 jieSvgBg1  " >
-               <v-layout wrap color="transparent" :class="whatisClass" class="px-2" >
-                  <v-flex xs12  class="mb-1" >
+            <v-card flat style="margin-bottom:1px" class="jieSvgBg1  " >
+               <!-- style="border:1px #E0E0E0 solid;border-radius:2px"   -->
+               <v-layout wrap color="white" :class="whatisClass" class="pt-2 px-2" >
+                  <!-- <v-flex xs12  class="mb-1" >
                      <v-layout>
                         <v-btn
                            color="grey lighten-3"
@@ -49,29 +50,24 @@
                         </v-btn>
                      </v-layout>
 
-                  </v-flex>
+                  </v-flex> -->
                  
                   <v-flex  xs1 class="mt-3">
                      <v-btn @click="profileMenu" color="" icon style="height:34px !important; width:34px !important;margin-top:-5px" class=" jieleftNav"  flat>
                         <v-badge color="white"  overlap class="jieBadgeNews">
                            <!-- <span  slot="badge" class="" style="font-size:16px; border-radius: 50%; border: 4.5px solid #7CB342 ;"></span> -->
-                           <v-avatar class="mr-2 " color="grey lighten-3" size="35">
-                              <img :src="userData.photoUrl" alt="">
+                           <v-avatar class="mr-2 " color="grey lighten-3" size="38">
+                              <img :src="`${userData.photoUrl}?height=10000`" alt="">
                            </v-avatar>
                         </v-badge>
                      </v-btn> 
                   </v-flex>
-                  <v-flex :class="whatisFlex">
+                  <v-flex style="margin-top:-2px" :class="whatisFlex">
                      <v-textarea 
-                        v-model="postedData.message"
-                        color="blue"
-                        class="jiew"
-                        row-height="10"
-                        style="font-size:15px !important"
-                        placeholder="What is your main focus for today?"
-                        @click="whatisFunctionMethod"
-                        @blur="whatisFunctionMethodFalse"
-                        flat solo
+                        hide-details v-model="postedData.message" color="blue"
+                        class="jiew " @keyup.enter="addDiv" row-height="10"
+                        style="font-size:15px !important" placeholder="What is your main focus for today?"
+                        @click="whatisFunctionMethod" @blur="whatisFunctionMethodFalse" flat solo
                         auto-grow
                      ></v-textarea>
                   </v-flex>
@@ -82,10 +78,46 @@
                      <span class="textfm2 black--text" style="font-size:15px"> {{greet}}</span>
                      <!-- </p> -->
                   </v-flex>
+                  
+                  <v-flex xs9 class="mb-1" >
+                     <v-layout>
+                        <!-- <v-btn
+                           color="grey lighten-3"
+                           round
+                           depressed
+                           small
+                           style="font-size:12px" class="font-weigth-bold textfm1 textDefault"
+                        >
+                           <v-icon dark class="mr-1" color="blue" style="font-size:15px">mdi-pencil</v-icon>
+                           Make Post
+                        </v-btn> -->
+                        <v-btn
+                           color="grey lighten-3"
+                           round
+                           depressed
+                           small
+                           style="font-size:12px" class="font-weigth-bold textfm1 textDefault"
+                        >
+                           <v-icon dark class="mr-1" color="brown" style="font-size:15px">mdi-image-album</v-icon>
+                           Photo/Album
+                        </v-btn>
+                        <v-btn
+                           color="grey lighten-3"
+                           round
+                           depressed
+                           small
+                           style="font-size:12px" class="font-weigth-bold textfm1 textDefault"
+                        >
+                           <v-icon dark class="mr-1" color="green" style="font-size:15px">mdi-poll</v-icon>
+                           Poll Voting
+                        </v-btn>
+                     </v-layout>
 
-                  <v-flex xs12 class="text-xs-right" v-if="whatisFunction" >
+                  </v-flex>
+
+                  <v-flex xs3 class="text-xs-right" v-if="whatisFunction" >
                      <v-spacer></v-spacer>
-                     <v-btn small round  :disabled="postedDataNews"  depressed color="blue" @click="makePost(userData)" class="white--text caption textDefault"> Post </v-btn>
+                     <v-btn small round  :disabled="postedDataNews"  depressed color="blue" @click="makePost(userData)" class="white--text font-weight-black caption textDefault"> Post </v-btn>
                   </v-flex>
                </v-layout>
                <!-- <v-layout>
@@ -98,27 +130,27 @@
                   </v-flex>
                </v-layout> -->
             </v-card>
-            <v-card  style="border:1px #E0E0E0 solid;border-radius:2px" v-for="newsfeed in newsfeeds " :key="newsfeed.keyIndex" flat class="jieSvgBg1" >
+             <!-- :class="mb-1" border:1px #E0E0E0 solid;border-radius:2px;-->
+            <v-card flat v-for="newsfeed in newsfeeds " style="margin-bottom:2px;" :key="newsfeed.keyIndex"  class=" jieSvgBg1" >
                <!-- <v-progress-linear active height="2" style="margin:0px !important" color="grey lighten-2" :indeterminate="false"></v-progress-linear> -->
                <v-layout wrap white class=" py-2" >
                   <v-flex xs12 class="mx-2">
                      <v-layout>
                      <v-btn @click="profileMenu" color="" icon style="height:34px !important; width:34px !important" class=" jieleftNav"  flat>
                         <v-badge color="white"  overlap class="jieBadgeNews">
-                           <span  slot="badge" class="" style="font-size:16px; border-radius: 50%; border: 4.5px solid #7CB342 ;"></span>
-                           <v-avatar class="mr-2 " color="grey lighten-3" size="35">
-                              <img :src="newsfeed.photoUrl" alt="">
+                           <!-- <span  slot="badge" class="" style="font-size:16px; border-radius: 50%; border: 4.5px solid #7CB342 ;"></span> -->
+                           <v-avatar class="mr-2 " color="grey lighten-3" size="38">
+                              <img :src="`${newsfeed.photoUrl}?height=10000`" :alt="404">
                            </v-avatar>
                         </v-badge>
                      </v-btn> 
                      <div class="mt-2 ">
-                     <p @click="profileMenuFriend(newsfeed.displayName)" style="font-size:15px" class="aJie mb-0 indigo--text text--darken-4 font-weight-bold textfm1">{{newsfeed.displayName}} </p>
+                     <p @click="profileMenuFriend(newsfeed.displayName)" style="letter-spacing:1px; font-size:13px" class="aJie mb-0 font-weight-bold ">{{newsfeed.displayName}} </p>
                      <p style="margin-top:-5px;font-size:13px" class="grey--text textfm2">
                         <!-- {{newsfeed.timestamp | moment("dddd, MMMM Do YYYY: h:mm:a") }}| -->
                         <Timeago :auto-update="60" :datetime="newsfeed.timestamp" :since="timeAgoFormat"></Timeago>
                      </p>
                      </div>
-
                      <v-spacer></v-spacer>
                      <v-menu style="margin-top:-27px;" offset-y nudge-left="80"> 
                           <v-btn
@@ -147,15 +179,22 @@
 
                   </v-flex>
 
-                  <v-flex class="mx-3" xs12  >
-                     <div v-if="newsfeed.data.message.length < 150" style="font-size:25px;" class="black--text textfm1">
-                        {{newsfeed.data.message}}
-                     </div>
-
-                     <div v-else-if="newsfeed.data.message.length > 150" style="font-size:16px;" class="black--text textfm1">
-                        {{newsfeed.data.message}}
-                     </div>
-                     <v-divider class="mt-3 grey lighten-3"> </v-divider>
+                  <v-flex class="ml-1" style="margin-top:-20px;" xs12  >
+                        <v-textarea
+                           v-if="newsfeed.data.message.length < 150" 
+                           flat readonly background-color="transparent"
+                           hide-details rows="1" solo auto-grow
+                           class="newslineHeight"
+                           style="font-size:25px !important"
+                           v-model="newsfeed.data.message"
+                        ></v-textarea>
+                        <v-textarea
+                           v-else-if="newsfeed.data.message.length > 150" 
+                           flat readonly background-color="transparent"
+                           hide-details rows="1" solo auto-grow
+                           v-model="newsfeed.data.message"
+                        ></v-textarea>
+                     <!-- <v-divider class="grey lighten-3"> </v-divider> -->
                      <v-layout>
                         <v-flex xs3  >
                            <v-btn depressed color="transparent" class=" textDefault grey--text text--darken-1 textfm1" block>
@@ -186,7 +225,7 @@
                         </v-flex>
 
                         <v-flex xs3 >
-                           <v-btn depressed color="transparent" class=" textDefault grey--text text--darken-1 textfm1" block>
+                           <v-btn depressed @click="reloadNews" color="transparent" class=" textDefault grey--text text--darken-1 textfm1" block>
                               <v-icon size="20" class="--text text--darken-3 mr-1" >mdi-share-outline</v-icon>
                               Share
                            </v-btn>
@@ -214,20 +253,20 @@
                         
                            <v-flex xs11  style="margin-top:12px;margin-left:-4px" >
                               <p style="width: auto !important" class=" jie3Commented">
-                                 <router-link class="indigo--text aJie" to="/profile/jiecel.marianne">{{commented.displayName}}</router-link>
+                                 <router-link class="blue--text text--darken-2 aJie" to="/profile/jiecel.marianne">{{commented.displayName}}</router-link>
                                  {{commented.data}}
                               </p>
                               <div class="caption ml-2" style="margin-top:-13px; ">
                                  <span>
-                                 <a style="font-size:13px;" class="aJie indigo--text mt-2  textfm1" @click="test"> Like </a> 
+                                 <a style="font-size:13px;" class="aJie grey--text mt-2  textfm1" @click="test"> Like </a> 
                                     <v-icon size="3px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
                                  </span>
                                  <span class="ml-3">
-                                 <a style="font-size:13px;" class=" aJie indigo--text mt-2  textfm1" @click="test"> Dislike </a> 
+                                 <a style="font-size:13px;" class=" aJie grey--text mt-2  textfm1" @click="test"> Dislike </a> 
                                     <v-icon size="3px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
                                  </span>
                                  <span class="ml-3">
-                                 <a style="font-size:13px;" class=" aJie indigo--text mt-2  textfm1" @click="test"> Reply </a> 
+                                 <a style="font-size:13px;" class=" aJie grey--text mt-2  textfm1" @click="test"> Reply </a> 
                                     <v-icon size="3px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
                                  </span>
                                  <span class="ml-3">
@@ -336,6 +375,7 @@ export default {
       }
    },
    data: () => ({
+      offsetTop: 0,
       timeAgoFormat: "",
       availableNews: true,
       newsFeedsValueRef: [],
@@ -359,6 +399,14 @@ export default {
       },
   }),
    computed: {
+      reloadNewsComputed() {
+         var number1 = true
+         if(number1) {
+            alert("Reload")
+         } {
+            alert("Dont")
+         }
+      },
       newsfeeds() {
          // return this.newsFeedsValueRef;
          return _.orderBy(this.newsFeedsValueRef, 'order');
@@ -378,6 +426,28 @@ export default {
       },
    },
    methods: {
+      addDiv() {
+         
+      },
+      reloadNews() {
+         let vm = this
+         vm.newsFeedLimit = 1 ;
+         var newsFeedsValue  = db.ref('Newsfeed').limitToLast(vm.newsFeedLimit);
+         newsFeedsValue.on('value', function(gotData) {
+            let keys = Object.keys(gotData.val())
+            // console.log(keys)
+            // gotData.val().text = "test"
+            vm.newsFeedsValueRef = gotData.val()
+            keys.forEach( function (key) {
+            //  console.log(gotData.val()[key], key)
+               vm.newsFeedsValueRef[key].keyIndex = key
+            })
+         })
+      },
+      onScroll (e) {
+        this.offsetTop = e.target.scrollTop
+        console.log(this.offsetTop)
+      },
       infiniteHandler($state) {
          let vm = this;
          vm.newsFeedLimit += 4;
@@ -391,7 +461,7 @@ export default {
                keys.forEach( function (key) {
                //  console.log(gotData.val()[key], key)
                   vm.newsFeedsValueRef[key].keyIndex = key
-                 })
+               })
 
                if(vm.newsfeeds.length == vm.newsFeedLimit){
                   vm.availableNews=true
@@ -482,7 +552,7 @@ export default {
 
       },
       whatisFunctionMethod () {
-         this.whatisClass = "mb-1 elevation-3"
+         this.whatisClass = "mb-1 elevation-18"
          this.whatisFunction = true
          this.whatisFlex = "xs11"
       },
