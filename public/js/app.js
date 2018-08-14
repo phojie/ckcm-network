@@ -56557,7 +56557,7 @@ var render = function() {
       _c(
         "v-toolbar",
         {
-          staticClass: "elevation-1 mr-5 blue darken-2 jieLandingBg2",
+          staticClass: "elevation-1 mr-5 blue jieLandingBg2",
           attrs: {
             height: "43px",
             "clipped-left": "",
@@ -57797,6 +57797,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -58503,14 +58527,13 @@ var render = function() {
                   "v-card",
                   {
                     key: newsfeed.keyIndex,
-                    staticClass: " jieSvgBg1",
                     staticStyle: { "margin-bottom": "2px" },
                     attrs: { flat: "" }
                   },
                   [
                     _c(
                       "v-layout",
-                      { staticClass: " py-2", attrs: { wrap: "", white: "" } },
+                      { staticClass: "newscard py-2", attrs: { wrap: "" } },
                       [
                         _c(
                           "v-flex",
@@ -58565,28 +58588,43 @@ var render = function() {
                                   1
                                 ),
                                 _vm._v(" "),
-                                _c("div", { staticClass: "mt-2 " }, [
-                                  _c(
-                                    "p",
-                                    {
-                                      staticClass:
-                                        "aJie mb-0 font-weight-bold ",
-                                      staticStyle: { "font-size": "14px" },
-                                      on: {
-                                        click: function($event) {
-                                          _vm.profileMenuFriend(
-                                            newsfeed.displayName
-                                          )
+                                _c("div", { staticClass: "mt-1" }, [
+                                  _c("p", { staticClass: "mb-0" }, [
+                                    _c(
+                                      "span",
+                                      {
+                                        staticClass: "aJie font-weight-bold ",
+                                        staticStyle: { "font-size": "13px" },
+                                        on: {
+                                          click: function($event) {
+                                            _vm.profileMenuFriend(
+                                              newsfeed.displayName
+                                            )
+                                          }
                                         }
-                                      }
-                                    },
-                                    [_vm._v(_vm._s(newsfeed.displayName) + " ")]
-                                  ),
+                                      },
+                                      [
+                                        _vm._v(
+                                          _vm._s(newsfeed.displayName) + " "
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "textlower caption grey--text text--darken-1",
+                                        staticStyle: { "margin-left": "-2px" }
+                                      },
+                                      [_vm._v(" @jie26 ")]
+                                    )
+                                  ]),
                                   _vm._v(" "),
                                   _c(
                                     "p",
                                     {
-                                      staticClass: "grey--text textfm2",
+                                      staticClass: "textfm2 grey--text",
                                       staticStyle: {
                                         "margin-top": "-5px",
                                         "font-size": "11px"
@@ -58610,8 +58648,9 @@ var render = function() {
                                 _c(
                                   "v-menu",
                                   {
-                                    staticStyle: { "margin-top": "-27px" },
+                                    staticStyle: { "margin-top": "-20px" },
                                     attrs: {
+                                      "open-on-hover": "",
                                       "offset-y": "",
                                       "nudge-left": "80"
                                     }
@@ -58626,26 +58665,25 @@ var render = function() {
                                         attrs: {
                                           slot: "activator",
                                           icon: "",
-                                          color: "grey lighten-4",
+                                          outline: "",
+                                          color: "transparent",
                                           round: "",
-                                          depressed: "",
                                           small: ""
                                         },
                                         slot: "activator"
                                       },
                                       [
                                         _c(
-                                          "v-icon",
-                                          {
-                                            staticStyle: {
-                                              "font-size": "17px"
-                                            },
-                                            attrs: {
-                                              dark: "",
-                                              color: "grey darken-4"
-                                            }
-                                          },
-                                          [_vm._v("mdi-dots-horizontal")]
+                                          "v-avatar",
+                                          { attrs: { size: "15" } },
+                                          [
+                                            _c("img", {
+                                              attrs: {
+                                                src:
+                                                  "https://png.icons8.com/ios/50/424242/expand-arrow-filled.png"
+                                              }
+                                            })
+                                          ]
                                         )
                                       ],
                                       1
@@ -58688,13 +58726,15 @@ var render = function() {
                           [
                             _c(
                               "v-layout",
-                              { staticClass: "ml-1" },
+                              { staticClass: "wrap row ml-1" },
                               [
-                                newsfeed.data.message.length <= 80
+                                (newsfeed.data.message.length <= 80) &
+                                (newsfeed.data.image == "")
                                   ? _c("v-textarea", {
-                                      staticClass: "newslineHeight",
+                                      staticClass: " textfm1 newslineHeight ",
                                       staticStyle: {
-                                        "font-size": "25px !important"
+                                        "font-size": "25px !important",
+                                        "letter-spacing": "1"
                                       },
                                       attrs: {
                                         flat: "",
@@ -58717,8 +58757,11 @@ var render = function() {
                                         expression: "newsfeed.data.message"
                                       }
                                     })
-                                  : newsfeed.data.message.length > 80
+                                  : (newsfeed.data.message.length > 80) &
+                                    (newsfeed.data.image == "")
                                     ? _c("v-textarea", {
+                                        staticClass: "textfm1",
+                                        staticStyle: { "letter-spacing": "1" },
                                         attrs: {
                                           flat: "",
                                           readonly: "",
@@ -58740,14 +58783,75 @@ var render = function() {
                                           expression: "newsfeed.data.message"
                                         }
                                       })
-                                    : _vm._e()
+                                    : _c("v-textarea", {
+                                        staticClass: "textfm1",
+                                        staticStyle: {
+                                          "font-size": "16px !important",
+                                          "letter-spacing": "1"
+                                        },
+                                        attrs: {
+                                          flat: "",
+                                          readonly: "",
+                                          "background-color": "transparent",
+                                          "hide-details": "",
+                                          rows: "1",
+                                          solo: "",
+                                          "auto-grow": ""
+                                        },
+                                        model: {
+                                          value: newsfeed.data.message,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              newsfeed.data,
+                                              "message",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "newsfeed.data.message"
+                                        }
+                                      })
                               ],
                               1
                             ),
                             _vm._v(" "),
+                            newsfeed.data.image != ""
+                              ? _c(
+                                  "layout",
+                                  { attrs: { wrap: "", row: "" } },
+                                  [
+                                    _c(
+                                      "v-card",
+                                      {
+                                        staticClass: "mx-3 ",
+                                        attrs: { depressed: "", flat: "" }
+                                      },
+                                      [
+                                        _c("img", {
+                                          staticStyle: {
+                                            "margin-bottom": "7px",
+                                            "margin-top": "-3px",
+                                            "border-radius": "5px !important",
+                                            border: "1px solid #E0E0E0"
+                                          },
+                                          attrs: {
+                                            width: "100%",
+                                            height: "100%",
+                                            src: newsfeed.data.image
+                                          }
+                                        })
+                                      ]
+                                    )
+                                  ],
+                                  1
+                                )
+                              : _vm._e(),
+                            _vm._v(" "),
                             _c(
                               "v-layout",
-                              { attrs: { wrap: "", row: "" } },
+                              {
+                                staticStyle: { "margin-top": "-15px" },
+                                attrs: { wrap: "", row: "" }
+                              },
                               [
                                 _c(
                                   "v-flex",
@@ -59022,7 +59126,203 @@ var render = function() {
                                             )
                                           ],
                                           1
+                                        ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-btn",
+                                      {
+                                        staticClass: "mx-4 commentbtn",
+                                        attrs: {
+                                          flat: "",
+                                          icon: "",
+                                          large: "",
+                                          color: "transparent"
+                                        }
+                                      },
+                                      [
+                                        _c(
+                                          "v-tooltip",
+                                          {
+                                            attrs: {
+                                              "content-class": "jieTool",
+                                              color: "grey darken-4",
+                                              top: ""
+                                            }
+                                          },
+                                          [
+                                            _c(
+                                              "v-avatar",
+                                              {
+                                                staticClass: "mr-1",
+                                                attrs: {
+                                                  slot: "activator",
+                                                  color: "",
+                                                  tile: "",
+                                                  size: "20"
+                                                },
+                                                slot: "activator"
+                                              },
+                                              [
+                                                _c(
+                                                  "v-icon",
+                                                  {
+                                                    staticStyle: {
+                                                      "font-size": "18px"
+                                                    }
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      "mdi-comment-multiple-outline"
+                                                    )
+                                                  ]
+                                                )
+                                              ],
+                                              1
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "span",
+                                              {
+                                                staticStyle: {
+                                                  margin: "3px",
+                                                  "font-size": "12px"
+                                                }
+                                              },
+                                              [_vm._v(" Comment ")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "v-layout",
+                                              {
+                                                attrs: { "justify-center": "" }
+                                              },
+                                              [
+                                                _c("div", {
+                                                  staticStyle: {
+                                                    position: "absolute",
+                                                    "margin-top": "5px",
+                                                    "margin-bottom": "5px",
+                                                    width: "0",
+                                                    height: "0",
+                                                    "border-left":
+                                                      "6px solid transparent",
+                                                    "border-right":
+                                                      "6px solid transparent",
+                                                    "border-top":
+                                                      "6px solid #212121"
+                                                  }
+                                                })
+                                              ]
+                                            )
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticStyle: {
+                                              "margin-top": "3px",
+                                              "font-size": "12px",
+                                              "font-weight": "bold",
+                                              "line-height": "1"
+                                            }
+                                          },
+                                          [
+                                            _vm._v(
+                                              "\r\n                                    1\r\n                                 "
+                                            )
+                                          ]
                                         )
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-btn",
+                                      {
+                                        staticClass: "messagebtn",
+                                        staticStyle: { "margin-left": "-2px" },
+                                        attrs: {
+                                          flat: "",
+                                          icon: "",
+                                          large: "",
+                                          color: "transparent"
+                                        }
+                                      },
+                                      [
+                                        _c(
+                                          "v-tooltip",
+                                          {
+                                            attrs: {
+                                              "content-class": "jieTool",
+                                              color: "grey darken-4",
+                                              top: ""
+                                            }
+                                          },
+                                          [
+                                            _c(
+                                              "v-avatar",
+                                              {
+                                                staticClass: "mr-1",
+                                                attrs: {
+                                                  slot: "activator",
+                                                  color: "",
+                                                  tile: "",
+                                                  size: "17"
+                                                },
+                                                slot: "activator"
+                                              },
+                                              [
+                                                _c("img", {
+                                                  attrs: {
+                                                    src:
+                                                      "https://png.icons8.com/ios/50/546E7A/new-post.png"
+                                                  }
+                                                })
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "span",
+                                              {
+                                                staticStyle: {
+                                                  margin: "3px",
+                                                  "font-size": "11px"
+                                                }
+                                              },
+                                              [_vm._v(" Message ")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "v-layout",
+                                              {
+                                                attrs: { "justify-center": "" }
+                                              },
+                                              [
+                                                _c("div", {
+                                                  staticStyle: {
+                                                    position: "absolute",
+                                                    "margin-top": "5px",
+                                                    "margin-bottom": "5px",
+                                                    width: "0",
+                                                    height: "0",
+                                                    "border-left":
+                                                      "6px solid transparent",
+                                                    "border-right":
+                                                      "6px solid transparent",
+                                                    "border-top":
+                                                      "6px solid #212121"
+                                                  }
+                                                })
+                                              ]
+                                            )
+                                          ],
+                                          1
+                                        )
+                                      ],
+                                      1
+                                    )
                                   ],
                                   1
                                 )
@@ -59264,17 +59564,13 @@ var render = function() {
                                               "span",
                                               { staticClass: "ml-3" },
                                               [
-                                                _c(
-                                                  "span",
-                                                  {
-                                                    staticClass:
-                                                      " grey--text mt-2  textfm1",
-                                                    staticStyle: {
-                                                      "font-size": "13px"
-                                                    }
-                                                  },
-                                                  [_vm._v(" 1h ")]
-                                                )
+                                                _c("span", {
+                                                  staticClass:
+                                                    " grey--text mt-2  textfm1",
+                                                  staticStyle: {
+                                                    "font-size": "13px"
+                                                  }
+                                                })
                                               ]
                                             )
                                           ]
@@ -59336,7 +59632,7 @@ var render = function() {
                                 _c(
                                   "v-card",
                                   {
-                                    staticClass: " mt-3",
+                                    staticClass: "transparent mt-3",
                                     attrs: { flat: "", xs1: "" }
                                   },
                                   [
@@ -59350,7 +59646,7 @@ var render = function() {
                                           "margin-top": "-5px"
                                         },
                                         attrs: {
-                                          color: "",
+                                          color: "transparent",
                                           icon: "",
                                           flat: ""
                                         },
@@ -59425,6 +59721,7 @@ var render = function() {
                                             "font-weight-thin-light jie3 textfm1  ",
                                           staticStyle: { "font-size": "13px" },
                                           attrs: {
+                                            color: "blue lighten-2",
                                             "background-color":
                                               "grey lighten-5",
                                             "single-line": "",

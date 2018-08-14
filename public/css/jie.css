@@ -22,7 +22,7 @@
 
 .aJie:hover{
    text-decoration: underline !important ;
-   color: #2196F3;
+   color: #2196F3 !important;
 }
 
 .textDefault {
@@ -109,7 +109,7 @@
    font-size: 12px !important;
 }
 .jie3 .v-icon {
-   color: rgba(0,0,0,0.54) !important;
+   /* color: #1E88E5 !important; */
    font-size: 17px !important;
 }
 
@@ -118,7 +118,7 @@
    padding: 6px !important;
    display: inline-block;
    border-radius: 20px !important;
-   background-color: #EEEEEE;
+   background-color: #F5F5F5;
    /* border: 1px solid #E0E0E0; */
 }
 
@@ -360,8 +360,8 @@ background-color: #2BBBAD; }
 
 .heartFav{
    position: absolute;
-   background: url("https://abs.twimg.com/a/1533755696/img/animations/web_heart_animation_edge.png");
-   animation: play 1s steps(28) forwards  ;
+   background: url(../imgs/react/jie_heart.png);
+   animation: play .8s steps(28) forwards  ;
    background-size: 2900%;
    height: 50px;
    width: 50px;
@@ -373,8 +373,8 @@ background-color: #2BBBAD; }
  }
 
 @keyframes play {
-   /* from { background-position:    0px; } */
-   100% { background-position: -2800px; }
+   from {background-position:left;}
+   to { background-position:right;}
 }
 .Heartbtn{
    color:#657786 !important;
@@ -390,4 +390,38 @@ background-color: #2BBBAD; }
 }
 .HeartbtnActive.v-btn::before{
    opacity: 0;
+}
+
+.commentbtnActive{
+   color: #17bf63 !important;
+}
+.commentbtnActive.v-btn::before{
+   opacity: 0;
+}
+
+.commentbtn{
+   color: #657786c7 !important;
+}
+.commentbtn:hover{
+   color: #17bf63 !important;
+}
+.commentbtn.v-btn::before{
+   opacity: 0;
+}
+
+.messagebtn{
+   color: #CFD8DC !important;
+}
+.messagebtn:hover{
+   color: #2196F3 !important;
+}
+.messagebtn.v-btn::before{
+   opacity: 0;
+}
+
+.newscard {
+   background-color: white !important;
+}
+.newscard:hover {
+   background-color: #e3f2fd3f !important;
 }

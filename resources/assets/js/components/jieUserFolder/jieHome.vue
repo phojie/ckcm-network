@@ -150,9 +150,9 @@
                </v-layout> -->
             </v-card>
              <!-- :class="mb-1" border:1px #E0E0E0 solid;border-radius:2px;-->
-            <v-card flat v-for="newsfeed in newsfeeds " style="margin-bottom:2px;" :key="newsfeed.keyIndex"  class=" jieSvgBg1" >
+            <v-card flat v-for="newsfeed in newsfeeds " style="margin-bottom:2px;" :key="newsfeed.keyIndex"  >
                <!-- <v-progress-linear active height="2" style="margin:0px !important" color="grey lighten-2" :indeterminate="false"></v-progress-linear> -->
-               <v-layout wrap white class=" py-2" >
+               <v-layout wrap class="newscard py-2" >
                   <v-flex xs12 class="mx-2">
                      <v-layout>
                      <v-btn @click="profileMenu" color="" icon style="height:34px !important; width:34px !important" class=" jieleftNav"  flat>
@@ -163,25 +163,30 @@
                            </v-avatar>
                         </v-badge>
                      </v-btn> 
-                     <div class="mt-2 ">
-                     <p @click="profileMenuFriend(newsfeed.displayName)" style="font-size:14px" class="aJie mb-0 font-weight-bold ">{{newsfeed.displayName}} </p>
-                     <p style="margin-top:-5px;font-size:11px" class="grey--text textfm2">
+                     <div class="mt-1">
+                     <p class="mb-0">
+                        <span @click="profileMenuFriend(newsfeed.displayName)" style="font-size:13px" class="aJie font-weight-bold ">{{newsfeed.displayName}} </span>
+                        <span style="margin-left:-2px;" class="textlower caption grey--text text--darken-1"> @jie26 </span> 
+                     </p>
+                     <p style="margin-top:-5px;font-size:11px;" class="textfm2 grey--text">
                         <!-- {{newsfeed.timestamp | moment("dddd, MMMM Do YYYY: h:mm:a") }}| -->
                         <Timeago :auto-update="60" :datetime="newsfeed.timestamp" :since="timeAgoFormat"></Timeago>
                      </p>
                      </div>
                      <v-spacer></v-spacer>
-                     <v-menu style="margin-top:-27px;" offset-y nudge-left="80"> 
+                     <v-menu open-on-hover style="margin-top:-20px;" offset-y nudge-left="80"> 
                           <v-btn
                            slot="activator"
                            icon
-                           color="grey lighten-4"
+                           outline
+                           color="transparent"
                            round
-                           depressed
                            small
                            style="font-size:12px" class="font-weigth-bold textfm1 textDefault"
                         >
-                           <v-icon dark  color="grey darken-4" style="font-size:17px">mdi-dots-horizontal</v-icon>
+                           <v-avatar size="15">
+                              <img src="https://png.icons8.com/ios/50/424242/expand-arrow-filled.png">
+                           </v-avatar>
                         </v-btn>
                         <v-list>
                         <v-list-tile
@@ -199,24 +204,46 @@
                   </v-flex>
 
                   <v-flex  style="margin-top:-20px;" xs12  >
-                     <v-layout class="ml-1">
+                     <v-layout class="wrap row ml-1">
                         <v-textarea
-                           v-if="newsfeed.data.message.length <= 80" 
+                           v-if="newsfeed.data.message.length <= 80 & newsfeed.data.image == ''" 
                            flat readonly background-color="transparent"
                            hide-details rows="1" solo auto-grow
-                           class="newslineHeight"
-                           style="font-size:25px !important"
+                           class=" textfm1 newslineHeight "
+                           style="font-size:25px !important;letter-spacing:1"
                            v-model="newsfeed.data.message"
                         ></v-textarea>
                         <v-textarea
-                           v-else-if="newsfeed.data.message.length > 80" 
+                           v-else-if="newsfeed.data.message.length > 80 & newsfeed.data.image == ''" 
                            flat readonly background-color="transparent"
                            hide-details rows="1" solo auto-grow
                            v-model="newsfeed.data.message"
+                           class="textfm1"
+                           style="letter-spacing:1"
+                        ></v-textarea>
+                        <v-textarea
+                           v-else
+                           flat readonly background-color="transparent"
+                           hide-details rows="1" solo auto-grow
+                           v-model="newsfeed.data.message"
+                           class="textfm1"
+                           style="font-size:16px !important;letter-spacing:1"
                         ></v-textarea>
                      </v-layout>
+
+                     <layout wrap row  v-if="newsfeed.data.image != ''" class="">
+                        <v-card depressed flat class="mx-3 ">
+                           <img
+                              style="margin-bottom:7px;margin-top:-3px;border-radius:5px !important;border:1px solid #E0E0E0"  
+                              width="100%"
+                              height="100%"
+                              :src="newsfeed.data.image"
+                           >
+                              <!-- aspect-ratio="2.75" -->
+                        </v-card>
+                     </layout>
                      <!-- <v-divider class="grey lighten-3"> </v-divider> -->
-                     <v-layout wrap row > 
+                     <v-layout wrap row style="margin-top:-15px"> 
                         <v-flex class="mx-2 text-xs-left" >
                            <!-- <v-tooltip content-class="jieTool" color="grey darken-4"  top>
                               <v-btn :disabled="disAbleReact" v-if="newsfeed.whoLikes[userData['ckcm-network_token_id']] == null " @click="newsAtLike(newsfeed)" slot="activator" flat icon large color="transparent">
@@ -301,7 +328,6 @@
                                     </v-layout> 
                                  </v-tooltip>
                               </v-btn>
-
                               <!-- GA LIKE KO -->
                               <v-btn @click="newsAtUnlike(newsfeed)" :disabled="disAbleReact" v-else flat :ripple="false" icon large class="HeartbtnActive" >
                                  <v-tooltip content-class="jieToolHeart" color="grey darken-4"  top>
@@ -329,20 +355,13 @@
                                     ></div>
                                     </v-layout> 
                                  </v-tooltip>
-                                 
                               </v-btn>
-                             
-
-
-
-
-
-                              <!-- <v-btn flat icon large color="transparent">
+                              <v-btn flat icon large class="mx-4 commentbtn" color="transparent">
                                  <v-tooltip content-class="jieTool" color="grey darken-4"  top>
-                                    <v-avatar  slot="activator" tile size="17" class="mr-1">
-                                       <img src="https://png.icons8.com/ios/50/546E7A/comments.png">
+                                    <v-avatar  slot="activator" color="" tile size="20" class="mr-1">
+                                       <v-icon style="font-size:18px">mdi-comment-multiple-outline</v-icon>
                                     </v-avatar>
-                                    <span style="margin:3px;font-size:11px" > Comment </span>
+                                    <span style="margin:3px;font-size:12px" > Comment </span>
                                        <v-layout justify-center>
                                           <div class="" style="
                                              position:absolute;
@@ -356,14 +375,18 @@
                                           ></div>
                                        </v-layout> 
                                  </v-tooltip>
-                                 <div class="font-weight-bold blue-grey--text text--darken-1 caption">128</div>
+                                 <div style="margin-top:3px;font-size:12px;font-weight:bold;line-height:1;">
+                                    1
+                                 </div>
                               </v-btn>
                               
 
-                              <v-btn style="margin-left:-2px" flat icon large color="transparent">
+                              <v-btn style="margin-left:-2px" class="messagebtn" flat icon large color="transparent">
                                  <v-tooltip content-class="jieTool" color="grey darken-4"  top>
-                                    <v-avatar slot="activator" tile size="17" class="mr-1">
+                                    <v-avatar  slot="activator" color="" tile size="17" class="mr-1">
                                        <img src="https://png.icons8.com/ios/50/546E7A/new-post.png">
+                                       <!-- <img src="https://png.icons8.com/ios/50/546E7A/sent.png"> -->
+                                       <!-- <v-icon style="font-size:20px">mdi-email-outline</v-icon> -->
                                     </v-avatar>
                                     <span style="margin:3px;font-size:11px" > Message </span>
                                     <v-layout justify-center>
@@ -379,7 +402,7 @@
                                        ></div>
                                     </v-layout> 
                                  </v-tooltip>
-                              </v-btn> -->
+                              </v-btn>
                            
                            <!-- <v-btn flat icon color="grey">
                               <v-icon>star</v-icon>
@@ -424,7 +447,7 @@
                                     <v-icon size="3px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
                                  </span>
                                  <span class="ml-3">
-                                 <span style="font-size:13px;" class=" grey--text mt-2  textfm1" > 1h </span> 
+                                 <span style="font-size:13px;" class=" grey--text mt-2  textfm1" >  </span> 
                                  </span>
 
                               </div>
@@ -448,8 +471,8 @@
 <!-- .${newsfeed.keyIndex} -->
                   <v-flex xs12 class="mx-2">
                      <v-layout>
-                        <v-card flat xs1 class=" mt-3">
-                           <v-btn @click="profileMenu" color="" icon style="height:34px !important; width:34px !important;margin-top:-5px" class=" jieleftNav"  flat>
+                        <v-card flat xs1 class="transparent mt-3">
+                           <v-btn @click="profileMenu" color="transparent" icon style="height:34px !important; width:34px !important;margin-top:-5px" class=" jieleftNav"  flat>
                               <v-badge color="white"  overlap class="jieBadgeNews">
                                  <v-avatar class="mr-2 " color="grey lighten-3" size="32">
                                     <img :src="userData.photoUrl" alt="">
@@ -460,6 +483,7 @@
                         <v-flex  xs11 style="margin-top:-7px;margin-left:-5px">
                            <v-form @submit.prevent="commentPost(newsfeed.keyIndex, userData, newsfeed.commentText)">
                               <v-text-field  
+                                 color="blue lighten-2"
                                  background-color="grey lighten-5"
                                  single-line
                                  solo
