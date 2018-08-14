@@ -305,7 +305,7 @@
       </v-navigation-drawer>
       <!-- jieLandingBg -->
       <!-- mycolor3 -->
-      <v-toolbar   height="43px" clipped-left dark class="mr-5 blue darken-2 jieLandingBg2" flat app dense >
+      <v-toolbar   height="43px" clipped-left dark class="elevation-1 mr-5 blue darken-2 jieLandingBg2"  app dense >
          <!-- <v-toolbar-side-icon class="" @click="(mycolor1) => (showNav = !showNav)"></v-toolbar-side-icon> -->
          <v-toolbar-title class="primaryColortext--text subheading ">
             <!-- <span class="subheading white--text">Christ the King Network</span> -->

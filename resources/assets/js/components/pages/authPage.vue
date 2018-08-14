@@ -256,7 +256,7 @@ export default {
             // The signed-in user info.
             const user = result.user;
             // vm.$store.dispatch("registerUser")
-            console.log(token)
+            alert("something")
             console.log(user);
             signUp(user)
                .then((res) => {

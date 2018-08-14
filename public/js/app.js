@@ -52200,7 +52200,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // The signed-in user info.
             var user = result.user;
             // vm.$store.dispatch("registerUser")
-            console.log(token);
+            alert("something");
             console.log(user);
             Object(__WEBPACK_IMPORTED_MODULE_2__ckcmHelpers_auth__["d" /* signUp */])(user).then(function (res) {
                vm.form.password = 'jiejie';
@@ -56558,12 +56558,11 @@ var render = function() {
       _c(
         "v-toolbar",
         {
-          staticClass: "mr-5 blue darken-2 jieLandingBg2",
+          staticClass: "elevation-1 mr-5 blue darken-2 jieLandingBg2",
           attrs: {
             height: "43px",
             "clipped-left": "",
             dark: "",
-            flat: "",
             app: "",
             dense: ""
           }
@@ -57766,7 +57765,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
    },
    data: function data() {
       return {
-         likeDisable: false,
+         disAbleReact: false,
          offsetTop: 0,
          timeAgoFormat: "",
          availableNews: true,
@@ -57817,18 +57816,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
    },
    methods: {
       newsAtUnlike: function newsAtUnlike(newsfeed) {
-         __WEBPACK_IMPORTED_MODULE_0__firebase_js__["b" /* db */].ref('Newsfeed/' + newsfeed.keyIndex + '/whoLikes/' + this.userData['ckcm-network_token_id']).remove();
+         this.disAbleReact = true;
+         __WEBPACK_IMPORTED_MODULE_0__firebase_js__["b" /* db */].ref('Newsfeed/' + newsfeed.keyIndex + '/whoLikes/rp84hDq2SEMay00D7KL3rGSuAs93').remove();
          __WEBPACK_IMPORTED_MODULE_0__firebase_js__["b" /* db */].ref('Newsfeed/' + newsfeed.keyIndex + '/').update({
             likes: newsfeed.likes - 1
          });
+         this.disAbleReact = false;
       },
       newsAtLike: function newsAtLike(newsfeed) {
          var _this = this;
 
-         this.likeDisable = true;
+         this.disAbleReact = true;
          axios.get('https://api.ipgeolocation.io/ipgeo?apiKey=90a83c7326cc475f8048cf81362e1df0').then(function (response) {
+            // var now= moment(response.data.time_zone.current_time).tz(response.data.time_zone.name).format('MMMM D YYYY, kk:mm:ss');
             var now = response.data.time_zone.current_time;
             var vm = _this;
+            // var now = moment().format("MMMM D YYYY, kk:mm:ss");
+            // console.log(now)
             __WEBPACK_IMPORTED_MODULE_0__firebase_js__["b" /* db */].ref('Newsfeed/' + newsfeed.keyIndex + '/whoLikes/' + vm.userData['ckcm-network_token_id']).set({
                userId: vm.userData['ckcm-network_token_id'],
                displayName: vm.userData.displayName,
@@ -57837,11 +57841,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }, function (error) {
                if (error) {
                   console.log(error);
+                  __WEBPACK_IMPORTED_MODULE_0__firebase_js__["b" /* db */].ref('Newsfeed/' + newsfeed.keyIndex + '/').update({
+                     likes: newsfeed.likes - 1
+                  });
                } else {
-                  vm.likeDisable = false;
+                  vm.disAbleReact = false;
                   __WEBPACK_IMPORTED_MODULE_0__firebase_js__["b" /* db */].ref('Newsfeed/' + newsfeed.keyIndex + '/').update({
                      likes: newsfeed.likes + 1
                   });
+                  // Data saved successfully!
                }
             });
          });
@@ -57953,7 +57961,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                someoneComment: false,
                commentText: "",
                likes: 0,
-               whoLikes: { php: "php" },
+               whoLikes: { php: 'php' },
                order: vm.orderValue + 1
             }, function (error) {
                if (error) {
@@ -58710,7 +58718,7 @@ var render = function() {
                                               {
                                                 attrs: {
                                                   slot: "activator",
-                                                  disabled: _vm.likeDisable,
+                                                  disabled: _vm.disAbleReact,
                                                   flat: "",
                                                   icon: "",
                                                   large: "",
@@ -58743,12 +58751,12 @@ var render = function() {
                                                   ]
                                                 ),
                                                 _vm._v(" "),
-                                                newsfeed.likes != 0
+                                                newsfeed.likes > 0
                                                   ? _c(
                                                       "div",
                                                       {
                                                         staticClass:
-                                                          "grey--text font-weight-bold text--darken-2 caption"
+                                                          "grey--text text--darken-2 caption"
                                                       },
                                                       [
                                                         _vm._v(
@@ -58765,7 +58773,7 @@ var render = function() {
                                               {
                                                 attrs: {
                                                   slot: "activator",
-                                                  disabled: _vm.likeDisable,
+                                                  disabled: _vm.disAbleReact,
                                                   flat: "",
                                                   icon: "",
                                                   large: "",
@@ -58798,18 +58806,20 @@ var render = function() {
                                                   ]
                                                 ),
                                                 _vm._v(" "),
-                                                _c(
-                                                  "div",
-                                                  {
-                                                    staticClass:
-                                                      "font-weight-bold blue--text caption"
-                                                  },
-                                                  [
-                                                    _vm._v(
-                                                      _vm._s(newsfeed.likes)
+                                                newsfeed.likes > 0
+                                                  ? _c(
+                                                      "div",
+                                                      {
+                                                        staticClass:
+                                                          "font-weight-bold blue--text caption"
+                                                      },
+                                                      [
+                                                        _vm._v(
+                                                          _vm._s(newsfeed.likes)
+                                                        )
+                                                      ]
                                                     )
-                                                  ]
-                                                )
+                                                  : _vm._e()
                                               ],
                                               1
                                             ),
@@ -58820,12 +58830,7 @@ var render = function() {
                                           ? _c(
                                               "span",
                                               {
-                                                staticStyle: { margin: "3px" },
-                                                on: {
-                                                  click: function($event) {
-                                                    _vm.newsAtLike(newsfeed)
-                                                  }
-                                                }
+                                                staticStyle: { margin: "3px" }
                                               },
                                               [_vm._v(" Like ")]
                                             )
@@ -58834,7 +58839,7 @@ var render = function() {
                                               {
                                                 staticStyle: { margin: "3px" }
                                               },
-                                              [_vm._v(" Unlike ")]
+                                              [_vm._v(" Undo Like ")]
                                             ),
                                         _vm._v(" "),
                                         _c(
