@@ -51892,7 +51892,7 @@ exports = module.exports = __webpack_require__(5)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -52200,7 +52200,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             // The signed-in user info.
             var user = result.user;
             // vm.$store.dispatch("registerUser")
-            alert("something");
             console.log(user);
             Object(__WEBPACK_IMPORTED_MODULE_2__ckcmHelpers_auth__["d" /* signUp */])(user).then(function (res) {
                vm.form.password = 'jiejie';
@@ -57749,6 +57748,55 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -57765,6 +57813,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
    },
    data: function data() {
       return {
+         AnimateHeart: '',
+         sectionLove: "blue-grey--text",
          disAbleReact: false,
          offsetTop: 0,
          timeAgoFormat: "",
@@ -57817,7 +57867,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
    methods: {
       newsAtUnlike: function newsAtUnlike(newsfeed) {
          this.disAbleReact = true;
-         __WEBPACK_IMPORTED_MODULE_0__firebase_js__["b" /* db */].ref('Newsfeed/' + newsfeed.keyIndex + '/whoLikes/rp84hDq2SEMay00D7KL3rGSuAs93').remove();
+         __WEBPACK_IMPORTED_MODULE_0__firebase_js__["b" /* db */].ref('Newsfeed/' + newsfeed.keyIndex + '/whoLikes/' + this.userData['ckcm-network_token_id']).remove();
          __WEBPACK_IMPORTED_MODULE_0__firebase_js__["b" /* db */].ref('Newsfeed/' + newsfeed.keyIndex + '/').update({
             likes: newsfeed.likes - 1
          });
@@ -57826,6 +57876,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       newsAtLike: function newsAtLike(newsfeed) {
          var _this = this;
 
+         // this.AnimateHeart="heartFav"
+         this.AnimateHeart = newsfeed.keyIndex;
          this.disAbleReact = true;
          axios.get('https://api.ipgeolocation.io/ipgeo?apiKey=90a83c7326cc475f8048cf81362e1df0').then(function (response) {
             // var now= moment(response.data.time_zone.current_time).tz(response.data.time_zone.name).format('MMMM D YYYY, kk:mm:ss');
@@ -57845,6 +57897,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                      likes: newsfeed.likes - 1
                   });
                } else {
+                  // vm.AnimateHeart = ""
                   vm.disAbleReact = false;
                   __WEBPACK_IMPORTED_MODULE_0__firebase_js__["b" /* db */].ref('Newsfeed/' + newsfeed.keyIndex + '/').update({
                      likes: newsfeed.likes + 1
@@ -58700,491 +58753,276 @@ var render = function() {
                                   "v-flex",
                                   { staticClass: "mx-2 text-xs-left" },
                                   [
-                                    _c(
-                                      "v-tooltip",
-                                      {
-                                        attrs: {
-                                          "content-class": "jieTool",
-                                          color: "grey darken-4",
-                                          top: ""
-                                        }
-                                      },
-                                      [
-                                        newsfeed.whoLikes[
-                                          _vm.userData["ckcm-network_token_id"]
-                                        ] == null
-                                          ? _c(
-                                              "v-btn",
+                                    newsfeed.whoLikes[
+                                      _vm.userData["ckcm-network_token_id"]
+                                    ] == null
+                                      ? _c(
+                                          "v-btn",
+                                          {
+                                            staticClass: "Heartbtn",
+                                            attrs: {
+                                              disabled: _vm.disAbleReact,
+                                              flat: "",
+                                              ripple: false,
+                                              icon: "",
+                                              large: ""
+                                            },
+                                            on: {
+                                              click: function($event) {
+                                                _vm.newsAtLike(newsfeed)
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _c(
+                                              "v-tooltip",
                                               {
                                                 attrs: {
-                                                  slot: "activator",
-                                                  disabled: _vm.disAbleReact,
-                                                  flat: "",
-                                                  icon: "",
-                                                  large: "",
-                                                  color: "transparent"
-                                                },
-                                                on: {
-                                                  click: function($event) {
-                                                    _vm.newsAtLike(newsfeed)
-                                                  }
-                                                },
-                                                slot: "activator"
+                                                  "content-class":
+                                                    "jieToolHeart",
+                                                  color: "grey darken-4",
+                                                  top: ""
+                                                }
                                               },
                                               [
                                                 _c(
-                                                  "v-avatar",
+                                                  "div",
                                                   {
-                                                    staticClass: "mr-1",
+                                                    staticClass: "heartLeft",
                                                     attrs: {
-                                                      tile: "",
-                                                      size: "19"
-                                                    }
+                                                      slot: "activator"
+                                                    },
+                                                    slot: "activator"
                                                   },
                                                   [
-                                                    _c("img", {
-                                                      attrs: {
-                                                        src:
-                                                          "https://png.icons8.com/ios/50/333333/thumb-up.png"
-                                                      }
-                                                    })
+                                                    newsfeed.likes > 0
+                                                      ? _c(
+                                                          "div",
+                                                          {
+                                                            staticStyle: {
+                                                              "margin-top":
+                                                                "20px",
+                                                              "margin-left":
+                                                                "40px",
+                                                              position:
+                                                                "absolute",
+                                                              "font-size":
+                                                                "12px",
+                                                              "font-weight":
+                                                                "bold",
+                                                              "line-height": "1"
+                                                            }
+                                                          },
+                                                          [
+                                                            _vm._v(
+                                                              "\r\n                                          " +
+                                                                _vm._s(
+                                                                  newsfeed.likes
+                                                                ) +
+                                                                "\r\n                                       "
+                                                            )
+                                                          ]
+                                                        )
+                                                      : _vm._e()
                                                   ]
                                                 ),
                                                 _vm._v(" "),
-                                                newsfeed.likes > 0
+                                                _c(
+                                                  "span",
+                                                  {
+                                                    staticStyle: {
+                                                      margin: "3px",
+                                                      "font-size": "11px"
+                                                    }
+                                                  },
+                                                  [_vm._v(" Like ")]
+                                                ),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "v-layout",
+                                                  {
+                                                    attrs: {
+                                                      "justify-center": ""
+                                                    }
+                                                  },
+                                                  [
+                                                    _c("div", {
+                                                      staticStyle: {
+                                                        position: "absolute",
+                                                        "margin-top": "5px",
+                                                        "margin-bottom": "5px",
+                                                        width: "0",
+                                                        height: "0",
+                                                        "border-left":
+                                                          "6px solid transparent",
+                                                        "border-right":
+                                                          "6px solid transparent",
+                                                        "border-top":
+                                                          "6px solid #212121"
+                                                      }
+                                                    })
+                                                  ]
+                                                )
+                                              ],
+                                              1
+                                            )
+                                          ],
+                                          1
+                                        )
+                                      : _c(
+                                          "v-btn",
+                                          {
+                                            staticClass: "HeartbtnActive",
+                                            attrs: {
+                                              disabled: _vm.disAbleReact,
+                                              flat: "",
+                                              ripple: false,
+                                              icon: "",
+                                              large: ""
+                                            },
+                                            on: {
+                                              click: function($event) {
+                                                _vm.newsAtUnlike(newsfeed)
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _c(
+                                              "v-tooltip",
+                                              {
+                                                attrs: {
+                                                  "content-class":
+                                                    "jieToolHeart",
+                                                  color: "grey darken-4",
+                                                  top: ""
+                                                }
+                                              },
+                                              [
+                                                _vm.AnimateHeart ==
+                                                newsfeed.keyIndex
                                                   ? _c(
                                                       "div",
                                                       {
                                                         staticClass:
-                                                          "grey--text text--darken-2 caption"
+                                                          " heartFav ",
+                                                        attrs: {
+                                                          slot: "activator"
+                                                        },
+                                                        slot: "activator"
                                                       },
                                                       [
-                                                        _vm._v(
-                                                          _vm._s(newsfeed.likes)
+                                                        _c(
+                                                          "div",
+                                                          {
+                                                            staticStyle: {
+                                                              "margin-top":
+                                                                "20px",
+                                                              "margin-left":
+                                                                "40px",
+                                                              position:
+                                                                "absolute",
+                                                              "font-size":
+                                                                "12px",
+                                                              "font-weight":
+                                                                "bold",
+                                                              "line-height": "1"
+                                                            }
+                                                          },
+                                                          [
+                                                            _vm._v(
+                                                              "\r\n                                          " +
+                                                                _vm._s(
+                                                                  newsfeed.likes
+                                                                ) +
+                                                                "\r\n                                       "
+                                                            )
+                                                          ]
                                                         )
                                                       ]
                                                     )
-                                                  : _vm._e()
-                                              ],
-                                              1
-                                            )
-                                          : _c(
-                                              "v-btn",
-                                              {
-                                                attrs: {
-                                                  slot: "activator",
-                                                  disabled: _vm.disAbleReact,
-                                                  flat: "",
-                                                  icon: "",
-                                                  large: "",
-                                                  color: "transparent"
-                                                },
-                                                on: {
-                                                  click: function($event) {
-                                                    _vm.newsAtUnlike(newsfeed)
-                                                  }
-                                                },
-                                                slot: "activator"
-                                              },
-                                              [
-                                                _c(
-                                                  "v-avatar",
-                                                  {
-                                                    staticClass: "mr-1",
-                                                    attrs: {
-                                                      tile: "",
-                                                      size: "23"
-                                                    }
-                                                  },
-                                                  [
-                                                    _c("img", {
-                                                      attrs: {
-                                                        src:
-                                                          "https://png.icons8.com/ios/50/2196F3/good-quality-filled.png"
-                                                      }
-                                                    })
-                                                  ]
-                                                ),
-                                                _vm._v(" "),
-                                                newsfeed.likes > 0
-                                                  ? _c(
+                                                  : _c(
                                                       "div",
                                                       {
                                                         staticClass:
-                                                          "font-weight-bold blue--text caption"
+                                                          "heartRight",
+                                                        attrs: {
+                                                          slot: "activator"
+                                                        },
+                                                        slot: "activator"
                                                       },
                                                       [
-                                                        _vm._v(
-                                                          _vm._s(newsfeed.likes)
+                                                        _c(
+                                                          "div",
+                                                          {
+                                                            staticStyle: {
+                                                              "margin-top":
+                                                                "20px",
+                                                              "margin-left":
+                                                                "40px",
+                                                              position:
+                                                                "absolute",
+                                                              "font-size":
+                                                                "12px",
+                                                              "font-weight":
+                                                                "bold",
+                                                              "line-height": "1"
+                                                            }
+                                                          },
+                                                          [
+                                                            _vm._v(
+                                                              "\r\n                                          " +
+                                                                _vm._s(
+                                                                  newsfeed.likes
+                                                                ) +
+                                                                "\r\n                                       "
+                                                            )
+                                                          ]
                                                         )
                                                       ]
-                                                    )
-                                                  : _vm._e()
+                                                    ),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "span",
+                                                  {
+                                                    staticStyle: {
+                                                      margin: "3px",
+                                                      "font-size": "11px"
+                                                    }
+                                                  },
+                                                  [_vm._v(" Undo Like ")]
+                                                ),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "v-layout",
+                                                  {
+                                                    attrs: {
+                                                      "justify-center": ""
+                                                    }
+                                                  },
+                                                  [
+                                                    _c("div", {
+                                                      staticStyle: {
+                                                        position: "absolute",
+                                                        "margin-top": "5px",
+                                                        "margin-bottom": "5px",
+                                                        width: "0",
+                                                        height: "0",
+                                                        "border-left":
+                                                          "6px solid transparent",
+                                                        "border-right":
+                                                          "6px solid transparent",
+                                                        "border-top":
+                                                          "6px solid #212121"
+                                                      }
+                                                    })
+                                                  ]
+                                                )
                                               ],
                                               1
-                                            ),
-                                        _vm._v(" "),
-                                        newsfeed.whoLikes[
-                                          _vm.userData["ckcm-network_token_id"]
-                                        ] == null
-                                          ? _c(
-                                              "span",
-                                              {
-                                                staticStyle: { margin: "3px" }
-                                              },
-                                              [_vm._v(" Like ")]
-                                            )
-                                          : _c(
-                                              "span",
-                                              {
-                                                staticStyle: { margin: "3px" }
-                                              },
-                                              [_vm._v(" Undo Like ")]
-                                            ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "v-layout",
-                                          { attrs: { "justify-center": "" } },
-                                          [
-                                            _c("div", {
-                                              staticStyle: {
-                                                position: "absolute",
-                                                "margin-top": "5px",
-                                                "margin-bottom": "5px",
-                                                width: "0",
-                                                height: "0",
-                                                "border-left":
-                                                  "6px solid transparent",
-                                                "border-right":
-                                                  "6px solid transparent",
-                                                "border-top":
-                                                  "6px solid #212121"
-                                              }
-                                            })
-                                          ]
-                                        )
-                                      ],
-                                      1
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "v-tooltip",
-                                      {
-                                        attrs: {
-                                          "content-class": "jieTool",
-                                          color: "grey darken-4",
-                                          top: ""
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "v-btn",
-                                          {
-                                            attrs: {
-                                              slot: "activator",
-                                              flat: "",
-                                              icon: "",
-                                              large: "",
-                                              color: "transparent"
-                                            },
-                                            slot: "activator"
-                                          },
-                                          [
-                                            _c(
-                                              "v-avatar",
-                                              {
-                                                staticClass: "mr-1",
-                                                attrs: { tile: "", size: "19" }
-                                              },
-                                              [
-                                                _c("img", {
-                                                  attrs: {
-                                                    src:
-                                                      "https://png.icons8.com/ios/50/333333/thumbs-down.png"
-                                                  }
-                                                })
-                                              ]
-                                            ),
-                                            _vm._v(" "),
-                                            _c(
-                                              "div",
-                                              {
-                                                staticClass:
-                                                  "grey--text text--darken-2 caption"
-                                              },
-                                              [_vm._v("7")]
                                             )
                                           ],
                                           1
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticStyle: { margin: "3px" } },
-                                          [_vm._v(" Dislike ")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "v-layout",
-                                          { attrs: { "justify-center": "" } },
-                                          [
-                                            _c("div", {
-                                              staticStyle: {
-                                                position: "absolute",
-                                                "margin-top": "5px",
-                                                "margin-bottom": "5px",
-                                                width: "0",
-                                                height: "0",
-                                                "border-left":
-                                                  "6px solid transparent",
-                                                "border-right":
-                                                  "6px solid transparent",
-                                                "border-top":
-                                                  "6px solid #212121"
-                                              }
-                                            })
-                                          ]
                                         )
-                                      ],
-                                      1
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "v-tooltip",
-                                      {
-                                        attrs: {
-                                          "content-class": "jieTool",
-                                          color: "grey darken-4",
-                                          top: ""
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "v-btn",
-                                          {
-                                            attrs: {
-                                              slot: "activator",
-                                              flat: "",
-                                              icon: "",
-                                              large: "",
-                                              color: "transparent"
-                                            },
-                                            slot: "activator"
-                                          },
-                                          [
-                                            _c(
-                                              "v-avatar",
-                                              {
-                                                staticClass: "mr-1",
-                                                attrs: { tile: "", size: "19" }
-                                              },
-                                              [
-                                                _c("img", {
-                                                  attrs: {
-                                                    src:
-                                                      "https://png.icons8.com/ios/50/333333/hearts.png"
-                                                  }
-                                                })
-                                              ]
-                                            ),
-                                            _vm._v(" "),
-                                            _c(
-                                              "div",
-                                              {
-                                                staticClass:
-                                                  "grey--text text--darken-2 caption"
-                                              },
-                                              [_vm._v("2")]
-                                            )
-                                          ],
-                                          1
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticStyle: { margin: "3px" } },
-                                          [_vm._v(" Love ")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "v-layout",
-                                          { attrs: { "justify-center": "" } },
-                                          [
-                                            _c("div", {
-                                              staticStyle: {
-                                                position: "absolute",
-                                                "margin-top": "5px",
-                                                "margin-bottom": "5px",
-                                                width: "0",
-                                                height: "0",
-                                                "border-left":
-                                                  "6px solid transparent",
-                                                "border-right":
-                                                  "6px solid transparent",
-                                                "border-top":
-                                                  "6px solid #212121"
-                                              }
-                                            })
-                                          ]
-                                        )
-                                      ],
-                                      1
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "v-tooltip",
-                                      {
-                                        attrs: {
-                                          "content-class": "jieTool",
-                                          color: "grey darken-4",
-                                          top: ""
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "v-btn",
-                                          {
-                                            attrs: {
-                                              slot: "activator",
-                                              flat: "",
-                                              icon: "",
-                                              large: "",
-                                              color: "transparent"
-                                            },
-                                            slot: "activator"
-                                          },
-                                          [
-                                            _c(
-                                              "v-avatar",
-                                              {
-                                                staticClass: "mr-1",
-                                                attrs: { tile: "", size: "18" }
-                                              },
-                                              [
-                                                _c("img", {
-                                                  attrs: {
-                                                    src:
-                                                      "https://png.icons8.com/ios/50/333333/speech-bubble.png"
-                                                  }
-                                                })
-                                              ]
-                                            ),
-                                            _vm._v(" "),
-                                            _c(
-                                              "div",
-                                              {
-                                                staticClass:
-                                                  "grey--text text--darken-2 caption"
-                                              },
-                                              [_vm._v("128")]
-                                            )
-                                          ],
-                                          1
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticStyle: { margin: "3px" } },
-                                          [_vm._v(" Comment ")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "v-layout",
-                                          { attrs: { "justify-center": "" } },
-                                          [
-                                            _c("div", {
-                                              staticStyle: {
-                                                position: "absolute",
-                                                "margin-top": "5px",
-                                                "margin-bottom": "5px",
-                                                width: "0",
-                                                height: "0",
-                                                "border-left":
-                                                  "6px solid transparent",
-                                                "border-right":
-                                                  "6px solid transparent",
-                                                "border-top":
-                                                  "6px solid #212121"
-                                              }
-                                            })
-                                          ]
-                                        )
-                                      ],
-                                      1
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "v-tooltip",
-                                      {
-                                        attrs: {
-                                          "content-class": "jieTool",
-                                          color: "grey darken-4",
-                                          top: ""
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "v-btn",
-                                          {
-                                            attrs: {
-                                              slot: "activator",
-                                              flat: "",
-                                              icon: "",
-                                              large: "",
-                                              color: "transparent"
-                                            },
-                                            slot: "activator"
-                                          },
-                                          [
-                                            _c(
-                                              "v-avatar",
-                                              {
-                                                staticClass: "mr-1",
-                                                attrs: { tile: "", size: "17" }
-                                              },
-                                              [
-                                                _c("img", {
-                                                  attrs: {
-                                                    src:
-                                                      "https://png.icons8.com/ios/50/333333/new-post.png"
-                                                  }
-                                                })
-                                              ]
-                                            )
-                                          ],
-                                          1
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticStyle: { margin: "3px" } },
-                                          [_vm._v(" Message ")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "v-layout",
-                                          { attrs: { "justify-center": "" } },
-                                          [
-                                            _c("div", {
-                                              staticStyle: {
-                                                position: "absolute",
-                                                "margin-top": "5px",
-                                                "margin-bottom": "5px",
-                                                width: "0",
-                                                height: "0",
-                                                "border-left":
-                                                  "6px solid transparent",
-                                                "border-right":
-                                                  "6px solid transparent",
-                                                "border-top":
-                                                  "6px solid #212121"
-                                              }
-                                            })
-                                          ]
-                                        )
-                                      ],
-                                      1
-                                    )
                                   ],
                                   1
                                 )

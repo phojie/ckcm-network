@@ -306,9 +306,88 @@ background-color: #2BBBAD; }
    line-height:30px !important;
 }
 
-.jieTool {
-   margin-top:5px;
+.jieToolHeart {
+   margin-top: 9px;
    border-radius: 4px !important;
 }
-/* home */
+.jieTool {
+   margin-top:-8px;
+   border-radius: 4px !important;
+}
 
+  /* position: absolute;
+   background-image: url("https://abs.twimg.com/a/1533755696/img/animations/web_heart_animation_edge.png") ;
+   background-position: right;
+   background-repeat: no-repeat;
+   background-size: 2900%;
+   height: 50px;
+   width: 50px;
+   left: 50%;
+   top: 50%;
+   -ms-transform: translate(-50%,-47.5%);
+   transform: translate(-50%,-47.5%); */
+
+.heartLeft{
+  position: absolute;
+   background-image: url("https://abs.twimg.com/a/1533755696/img/animations/web_heart_animation_edge.png") ;
+   background-repeat: no-repeat;
+   background-size: 2900%;
+   height: 50px;
+   width: 50px;
+   left: 50%;
+   top: 50%;
+   -ms-transform: translate(-50%,-47.5%);
+   transform: translate(-50%,-47.5%);
+}
+.heartLeft:hover{
+   background-position: 3.571428571428571%
+}
+
+.heartRight{
+   position: absolute;
+    background-image: url("https://abs.twimg.com/a/1533755696/img/animations/web_heart_animation_edge.png") ;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 2900%;
+    height: 50px;
+    width: 50px;
+    left: 50%;
+    top: 50%;
+    -ms-transform: translate(-50%,-47.5%);
+    transform: translate(-50%,-47.5%);
+ }
+
+
+.heartFav{
+   position: absolute;
+   background: url("https://abs.twimg.com/a/1533755696/img/animations/web_heart_animation_edge.png");
+   animation: play 1s steps(28) forwards  ;
+   background-size: 2900%;
+   height: 50px;
+   width: 50px;
+   left: 50%;
+   top: 50%;
+   -ms-transform: translate(-50%,-47.5%);
+   transform: translate(-50%,-47.5%);
+   /* infinite */
+ }
+
+@keyframes play {
+   /* from { background-position:    0px; } */
+   100% { background-position: -2800px; }
+}
+.Heartbtn{
+   color:#657786 !important;
+}
+.Heartbtn:hover{
+   color: #e0245e !important;
+}
+.Heartbtn.v-btn::before{
+   opacity: 0;
+}
+.HeartbtnActive{
+   color: #e0245e !important;
+}
+.HeartbtnActive.v-btn::before{
+   opacity: 0;
+}
