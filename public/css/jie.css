@@ -118,7 +118,7 @@
    padding: 6px !important;
    display: inline-block;
    border-radius: 20px !important;
-   background-color: #F5F5F5;
+   /* background-color: #F5F5F5; */
    /* border: 1px solid #E0E0E0; */
 }
 
@@ -299,6 +299,14 @@ background-color: #2BBBAD; }
 /* left friend list */
 
 /* home */
+.jieWhatBg {
+   background-image: url(https://ssl.gstatic.com/support/content/images/static/homepage_header_background.svg);
+   /* background-position: 50% 10px; */
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   /* height: 105px; */
+}
 .jiew.v-text-field--solo .v-input__slot  {
    background: transparent !important;
 }
@@ -361,7 +369,8 @@ background-color: #2BBBAD; }
 .heartFav{
    position: absolute;
    background: url(../imgs/react/jie_heart.png);
-   animation: play .8s steps(28) forwards  ;
+   background-repeat: no-repeat;
+   animation: like .8s steps(28) forwards  ;
    background-size: 2900%;
    height: 50px;
    width: 50px;
@@ -372,10 +381,33 @@ background-color: #2BBBAD; }
    /* infinite */
  }
 
-@keyframes play {
+@keyframes like {
    from {background-position:left;}
    to { background-position:right;}
 }
+
+.heartnotFav{
+   position: absolute;
+   background: url(../imgs/react/jie_heart.png);
+   background-repeat: no-repeat;
+   animation: unlike .5s steps(28) forwards  ;
+   background-size: 2900%;
+   height: 50px;
+   width: 50px;
+   left: 50%;
+   top: 50%;
+   -ms-transform: translate(-50%,-47.5%);
+   transform: translate(-50%,-47.5%);
+   /* infinite */
+ }
+
+ @keyframes unlike {
+   from {background-position:right;}
+   to { background-position:left;}
+}
+
+
+
 .Heartbtn{
    color:#657786 !important;
 }
@@ -424,4 +456,29 @@ background-color: #2BBBAD; }
 }
 .newscard:hover {
    background-color: #e3f2fd3f !important;
+   
 }
+
+.appscard {
+   transition: background-color .5s ease;
+   background-color: #E0E0E0 !important;
+}
+.appscard:hover {
+   background-color: white !important;
+}
+
+.wave-item{
+   /* -webkit-animation: jieLoad linear 2.8s infinite !important; */
+   width: 0px !important;
+   height: 0px !important;
+   /* background-color:#2196F3 */
+   /* background-color: red !important; */
+}
+/* loading-wave-dots-data-v-6e1fd88f */
+
+
+
+
+
+
+/* transition */

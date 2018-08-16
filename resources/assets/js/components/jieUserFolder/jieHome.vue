@@ -2,7 +2,7 @@
 <v-card  id="scroll-target" app height="100%" width="100%" style="position:absolute; bottom:0" flat class="newsfeedScroll transparent scrollbar-primary "> 
       <v-layout v-scroll:#scroll-target="onScroll" class="mt-1 mx-1 justify-center">
          <v-flex class=" xs12 sm12 md8 lg8  mr-2 mt-1">
-            <v-card flat style="margin-bottom:3px" class="jieSvgBg1  " >
+            <v-card flat  class="jieSvgBg1  " >
                <!-- style="border:1px #E0E0E0 solid;border-radius:2px"   -->
                <v-layout wrap color="white" :class="whatisClass" class="py-2 px-2" >
                   <v-flex xs12 style="margin-top:-10px" >
@@ -69,7 +69,7 @@
                         </v-btn> -->
                      </v-layout>
                   </v-flex>
-                  <div  style="width:32px !important" class=" mt-3">
+                  <div  style="width:39px !important" class=" mt-3">
                      <v-btn @click="profileMenu" color="" icon style="height:34px !important; width:34px !important;margin-top:-5px" class=" jieleftNav"  flat>
                         <v-badge color="white"  overlap class="jieBadgeNews">
                            <!-- <span  slot="badge" class="" style="font-size:16px; border-radius: 50%; border: 4.5px solid #7CB342 ;"></span> -->
@@ -149,219 +149,193 @@
                   </v-flex>
                </v-layout> -->
             </v-card>
-             <!-- :class="mb-1" border:1px #E0E0E0 solid;border-radius:2px;-->
-            <v-card flat v-for="newsfeed in newsfeeds " style="margin-bottom:2px;" :key="newsfeed.keyIndex"  >
-               <!-- <v-progress-linear active height="2" style="margin:0px !important" color="grey lighten-2" :indeterminate="false"></v-progress-linear> -->
-               <v-layout wrap class="newscard py-2" >
-                  <v-flex xs12 class="mx-2">
-                     <v-layout>
-                     <v-btn @click="profileMenu" color="" icon style="height:34px !important; width:34px !important" class=" jieleftNav"  flat>
-                        <v-badge color="white"  overlap class="jieBadgeNews">
-                           <!-- <span  slot="badge" class="" style="font-size:16px; border-radius: 50%; border: 4.5px solid #7CB342 ;"></span> -->
-                           <v-avatar class="mr-2 " color="grey lighten-3" size="38">
-                              <img :src="`${newsfeed.photoUrl}?height=10000`" :alt="404">
-                           </v-avatar>
-                        </v-badge>
-                     </v-btn> 
-                     <div class="mt-1">
-                     <p class="mb-0">
-                        <span @click="profileMenuFriend(newsfeed.displayName)" style="font-size:13px" class="aJie font-weight-bold ">{{newsfeed.displayName}} </span>
-                        <span style="margin-left:-2px;" class="textlower caption grey--text text--darken-1"> @jie26 </span> 
-                     </p>
-                     <p style="margin-top:-5px;font-size:11px;" class="textfm2 grey--text">
-                        <!-- {{newsfeed.timestamp | moment("dddd, MMMM Do YYYY: h:mm:a") }}| -->
-                        <Timeago :auto-update="60" :datetime="newsfeed.timestamp" :since="timeAgoFormat"></Timeago>
-                     </p>
-                     </div>
-                     <v-spacer></v-spacer>
-                     <v-menu open-on-hover style="margin-top:-20px;" offset-y nudge-left="80"> 
-                          <v-btn
-                           slot="activator"
-                           icon
-                           outline
-                           color="transparent"
-                           round
-                           small
-                           style="font-size:12px" class="font-weigth-bold textfm1 textDefault"
-                        >
-                           <v-avatar size="15">
-                              <img src="https://png.icons8.com/ios/50/424242/expand-arrow-filled.png">
-                           </v-avatar>
-                        </v-btn>
-                        <v-list>
-                        <v-list-tile
-                           v-for="(item, index) in items"
-                           :key="index"
-                           @click="test"
-                        >
-                           <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-                        </v-list-tile>
-                        </v-list>
-                     </v-menu>
-                      
-                     </v-layout>
 
-                  </v-flex>
-
-                  <v-flex  style="margin-top:-20px;" xs12  >
-                     <v-layout class="wrap row ml-1">
-                        <v-textarea
-                           v-if="newsfeed.data.message.length <= 80 & newsfeed.data.image == ''" 
-                           flat readonly background-color="transparent"
-                           hide-details rows="1" solo auto-grow
-                           class=" textfm1 newslineHeight "
-                           style="font-size:25px !important;letter-spacing:1"
-                           v-model="newsfeed.data.message"
-                        ></v-textarea>
-                        <v-textarea
-                           v-else-if="newsfeed.data.message.length > 80 & newsfeed.data.image == ''" 
-                           flat readonly background-color="transparent"
-                           hide-details rows="1" solo auto-grow
-                           v-model="newsfeed.data.message"
-                           class="textfm1"
-                           style="letter-spacing:1"
-                        ></v-textarea>
-                        <v-textarea
-                           v-else
-                           flat readonly background-color="transparent"
-                           hide-details rows="1" solo auto-grow
-                           v-model="newsfeed.data.message"
-                           class="textfm1"
-                           style="font-size:16px !important;letter-spacing:1"
-                        ></v-textarea>
-                     </v-layout>
-
-                     <layout wrap row  v-if="newsfeed.data.image != ''" class="">
-                        <v-card depressed flat class="mx-3 ">
-                           <img
-                              style="margin-bottom:7px;margin-top:-3px;border-radius:5px !important;border:1px solid #E0E0E0"  
-                              width="100%"
-                              height="100%"
-                              :src="newsfeed.data.image"
+           
+               <v-card flat  v-for="newsfeed in newsfeeds " :key="newsfeed.keyIndex" class="mt-1" >
+                  <!-- <v-progress-linear active height="2" style="margin:0px !important" color="grey lighten-2" :indeterminate="false"></v-progress-linear> -->
+                  <v-layout wrap class="newscard py-2" >
+                     <v-flex xs12 class="mx-2">
+                        <v-layout>
+                        <v-btn @click="profileMenu" color="" icon style="height:34px !important; width:34px !important" class=" jieleftNav"  flat>
+                           <v-badge color="white"  overlap class="jieBadgeNews">
+                              <!-- <span  slot="badge" class="" style="font-size:16px; border-radius: 50%; border: 4.5px solid #7CB342 ;"></span> -->
+                              <v-avatar class="mr-2 " color="grey lighten-3" size="38">
+                                 <img :src="`${newsfeed.photoUrl}?height=10000`" :alt="404">
+                              </v-avatar>
+                           </v-badge>
+                        </v-btn> 
+                        <div class="mt-1">
+                        <p class="mb-0">
+                           <span @click="profileMenuFriend(newsfeed.displayName)" style="font-size:13px" class="aJie font-weight-bold ">{{newsfeed.displayName}} </span>
+                           <span style="margin-left:-2px;" class="textlower caption grey--text text--darken-1"> @jie26 </span> 
+                        </p>
+                        <p style="margin-top:-5px;font-size:11px;" class="textfm2 grey--text">
+                           <!-- {{newsfeed.timestamp | moment("dddd, MMMM Do YYYY: h:mm:a") }}| -->
+                           <Timeago :auto-update="60" :datetime="newsfeed.timestamp" :since="timeAgoFormat"></Timeago>
+                        </p>
+                        </div>
+                        <v-spacer></v-spacer>
+                        <v-menu open-on-hover style="margin-top:-20px;" offset-y nudge-left="80"> 
+                           <v-btn
+                              slot="activator"
+                              icon
+                              outline
+                              color="transparent"
+                              round
+                              small
+                              style="font-size:12px" class="font-weigth-bold textfm1 textDefault"
                            >
-                              <!-- aspect-ratio="2.75" -->
-                        </v-card>
-                     </layout>
-                     <!-- <v-divider class="grey lighten-3"> </v-divider> -->
-                     <v-layout wrap row style="margin-top:-15px"> 
-                        <v-flex class="mx-2 text-xs-left" >
-                           <!-- <v-tooltip content-class="jieTool" color="grey darken-4"  top>
-                              <v-btn :disabled="disAbleReact" v-if="newsfeed.whoLikes[userData['ckcm-network_token_id']] == null " @click="newsAtLike(newsfeed)" slot="activator" flat icon large color="transparent">
-                                 <v-avatar tile size="19" class="mr-1">
-                                    <img src="https://png.icons8.com/ios/50/333333/thumb-up.png">
-                                 </v-avatar>
-                                 <div v-if="newsfeed.likes > 0" class="grey--text text--darken-2 caption">{{20+newsfeed.likes}}</div>
-                              </v-btn>
-                              <v-btn v-else :disabled="disAbleReact"  @click="newsAtUnlike(newsfeed)" slot="activator" flat icon large color="transparent">
-                                 <v-avatar tile size="23" class="mr-1">
-                                    <img src="https://png.icons8.com/ios/50/2196F3/good-quality-filled.png">
-                                 </v-avatar>
-                                 <div v-if="newsfeed.likes > 0" class="font-weight-bold blue--text caption">{{20+newsfeed.likes}}</div>
-                              </v-btn>
-                              <span v-if="newsfeed.whoLikes[userData['ckcm-network_token_id']] == null " style="margin:3px"> Like </span>
-                              <span v-else style="margin:3px " > Undo Like </span>
-                              <v-layout justify-center>
-                                 <div class="" style="
-                                    position:absolute;
-                                    margin-top:5px;
-                                    margin-bottom:5px;
-                                    width: 0;
-                                    height: 0;
-                                    border-left: 6px solid transparent;
-                                    border-right: 6px solid transparent;
-                                    border-top: 6px solid #212121;"
-                                 ></div>
-                              </v-layout> 
-                           </v-tooltip>
-                           <v-tooltip content-class="jieTool" color="grey darken-4"  top>
-                              <v-btn slot="activator" flat icon large color="transparent">
-                                 <v-avatar tile size="19" class="mr-1">
-                                    <img src="https://png.icons8.com/ios/50/333333/thumbs-down.png">
-                                 </v-avatar>
-                                 <div class="grey--text text--darken-2 caption">7</div>
-                              </v-btn>
-                              <span style="margin:3px"  > Dislike </span>
-                              <v-layout justify-center>
-                                 <div class="" style="
-                                    position:absolute;
-                                    margin-top:5px;
-                                    margin-bottom:5px;
-                                    width: 0;
-                                    height: 0;
-                                    border-left: 6px solid transparent;
-                                    border-right: 6px solid transparent;
-                                    border-top: 6px solid #212121;"
-                                 ></div>
-                              </v-layout> 
-                           </v-tooltip> -->
-                              <!-- <v-avatar tile size="21"    class="mr-1">
-                                    <img src="https://png.icons8.com/ios/50/546E7A/hearts.png">
-                              </v-avatar> -->
-                              <!-- @mouseout="()=> (sectionLove = 'blue-grey--text')" @mouseover="()=> (sectionLove = 'pink--text')"  -->
+                              <v-avatar size="13">
+                                 <img src="https://png.icons8.com/ios/50/424242/expand-arrow-filled.png">
+                              </v-avatar>
+                           </v-btn>
+                           <v-list>
+                           <v-list-tile
+                              v-for="(item, index) in items"
+                              :key="index"
+                              @click="test"
+                           >
+                              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+                           </v-list-tile>
+                           </v-list>
+                        </v-menu>
+                        
+                        </v-layout>
 
+                     </v-flex>
 
+                     <v-flex  style="margin-top:-20px;" xs12  >
+                        <v-layout class="wrap row ml-1">
+                           <v-textarea
+                              v-if="newsfeed.data.message.length <= 80 & newsfeed.data.image == ''" 
+                              flat readonly background-color="transparent"
+                              hide-details rows="1" solo auto-grow
+                              class="  newslineHeight "
+                              style="word-wrap: break-word;font-size:25px !important;letter-spacing:1.34"
+                              v-model="newsfeed.data.message"
+                           ></v-textarea>
+                           <v-textarea
+                              v-else-if="newsfeed.data.message.length > 80 & newsfeed.data.image == ''" 
+                              flat readonly background-color="transparent"
+                              hide-details rows="1" solo auto-grow
+                              v-model="newsfeed.data.message"
+                              class=" "
+                              style="word-wrap: break-word;letter-spacing:1.34"
+                           ></v-textarea>
+                           <v-textarea
+                              v-else
+                              flat readonly background-color="transparent"
+                              hide-details rows="1" solo auto-grow
+                              v-model="newsfeed.data.message"
+                              class=" "
+                              style="word-wrap: break-word;font-size:14px !important;letter-spacing:1.34"
+                           ></v-textarea>
+                        </v-layout>
 
-
-
-
-
-                              <!-- WLA KO GA LIKE -->
-                              <v-btn @click="newsAtLike(newsfeed)" :disabled="disAbleReact" v-if="newsfeed.whoLikes[userData['ckcm-network_token_id']] == null " flat :ripple="false" icon large class="Heartbtn" >
-                                 <v-tooltip content-class="jieToolHeart" color="grey darken-4"  top>
-                                    <div  slot="activator" class="heartLeft">
-                                       <div v-if="newsfeed.likes > 0" style="margin-top:20px;margin-left:40px;position:absolute;font-size:12px;font-weight:bold;line-height:1;">
-                                          {{newsfeed.likes}}
+                        <v-layout wrap row  v-if="newsfeed.data.image != ''" class="">
+                           <v-card depressed flat class="mx-3 ">
+                              <img
+                                 style="margin-bottom:7px;margin-top:-3px;border-radius:5px !important;border:1px solid #E0E0E0"  
+                                 width="100%"
+                                 height="100%"
+                                 :src="newsfeed.data.image"
+                              >
+                                 <!-- aspect-ratio="2.75" -->
+                           </v-card>
+                        </v-layout>
+                        <!-- <v-divider class="grey lighten-3"> </v-divider> -->
+                        <v-layout wrap row> 
+                           <v-flex class="mx-2 text-xs-left" >
+                                 <!-- WLA KO GA LIKE -->
+                                 <v-btn @click="newsAtLike(newsfeed)" :disabled="disAbleReact" v-if="newsfeed.whoLikes[userData['ckcm-network_token_id']] == null " flat :ripple="false" icon large class="Heartbtn" >
+                                    <v-tooltip content-class="jieToolHeart" color="grey darken-4"  top>
+                                       <span style="margin:3px;font-size:11px" class="text-xs-center">Like </span>
+                                       <v-layout justify-center>
+                                       <div class="" style="
+                                          position:absolute;
+                                          margin-top:5px;
+                                          margin-bottom:5px;
+                                          width: 0;
+                                          height: 0;
+                                          border-left: 6px solid transparent;
+                                          border-right: 6px solid transparent;
+                                          border-top: 6px solid #212121;"
+                                       ></div>
+                                       </v-layout> 
+                                       <div  v-if="AnimateHeart == newsfeed.keyIndex" slot="activator" class="heartnotFav">
+                                          <div v-if="newsfeed.likes > 0" style="margin-top:20px;margin-left:40px;position:absolute;font-size:12px;font-weight:bold;line-height:1;">
+                                             {{newsfeed.likes}}
+                                          </div>
                                        </div>
-                                    </div>
-                                    <span style="margin:3px;font-size:11px" > Like </span>
-                                    <v-layout justify-center>
-                                    <div class="" style="
-                                       position:absolute;
-                                       margin-top:5px;
-                                       margin-bottom:5px;
-                                       width: 0;
-                                       height: 0;
-                                       border-left: 6px solid transparent;
-                                       border-right: 6px solid transparent;
-                                       border-top: 6px solid #212121;"
-                                    ></div>
-                                    </v-layout> 
-                                 </v-tooltip>
-                              </v-btn>
-                              <!-- GA LIKE KO -->
-                              <v-btn @click="newsAtUnlike(newsfeed)" :disabled="disAbleReact" v-else flat :ripple="false" icon large class="HeartbtnActive" >
-                                 <v-tooltip content-class="jieToolHeart" color="grey darken-4"  top>
-                                    <div  v-if="AnimateHeart == newsfeed.keyIndex" slot="activator" class=" heartFav ">
-                                       <div style="margin-top:20px;margin-left:40px;position:absolute;font-size:12px;font-weight:bold;line-height:1;">
-                                          {{newsfeed.likes}}
+                                       <div  slot="activator" class="heartLeft">
+                                          <div v-if="newsfeed.likes > 0" style="margin-top:20px;margin-left:40px;position:absolute;font-size:12px;font-weight:bold;line-height:1;">
+                                             {{newsfeed.likes}}
+                                          </div>
                                        </div>
-                                    </div>
-                                    <div  v-else slot="activator" class="heartRight">
-                                       <div style="margin-top:20px;margin-left:40px;position:absolute;font-size:12px;font-weight:bold;line-height:1;">
-                                          {{newsfeed.likes}}
+                                    </v-tooltip>
+                                 </v-btn>
+                                 <!-- GA LIKE KO -->
+                                 <v-btn @click="newsAtUnlike(newsfeed)" :disabled="disAbleReact" v-else flat :ripple="false" icon large class="HeartbtnActive" >
+                                    <v-tooltip  content-class="jieToolHeart" color="grey darken-4"  top>
+                                       <span style="margin:3px;font-size:11px" > Unlike </span>
+                                       <v-layout justify-center>
+                                       <div class="" style="
+                                          position:absolute;
+                                          margin-top:5px;
+                                          margin-bottom:5px;
+                                          width: 0;
+                                          height: 0;
+                                          border-left: 6px solid transparent;
+                                          border-right: 6px solid transparent;
+                                          border-top: 6px solid #212121;"
+                                       ></div>
+                                       </v-layout> 
+                                       <div  v-if="AnimateHeart == newsfeed.keyIndex" slot="activator" class=" heartFav ">
+                                          <div style="margin-top:20px;margin-left:40px;position:absolute;font-size:12px;font-weight:bold;line-height:1;">
+                                             {{newsfeed.likes}}
+                                          </div>
                                        </div>
+                                       <div v-else slot="activator" class="heartRight">
+                                          <div style="margin-top:20px;margin-left:40px;position:absolute;font-size:12px;font-weight:bold;line-height:1;">
+                                             {{newsfeed.likes}}
+                                          </div>
+                                       </div>
+                                    </v-tooltip>
+                                 </v-btn>
+
+                                 <v-btn flat icon large class="mx-4 commentbtn" :ripple="false"  color="transparent">
+                                    <v-tooltip content-class="jieTool" color="grey darken-4"  top>
+                                       <v-avatar  slot="activator" color="" tile size="20" class="mr-1">
+                                          <v-icon style="font-size:18px">mdi-comment-multiple-outline</v-icon>
+                                       </v-avatar>
+                                       <span style="margin:3px;font-size:12px" > Comment </span>
+                                          <v-layout justify-center>
+                                             <div class="" style="
+                                                position:absolute;
+                                                margin-top:5px;
+                                                margin-bottom:5px;
+                                                width: 0;
+                                                height: 0;
+                                                border-left: 6px solid transparent;
+                                                border-right: 6px solid transparent;
+                                                border-top: 6px solid #212121;"
+                                             ></div>
+                                          </v-layout> 
+                                    </v-tooltip>
+                                    <div style="margin-top:3px;font-size:12px;font-weight:bold;line-height:1;">
+                                       1
                                     </div>
-                                    <span style="margin:3px;font-size:11px" > Undo Like </span>
-                                    <v-layout justify-center>
-                                    <div class="" style="
-                                       position:absolute;
-                                       margin-top:5px;
-                                       margin-bottom:5px;
-                                       width: 0;
-                                       height: 0;
-                                       border-left: 6px solid transparent;
-                                       border-right: 6px solid transparent;
-                                       border-top: 6px solid #212121;"
-                                    ></div>
-                                    </v-layout> 
-                                 </v-tooltip>
-                              </v-btn>
-                              <v-btn flat icon large class="mx-4 commentbtn" color="transparent">
-                                 <v-tooltip content-class="jieTool" color="grey darken-4"  top>
-                                    <v-avatar  slot="activator" color="" tile size="20" class="mr-1">
-                                       <v-icon style="font-size:18px">mdi-comment-multiple-outline</v-icon>
-                                    </v-avatar>
-                                    <span style="margin:3px;font-size:12px" > Comment </span>
+                                 </v-btn>
+                                 
+
+                                 <v-btn style="margin-left:-2px" class="messagebtn" :ripple="false"  flat icon large color="transparent">
+                                    <v-tooltip content-class="jieTool" color="grey darken-4"  top>
+                                       <v-avatar  slot="activator" color="" tile size="17" class="mr-1">
+                                          <img src="https://png.icons8.com/ios/50/546E7A/new-post.png">
+                                          <!-- <img src="https://png.icons8.com/ios/50/546E7A/sent.png"> -->
+                                          <!-- <v-icon style="font-size:20px">mdi-email-outline</v-icon> -->
+                                       </v-avatar>
+                                       <span style="margin:3px;font-size:11px" > Message </span>
                                        <v-layout justify-center>
                                           <div class="" style="
                                              position:absolute;
@@ -374,141 +348,159 @@
                                              border-top: 6px solid #212121;"
                                           ></div>
                                        </v-layout> 
-                                 </v-tooltip>
-                                 <div style="margin-top:3px;font-size:12px;font-weight:bold;line-height:1;">
-                                    1
-                                 </div>
-                              </v-btn>
+                                    </v-tooltip>
+                                 </v-btn>
                               
+                              <!-- <v-btn flat icon color="grey">
+                                 <v-icon>star</v-icon>
+                              </v-btn> -->
+                           </v-flex>
+                        </v-layout>
+                     </v-flex>
 
-                              <v-btn style="margin-left:-2px" class="messagebtn" flat icon large color="transparent">
-                                 <v-tooltip content-class="jieTool" color="grey darken-4"  top>
-                                    <v-avatar  slot="activator" color="" tile size="17" class="mr-1">
-                                       <img src="https://png.icons8.com/ios/50/546E7A/new-post.png">
-                                       <!-- <img src="https://png.icons8.com/ios/50/546E7A/sent.png"> -->
-                                       <!-- <v-icon style="font-size:20px">mdi-email-outline</v-icon> -->
-                                    </v-avatar>
-                                    <span style="margin:3px;font-size:11px" > Message </span>
-                                    <v-layout justify-center>
-                                       <div class="" style="
-                                          position:absolute;
-                                          margin-top:5px;
-                                          margin-bottom:5px;
-                                          width: 0;
-                                          height: 0;
-                                          border-left: 6px solid transparent;
-                                          border-right: 6px solid transparent;
-                                          border-top: 6px solid #212121;"
-                                       ></div>
-                                    </v-layout> 
-                                 </v-tooltip>
-                              </v-btn>
+                     <v-flex class="mx-3" xs12 v-if="newsfeed.commented != null">
+                        <v-divider class="grey lighten-3"></v-divider>
+                     </v-flex>
+
+                     <v-flex xs12 class="mx-2 ">
+                        <v-flex xs12 v-for="commented in newsfeed.commentedLimit" :key="commented['.key']">
+                           <v-layout>
+                              <div  class=" mt-3">
+                                 <v-btn @click="profileMenu" color="" icon style="height:34px !important; width:34px !important;margin-top:-5px" class=" jieleftNav"  flat>
+                                    <v-badge color="white"  overlap class="jieBadgeNews">
+                                       <v-avatar class="mr-2 " color="grey lighten-3" size="32">
+                                          <img :src="commented.photoUrl" alt="">
+                                       </v-avatar>
+                                    </v-badge>
+                                 </v-btn> 
+                              </div>
                            
-                           <!-- <v-btn flat icon color="grey">
-                              <v-icon>star</v-icon>
-                           </v-btn> -->
+                              <v-flex xs11  style="margin-top:12px;margin-left:-4px" >
+                                 <p style="width: auto !important" class=" grey lighten-3 jie3Commented">
+                                    <router-link class="caption font-weight-bold blue--text text--darken-3 aJie" to="/profile/jiecel.marianne">{{commented.displayName}}</router-link>
+                                    {{commented.data}}
+                                 </p>
+                                 <!-- <div class="caption ml-2" style="margin-top:-13px; ">
+                                    <span>
+                                    <a style="font-size:13px;" class="aJie grey--text mt-2  textfm1" @click="test"> Like </a> 
+                                       <v-icon size="3px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
+                                    </span>
+                                    <span class="ml-3">
+                                    <a style="font-size:13px;" class=" aJie grey--text mt-2  textfm1" @click="test"> Dislike </a> 
+                                       <v-icon size="3px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
+                                    </span>
+                                    <span class="ml-3">
+                                    <a style="font-size:13px;" class=" aJie grey--text mt-2  textfm1" @click="test"> Reply </a> 
+                                       <v-icon size="3px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
+                                    </span>
+                                    <span class="ml-3">
+                                    <span style="font-size:13px;" class=" grey--text mt-2  textfm1" >  </span> 
+                                    </span>
+
+                                 </div> -->
+                              </v-flex>
+
+                           </v-layout>
                         </v-flex>
-                     </v-layout>
-                  </v-flex>
+                     </v-flex>
 
-                  <v-flex xs12>
-                     <v-divider class="grey lighten-3"></v-divider>
-                  </v-flex>
+                     <v-flex v-if="newsfeed.someoneComment.someone == true & disableWrite == false" xs12 class="mx-5 px-2 mt-2">
+                        <div xs12>
+                           <v-progress-circular
+                              :width="1"
+                              :size="13"
+                              color="blue lighten-1"
+                              indeterminate
+                           ></v-progress-circular>
+                           <span class="caption font-weight-thin grey--text textfm1">Someone is typing...</span>
+                        </div>
+                     </v-flex>
 
-                  <v-flex xs12 class="mx-2 ">
-                     <v-flex xs12 v-for="commented in newsfeed.commented  " :key="commented['.key']">
+                     <v-flex xs12 class="mx-2">
                         <v-layout>
-                           <div  class=" mt-3">
-                              <v-btn @click="profileMenu" color="" icon style="height:34px !important; width:34px !important;margin-top:-5px" class=" jieleftNav"  flat>
+                           <v-card flat xs1 class="transparent mt-3">
+                              <v-btn @click="profileMenu" color="transparent" icon style="height:34px !important; width:34px !important;margin-top:-5px" class=" jieleftNav"  flat>
                                  <v-badge color="white"  overlap class="jieBadgeNews">
                                     <v-avatar class="mr-2 " color="grey lighten-3" size="32">
-                                       <img :src="commented.photoUrl" alt="">
+                                       <img :src="userData.photoUrl" alt="">
                                     </v-avatar>
                                  </v-badge>
                               </v-btn> 
-                           </div>
-                        
-                           <v-flex xs11  style="margin-top:12px;margin-left:-4px" >
-                              <p style="width: auto !important" class=" jie3Commented">
-                                 <router-link class="blue--text text--darken-2 aJie" to="/profile/jiecel.marianne">{{commented.displayName}}</router-link>
-                                 {{commented.data}}
-                              </p>
-                              <div class="caption ml-2" style="margin-top:-13px; ">
-                                 <span>
-                                 <a style="font-size:13px;" class="aJie grey--text mt-2  textfm1" @click="test"> Like </a> 
-                                    <v-icon size="3px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
-                                 </span>
-                                 <span class="ml-3">
-                                 <a style="font-size:13px;" class=" aJie grey--text mt-2  textfm1" @click="test"> Dislike </a> 
-                                    <v-icon size="3px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
-                                 </span>
-                                 <span class="ml-3">
-                                 <a style="font-size:13px;" class=" aJie grey--text mt-2  textfm1" @click="test"> Reply </a> 
-                                    <v-icon size="3px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
-                                 </span>
-                                 <span class="ml-3">
-                                 <span style="font-size:13px;" class=" grey--text mt-2  textfm1" >  </span> 
-                                 </span>
-
-                              </div>
+                           </v-card>
+                           <v-flex  xs11 style="margin-top:-7px;margin-left:-5px">
+                              <v-form @submit.prevent="commentPost(newsfeed.keyIndex, userData, newsfeed.commentText)">
+                                 <v-text-field  
+                                    color="blue lighten-2"
+                                    background-color="grey lighten-5"
+                                    single-line
+                                    solo
+                                    hint="Press Enter to comment"
+                                    flat
+                                    height="32"
+                                    full-width
+                                    v-model="newsfeed.commentText"
+                                    :loading="false"
+                                    placeholder="Write a comment .. . "
+                                    @blur="blurPost(newsfeed.keyIndex, userData, newsfeed.commentText)"
+                                    @input="inputPost(newsfeed.keyIndex, userData, newsfeed.commentText)"
+                                    @click:append="commentPost(newsfeed.keyIndex, userData, newsfeed.commentText)"
+                                    append-icon="mdi-send"
+                                    style="font-size:13px"
+                                    class="font-weight-thin-light jie3 textfm1  "
+                                 ></v-text-field>
+                              </v-form>
                            </v-flex>
-
+                        
                         </v-layout>
                      </v-flex>
-                  </v-flex>
+                  </v-layout>
+               </v-card>
 
-                  <v-flex v-if="newsfeed.someoneComment.someone == true" xs12 class="mx-5 px-2 mt-2">
-                     <div xs12>
-                        <v-progress-circular
-                           :width="1"
-                           :size="13"
-                           color="blue lighten-1"
-                           indeterminate
-                        ></v-progress-circular>
-                        <span class="caption font-weight-thin grey--text textfm1">Someone is typing...</span>
-                     </div>
-                  </v-flex>
-<!-- .${newsfeed.keyIndex} -->
+               <infinite-loading class="red" style="height:0px;margin-left:-46px" spinner="waveDots" @infinite="infiniteHandler" v-if="availableNews"></infinite-loading>
+            <v-card class="mt-1" v-if="doneLoadNews" flat v-for="loadnumbers in 2" :key="loadnumbers.index" style="margin-bottom:2px;"   >
+               <v-layout wrap class="newscard py-2" >
                   <v-flex xs12 class="mx-2">
                      <v-layout>
-                        <v-card flat xs1 class="transparent mt-3">
-                           <v-btn @click="profileMenu" color="transparent" icon style="height:34px !important; width:34px !important;margin-top:-5px" class=" jieleftNav"  flat>
-                              <v-badge color="white"  overlap class="jieBadgeNews">
-                                 <v-avatar class="mr-2 " color="grey lighten-3" size="32">
-                                    <img :src="userData.photoUrl" alt="">
-                                 </v-avatar>
-                              </v-badge>
-                           </v-btn> 
-                        </v-card>
-                        <v-flex  xs11 style="margin-top:-7px;margin-left:-5px">
-                           <v-form @submit.prevent="commentPost(newsfeed.keyIndex, userData, newsfeed.commentText)">
-                              <v-text-field  
-                                 color="blue lighten-2"
-                                 background-color="grey lighten-5"
-                                 single-line
-                                 solo
-                                 hint="Press Enter to comment"
-                                 flat
-                                 height="32"
-                                 full-width
-                                 v-model="newsfeed.commentText"
-                                 :loading="false"
-                                 placeholder="Write something here.."
-                                 @blur="blurPost(newsfeed.keyIndex, userData, newsfeed.commentText)"
-                                 @input="inputPost(newsfeed.keyIndex, userData, newsfeed.commentText)"
-                                 @click:append="commentPost(newsfeed.keyIndex, userData, newsfeed.commentText)"
-                                 append-icon="mdi-send"
-                                 style="font-size:13px"
-                                 class="font-weight-thin-light jie3 textfm1  "
-                              ></v-text-field>
-                           </v-form>
-                        </v-flex>
-                      
+                        <div class="mx-2" style="margin-top:-10px;height:38px;width:38px !important" >
+                           <v-progress-linear height="38px" style="border-radius:50% !important" background-opacity="0.8" color="grey lighten-2" :indeterminate="true"></v-progress-linear>
+                        </div>
+                        <div class="" style=";margin-top:-7px;height:25px;width:150px !important" >
+                           <v-progress-linear height="18px" style="margin-top:13px;border-radius:12px !important" color="grey lighten-1" ></v-progress-linear>
+                           <v-progress-linear height="10px" style="margin-top:-10px !important;width:70px;border-radius:12px !important" color="grey lighten-1"></v-progress-linear>
+                        </div>
+                        <v-spacer></v-spacer>
+                        <v-menu open-on-hover style="margin-top:-20px;" offset-y nudge-left="80"> 
+                           <v-btn
+                              slot="activator"
+                              icon
+                              outline
+                              color="transparent"
+                              round
+                              small
+                              style="font-size:12px" class="font-weigth-bold textfm1 textDefault"
+                           >
+                              <v-avatar size="13">
+                                 <img src="https://png.icons8.com/ios/50/424242/expand-arrow-filled.png">
+                              </v-avatar>
+                           </v-btn>
+                        </v-menu>
                      </v-layout>
+                  </v-flex>
+                  <v-flex class="mx-3" style="margin-top:40px;" xs12  >
+
+                        <v-progress-linear :indeterminate="true" height="8"  style="width:100%;margin-top:-10px;border-radius:3px !important" background-opacity="0.5" color="grey lighten-4" ></v-progress-linear>
+                        <v-progress-linear height="10" query style="width:80%;margin-top:-10px;border-radius:3px !important" background-opacity="0.5" color="grey lighten-3"></v-progress-linear>
+                        <v-progress-linear height="16"  style="width:20%;border-radius:3px !important" background-opacity="0.5" color="grey lighten-2" ></v-progress-linear>
+                        <v-progress-linear height="9" query style="width:37%;margin-top:-10px;border-radius:3px !important" background-opacity="0.5" color="grey lighten-2"></v-progress-linear>
+                        <v-progress-linear height="10" query style="width:80%;margin-top:-10px;border-radius:3px !important" background-opacity="0.5" color="grey lighten-2"></v-progress-linear>
+                        <v-progress-linear height="15" query style="width:37%;margin-top:-10px;border-radius:3px !important" background-opacity="0.5" color="grey lighten-3" ></v-progress-linear>
+                        <v-progress-linear height="15" style="width:10%;border-radius:3px !important" background-opacity="0.5" color="grey lighten-3" ></v-progress-linear>
+                        <v-progress-linear height="6"  style="width:20%;border-radius:3px !important" background-opacity="0.5" color="grey lighten-3" ></v-progress-linear>
+                        <v-progress-linear height="15" query style="width:37%;margin-top:-10px;border-radius:3px !important" background-opacity="0.5" color="grey lighten-3" ></v-progress-linear>
                   </v-flex>
                </v-layout>
             </v-card>
-            <infinite-loading @infinite="infiniteHandler" v-if="availableNews"></infinite-loading>
+           
             <!-- <v-card class="my-2" >
                <v-card-media
                   height=""
@@ -551,6 +543,8 @@ export default {
       }
    },
    data: () => ({
+      disableWrite: false,
+      doneLoadNews:true,
       AnimateHeart: '',
       sectionLove: "blue-grey--text",
       disAbleReact: false,
@@ -578,16 +572,12 @@ export default {
       },
   }),
    computed: {
-      // reloadNewsComputed() {
-      //    var number1 = true
-      //    if(number1) {
-      //       alert("Reload")
-      //    } {
-      //       alert("Dont")
-      //    }
-      // },
+      commenteds(dataOf) {
+         return dataOf;
+      },
       newsfeeds() {
          // return this.newsFeedsValueRef;
+         // let limitCommented = _.drop([this.newsFeedsValueRef.commented],2)
          return _.orderBy(this.newsFeedsValueRef, 'order');
       },
       userData() {
@@ -607,6 +597,7 @@ export default {
    methods: {
       newsAtUnlike(newsfeed){
          this.disAbleReact=true
+         this.AnimateHeart = newsfeed.keyIndex
          db.ref(`Newsfeed/${newsfeed.keyIndex}/whoLikes/${this.userData['ckcm-network_token_id']}`).remove();
          db.ref(`Newsfeed/${newsfeed.keyIndex}/`).update({
             likes: newsfeed.likes - 1
@@ -666,27 +657,33 @@ export default {
         console.log(this.offsetTop)
       },
       infiniteHandler($state) {
+         this.doneLoadNews=true
          let vm = this;
-         vm.newsFeedLimit += 4;
+         vm.newsFeedLimit += 1;
          // setTimeout(() => {
             var newsFeedsValue  = db.ref('Newsfeed').limitToLast(vm.newsFeedLimit);
             newsFeedsValue.on('value', function(gotData) {
                let keys = Object.keys(gotData.val())
-               // console.log(keys)
-               // gotData.val().text = "test"
                vm.newsFeedsValueRef = gotData.val()
                keys.forEach( function (key) {
-               //  console.log(gotData.val()[key], key)
                   vm.newsFeedsValueRef[key].keyIndex = key
+                  var commentedValue = db.ref(`Newsfeed/${key}/commented`).limitToLast(6);
+                  commentedValue.on('value', function (commentedData) {
+                     vm.newsFeedsValueRef[key].commentedLimit = commentedData.val()
+                     // console.log(commentedData.val())
+                  })
+                  // vm.newsFeedsValueRef[key].limitCommented  = commentedValue
+                  // vm.newsFeedsValueRef[key].commented
+                  // console.log(vm.newsFeedsValueRef)
                })
-
                if(vm.newsfeeds.length == vm.newsFeedLimit){
                   vm.availableNews=true
                   $state.loaded()
+                  vm.doneLoadNews=true
                }else{
                   vm.availableNews=false
+                  vm.doneLoadNews=false
                }
-
                });
          // }, 1000);
       },
@@ -695,6 +692,7 @@ export default {
       },
       blurPost(id,user,commentText) {
          let vm = this
+         vm.disableWrite = false
          db.ref(`Newsfeed/${id}/`).child('someoneComment').set({
             someone:false
          }, function(error) {
@@ -708,6 +706,7 @@ export default {
       },
       inputPost(id,user,commentText) {
          let vm = this
+         vm.disableWrite= true
          db.ref(`Newsfeed/${id}/`).child('someoneComment').set({
             someone:true
          }, function(error) {
@@ -732,6 +731,9 @@ export default {
             console.log(error)
             // The write failed...r
          } else {
+            db.ref(`Newsfeed/${id}/`).child('someoneComment').set({
+               someone:false
+            }) 
             // Data saved successfully!
          }
          });

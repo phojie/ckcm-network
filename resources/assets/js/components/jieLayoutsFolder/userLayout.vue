@@ -1,7 +1,7 @@
 <template>
 <!-- :value="leftnavDrawer"  -->
 <!-- <v-navigation-drawer  :value="!leftnavDrawer" stateless permanent flat width="80" clipped app></v-navigation-drawer> -->
-   <v-app class="grey lighten-3"  style="overflow:hidden !important" >
+   <v-app class="grey lighten-2"  style="overflow:hidden !important" >
     
       <!-- stateless permanent -->
       <v-navigation-drawer right class="transparent "   width="220" style="overflow: hidden !important;" clipped app>
@@ -289,7 +289,7 @@
                
             </v-card>
             <v-divider></v-divider>
-            <v-card flat class="grey lighten-3  ">
+            <v-card flat class="appscard ">
                <v-list class="mx-2">
                   <div class="font-weight-bold brown--text textupper" style="font-size:10px" > TERMS & POLICIES</div>
                       <v-list-tile-content style="font-size:11px">
@@ -304,8 +304,9 @@
          </v-card>
       </v-navigation-drawer>
       <!-- jieLandingBg -->
+      <!-- jieWhatBg -->
       <!-- mycolor3 -->
-      <v-toolbar   height="43px" clipped-left dark class="elevation-1 mr-5 blue jieLandingBg2"  app dense >
+      <v-toolbar   height="43px" clipped-left dark class="elevation-1 mr-5 blue darken-3 jieSvgBg1 "  app dense >
          <!-- <v-toolbar-side-icon class="" @click="(mycolor1) => (showNav = !showNav)"></v-toolbar-side-icon> -->
          <v-toolbar-title class="primaryColortext--text subheading ">
             <!-- <span class="subheading white--text">Christ the King Network</span> -->
@@ -360,13 +361,16 @@
                <div class=" ml-1 white--text caption textDefault textfm1"> Home </div> 
             </v-btn>
             <v-btn style="margin-right:-5px !important;" icon>
-               <v-icon style="font-size:18px !important">mdi-apps</v-icon>
+               <v-icon style="font-size:19px !important">mdi-apps</v-icon>
             </v-btn>
             <v-btn style="margin-right:-5px !important;" icon>
                <v-icon style="font-size:18px !important">mdi-account-switch</v-icon>
             </v-btn>
             <v-btn style="margin-right:-5px !important;" icon>
-               <v-icon style="font-size:18px !important">mdi-forum</v-icon>
+               <!-- <v-avatar tile size="22">
+                  <img src="https://png.icons8.com/material/50/ffffff/communication.png">
+               </v-avatar> -->
+               <v-icon style="font-size:19px !important">mdi-email</v-icon>
             </v-btn>
             
             
@@ -384,7 +388,7 @@
                            <v-avatar size="27px"
                            color="transparent red--after"
                            >
-                           <v-icon style="font-size:18px !important">mdi-earth</v-icon>
+                           <v-icon style="font-size:19px !important">mdi-earth</v-icon>
                            </v-avatar>
                         </v-badge>
                      </v-btn>
