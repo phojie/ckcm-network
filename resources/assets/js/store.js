@@ -70,7 +70,7 @@ export default {
          // localStorage.user = JSON.stringify(state.accountLoginData);
          // console.log(state.accountLoginData)
          const id = state.accountLoginData.user["ckcm-network_token_id"]
-         db.ref('users/' + id).set({
+         db.ref('users/' + id).update({
             status: "online",
             displayName: state.accountLoginData.user.displayName ,
             photoUrl: state.accountLoginData.user.photoUrl,
@@ -87,7 +87,7 @@ export default {
       },
       logout(state) {
          const id = state.accountLoginData.user["ckcm-network_token_id"]
-         db.ref('users/' + id).set({
+         db.ref('users/' + id).update({
             status: "offline",
             displayName: state.accountLoginData.user.displayName ,
             photoUrl: state.accountLoginData.user.photoUrl,

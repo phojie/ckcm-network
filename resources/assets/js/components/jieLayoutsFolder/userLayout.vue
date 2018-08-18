@@ -193,7 +193,7 @@
             <v-card flat class="pb-2">
                   <!-- src="https://scontent.fcgy1-1.fna.fbcdn.net/v/t1.0-9/29571261_1589949324387758_1953653254138362805_n.jpg?_nc_cat=0&oh=fbd784445c209ed004d49b0ea51cba32&oe=5BCADF30" -->
                <v-card-media
-                  class="blue lighten-2 jieSvgBg1"
+                  class="blue lighten-2 jieCkcmbg"
                   height="110px"
                >
                </v-card-media>

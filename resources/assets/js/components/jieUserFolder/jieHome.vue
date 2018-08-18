@@ -2,12 +2,14 @@
 <v-card  id="scroll-target" app height="100%" width="100%" style="position:absolute; bottom:0" flat class="newsfeedScroll transparent scrollbar-primary "> 
       <v-layout v-scroll:#scroll-target="onScroll" class="mt-1 mx-1 justify-center">
          <v-flex class=" xs12 sm12 md8 lg8  mr-2 mt-1">
-            <v-card flat  class="jieSvgBg1  " >
+            <v-card flat  class="" >
+               <!-- jieSvgBg1 -->
                <!-- style="border:1px #E0E0E0 solid;border-radius:2px"   -->
                <v-layout wrap color="white" :class="whatisClass" class="py-2 px-2" >
                   <v-flex xs12 style="margin-top:-10px" >
                      <v-layout row wrap>
                         <v-btn
+                           @click="newPostBtn"
                            round
                            color="transparent light-blue--text text--darken-1"
                            depressed
@@ -31,18 +33,16 @@
                            </v-avatar>
                            Add Poll
                         </v-btn>
-                        <v-btn
-                           round
-                           color="transparent brown--text text--darken-1"
-                           depressed
-                           small
-                           class="caption font-weigth-bold  textDefault"
-                        >
-                           <v-avatar tile size="18">  
-                              <img src="https://png.icons8.com/ios/50/6D4C41/image.png">
-                           </v-avatar>
-                           Photo/Album
-                        </v-btn>
+                        <div style="position:relative:overflow:hidden;display:inline-block">
+                           <v-btn  @click="photoBtn" round color="transparent brown--text text--darken-1" depressed small class="caption font-weigth-bold  textDefault">
+                              <v-avatar tile size="18">  
+                                 <img src="https://png.icons8.com/ios/50/6D4C41/image.png">
+                              </v-avatar>
+                              Photo/Album
+                           </v-btn>
+                           <!-- style="font-size:100px !important;positon:absolute !important;left;top:0;opacity:0;"  -->
+                           <input style="display:none" ref="newsFile" @input="addFile" accept="image/*" type="file" multiple>
+                        </div>
                         <v-btn
                            round
                            color="transparent indigo--text text--darken-1"
@@ -81,12 +81,15 @@
                   </div>
                   <v-flex style="margin-top:-3px" :class="whatisFlex">
                      <!-- jiew -->
+                     <!-- @blur="whatisFunctionMethodFalse" -->
                      <v-textarea 
                         background-color="transparent"
                         hide-details v-model="postedData.message" color="blue"
-                        class=" " row-height="10"
-                        style="font-size:15px !important" placeholder="What is your main focus for today?"
-                        @click="whatisFunctionMethod" @blur="whatisFunctionMethodFalse" flat solo
+                        class="whatIs  subheading" row-height="10"
+                        ref="newPost "
+                        style="" placeholder="What is your main focus for today?"
+                        @focus="whatisFunctionMethod"  flat solo
+                        @blur="whatisFunctionMethodFalse"
                         auto-grow
                      ></v-textarea>
                   </v-flex>
@@ -95,9 +98,32 @@
                      <br>
                      <span class="textfm2 black--text" style="font-size:15px"> {{greet}}</span>
                   </v-flex>
-                  
-                 
-
+                  <v-flex v-if="newsImgsUrl.length != 1 && newsImgsUrl.length < 4 " class="" xs12>
+                     <v-layout row wrap>
+                        <v-card depressed flat class="ml-5 mx-2 ">
+                           <span v-for="(thisUrl, index) in newsImgsUrl" :key="index" class="mr-1" >
+                              <img
+                                 style="width:35%;border-radius:5px !important;border:1px solid #E0E0E0"  
+                                 :src="thisUrl.imgUrl"
+                              >
+                           </span>
+                        </v-card>
+                     </v-layout>
+                  </v-flex>
+                  <v-flex v-else-if="newsImgsUrl.length == 1" class="" xs12>
+                     <v-layout row wrap>
+                        <v-card depressed flat class="ml-5 mx-2 ">
+                           <span style="min-height:100px !important" v-for="(thisUrl, index) in newsImgsUrl" :key="index" class="mr-1" >
+                              <!-- <v-progress-linear></v-progress-linear> -->
+                              <img
+                                 style="width:100%;border-radius:5px !important;border:1px solid #E0E0E0"  
+                                 :src="thisUrl.imgUrl"
+                              >
+                           </span>
+                        </v-card>
+                     </v-layout>
+                  </v-flex>
+                  <h3>{{imgsPercentage}}</h3>
                   <!-- <v-flex xs9 class="mb-1" >
                      <v-layout>
                         <v-btn
@@ -134,9 +160,52 @@
 
                   </v-flex> -->
 
-                  <v-flex xs11 class="text-xs-right" v-if="whatisFunction" >
-                     <v-spacer></v-spacer>
-                     <v-btn small round :disabled="postedDataNews"  depressed color="blue" @click="makePost(userData)" class="white--text font-weight-black caption textDefault"> Post </v-btn>
+                  <v-flex xs12 class="mx-2" v-if="whatisFunction" >
+                     <v-layout row wrap>
+                         <v-spacer></v-spacer>
+                        <!--
+                        <v-tooltip content-class="jieToolHeart" color="grey darken-4"  top>
+                           <span style="margin:3px;font-size:11px" class="text-xs-center"> Add photos </span>
+                           <v-layout justify-center>
+                           <div class="" style="
+                              position:absolute;
+                              margin-top:5px;
+                              margin-bottom:5px;
+                              width: 0;
+                              height: 0;
+                              border-left: 6px solid transparent;
+                              border-right: 6px solid transparent;
+                              border-top: 6px solid #212121;"
+                           ></div>
+                           </v-layout> 
+                           <v-btn slot="activator" style="margin-top:-2px;" large icon flat depressed color="blue" @click="test" class="white--text font-weight-black caption textDefault"> 
+                              <v-avatar color="" tile size="20" >
+                                 <img src="https://png.icons8.com/ios/50/2196F3/stack-of-photos.png">
+                              </v-avatar>
+                           </v-btn>
+                        </v-tooltip> -->
+                        <v-btn small   :disabled="postedDataNews"  depressed color="blue" @click="makePost(userData)" class="white--text font-weight-black caption textDefault"> Post </v-btn>
+                        <!-- <v-tooltip content-class="jieToolHeart" color="grey darken-4"  top>
+                           <span style="margin:3px;font-size:11px" class="text-xs-center"> Cancel </span>
+                           <v-layout justify-center>
+                           <div class="" style="
+                              position:absolute;
+                              margin-top:5px;
+                              margin-bottom:5px;
+                              width: 0;
+                              height: 0;
+                              border-left: 6px solid transparent;
+                              border-right: 6px solid transparent;
+                              border-top: 6px solid #212121;"
+                           ></div>
+                           </v-layout> 
+                           <v-btn slot="activator" @click="whatisFunctionMethodFalse" style="margin-top:-2px;" large icon flat depressed color="red lighten-3" class="white--text font-weight-black caption textDefault"> 
+                              <v-avatar color="" tile size="28" >
+                                 <img src="https://png.icons8.com/ios/50/EF9A9A/multiply-filled.png">
+                              </v-avatar>
+                           </v-btn>
+                        </v-tooltip> -->
+                     </v-layout>
                   </v-flex>
                </v-layout>
                <!-- <v-layout>
@@ -153,7 +222,7 @@
            
                <v-card flat  v-for="newsfeed in newsfeeds " :key="newsfeed.keyIndex" class="mt-1" >
                   <!-- <v-progress-linear active height="2" style="margin:0px !important" color="grey lighten-2" :indeterminate="false"></v-progress-linear> -->
-                  <v-layout wrap class="newscard py-2" >
+                  <v-layout wrap class="newscard pt-2" >
                      <v-flex xs12 class="mx-2">
                         <v-layout>
                         <v-btn @click="profileMenu" color="" icon style="height:34px !important; width:34px !important" class=" jieleftNav"  flat>
@@ -204,13 +273,13 @@
 
                      </v-flex>
 
-                     <v-flex  style="margin-top:-20px;" xs12  >
+                     <v-flex  style="margin-top:-15px;" xs12  >
                         <v-layout class="wrap row ml-1">
                            <v-textarea
                               v-if="newsfeed.data.message.length <= 80 & newsfeed.data.image == ''" 
                               flat readonly background-color="transparent"
                               hide-details rows="1" solo auto-grow
-                              class="  newslineHeight "
+                              class="newslineHeight "
                               style="word-wrap: break-word;font-size:25px !important;letter-spacing:1.34"
                               v-model="newsfeed.data.message"
                            ></v-textarea>
@@ -303,7 +372,31 @@
                                     </v-tooltip>
                                  </v-btn>
 
-                                 <v-btn flat icon large class="mx-4 commentbtn" :ripple="false"  color="transparent">
+                                 <v-btn v-if="newsfeed.whoComments[userData['ckcm-network_token_id']] != null" flat icon large class="mx-4 commentbtnActive" :ripple="false"  color="transparent">
+                                    <v-tooltip content-class="jieTool" color="grey darken-4"  top>
+                                       <v-avatar  slot="activator" color="" tile size="20" class="mr-1">
+                                          <v-icon style="font-size:18px">mdi-comment-multiple</v-icon>
+                                       </v-avatar>
+                                       <span style="margin:3px;font-size:12px" > Comment </span>
+                                          <v-layout justify-center>
+                                             <div class="" style="
+                                                position:absolute;
+                                                margin-top:5px;
+                                                margin-bottom:5px;
+                                                width: 0;
+                                                height: 0;
+                                                border-left: 6px solid transparent;
+                                                border-right: 6px solid transparent;
+                                                border-top: 6px solid #212121;"
+                                             ></div>
+                                          </v-layout> 
+                                    </v-tooltip>
+                                    <div style="margin-left:4px;margin-top:3px;font-size:12px;font-weight:bold;line-height:1;">
+                                       <span v-if="newsfeed.comments != 0 ">{{newsfeed.comments}}</span>
+                                    </div>
+                                 </v-btn>
+
+                                 <v-btn v-else flat icon large class="mx-4 commentbtn" :ripple="false"  color="transparent">
                                     <v-tooltip content-class="jieTool" color="grey darken-4"  top>
                                        <v-avatar  slot="activator" color="" tile size="20" class="mr-1">
                                           <v-icon style="font-size:18px">mdi-comment-multiple-outline</v-icon>
@@ -322,10 +415,11 @@
                                              ></div>
                                           </v-layout> 
                                     </v-tooltip>
-                                    <div style="margin-top:3px;font-size:12px;font-weight:bold;line-height:1;">
-                                       1
+                                    <div style="margin-left:4px;margin-top:3px;font-size:12px;font-weight:bold;line-height:1;">
+                                       <span v-if="newsfeed.comments != 0 ">{{newsfeed.comments}}</span>
                                     </div>
                                  </v-btn>
+
                                  
 
                                  <v-btn style="margin-left:-2px" class="messagebtn" :ripple="false"  flat icon large color="transparent">
@@ -357,102 +451,160 @@
                            </v-flex>
                         </v-layout>
                      </v-flex>
+                     <v-layout row wrap class="pb-1 jieSvgBg1">
+                        <v-flex class="mx-3" xs12 v-if="newsfeed.commented != null">
+                           <v-divider class="grey lighten-3"></v-divider>
+                        </v-flex>
 
-                     <v-flex class="mx-3" xs12 v-if="newsfeed.commented != null">
-                        <v-divider class="grey lighten-3"></v-divider>
-                     </v-flex>
+                        <v-flex xs12 class="mx-2  ">
+                           <v-flex xs12 v-for="commented in newsfeed.commentedLimit" :key="commented['.key']">
+                              <v-layout v-if="commented.userId == userData['ckcm-network_token_id']">
+                                 <div  class=" mt-3">
+                                    <v-btn @click="profileMenu" color="" icon style="height:34px !important; width:34px !important;margin-top:-5px" class=" jieleftNav"  flat>
+                                       <v-badge color="white"  overlap class="jieBadgeNews">
+                                          <v-avatar class="mr-2 " color="grey lighten-3" size="32">
+                                             <img :src="commented.photoUrl" alt="">
+                                          </v-avatar>
+                                       </v-badge>
+                                    </v-btn> 
+                                 </div>
+                              
+                                 <v-flex xs11  style="margin-top:12px;margin-left:-4px" >
+                                    <p style="word-wrap:break-word !important;max-width:98%;bwidth: auto !important" class=" green lighten-5 jie3Commented">
+                                       <router-link class="caption font-weight-bold blue--text text--darken-3 aJie" to="/profile/jiecel.marianne">{{commented.displayName}}</router-link>
+                                       {{commented.data}}
+                                    </p>
+                                    <div class="caption ml-3" style="margin-top:-13px; ">
+                                       <span>
+                                       <a style="font-size:12px;" class="aJie grey--text mt-2  textfm1" @click="test"> Like </a> 
+                                          <v-icon size="2px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
+                                       </span>
+                                       <span class="ml-3">
+                                       <a style="font-size:12px;" class=" aJie grey--text mt-2  textfm1" @click="test"> Dislike </a> 
+                                          <v-icon size="2px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
+                                       </span>
+                                       <span class="ml-3">
+                                       <a style="font-size:12px;" class=" aJie grey--text mt-2  textfm1" @click="test"> Reply </a> 
+                                          <v-icon size="2px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
+                                       </span>
+                                       <span class="ml-3">
+                                       <span style="font-size:13px;" class=" grey--text mt-2  textfm1" >  </span> 
+                                       </span>
 
-                     <v-flex xs12 class="mx-2 ">
-                        <v-flex xs12 v-for="commented in newsfeed.commentedLimit" :key="commented['.key']">
+                                    </div>
+                                 </v-flex>
+
+                              </v-layout>
+
+                              <v-layout v-else>
+                                 <div  class=" mt-3">
+                                    <v-btn @click="profileMenu" color="" icon style="height:34px !important; width:34px !important;margin-top:-5px" class=" jieleftNav"  flat>
+                                       <v-badge color="white"  overlap class="jieBadgeNews">
+                                          <v-avatar class="mr-2 " color="grey lighten-3" size="32">
+                                             <img :src="commented.photoUrl" alt="">
+                                          </v-avatar>
+                                       </v-badge>
+                                    </v-btn> 
+                                 </div>
+                              
+                                 <v-flex xs11  style="margin-top:12px;margin-left:-4px" >
+                                    <p style="word-wrap:break-word !important;max-width:98%;bwidth: auto !important" class=" grey lighten-3 jie3Commented">
+                                       <router-link class="caption font-weight-bold blue--text text--darken-3 aJie" to="/profile/jiecel.marianne">{{commented.displayName}}</router-link>
+                                       {{commented.data}}
+                                    </p>
+                                    <div class="caption ml-3" style="margin-top:-13px; ">
+                                       <span>
+                                       <a style="font-size:12px;" class="aJie grey--text mt-2  textfm1" @click="test"> Like </a> 
+                                          <v-icon size="2px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
+                                       </span>
+                                       <span class="ml-3">
+                                       <a style="font-size:12px;" class=" aJie grey--text mt-2  textfm1" @click="test"> Dislike </a> 
+                                          <v-icon size="2px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
+                                       </span>
+                                       <span class="ml-3">
+                                       <a style="font-size:12px;" class=" aJie grey--text mt-2  textfm1" @click="test"> Reply </a> 
+                                          <v-icon size="2px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
+                                       </span>
+                                       <span class="ml-3">
+                                       <span style="font-size:13px;" class=" grey--text mt-2  textfm1" >  </span> 
+                                       </span>
+
+                                    </div>
+                                 </v-flex>
+
+                              </v-layout>
+                  
+                           </v-flex>
+                        </v-flex>
+
+                        <v-flex v-if="newsfeed.someoneComment.someone == true & disableWrite == false" xs12 class="mx-5 px-2 mt-2">
+                           <div xs12>
+                              <v-progress-circular
+                                 :width="1"
+                                 :size="13"
+                                 color="blue lighten-1"
+                                 indeterminate
+                              ></v-progress-circular>
+                              <span class="caption font-weight-thin grey--text textfm1">Someone is typing...</span>
+                           </div>
+                        </v-flex>
+
+                        <v-flex xs12 class="mx-2">
                            <v-layout>
-                              <div  class=" mt-3">
-                                 <v-btn @click="profileMenu" color="" icon style="height:34px !important; width:34px !important;margin-top:-5px" class=" jieleftNav"  flat>
+                              <v-card flat xs1 class="transparent mt-3">
+                                 <v-btn @click="profileMenu" color="transparent" icon style="height:34px !important; width:34px !important;margin-top:-5px" class=" jieleftNav"  flat>
                                     <v-badge color="white"  overlap class="jieBadgeNews">
                                        <v-avatar class="mr-2 " color="grey lighten-3" size="32">
-                                          <img :src="commented.photoUrl" alt="">
+                                          <img :src="userData.photoUrl" alt="">
                                        </v-avatar>
                                     </v-badge>
                                  </v-btn> 
-                              </div>
-                           
-                              <v-flex xs11  style="margin-top:12px;margin-left:-4px" >
-                                 <p style="width: auto !important" class=" grey lighten-3 jie3Commented">
-                                    <router-link class="caption font-weight-bold blue--text text--darken-3 aJie" to="/profile/jiecel.marianne">{{commented.displayName}}</router-link>
-                                    {{commented.data}}
-                                 </p>
-                                 <!-- <div class="caption ml-2" style="margin-top:-13px; ">
-                                    <span>
-                                    <a style="font-size:13px;" class="aJie grey--text mt-2  textfm1" @click="test"> Like </a> 
-                                       <v-icon size="3px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
-                                    </span>
-                                    <span class="ml-3">
-                                    <a style="font-size:13px;" class=" aJie grey--text mt-2  textfm1" @click="test"> Dislike </a> 
-                                       <v-icon size="3px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
-                                    </span>
-                                    <span class="ml-3">
-                                    <a style="font-size:13px;" class=" aJie grey--text mt-2  textfm1" @click="test"> Reply </a> 
-                                       <v-icon size="3px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
-                                    </span>
-                                    <span class="ml-3">
-                                    <span style="font-size:13px;" class=" grey--text mt-2  textfm1" >  </span> 
-                                    </span>
-
-                                 </div> -->
+                              </v-card>
+                              <v-flex  xs11 style="margin-top:-7px;margin-left:-5px">
+                                 <v-form @submit.prevent="commentPost(newsfeed,newsfeed.keyIndex, userData, newsfeed.commentText)">
+                                    <v-text-field  
+                                       color="blue lighten-2"
+                                       background-color="white lighten-3"
+                                       single-line
+                                       solo
+                                       hint="Press Enter to comment"
+                                       flat
+                                       height="32"
+                                       full-width
+                                       v-model="newsfeed.commentText"
+                                       :loading="false"
+                                       placeholder="Write a comment .. . "
+                                       @blur="blurPost(newsfeed.keyIndex, userData, newsfeed.commentText)"
+                                       @input="inputPost(newsfeed.keyIndex, userData, newsfeed.commentText)"
+                                       @click:append="commentPost(newsfeed,newsfeed.keyIndex, userData, newsfeed.commentText)"
+                                       append-icon="mdi-send"
+                                       style="font-size:12px"
+                                       class="font-weight-thin-light jie3 "
+                                    ></v-text-field>
+                                    <!-- <v-textarea  
+                                       color="blue lighten-2"
+                                       background-color="grey lighten-5"
+                                       solo
+                                       auto-grow
+                                       rows="1"
+                                       flat
+                                       hint="Press Enter to comment"
+                                       v-model="newsfeed.commentText"
+                                       :loading="false"
+                                       placeholder="Write a comment .. . "
+                                       @blur="blurPost(newsfeed.keyIndex, userData, newsfeed.commentText)"
+                                       @input="inputPost(newsfeed.keyIndex, userData, newsfeed.commentText)"
+                                       @click:append="commentPost(newsfeed.keyIndex, userData, newsfeed.commentText)"
+                                       append-icon="mdi-send"
+                                       style="font-size:12px"
+                                       class="font-weight-thin-light  writeComment  "
+                                    ></v-textarea> -->
+                                 </v-form>
                               </v-flex>
-
+                           
                            </v-layout>
                         </v-flex>
-                     </v-flex>
-
-                     <v-flex v-if="newsfeed.someoneComment.someone == true & disableWrite == false" xs12 class="mx-5 px-2 mt-2">
-                        <div xs12>
-                           <v-progress-circular
-                              :width="1"
-                              :size="13"
-                              color="blue lighten-1"
-                              indeterminate
-                           ></v-progress-circular>
-                           <span class="caption font-weight-thin grey--text textfm1">Someone is typing...</span>
-                        </div>
-                     </v-flex>
-
-                     <v-flex xs12 class="mx-2">
-                        <v-layout>
-                           <v-card flat xs1 class="transparent mt-3">
-                              <v-btn @click="profileMenu" color="transparent" icon style="height:34px !important; width:34px !important;margin-top:-5px" class=" jieleftNav"  flat>
-                                 <v-badge color="white"  overlap class="jieBadgeNews">
-                                    <v-avatar class="mr-2 " color="grey lighten-3" size="32">
-                                       <img :src="userData.photoUrl" alt="">
-                                    </v-avatar>
-                                 </v-badge>
-                              </v-btn> 
-                           </v-card>
-                           <v-flex  xs11 style="margin-top:-7px;margin-left:-5px">
-                              <v-form @submit.prevent="commentPost(newsfeed.keyIndex, userData, newsfeed.commentText)">
-                                 <v-text-field  
-                                    color="blue lighten-2"
-                                    background-color="grey lighten-5"
-                                    single-line
-                                    solo
-                                    hint="Press Enter to comment"
-                                    flat
-                                    height="32"
-                                    full-width
-                                    v-model="newsfeed.commentText"
-                                    :loading="false"
-                                    placeholder="Write a comment .. . "
-                                    @blur="blurPost(newsfeed.keyIndex, userData, newsfeed.commentText)"
-                                    @input="inputPost(newsfeed.keyIndex, userData, newsfeed.commentText)"
-                                    @click:append="commentPost(newsfeed.keyIndex, userData, newsfeed.commentText)"
-                                    append-icon="mdi-send"
-                                    style="font-size:13px"
-                                    class="font-weight-thin-light jie3 textfm1  "
-                                 ></v-text-field>
-                              </v-form>
-                           </v-flex>
-                        
-                        </v-layout>
-                     </v-flex>
+                     </v-layout>
                   </v-layout>
                </v-card>
 
@@ -519,7 +671,13 @@
 <!-- xs12 sm12 md8 lg7 -->
  <!-- xs0 sm0 md4 lg4 -->
          <v-flex  class="md4 hidden-sm-and-down" >
-            <v-card flat class="grey lighten-4 my-1" height="50px">
+            <v-card flat class="white lighten-4 my-1" height="50px">
+            </v-card>
+            <v-card flat  class="grey lighten-4 mb-2" height="150px">
+            </v-card>
+            <v-card flat class=" grey lighten-4 my-1" height="50px">
+            </v-card>
+            <v-card flat  class="grey lighten-4 mb-2" height="150px">
             </v-card>
             <v-card flat  class="grey lighten-4 mb-2" height="150px">
             </v-card>
@@ -543,6 +701,8 @@ export default {
       }
    },
    data: () => ({
+      imgsPercentage: 0,
+      newsImgsUrl: [],
       disableWrite: false,
       doneLoadNews:true,
       AnimateHeart: '',
@@ -595,6 +755,67 @@ export default {
       },
    },
    methods: {
+      photoBtn() {
+         this.$refs.newsFile.click();
+      },
+      newPostBtn() {
+         this.$nextTick(() => this.$refs.newPost.focus());
+      },
+      createImage(file) {
+         // this.createImage(this.newsImgs[0]);
+         var image = new Image();
+         var reader = new FileReader();
+         var vm = this;
+         reader.onload = (e) => {
+           vm.ImgsReader = e.target.result;
+         };
+         reader.readAsDataURL(file);
+      },
+      addFile(event) {
+         let vm = this;
+         var idCode =  Math.random().toString(36).substring(2, 15)  + Math.random().toString(36).substring(2, 15)  + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+         var file = event.target.files;
+         var imgKeys = Object.keys(file);
+         if(file.length > 0) {
+            console.log("only1")
+               imgKeys.forEach( function(key) {
+                  var storageRef = firebase.storage().ref('dummyUploads/'+ idCode+file[key].name);
+                  var task = storageRef.put(file[key]);
+                  task.on('state_changed', 
+                     function progress(snapshot) {
+                        var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                        // vm.newsImgsUrl[key].percent = percentage;
+                        console.log(percentage)
+                        vm.imgsPercentage = percentage
+                        if(percentage == 100) {
+                           var starsRef = firebase.storage().ref(snapshot.metadata.fullPath);
+                           starsRef.getDownloadURL().then(function(url) {
+                              // vm.newsImgsUrl[key].imgUrl = url;
+                              vm.newsImgsUrl[key] = Object.assign({}, vm.newsImgsUrl[key], {
+                                 imgUrl : url
+                              })
+                           })
+                        }
+                     },
+                     function error(error) {
+                        console.log(error);
+                     },
+                     function complete() {
+                        // alert('complete')
+                     }
+                  );
+               });
+            // storageRef.put()
+         }
+         // } else if(file.length > 1 && file <= 4) {
+         //    console.log(file.length)
+         //    //1-4
+         // } else {
+         //    console.log(file.length)
+         //    //rest
+         // }
+        
+      },
       newsAtUnlike(newsfeed){
          this.disAbleReact=true
          this.AnimateHeart = newsfeed.keyIndex
@@ -659,7 +880,7 @@ export default {
       infiniteHandler($state) {
          this.doneLoadNews=true
          let vm = this;
-         vm.newsFeedLimit += 1;
+         vm.newsFeedLimit += 5;
          // setTimeout(() => {
             var newsFeedsValue  = db.ref('Newsfeed').limitToLast(vm.newsFeedLimit);
             newsFeedsValue.on('value', function(gotData) {
@@ -667,7 +888,7 @@ export default {
                vm.newsFeedsValueRef = gotData.val()
                keys.forEach( function (key) {
                   vm.newsFeedsValueRef[key].keyIndex = key
-                  var commentedValue = db.ref(`Newsfeed/${key}/commented`).limitToLast(6);
+                  var commentedValue = db.ref(`Newsfeed/${key}/commented`).limitToLast(4);
                   commentedValue.on('value', function (commentedData) {
                      vm.newsFeedsValueRef[key].commentedLimit = commentedData.val()
                      // console.log(commentedData.val())
@@ -718,8 +939,18 @@ export default {
          }
          });
       },
-      commentPost(id,user,commentText) {
+      commentPost(newsfeed, id,user,commentText) {
          let vm = this
+         let countRecent = newsfeed.comments
+         let myId = _.filter(newsfeed.commented, { userId : vm.userData['ckcm-network_token_id']})
+         if (myId.length == 0 ){
+            db.ref(`Newsfeed/${id}`).update({
+               comments: countRecent + 1
+            })
+            db.ref(`Newsfeed/${id}/whoComments/${user['ckcm-network_token_id']}`).set({
+               userId: user['ckcm-network_token_id']
+            })
+         }
          db.ref(`Newsfeed/${id}/commented`).push().set({
             userId: user['ckcm-network_token_id'],
             displayName: user.displayName,
@@ -755,7 +986,9 @@ export default {
                someoneComment: false,
                commentText: "",
                likes: 0,
+               comments: 0,
                whoLikes: {php:'php'},
+               whoComments: {python:'python'},
                order: vm.orderValue + 1 
             }, function(error) {
             if (error) {
@@ -774,11 +1007,14 @@ export default {
 
       },
       whatisFunctionMethod () {
-         this.whatisClass = "mb-1 elevation-18"
+         this.whatisClass = "mb-1 elevation-24"
          this.whatisFunction = true
          this.whatisFlex = "xs11"
       },
       whatisFunctionMethodFalse () {
+         // this.whatisFunction = false
+         // this.whatisClass = ""
+         // this.whatisFlex = "xs7"
          if(this.postedData.message == "") {
             this.whatisFunction = false
             this.whatisClass = ""

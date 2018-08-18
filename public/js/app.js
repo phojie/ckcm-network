@@ -5600,6 +5600,8 @@ var usersRef = db.ref('users');
 var newsfeedRef = db.ref('Newsfeed').orderByChild('order');
 var order = db.ref('N_order/newsfeedOrder');
 
+// export const storage = app.storage().ref('newsFeedImages');
+
 // export const timestamp = app.ServerValue.TIMESTAMP();
 
 // to identify if data has change or added
@@ -29167,7 +29169,7 @@ var fdetails = Object(__WEBPACK_IMPORTED_MODULE_0__ckcmHelpers_auth__["b" /* get
          // localStorage.user = JSON.stringify(state.accountLoginData);
          // console.log(state.accountLoginData)
          var id = state.accountLoginData.user["ckcm-network_token_id"];
-         __WEBPACK_IMPORTED_MODULE_1__firebase__["b" /* db */].ref('users/' + id).set({
+         __WEBPACK_IMPORTED_MODULE_1__firebase__["b" /* db */].ref('users/' + id).update({
             status: "online",
             displayName: state.accountLoginData.user.displayName,
             photoUrl: state.accountLoginData.user.photoUrl,
@@ -29184,7 +29186,7 @@ var fdetails = Object(__WEBPACK_IMPORTED_MODULE_0__ckcmHelpers_auth__["b" /* get
       },
       logout: function logout(state) {
          var id = state.accountLoginData.user["ckcm-network_token_id"];
-         __WEBPACK_IMPORTED_MODULE_1__firebase__["b" /* db */].ref('users/' + id).set({
+         __WEBPACK_IMPORTED_MODULE_1__firebase__["b" /* db */].ref('users/' + id).update({
             status: "offline",
             displayName: state.accountLoginData.user.displayName,
             photoUrl: state.accountLoginData.user.photoUrl,
@@ -55929,7 +55931,7 @@ var render = function() {
                 { staticClass: "pb-2", attrs: { flat: "" } },
                 [
                   _c("v-card-media", {
-                    staticClass: "blue lighten-2 jieSvgBg1",
+                    staticClass: "blue lighten-2 jieCkcmbg",
                     attrs: { height: "110px" }
                   }),
                   _vm._v(" "),
@@ -57817,6 +57819,164 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -57833,6 +57993,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
    },
    data: function data() {
       return {
+         imgsPercentage: 0,
+         newsImgsUrl: [],
          disableWrite: false,
          doneLoadNews: true,
          AnimateHeart: '',
@@ -57883,6 +58045,66 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
    },
    methods: {
+      photoBtn: function photoBtn() {
+         this.$refs.newsFile.click();
+      },
+      newPostBtn: function newPostBtn() {
+         var _this = this;
+
+         this.$nextTick(function () {
+            return _this.$refs.newPost.focus();
+         });
+      },
+      createImage: function createImage(file) {
+         // this.createImage(this.newsImgs[0]);
+         var image = new Image();
+         var reader = new FileReader();
+         var vm = this;
+         reader.onload = function (e) {
+            vm.ImgsReader = e.target.result;
+         };
+         reader.readAsDataURL(file);
+      },
+      addFile: function addFile(event) {
+         var vm = this;
+         var idCode = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+         var file = event.target.files;
+         var imgKeys = Object.keys(file);
+         if (file.length > 0) {
+            console.log("only1");
+            imgKeys.forEach(function (key) {
+               var storageRef = firebase.storage().ref('dummyUploads/' + idCode + file[key].name);
+               var task = storageRef.put(file[key]);
+               task.on('state_changed', function progress(snapshot) {
+                  var percentage = snapshot.bytesTransferred / snapshot.totalBytes * 100;
+                  // vm.newsImgsUrl[key].percent = percentage;
+                  console.log(percentage);
+                  vm.imgsPercentage = percentage;
+                  if (percentage == 100) {
+                     var starsRef = firebase.storage().ref(snapshot.metadata.fullPath);
+                     starsRef.getDownloadURL().then(function (url) {
+                        // vm.newsImgsUrl[key].imgUrl = url;
+                        vm.newsImgsUrl[key] = Object.assign({}, vm.newsImgsUrl[key], {
+                           imgUrl: url
+                        });
+                     });
+                  }
+               }, function error(error) {
+                  console.log(error);
+               }, function complete() {
+                  // alert('complete')
+               });
+            });
+            // storageRef.put()
+         }
+         // } else if(file.length > 1 && file <= 4) {
+         //    console.log(file.length)
+         //    //1-4
+         // } else {
+         //    console.log(file.length)
+         //    //rest
+         // }
+      },
       newsAtUnlike: function newsAtUnlike(newsfeed) {
          this.disAbleReact = true;
          this.AnimateHeart = newsfeed.keyIndex;
@@ -57893,7 +58115,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          this.disAbleReact = false;
       },
       newsAtLike: function newsAtLike(newsfeed) {
-         var _this = this;
+         var _this2 = this;
 
          // this.AnimateHeart="heartFav"
          this.AnimateHeart = newsfeed.keyIndex;
@@ -57901,7 +58123,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          axios.get('https://api.ipgeolocation.io/ipgeo?apiKey=90a83c7326cc475f8048cf81362e1df0').then(function (response) {
             // var now= moment(response.data.time_zone.current_time).tz(response.data.time_zone.name).format('MMMM D YYYY, kk:mm:ss');
             var now = response.data.time_zone.current_time;
-            var vm = _this;
+            var vm = _this2;
             // var now = moment().format("MMMM D YYYY, kk:mm:ss");
             // console.log(now)
             __WEBPACK_IMPORTED_MODULE_0__firebase_js__["b" /* db */].ref('Newsfeed/' + newsfeed.keyIndex + '/whoLikes/' + vm.userData['ckcm-network_token_id']).set({
@@ -57948,7 +58170,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       infiniteHandler: function infiniteHandler($state) {
          this.doneLoadNews = true;
          var vm = this;
-         vm.newsFeedLimit += 1;
+         vm.newsFeedLimit += 5;
          // setTimeout(() => {
          var newsFeedsValue = __WEBPACK_IMPORTED_MODULE_0__firebase_js__["b" /* db */].ref('Newsfeed').limitToLast(vm.newsFeedLimit);
          newsFeedsValue.on('value', function (gotData) {
@@ -57956,7 +58178,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             vm.newsFeedsValueRef = gotData.val();
             keys.forEach(function (key) {
                vm.newsFeedsValueRef[key].keyIndex = key;
-               var commentedValue = __WEBPACK_IMPORTED_MODULE_0__firebase_js__["b" /* db */].ref('Newsfeed/' + key + '/commented').limitToLast(6);
+               var commentedValue = __WEBPACK_IMPORTED_MODULE_0__firebase_js__["b" /* db */].ref('Newsfeed/' + key + '/commented').limitToLast(4);
                commentedValue.on('value', function (commentedData) {
                   vm.newsFeedsValueRef[key].commentedLimit = commentedData.val();
                   // console.log(commentedData.val())
@@ -58007,8 +58229,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                }
          });
       },
-      commentPost: function commentPost(id, user, commentText) {
+      commentPost: function commentPost(newsfeed, id, user, commentText) {
          var vm = this;
+         var countRecent = newsfeed.comments;
+         var myId = _.filter(newsfeed.commented, { userId: vm.userData['ckcm-network_token_id'] });
+         if (myId.length == 0) {
+            __WEBPACK_IMPORTED_MODULE_0__firebase_js__["b" /* db */].ref('Newsfeed/' + id).update({
+               comments: countRecent + 1
+            });
+            __WEBPACK_IMPORTED_MODULE_0__firebase_js__["b" /* db */].ref('Newsfeed/' + id + '/whoComments/' + user['ckcm-network_token_id']).set({
+               userId: user['ckcm-network_token_id']
+            });
+         }
          __WEBPACK_IMPORTED_MODULE_0__firebase_js__["b" /* db */].ref('Newsfeed/' + id + '/commented').push().set({
             userId: user['ckcm-network_token_id'],
             displayName: user.displayName,
@@ -58028,12 +58260,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          });
       },
       makePost: function makePost(user) {
-         var _this2 = this;
+         var _this3 = this;
 
          axios.get('https://api.ipgeolocation.io/ipgeo?apiKey=90a83c7326cc475f8048cf81362e1df0').then(function (response) {
             // var now= moment(response.data.time_zone.current_time).tz(response.data.time_zone.name).format('MMMM D YYYY, kk:mm:ss');
             var now = response.data.time_zone.current_time;
-            var vm = _this2;
+            var vm = _this3;
             // var now = moment().format("MMMM D YYYY, kk:mm:ss");
             // console.log(now)
             __WEBPACK_IMPORTED_MODULE_0__firebase_js__["b" /* db */].ref('Newsfeed/').push().set({
@@ -58045,7 +58277,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                someoneComment: false,
                commentText: "",
                likes: 0,
+               comments: 0,
                whoLikes: { php: 'php' },
+               whoComments: { python: 'python' },
                order: vm.orderValue + 1
             }, function (error) {
                if (error) {
@@ -58063,11 +58297,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          });
       },
       whatisFunctionMethod: function whatisFunctionMethod() {
-         this.whatisClass = "mb-1 elevation-18";
+         this.whatisClass = "mb-1 elevation-24";
          this.whatisFunction = true;
          this.whatisFlex = "xs11";
       },
       whatisFunctionMethodFalse: function whatisFunctionMethodFalse() {
+         // this.whatisFunction = false
+         // this.whatisClass = ""
+         // this.whatisFlex = "xs7"
          if (this.postedData.message == "") {
             this.whatisFunction = false;
             this.whatisClass = "";
@@ -58201,7 +58438,7 @@ var render = function() {
             [
               _c(
                 "v-card",
-                { staticClass: "jieSvgBg1  ", attrs: { flat: "" } },
+                { attrs: { flat: "" } },
                 [
                   _c(
                     "v-layout",
@@ -58233,7 +58470,8 @@ var render = function() {
                                       "transparent light-blue--text text--darken-1",
                                     depressed: "",
                                     small: ""
-                                  }
+                                  },
+                                  on: { click: _vm.newPostBtn }
                                 },
                                 [
                                   _c(
@@ -58289,34 +58527,58 @@ var render = function() {
                               ),
                               _vm._v(" "),
                               _c(
-                                "v-btn",
+                                "div",
                                 {
-                                  staticClass:
-                                    "caption font-weigth-bold  textDefault",
-                                  attrs: {
-                                    round: "",
-                                    color:
-                                      "transparent brown--text text--darken-1",
-                                    depressed: "",
-                                    small: ""
+                                  staticStyle: {
+                                    position: "relative:overflow:hidden",
+                                    display: "inline-block"
                                   }
                                 },
                                 [
                                   _c(
-                                    "v-avatar",
-                                    { attrs: { tile: "", size: "18" } },
+                                    "v-btn",
+                                    {
+                                      staticClass:
+                                        "caption font-weigth-bold  textDefault",
+                                      attrs: {
+                                        round: "",
+                                        color:
+                                          "transparent brown--text text--darken-1",
+                                        depressed: "",
+                                        small: ""
+                                      },
+                                      on: { click: _vm.photoBtn }
+                                    },
                                     [
-                                      _c("img", {
-                                        attrs: {
-                                          src:
-                                            "https://png.icons8.com/ios/50/6D4C41/image.png"
-                                        }
-                                      })
-                                    ]
+                                      _c(
+                                        "v-avatar",
+                                        { attrs: { tile: "", size: "18" } },
+                                        [
+                                          _c("img", {
+                                            attrs: {
+                                              src:
+                                                "https://png.icons8.com/ios/50/6D4C41/image.png"
+                                            }
+                                          })
+                                        ]
+                                      ),
+                                      _vm._v(
+                                        "\r\n                              Photo/Album\r\n                           "
+                                      )
+                                    ],
+                                    1
                                   ),
-                                  _vm._v(
-                                    "\r\n                           Photo/Album\r\n                        "
-                                  )
+                                  _vm._v(" "),
+                                  _c("input", {
+                                    ref: "newsFile",
+                                    staticStyle: { display: "none" },
+                                    attrs: {
+                                      accept: "image/*",
+                                      type: "file",
+                                      multiple: ""
+                                    },
+                                    on: { input: _vm.addFile }
+                                  })
                                 ],
                                 1
                               ),
@@ -58425,8 +58687,8 @@ var render = function() {
                         },
                         [
                           _c("v-textarea", {
-                            staticClass: " ",
-                            staticStyle: { "font-size": "15px !important" },
+                            ref: "newPost ",
+                            staticClass: "whatIs  subheading",
                             attrs: {
                               "background-color": "transparent",
                               "hide-details": "",
@@ -58438,7 +58700,7 @@ var render = function() {
                               "auto-grow": ""
                             },
                             on: {
-                              click: _vm.whatisFunctionMethod,
+                              focus: _vm.whatisFunctionMethod,
                               blur: _vm.whatisFunctionMethodFalse
                             },
                             model: {
@@ -58484,35 +58746,131 @@ var render = function() {
                           )
                         : _vm._e(),
                       _vm._v(" "),
+                      _vm.newsImgsUrl.length != 1 && _vm.newsImgsUrl.length < 4
+                        ? _c(
+                            "v-flex",
+                            { attrs: { xs12: "" } },
+                            [
+                              _c(
+                                "v-layout",
+                                { attrs: { row: "", wrap: "" } },
+                                [
+                                  _c(
+                                    "v-card",
+                                    {
+                                      staticClass: "ml-5 mx-2 ",
+                                      attrs: { depressed: "", flat: "" }
+                                    },
+                                    _vm._l(_vm.newsImgsUrl, function(
+                                      thisUrl,
+                                      index
+                                    ) {
+                                      return _c(
+                                        "span",
+                                        { key: index, staticClass: "mr-1" },
+                                        [
+                                          _c("img", {
+                                            staticStyle: {
+                                              width: "35%",
+                                              "border-radius": "5px !important",
+                                              border: "1px solid #E0E0E0"
+                                            },
+                                            attrs: { src: thisUrl.imgUrl }
+                                          })
+                                        ]
+                                      )
+                                    })
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        : _vm.newsImgsUrl.length == 1
+                          ? _c(
+                              "v-flex",
+                              { attrs: { xs12: "" } },
+                              [
+                                _c(
+                                  "v-layout",
+                                  { attrs: { row: "", wrap: "" } },
+                                  [
+                                    _c(
+                                      "v-card",
+                                      {
+                                        staticClass: "ml-5 mx-2 ",
+                                        attrs: { depressed: "", flat: "" }
+                                      },
+                                      _vm._l(_vm.newsImgsUrl, function(
+                                        thisUrl,
+                                        index
+                                      ) {
+                                        return _c(
+                                          "span",
+                                          {
+                                            key: index,
+                                            staticClass: "mr-1",
+                                            staticStyle: {
+                                              "min-height": "100px !important"
+                                            }
+                                          },
+                                          [
+                                            _c("img", {
+                                              staticStyle: {
+                                                width: "100%",
+                                                "border-radius":
+                                                  "5px !important",
+                                                border: "1px solid #E0E0E0"
+                                              },
+                                              attrs: { src: thisUrl.imgUrl }
+                                            })
+                                          ]
+                                        )
+                                      })
+                                    )
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          : _vm._e(),
+                      _vm._v(" "),
+                      _c("h3", [_vm._v(_vm._s(_vm.imgsPercentage))]),
+                      _vm._v(" "),
                       _vm.whatisFunction
                         ? _c(
                             "v-flex",
-                            {
-                              staticClass: "text-xs-right",
-                              attrs: { xs11: "" }
-                            },
+                            { staticClass: "mx-2", attrs: { xs12: "" } },
                             [
-                              _c("v-spacer"),
-                              _vm._v(" "),
                               _c(
-                                "v-btn",
-                                {
-                                  staticClass:
-                                    "white--text font-weight-black caption textDefault",
-                                  attrs: {
-                                    small: "",
-                                    round: "",
-                                    disabled: _vm.postedDataNews,
-                                    depressed: "",
-                                    color: "blue"
-                                  },
-                                  on: {
-                                    click: function($event) {
-                                      _vm.makePost(_vm.userData)
-                                    }
-                                  }
-                                },
-                                [_vm._v(" Post ")]
+                                "v-layout",
+                                { attrs: { row: "", wrap: "" } },
+                                [
+                                  _c("v-spacer"),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-btn",
+                                    {
+                                      staticClass:
+                                        "white--text font-weight-black caption textDefault",
+                                      attrs: {
+                                        small: "",
+                                        disabled: _vm.postedDataNews,
+                                        depressed: "",
+                                        color: "blue"
+                                      },
+                                      on: {
+                                        click: function($event) {
+                                          _vm.makePost(_vm.userData)
+                                        }
+                                      }
+                                    },
+                                    [_vm._v(" Post ")]
+                                  )
+                                ],
+                                1
                               )
                             ],
                             1
@@ -58536,7 +58894,7 @@ var render = function() {
                   [
                     _c(
                       "v-layout",
-                      { staticClass: "newscard py-2", attrs: { wrap: "" } },
+                      { staticClass: "newscard pt-2", attrs: { wrap: "" } },
                       [
                         _c(
                           "v-flex",
@@ -58723,7 +59081,7 @@ var render = function() {
                         _c(
                           "v-flex",
                           {
-                            staticStyle: { "margin-top": "-20px" },
+                            staticStyle: { "margin-top": "-15px" },
                             attrs: { xs12: "" }
                           },
                           [
@@ -58734,7 +59092,7 @@ var render = function() {
                                 (newsfeed.data.message.length <= 80) &
                                 (newsfeed.data.image == "")
                                   ? _c("v-textarea", {
-                                      staticClass: "  newslineHeight ",
+                                      staticClass: "newslineHeight ",
                                       staticStyle: {
                                         "word-wrap": "break-word",
                                         "font-size": "25px !important",
@@ -59182,53 +59540,97 @@ var render = function() {
                                           1
                                         ),
                                     _vm._v(" "),
-                                    _c(
-                                      "v-btn",
-                                      {
-                                        staticClass: "mx-4 commentbtn",
-                                        attrs: {
-                                          flat: "",
-                                          icon: "",
-                                          large: "",
-                                          ripple: false,
-                                          color: "transparent"
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "v-tooltip",
+                                    newsfeed.whoComments[
+                                      _vm.userData["ckcm-network_token_id"]
+                                    ] != null
+                                      ? _c(
+                                          "v-btn",
                                           {
+                                            staticClass:
+                                              "mx-4 commentbtnActive",
                                             attrs: {
-                                              "content-class": "jieTool",
-                                              color: "grey darken-4",
-                                              top: ""
+                                              flat: "",
+                                              icon: "",
+                                              large: "",
+                                              ripple: false,
+                                              color: "transparent"
                                             }
                                           },
                                           [
                                             _c(
-                                              "v-avatar",
+                                              "v-tooltip",
                                               {
-                                                staticClass: "mr-1",
                                                 attrs: {
-                                                  slot: "activator",
-                                                  color: "",
-                                                  tile: "",
-                                                  size: "20"
-                                                },
-                                                slot: "activator"
+                                                  "content-class": "jieTool",
+                                                  color: "grey darken-4",
+                                                  top: ""
+                                                }
                                               },
                                               [
                                                 _c(
-                                                  "v-icon",
+                                                  "v-avatar",
+                                                  {
+                                                    staticClass: "mr-1",
+                                                    attrs: {
+                                                      slot: "activator",
+                                                      color: "",
+                                                      tile: "",
+                                                      size: "20"
+                                                    },
+                                                    slot: "activator"
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "v-icon",
+                                                      {
+                                                        staticStyle: {
+                                                          "font-size": "18px"
+                                                        }
+                                                      },
+                                                      [
+                                                        _vm._v(
+                                                          "mdi-comment-multiple"
+                                                        )
+                                                      ]
+                                                    )
+                                                  ],
+                                                  1
+                                                ),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "span",
                                                   {
                                                     staticStyle: {
-                                                      "font-size": "18px"
+                                                      margin: "3px",
+                                                      "font-size": "12px"
+                                                    }
+                                                  },
+                                                  [_vm._v(" Comment ")]
+                                                ),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "v-layout",
+                                                  {
+                                                    attrs: {
+                                                      "justify-center": ""
                                                     }
                                                   },
                                                   [
-                                                    _vm._v(
-                                                      "mdi-comment-multiple-outline"
-                                                    )
+                                                    _c("div", {
+                                                      staticStyle: {
+                                                        position: "absolute",
+                                                        "margin-top": "5px",
+                                                        "margin-bottom": "5px",
+                                                        width: "0",
+                                                        height: "0",
+                                                        "border-left":
+                                                          "6px solid transparent",
+                                                        "border-right":
+                                                          "6px solid transparent",
+                                                        "border-top":
+                                                          "6px solid #212121"
+                                                      }
+                                                    })
                                                   ]
                                                 )
                                               ],
@@ -59236,62 +59638,150 @@ var render = function() {
                                             ),
                                             _vm._v(" "),
                                             _c(
-                                              "span",
+                                              "div",
                                               {
                                                 staticStyle: {
-                                                  margin: "3px",
-                                                  "font-size": "12px"
+                                                  "margin-left": "4px",
+                                                  "margin-top": "3px",
+                                                  "font-size": "12px",
+                                                  "font-weight": "bold",
+                                                  "line-height": "1"
                                                 }
                                               },
-                                              [_vm._v(" Comment ")]
+                                              [
+                                                newsfeed.comments != 0
+                                                  ? _c("span", [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          newsfeed.comments
+                                                        )
+                                                      )
+                                                    ])
+                                                  : _vm._e()
+                                              ]
+                                            )
+                                          ],
+                                          1
+                                        )
+                                      : _c(
+                                          "v-btn",
+                                          {
+                                            staticClass: "mx-4 commentbtn",
+                                            attrs: {
+                                              flat: "",
+                                              icon: "",
+                                              large: "",
+                                              ripple: false,
+                                              color: "transparent"
+                                            }
+                                          },
+                                          [
+                                            _c(
+                                              "v-tooltip",
+                                              {
+                                                attrs: {
+                                                  "content-class": "jieTool",
+                                                  color: "grey darken-4",
+                                                  top: ""
+                                                }
+                                              },
+                                              [
+                                                _c(
+                                                  "v-avatar",
+                                                  {
+                                                    staticClass: "mr-1",
+                                                    attrs: {
+                                                      slot: "activator",
+                                                      color: "",
+                                                      tile: "",
+                                                      size: "20"
+                                                    },
+                                                    slot: "activator"
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "v-icon",
+                                                      {
+                                                        staticStyle: {
+                                                          "font-size": "18px"
+                                                        }
+                                                      },
+                                                      [
+                                                        _vm._v(
+                                                          "mdi-comment-multiple-outline"
+                                                        )
+                                                      ]
+                                                    )
+                                                  ],
+                                                  1
+                                                ),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "span",
+                                                  {
+                                                    staticStyle: {
+                                                      margin: "3px",
+                                                      "font-size": "12px"
+                                                    }
+                                                  },
+                                                  [_vm._v(" Comment ")]
+                                                ),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "v-layout",
+                                                  {
+                                                    attrs: {
+                                                      "justify-center": ""
+                                                    }
+                                                  },
+                                                  [
+                                                    _c("div", {
+                                                      staticStyle: {
+                                                        position: "absolute",
+                                                        "margin-top": "5px",
+                                                        "margin-bottom": "5px",
+                                                        width: "0",
+                                                        height: "0",
+                                                        "border-left":
+                                                          "6px solid transparent",
+                                                        "border-right":
+                                                          "6px solid transparent",
+                                                        "border-top":
+                                                          "6px solid #212121"
+                                                      }
+                                                    })
+                                                  ]
+                                                )
+                                              ],
+                                              1
                                             ),
                                             _vm._v(" "),
                                             _c(
-                                              "v-layout",
+                                              "div",
                                               {
-                                                attrs: { "justify-center": "" }
+                                                staticStyle: {
+                                                  "margin-left": "4px",
+                                                  "margin-top": "3px",
+                                                  "font-size": "12px",
+                                                  "font-weight": "bold",
+                                                  "line-height": "1"
+                                                }
                                               },
                                               [
-                                                _c("div", {
-                                                  staticStyle: {
-                                                    position: "absolute",
-                                                    "margin-top": "5px",
-                                                    "margin-bottom": "5px",
-                                                    width: "0",
-                                                    height: "0",
-                                                    "border-left":
-                                                      "6px solid transparent",
-                                                    "border-right":
-                                                      "6px solid transparent",
-                                                    "border-top":
-                                                      "6px solid #212121"
-                                                  }
-                                                })
+                                                newsfeed.comments != 0
+                                                  ? _c("span", [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          newsfeed.comments
+                                                        )
+                                                      )
+                                                    ])
+                                                  : _vm._e()
                                               ]
                                             )
                                           ],
                                           1
                                         ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          {
-                                            staticStyle: {
-                                              "margin-top": "3px",
-                                              "font-size": "12px",
-                                              "font-weight": "bold",
-                                              "line-height": "1"
-                                            }
-                                          },
-                                          [
-                                            _vm._v(
-                                              "\r\n                                       1\r\n                                    "
-                                            )
-                                          ]
-                                        )
-                                      ],
-                                      1
-                                    ),
                                     _vm._v(" "),
                                     _c(
                                       "v-btn",
@@ -59389,33 +59879,653 @@ var render = function() {
                           1
                         ),
                         _vm._v(" "),
-                        newsfeed.commented != null
-                          ? _c(
-                              "v-flex",
-                              { staticClass: "mx-3", attrs: { xs12: "" } },
-                              [
-                                _c("v-divider", {
-                                  staticClass: "grey lighten-3"
-                                })
-                              ],
-                              1
-                            )
-                          : _vm._e(),
-                        _vm._v(" "),
                         _c(
-                          "v-flex",
-                          { staticClass: "mx-2 ", attrs: { xs12: "" } },
-                          _vm._l(newsfeed.commentedLimit, function(commented) {
-                            return _c(
+                          "v-layout",
+                          {
+                            staticClass: "pb-1 jieSvgBg1",
+                            attrs: { row: "", wrap: "" }
+                          },
+                          [
+                            newsfeed.commented != null
+                              ? _c(
+                                  "v-flex",
+                                  { staticClass: "mx-3", attrs: { xs12: "" } },
+                                  [
+                                    _c("v-divider", {
+                                      staticClass: "grey lighten-3"
+                                    })
+                                  ],
+                                  1
+                                )
+                              : _vm._e(),
+                            _vm._v(" "),
+                            _c(
                               "v-flex",
-                              { key: commented[".key"], attrs: { xs12: "" } },
+                              { staticClass: "mx-2  ", attrs: { xs12: "" } },
+                              _vm._l(newsfeed.commentedLimit, function(
+                                commented
+                              ) {
+                                return _c(
+                                  "v-flex",
+                                  {
+                                    key: commented[".key"],
+                                    attrs: { xs12: "" }
+                                  },
+                                  [
+                                    commented.userId ==
+                                    _vm.userData["ckcm-network_token_id"]
+                                      ? _c(
+                                          "v-layout",
+                                          [
+                                            _c(
+                                              "div",
+                                              { staticClass: " mt-3" },
+                                              [
+                                                _c(
+                                                  "v-btn",
+                                                  {
+                                                    staticClass: " jieleftNav",
+                                                    staticStyle: {
+                                                      height: "34px !important",
+                                                      width: "34px !important",
+                                                      "margin-top": "-5px"
+                                                    },
+                                                    attrs: {
+                                                      color: "",
+                                                      icon: "",
+                                                      flat: ""
+                                                    },
+                                                    on: {
+                                                      click: _vm.profileMenu
+                                                    }
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "v-badge",
+                                                      {
+                                                        staticClass:
+                                                          "jieBadgeNews",
+                                                        attrs: {
+                                                          color: "white",
+                                                          overlap: ""
+                                                        }
+                                                      },
+                                                      [
+                                                        _c(
+                                                          "v-avatar",
+                                                          {
+                                                            staticClass:
+                                                              "mr-2 ",
+                                                            attrs: {
+                                                              color:
+                                                                "grey lighten-3",
+                                                              size: "32"
+                                                            }
+                                                          },
+                                                          [
+                                                            _c("img", {
+                                                              attrs: {
+                                                                src:
+                                                                  commented.photoUrl,
+                                                                alt: ""
+                                                              }
+                                                            })
+                                                          ]
+                                                        )
+                                                      ],
+                                                      1
+                                                    )
+                                                  ],
+                                                  1
+                                                )
+                                              ],
+                                              1
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "v-flex",
+                                              {
+                                                staticStyle: {
+                                                  "margin-top": "12px",
+                                                  "margin-left": "-4px"
+                                                },
+                                                attrs: { xs11: "" }
+                                              },
+                                              [
+                                                _c(
+                                                  "p",
+                                                  {
+                                                    staticClass:
+                                                      " green lighten-5 jie3Commented",
+                                                    staticStyle: {
+                                                      "word-wrap":
+                                                        "break-word !important",
+                                                      "max-width": "98%",
+                                                      bwidth: "auto !important"
+                                                    }
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "router-link",
+                                                      {
+                                                        staticClass:
+                                                          "caption font-weight-bold blue--text text--darken-3 aJie",
+                                                        attrs: {
+                                                          to:
+                                                            "/profile/jiecel.marianne"
+                                                        }
+                                                      },
+                                                      [
+                                                        _vm._v(
+                                                          _vm._s(
+                                                            commented.displayName
+                                                          )
+                                                        )
+                                                      ]
+                                                    ),
+                                                    _vm._v(
+                                                      "\r\n                                       " +
+                                                        _vm._s(commented.data) +
+                                                        "\r\n                                    "
+                                                    )
+                                                  ],
+                                                  1
+                                                ),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass: "caption ml-3",
+                                                    staticStyle: {
+                                                      "margin-top": "-13px"
+                                                    }
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "span",
+                                                      [
+                                                        _c(
+                                                          "a",
+                                                          {
+                                                            staticClass:
+                                                              "aJie grey--text mt-2  textfm1",
+                                                            staticStyle: {
+                                                              "font-size":
+                                                                "12px"
+                                                            },
+                                                            on: {
+                                                              click: _vm.test
+                                                            }
+                                                          },
+                                                          [_vm._v(" Like ")]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "v-icon",
+                                                          {
+                                                            staticClass: "ml-1",
+                                                            staticStyle: {
+                                                              "margin-top":
+                                                                "9px",
+                                                              position:
+                                                                "absolute"
+                                                            },
+                                                            attrs: {
+                                                              size: "2px"
+                                                            }
+                                                          },
+                                                          [
+                                                            _vm._v(
+                                                              "mdi-asterisk"
+                                                            )
+                                                          ]
+                                                        )
+                                                      ],
+                                                      1
+                                                    ),
+                                                    _vm._v(" "),
+                                                    _c(
+                                                      "span",
+                                                      { staticClass: "ml-3" },
+                                                      [
+                                                        _c(
+                                                          "a",
+                                                          {
+                                                            staticClass:
+                                                              " aJie grey--text mt-2  textfm1",
+                                                            staticStyle: {
+                                                              "font-size":
+                                                                "12px"
+                                                            },
+                                                            on: {
+                                                              click: _vm.test
+                                                            }
+                                                          },
+                                                          [_vm._v(" Dislike ")]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "v-icon",
+                                                          {
+                                                            staticClass: "ml-1",
+                                                            staticStyle: {
+                                                              "margin-top":
+                                                                "9px",
+                                                              position:
+                                                                "absolute"
+                                                            },
+                                                            attrs: {
+                                                              size: "2px"
+                                                            }
+                                                          },
+                                                          [
+                                                            _vm._v(
+                                                              "mdi-asterisk"
+                                                            )
+                                                          ]
+                                                        )
+                                                      ],
+                                                      1
+                                                    ),
+                                                    _vm._v(" "),
+                                                    _c(
+                                                      "span",
+                                                      { staticClass: "ml-3" },
+                                                      [
+                                                        _c(
+                                                          "a",
+                                                          {
+                                                            staticClass:
+                                                              " aJie grey--text mt-2  textfm1",
+                                                            staticStyle: {
+                                                              "font-size":
+                                                                "12px"
+                                                            },
+                                                            on: {
+                                                              click: _vm.test
+                                                            }
+                                                          },
+                                                          [_vm._v(" Reply ")]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "v-icon",
+                                                          {
+                                                            staticClass: "ml-1",
+                                                            staticStyle: {
+                                                              "margin-top":
+                                                                "9px",
+                                                              position:
+                                                                "absolute"
+                                                            },
+                                                            attrs: {
+                                                              size: "2px"
+                                                            }
+                                                          },
+                                                          [
+                                                            _vm._v(
+                                                              "mdi-asterisk"
+                                                            )
+                                                          ]
+                                                        )
+                                                      ],
+                                                      1
+                                                    ),
+                                                    _vm._v(" "),
+                                                    _c(
+                                                      "span",
+                                                      { staticClass: "ml-3" },
+                                                      [
+                                                        _c("span", {
+                                                          staticClass:
+                                                            " grey--text mt-2  textfm1",
+                                                          staticStyle: {
+                                                            "font-size": "13px"
+                                                          }
+                                                        })
+                                                      ]
+                                                    )
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          ],
+                                          1
+                                        )
+                                      : _c(
+                                          "v-layout",
+                                          [
+                                            _c(
+                                              "div",
+                                              { staticClass: " mt-3" },
+                                              [
+                                                _c(
+                                                  "v-btn",
+                                                  {
+                                                    staticClass: " jieleftNav",
+                                                    staticStyle: {
+                                                      height: "34px !important",
+                                                      width: "34px !important",
+                                                      "margin-top": "-5px"
+                                                    },
+                                                    attrs: {
+                                                      color: "",
+                                                      icon: "",
+                                                      flat: ""
+                                                    },
+                                                    on: {
+                                                      click: _vm.profileMenu
+                                                    }
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "v-badge",
+                                                      {
+                                                        staticClass:
+                                                          "jieBadgeNews",
+                                                        attrs: {
+                                                          color: "white",
+                                                          overlap: ""
+                                                        }
+                                                      },
+                                                      [
+                                                        _c(
+                                                          "v-avatar",
+                                                          {
+                                                            staticClass:
+                                                              "mr-2 ",
+                                                            attrs: {
+                                                              color:
+                                                                "grey lighten-3",
+                                                              size: "32"
+                                                            }
+                                                          },
+                                                          [
+                                                            _c("img", {
+                                                              attrs: {
+                                                                src:
+                                                                  commented.photoUrl,
+                                                                alt: ""
+                                                              }
+                                                            })
+                                                          ]
+                                                        )
+                                                      ],
+                                                      1
+                                                    )
+                                                  ],
+                                                  1
+                                                )
+                                              ],
+                                              1
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "v-flex",
+                                              {
+                                                staticStyle: {
+                                                  "margin-top": "12px",
+                                                  "margin-left": "-4px"
+                                                },
+                                                attrs: { xs11: "" }
+                                              },
+                                              [
+                                                _c(
+                                                  "p",
+                                                  {
+                                                    staticClass:
+                                                      " grey lighten-3 jie3Commented",
+                                                    staticStyle: {
+                                                      "word-wrap":
+                                                        "break-word !important",
+                                                      "max-width": "98%",
+                                                      bwidth: "auto !important"
+                                                    }
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "router-link",
+                                                      {
+                                                        staticClass:
+                                                          "caption font-weight-bold blue--text text--darken-3 aJie",
+                                                        attrs: {
+                                                          to:
+                                                            "/profile/jiecel.marianne"
+                                                        }
+                                                      },
+                                                      [
+                                                        _vm._v(
+                                                          _vm._s(
+                                                            commented.displayName
+                                                          )
+                                                        )
+                                                      ]
+                                                    ),
+                                                    _vm._v(
+                                                      "\r\n                                       " +
+                                                        _vm._s(commented.data) +
+                                                        "\r\n                                    "
+                                                    )
+                                                  ],
+                                                  1
+                                                ),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass: "caption ml-3",
+                                                    staticStyle: {
+                                                      "margin-top": "-13px"
+                                                    }
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "span",
+                                                      [
+                                                        _c(
+                                                          "a",
+                                                          {
+                                                            staticClass:
+                                                              "aJie grey--text mt-2  textfm1",
+                                                            staticStyle: {
+                                                              "font-size":
+                                                                "12px"
+                                                            },
+                                                            on: {
+                                                              click: _vm.test
+                                                            }
+                                                          },
+                                                          [_vm._v(" Like ")]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "v-icon",
+                                                          {
+                                                            staticClass: "ml-1",
+                                                            staticStyle: {
+                                                              "margin-top":
+                                                                "9px",
+                                                              position:
+                                                                "absolute"
+                                                            },
+                                                            attrs: {
+                                                              size: "2px"
+                                                            }
+                                                          },
+                                                          [
+                                                            _vm._v(
+                                                              "mdi-asterisk"
+                                                            )
+                                                          ]
+                                                        )
+                                                      ],
+                                                      1
+                                                    ),
+                                                    _vm._v(" "),
+                                                    _c(
+                                                      "span",
+                                                      { staticClass: "ml-3" },
+                                                      [
+                                                        _c(
+                                                          "a",
+                                                          {
+                                                            staticClass:
+                                                              " aJie grey--text mt-2  textfm1",
+                                                            staticStyle: {
+                                                              "font-size":
+                                                                "12px"
+                                                            },
+                                                            on: {
+                                                              click: _vm.test
+                                                            }
+                                                          },
+                                                          [_vm._v(" Dislike ")]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "v-icon",
+                                                          {
+                                                            staticClass: "ml-1",
+                                                            staticStyle: {
+                                                              "margin-top":
+                                                                "9px",
+                                                              position:
+                                                                "absolute"
+                                                            },
+                                                            attrs: {
+                                                              size: "2px"
+                                                            }
+                                                          },
+                                                          [
+                                                            _vm._v(
+                                                              "mdi-asterisk"
+                                                            )
+                                                          ]
+                                                        )
+                                                      ],
+                                                      1
+                                                    ),
+                                                    _vm._v(" "),
+                                                    _c(
+                                                      "span",
+                                                      { staticClass: "ml-3" },
+                                                      [
+                                                        _c(
+                                                          "a",
+                                                          {
+                                                            staticClass:
+                                                              " aJie grey--text mt-2  textfm1",
+                                                            staticStyle: {
+                                                              "font-size":
+                                                                "12px"
+                                                            },
+                                                            on: {
+                                                              click: _vm.test
+                                                            }
+                                                          },
+                                                          [_vm._v(" Reply ")]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "v-icon",
+                                                          {
+                                                            staticClass: "ml-1",
+                                                            staticStyle: {
+                                                              "margin-top":
+                                                                "9px",
+                                                              position:
+                                                                "absolute"
+                                                            },
+                                                            attrs: {
+                                                              size: "2px"
+                                                            }
+                                                          },
+                                                          [
+                                                            _vm._v(
+                                                              "mdi-asterisk"
+                                                            )
+                                                          ]
+                                                        )
+                                                      ],
+                                                      1
+                                                    ),
+                                                    _vm._v(" "),
+                                                    _c(
+                                                      "span",
+                                                      { staticClass: "ml-3" },
+                                                      [
+                                                        _c("span", {
+                                                          staticClass:
+                                                            " grey--text mt-2  textfm1",
+                                                          staticStyle: {
+                                                            "font-size": "13px"
+                                                          }
+                                                        })
+                                                      ]
+                                                    )
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          ],
+                                          1
+                                        )
+                                  ],
+                                  1
+                                )
+                              })
+                            ),
+                            _vm._v(" "),
+                            (newsfeed.someoneComment.someone == true) &
+                            (_vm.disableWrite == false)
+                              ? _c(
+                                  "v-flex",
+                                  {
+                                    staticClass: "mx-5 px-2 mt-2",
+                                    attrs: { xs12: "" }
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      { attrs: { xs12: "" } },
+                                      [
+                                        _c("v-progress-circular", {
+                                          attrs: {
+                                            width: 1,
+                                            size: 13,
+                                            color: "blue lighten-1",
+                                            indeterminate: ""
+                                          }
+                                        }),
+                                        _vm._v(" "),
+                                        _c(
+                                          "span",
+                                          {
+                                            staticClass:
+                                              "caption font-weight-thin grey--text textfm1"
+                                          },
+                                          [_vm._v("Someone is typing...")]
+                                        )
+                                      ],
+                                      1
+                                    )
+                                  ]
+                                )
+                              : _vm._e(),
+                            _vm._v(" "),
+                            _c(
+                              "v-flex",
+                              { staticClass: "mx-2", attrs: { xs12: "" } },
                               [
                                 _c(
                                   "v-layout",
                                   [
                                     _c(
-                                      "div",
-                                      { staticClass: " mt-3" },
+                                      "v-card",
+                                      {
+                                        staticClass: "transparent mt-3",
+                                        attrs: { flat: "", xs1: "" }
+                                      },
                                       [
                                         _c(
                                           "v-btn",
@@ -59427,7 +60537,7 @@ var render = function() {
                                               "margin-top": "-5px"
                                             },
                                             attrs: {
-                                              color: "",
+                                              color: "transparent",
                                               icon: "",
                                               flat: ""
                                             },
@@ -59456,7 +60566,8 @@ var render = function() {
                                                   [
                                                     _c("img", {
                                                       attrs: {
-                                                        src: commented.photoUrl,
+                                                        src:
+                                                          _vm.userData.photoUrl,
                                                         alt: ""
                                                       }
                                                     })
@@ -59476,241 +60587,91 @@ var render = function() {
                                       "v-flex",
                                       {
                                         staticStyle: {
-                                          "margin-top": "12px",
-                                          "margin-left": "-4px"
+                                          "margin-top": "-7px",
+                                          "margin-left": "-5px"
                                         },
                                         attrs: { xs11: "" }
                                       },
                                       [
                                         _c(
-                                          "p",
+                                          "v-form",
                                           {
-                                            staticClass:
-                                              " grey lighten-3 jie3Commented",
-                                            staticStyle: {
-                                              width: "auto !important"
-                                            }
-                                          },
-                                          [
-                                            _c(
-                                              "router-link",
-                                              {
-                                                staticClass:
-                                                  "caption font-weight-bold blue--text text--darken-3 aJie",
-                                                attrs: {
-                                                  to: "/profile/jiecel.marianne"
-                                                }
-                                              },
-                                              [
-                                                _vm._v(
-                                                  _vm._s(commented.displayName)
+                                            on: {
+                                              submit: function($event) {
+                                                $event.preventDefault()
+                                                _vm.commentPost(
+                                                  newsfeed,
+                                                  newsfeed.keyIndex,
+                                                  _vm.userData,
+                                                  newsfeed.commentText
                                                 )
-                                              ]
-                                            ),
-                                            _vm._v(
-                                              "\r\n                                    " +
-                                                _vm._s(commented.data) +
-                                                "\r\n                                 "
-                                            )
-                                          ],
-                                          1
-                                        )
-                                      ]
-                                    )
-                                  ],
-                                  1
-                                )
-                              ],
-                              1
-                            )
-                          })
-                        ),
-                        _vm._v(" "),
-                        (newsfeed.someoneComment.someone == true) &
-                        (_vm.disableWrite == false)
-                          ? _c(
-                              "v-flex",
-                              {
-                                staticClass: "mx-5 px-2 mt-2",
-                                attrs: { xs12: "" }
-                              },
-                              [
-                                _c(
-                                  "div",
-                                  { attrs: { xs12: "" } },
-                                  [
-                                    _c("v-progress-circular", {
-                                      attrs: {
-                                        width: 1,
-                                        size: 13,
-                                        color: "blue lighten-1",
-                                        indeterminate: ""
-                                      }
-                                    }),
-                                    _vm._v(" "),
-                                    _c(
-                                      "span",
-                                      {
-                                        staticClass:
-                                          "caption font-weight-thin grey--text textfm1"
-                                      },
-                                      [_vm._v("Someone is typing...")]
-                                    )
-                                  ],
-                                  1
-                                )
-                              ]
-                            )
-                          : _vm._e(),
-                        _vm._v(" "),
-                        _c(
-                          "v-flex",
-                          { staticClass: "mx-2", attrs: { xs12: "" } },
-                          [
-                            _c(
-                              "v-layout",
-                              [
-                                _c(
-                                  "v-card",
-                                  {
-                                    staticClass: "transparent mt-3",
-                                    attrs: { flat: "", xs1: "" }
-                                  },
-                                  [
-                                    _c(
-                                      "v-btn",
-                                      {
-                                        staticClass: " jieleftNav",
-                                        staticStyle: {
-                                          height: "34px !important",
-                                          width: "34px !important",
-                                          "margin-top": "-5px"
-                                        },
-                                        attrs: {
-                                          color: "transparent",
-                                          icon: "",
-                                          flat: ""
-                                        },
-                                        on: { click: _vm.profileMenu }
-                                      },
-                                      [
-                                        _c(
-                                          "v-badge",
-                                          {
-                                            staticClass: "jieBadgeNews",
-                                            attrs: {
-                                              color: "white",
-                                              overlap: ""
+                                              }
                                             }
                                           },
                                           [
-                                            _c(
-                                              "v-avatar",
-                                              {
-                                                staticClass: "mr-2 ",
-                                                attrs: {
-                                                  color: "grey lighten-3",
-                                                  size: "32"
+                                            _c("v-text-field", {
+                                              staticClass:
+                                                "font-weight-thin-light jie3 ",
+                                              staticStyle: {
+                                                "font-size": "12px"
+                                              },
+                                              attrs: {
+                                                color: "blue lighten-2",
+                                                "background-color":
+                                                  "white lighten-3",
+                                                "single-line": "",
+                                                solo: "",
+                                                hint: "Press Enter to comment",
+                                                flat: "",
+                                                height: "32",
+                                                "full-width": "",
+                                                loading: false,
+                                                placeholder:
+                                                  "Write a comment .. . ",
+                                                "append-icon": "mdi-send"
+                                              },
+                                              on: {
+                                                blur: function($event) {
+                                                  _vm.blurPost(
+                                                    newsfeed.keyIndex,
+                                                    _vm.userData,
+                                                    newsfeed.commentText
+                                                  )
+                                                },
+                                                input: function($event) {
+                                                  _vm.inputPost(
+                                                    newsfeed.keyIndex,
+                                                    _vm.userData,
+                                                    newsfeed.commentText
+                                                  )
+                                                },
+                                                "click:append": function(
+                                                  $event
+                                                ) {
+                                                  _vm.commentPost(
+                                                    newsfeed,
+                                                    newsfeed.keyIndex,
+                                                    _vm.userData,
+                                                    newsfeed.commentText
+                                                  )
                                                 }
                                               },
-                                              [
-                                                _c("img", {
-                                                  attrs: {
-                                                    src: _vm.userData.photoUrl,
-                                                    alt: ""
-                                                  }
-                                                })
-                                              ]
-                                            )
+                                              model: {
+                                                value: newsfeed.commentText,
+                                                callback: function($$v) {
+                                                  _vm.$set(
+                                                    newsfeed,
+                                                    "commentText",
+                                                    $$v
+                                                  )
+                                                },
+                                                expression:
+                                                  "newsfeed.commentText"
+                                              }
+                                            })
                                           ],
                                           1
                                         )
-                                      ],
-                                      1
-                                    )
-                                  ],
-                                  1
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "v-flex",
-                                  {
-                                    staticStyle: {
-                                      "margin-top": "-7px",
-                                      "margin-left": "-5px"
-                                    },
-                                    attrs: { xs11: "" }
-                                  },
-                                  [
-                                    _c(
-                                      "v-form",
-                                      {
-                                        on: {
-                                          submit: function($event) {
-                                            $event.preventDefault()
-                                            _vm.commentPost(
-                                              newsfeed.keyIndex,
-                                              _vm.userData,
-                                              newsfeed.commentText
-                                            )
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _c("v-text-field", {
-                                          staticClass:
-                                            "font-weight-thin-light jie3 textfm1  ",
-                                          staticStyle: { "font-size": "13px" },
-                                          attrs: {
-                                            color: "blue lighten-2",
-                                            "background-color":
-                                              "grey lighten-5",
-                                            "single-line": "",
-                                            solo: "",
-                                            hint: "Press Enter to comment",
-                                            flat: "",
-                                            height: "32",
-                                            "full-width": "",
-                                            loading: false,
-                                            placeholder:
-                                              "Write a comment .. . ",
-                                            "append-icon": "mdi-send"
-                                          },
-                                          on: {
-                                            blur: function($event) {
-                                              _vm.blurPost(
-                                                newsfeed.keyIndex,
-                                                _vm.userData,
-                                                newsfeed.commentText
-                                              )
-                                            },
-                                            input: function($event) {
-                                              _vm.inputPost(
-                                                newsfeed.keyIndex,
-                                                _vm.userData,
-                                                newsfeed.commentText
-                                              )
-                                            },
-                                            "click:append": function($event) {
-                                              _vm.commentPost(
-                                                newsfeed.keyIndex,
-                                                _vm.userData,
-                                                newsfeed.commentText
-                                              )
-                                            }
-                                          },
-                                          model: {
-                                            value: newsfeed.commentText,
-                                            callback: function($$v) {
-                                              _vm.$set(
-                                                newsfeed,
-                                                "commentText",
-                                                $$v
-                                              )
-                                            },
-                                            expression: "newsfeed.commentText"
-                                          }
-                                        })
                                       ],
                                       1
                                     )
@@ -60028,8 +60989,23 @@ var render = function() {
             { staticClass: "md4 hidden-sm-and-down" },
             [
               _c("v-card", {
-                staticClass: "grey lighten-4 my-1",
+                staticClass: "white lighten-4 my-1",
                 attrs: { flat: "", height: "50px" }
+              }),
+              _vm._v(" "),
+              _c("v-card", {
+                staticClass: "grey lighten-4 mb-2",
+                attrs: { flat: "", height: "150px" }
+              }),
+              _vm._v(" "),
+              _c("v-card", {
+                staticClass: " grey lighten-4 my-1",
+                attrs: { flat: "", height: "50px" }
+              }),
+              _vm._v(" "),
+              _c("v-card", {
+                staticClass: "grey lighten-4 mb-2",
+                attrs: { flat: "", height: "150px" }
               }),
               _vm._v(" "),
               _c("v-card", {

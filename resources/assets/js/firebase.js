@@ -21,6 +21,7 @@ export const usersRef = db.ref('users');
 export const  newsfeedRef = db.ref('Newsfeed').orderByChild('order');
 export const  order = db.ref('N_order/newsfeedOrder');
 
+// export const storage = app.storage().ref('newsFeedImages');
 
 // export const timestamp = app.ServerValue.TIMESTAMP();
 

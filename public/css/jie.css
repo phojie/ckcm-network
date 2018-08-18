@@ -47,6 +47,7 @@
    background-position: center;
    background-size: cover;
 }
+
 .jieLandingBg2 {
    background-image: url("/imgs/background-pricing-existing.svg");
    background-position: center;
@@ -54,6 +55,17 @@
 }
 .jieSvgBg1 {
    background-image: url("/imgs/background-main-light.svg");
+   background-position: center;
+   background-size: cover;
+}
+
+.jieCkcmbg{
+   background-image: url("/imgs/ckcm/1.jpg");
+   background-position: center;
+   background-size: cover;
+}
+.jieCkcmbg1{
+   background-image: url("/imgs/ckcm/2.jpg");
    background-position: center;
    background-size: cover;
 }
@@ -118,6 +130,8 @@
    padding: 6px !important;
    display: inline-block;
    border-radius: 20px !important;
+   border-top-left-radius: 0px !important;
+   /* border-bottom-left-radius: 0px !important; */
    /* background-color: #F5F5F5; */
    /* border: 1px solid #E0E0E0; */
 }
@@ -173,7 +187,8 @@
    border-radius:10px;
    height: 30px;
    width: 8px;
-   background: #21212169;
+   /* background: #21212169; */
+   background: #21212133;
    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -478,7 +493,64 @@ background-color: #2BBBAD; }
 
 
 
+.pText {
+   -webkit-appearance: textarea;
+   background-color: white;
+   -webkit-rtl-ordering: logical;
+   flex-direction: column;
+   cursor: pointer;
+   /* white-space: pre-wrap; */
+   word-wrap: break-word;
+   border-width: 1px;
+   border-style: solid;
+   border-color: initial;
+   border-image: initial;
+}
 
 
+.writeComment .v-icon {
+   font-size:16px !important;
+}
+
+.writeComment .v-textarea.v-text-field--solo .v-input__prepend-inner, .v-textarea.v-text-field--solo .v-input__prepend-outer, .v-textarea.v-text-field--solo .v-input__append-inner, .v-textarea.v-text-field--solo .v-input__append-outer {
+   margin-top:4px !important;
+}
+
+.writeComment .v-input__control   {
+   margin-left:-8px;
+   margin-top:8px;
+   min-height:0px !important;
+   padding: 10px !important;
+}
+
+.writeComment textarea {
+   padding-top:19px !important;
+   margin-top:-11px !important;
+}
+.writeComment .v-input__slot   {
+   border:1px solid #E0E0E0 !important;
+   border-radius:20px !important;
+   -webkit-transition: width 2s; /* Safari */
+   transition: width .2;
+   min-height: 0px !important;
+}
+.writeComment .v-text-field__details   {
+   margin-bottom: -18px !important;
+}
+
+.writeComment .v-messages__message   {
+   font-family: 'Source Sans Pro', sans-serif;
+   font-size:10px !important;
+   margin-top:-1px !important;
+}
+
+.writeComment .v-label {
+   color: rgba(0,0,0,0.54) !important;
+   font-size: 12px !important;
+}
+
+.whatIs textarea:focus {
+   /* font-weight:600 !important; */
+}
 
 /* transition */
