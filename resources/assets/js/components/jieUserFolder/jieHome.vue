@@ -805,16 +805,7 @@ export default {
                      }
                   );
                });
-            // storageRef.put()
          }
-         // } else if(file.length > 1 && file <= 4) {
-         //    console.log(file.length)
-         //    //1-4
-         // } else {
-         //    console.log(file.length)
-         //    //rest
-         // }
-        
       },
       newsAtUnlike(newsfeed){
          this.disAbleReact=true
