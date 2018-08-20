@@ -553,4 +553,8 @@ background-color: #2BBBAD; }
    /* font-weight:600 !important; */
 }
 
+.whatIs .v-icon {
+   margin-top:23px !important;
+}
+
 /* transition */

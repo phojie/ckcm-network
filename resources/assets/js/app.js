@@ -17,6 +17,8 @@ import VueProgressBar from 'vue-progressbar'
 import '@mdi/font/css/materialdesignicons.css';
 import './firebase';
 import VueFire from 'vuefire';
+import { EmojiPickerPlugin } from 'vue-emoji-picker'
+Vue.use(EmojiPickerPlugin)
 // import moment from 'moment-timezone';
 
 // import firebase from 'firebase';

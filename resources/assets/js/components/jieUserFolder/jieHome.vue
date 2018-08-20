@@ -34,7 +34,7 @@
                            Add Poll
                         </v-btn>
                         <div style="position:relative:overflow:hidden;display:inline-block">
-                           <v-btn  @click="photoBtn" round color="transparent brown--text text--darken-1" depressed small class="caption font-weigth-bold  textDefault">
+                           <v-btn  round color="transparent brown--text text--darken-1" depressed small class="caption font-weigth-bold  textDefault">
                               <v-avatar tile size="18">  
                                  <img src="https://png.icons8.com/ios/50/6D4C41/image.png">
                               </v-avatar>
@@ -86,44 +86,44 @@
                         background-color="transparent"
                         hide-details v-model="postedData.message" color="blue"
                         class="whatIs  subheading" row-height="10"
-                        ref="newPost "
+                        ref="newP"
+                        append-icon="mdi-image-outline"
+                        @click:append="photoBtn"
                         style="" placeholder="What is your main focus for today?"
                         @focus="whatisFunctionMethod"  flat solo
-                        @blur="whatisFunctionMethodFalse"
                         auto-grow
                      ></v-textarea>
+                    
                   </v-flex>
                   <v-flex v-if="!whatisFunction" class="ml-2" style="margin-top:-10px">
                      <span style="font-size:28px" class="textfm2">{{timeDisplay}}</span>
                      <br>
                      <span class="textfm2 black--text" style="font-size:15px"> {{greet}}</span>
                   </v-flex>
-                  <v-flex v-if="newsImgsUrl.length != 1 && newsImgsUrl.length < 4 " class="" xs12>
-                     <v-layout row wrap>
-                        <v-card depressed flat class="ml-5 mx-2 ">
-                           <span v-for="(thisUrl, index) in newsImgsUrl" :key="index" class="mr-1" >
-                              <img
-                                 style="width:35%;border-radius:5px !important;border:1px solid #E0E0E0"  
-                                 :src="thisUrl.imgUrl"
-                              >
-                           </span>
-                        </v-card>
-                     </v-layout>
+                  <v-flex v-if="newsImgsUrl.length > 1 && newsImgsUrl.length < 4 " class="" xs12>
+                     <v-card depressed flat class="ml-5 mx-2 ">
+                        <span v-for="(thisUrl, index) in newsImgsUrl" :key="index" class="mr-1" >
+                           <img
+                              style="width:35%;border-radius:5px !important;border:1px solid #E0E0E0"  
+                              :src="thisUrl.imgUrl"
+                           >
+                        </span>
+                     <v-progress-linear v-if="imgsPercentage != 100" color="blue" height="3" :value="imgsPercentage"></v-progress-linear>
+                     </v-card>
                   </v-flex>
-                  <v-flex v-else-if="newsImgsUrl.length == 1" class="" xs12>
-                     <v-layout row wrap>
-                        <v-card depressed flat class="ml-5 mx-2 ">
-                           <span style="min-height:100px !important" v-for="(thisUrl, index) in newsImgsUrl" :key="index" class="mr-1" >
-                              <!-- <v-progress-linear></v-progress-linear> -->
-                              <img
-                                 style="width:100%;border-radius:5px !important;border:1px solid #E0E0E0"  
-                                 :src="thisUrl.imgUrl"
-                              >
-                           </span>
-                        </v-card>
-                     </v-layout>
+                  <v-flex  v-else-if="newsImgsUrl.length == 1" class="" xs12>
+                     <v-card depressed flat class="ml-5 mx-2 ">
+                        <span style="min-width:100% !important" v-for="(thisUrl, index) in newsImgsUrl" :key="index" class="mr-1" >
+                           <!-- <v-progress-linear></v-progress-linear> -->
+                           <img
+                              style="width:100%;border-radius:5px !important;border:1px solid #E0E0E0"  
+                              :src="thisUrl.imgUrl"
+                           >
+                        </span>
+                     <v-progress-linear color="blue" height="3" v-if="imgsPercentage != 100" :value="imgsPercentage"></v-progress-linear>
+                     </v-card>
                   </v-flex>
-                  <h3>{{imgsPercentage}}</h3>
+                  <!-- <h3>{{}}</h3> -->
                   <!-- <v-flex xs9 class="mb-1" >
                      <v-layout>
                         <v-btn
@@ -159,52 +159,55 @@
                      </v-layout>
 
                   </v-flex> -->
-
+                 
                   <v-flex xs12 class="mx-2" v-if="whatisFunction" >
                      <v-layout row wrap>
-                         <v-spacer></v-spacer>
-                        <!--
-                        <v-tooltip content-class="jieToolHeart" color="grey darken-4"  top>
-                           <span style="margin:3px;font-size:11px" class="text-xs-center"> Add photos </span>
-                           <v-layout justify-center>
-                           <div class="" style="
-                              position:absolute;
-                              margin-top:5px;
-                              margin-bottom:5px;
-                              width: 0;
-                              height: 0;
-                              border-left: 6px solid transparent;
-                              border-right: 6px solid transparent;
-                              border-top: 6px solid #212121;"
-                           ></div>
-                           </v-layout> 
-                           <v-btn slot="activator" style="margin-top:-2px;" large icon flat depressed color="blue" @click="test" class="white--text font-weight-black caption textDefault"> 
-                              <v-avatar color="" tile size="20" >
-                                 <img src="https://png.icons8.com/ios/50/2196F3/stack-of-photos.png">
-                              </v-avatar>
-                           </v-btn>
-                        </v-tooltip> -->
+                        <v-spacer></v-spacer>
+                        <emoji-picker @emoji="insert" :search="search">
+                           <div slot="emoji-invoker" slot-scope="{ events }" v-on="events">
+                              <v-tooltip content-class="jieToolHeart" color="grey darken-4"  top>
+                                 <span style="margin:3px;font-size:11px" class="text-xs-center"> Insert Emoji </span>
+                                 <v-layout justify-center>
+                                 <div class="" style="
+                                    position:absolute;
+                                    margin-top:5px;
+                                    margin-bottom:5px;
+                                    width: 0;
+                                    height: 0;
+                                    border-left: 6px solid transparent;
+                                    border-right: 6px solid transparent;
+                                    border-top: 6px solid #212121;"
+                                 ></div>
+                                 </v-layout> 
+                                 <v-btn  @click="events" slot="activator" style="margin-top:-2px;" large icon flat depressed color="blue" class="white--text font-weight-black caption textDefault"> 
+                                    <v-avatar color="" tile size="20" >
+                                       <img src="https://png.icons8.com/ios/50/2196F3/happy.png">
+                                    </v-avatar>
+                                 </v-btn>
+                              </v-tooltip>
+                           </div>
+                           <div slot="emoji-picker" slot-scope="{ emojis, insert, display }">
+                              <div>
+                                    <div>
+                                       <input type="text" v-model="searchEmoji">
+                                    </div>
+                                    <v-layout row wrap>
+                                       <div v-for="(emojiGroup, category) in emojis" :key="category">
+                                          <h5>{{ category }}</h5>
+                                          <v-layout row wrap>
+                                                   <span
+                                                      v-for="(emoji, emojiName) in emojiGroup"
+                                                      :key="emojiName"
+                                                      @click="insert(emoji)"
+                                                      :title="emojiName"
+                                                   >{{ emoji }}</span>
+                                          </v-layout>
+                                       </div>
+                                    </v-layout>
+                              </div>
+                           </div>
+                        </emoji-picker>
                         <v-btn small   :disabled="postedDataNews"  depressed color="blue" @click="makePost(userData)" class="white--text font-weight-black caption textDefault"> Post </v-btn>
-                        <!-- <v-tooltip content-class="jieToolHeart" color="grey darken-4"  top>
-                           <span style="margin:3px;font-size:11px" class="text-xs-center"> Cancel </span>
-                           <v-layout justify-center>
-                           <div class="" style="
-                              position:absolute;
-                              margin-top:5px;
-                              margin-bottom:5px;
-                              width: 0;
-                              height: 0;
-                              border-left: 6px solid transparent;
-                              border-right: 6px solid transparent;
-                              border-top: 6px solid #212121;"
-                           ></div>
-                           </v-layout> 
-                           <v-btn slot="activator" @click="whatisFunctionMethodFalse" style="margin-top:-2px;" large icon flat depressed color="red lighten-3" class="white--text font-weight-black caption textDefault"> 
-                              <v-avatar color="" tile size="28" >
-                                 <img src="https://png.icons8.com/ios/50/EF9A9A/multiply-filled.png">
-                              </v-avatar>
-                           </v-btn>
-                        </v-tooltip> -->
                      </v-layout>
                   </v-flex>
                </v-layout>
@@ -301,17 +304,28 @@
                            ></v-textarea>
                         </v-layout>
 
-                        <v-layout wrap row  v-if="newsfeed.data.image != ''" class="">
+                        <v-layout wrap row  v-if="newsfeed.data.image != null" class="">
                            <v-card depressed flat class="mx-3 ">
-                              <img
-                                 style="margin-bottom:7px;margin-top:-3px;border-radius:5px !important;border:1px solid #E0E0E0"  
-                                 width="100%"
-                                 height="100%"
-                                 :src="newsfeed.data.image"
-                              >
+                              <span v-if="newsfeed.data.image.count == 1" > 
+                                 <img
+                                    style="margin-bottom:7px;margin-top:-3px;border-radius:5px !important;border:1px solid #E0E0E0"  
+                                    width="100%"
+                                    height="100%"
+                                    :src="newsfeed.data.image[0].imgUrl"
+                                 >
+                              </span>
+                              <span v-else-if="newsfeed.data.image.count > 1" v-for="(dataImage, index) in newsfeed.data.image" :key="index"> 
+                                 <img
+                                    style="margin-bottom:7px;margin-top:-3px;border-radius:5px !important;border:1px solid #E0E0E0"  
+                                    width="50%"
+                                    :src="dataImage.imgUrl"
+                                 >
+                              </span>
+
                                  <!-- aspect-ratio="2.75" -->
                            </v-card>
                         </v-layout>
+                          
                         <!-- <v-divider class="grey lighten-3"> </v-divider> -->
                         <v-layout wrap row> 
                            <v-flex class="mx-2 text-xs-left" >
@@ -701,6 +715,7 @@ export default {
       }
    },
    data: () => ({
+      searchEmoji:'',
       imgsPercentage: 0,
       newsImgsUrl: [],
       disableWrite: false,
@@ -755,11 +770,15 @@ export default {
       },
    },
    methods: {
+      insert(emoji) {
+         this.postedData.message += emoji
+      },
       photoBtn() {
          this.$refs.newsFile.click();
       },
       newPostBtn() {
-         this.$nextTick(() => this.$refs.newPost.focus());
+         let vm = this
+         vm.$nextTick(() => vm.$refs.newP.focus());
       },
       createImage(file) {
          // this.createImage(this.newsImgs[0]);
@@ -791,6 +810,10 @@ export default {
                            var starsRef = firebase.storage().ref(snapshot.metadata.fullPath);
                            starsRef.getDownloadURL().then(function(url) {
                               // vm.newsImgsUrl[key].imgUrl = url;
+                              vm.$nextTick(() => vm.$refs.newP.blur());
+                              vm.$nextTick(() => vm.$refs.newP.focus());
+                              vm.$nextTick(() => vm.$refs.newP.blur());
+                              vm.$nextTick(() => vm.$refs.newP.focus());
                               vm.newsImgsUrl[key] = Object.assign({}, vm.newsImgsUrl[key], {
                                  imgUrl : url
                               })
@@ -961,6 +984,8 @@ export default {
          });
       },
       makePost(user) {
+         this.postedData.image = this.newsImgsUrl
+         this.postedData.image.count = this.postedData.image.length
          axios.get('https://api.ipgeolocation.io/ipgeo?apiKey=90a83c7326cc475f8048cf81362e1df0')
             .then((response) =>{
             // var now= moment(response.data.time_zone.current_time).tz(response.data.time_zone.name).format('MMMM D YYYY, kk:mm:ss');
@@ -990,6 +1015,8 @@ export default {
                   newsfeedOrder: vm.orderValue-1
                })
                vm.postedData.message = "";
+               vm.postedData.image = [];
+               vm.newsImgsUrl = [];
                vm.whatisFunctionMethodFalse()
                // Data saved successfully!
             }
