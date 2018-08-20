@@ -810,13 +810,13 @@ export default {
                            var starsRef = firebase.storage().ref(snapshot.metadata.fullPath);
                            starsRef.getDownloadURL().then(function(url) {
                               // vm.newsImgsUrl[key].imgUrl = url;
-                              vm.$nextTick(() => vm.$refs.newP.blur());
                               vm.$nextTick(() => vm.$refs.newP.focus());
-                              vm.$nextTick(() => vm.$refs.newP.blur());
-                              vm.$nextTick(() => vm.$refs.newP.focus());
+                              vm.postedData.message = ' '
                               vm.newsImgsUrl[key] = Object.assign({}, vm.newsImgsUrl[key], {
                                  imgUrl : url
                               })
+                              vm.postedData.message = ''
+
                            })
                         }
                      },

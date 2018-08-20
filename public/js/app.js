@@ -56828,7 +56828,7 @@ var render = function() {
           _vm._v(" "),
           _c(
             "v-menu",
-            { attrs: { "offset-y": "" } },
+            { attrs: { "offset-y": "", "nudge-top": "5" } },
             [
               _c(
                 "v-btn",
@@ -58106,20 +58106,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                      starsRef.getDownloadURL().then(function (url) {
                         // vm.newsImgsUrl[key].imgUrl = url;
                         vm.$nextTick(function () {
-                           return vm.$refs.newP.blur();
-                        });
-                        vm.$nextTick(function () {
                            return vm.$refs.newP.focus();
                         });
-                        vm.$nextTick(function () {
-                           return vm.$refs.newP.blur();
-                        });
-                        vm.$nextTick(function () {
-                           return vm.$refs.newP.focus();
-                        });
+                        vm.postedData.message = ' ';
                         vm.newsImgsUrl[key] = Object.assign({}, vm.newsImgsUrl[key], {
                            imgUrl: url
                         });
+                        vm.postedData.message = '';
                      });
                   }
                }, function error(error) {

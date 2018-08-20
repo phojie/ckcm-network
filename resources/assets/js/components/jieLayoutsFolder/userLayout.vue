@@ -418,7 +418,7 @@
                </v-menu>
             </v-tooltip>
 
-         <v-menu offset-y >
+         <v-menu offset-y nudge-top="5">
                <!-- color="white" flat  -->
             <v-btn  slot="activator" style="min-width:140px" flat ripple>
                <!-- Dropdown -->
