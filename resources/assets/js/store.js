@@ -2,7 +2,6 @@ import { getLocalUser } from "./ckcmHelpers/auth";
 import { getLocalfdetails } from "./ckcmHelpers/auth";
 import { db } from "./firebase";
 import { auth } from "./firebase";
-
 const user = getLocalUser();
 const fdetails = getLocalfdetails();
 export default {
@@ -70,8 +69,14 @@ export default {
          // localStorage.user = JSON.stringify(state.accountLoginData);
          // console.log(state.accountLoginData)
          const id = state.accountLoginData.user["ckcm-network_token_id"]
+         let getFn = state.accountLoginData.user.displayName
+         let firstname = getFn.split(" ");
          db.ref('users/' + id).update({
             status: "online",
+            first: firstname[0],
+            lastname: firstname[1],
+            roles: '',
+            coverUrl: '',
             displayName: state.accountLoginData.user.displayName ,
             photoUrl: state.accountLoginData.user.photoUrl,
             timestamp: "",
@@ -88,10 +93,10 @@ export default {
       logout(state) {
          const id = state.accountLoginData.user["ckcm-network_token_id"]
          db.ref('users/' + id).update({
-            status: "offline",
-            displayName: state.accountLoginData.user.displayName ,
-            photoUrl: state.accountLoginData.user.photoUrl,
-            timestamp: "",
+            status: "offline"
+            // displayName: state.accountLoginData.user.displayName ,
+            // photoUrl: state.accountLoginData.user.photoUrl,
+            // timestamp: "",
           }, function(error) {
             if (error) {
                console.log(error)

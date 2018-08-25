@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Sawarabi+Mincho');
+
 .material-icons  {
    font-size: 23px !important;
 }
@@ -40,6 +42,9 @@
 }
 .textfm2 {
    font-family: 'Overlock', cursive;
+}
+.textfm3 {
+   font-family: 'Sawarabi Mincho', sans-serif;
 }
 
 .jieLandingBg {
@@ -481,7 +486,10 @@ background-color: #2BBBAD; }
 .appscard:hover {
    background-color: white !important;
 }
-
+.terms.v-list  {
+   background: transparent !important;
+   color: rgba(0,0,0,0.87);
+}
 .wave-item{
    /* -webkit-animation: jieLoad linear 2.8s infinite !important; */
    width: 0px !important;

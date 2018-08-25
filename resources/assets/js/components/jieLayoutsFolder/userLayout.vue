@@ -191,9 +191,10 @@
       <v-navigation-drawer :value="leftnavDrawer" class=" transparent lighten-3 scrollbar-secondary " floating  width="300" style="overflow: auto !important;" clipped app>
          <v-card flat color="transparent" class="mt-2 ml-5">
             <v-card flat class="pb-2">
+                  <!-- jieCkcmbg -->
                   <!-- src="https://scontent.fcgy1-1.fna.fbcdn.net/v/t1.0-9/29571261_1589949324387758_1953653254138362805_n.jpg?_nc_cat=0&oh=fbd784445c209ed004d49b0ea51cba32&oe=5BCADF30" -->
                <v-card-media
-                  class="blue lighten-2 jieCkcmbg"
+                  class="blue lighten-2 jieSvgBg1"
                   height="110px"
                >
                </v-card-media>
@@ -270,7 +271,7 @@
 
                <v-divider></v-divider>
                <div class="ml-2 mt-1 caption font-weight-black grey--text" ><span class="blue--text">My</span>Apps</div>
-               <v-btn :to="code" style="padding-left:10px"  :ripple="{ class: 'white--text' }"  color="blue lighten-1"  class=" jieleftNav" flat depressed block >
+               <v-btn to="vpoffice" style="padding-left:10px"  :ripple="{ class: 'white--text' }"  color="blue lighten-1"  class=" jieleftNav" flat depressed block >
                   <v-avatar tile class="mr-2" color="grey--after" size="20px">
                      <img src="https://png.icons8.com/ios/50/000000/interior-accesories.png">
                   </v-avatar>
@@ -286,7 +287,22 @@
                   <v-spacer></v-spacer>
                   <div class="textfm1 caption" ></div>
                </v-btn>
-               
+               <v-btn :to="code" style="padding-left:10px;margin-top:-6px"  :ripple="{ class: 'white--text' }"  color="blue lighten-1"  class=" jieleftNav" flat depressed block >
+                  <v-avatar tile class="mr-2" color="grey--after" size="20px">
+                     <img src="https://png.icons8.com/ios/50/000000/book-shelf.png">
+                  </v-avatar>
+                  <div style="font-size:12px;margin-left:1px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault "> Subjects </div> 
+                  <v-spacer></v-spacer>
+                  <div class="textfm1 caption" ></div>
+               </v-btn>
+               <v-btn :to="code" style="padding-left:10px;margin-top:-6px"  :ripple="{ class: 'white--text' }"  color="blue lighten-1"  class=" jieleftNav" flat depressed block >
+                  <v-avatar tile class="mr-2" color="grey--after" size="20px">
+                     <img src="https://png.icons8.com/ios/50/000000/report-card.png">
+                  </v-avatar>
+                  <div style="font-size:12px;margin-left:1px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault "> Result Card </div> 
+                  <v-spacer></v-spacer>
+                  <div class="textfm1 caption" ></div>
+               </v-btn>
             </v-card>
             <v-divider></v-divider>
             <v-card flat class="appscard ">
@@ -308,13 +324,16 @@
       <!-- mycolor3 -->
       <v-toolbar   height="43px" clipped-left dark class="elevation-1 mr-5 blue darken-3 jieSvgBg1 "  app dense >
          <!-- <v-toolbar-side-icon class="" @click="(mycolor1) => (showNav = !showNav)"></v-toolbar-side-icon> -->
-         <v-toolbar-title class="primaryColortext--text subheading ">
-            <!-- <span class="subheading white--text">Christ the King Network</span> -->
+        
+         <!-- <v-toolbar-title  class="primaryColortext--text subheading ">
+            <span style="margin-left:100px"  class="subheading white--text">Christ the King Network</span>
+         </v-toolbar-title> -->
+          <img  class="ml-5 mt-1" height="25" src="imgs/ckcm/logo.png">
+         <v-toolbar-title style="margin-left:-2px" class="align-left">
+            <span class="body-2 textfm3">Christ the King Network</span>
          </v-toolbar-title>
-            <!-- solo-inverted -->
          <v-spacer></v-spacer>
          <!-- <v-menu  slot="activator"  offset-y nudge-left="44px"> -->
-         
             <v-flex :class="md2" :style="extendSearch" align-start>
                <v-text-field  
                   @focus="() => (md2 = 'md4', extendSearch = 'transition: .5s')"
@@ -355,8 +374,8 @@
          <!-- </v-menu> -->
 
          <v-divider vertical inset ></v-divider>
-         
-            <v-btn small @click="test" to="/" flat style="margin-right:-5px  !important;" >
+            <!-- @click="test" -->
+            <v-btn small  to="/" flat style="margin-right:-5px  !important;" >
                <v-icon  style="font-size:19px !important">mdi-home</v-icon>
                <div class=" ml-1 white--text caption textDefault textfm1"> Home </div> 
             </v-btn>

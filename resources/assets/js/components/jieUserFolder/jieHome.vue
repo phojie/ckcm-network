@@ -238,8 +238,8 @@
                         </v-btn> 
                         <div class="mt-1">
                         <p class="mb-0">
-                           <span @click="profileMenuFriend(newsfeed.displayName)" style="font-size:13px" class="aJie font-weight-bold ">{{newsfeed.displayName}} </span>
-                           <span style="margin-left:-2px;" class="textlower caption grey--text text--darken-1"> @jie26 </span> 
+                           <span @click="profileMenuFriend(newsfeed.displayName)" style="font-size:13px" class="aJie font-weight-bold textDefault">{{newsfeed.displayName}} </span>
+                           <span style="margin-left:-2px;" class="textlower caption grey--text text--darken-1"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
                         </p>
                         <p style="margin-top:-5px;font-size:11px;" class="textfm2 grey--text">
                            <!-- {{newsfeed.timestamp | moment("dddd, MMMM Do YYYY: h:mm:a") }}| -->
@@ -691,10 +691,20 @@
             </v-card>
             <v-card flat class=" grey lighten-4 my-1" height="50px">
             </v-card>
-            <v-card flat  class="grey lighten-4 mb-2" height="150px">
+            <v-card flat  class="grey lighten-4 mb-2" height="250px">
             </v-card>
-            <v-card flat  class="grey lighten-4 mb-2" height="150px">
-            </v-card>
+            <!-- <v-card flat class="appscard ">
+               <v-list class="terms mx-2">
+                  <div class="font-weight-bold brown--text textupper" style="font-size:10px" > TERMS & POLICIES</div>
+                      <v-list-tile-content style="font-size:11px">
+                       <v-list-tile-title > <router-link class="aJie grey--text" to="#"> Terms of Service </router-link></v-list-tile-title>
+                       <v-list-tile-title > <router-link class="aJie grey--text" to="#"> Privacy Statement </router-link></v-list-tile-title>
+                       <v-list-tile-title > <router-link class="aJie grey--text" to="#"> Ckcm Cloud Security </router-link></v-list-tile-title>
+                     </v-list-tile-content>
+                  <v-divider></v-divider>
+                  <div class="mt-2 font-weight-bold green--text " style="font-size:10px" > &copy; {{ new Date().getFullYear() }} Ckcm-Network</div>
+               </v-list>
+            </v-card> -->
          </v-flex>
       </v-layout>
    </v-card>
@@ -763,6 +773,11 @@ export default {
          var firstname = getFn.split(" ");
          return firstname[0];
       },
+      newsFirstname() {
+         var getFn = this.$store.getters.accountLoginData.user.displayName
+         var firstname = getFn.split(" ");
+         return firstname[0];
+      },
       postedDataNews() {
          if (this.postedData.message == "") return true
          this.postedData.message != ""
@@ -811,7 +826,7 @@ export default {
                            starsRef.getDownloadURL().then(function(url) {
                               // vm.newsImgsUrl[key].imgUrl = url;
                               vm.$nextTick(() => vm.$refs.newP.focus());
-                              vm.postedData.message = ' '
+                              vm.postedData.message += ' '
                               vm.newsImgsUrl[key] = Object.assign({}, vm.newsImgsUrl[key], {
                                  imgUrl : url
                               })

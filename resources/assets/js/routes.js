@@ -9,6 +9,7 @@ import jieUserWelcome from './components/jieUserFolder/jieWelcome.vue';
 import jieUserHome from './components/jieUserFolder/jieHome.vue';
 import jieProfile from './components/jieUserFolder/jieProfile.vue';
 
+import jieVpOffice from './components/jieMyApps/jieVpOffice.vue';
 import api from './components/api.vue';
 export const routes = [
    {
@@ -41,6 +42,10 @@ export const routes = [
          {
             path: '/welcome',
             component: jieUserWelcome
+         },
+         {
+            path: '/vpoffice',
+            component: jieVpOffice
          }
       ]
    },
