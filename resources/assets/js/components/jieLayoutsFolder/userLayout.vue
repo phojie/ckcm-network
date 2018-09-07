@@ -33,11 +33,8 @@
                   {{friendList.displayName}}
                </v-toolbar-title>
                <v-spacer></v-spacer>
-               <div style="font-size:11px" class="textfm2 textDefault">2m</div>
             </v-btn>
                <v-card >
-
-                 
                   <v-layout  row wrap justify-center align-center align-content-center>
                      <v-flex xs12 class="grey lighten-5 pa-3 ">
                         <v-layout  row wrap justify-center align-center align-content-center>
@@ -171,6 +168,77 @@
             </v-menu>
 
 
+            <v-toolbar-title style="margin-left:8px !important;font-size:14px !important; letter-spacing:.5px;" class="textDefault textfm1 grey--text text--darken-3 "> 
+               Subjects Converation    
+            </v-toolbar-title>
+
+            <v-btn style=""    color="grey" class=" jieleftNav" block flat>
+               <v-badge color="white"  overlap class="jieBadgeFriend">
+                  <v-avatar    class="mr-2"  color="" size="28">
+                     <img src="https://png.icons8.com/ios/50/795548/physics.png">
+                  </v-avatar>
+               </v-badge>
+               <!-- <img :src="userData.photoUrl" alt=""> -->
+               <v-toolbar-title style="margin-left:-2px !important;font-size:14px !important; letter-spacing:.5px;" class="textDefault textfm1 grey--text text--darken-3 "> 
+                  Physics II
+               </v-toolbar-title>
+               <v-spacer></v-spacer>
+               <div style="font-size:11px" class="textfm2 textDefault">24</div>
+            </v-btn>
+            <v-btn style=""    color="grey" class=" jieleftNav" block flat>
+               <v-badge color="white"  overlap class="jieBadgeFriend">
+                  <v-avatar  tile  class="mr-2"  color="" size="25">
+                     <img src="https://png.icons8.com/ios/50/9C27B0/mind-map.png">
+                  </v-avatar>
+               </v-badge>
+               <!-- <img :src="userData.photoUrl" alt=""> -->
+               <v-toolbar-title style="margin-left:-2px !important;font-size:14px !important; letter-spacing:.5px;" class="textDefault textfm1 grey--text text--darken-3 "> 
+                  Artificial Intelligence
+               </v-toolbar-title>
+               <v-spacer></v-spacer>
+               <div style="font-size:11px" class="textfm2 textDefault">6</div>
+            </v-btn>
+            <v-btn style=""    color="grey" class=" jieleftNav" block flat>
+               <v-badge color="white"  overlap class="jieBadgeFriend">
+                  <v-avatar  tile  class="mr-2"  color="" size="25">
+                     <img src="https://png.icons8.com/ios/50/FFCC80/geography.png">
+                  </v-avatar>
+               </v-badge>
+               <!-- <img :src="userData.photoUrl" alt=""> -->
+               <v-toolbar-title style="margin-left:-2px !important;font-size:14px !important; letter-spacing:.5px;" class="textDefault textfm1 grey--text text--darken-3 "> 
+                 Web Base 
+               </v-toolbar-title>
+               <v-spacer></v-spacer>
+               <div style="font-size:11px" class="textfm2 textDefault">14</div>
+            </v-btn>
+            <v-btn style=""    color="grey" class=" jieleftNav" block flat>
+               <v-badge color="white"  overlap class="jieBadgeFriend">
+                  <v-avatar  tile class="mr-2"  color="" size="22">
+                     <img src="https://png.icons8.com/ios/50/009688/trigonometry.png">
+                  </v-avatar>
+               </v-badge>
+               <!-- <img :src="userData.photoUrl" alt=""> -->
+               <v-toolbar-title style="margin-left:-2px !important;font-size:14px !important; letter-spacing:.5px;" class="textDefault textfm1 grey--text text--darken-3 "> 
+                  Trigonometry
+               </v-toolbar-title>
+               <v-spacer></v-spacer>
+               <div style="font-size:11px" class="textfm2 textDefault">50</div>
+            </v-btn>
+
+            <v-btn style=""    color="grey" class=" jieleftNav" block flat>
+               <v-badge color="white"  overlap class="jieBadgeFriend">
+                  <v-avatar  tile  class="mr-2"  color="" size="25">
+                     <img src="https://png.icons8.com/ios/50/4CAF50/test-tube.png">
+                  </v-avatar>
+               </v-badge>
+               <!-- <img :src="userData.photoUrl" alt=""> -->
+               <v-toolbar-title style="margin-left:-2px !important;font-size:14px !important; letter-spacing:.5px;" class="textDefault textfm1 grey--text text--darken-3 "> 
+                 Science
+               </v-toolbar-title>
+               <v-spacer></v-spacer>
+               <div style="font-size:11px" class="textfm2 textDefault">20</div>
+            </v-btn>
+
          </v-card>
          <v-card flat color="white" class="friendscroll scrollbar-primary ">
             <v-text-field
@@ -220,8 +288,14 @@
                </div>
                <v-layout class="mt-1 mx-2" row wrap>
                   <v-flex>
+                     <v-chip small color="blue caption lighten-5" text-color="green">
+                        Registrar
+                     </v-chip>
                      <v-chip small color="blue caption lighten-5" text-color="indigo">
                         Vice-President
+                     </v-chip>
+                     <v-chip small color="blue caption lighten-5" text-color="orange">
+                        Instructor
                      </v-chip>
                      <v-chip small color="blue caption lighten-5" text-color="teal">
                         Student
@@ -271,6 +345,14 @@
 
                <v-divider></v-divider>
                <div class="ml-2 mt-1 caption font-weight-black grey--text" ><span class="blue--text">My</span>Apps</div>
+               <v-btn to="" style="padding-left:10px"  :ripple="{ class: 'white--text' }"  color="blue lighten-1"  class=" jieleftNav" flat depressed block >
+                  <v-avatar tile class="mr-2" color="grey--after" size="20px">
+                     <img src="https://png.icons8.com/ios/50/000000/check-in-desk.png">
+                  </v-avatar>
+                  <div style="font-size:12px;margin-left:1px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault "> Registrar-Office </div> 
+                  <v-spacer></v-spacer>
+                  <div class="textfm1 caption" ></div>
+               </v-btn>
                <v-btn to="vpoffice" style="padding-left:10px"  :ripple="{ class: 'white--text' }"  color="blue lighten-1"  class=" jieleftNav" flat depressed block >
                   <v-avatar tile class="mr-2" color="grey--after" size="20px">
                      <img src="https://png.icons8.com/ios/50/000000/interior-accesories.png">
@@ -299,7 +381,7 @@
                   <v-avatar tile class="mr-2" color="grey--after" size="20px">
                      <img src="https://png.icons8.com/ios/50/000000/report-card.png">
                   </v-avatar>
-                  <div style="font-size:12px;margin-left:1px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault "> Result Card </div> 
+                  <div style="font-size:12px;margin-left:1px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault "> Results Card </div> 
                   <v-spacer></v-spacer>
                   <div class="textfm1 caption" ></div>
                </v-btn>
@@ -322,7 +404,7 @@
       <!-- jieLandingBg -->
       <!-- jieWhatBg -->
       <!-- mycolor3 -->
-      <v-toolbar   height="43px" clipped-left dark class="elevation-1 mr-5 blue darken-3 jieSvgBg1 "  app dense >
+      <v-toolbar   height="43px" clipped-left dark class="elevation-1 mr-5 blue darken-3 jieSvgBgvu "  app dense >
          <!-- <v-toolbar-side-icon class="" @click="(mycolor1) => (showNav = !showNav)"></v-toolbar-side-icon> -->
         
          <!-- <v-toolbar-title  class="primaryColortext--text subheading ">

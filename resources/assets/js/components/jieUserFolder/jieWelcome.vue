@@ -24,6 +24,7 @@
                         ></v-text-field>
                         <v-text-field
                            v-model="password"
+                           type="password"
                            label="Password"
                         ></v-text-field>
                         <v-select
@@ -96,6 +97,7 @@ export default {
    methods: {
       test() {
          alert('ete')
+         
       }
    },
    mounted () {

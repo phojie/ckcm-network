@@ -490,15 +490,15 @@
                                     </p>
                                     <div class="caption ml-3" style="margin-top:-13px; ">
                                        <span>
-                                       <a style="font-size:12px;" class="aJie grey--text mt-2  textfm1" @click="test"> Like </a> 
+                                       <a style="font-size:12px;" class="aJie grey--text mt-2  textfm1" @click=""> Like </a> 
                                           <v-icon size="2px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
                                        </span>
                                        <span class="ml-3">
-                                       <a style="font-size:12px;" class=" aJie grey--text mt-2  textfm1" @click="test"> Dislike </a> 
+                                       <a style="font-size:12px;" class=" aJie grey--text mt-2  textfm1" @click=""> Dislike </a> 
                                           <v-icon size="2px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
                                        </span>
                                        <span class="ml-3">
-                                       <a style="font-size:12px;" class=" aJie grey--text mt-2  textfm1" @click="test"> Reply </a> 
+                                       <a style="font-size:12px;" class=" aJie grey--text mt-2  textfm1" @click=""> Reply </a> 
                                           <v-icon size="2px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
                                        </span>
                                        <span class="ml-3">

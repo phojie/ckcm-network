@@ -1,7 +1,7 @@
 <template>
    <div>
       <!-- <v-dialog :fullscreen="$vuetify.breakpoint.md"> -->
-         <v-alert :value="true" type="success">You are lost my friend</v-alert>
+         <v-alert :value="true" type="success">Not yet Live</v-alert>
          <router-link to="/">Bring me back</router-link>
       <!-- </v-dialog> -->
       

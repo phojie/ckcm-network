@@ -5186,6 +5186,48 @@ function toComment(sourceMap) {
 
 /***/ }),
 /* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export app */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return auth; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return db; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return usersRef; });
+/* unused harmony export newsfeedRef */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return order; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_js__ = __webpack_require__(25);
+
+// import { app } from 'firebase';
+
+
+var config = {
+   apiKey: "AIzaSyAcYoRTQ4nmID5XjHbPXz543yG5ozz1bFM",
+   authDomain: "authjie.ckcm-network.com",
+   databaseURL: "https://christ-the-king-network.firebaseio.com",
+   projectId: "christ-the-king-network",
+   storageBucket: "christ-the-king-network.appspot.com",
+   messagingSenderId: "631685789688"
+};
+var app = firebase.initializeApp(config);
+var auth = app.auth();
+// firebase.initializeApp(config);
+// export const ckcmApp = app.auth;
+// export const auth = app.auth();
+// export const authGoogle = firebase.auth.GoogleAuthProvider();
+var db = app.database();
+var usersRef = db.ref('users');
+var newsfeedRef = db.ref('Newsfeed').orderByChild('order');
+var order = db.ref('N_order/newsfeedOrder');
+
+// export const storage = app.storage().ref('newsFeedImages');
+
+// export const timestamp = app.ServerValue.TIMESTAMP();
+
+// to identify if data has change or added
+// newsfeedRef.on('value', snap => console.log(snap.val()));
+
+/***/ }),
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isDate = __webpack_require__(274)
@@ -5511,7 +5553,7 @@ module.exports = parse
 
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5564,48 +5606,6 @@ function getLocalfdetails() {
    }
    return JSON.parse(userStr2);
 }
-
-/***/ }),
-/* 8 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export app */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return auth; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return db; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return usersRef; });
-/* unused harmony export newsfeedRef */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return order; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_js__ = __webpack_require__(25);
-
-// import { app } from 'firebase';
-
-
-var config = {
-   apiKey: "AIzaSyAcYoRTQ4nmID5XjHbPXz543yG5ozz1bFM",
-   authDomain: "authjie.ckcm-network.com",
-   databaseURL: "https://christ-the-king-network.firebaseio.com",
-   projectId: "christ-the-king-network",
-   storageBucket: "christ-the-king-network.appspot.com",
-   messagingSenderId: "631685789688"
-};
-var app = firebase.initializeApp(config);
-var auth = app.auth();
-// firebase.initializeApp(config);
-// export const ckcmApp = app.auth;
-// export const auth = app.auth();
-// export const authGoogle = firebase.auth.GoogleAuthProvider();
-var db = app.database();
-var usersRef = db.ref('users');
-var newsfeedRef = db.ref('Newsfeed').orderByChild('order');
-var order = db.ref('N_order/newsfeedOrder');
-
-// export const storage = app.storage().ref('newsFeedImages');
-
-// export const timestamp = app.ServerValue.TIMESTAMP();
-
-// to identify if data has change or added
-// newsfeedRef.on('value', snap => console.log(snap.val()));
 
 /***/ }),
 /* 9 */
@@ -29096,8 +29096,8 @@ function withParams(paramsOrClosure, maybeValidator) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ckcmHelpers_auth__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__firebase__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ckcmHelpers_auth__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__firebase__ = __webpack_require__(6);
 
 
 
@@ -41169,7 +41169,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_vue_progressbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_vue_progressbar__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__mdi_font_css_materialdesignicons_css__ = __webpack_require__(253);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__mdi_font_css_materialdesignicons_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__mdi_font_css_materialdesignicons_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__firebase__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__firebase__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_vuefire__ = __webpack_require__(261);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_vuefire___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_vuefire__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_vue_emoji_picker__ = __webpack_require__(262);
@@ -41308,7 +41308,7 @@ try {
 
 window.axios = __webpack_require__(13);
 
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+// window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
@@ -51957,7 +51957,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuelidate___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vuelidate__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ckcmHelpers_auth__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ckcmHelpers_auth__ = __webpack_require__(8);
 //
 //
 //
@@ -54019,7 +54019,7 @@ var render = function() {
     "div",
     [
       _c("v-alert", { attrs: { value: true, type: "success" } }, [
-        _vm._v("You are lost my friend")
+        _vm._v("Not yet Live")
       ]),
       _vm._v(" "),
       _c("router-link", { attrs: { to: "/" } }, [_vm._v("Bring me back")])
@@ -54136,7 +54136,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ckcmHelpers_auth__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ckcmHelpers_auth__ = __webpack_require__(8);
 //
 //
 //
@@ -54563,7 +54563,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ckcmHelpers_auth__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ckcmHelpers_auth__ = __webpack_require__(8);
 //
 //
 //
@@ -54977,7 +54977,7 @@ exports = module.exports = __webpack_require__(5)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* html {\r\n   overflow: hidden !important; \r\n} */\n.fade-enter-active, .fade-leave-active {\r\n  -webkit-transition: opacity .5s;\r\n  transition: opacity .5s;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\r\n  opacity: 0;\n}\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* html {\r\n   overflow: hidden !important; \r\n} */\n.fade-enter-active, .fade-leave-active {\r\n  -webkit-transition: opacity .5s;\r\n  transition: opacity .5s;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\r\n  opacity: 0;\n}\r\n", ""]);
 
 // exports
 
@@ -54988,7 +54988,89 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_js__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_js__ = __webpack_require__(6);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -55624,286 +55706,630 @@ var render = function() {
               staticStyle: { "padding-top": "7px !important" },
               attrs: { flat: "", color: "" }
             },
-            _vm._l(_vm.users, function(friendList) {
-              return friendList[".key"] != _vm.userData["ckcm-network_token_id"]
-                ? _c(
-                    "v-menu",
+            [
+              _vm._l(_vm.users, function(friendList) {
+                return friendList[".key"] !=
+                  _vm.userData["ckcm-network_token_id"]
+                  ? _c(
+                      "v-menu",
+                      {
+                        key: friendList.id,
+                        attrs: {
+                          "close-on-content-click": false,
+                          "full-width": "",
+                          "open-on-hover": "",
+                          "allow-overflow": "",
+                          "nudge-left": "240",
+                          "min-width": "240",
+                          "max-width": "240",
+                          "close-delay": "50",
+                          bottom: "",
+                          app: ""
+                        }
+                      },
+                      [
+                        _c(
+                          "v-btn",
+                          {
+                            staticClass: " jieleftNav",
+                            staticStyle: { "margin-top": "-6px" },
+                            attrs: {
+                              slot: "activator",
+                              color: "grey",
+                              block: "",
+                              flat: ""
+                            },
+                            slot: "activator"
+                          },
+                          [
+                            _c(
+                              "v-badge",
+                              {
+                                staticClass: "jieBadgeFriend",
+                                attrs: { color: "white", overlap: "" }
+                              },
+                              [
+                                friendList.status == "online"
+                                  ? _c("span", {
+                                      key: friendList[".key"],
+                                      staticStyle: {
+                                        "font-size": "16px",
+                                        "border-radius": "50%",
+                                        border: "4px solid #7CB342"
+                                      },
+                                      attrs: { slot: "badge" },
+                                      slot: "badge"
+                                    })
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                friendList.status != "online"
+                                  ? _c("span", {
+                                      key: friendList[".key"],
+                                      staticStyle: {
+                                        "font-size": "16px",
+                                        "border-radius": "50%",
+                                        border: "4px solid #E57373"
+                                      },
+                                      attrs: { slot: "badge" },
+                                      slot: "badge"
+                                    })
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                _c(
+                                  "v-avatar",
+                                  {
+                                    staticClass: "mr-2",
+                                    attrs: {
+                                      color: "grey lighten-3",
+                                      size: "28"
+                                    }
+                                  },
+                                  [
+                                    _c("img", {
+                                      attrs: {
+                                        src: friendList.photoUrl,
+                                        alt: ""
+                                      }
+                                    })
+                                  ]
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "v-toolbar-title",
+                              {
+                                staticClass:
+                                  "textDefault textfm1 grey--text text--darken-3 ",
+                                staticStyle: {
+                                  "margin-left": "-2px !important",
+                                  "font-size": "14px !important",
+                                  "letter-spacing": ".5px"
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  " \r\n                  " +
+                                    _vm._s(friendList.displayName) +
+                                    "\r\n               "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("v-spacer")
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "v-card",
+                          [
+                            _c(
+                              "v-layout",
+                              {
+                                attrs: {
+                                  row: "",
+                                  wrap: "",
+                                  "justify-center": "",
+                                  "align-center": "",
+                                  "align-content-center": ""
+                                }
+                              },
+                              [
+                                _c(
+                                  "v-flex",
+                                  {
+                                    staticClass: "grey lighten-5 pa-3 ",
+                                    attrs: { xs12: "" }
+                                  },
+                                  [
+                                    _c(
+                                      "v-layout",
+                                      {
+                                        attrs: {
+                                          row: "",
+                                          wrap: "",
+                                          "justify-center": "",
+                                          "align-center": "",
+                                          "align-content-center": ""
+                                        }
+                                      },
+                                      [
+                                        _c(
+                                          "v-badge",
+                                          {
+                                            staticClass:
+                                              "jieBadgeFriendMessage",
+                                            attrs: {
+                                              color: "white",
+                                              overlap: ""
+                                            }
+                                          },
+                                          [
+                                            friendList.status == "online"
+                                              ? _c("span", {
+                                                  key: friendList[".key"],
+                                                  staticStyle: {
+                                                    "border-radius": "50%",
+                                                    border: "6px solid #7CB342"
+                                                  },
+                                                  attrs: { slot: "badge" },
+                                                  slot: "badge"
+                                                })
+                                              : _vm._e(),
+                                            _vm._v(" "),
+                                            friendList.status != "online"
+                                              ? _c("span", {
+                                                  key: friendList[".key"],
+                                                  staticStyle: {
+                                                    "border-radius": "50%",
+                                                    border: "6px solid #E57373"
+                                                  },
+                                                  attrs: { slot: "badge" },
+                                                  slot: "badge"
+                                                })
+                                              : _vm._e(),
+                                            _vm._v(" "),
+                                            _c(
+                                              "v-avatar",
+                                              {
+                                                attrs: {
+                                                  color: "grey lighten-3",
+                                                  size: "70"
+                                                }
+                                              },
+                                              [
+                                                _c("img", {
+                                                  attrs: {
+                                                    src:
+                                                      friendList.photoUrl +
+                                                      "?height=500",
+                                                    alt: ""
+                                                  }
+                                                })
+                                              ]
+                                            )
+                                          ],
+                                          1
+                                        )
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "text-xs-center mt-1" },
+                                      [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "subheading font-weight-bold textDefault textfm1"
+                                          },
+                                          [
+                                            _vm._v(
+                                              " " +
+                                                _vm._s(friendList.displayName)
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "body-1 textDefault textfm1"
+                                          },
+                                          [_vm._v(" Caption ")]
+                                        )
+                                      ]
+                                    )
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-flex",
+                                  { staticClass: "pa-2", attrs: { xs12: "" } },
+                                  [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "caption font-weight-bold textDefault textfm1 grey--text"
+                                      },
+                                      [_vm._v(" ROLES ")]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "caption font-weight-bold textDefault textfm1 grey--text"
+                                      },
+                                      [_vm._v(" NOTE ")]
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-flex",
+                                  { attrs: { xs12: "" } },
+                                  [_c("v-divider", { staticClass: "mt-4" })],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  : _vm._e()
+              }),
+              _vm._v(" "),
+              _c(
+                "v-toolbar-title",
+                {
+                  staticClass: "textDefault textfm1 grey--text text--darken-3 ",
+                  staticStyle: {
+                    "margin-left": "8px !important",
+                    "font-size": "14px !important",
+                    "letter-spacing": ".5px"
+                  }
+                },
+                [
+                  _vm._v(
+                    " \r\n               Subjects Converation    \r\n            "
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "v-btn",
+                {
+                  staticClass: " jieleftNav",
+                  attrs: { color: "grey", block: "", flat: "" }
+                },
+                [
+                  _c(
+                    "v-badge",
                     {
-                      key: friendList.id,
-                      attrs: {
-                        "close-on-content-click": false,
-                        "full-width": "",
-                        "open-on-hover": "",
-                        "allow-overflow": "",
-                        "nudge-left": "240",
-                        "min-width": "240",
-                        "max-width": "240",
-                        "close-delay": "50",
-                        bottom: "",
-                        app: ""
-                      }
+                      staticClass: "jieBadgeFriend",
+                      attrs: { color: "white", overlap: "" }
                     },
                     [
                       _c(
-                        "v-btn",
+                        "v-avatar",
                         {
-                          staticClass: " jieleftNav",
-                          staticStyle: { "margin-top": "-6px" },
-                          attrs: {
-                            slot: "activator",
-                            color: "grey",
-                            block: "",
-                            flat: ""
-                          },
-                          slot: "activator"
+                          staticClass: "mr-2",
+                          attrs: { color: "", size: "28" }
                         },
                         [
-                          _c(
-                            "v-badge",
-                            {
-                              staticClass: "jieBadgeFriend",
-                              attrs: { color: "white", overlap: "" }
-                            },
-                            [
-                              friendList.status == "online"
-                                ? _c("span", {
-                                    key: friendList[".key"],
-                                    staticStyle: {
-                                      "font-size": "16px",
-                                      "border-radius": "50%",
-                                      border: "4px solid #7CB342"
-                                    },
-                                    attrs: { slot: "badge" },
-                                    slot: "badge"
-                                  })
-                                : _vm._e(),
-                              _vm._v(" "),
-                              friendList.status != "online"
-                                ? _c("span", {
-                                    key: friendList[".key"],
-                                    staticStyle: {
-                                      "font-size": "16px",
-                                      "border-radius": "50%",
-                                      border: "4px solid #E57373"
-                                    },
-                                    attrs: { slot: "badge" },
-                                    slot: "badge"
-                                  })
-                                : _vm._e(),
-                              _vm._v(" "),
-                              _c(
-                                "v-avatar",
-                                {
-                                  staticClass: "mr-2",
-                                  attrs: { color: "grey lighten-3", size: "28" }
-                                },
-                                [
-                                  _c("img", {
-                                    attrs: { src: friendList.photoUrl, alt: "" }
-                                  })
-                                ]
-                              )
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-toolbar-title",
-                            {
-                              staticClass:
-                                "textDefault textfm1 grey--text text--darken-3 ",
-                              staticStyle: {
-                                "margin-left": "-2px !important",
-                                "font-size": "14px !important",
-                                "letter-spacing": ".5px"
-                              }
-                            },
-                            [
-                              _vm._v(
-                                " \r\n                  " +
-                                  _vm._s(friendList.displayName) +
-                                  "\r\n               "
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("v-spacer"),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass: "textfm2 textDefault",
-                              staticStyle: { "font-size": "11px" }
-                            },
-                            [_vm._v("2m")]
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-card",
-                        [
-                          _c(
-                            "v-layout",
-                            {
-                              attrs: {
-                                row: "",
-                                wrap: "",
-                                "justify-center": "",
-                                "align-center": "",
-                                "align-content-center": ""
-                              }
-                            },
-                            [
-                              _c(
-                                "v-flex",
-                                {
-                                  staticClass: "grey lighten-5 pa-3 ",
-                                  attrs: { xs12: "" }
-                                },
-                                [
-                                  _c(
-                                    "v-layout",
-                                    {
-                                      attrs: {
-                                        row: "",
-                                        wrap: "",
-                                        "justify-center": "",
-                                        "align-center": "",
-                                        "align-content-center": ""
-                                      }
-                                    },
-                                    [
-                                      _c(
-                                        "v-badge",
-                                        {
-                                          staticClass: "jieBadgeFriendMessage",
-                                          attrs: { color: "white", overlap: "" }
-                                        },
-                                        [
-                                          friendList.status == "online"
-                                            ? _c("span", {
-                                                key: friendList[".key"],
-                                                staticStyle: {
-                                                  "border-radius": "50%",
-                                                  border: "6px solid #7CB342"
-                                                },
-                                                attrs: { slot: "badge" },
-                                                slot: "badge"
-                                              })
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          friendList.status != "online"
-                                            ? _c("span", {
-                                                key: friendList[".key"],
-                                                staticStyle: {
-                                                  "border-radius": "50%",
-                                                  border: "6px solid #E57373"
-                                                },
-                                                attrs: { slot: "badge" },
-                                                slot: "badge"
-                                              })
-                                            : _vm._e(),
-                                          _vm._v(" "),
-                                          _c(
-                                            "v-avatar",
-                                            {
-                                              attrs: {
-                                                color: "grey lighten-3",
-                                                size: "70"
-                                              }
-                                            },
-                                            [
-                                              _c("img", {
-                                                attrs: {
-                                                  src:
-                                                    friendList.photoUrl +
-                                                    "?height=500",
-                                                  alt: ""
-                                                }
-                                              })
-                                            ]
-                                          )
-                                        ],
-                                        1
-                                      )
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    { staticClass: "text-xs-center mt-1" },
-                                    [
-                                      _c(
-                                        "div",
-                                        {
-                                          staticClass:
-                                            "subheading font-weight-bold textDefault textfm1"
-                                        },
-                                        [
-                                          _vm._v(
-                                            " " + _vm._s(friendList.displayName)
-                                          )
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "div",
-                                        {
-                                          staticClass:
-                                            "body-1 textDefault textfm1"
-                                        },
-                                        [_vm._v(" Caption ")]
-                                      )
-                                    ]
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-flex",
-                                { staticClass: "pa-2", attrs: { xs12: "" } },
-                                [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "caption font-weight-bold textDefault textfm1 grey--text"
-                                    },
-                                    [_vm._v(" ROLES ")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "caption font-weight-bold textDefault textfm1 grey--text"
-                                    },
-                                    [_vm._v(" NOTE ")]
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-flex",
-                                { attrs: { xs12: "" } },
-                                [_c("v-divider", { staticClass: "mt-4" })],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://png.icons8.com/ios/50/795548/physics.png"
+                            }
+                          })
+                        ]
                       )
                     ],
                     1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-toolbar-title",
+                    {
+                      staticClass:
+                        "textDefault textfm1 grey--text text--darken-3 ",
+                      staticStyle: {
+                        "margin-left": "-2px !important",
+                        "font-size": "14px !important",
+                        "letter-spacing": ".5px"
+                      }
+                    },
+                    [
+                      _vm._v(
+                        " \r\n                  Physics II\r\n               "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "textfm2 textDefault",
+                      staticStyle: { "font-size": "11px" }
+                    },
+                    [_vm._v("24")]
                   )
-                : _vm._e()
-            })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-btn",
+                {
+                  staticClass: " jieleftNav",
+                  attrs: { color: "grey", block: "", flat: "" }
+                },
+                [
+                  _c(
+                    "v-badge",
+                    {
+                      staticClass: "jieBadgeFriend",
+                      attrs: { color: "white", overlap: "" }
+                    },
+                    [
+                      _c(
+                        "v-avatar",
+                        {
+                          staticClass: "mr-2",
+                          attrs: { tile: "", color: "", size: "25" }
+                        },
+                        [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://png.icons8.com/ios/50/9C27B0/mind-map.png"
+                            }
+                          })
+                        ]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-toolbar-title",
+                    {
+                      staticClass:
+                        "textDefault textfm1 grey--text text--darken-3 ",
+                      staticStyle: {
+                        "margin-left": "-2px !important",
+                        "font-size": "14px !important",
+                        "letter-spacing": ".5px"
+                      }
+                    },
+                    [
+                      _vm._v(
+                        " \r\n                  Artificial Intelligence\r\n               "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "textfm2 textDefault",
+                      staticStyle: { "font-size": "11px" }
+                    },
+                    [_vm._v("6")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-btn",
+                {
+                  staticClass: " jieleftNav",
+                  attrs: { color: "grey", block: "", flat: "" }
+                },
+                [
+                  _c(
+                    "v-badge",
+                    {
+                      staticClass: "jieBadgeFriend",
+                      attrs: { color: "white", overlap: "" }
+                    },
+                    [
+                      _c(
+                        "v-avatar",
+                        {
+                          staticClass: "mr-2",
+                          attrs: { tile: "", color: "", size: "25" }
+                        },
+                        [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://png.icons8.com/ios/50/FFCC80/geography.png"
+                            }
+                          })
+                        ]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-toolbar-title",
+                    {
+                      staticClass:
+                        "textDefault textfm1 grey--text text--darken-3 ",
+                      staticStyle: {
+                        "margin-left": "-2px !important",
+                        "font-size": "14px !important",
+                        "letter-spacing": ".5px"
+                      }
+                    },
+                    [
+                      _vm._v(
+                        " \r\n                 Web Base \r\n               "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "textfm2 textDefault",
+                      staticStyle: { "font-size": "11px" }
+                    },
+                    [_vm._v("14")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-btn",
+                {
+                  staticClass: " jieleftNav",
+                  attrs: { color: "grey", block: "", flat: "" }
+                },
+                [
+                  _c(
+                    "v-badge",
+                    {
+                      staticClass: "jieBadgeFriend",
+                      attrs: { color: "white", overlap: "" }
+                    },
+                    [
+                      _c(
+                        "v-avatar",
+                        {
+                          staticClass: "mr-2",
+                          attrs: { tile: "", color: "", size: "22" }
+                        },
+                        [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://png.icons8.com/ios/50/009688/trigonometry.png"
+                            }
+                          })
+                        ]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-toolbar-title",
+                    {
+                      staticClass:
+                        "textDefault textfm1 grey--text text--darken-3 ",
+                      staticStyle: {
+                        "margin-left": "-2px !important",
+                        "font-size": "14px !important",
+                        "letter-spacing": ".5px"
+                      }
+                    },
+                    [
+                      _vm._v(
+                        " \r\n                  Trigonometry\r\n               "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "textfm2 textDefault",
+                      staticStyle: { "font-size": "11px" }
+                    },
+                    [_vm._v("50")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-btn",
+                {
+                  staticClass: " jieleftNav",
+                  attrs: { color: "grey", block: "", flat: "" }
+                },
+                [
+                  _c(
+                    "v-badge",
+                    {
+                      staticClass: "jieBadgeFriend",
+                      attrs: { color: "white", overlap: "" }
+                    },
+                    [
+                      _c(
+                        "v-avatar",
+                        {
+                          staticClass: "mr-2",
+                          attrs: { tile: "", color: "", size: "25" }
+                        },
+                        [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://png.icons8.com/ios/50/4CAF50/test-tube.png"
+                            }
+                          })
+                        ]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-toolbar-title",
+                    {
+                      staticClass:
+                        "textDefault textfm1 grey--text text--darken-3 ",
+                      staticStyle: {
+                        "margin-left": "-2px !important",
+                        "font-size": "14px !important",
+                        "letter-spacing": ".5px"
+                      }
+                    },
+                    [_vm._v(" \r\n                 Science\r\n               ")]
+                  ),
+                  _vm._v(" "),
+                  _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "textfm2 textDefault",
+                      staticStyle: { "font-size": "11px" }
+                    },
+                    [_vm._v("20")]
+                  )
+                ],
+                1
+              )
+            ],
+            2
           ),
           _vm._v(" "),
           _c(
@@ -56071,12 +56497,44 @@ var render = function() {
                               attrs: {
                                 small: "",
                                 color: "blue caption lighten-5",
+                                "text-color": "green"
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\r\n                        Registrar\r\n                     "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-chip",
+                            {
+                              attrs: {
+                                small: "",
+                                color: "blue caption lighten-5",
                                 "text-color": "indigo"
                               }
                             },
                             [
                               _vm._v(
                                 "\r\n                        Vice-President\r\n                     "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-chip",
+                            {
+                              attrs: {
+                                small: "",
+                                color: "blue caption lighten-5",
+                                "text-color": "orange"
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\r\n                        Instructor\r\n                     "
                               )
                             ]
                           ),
@@ -56382,6 +56840,62 @@ var render = function() {
                       staticClass: " jieleftNav",
                       staticStyle: { "padding-left": "10px" },
                       attrs: {
+                        to: "",
+                        ripple: { class: "white--text" },
+                        color: "blue lighten-1",
+                        flat: "",
+                        depressed: "",
+                        block: ""
+                      }
+                    },
+                    [
+                      _c(
+                        "v-avatar",
+                        {
+                          staticClass: "mr-2",
+                          attrs: {
+                            tile: "",
+                            color: "grey--after",
+                            size: "20px"
+                          }
+                        },
+                        [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "https://png.icons8.com/ios/50/000000/check-in-desk.png"
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "font-weight-thin mr-2 black--text textDefault ",
+                          staticStyle: {
+                            "font-size": "12px",
+                            "margin-left": "1px",
+                            "letter-spacing": ".5px"
+                          }
+                        },
+                        [_vm._v(" Registrar-Office ")]
+                      ),
+                      _vm._v(" "),
+                      _c("v-spacer"),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "textfm1 caption" })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: " jieleftNav",
+                      staticStyle: { "padding-left": "10px" },
+                      attrs: {
                         to: "vpoffice",
                         ripple: { class: "white--text" },
                         color: "blue lighten-1",
@@ -56599,7 +57113,7 @@ var render = function() {
                             "letter-spacing": ".5px"
                           }
                         },
-                        [_vm._v(" Result Card ")]
+                        [_vm._v(" Results Card ")]
                       ),
                       _vm._v(" "),
                       _c("v-spacer"),
@@ -56715,7 +57229,7 @@ var render = function() {
       _c(
         "v-toolbar",
         {
-          staticClass: "elevation-1 mr-5 blue darken-3 jieSvgBg1 ",
+          staticClass: "elevation-1 mr-5 blue darken-3 jieSvgBgvu ",
           attrs: {
             height: "43px",
             "clipped-left": "",
@@ -57279,6 +57793,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 // var moment = require('moment-timezone');
 
@@ -57424,7 +57939,10 @@ var render = function() {
                                   }),
                                   _vm._v(" "),
                                   _c("v-text-field", {
-                                    attrs: { label: "Password" },
+                                    attrs: {
+                                      type: "password",
+                                      label: "Password"
+                                    },
                                     model: {
                                       value: _vm.password,
                                       callback: function($$v) {
@@ -57560,7 +58078,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_js__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_js__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_infinite_loading__ = __webpack_require__(237);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_infinite_loading___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_infinite_loading__);
 //
@@ -60633,7 +61151,9 @@ var render = function() {
                                                                 "12px"
                                                             },
                                                             on: {
-                                                              click: _vm.test
+                                                              click: function(
+                                                                $event
+                                                              ) {}
                                                             }
                                                           },
                                                           [_vm._v(" Like ")]
@@ -60677,7 +61197,9 @@ var render = function() {
                                                                 "12px"
                                                             },
                                                             on: {
-                                                              click: _vm.test
+                                                              click: function(
+                                                                $event
+                                                              ) {}
                                                             }
                                                           },
                                                           [_vm._v(" Dislike ")]
@@ -60721,7 +61243,9 @@ var render = function() {
                                                                 "12px"
                                                             },
                                                             on: {
-                                                              click: _vm.test
+                                                              click: function(
+                                                                $event
+                                                              ) {}
                                                             }
                                                           },
                                                           [_vm._v(" Reply ")]
@@ -61955,7 +62479,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_js__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_js__ = __webpack_require__(6);
 //
 //
 //
@@ -62166,7 +62690,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                apikey: 'PK5J+HcAL3c-VQGS8ixOd8AEvoIjjzRnKivZCviJ1Y',
                numbers: '09463582440', sender: 'jie', message: vm.announceMesesage
             }];
-            axios.request('https://api.txtlocal.com/send/?apikey=PK5J%2BHcAL3c-VQGS8ixOd8AEvoIjjzRnKivZCviJ1Y&numbers=09463582440&sender=jie&message=123').then(function (response) {
+            axios.post('https://api.txtlocal.com/send/?apikey=wckbqSSCC0k-ImFk31JYM0YIAZlFG0ObL22iEf1jeW&numbers=639463582440&sender=CkcmNetwork&message=' + vm.announceMesesage).then(function (response) {
                console.log(response);
             }).catch(function (error) {
                console.log(error);
@@ -107010,7 +107534,7 @@ module.exports = distanceInWordsToNow
 /***/ (function(module, exports, __webpack_require__) {
 
 var compareDesc = __webpack_require__(273)
-var parse = __webpack_require__(6)
+var parse = __webpack_require__(7)
 var differenceInSeconds = __webpack_require__(275)
 var differenceInMonths = __webpack_require__(277)
 var enLocale = __webpack_require__(280)
@@ -107218,7 +107742,7 @@ module.exports = distanceInWords
 /* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var parse = __webpack_require__(6)
+var parse = __webpack_require__(7)
 
 /**
  * @category Common Helpers
@@ -107335,7 +107859,7 @@ module.exports = differenceInSeconds
 /* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var parse = __webpack_require__(6)
+var parse = __webpack_require__(7)
 
 /**
  * @category Millisecond Helpers
@@ -107370,7 +107894,7 @@ module.exports = differenceInMilliseconds
 /* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var parse = __webpack_require__(6)
+var parse = __webpack_require__(7)
 var differenceInCalendarMonths = __webpack_require__(278)
 var compareAsc = __webpack_require__(279)
 
@@ -107414,7 +107938,7 @@ module.exports = differenceInMonths
 /* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var parse = __webpack_require__(6)
+var parse = __webpack_require__(7)
 
 /**
  * @category Month Helpers
@@ -107452,7 +107976,7 @@ module.exports = differenceInCalendarMonths
 /* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var parse = __webpack_require__(6)
+var parse = __webpack_require__(7)
 
 /**
  * @category Common Helpers
