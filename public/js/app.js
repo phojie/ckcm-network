@@ -56003,7 +56003,7 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    " \r\n               Subjects Converation    \r\n            "
+                    " \r\n               Subjects Conversation    \r\n            "
                   )
                 ]
               ),
@@ -56026,7 +56026,7 @@ var render = function() {
                         "v-avatar",
                         {
                           staticClass: "mr-2",
-                          attrs: { color: "", size: "28" }
+                          attrs: { color: "", size: "20" }
                         },
                         [
                           _c("img", {
@@ -56091,7 +56091,7 @@ var render = function() {
                         "v-avatar",
                         {
                           staticClass: "mr-2",
-                          attrs: { tile: "", color: "", size: "25" }
+                          attrs: { tile: "", color: "", size: "20" }
                         },
                         [
                           _c("img", {
@@ -56156,7 +56156,7 @@ var render = function() {
                         "v-avatar",
                         {
                           staticClass: "mr-2",
-                          attrs: { tile: "", color: "", size: "25" }
+                          attrs: { tile: "", color: "", size: "20" }
                         },
                         [
                           _c("img", {
@@ -56221,7 +56221,7 @@ var render = function() {
                         "v-avatar",
                         {
                           staticClass: "mr-2",
-                          attrs: { tile: "", color: "", size: "22" }
+                          attrs: { tile: "", color: "", size: "20" }
                         },
                         [
                           _c("img", {
@@ -56286,7 +56286,7 @@ var render = function() {
                         "v-avatar",
                         {
                           staticClass: "mr-2",
-                          attrs: { tile: "", color: "", size: "25" }
+                          attrs: { tile: "", color: "", size: "20" }
                         },
                         [
                           _c("img", {

@@ -169,12 +169,12 @@
 
 
             <v-toolbar-title style="margin-left:8px !important;font-size:14px !important; letter-spacing:.5px;" class="textDefault textfm1 grey--text text--darken-3 "> 
-               Subjects Converation    
+               Subjects Conversation    
             </v-toolbar-title>
 
             <v-btn style=""    color="grey" class=" jieleftNav" block flat>
                <v-badge color="white"  overlap class="jieBadgeFriend">
-                  <v-avatar    class="mr-2"  color="" size="28">
+                  <v-avatar    class="mr-2"  color="" size="20">
                      <img src="https://png.icons8.com/ios/50/795548/physics.png">
                   </v-avatar>
                </v-badge>
@@ -187,7 +187,7 @@
             </v-btn>
             <v-btn style=""    color="grey" class=" jieleftNav" block flat>
                <v-badge color="white"  overlap class="jieBadgeFriend">
-                  <v-avatar  tile  class="mr-2"  color="" size="25">
+                  <v-avatar  tile  class="mr-2"  color="" size="20">
                      <img src="https://png.icons8.com/ios/50/9C27B0/mind-map.png">
                   </v-avatar>
                </v-badge>
@@ -200,7 +200,7 @@
             </v-btn>
             <v-btn style=""    color="grey" class=" jieleftNav" block flat>
                <v-badge color="white"  overlap class="jieBadgeFriend">
-                  <v-avatar  tile  class="mr-2"  color="" size="25">
+                  <v-avatar  tile  class="mr-2"  color="" size="20">
                      <img src="https://png.icons8.com/ios/50/FFCC80/geography.png">
                   </v-avatar>
                </v-badge>
@@ -213,7 +213,7 @@
             </v-btn>
             <v-btn style=""    color="grey" class=" jieleftNav" block flat>
                <v-badge color="white"  overlap class="jieBadgeFriend">
-                  <v-avatar  tile class="mr-2"  color="" size="22">
+                  <v-avatar  tile class="mr-2"  color="" size="20">
                      <img src="https://png.icons8.com/ios/50/009688/trigonometry.png">
                   </v-avatar>
                </v-badge>
@@ -227,7 +227,7 @@
 
             <v-btn style=""    color="grey" class=" jieleftNav" block flat>
                <v-badge color="white"  overlap class="jieBadgeFriend">
-                  <v-avatar  tile  class="mr-2"  color="" size="25">
+                  <v-avatar  tile  class="mr-2"  color="" size="20">
                      <img src="https://png.icons8.com/ios/50/4CAF50/test-tube.png">
                   </v-avatar>
                </v-badge>
