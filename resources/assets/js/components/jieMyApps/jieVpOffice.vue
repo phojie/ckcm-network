@@ -205,7 +205,8 @@ export default {
                apikey: 'PK5J+HcAL3c-VQGS8ixOd8AEvoIjjzRnKivZCviJ1Y',
                numbers:'09463582440',sender: 'jie', message: vm.announceMesesage
             }]
-            axios.post(`https://api.txtlocal.com/send/?apikey=wckbqSSCC0k-ImFk31JYM0YIAZlFG0ObL22iEf1jeW&numbers=639463582440&sender=CkcmNetwork&message=${vm.announceMesesage}`)
+            var sendingNumber = '+639061262389'
+            axios.post(`https://api.txtlocal.com/send/?apikey=wckbqSSCC0k-ImFk31JYM0YIAZlFG0ObL22iEf1jeW&numbers=${sendingNumber}&sender=CkcmNetwork&message=${vm.announceMesesage}`)
                .then((response) =>{
                   console.log(response)
                })

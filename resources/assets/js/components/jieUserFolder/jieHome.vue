@@ -1,7 +1,7 @@
 <template>
 <v-card  id="scroll-target" app height="100%" width="100%" style="position:absolute; bottom:0" flat class="newsfeedScroll transparent scrollbar-primary "> 
       <v-layout v-scroll:#scroll-target="onScroll" class="mt-1 mx-1 justify-center">
-         <v-flex class=" xs12 sm12 md8 lg8  mr-2 mt-1">
+         <v-flex class=" xs12 sm12 md8  ml-1 mr-2 mt-1">
             <v-card flat  class="" >
                <!-- jieSvgBg1 -->
                <!-- style="border:1px #E0E0E0 solid;border-radius:2px"   -->
@@ -81,16 +81,16 @@
                   </div>
                   <v-flex style="margin-top:-3px" :class="whatisFlex">
                      <!-- jiew -->
-                     <!-- @blur="whatisFunctionMethodFalse" -->
                      <v-textarea 
                         background-color="transparent"
                         hide-details v-model="postedData.message" color="blue"
-                        class="whatIs  subheading" row-height="10"
+                        class="whatIs  body-2" row-height="10"
                         ref="newP"
                         append-icon="mdi-image-outline"
                         @click:append="photoBtn"
                         style="" placeholder="What is your main focus for today?"
                         @focus="whatisFunctionMethod"  flat solo
+                        @blur="whatisFunctionMethodFalse"
                         auto-grow
                      ></v-textarea>
                     
@@ -247,7 +247,7 @@
                         </p>
                         </div>
                         <v-spacer></v-spacer>
-                        <v-menu open-on-hover style="margin-top:-20px;" offset-y nudge-left="80"> 
+                        <v-menu open-on-hover style="margin-top:-7px;" offset-y nudge-left="80"> 
                            <v-btn
                               slot="activator"
                               icon
@@ -279,7 +279,7 @@
                      <v-flex  style="margin-top:-15px;" xs12  >
                         <v-layout class="wrap row ml-1">
                            <v-textarea
-                              v-if="newsfeed.data.message.length <= 80 & newsfeed.data.image == ''" 
+                              v-if="newsfeed.data.message.length <= 80 && newsfeed.data.image.count == 0 " 
                               flat readonly background-color="transparent"
                               hide-details rows="1" solo auto-grow
                               class="newslineHeight "
@@ -287,12 +287,12 @@
                               v-model="newsfeed.data.message"
                            ></v-textarea>
                            <v-textarea
-                              v-else-if="newsfeed.data.message.length > 80 & newsfeed.data.image == ''" 
+                              v-else-if="newsfeed.data.message.length <= 80 && newsfeed.data.image.count != 0 " 
                               flat readonly background-color="transparent"
                               hide-details rows="1" solo auto-grow
                               v-model="newsfeed.data.message"
                               class=" "
-                              style="word-wrap: break-word;letter-spacing:1.34"
+                              style="font-size:15px !important;word-wrap: break-word;letter-spacing:1.34"
                            ></v-textarea>
                            <v-textarea
                               v-else
@@ -300,7 +300,7 @@
                               hide-details rows="1" solo auto-grow
                               v-model="newsfeed.data.message"
                               class=" "
-                              style="word-wrap: break-word;font-size:14px !important;letter-spacing:1.34"
+                              style="font-size:14px !important;word-wrap: break-word;letter-spacing:1.34"
                            ></v-textarea>
                         </v-layout>
 
@@ -380,16 +380,17 @@
                                        </div>
                                        <div v-else slot="activator" class="heartRight">
                                           <div style="margin-top:20px;margin-left:40px;position:absolute;font-size:12px;font-weight:bold;line-height:1;">
-                                             {{newsfeed.likes}}
+                                             {{43+newsfeed.likes}}
                                           </div>
                                        </div>
                                     </v-tooltip>
                                  </v-btn>
 
-                                 <v-btn v-if="newsfeed.whoComments[userData['ckcm-network_token_id']] != null" flat icon large class="mx-4 commentbtnActive" :ripple="false"  color="transparent">
+                                 <v-btn  v-if="newsfeed.whoComments[userData['ckcm-network_token_id']] != null" flat icon large class="mx-4 commentbtnActive" :ripple="false"  color="transparent">
                                     <v-tooltip content-class="jieTool" color="grey darken-4"  top>
-                                       <v-avatar  slot="activator" color="" tile size="20" class="mr-1">
-                                          <v-icon style="font-size:18px">mdi-comment-multiple</v-icon>
+                                       <v-avatar  slot="activator" color="" tile size="16" class="mr-1">
+                                          <img src="https://png.icons8.com/metro/50/17bf63/topic.png">
+                                          <!-- <img src="https://png.icons8.com/small/50/17bf63/speech-bubble.png"> -->
                                        </v-avatar>
                                        <span style="margin:3px;font-size:12px" > Comment </span>
                                           <v-layout justify-center>
@@ -412,8 +413,9 @@
 
                                  <v-btn v-else flat icon large class="mx-4 commentbtn" :ripple="false"  color="transparent">
                                     <v-tooltip content-class="jieTool" color="grey darken-4"  top>
-                                       <v-avatar  slot="activator" color="" tile size="20" class="mr-1">
-                                          <v-icon style="font-size:18px">mdi-comment-multiple-outline</v-icon>
+                                       <v-avatar  slot="activator" color="" tile size="16" class="mr-1">
+                                          <img src="https://png.icons8.com/metro/50/546E7A/topic.png">
+                                          <!-- <img src="https://png.icons8.com/small/50/546E7A/speech-bubble.png"> -->
                                        </v-avatar>
                                        <span style="margin:3px;font-size:12px" > Comment </span>
                                           <v-layout justify-center>
@@ -434,14 +436,35 @@
                                     </div>
                                  </v-btn>
 
-                                 
+                                 <v-btn flat icon large class="mr-4 " :ripple="false"  color="transparent">
+                                    <v-tooltip content-class="jieTool" color="grey darken-4"  top>
+                                       <v-avatar  slot="activator" color="" tile size="18" class="mr-1">
+                                          <img src="https://png.icons8.com/small/50/546E7A/share-3.png">
+                                       </v-avatar>
+                                       <span style="margin:3px;font-size:12px" > Share </span>
+                                          <v-layout justify-center>
+                                             <div class="" style="
+                                                position:absolute;
+                                                margin-top:5px;
+                                                margin-bottom:5px;
+                                                width: 0;
+                                                height: 0;
+                                                border-left: 6px solid transparent;
+                                                border-right: 6px solid transparent;
+                                                border-top: 6px solid #212121;"
+                                             ></div>
+                                          </v-layout> 
+                                    </v-tooltip>
+                                    <div style="margin-left:4px;margin-top:3px;font-size:12px;font-weight:bold;line-height:1;">
+                                       <span>1</span>
+                                    </div>
+                                 </v-btn>
 
                                  <v-btn style="margin-left:-2px" class="messagebtn" :ripple="false"  flat icon large color="transparent">
                                     <v-tooltip content-class="jieTool" color="grey darken-4"  top>
-                                       <v-avatar  slot="activator" color="" tile size="17" class="mr-1">
+                                       <v-avatar  slot="activator" color="" tile size="18" class="mr-1">
                                           <img src="https://png.icons8.com/ios/50/546E7A/new-post.png">
-                                          <!-- <img src="https://png.icons8.com/ios/50/546E7A/sent.png"> -->
-                                          <!-- <v-icon style="font-size:20px">mdi-email-outline</v-icon> -->
+                                          <!-- <img src="https://png.icons8.com/small/50/546E7A/new-post.png"> -->
                                        </v-avatar>
                                        <span style="margin:3px;font-size:11px" > Message </span>
                                        <v-layout justify-center>
@@ -470,7 +493,7 @@
                            <v-divider class="grey lighten-3"></v-divider>
                         </v-flex>
 
-                        <v-flex xs12 class="mx-2  ">
+                        <v-flex xs12 class="mx-2 ">
                            <v-flex xs12 v-for="commented in newsfeed.commentedLimit" :key="commented['.key']">
                               <v-layout v-if="commented.userId == userData['ckcm-network_token_id']">
                                  <div  class=" mt-3">
@@ -484,21 +507,21 @@
                                  </div>
                               
                                  <v-flex xs11  style="margin-top:12px;margin-left:-4px" >
-                                    <p style="word-wrap:break-word !important;max-width:98%;bwidth: auto !important" class=" green lighten-5 jie3Commented">
-                                       <router-link class="caption font-weight-bold blue--text text--darken-3 aJie" to="/profile/jiecel.marianne">{{commented.displayName}}</router-link>
+                                    <p style="word-wrap:break-word !important;max-width:98%;bwidth: auto !important" :class="userFData.themeColor" class="lighten-5 jie3Commented">
+                                       <router-link :class="`${userFData.themeColor}--text text--darken-4`" class="caption font-weight-bold aJie" to="/profile/jiecel.marianne">{{commented.displayName}}</router-link>
                                        {{commented.data}}
                                     </p>
                                     <div class="caption ml-3" style="margin-top:-13px; ">
                                        <span>
-                                       <a style="font-size:12px;" class="aJie grey--text mt-2  textfm1" @click=""> Like </a> 
+                                       <a style="font-size:12px;" class="aJie grey--text mt-2  textfm1" @click="test"> Like </a> 
                                           <v-icon size="2px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
                                        </span>
                                        <span class="ml-3">
-                                       <a style="font-size:12px;" class=" aJie grey--text mt-2  textfm1" @click=""> Dislike </a> 
+                                       <a style="font-size:12px;" class=" aJie grey--text mt-2  textfm1" @click="test"> Dislike </a> 
                                           <v-icon size="2px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
                                        </span>
                                        <span class="ml-3">
-                                       <a style="font-size:12px;" class=" aJie grey--text mt-2  textfm1" @click=""> Reply </a> 
+                                       <a style="font-size:12px;" class=" aJie grey--text mt-2  textfm1" @click="test"> Reply </a> 
                                           <v-icon size="2px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
                                        </span>
                                        <span class="ml-3">
@@ -523,7 +546,7 @@
                               
                                  <v-flex xs11  style="margin-top:12px;margin-left:-4px" >
                                     <p style="word-wrap:break-word !important;max-width:98%;bwidth: auto !important" class=" grey lighten-3 jie3Commented">
-                                       <router-link class="caption font-weight-bold blue--text text--darken-3 aJie" to="/profile/jiecel.marianne">{{commented.displayName}}</router-link>
+                                       <router-link :class="`${userFData.themeColor}--text text--darken-4`" class="textDefault caption font-weight-bold aJie" to="/profile/jiecel.marianne">{{commented.displayName}}</router-link>
                                        {{commented.data}}
                                     </p>
                                     <div class="caption ml-3" style="margin-top:-13px; ">
@@ -556,7 +579,7 @@
                               <v-progress-circular
                                  :width="1"
                                  :size="13"
-                                 color="blue lighten-1"
+                                 :color="`${userFData.themeColor} lighten-1`"
                                  indeterminate
                               ></v-progress-circular>
                               <span class="caption font-weight-thin grey--text textfm1">Someone is typing...</span>
@@ -583,6 +606,7 @@
                                        solo
                                        hint="Press Enter to comment"
                                        flat
+                                       :ref="newsfeed.keyIndex"
                                        height="32"
                                        full-width
                                        v-model="newsfeed.commentText"
@@ -635,7 +659,7 @@
                            <v-progress-linear height="10px" style="margin-top:-10px !important;width:70px;border-radius:12px !important" color="grey lighten-1"></v-progress-linear>
                         </div>
                         <v-spacer></v-spacer>
-                        <v-menu open-on-hover style="margin-top:-20px;" offset-y nudge-left="80"> 
+                        <v-menu open-on-hover style="margin-top:-7px;" offset-y nudge-left="80"> 
                            <v-btn
                               slot="activator"
                               icon
@@ -653,7 +677,6 @@
                      </v-layout>
                   </v-flex>
                   <v-flex class="mx-3" style="margin-top:40px;" xs12  >
-
                         <v-progress-linear :indeterminate="true" height="8"  style="width:100%;margin-top:-10px;border-radius:3px !important" background-opacity="0.5" color="grey lighten-4" ></v-progress-linear>
                         <v-progress-linear height="10" query style="width:80%;margin-top:-10px;border-radius:3px !important" background-opacity="0.5" color="grey lighten-3"></v-progress-linear>
                         <v-progress-linear height="16"  style="width:20%;border-radius:3px !important" background-opacity="0.5" color="grey lighten-2" ></v-progress-linear>
@@ -683,15 +706,81 @@
          </v-flex>
 
 <!-- xs12 sm12 md8 lg7 -->
+
  <!-- xs0 sm0 md4 lg4 -->
-         <v-flex  class="md4 hidden-sm-and-down" >
-            <v-card flat class="white lighten-4 my-1" height="50px">
+         <v-flex class="md4 hidden-sm-and-down" >
+            <v-card flat  class="white lighten-4 mt-1" height="50px">
             </v-card>
-            <v-card flat  class="grey lighten-4 mb-2" height="150px">
+            <v-card flat  class="px-2 py-3 grey lighten-4 my-2" height="130px">
+                <div :class="`${userFData.themeColor}--text`" class="font-weight-medium body-1">
+                  What's new? 
+               </div>
             </v-card>
-            <v-card flat class=" grey lighten-4 my-1" height="50px">
+            <v-card flat  class="px-2 py-3 white lighten-4 my-2">
+               <div class=" font-weight-bold subheading">
+                  Who to follow
+               </div>
+               <v-layout class="mx-1 mt-3" row wrap>
+                  <div style="width:55px" >
+                  <v-avatar size="55">
+                     <img src="https://pbs.twimg.com/profile_images/917742874837508096/vy7QY6Lu_400x400.jpg">
+                  </v-avatar>
+                  </div>
+                  <v-flex>
+                     <div class="ml-2 caption font-weight-bold" >Kuku Palad <span style="margin-top:-10px;font-size:10px" class="grey--text">@kuku12</span> </div>
+                     <v-btn depressed style="font-size: 11px !important"   class="textDefault font-weight-bold" small  :class="`${userFData.themeColor}--text`" round > Follow </v-btn>
+                  </v-flex>
+                  <v-flex class="mt-2 xs12">
+                    <v-divider class="grey lighten-3"></v-divider>
+                  </v-flex>
+               </v-layout>
+
+                <v-layout class="mx-1 mt-3" row wrap>
+                  <div style="width:55px" >
+                  <v-avatar size="55">
+                     <img src="https://pbs.twimg.com/profile_images/1033985393153040384/aRtpdPB2_400x400.jpg">
+                  </v-avatar>
+                  </div>
+                  <v-flex>
+                     <div class="ml-2 caption font-weight-bold" > Johan Sundstein <span style="margin-top:-10px;font-size:10px" class="grey--text">@OG_BDN0tail</span> </div>
+                     <v-btn depressed style="font-size: 11px !important"   class="textDefault font-weight-bold" small  :class="`${userFData.themeColor}--text`" round > Follow </v-btn>
+                  </v-flex>
+                  <v-flex class="mt-2 xs12">
+                    <v-divider class="grey lighten-3"></v-divider>
+                  </v-flex>
+               </v-layout>
+
+                <v-layout class="mx-1 mt-3" row wrap>
+                  <div style="width:55px" >
+                  <v-avatar size="55">
+                     <img src="https://pbs.twimg.com/profile_images/969282406854332416/Ws9QWJ2Z_400x400.jpg">
+                  </v-avatar>
+                  </div>
+                  <v-flex>
+                     <div class="ml-2 caption font-weight-bold" > TIMS <span style="margin-top:-10px;font-size:10px" class="grey--text">@TimsDOTA</span> </div>
+                     <v-btn depressed style="font-size: 11px !important"   class="textDefault font-weight-bold" small  :class="`${userFData.themeColor}--text`" round > Follow </v-btn>
+                  </v-flex>
+                  <v-flex class="mt-2 xs12">
+                    <v-divider class="grey lighten-3"></v-divider>
+                  </v-flex>
+               </v-layout>
+
             </v-card>
-            <v-card flat  class="grey lighten-4 mb-2" height="250px">
+            <v-card flat  class="pa-3 white lighten-4 my-2" >
+               <p  style="font-size:11px">
+               <span class="mr-2  blue-grey--text text--lighten-1"  > &copy; {{ new Date().getFullYear() }} Ckcm Network</span>
+               <span class="mr-2"> <router-link  class="font-weight-thin aJie blue-grey--text text--lighten-3 " to=""> About </router-link> </span>
+               <span class="mr-2"> <router-link  class="font-weight-thin aJie blue-grey--text text--lighten-3" to=""> Help Center </router-link> </span>
+               <span class="mr-2"> <router-link  class="font-weight-thin aJie blue-grey--text text--lighten-3" to=""> Terms </router-link> </span>
+               <span class="mr-2"> <router-link  class="font-weight-thin aJie blue-grey--text text--lighten-3" to=""> Privacy policy </router-link> </span>
+               <span class="mr-2"> <router-link  class="font-weight-thin aJie blue-grey--text text--lighten-3" to=""> Cookies </router-link> </span>
+               <span class="mr-2"> <router-link  class="font-weight-thin aJie blue-grey--text text--lighten-3" to=""> Status </router-link> </span>
+               <span class="mr-2"> <router-link  class="font-weight-thin aJie blue-grey--text text--lighten-3" to=""> Apps </router-link> </span>
+               <span class="mr-2"> <router-link  class="font-weight-thin aJie blue-grey--text text--lighten-3" to=""> Info </router-link> </span>
+               <span class="mr-2"> <router-link  class="font-weight-thin aJie blue-grey--text text--lighten-3" to=""> Cloud </router-link> </span>
+               <span class="mr-2"> <router-link  class="font-weight-thin aJie blue-grey--text text--lighten-3" to=""> Developers </router-link> </span>
+               </p>
+               <v-divider class=" grey lighten-4"></v-divider>
             </v-card>
             <!-- <v-card flat class="appscard ">
                <v-list class="terms mx-2">
@@ -755,6 +844,7 @@ export default {
          message:'', 
          image:''
       },
+      rating: 0
   }),
    computed: {
       commenteds(dataOf) {
@@ -767,6 +857,9 @@ export default {
       },
       userData() {
          return this.$store.getters.accountLoginData.user
+      },
+      userFData() {
+         return this.$store.getters.AccountFdetails
       },
       firstname() {
          var getFn = this.$store.getters.accountLoginData.user.displayName

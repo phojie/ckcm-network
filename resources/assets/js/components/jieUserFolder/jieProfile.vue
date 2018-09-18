@@ -99,6 +99,7 @@ export default {
    created () {
       document.title = this.username + " | Profile";
       this.$store.commit("leftnavDrawerOff");
+      this.$store.commit("rightnavDrawerOn");
    },
    mounted () {
       // document.title = this.username + " | Profile";

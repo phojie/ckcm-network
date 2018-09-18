@@ -82,11 +82,11 @@ Vue.use(Vuelidate)
 Vue.use(VueRouter);
 Vue.use(Vuex);
 Vue.use(VueProgressBar, {
-   color: '#512DA8',
+   color: '#fd9800',
    failedColor: '#820333',
-   thickness: '3px',
+   thickness: '1px',
    transition: {
-      speed: '1.5s',
+      speed: '3.5s',
       opacity: '0.6s',
       termination: 300
    },

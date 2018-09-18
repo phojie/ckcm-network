@@ -8,6 +8,7 @@ export default {
    state: {
       accountLoginData: user,
       fdetails: fdetails,
+      AccountFdetails: [],
       isIn: !!user,
       isFB: !!fdetails,
       loading: false,
@@ -15,6 +16,7 @@ export default {
       alertLogoutDone: false,
       windowSize: [],
       leftnavDrawer: true,
+      rightnavDrawer: true,
       friendList: [], //Object,
       scrollLimitNews: 2,
    },
@@ -40,11 +42,17 @@ export default {
       fdetails(state) {
          return state.fdetails;
       },
+      AccountFdetails(state) {
+         return state.AccountFdetails;
+      },
       alertLogoutDone(state) {
          return state.alertLogoutDone;
       },
       leftnavDrawer(state) {
          return state.leftnavDrawer
+      },
+      rightnavDrawer(state) {
+         return state.rightnavDrawer
       },
       friendList(state) {
          return state.friendList
@@ -63,7 +71,7 @@ export default {
          state.alertLogoutDone = false
          state.auth_error = null;
          state.isIn = true;
-         state.loading = false;
+         state.loading = false
          state.accountLoginData = Object.assign({}, payload, {token: payload.access_token});
          localStorage.setItem("user", JSON.stringify(state.accountLoginData));
          // localStorage.user = JSON.stringify(state.accountLoginData);
@@ -88,7 +96,7 @@ export default {
             } else {
               // Data saved successfully!
             }
-          });
+         });
       },
       logout(state) {
          const id = state.accountLoginData.user["ckcm-network_token_id"]
@@ -133,11 +141,31 @@ export default {
       leftnavDrawerOn(state) {
          state.leftnavDrawer = true;
       },
+      rightnavDrawerOff(state) {
+         state.rightnavDrawer = false;
+      },
+      rightnavDrawerOn(state) {
+         state.rightnavDrawer = true;
+      },
       friendList(state, friendList) {
          state.friendList = friendList
+      },
+      getAccountFdetails(state) {
+         state.loading = true
+         const id = state.accountLoginData.user["ckcm-network_token_id"]
+         var myAccount = db.ref(`users/${id}`);
+         myAccount.on("value", function(data) {
+            state.AccountFdetails = data.val()
+            state.loading = false
+         }, function (errorObject) {
+            console.log("The read failed: " + errorObject.code);
+         });
       }
    },
    actions: {
+      refreshPage(context) {
+         context.commit("getAccountFdetails")
+      },
       scrollLimitNewsAdd(context) {
          context.commit("scrollLimitNewsAdd");
       },

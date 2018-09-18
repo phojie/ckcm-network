@@ -14,7 +14,7 @@
       <link rel="stylesheet" type="text/css" href="{{ asset('css/jie.css') }}">
       <link rel="manifest" href="{{ asset('manifest.json') }}">
       {{--  <link href="https://fonts.googleapis.com/css?family=Overlock" rel="stylesheet">  --}}
-		<link rel="shortcut icon"  href="favicon.ico" />
+		<link rel="shortcut icon"  href="jieIcons/favicon.ico" />
 		<!--upscript-->      
       
        
@@ -25,7 +25,16 @@
 		</div>
 	</body>
 		<!-- script -->
-      
+      <script>
+      // Check that service workers are registered
+    
+      if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', () => {
+         navigator.serviceWorker.register('/sw.js');
+      });
+      }
+      </script>
       <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
       <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-auth.js"></script>
       <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-database.js"></script>

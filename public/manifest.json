@@ -1,24 +1,43 @@
 {
-
-   "author": "jie",
-   "background_color": "White",
-   "description": "Christ the King Network",
-   "display": "standalone",
-   "icons": [
-
-      {
-      "src": "/favicon.ico",
-      "sizes": "192x192",
-      "type": "image/png"
-      }
-
-   ],
-   "manifest_version": 2,
-   "name": "CHRIST THE KING NETWORK",
-   "orientation": "portrait",
-   "short_name": "CKCMNETWORK",
+   "name": "Christ the King Network",
+   "short_name": "ckcmNetwork",
    "start_url": "/",
-   "theme_color": "#ffffff",
-   "version": "0.1"
-
-}
+   "display": "standalone",
+   "gcm_sender_id": "0000",
+   "background_color": "#FFFFF8",
+   "theme_color": "#8CB84E",
+   "icons": [{
+      "src": "/jieIcons/apple-touch-icon-57x57.png",
+      "type": "image/png",
+      "sizes": "57x57"
+    },  {
+      "src": "/jieIcons/apple-touch-icon-72x72.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    }, {
+      "src": "/jieIcons/apple-touch-icon-76x76.png",
+      "type": "image/png",
+      "sizes": "76x76"
+    }, {
+      "src": "/jieIcons/apple-touch-icon-114x114.png",
+      "type": "image/png",
+      "sizes": "114x114"
+    }, {
+      "src": "/jieIcons/apple-touch-icon-120x120.png",
+      "type": "image/png",
+      "sizes": "120x120"
+    }, {
+      "src": "/jieIcons/apple-touch-icon-144x144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    }, {
+      "src": "/jieIcons/apple-touch-icon-152x152.png",
+      "type": "image/png",
+      "sizes": "152x152"
+    }, {
+      "src": "/jieIcons/apple-touch-icon-180x180.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    }]
+ }
+ 

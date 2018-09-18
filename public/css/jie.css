@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Sawarabi+Mincho');
-
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+KR:200,300,400,500,600,700,900');
+@import url('https://fonts.googleapis.com/css?family=Nanum+Pen+Script');
+@import url('https://fonts.googleapis.com/css?family=Courgette');
 .material-icons  {
    font-size: 23px !important;
 }
@@ -46,7 +48,17 @@
 .textfm3 {
    font-family: 'Sawarabi Mincho', sans-serif;
 }
+.textfm4 {
+   font-family: 'Noto Serif KR', sans-serif;
+}
 
+.textfm5 {
+   font-family: 'Nanum Pen Script', cursive;
+}
+
+.textfm6 {
+   font-family: 'Courgette', cursive;
+}
 .jieLandingBg {
    background-image: url("/imgs/proto-background-nuanced.svg");
    background-position: center;
@@ -60,6 +72,11 @@
 }
 .jieSvgBg1 {
    background-image: url("/imgs/background-main-light.svg");
+   background-position: center;
+   background-size: cover;
+}
+.jieSvgBgvu {
+   background-image: url(https://www.bypeople.com/wp-content/uploads/2014/05/light-svg-background-image.jpg);
    background-position: center;
    background-size: cover;
 }
@@ -82,7 +99,8 @@
 }
 
 .jie .v-input__slot   {
-   border-radius:2px;
+   /* border:solid #E0E0E0 1px; */
+   border-radius:4px !important;
    -webkit-transition: width 2s; /* Safari */
    transition: width .2;
 }
@@ -135,7 +153,7 @@
    padding: 6px !important;
    display: inline-block;
    border-radius: 20px !important;
-   border-top-left-radius: 0px !important;
+   /* border-top-left-radius: 0px !important; */
    /* border-bottom-left-radius: 0px !important; */
    /* background-color: #F5F5F5; */
    /* border: 1px solid #E0E0E0; */
@@ -171,11 +189,21 @@
 .friendscroll {
    overflow-x:hidden;
    overflow-y:hidden;
-   height:112% !important;
+   height:96% !important;
 }
 .friendscroll:hover{
    overflow-y:auto;
 }
+
+.leftNavscroll {
+   overflow-x:hidden;
+   overflow-y:hidden;
+   height:99% !important;
+}
+.leftNavscroll:hover{
+   overflow-y:auto;
+}
+
 .scrollbar-primary::-webkit-scrollbar{
    width: 5px !important;
    /* height: 10px !important; */
@@ -193,7 +221,7 @@
    height: 30px;
    width: 8px;
    /* background: #21212169; */
-   background: #21212133;
+   background: #BDBDBD;
    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -220,10 +248,10 @@
 /* 757575 */
 
 .jieBadge .v-badge__badge {
-   margin-right:3px !important;
-   margin-top:6px !important;
-   height:18px !important;
-   width:18px !important;
+   margin-right:1px !important;
+   margin-top:4px !important;
+   height:16px !important;
+   width:16px !important;
 }
 .jieBadgeFriend .v-badge__badge {
    margin-right:15px !important;
@@ -325,6 +353,15 @@ background-color: #2BBBAD; }
    background-position: center;
    background-size: cover;
    background-repeat: no-repeat;
+   /* height: 105px; */
+}
+.jieWhatBg2 {
+   background-image: url(https://ssl.gstatic.com/support/content/images/static/homepage_header_background.svg);
+   /* background-position: 50% 10px; */
+   background-position: center;
+   height: 100%;
+   background-repeat: no-repeat;
+   /* filter:blur(5px); */
    /* height: 105px; */
 }
 .jiew.v-text-field--solo .v-input__slot  {
@@ -479,13 +516,13 @@ background-color: #2BBBAD; }
    
 }
 
-.appscard {
-   transition: background-color .5s ease;
+/* .appscard {
+   transition: background-color .3s ease;
    background-color: #E0E0E0 !important;
 }
 .appscard:hover {
    background-color: white !important;
-}
+} */
 .terms.v-list  {
    background: transparent !important;
    color: rgba(0,0,0,0.87);
@@ -566,3 +603,13 @@ background-color: #2BBBAD; }
 }
 
 /* transition */
+
+
+.v-card--reveal {
+   align-items: center;
+   bottom: 0;
+   justify-content: center;
+   opacity: .5;
+   position: absolute;
+   width: 100%;
+ }

@@ -8,3 +8,21 @@
    // exec('composer install');
    // exec('php artisan migrate');
    // exec('php artisan jwt:secret');
+
+   // ,  {
+   //    "src": "/imgs/ckcm/logo.png",
+   //    "type": "image/png",
+   //    "sizes": "512x512"
+   // }, {
+   //    "src": "/imgs/ckcm/logo.png",
+   //    "type": "image/png",
+   //    "sizes": "152x152"
+   // }, {
+   //    "src": "/imgs/ckcm/logo.png",
+   //    "type": "image/png",
+   //    "sizes": "144x144"
+   // }, {
+   //    "src": "/imgs/ckcm/logo.png",
+   //    "type": "image/png",
+   //    "sizes": "192x192"
+   // }
