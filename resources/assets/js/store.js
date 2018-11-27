@@ -19,6 +19,7 @@ export default {
       rightnavDrawer: true,
       friendList: [], //Object,
       scrollLimitNews: 2,
+      homeReload: false
    },
    getters: {
       scrollLimitNews(state) {
@@ -56,10 +57,19 @@ export default {
       },
       friendList(state) {
          return state.friendList
-      }   
+      },
+      homeReload(state) {
+         return state.homeReload
+      }
       
    },
    mutations: {
+      homeReload(state) {
+         state.homeReload = true
+      },
+      homeReloadFalse(state) {
+         state.homeReload = false
+      },
       scrollLimitNewsAdd(state) {
          state.scrollLimitNews = 5;
       },
@@ -79,11 +89,19 @@ export default {
          const id = state.accountLoginData.user["ckcm-network_token_id"]
          let getFn = state.accountLoginData.user.displayName
          let firstname = getFn.split(" ");
-         db.ref('users/' + id).update({
+         // type :   1 : not enrolled 
+         //          2 : enrolled
+         //          3 : andmin
+         db.ref('users/' + id).set({
             status: "online",
+            themeColor: 'deep-purple',
             first: firstname[0],
             lastname: firstname[1],
+            guest: true,
             roles: '',
+            type: 1,
+            status: false,
+            firsttime: true,
             coverUrl: '',
             displayName: state.accountLoginData.user.displayName ,
             photoUrl: state.accountLoginData.user.photoUrl,
@@ -116,6 +134,7 @@ export default {
          
          localStorage.removeItem("user");
          localStorage.removeItem("fdetails");
+         localStorage.removeItem("ListOfChats");
          state.isIn = false;
          state.fdetails = null ;
          state.accountLoginData = null;

@@ -17,17 +17,24 @@ import VueProgressBar from 'vue-progressbar'
 import '@mdi/font/css/materialdesignicons.css';
 import './firebase';
 import VueFire from 'vuefire';
-import { EmojiPickerPlugin } from 'vue-emoji-picker'
-Vue.use(EmojiPickerPlugin)
-// import moment from 'moment-timezone';
+import { EmojiPickerPlugin } from 'vue-emoji-picker';
+import {Textra} from 'vue-textra';
+import Croppa from 'vue-croppa';
 
-// import firebase from 'firebase';
-// window.firebase = firebase;
+Vue.use(Croppa);
+Vue.use(require('vue-chat-scroll'))
+Vue.use(Textra);
+Vue.use(EmojiPickerPlugin);
+
+// You can also pass in the default options
+const VueScrollTo = require('vue-scrollto')
+Vue.use(VueScrollTo)
 
 window._ = require('lodash');
 window.moment = require('moment');
 window.moment = require('moment-timezone');
 
+window.eventBus = new Vue();
 
 Vue.use(require('vue-moment'));
 // window.firebase = require('./firebase')

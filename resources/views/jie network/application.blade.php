@@ -25,6 +25,7 @@
 		</div>
 	</body>
 		<!-- script -->
+      
       <script>
       // Check that service workers are registered
     

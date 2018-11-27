@@ -1,6 +1,6 @@
 <template>
    <!-- <v-layout v-resize="onResize" > -->
-   <div>
+   <div >
       <vue-progress-bar></vue-progress-bar>
       <router-view ></router-view>
    </div>   

@@ -11,6 +11,11 @@ import jieProfile from './components/jieUserFolder/jieProfile.vue';
 
 import jieVpOffice from './components/jieMyApps/jieVpOffice.vue';
 import api from './components/api.vue';
+
+//test
+
+import PleaseClickMe from './components/pages/PleaseClickMe.vue';
+
 export const routes = [
    {
       path:'/auth',
@@ -61,6 +66,11 @@ export const routes = [
    {
       path:'/login',
       component: jieLogin
+   },
+
+   {
+      path:'/PleaseClickMe',
+      component: PleaseClickMe
    },
 
    {  

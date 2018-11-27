@@ -22,3 +22,4 @@
 [0803/183541.678:ERROR:crash_report_exception_handler.cc(111)] WriteEverything failed
 [0803/183541.679:ERROR:filesystem_win.cc(148)] DeleteFile C:\Users\Develop_hereJie\AppData\Local\Google\Chrome\User Data\Crashpad\reports\ec383389-ffde-4603-8058-fb83e8370998.dmp: The process cannot access the file because it is being used by another process. (0x20)
 [0803/183541.680:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)
+[0918/114257.512:ERROR:settings.cc(319)] Settings magic is not 1129342067

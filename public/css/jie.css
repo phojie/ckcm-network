@@ -2,8 +2,11 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif+KR:200,300,400,500,600,700,900');
 @import url('https://fonts.googleapis.com/css?family=Nanum+Pen+Script');
 @import url('https://fonts.googleapis.com/css?family=Courgette');
+@import url('fonts/style.css');
+
+
 .material-icons  {
-   font-size: 23px !important;
+   font-size: 20px !important;
 }
 .alwaysSignCHECK .material-icons {
    margin-left: 5px !important;
@@ -16,7 +19,7 @@
    font-size: 14px !important;
 }
 .txt13 {
-   font-size:13px !important;
+   font-size:12px !important;
 }
 
 .aJie {
@@ -27,6 +30,10 @@
 .aJie:hover{
    text-decoration: underline !important ;
    color: #2196F3 !important;
+}
+
+.textNone {
+   text-transform: none !important;
 }
 
 .textDefault {
@@ -55,10 +62,47 @@
 .textfm5 {
    font-family: 'Nanum Pen Script', cursive;
 }
-
 .textfm6 {
    font-family: 'Courgette', cursive;
 }
+
+.textfm7 {
+   font-family: 'Helvetica 85 Heavy';
+   font-weight: normal;
+}
+
+.textfm8 {
+   font-family: 'Helvetica 33 Thin Extended Oblique';
+   font-weight: normal;
+}
+.textfm9 {
+   font-family: 'Helvetica 85 Heavy';
+   /* font-family: 'Helvetica 43 Light Extended'; */
+   font-weight: normal;
+}
+.textfm10 {
+   font-family: 'Helvetica 43 Light Extended';
+   font-weight: normal;
+}
+.textfm11 {
+   font-family: 'Helvetica 35 Thin';
+   font-weight: normal;
+}
+.textfm12 {
+   font-family: 'Helvetica 33 Thin Extended Oblique';
+   font-weight: normal;
+}
+.textfm13 {
+   font-family:'Helvetica 55 Roman';
+   font-weight: normal;
+}
+
+.v-btn.enrollBtn{
+   min-width: 0px !important;
+   font-size:11px;
+   /* padding:0px !important; */
+}
+
 .jieLandingBg {
    background-image: url("/imgs/proto-background-nuanced.svg");
    background-position: center;
@@ -66,6 +110,8 @@
 }
 
 .jieLandingBg2 {
+   
+   /* background-image: url("/imgs/ckcm/2.jpg"); */
    background-image: url("/imgs/background-pricing-existing.svg");
    background-position: center;
    background-size: cover;
@@ -149,8 +195,8 @@
 }
 
 .jie3Commented {
-   font-size:13px;
-   padding: 6px !important;
+   font-size: 12px !important;
+   padding: 5px  10px !important;
    display: inline-block;
    border-radius: 20px !important;
    /* border-top-left-radius: 0px !important; */
@@ -363,6 +409,16 @@ background-color: #2BBBAD; }
    background-repeat: no-repeat;
    /* filter:blur(5px); */
    /* height: 105px; */
+}
+.rightPromoteEnroll {
+   background-image: url("/imgs/ckcm/1.jpg");
+   background: #DA22FF;  /* fallback for old browsers */
+   background: -webkit-linear-gradient(to right, #9733EE, #DA22FF);  /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to right, #9733EE, #DA22FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+
 }
 .jiew.v-text-field--solo .v-input__slot  {
    background: transparent !important;
@@ -613,3 +669,105 @@ background-color: #2BBBAD; }
    position: absolute;
    width: 100%;
  }
+
+ /* jieMessnger */
+.jieMessnger {
+   /* border-top-left-radius: 10%; */
+   /* border-top-right-radius: 10%; */
+   padding:0px ;
+   margin:0px ;
+}
+.mssngerRadius {
+   /* box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .20) !important; */
+   border-top-left-radius: 5px;
+   border-top-right-radius: 5px;
+   border-bottom-left-radius: 0px !important;
+   border-bottom-right-radius: 0px !important;
+}
+
+.jietxtmssg ::placeholder {
+   color: #BDBDBD !important;
+   font-size:13px;
+} 
+
+
+.jietxtmssg
+.v-input__slot {
+   position: absolute !important;
+   padding-left: 6px !important;
+   border:0px !important;
+   overflow: auto;
+   background-color:white !important;
+   max-height: 30px !important;
+   /* max-height:160px; */
+   min-height: 40px !important;
+   /* height:auto !important; */
+   /* height: 10px !important; */
+
+   /* margin-top:20px !important; */
+}
+.jietxtmssg
+.v-input__slot:focus{
+   border:0px !important;
+   outline:none !important;
+}
+
+.jietxtmssg.v-textarea.v-text-field--enclosed.v-text-field--single-line textarea {
+   margin-top: -5px !important;
+}
+
+/* client */
+.jie1Messge {
+   padding: 5px  10px !important;
+   display: inline-block !important;
+   border-radius: 20px !important;
+   border-bottom-left-radius:  0px !important;
+
+}
+
+/* center */
+.jie2Messge {
+   padding: 5px  10px !important;
+   display: inline-block !important;
+   border-top-left-radius: 0px !important;
+   border-bottom-left-radius: 0px !important;
+   border-top-right-radius: 20px !important;
+   border-bottom-right-radius: 20px !important;
+}
+
+/* user */
+.jie3Messge {
+   padding: 5px  10px !important;
+   display: inline-block;
+   border-radius: 20px !important;
+   border-bottom-right-radius: 0px !important;
+}
+.maxChat {
+   height: 310px !important;
+   width: 280px;
+   /* transition: all .5s ease-in-out; */
+}
+.minbtn { 
+   min-width: 180px;
+   /* max-width:180px; */
+   /* padding: 0px 100px !important; */
+}
+.maxbtn {
+   /* min-width: 280px; */
+   /* max-width: 280px; */
+   /* width: 280px; */
+}
+
+.authPlace .v-label  {
+   font-size:15px !important;
+}
+
+.displayName {
+   font-size:20px;
+   margin-top:-120px !important;
+   margin-left:155px
+}
+.firstName {
+   margin-top:-5px !important;
+   margin-left:162px
+}

@@ -15,7 +15,7 @@ class User extends Authenticatable implements JWTSubject
 	 * @var array
 	 */
 	protected $fillable = [
-		'password','ckcm-network_token_id','displayName', 'emailVerified', 'photoUrl','secret','email'
+		'password','ckcm-network_token_id','displayName', 'emailVerified', 'photoUrl','secret','email','firsttime'
 	];
 
 	/**

@@ -4,7 +4,8 @@
    <v-app>
       <v-app v-if="!stateLoading"   style="background:#e6ecf0;overflow:hidden !important" >
             <!-- stateless permanent -->
-            <v-navigation-drawer  right class="transparent "   width="220" style="overflow: hidden !important;" clipped app>
+               
+            <v-navigation-drawer :value="leftnavDrawer"  right class="transparent "   width="220" style="overflow: hidden !important;" clipped app>
                <v-card flat color=""   style="padding-top:7px !important" class=" friendscroll scrollbar-primary ">
                   <v-menu
                      :close-on-content-click="false"
@@ -15,12 +16,13 @@
                      min-width="240"
                      max-width="240"
                      close-delay="50"
+                     open-delay="1000"
                      v-for="friendList in users" :key="friendList.id" v-if="friendList['.key'] != userData['ckcm-network_token_id']"
                      bottom
                      app
                   >
                   <!-- @click="profileMenuFriend(friendList.displayName)"  -->
-                  <v-btn slot="activator" style="margin-top:-6px"    color="grey" class=" jieleftNav" block flat>
+                  <v-btn  @click="addToChat(friendList['.key'], friendList.displayName)" slot="activator" style="margin-top:-6px"    color="grey" class=" jieleftNav" block flat>
                      <v-badge color="white"  overlap class="jieBadgeFriend">
                         <span v-if="friendList.status == 'online'" :key="friendList['.key']" slot="badge" style="font-size:16px; border-radius: 50%; border: 4px solid #7CB342 ;"></span>
                         <span  v-if="friendList.status != 'online'" :key="friendList['.key']" slot="badge" style="font-size:16px; border-radius: 50%; border: 4px solid #E57373 ;"></span>
@@ -253,7 +255,7 @@
                      solo
                   ></v-text-field>
                </v-card>
-
+               
             </v-navigation-drawer>
 
             <v-navigation-drawer :value="leftnavDrawer" class=" transparent lighten-3 " floating  width="300" style="overflow: hidden !important;" clipped app>
@@ -272,7 +274,7 @@
                            <img
                               class="white"
                               style="border:1px solid white;border-radius:50%;height:60px !important;width:60px !important;padding:2px !important"
-                              :src="userData.photoUrl+'?height=10000'"
+                              :src="userFData.photoUrl+'?height=10000'"
                               :alt="firstname"
                            >
                         </v-avatar>
@@ -307,9 +309,21 @@
                         </v-flex>
                      </v-layout>
                   </v-card>
+                  <!-- <v-card v-if="userFData.type == 1" flat  color="" class="pa-1 mt-1">
+                     <v-btn to="enrollnow" style="padding-left:9px;"  class='white--text jieleftNav' :color="`${userFData.themeColor} lighten-1`" flat depressed block >
+                        <v-avatar tile class="mr-2" color="transparent" size="20px">
+                           <img src="https://img.icons8.com/ios/50/000000/curriculum.png">
+                        </v-avatar>
+                        <div style="font-size:12px;margin-left:1px; letter-spacing:.5px" class="font-weight-thin mr-2 textDefault "> Get enrolled today! </div> 
+                        <v-spacer></v-spacer>
+                        <v-avatar tile class="mr-2" color="transparent" size="20px">
+                           <img src="https://img.icons8.com/color/50/000000/high-priority.png">
+                        </v-avatar>
+                     </v-btn>
+                  </v-card> -->
                      <!-- style="border-left:2px solid #4CAF50 !important" -->
                   <v-card flat  color="" class="pa-1 mt-1">
-                     <v-btn to="/" style="padding-left:9px;"  :ripple="{ class: 'white--text' }" :color="`${userFData.themeColor} lighten-1`" class=" jieleftNav" flat depressed block >
+                     <v-btn  to="/" style="padding-left:9px;"  :ripple="{ class: 'white--text' }" :color="`${userFData.themeColor} lighten-1`" class=" jieleftNav" flat depressed block >
                         <v-avatar tile class="mr-2" color="transparent" size="20px">
                            <img src="https://png.icons8.com/ios/50/000000/rss.png">
                         </v-avatar>
@@ -317,7 +331,7 @@
                         <v-spacer></v-spacer>
                         <div class="textfm1 caption" >24</div>
                      </v-btn>
-                     <v-btn to="/messages" style="padding-left:9px;margin-top:-6px"  :ripple="{ class: 'white--text' }"  :color="`${userFData.themeColor} lighten-1`"   class=" jieleftNav" flat depressed block >
+                     <v-btn  to="/messages" style="padding-left:9px;margin-top:-6px"  :ripple="{ class: 'white--text' }"  :color="`${userFData.themeColor} lighten-1`"   class=" jieleftNav" flat depressed block >
                            <v-avatar tile class="mr-2" color="transparent" size="20px">
                            <img src="https://png.icons8.com/ios/50/000000/speech-bubble-with-dots.png">
                         </v-avatar>
@@ -506,12 +520,12 @@
                <!-- <v-toolbar-title  class="primaryColortext--text subheading ">
                   <span style="margin-left:100px"  class="subheading white--text">Christ the King Network</span>
                </v-toolbar-title> -->
-               <v-toolbar-title style="margin-top:-10px;margin-left:38px" class="align-left">
-                  <v-avatar tile size="22">
+               <v-toolbar-title @click="home"  style="cursor:pointer;margin-top:-5px;margin-left:38px" class="align-left">
+                  <v-avatar tile size="25" >
                      <img src="jieIcons/apple-touch-icon.png">
                   </v-avatar>
-                  <span style="margin-left:-2px;font-size:13px" class="white--text textfm6">Christ the King Network </span> 
-                  <div style="margin-top:-13px;margin-left:60px;font-size:13px;position:absolute" class="white--text textfm5">Developed for Ckcmians</div>
+                  <span style="font-size:11px;margin-top:-12px;" class="jieSvgBg1 textfm6">Christ the king Network</span> 
+                  <div style="margin-top:-9px;margin-left:60px;font-size:8px;position:absolute" class="textfm6">Developed for Ckcmians</div>
                </v-toolbar-title>
                <v-spacer></v-spacer>
                <!-- <v-menu  slot="activator"  offset-y nudge-left="44px"> -->
@@ -534,10 +548,8 @@
                      ></v-text-field>
                   </v-flex>
                <!-- </v-menu> -->
-
                <!-- <v-divider vertical inset ></v-divider> -->
-                  <!-- @click="test" -->
-                  <v-btn to="/" flat small  class=" textDefault textfm1 " style="font-size:12px;margin-right:1px;margin-left:10px !important;" >
+                  <v-btn @click="homeReload" v-scroll-to="'#scrollTopjie'" flat small  class=" textDefault textfm1 " style="font-size:12px;margin-right:1px;margin-left:10px !important;" >
                         <v-avatar tile size="17"
                         color="transparent red--after"
                         >
@@ -642,7 +654,7 @@
                   
                      <span class="textfm1" style="font-size:11.5px !important">Notifications</span>
                      <v-menu flat slot="activator" offset-y nudge-left="44px">
-                           <v-btn  slot="activator" red  icon>
+                           <v-btn  @click="clearChat" slot="activator" red  icon>
                               <!-- <v-badge color="primary" overlap class="jieBadge">
                                  <span  slot="badge" class="textfm1" style="font-size:11px">3</span>
                                  <v-avatar size="20px"
@@ -690,7 +702,7 @@
                   <v-btn  slot="activator" style="min-width:140px" flat ripple>
                      <!-- Dropdown -->
                      <v-avatar class="mr-1 " color="red--after" size="25px">
-                        <img :src="userData.photoUrl" alt="">
+                        <img :src="userFData.photoUrl" alt="">
                      </v-avatar>
                      <div class="font-weight-thin mr-2  text--darken-2 caption  textDefault textfm1"> Hello, {{firstname}}</div> 
                      <v-spacer></v-spacer>
@@ -740,14 +752,166 @@
             <v-content class="" >
                <!-- <v-container class="" app fluid> -->
                   <router-view></router-view>
+                  <v-layout class="mr-2 ml-2" style="height:100%" justify-end align-end>
+                     <v-card  v-for="(listofChat, index) in listofid" :key="listofChat['.key']" height="auto"   class=" white mr-2 mssngerRadius ">
+                        <!-- { minbtn: !listofid[index].toogle} , { maxbtn: listofid[index].toogle} , -->
+                        <!-- <v-btn  class="minbtn px-2  mssngerRadius  jieMessnger" @click="changeChatToogle(listofChat, index)"  flat small block  >
+                           <v-toolbar-title  class="white--text text--darken-3 caption textDefault " >
+                              <span style="letter-spacing:.5px" > {{listofChat.name}} </span>
+                           </v-toolbar-title>
+                           <v-spacer></v-spacer>
+                           <v-icon  color="light-green  darken-4" size="8">
+                              mdi-circle
+                           </v-icon>
+                        </v-btn> -->
+
+                        <v-btn v-if="chattActiveID == index" :class="[ `${userFData.themeColor} lighten-2`] " style="border-bottom:.5px solid #E0E0E0;background-color:#f5f6f7"     class=" px-2  mssngerRadius  jieMessnger "  @click="changeChatToogle(listofChat, index)"  flat small block  >
+                           <v-toolbar-title  v-if="listofChat.toogle == false" style="max-width:130px !important"  class="white--text text--darken-3 caption textDefault " >
+                              <v-icon  style="vertical-align: middle;" color="light-green  darken-4" size="8">
+                                 mdi-circle
+                              </v-icon>
+                              <span style="letter-spacing:.5px" > {{listofChat.name}} </span>
+                           </v-toolbar-title>
+                           <v-toolbar-title v-else style="max-width:1230px !important"  class="white--text text--darken-3 caption textDefault " >
+                              <v-icon  style="vertical-align: middle;" color="light-green  darken-4" size="8">
+                                 mdi-circle
+                              </v-icon>
+                              <span style="letter-spacing:.5px" > {{listofChat.name}} </span>
+                           </v-toolbar-title>
+                           <v-spacer></v-spacer>
+                           <v-tooltip top>
+                              <v-icon slot="activator"  style="margin-bottom:2px !important" class="mr-1"  color="white" size="12">
+                              mdi-settings
+                              </v-icon>
+                              <span>Options</span>
+                           </v-tooltip>
+                           <v-tooltip top>
+                              <v-icon @click="deleteChatt(index)" slot="activator" color="white" size="16">
+                                 mdi-close
+                              </v-icon>
+                              <span>Close tab</span>
+                           </v-tooltip>
+
+                        </v-btn>
+                        <v-btn  v-else style=" border-bottom:.5px solid #E0E0E0;background-color:#f5f6f7"     class="minbtn px-2  mssngerRadius  jieMessnger "  @click="changeChatToogle(listofChat, index)"  flat small block  >
+                           <v-toolbar-title  v-if="listofChat.toogle == false" style="max-width:130px !important"  class="black--text text--darken-3 caption textDefault " >
+                              <v-icon  style="vertical-align: middle;" color="light-green  darken-4" size="8">
+                                 mdi-circle
+                              </v-icon>
+                              <span style="lette
+                              r-spacing:.5px" > {{listofChat.name}} </span>
+                           </v-toolbar-title>
+                           <v-toolbar-title  v-else style="max-width:230px !important"  class="black--text text--darken-3 caption textDefault " >
+                              <v-icon  style="vertical-align: middle;" color="light-green  darken-4" size="8">
+                                 mdi-circle
+                              </v-icon>
+                              <span style="letter-spacing:.5px" > {{listofChat.name}} </span>
+                           </v-toolbar-title>
+                           <v-spacer></v-spacer>
+                           <v-tooltip top>
+                              <v-icon slot="activator"  style="margin-bottom:2px !important" class="mr-1"  color="grey darken-1" size="12">
+                              mdi-settings
+                              </v-icon>
+                              <span>Options</span>
+                           </v-tooltip>
+                           <v-tooltip top>
+                              <v-icon @click="deleteChatt(index)" slot="activator" color="grey darken-1" size="16">
+                                 mdi-close
+                              </v-icon>
+                              <span>Close tab</span>
+                           </v-tooltip>
+                           
+
+                        </v-btn>
+                        <v-card  v-if="listofChat.toogle" flat class=" maxChat"  >
+                           <v-card v-chat-scroll="{always: false, smooth: true}" height="80%" style="position:relative !important;overflow-y:auto" class="scrollbar-primary px-2" flat>
+                          
+                              <!-- <v-layout  class="mb-1" fill-height align-end justify-start >
+                                 <v-avatar size="28" class="mr-1">
+                                    <img src="https://lh6.googleusercontent.com/-032Q-BfAjw4/AAAAAAAAAAI/AAAAAAAAAAA/APUIFaNBu7CiSH3g_6CAZckrWUAaKLLSVw/mo/photo.jpg">
+                                 </v-avatar>
+                                 <p style="margin-bottom:-0px !important; word-wrap:break-word !important;max-width:68%;width: auto !important;background-color:#EEEEEE !important" class="caption jie1Messge">
+                                    Anim nostrud amet ostrud
+                                 </p>
+                              </v-layout>
+                              <v-layout  class="mb-1" align-end justify-start >
+                                 <v-avatar size="28" class="mr-1">
+                                    <img src="https://lh6.googleusercontent.com/-032Q-BfAjw4/AAAAAAAAAAI/AAAAAAAAAAA/APUIFaNBu7CiSH3g_6CAZckrWUAaKLLSVw/mo/photo.jpg">
+                                 </v-avatar>
+                                 <p style="margin-bottom:-0px !important; word-wrap:break-word !important;max-width:68%;width: auto !important;background-color:#EEEEEE !important" class="caption jie2Messge">
+                                    Anim nostrud amet ostrud ametostrud ametds sdqwe 23Esse ad ut et consequat duis laboris irure aliquip ullamco. Deserunt sit qui sunt aute. Voluptate cillum incididunt officia nostrud. Culpa aute laborum adipisicing ex aliqua qui aute ut nostrud minim sunt consectetur. Deserunt ullamco ipsum duis duis aliquip voluptate do minim. Enim ex tempor tempor aliqua cupidatat consequat dolore qui sint aliquip ipsum enim et.
+                                 </p>
+                              </v-layout> -->
+                              <infinite-loading class="red" style="height:0px;margin-left:-46px" spinner="waveDots" @infinite="infiniteHandler" v-if="availableNews"></infinite-loading>
+                              <!-- <v-layout  v-for="messg in listofChat" :key="messg['.key']" class="" justify-end >
+                                 <p style="word-wrap:break-word !important;max-width:68%;width: auto !important;" class="blue lighten-2 white--text caption jie3Messge">
+                                    {{messg.convor}}
+                                 </p>
+                              </v-layout> -->
+                           </v-card>
+                           <v-form @submit.prevent="sendMessnger(listofChat)">
+                              <v-textarea 
+                                 style=" border-top:1px solid #EEEEEE;"
+                                 v-model="listofChat.message"
+                                 :color="`${userFData.themeColor}`"   class="scrollbar-primary caption jietxtmssg"  
+                                 auto-grow placeholder="Type a message..." solo rows="1" flat hide-details
+                                 autofocus  @focus="activeChatt(index)" @blur="inactiveChatt(index)" 
+                                 @keydown.enter.exact.prevent
+                                 @keyup.enter.exact="sendMessnger(listofChat)"
+                                 @keydown.enter.shift.exact="newline(listofChat)"
+                              >
+                              </v-textarea>
+                           </v-form>
+                           <v-flex xs12 style="width:100%;position:absolute; bottom:0">
+                              <v-flex class=" mb-2 mx-1">
+                                 <v-avatar class="mr-1 " tile size="19">
+                                    <img src="https://png.icons8.com/linen/50/757575/stack-of-photos.png">
+                                 </v-avatar>
+
+                                 <v-avatar class="mr-2" tile size="16">
+                                    <img src="https://img.icons8.com/ios/50/424242/happy.png">
+                                 </v-avatar>
+
+                                 <v-avatar class="mr-2" tile size="17">
+                                    <img src="https://img.icons8.com/ios/50/757575/attach-filled.png">
+                                 </v-avatar>
+
+                                 <v-avatar class="mr-2" tile size="17">
+                                    <img src="https://img.icons8.com/ios/50/424242/screenshot.png">
+                                 </v-avatar>
+                                 <v-tooltip top>
+                                    <v-avatar style="cursor:pointer" slot="activator" @click="sendMessnger(listofChat)" class="mr-1 right " tile size="16">
+                                       <img src="https://img.icons8.com/ios/50/2196F3/paper-plane-filled.png">
+                                    </v-avatar>
+                                    <span>Press enter to send</span>
+                                 </v-tooltip>
+                              </v-flex>
+                           </v-flex>
+                        </v-card>
+                     </v-card>
+
+                     <!-- <v-card :class="toogleChat" class="white mr-2 mssngerRadius minChat" >
+                        <v-btn @click="toogleChat == maxChat" flat small block class=" white px-2 mssngerRadius jieMessnger" >
+                           <v-toolbar-title  class="grey--text text--darken-2 caption textDefault " >
+                              <span style="letter-spacing:.5px" > Evelynn Lozada </span>
+                           </v-toolbar-title>
+                           <v-spacer></v-spacer>
+                           <v-icon  color="light-green  darken-2" size="8">
+                              mdi-circle
+                           </v-icon>
+                        </v-btn>
+                     </v-card> -->
+                     
+                  </v-layout>
                <!-- </v-container> -->
             </v-content>
       </v-app>
+
       <v-app v-else>
          <v-card class="grey lighten-5 jieWhatBg2" style="height:100%">
             <v-layout align-center fill-height justify-center>
-               <v-flex xs4>
-                 <v-progress-linear color="grey darken-1" style="margin-top:200px !important" height="5" :indeterminate="true"></v-progress-linear>
+               <v-flex xs3>
+                 <v-progress-linear color="primary darken-1" style="margin-top:200px !important" height="3" :indeterminate="true"></v-progress-linear>
                </v-flex>
             </v-layout>
          </v-card>
@@ -767,8 +931,8 @@ export default {
       progressDone: false,
       md2: "md3",
       extendSearch: "",
-      friendLists: []
-,      items: [
+      friendLists: [],   
+      items: [
          { title: 'Home', icon: 'dashboard' },
          { title: 'About', icon: 'question_answer' }
       ],
@@ -781,8 +945,145 @@ export default {
       term1: false,
       term2: false,
       term3: false,
+      listofid: {
+         id: '' ,
+         name: '',
+         toogle: '',
+         message: '',
+         convor: [],
+      },
+      dummy: [],
+      chattActiveID: '-26' ,
+      navBar : true
    }),
    methods: {
+      home() {
+         this.$router.push({
+            path: `/`,
+         }); 
+      },
+      infiniteHandler(){
+
+      },
+      newline(listofChat) {
+         listofChat.message = `${listofChat.message}\n`;
+         
+      },
+      sendMessnger(listofChat) {
+         let vm = this;
+         let convo = db.ref("ConversationList");
+         if(listofChat == '') {
+            // dont send -_
+         } else {
+            axios.get('https://api.ipgeolocation.io/ipgeo?apiKey=90a83c7326cc475f8048cf81362e1df0')
+               .then((response) =>{
+               // var now= moment(response.data.time_zone.current_time).tz(response.data.time_zone.name).format('MMMM D YYYY, kk:mm:ss');
+               var now= response.data.time_zone.current_time
+               if(listofChat.convor.first == listofChat.id){
+                  // ang ga una nga id kay imuha bobo
+                  convo.child(listofChat.id + vm.userData['ckcm-network_token_id']).set ({
+                     from: listofChat.id,
+                     message: listofChat.message,
+                     time: now
+                  }) 
+               } else {
+                  convo.child(vm.userData['ckcm-network_token_id']+listofChat.id).push ({
+                     from: listofChat.id,
+                     message: listofChat.message,
+                     time: now
+                  }) 
+               }
+            })
+         }
+         listofChat.message = ''
+         // console.log(`${listofChat.id} : ${listofChat.message}` )
+      },
+      deleteChatt(index){
+         window.localStorage.removeItem('ListOfChats');
+         this.listofid.splice(index,1);
+         localStorage.setItem("ListOfChats",JSON.stringify(this.listofid));
+      },
+      activeChatt(index) {
+         this.chattActiveID = index
+      },
+      inactiveChatt(index) {
+         this.chattActiveID = '-26'
+      },
+      changeChatToogle(myChat, index) {
+         window.localStorage.removeItem('ListOfChats');
+         myChat.toogle =! myChat.toogle;
+         localStorage.setItem("ListOfChats",JSON.stringify(this.listofid));
+      },
+      clearChat() {
+         window.localStorage.removeItem('ListOfChats');
+         console.log(localStorage.getItem('ListOfChats'));
+         this.listofid = [];
+      },
+      addToChat(id,displayName) {
+         let vm = this;
+         let idListed = _.filter(this.listofid, ['id', id]);
+         let idIndex = _.findIndex(this.listofid, ['id', id])
+        
+         if(idListed.length != 0) {
+            window.localStorage.removeItem('ListOfChats');
+            this.listofid[idIndex].toogle == true
+            localStorage.setItem("ListOfChats",JSON.stringify(this.listofid));
+            // changeChatToogle(idListed, idIndex)
+         } else {
+            // firebase module
+            // 1. id between yours and your friend _find
+            let convo = db.ref("ConversationList");
+            convo.on("value", function(getConvo) {
+               if(getConvo.val()[vm.userData['ckcm-network_token_id']+id] != null) {
+                  db.ref(`ConversationList/${vm.userData['ckcm-network_token_id']}${id}`).on("value", function(getConver) {
+                     vm.listofid.push({
+                        id: id,
+                        name: displayName,
+                        toogle: true,
+                        convor: getConver.val()
+                     });
+                  })
+               } else if(getConvo.val()[id+vm.userData['ckcm-network_token_id']] != null){
+                  db.ref(`ConversationList/${id}${vm.userData['ckcm-network_token_id']}`).on("value", function(getConver) {
+                     vm.listofid.push({
+                        id: id,
+                        name: displayName,
+                        toogle: true,
+                        convor: getConver.val()
+                     });
+                  })
+               } else {
+                  convo.child(vm.userData['ckcm-network_token_id']+id).set({
+                     first : vm.userData['ckcm-network_token_id']
+                  })
+                  db.ref(`ConversationList/${vm.userData['ckcm-network_token_id']}${id}`).on("value", function(getConver) {
+                     vm.listofid.push({
+                        id: id,
+                        name: displayName,
+                        toogle: true,
+                        convor: getConver.val()
+                     });
+                  })
+               }
+            })
+            // exit
+            console.log(vm.listofid)
+            localStorage.setItem("ListOfChats",JSON.stringify(vm.listofid));
+         }
+
+      },
+      homeReload() {
+         // console.log(this.$router.currentRoute.path)
+         if(this.$router.currentRoute.path == '/'){
+            eventBus.$emit('jie');
+            // this.$router.go(this.$router.currentRoute)
+            // this.stateLoading = false
+         } else {
+            this.$router.push({
+               path: '/'
+            })
+         }
+      },
       searchInput() {
 
       },
@@ -847,8 +1148,15 @@ export default {
    },
    mounted() {
       this.$store.dispatch("refreshPage")
+      // 
+      this.listofid = JSON.parse(localStorage.getItem('ListOfChats'));
+      if(this.listofid==null){
+         this.listofid = []
+      }
+      
    },
    created() {
+      this.$store.commit("homeReloadFalse")
       if(!this.stateLoading) {
          this.$Progress.finish()
       } else {

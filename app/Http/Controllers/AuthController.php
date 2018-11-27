@@ -112,7 +112,8 @@ class AuthController extends Controller
             'displayName' => $request->displayName,
             'email' => $request->email,
             'password' => $passhash,
-            'secret' => $type
+            'secret' => $type,
+            'firsttime' => 1
             // 'secret' => \Request::ip(),
          ]);
       } else {

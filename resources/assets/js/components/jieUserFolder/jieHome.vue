@@ -1,8 +1,9 @@
 <template>
 <v-card  id="scroll-target" app height="100%" width="100%" style="position:absolute; bottom:0" flat class="newsfeedScroll transparent scrollbar-primary "> 
-      <v-layout v-scroll:#scroll-target="onScroll" class="mt-1 mx-1 justify-center">
+      <v-layout  id="scrollTopjie" v-scroll:#scroll-target="onScroll" class="mt-1 mx-1 justify-center">
+         
          <v-flex class=" xs12 sm12 md8  ml-1 mr-2 mt-1">
-            <v-card flat  class="" >
+            <v-card flat class="" >
                <!-- jieSvgBg1 -->
                <!-- style="border:1px #E0E0E0 solid;border-radius:2px"   -->
                <v-layout wrap color="white" :class="whatisClass" class="py-2 px-2" >
@@ -55,8 +56,6 @@
                            </v-avatar>
                            Make Announcement
                         </v-btn>
-                        
-                       
                         <!-- <v-btn
                            icon
                            color="grey lighten-3"
@@ -74,7 +73,7 @@
                         <v-badge color="white"  overlap class="jieBadgeNews">
                            <!-- <span  slot="badge" class="" style="font-size:16px; border-radius: 50%; border: 4.5px solid #7CB342 ;"></span> -->
                            <v-avatar class="mr-2 " color="grey lighten-3" size="32">
-                              <img :src="`${userData.photoUrl}?height=10000`" alt="">
+                              <img :src="`${userFData.photoUrl}?height=10000`" alt="">
                            </v-avatar>
                         </v-badge>
                      </v-btn> 
@@ -222,7 +221,30 @@
                </v-layout> -->
             </v-card>
 
-           
+              <v-jumbotron
+                  class="my-1"
+                  :gradient="gradient"
+                  dark
+                  height="200px"
+                  src="imgs/ckcm/1.jpg"
+               >
+                  <v-container >
+                     <v-layout align-center>
+                        <v-flex>
+                           <p class="textfm13"><span class="textfm7 ">CKCM</span> – all you need for a successful career.</p>
+                        </v-flex>
+                        <v-flex text-xs-right>
+                           <!-- style="background-color: #fab364"  -->
+                           <v-btn  class="orange caption enrollBtn hidden-sm-and-down textNone textfm13 text-xs-center">
+                              Enroll now
+                           </v-btn>
+                        </v-flex>
+                     </v-layout>
+                  </v-container>
+               </v-jumbotron>
+
+
+
                <v-card flat  v-for="newsfeed in newsfeeds " :key="newsfeed.keyIndex" class="mt-1" >
                   <!-- <v-progress-linear active height="2" style="margin:0px !important" color="grey lighten-2" :indeterminate="false"></v-progress-linear> -->
                   <v-layout wrap class="newscard pt-2" >
@@ -236,18 +258,18 @@
                               </v-avatar>
                            </v-badge>
                         </v-btn> 
-                        <div class="mt-1">
-                        <p class="mb-0">
-                           <span @click="profileMenuFriend(newsfeed.displayName)" style="font-size:13px" class="aJie font-weight-bold textDefault">{{newsfeed.displayName}} </span>
-                           <span style="margin-left:-2px;" class="textlower caption grey--text text--darken-1"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+                        <div class="mt-2">
+                        <p class="mb-0;">
+                           <span @click="profileMenuFriend(newsfeed.displayName)" style="font-size:14px"  :class="`${userFData.themeColor}--text text--darken-3`" class="aJie font-weight-bold textDefault">{{newsfeed.displayName}} </span>
+                           <span style="margin-left:-2px;" class="textlower caption "> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
                         </p>
-                        <p style="margin-top:-5px;font-size:11px;" class="textfm2 grey--text">
+                        <p style="margin-top:-20px !important;font-size:10px;" class="  grey--text">
                            <!-- {{newsfeed.timestamp | moment("dddd, MMMM Do YYYY: h:mm:a") }}| -->
                            <Timeago :auto-update="60" :datetime="newsfeed.timestamp" :since="timeAgoFormat"></Timeago>
                         </p>
                         </div>
                         <v-spacer></v-spacer>
-                        <v-menu open-on-hover style="margin-top:-7px;" offset-y nudge-left="80"> 
+                        <v-menu style="margin-top:-7px;" offset-y nudge-left="80"> 
                            <v-btn
                               slot="activator"
                               icon
@@ -388,7 +410,7 @@
 
                                  <v-btn  v-if="newsfeed.whoComments[userData['ckcm-network_token_id']] != null" flat icon large class="mx-4 commentbtnActive" :ripple="false"  color="transparent">
                                     <v-tooltip content-class="jieTool" color="grey darken-4"  top>
-                                       <v-avatar  slot="activator" color="" tile size="16" class="mr-1">
+                                       <v-avatar  slot="activator" color="" tile size="15" class="mr-1">
                                           <img src="https://png.icons8.com/metro/50/17bf63/topic.png">
                                           <!-- <img src="https://png.icons8.com/small/50/17bf63/speech-bubble.png"> -->
                                        </v-avatar>
@@ -413,7 +435,7 @@
 
                                  <v-btn v-else flat icon large class="mx-4 commentbtn" :ripple="false"  color="transparent">
                                     <v-tooltip content-class="jieTool" color="grey darken-4"  top>
-                                       <v-avatar  slot="activator" color="" tile size="16" class="mr-1">
+                                       <v-avatar  slot="activator" color="" tile size="15" class="mr-1">
                                           <img src="https://png.icons8.com/metro/50/546E7A/topic.png">
                                           <!-- <img src="https://png.icons8.com/small/50/546E7A/speech-bubble.png"> -->
                                        </v-avatar>
@@ -488,7 +510,8 @@
                            </v-flex>
                         </v-layout>
                      </v-flex>
-                     <v-layout row wrap class="pb-1 jieSvgBg1">
+                     <!-- jieSvgBg1 -->
+                     <v-layout row wrap class="pb-1 ">
                         <v-flex class="mx-3" xs12 v-if="newsfeed.commented != null">
                            <v-divider class="grey lighten-3"></v-divider>
                         </v-flex>
@@ -507,8 +530,8 @@
                                  </div>
                               
                                  <v-flex xs11  style="margin-top:12px;margin-left:-4px" >
-                                    <p style="word-wrap:break-word !important;max-width:98%;bwidth: auto !important" :class="userFData.themeColor" class="lighten-5 jie3Commented">
-                                       <router-link :class="`${userFData.themeColor}--text text--darken-4`" class="caption font-weight-bold aJie" to="/profile/jiecel.marianne">{{commented.displayName}}</router-link>
+                                    <p style="word-wrap:break-word !important;max-width:98%;bwidth: auto !important;background-color:#e6ecf078 !important" class="jie3Commented">
+                                       <router-link :class="`${userFData.themeColor}--text text--darken-1`" class="caption font-weight-bold aJie" to="/profile/jiecel.marianne">{{commented.displayName}}</router-link>
                                        {{commented.data}}
                                     </p>
                                     <div class="caption ml-3" style="margin-top:-13px; ">
@@ -521,12 +544,9 @@
                                           <v-icon size="2px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
                                        </span>
                                        <span class="ml-3">
-                                       <a style="font-size:12px;" class=" aJie grey--text mt-2  textfm1" @click="test"> Reply </a> 
-                                          <v-icon size="2px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
+                                          <a style="font-size:12px;" class=" aJie grey--text mt-2  textfm1" @click="test"> Reply </a> 
                                        </span>
-                                       <span class="ml-3">
-                                       <span style="font-size:13px;" class=" grey--text mt-2  textfm1" >  </span> 
-                                       </span>
+                                      
 
                                     </div>
                                  </v-flex>
@@ -545,8 +565,8 @@
                                  </div>
                               
                                  <v-flex xs11  style="margin-top:12px;margin-left:-4px" >
-                                    <p style="word-wrap:break-word !important;max-width:98%;bwidth: auto !important" class=" grey lighten-3 jie3Commented">
-                                       <router-link :class="`${userFData.themeColor}--text text--darken-4`" class="textDefault caption font-weight-bold aJie" to="/profile/jiecel.marianne">{{commented.displayName}}</router-link>
+                                    <p style="word-wrap:break-word !important;max-width:98%;bwidth: auto !important;background-color:#e6ecf078 !important" class="jie3Commented">
+                                       <router-link :class="`${userFData.themeColor}--text text--darken-1`" class="textDefault caption font-weight-bold aJie" to="/profile/jiecel.marianne">{{commented.displayName}}</router-link>
                                        {{commented.data}}
                                     </p>
                                     <div class="caption ml-3" style="margin-top:-13px; ">
@@ -559,12 +579,9 @@
                                           <v-icon size="2px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
                                        </span>
                                        <span class="ml-3">
-                                       <a style="font-size:12px;" class=" aJie grey--text mt-2  textfm1" @click="test"> Reply </a> 
-                                          <v-icon size="2px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
+                                          <a style="font-size:12px;" class=" aJie grey--text mt-2  textfm1" @click="test"> Reply </a> 
                                        </span>
-                                       <span class="ml-3">
-                                       <span style="font-size:13px;" class=" grey--text mt-2  textfm1" >  </span> 
-                                       </span>
+                                     
 
                                     </div>
                                  </v-flex>
@@ -592,7 +609,7 @@
                                  <v-btn @click="profileMenu" color="transparent" icon style="height:34px !important; width:34px !important;margin-top:-5px" class=" jieleftNav"  flat>
                                     <v-badge color="white"  overlap class="jieBadgeNews">
                                        <v-avatar class="mr-2 " color="grey lighten-3" size="32">
-                                          <img :src="userData.photoUrl" alt="">
+                                          <img :src="userFData.photoUrl" alt="">
                                        </v-avatar>
                                     </v-badge>
                                  </v-btn> 
@@ -717,18 +734,22 @@
                </div>
             </v-card>
             <v-card flat  class="px-2 py-3 white lighten-4 my-2">
-               <div class=" font-weight-bold subheading">
-                  Who to follow
+               <div >
+                  <span class="ml-1 font-weight-bold subheading">Who to add</span> 
+                  <span class="mx-1 font-weight-bold subheading"  :class="`${userFData.themeColor}--text`">.</span> 
+                  <span  class="caption aJie" :class="`${userFData.themeColor}--text`">Refresh</span>
+                  <span class="mx-1 font-weight-bold subheading"  :class="`${userFData.themeColor}--text`">.</span> 
+                  <span  class="caption aJie" :class="`${userFData.themeColor}--text`">View all</span>
                </div>
                <v-layout class="mx-1 mt-3" row wrap>
-                  <div style="width:55px" >
-                  <v-avatar size="55">
+                  <div style="width:52px" >
+                  <v-avatar size="52">
                      <img src="https://pbs.twimg.com/profile_images/917742874837508096/vy7QY6Lu_400x400.jpg">
                   </v-avatar>
                   </div>
                   <v-flex>
                      <div class="ml-2 caption font-weight-bold" >Kuku Palad <span style="margin-top:-10px;font-size:10px" class="grey--text">@kuku12</span> </div>
-                     <v-btn depressed style="font-size: 11px !important"   class="textDefault font-weight-bold" small  :class="`${userFData.themeColor}--text`" round > Follow </v-btn>
+                     <v-btn depressed style="font-size: 11px !important"   class="textDefault font-weight-bold" small  :class="`${userFData.themeColor}--text`" round > Add friend </v-btn>
                   </v-flex>
                   <v-flex class="mt-2 xs12">
                     <v-divider class="grey lighten-3"></v-divider>
@@ -736,14 +757,14 @@
                </v-layout>
 
                 <v-layout class="mx-1 mt-3" row wrap>
-                  <div style="width:55px" >
-                  <v-avatar size="55">
+                  <div style="width:52px" >
+                  <v-avatar size="52">
                      <img src="https://pbs.twimg.com/profile_images/1033985393153040384/aRtpdPB2_400x400.jpg">
                   </v-avatar>
                   </div>
                   <v-flex>
-                     <div class="ml-2 caption font-weight-bold" > Johan Sundstein <span style="margin-top:-10px;font-size:10px" class="grey--text">@OG_BDN0tail</span> </div>
-                     <v-btn depressed style="font-size: 11px !important"   class="textDefault font-weight-bold" small  :class="`${userFData.themeColor}--text`" round > Follow </v-btn>
+                     <div class="ml-2 caption font-weight-bold" > Johan Sundstein <span style="margin-top:-10px;font-size:10px" class="grey--text">@N0tail</span> </div>
+                     <v-btn depressed style="font-size: 11px !important"   class="textDefault font-weight-bold" small  :class="`${userFData.themeColor}--text`" round > Add friend </v-btn>
                   </v-flex>
                   <v-flex class="mt-2 xs12">
                     <v-divider class="grey lighten-3"></v-divider>
@@ -751,14 +772,14 @@
                </v-layout>
 
                 <v-layout class="mx-1 mt-3" row wrap>
-                  <div style="width:55px" >
-                  <v-avatar size="55">
+                  <div style="width:52px" >
+                  <v-avatar size="52">
                      <img src="https://pbs.twimg.com/profile_images/969282406854332416/Ws9QWJ2Z_400x400.jpg">
                   </v-avatar>
                   </div>
                   <v-flex>
                      <div class="ml-2 caption font-weight-bold" > TIMS <span style="margin-top:-10px;font-size:10px" class="grey--text">@TimsDOTA</span> </div>
-                     <v-btn depressed style="font-size: 11px !important"   class="textDefault font-weight-bold" small  :class="`${userFData.themeColor}--text`" round > Follow </v-btn>
+                     <v-btn depressed style="font-size: 11px !important"   class="textDefault font-weight-bold" small  :class="`${userFData.themeColor}--text`" round > Add friend </v-btn>
                   </v-flex>
                   <v-flex class="mt-2 xs12">
                     <v-divider class="grey lighten-3"></v-divider>
@@ -769,7 +790,7 @@
             <v-card flat  class="pa-3 white lighten-4 my-2" >
                <p  style="font-size:11px">
                <span class="mr-2  blue-grey--text text--lighten-1"  > &copy; {{ new Date().getFullYear() }} Ckcm Network</span>
-               <span class="mr-2"> <router-link  class="font-weight-thin aJie blue-grey--text text--lighten-3 " to=""> About </router-link> </span>
+               <span @click="reloadNews"  class="mr-2"> <router-link  class="font-weight-thin aJie blue-grey--text text--lighten-3 " to=""> About </router-link> </span>
                <span class="mr-2"> <router-link  class="font-weight-thin aJie blue-grey--text text--lighten-3" to=""> Help Center </router-link> </span>
                <span class="mr-2"> <router-link  class="font-weight-thin aJie blue-grey--text text--lighten-3" to=""> Terms </router-link> </span>
                <span class="mr-2"> <router-link  class="font-weight-thin aJie blue-grey--text text--lighten-3" to=""> Privacy policy </router-link> </span>
@@ -844,7 +865,8 @@ export default {
          message:'', 
          image:''
       },
-      rating: 0
+      rating: 0,
+      gradient: 'to top right, #d67d0000, #382102'
   }),
    computed: {
       commenteds(dataOf) {
@@ -961,7 +983,7 @@ export default {
             db.ref(`Newsfeed/${newsfeed.keyIndex}/whoLikes/${vm.userData['ckcm-network_token_id']}` ).set({
                userId: vm.userData['ckcm-network_token_id'],
                displayName: vm.userData.displayName,
-               photoUrl: vm.userData.photoUrl,
+               photoUrl: vm.userFData.photoUrl,
                timestamp:  now,
             }, function(error) {
             if (error) {
@@ -981,22 +1003,38 @@ export default {
          });
       },
       reloadNews() {
-         let vm = this
-         vm.newsFeedLimit = 1 ;
-         var newsFeedsValue  = db.ref('Newsfeed').limitToLast(vm.newsFeedLimit);
-         newsFeedsValue.on('value', function(gotData) {
-            let keys = Object.keys(gotData.val())
-            // console.log(keys)
-            // gotData.val().text = "test"
-            vm.newsFeedsValueRef = gotData.val()
-            keys.forEach( function (key) {
-            //  console.log(gotData.val()[key], key)
-               vm.newsFeedsValueRef[key].keyIndex = key
-            })
-         })
+         var el = document.querySelector('#scroll-target');
+         let vm = this;
+         vm.newsFeedLimit = 1;
+         // setTimeout(() => {
+            var newsFeedsValue  = db.ref('Newsfeed').limitToLast(vm.newsFeedLimit);
+            newsFeedsValue.on('value', function(gotData) {
+               let keys = Object.keys(gotData.val())
+               vm.newsFeedsValueRef = gotData.val()
+               keys.forEach( function (key) {
+                  vm.newsFeedsValueRef[key].keyIndex = key
+                  var commentedValue = db.ref(`Newsfeed/${key}/commented`).limitToLast(4);
+                  commentedValue.on('value', function (commentedData) {
+                     vm.newsFeedsValueRef[key].commentedLimit = commentedData.val()
+                     // console.log(commentedData.val())
+                  })
+                  // vm.newsFeedsValueRef[key].limitCommented  = commentedValue
+                  // vm.newsFeedsValueRef[key].commented
+                  // console.log(vm.newsFeedsValueRef)
+               })
+               if(vm.newsfeeds.length == vm.newsFeedLimit){
+                  vm.availableNews=true
+                  $state.loaded()
+                  vm.doneLoadNews=true
+               }else{
+                  vm.availableNews=false
+                  vm.doneLoadNews=false
+               }
+               });
+         el.scrollTop = 0;
       },
       onScroll (e) {
-        this.offsetTop = e.target.scrollTop
+      //   this.offsetTop = e.target.scrollTop
         console.log(this.offsetTop)
       },
       infiniteHandler($state) {
@@ -1162,7 +1200,7 @@ export default {
             path: `/profile/${user}`,
             });
       }
-   },
+   },  
    mounted: function() {
 
       this.$store.commit("leftnavDrawerOn");
@@ -1196,6 +1234,9 @@ export default {
       // }, (60 - date.getSeconds()) * 1000);
    },
    created() {
+      // eventBus.$on('jie',() => { alert(test);});
+
+      eventBus.$on('jie', ()=> this.reloadNews());
 
       document.title = "Christ the King Network";
       
