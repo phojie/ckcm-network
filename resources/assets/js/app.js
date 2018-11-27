@@ -19,9 +19,6 @@ import './firebase';
 import VueFire from 'vuefire';
 import { EmojiPickerPlugin } from 'vue-emoji-picker';
 import {Textra} from 'vue-textra';
-import Croppa from 'vue-croppa';
-
-Vue.use(Croppa);
 Vue.use(require('vue-chat-scroll'))
 Vue.use(Textra);
 Vue.use(EmojiPickerPlugin);

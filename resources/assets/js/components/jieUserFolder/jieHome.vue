@@ -221,28 +221,7 @@
                </v-layout> -->
             </v-card>
 
-              <v-jumbotron
-                  class="my-1"
-                  :gradient="gradient"
-                  dark
-                  height="200px"
-                  src="imgs/ckcm/1.jpg"
-               >
-                  <v-container >
-                     <v-layout align-center>
-                        <v-flex>
-                           <p class="textfm13"><span class="textfm7 ">CKCM</span> – all you need for a successful career.</p>
-                        </v-flex>
-                        <v-flex text-xs-right>
-                           <!-- style="background-color: #fab364"  -->
-                           <v-btn  class="orange caption enrollBtn hidden-sm-and-down textNone textfm13 text-xs-center">
-                              Enroll now
-                           </v-btn>
-                        </v-flex>
-                     </v-layout>
-                  </v-container>
-               </v-jumbotron>
-
+            
 
 
                <v-card flat  v-for="newsfeed in newsfeeds " :key="newsfeed.keyIndex" class="mt-1" >
@@ -866,7 +845,6 @@ export default {
          image:''
       },
       rating: 0,
-      gradient: 'to top right, #d67d0000, #382102'
   }),
    computed: {
       commenteds(dataOf) {
@@ -1002,7 +980,7 @@ export default {
             });
          });
       },
-      reloadNews() {
+      reloadNews($) {
          var el = document.querySelector('#scroll-target');
          let vm = this;
          vm.newsFeedLimit = 1;
@@ -1024,7 +1002,6 @@ export default {
                })
                if(vm.newsfeeds.length == vm.newsFeedLimit){
                   vm.availableNews=true
-                  $state.loaded()
                   vm.doneLoadNews=true
                }else{
                   vm.availableNews=false
@@ -1035,7 +1012,7 @@ export default {
       },
       onScroll (e) {
       //   this.offsetTop = e.target.scrollTop
-        console.log(this.offsetTop)
+      //   console.log(this.offsetTop)
       },
       infiniteHandler($state) {
          this.doneLoadNews=true

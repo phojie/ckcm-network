@@ -1,7 +1,7 @@
 <template>
    <v-card  app height="100%" width="100%" style="position:absolute; bottom:0" flat class="newsfeedScroll transparent scrollbar-primary "> 
       <v-layout justify-center class="mt-3 py-0">
-         <v-flex xs12 sm7> 
+         <v-flex xs12 md7> 
             <v-stepper v-model="e6" vertical>
                <div class="px-4 py-3">
                   <span style="font-size:16px" class="font-weight-bold"> You've just arrive to <span  style="font-size:18px" class="red--text">Ckcm Network</span>, <span class="textDefault">{{userFData.first}} </span></span>
@@ -13,7 +13,7 @@
                </v-stepper-step>  
                <v-stepper-content color="deep-purple"  step="1">
                   <v-card color="" class="mb-5" height="">
-                     <v-hover>
+                     <v-hover open-delay="500">
                         <v-card
                            slot-scope="{ hover }"
                            class="mx-auto jieSvgBg1"
@@ -49,7 +49,7 @@
                         </v-card>
                      </v-hover>
                   <div  style="margin-left: 80px;position:absolute !important; margin-top:-80px !important" >
-                  <v-hover>
+                  <v-hover open-delay="500">
                      <v-avatar slot-scope="{ hover }" size="150" class="white">
                         <img
                            class="white"
@@ -92,7 +92,32 @@
 
                <v-stepper-content  step="2">
                   <v-card color="grey lighten-1" class="mb-5" height="200px">
-                     
+                     <v-avatar>
+                        <img src="/jieIcons/frontLogo.png">
+                     </v-avatar>
+                     <v-img
+                        v-if="configureEnrollbtn"
+                        class="my-1"
+                        :gradient="gradient"
+                        dark
+                        height="100%"
+                        src="imgs/ckcm/1.jpg"
+                     >
+                        <v-container >
+                           <v-layout align-center>
+                              <v-flex>
+                                 <p class="textfm13"><span class="textfm7 ">CKCM</span> – all you need for a successful career.</p>
+                              </v-flex>
+                              <v-flex text-xs-right>
+                                 <!-- style="background-color: #fab364"  -->
+                                 <v-btn  class="orange caption enrollBtn hidden-sm-and-down textNone textfm13 text-xs-center">
+                                    Enroll now
+                                 </v-btn>
+                              </v-flex>
+                           </v-layout>
+                        </v-container>
+                     </v-img>
+
                   </v-card>
                   <v-btn color="deep-purple lighten-2"  class="right textNone white--text"   @click="e6 = 3">Continue</v-btn>
                </v-stepper-content>
@@ -147,17 +172,18 @@
 // var moment = require('moment-timezone');
 
 import { db } from '../../firebase.js';
-
+import myUpload from 'vue-image-crop-upload';
 // import moment from 'moment';
 // moment().tz("America/Los_Angeles").format();
 
 export default {  
    components: {
+      'my-upload': myUpload
    },
    data: () => ({
       uploading: false,y: 'bottom', x: 'left', timeout: 10000, uploadingMess: "",
       uploadingProgess: false, uploadingPvalue: 0, messageDialog: '',
-      e6: 1,
+      e6: 2,
       items: ['Student', 'Instructor', 'Club Moderator', 'DSA', 'Finance', 'Dean(BSCS)', 'Dean(BSBA)', 'Dean(CRIM)', 'Dean(BSED)'],
       value: [],
       contact: '',
@@ -165,6 +191,8 @@ export default {
       show: false,
       showCover: false,
       imgDataUrl: '',
+      gradient: 'to top right, #d67d0000, #382102',
+      configureEnrollbtn: false,
       
    }),
    computed: {
@@ -184,14 +212,19 @@ export default {
       uploadCoverpicture(event) {
          // e.files.length > 2 SOMETHING IS WRONG IF MORE THAN 2 COVER PICTURE
          let vm = this;
+         vm.uploading = false
+         vm.uploadingPvalue = 100
+         vm.uploading = true
+         console.log(event)
          var storageRef = firebase.storage().ref();
          var uploadTask = storageRef.child(`coverPic/${vm.userData['ckcm-network_token_id']}`).put(event.target.files[0]);
-         uploadTask.on('state_change', function(snapshot){
+         uploadTask.on('state_changed', function(snapshot){
+            console.log(snapshot)
             var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
             vm.uploadingPvalue = progress
          }, function(error) {
+            console.log(error)
          }, function () {
-            vm.imgDataUrl = ''
             uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
                // console.log('File available at', downloadURL);
                vm.changeCover(downloadURL)
@@ -244,7 +277,6 @@ export default {
          let vm = this;
          vm.uploading = false
          vm.uploadingPvalue = 100
-         console.log(vm.userData)
          // let storageRef = firebase.storage().ref(`profilePic/${vm.userData['ckcm-network_token_id']}`);
          var storageRef = firebase.storage().ref();
          var uploadTask = storageRef.child(`profilePic/${vm.userData['ckcm-network_token_id']}`).putString(imgDataUrl, 'data_url');

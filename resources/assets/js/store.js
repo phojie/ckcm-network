@@ -19,7 +19,8 @@ export default {
       rightnavDrawer: true,
       friendList: [], //Object,
       scrollLimitNews: 2,
-      homeReload: false
+      homeReload: false,
+      resultInfoState : []
    },
    getters: {
       scrollLimitNews(state) {
@@ -92,29 +93,45 @@ export default {
          // type :   1 : not enrolled 
          //          2 : enrolled
          //          3 : andmin
-         db.ref('users/' + id).set({
-            status: "online",
-            themeColor: 'deep-purple',
-            first: firstname[0],
-            lastname: firstname[1],
-            guest: true,
-            roles: '',
-            type: 1,
-            status: false,
-            firsttime: true,
-            coverUrl: '',
-            displayName: state.accountLoginData.user.displayName ,
-            photoUrl: state.accountLoginData.user.photoUrl,
-            timestamp: "",
+         if(state.resultInfoState.additionalUserInfo.isNewUser == false) {
+            db.ref('users/' + id).update({
+               status: "online"
+               // displayName: state.accountLoginData.user.displayName ,
+               // photoUrl: state.accountLoginData.user.photoUrl,
+               // timestamp: "",
+             }, function(error) {
+               if (error) {
+                  console.log(error)
+                 // The write failed...r
+               } else {
+                 // Data saved successfully!
+               }
+             });
+         } else {
+            db.ref('users/' + id).set({
+               status: "online",
+               themeColor: 'deep-purple',
+               first: firstname[0],
+               lastname: firstname[1],
+               guest: true,
+               roles: '',
+               type: 1,
+               status: false,
+               firsttime: true,
+               coverUrl: '',
+               displayName: state.accountLoginData.user.displayName ,
+               photoUrl: state.accountLoginData.user.photoUrl,
+               timestamp: "",
 
-          }, function(error) {
-            if (error) {
-               console.log(error)
-              // The write failed...r
-            } else {
-              // Data saved successfully!
-            }
-         });
+            }, function(error) {
+               if (error) {
+                  console.log(error)
+               // The write failed...r
+               } else {
+               // Data saved successfully!
+               }
+            });
+         }
       },
       logout(state) {
          const id = state.accountLoginData.user["ckcm-network_token_id"]

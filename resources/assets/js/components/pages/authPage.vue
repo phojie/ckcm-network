@@ -379,6 +379,7 @@ export default {
          this.$v.$reset()
          this.$store.dispatch("jieLoaderOn")
          let vm = this
+         vm.$store.resultInfoState = []
          const provider = new firebase.auth.FacebookAuthProvider();
          firebase.auth().signInWithPopup(provider)
          .then(function(result) {
@@ -386,9 +387,8 @@ export default {
             // This gives you a Facebook Access Token. You can use it to access the Facebook API.
             const token = result.credential.accessToken;
             // The signed-in user info.
+            vm.$store.state.resultInfoState = result
             const user = result.user;
-            // vm.$store.dispatch("registerUser")
-            console.log(user);
             signUp(user)
                .then((res) => {
                   vm.form.password='jiejie';
@@ -439,6 +439,7 @@ export default {
          this.$v.$reset()
          this.$store.dispatch("jieLoaderOn")
          let vm = this
+         vm.$store.state.resultInfoState = []
          const provider =  new firebase.auth.GoogleAuthProvider();
          // firebase.auth().signInWithPopup(provider);
          firebase.auth().signInWithPopup(provider).then(function(result) {
@@ -447,6 +448,8 @@ export default {
             const token = result.credential.accessToken;
             // The signed-in user info.
             const user = result.user;
+            vm.$store.state.resultInfoState = result
+
             // vm.$store.dispatch("registerUser")
             signUp(user)
                .then((res) => {
@@ -454,7 +457,7 @@ export default {
                   vm.form.email=res;
                   login(vm.$data.form)  
                      .then((res) => {
-                     vm.$store.commit("loginSuccess", res);
+                     vm.$store.commit("loginSuccess", res );
                      vm.$store.dispatch("loginFirebase")
                      vm.$Progress.finish()
                      vm.$store.dispatch("jieLoaderOff")

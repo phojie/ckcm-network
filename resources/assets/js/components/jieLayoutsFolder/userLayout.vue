@@ -5,7 +5,7 @@
       <v-app v-if="!stateLoading"   style="background:#e6ecf0;overflow:hidden !important" >
             <!-- stateless permanent -->
                
-            <v-navigation-drawer :value="leftnavDrawer"  right class="transparent "   width="220" style="overflow: hidden !important;" clipped app>
+            <v-navigation-drawer :value="leftnavDrawer"  stateless right class="transparent "   width="220" style="overflow: hidden !important;" clipped app>
                <v-card flat color=""   style="padding-top:7px !important" class=" friendscroll scrollbar-primary ">
                   <v-menu
                      :close-on-content-click="false"
@@ -258,17 +258,17 @@
                
             </v-navigation-drawer>
 
-            <v-navigation-drawer :value="leftnavDrawer" class=" transparent lighten-3 " floating  width="300" style="overflow: hidden !important;" clipped app>
+            <v-navigation-drawer :value="leftnavDrawer" stateless  class=" transparent lighten-3 " floating  width="300" style="overflow: hidden !important;" clipped app>
                <v-card flat color="transparent"  class=" leftNavscroll scrollbar-primary mt-2 ml-5">
                   <v-card flat class="pb-2">
                         <!-- jieCkcmbg -->
                         <!-- src="https://scontent.fcgy1-1.fna.fbcdn.net/v/t1.0-9/29571261_1589949324387758_1953653254138362805_n.jpg?_nc_cat=0&oh=fbd784445c209ed004d49b0ea51cba32&oe=5BCADF30" -->
-                     <v-card-media
+                     <v-img
                         :class="userFData.themeColor" class=" jieSvgBg1"
                         height="80px"
-                        src=""
+                        :src="userFData.coverUrl"
                      >
-                     </v-card-media>
+                     </v-img>
                      <div class="ml-4" style="position:absolute !important; margin-top:-30px !important" >
                         <v-avatar size="60" class="white">
                            <img
@@ -513,8 +513,8 @@
             <!-- jieLandingBg -->
             <!-- jieWhatBg -->
             <!-- mycolor3 -->
-            <!-- <v-toolbar   height="43px" clipped-left dark  :class="userFData.themeColor" class=" mr-5 transparent darken-3 jieWhatBg "  app dense > -->
-            <v-toolbar   height="43px" clipped-left dark :class="`${userFData.themeColor}`" class="jieWhatBg elevation-1 mr-5 white "  app dense >
+            <!-- <v-toolbar   height="43px" clipped-left dark  :class="userFData.themeColor" class=" jieLandingBg mr-5 transparent darken-3 jieWhatBg "  app dense > -->
+            <v-toolbar   height="43px" clipped-left dark :class="`${userFData.themeColor}`" class=" jieSvgBg1 elevation-1 mr-5 white "  app dense >
                <!-- <v-toolbar-side-icon class="" @click="(mycolor1) => (showNav = !showNav)"></v-toolbar-side-icon> -->
             
                <!-- <v-toolbar-title  class="primaryColortext--text subheading ">
