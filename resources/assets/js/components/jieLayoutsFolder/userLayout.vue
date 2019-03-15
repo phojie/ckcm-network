@@ -5,7 +5,7 @@
       <v-app v-if="!stateLoading"   style="background:#e6ecf0;overflow:hidden !important" >
             <!-- stateless permanent -->
                
-            <v-navigation-drawer :value="leftnavDrawer"  stateless right class="transparent "   width="220" style="overflow: hidden !important;" clipped app>
+            <v-navigation-drawer :value="rightnavDrawer"  stateless right class="transparent "   width="220" style="overflow: hidden !important;" clipped app>
                <v-card flat color=""   style="padding-top:7px !important" class=" friendscroll scrollbar-primary ">
                   <v-menu
                      :close-on-content-click="false"
@@ -17,10 +17,14 @@
                      max-width="240"
                      close-delay="50"
                      open-delay="1000"
-                     v-for="friendList in users" :key="friendList.id" v-if="friendList['.key'] != userData['ckcm-network_token_id']"
                      bottom
                      app
+                     v-for="friendList in users" 
+                     :key="friendList.id" 
                   >
+                     <!-- v-if="friendList['.key'] != userData['ckcm-network_token_id']" -->
+
+             
                   <!-- @click="profileMenuFriend(friendList.displayName)"  -->
                   <v-btn  @click="addToChat(friendList['.key'], friendList.displayName)" slot="activator" style="margin-top:-6px"    color="grey" class=" jieleftNav" block flat>
                      <v-badge color="white"  overlap class="jieBadgeFriend">
@@ -368,6 +372,14 @@
                         <v-spacer></v-spacer>
                         <div class="textfm1 caption" ></div>
                      </v-btn>
+                     <v-btn to="vpaaoffice" style="padding-left:10px"  :ripple="{ class: 'white--text' }"  :color="`${userFData.themeColor} lighten-1`"  class=" jieleftNav" flat depressed block >
+                        <v-avatar tile class="mr-2" color="grey--after" size="20px">
+                           <img src="https://img.icons8.com/ios/50/000000/saving-book.png">
+                        </v-avatar>
+                        <div style="font-size:12px;margin-left:1px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault "> Academic Affairs-Office </div> 
+                        <v-spacer></v-spacer>
+                        <div class="textfm1 caption" ></div>
+                     </v-btn>
                      <v-btn to="vpoffice" style="padding-left:10px"  :ripple="{ class: 'white--text' }"  :color="`${userFData.themeColor} lighten-1`" class=" jieleftNav" flat depressed block >
                         <v-avatar tile class="mr-2" color="grey--after" size="20px">
                            <img src="https://png.icons8.com/ios/50/000000/interior-accesories.png">
@@ -514,18 +526,20 @@
             <!-- jieWhatBg -->
             <!-- mycolor3 -->
             <!-- <v-toolbar   height="43px" clipped-left dark  :class="userFData.themeColor" class=" jieLandingBg mr-5 transparent darken-3 jieWhatBg "  app dense > -->
-            <v-toolbar   height="43px" clipped-left dark :class="`${userFData.themeColor}`" class=" jieSvgBg1 elevation-1 mr-5 white "  app dense >
+            <v-toolbar   height="45px" clipped-left dark :class="`${userFData.themeColor}` " class=" portalSvg  elevation-1 mr-5 white "  app dense >
                <!-- <v-toolbar-side-icon class="" @click="(mycolor1) => (showNav = !showNav)"></v-toolbar-side-icon> -->
             
                <!-- <v-toolbar-title  class="primaryColortext--text subheading ">
                   <span style="margin-left:100px"  class="subheading white--text">Christ the King Network</span>
                </v-toolbar-title> -->
-               <v-toolbar-title @click="home"  style="cursor:pointer;margin-top:-5px;margin-left:38px" class="align-left">
-                  <v-avatar tile size="25" >
+               <v-toolbar-title @click="home"  style="cursor:pointer;margin-top:-5px;margin-left:38px" class=" align-left">
+                  <v-avatar tile size="30" >
                      <img src="jieIcons/apple-touch-icon.png">
                   </v-avatar>
-                  <span style="font-size:11px;margin-top:-12px;" class="jieSvgBg1 textfm6">Christ the king Network</span> 
-                  <div style="margin-top:-9px;margin-left:60px;font-size:8px;position:absolute" class="textfm6">Developed for Ckcmians</div>
+                  <span style="font-size:14px;margin-top:-18px;" class="jieSvgBg1 textfm6">Christ The King Network</span> 
+                  <div style="margin-top:-9px;margin-left:60px;font-size:10px;position:absolute" class="textfm6">Developed for Ckcmians</div>
+                  <!-- <span style="font-size:11px;margin-top:-12px;" class="jieSvgBg1 textfm6">Christ the king Network</span>  -->
+                  <!-- <div style="margin-top:-9px;margin-left:60px;font-size:8px;position:absolute" class="textfm6">Developed for Ckcmians</div> -->
                </v-toolbar-title>
                <v-spacer></v-spacer>
                <!-- <v-menu  slot="activator"  offset-y nudge-left="44px"> -->
@@ -538,24 +552,24 @@
                         solo
                         light
                         flat
-                        height="28"
-                        full-width
+                        height="30"
                         :loading="false"
                         placeholder="Search . . ."
                         append-icon="search"
                         style="font-size:13px"
-                        class="font-weight-thin-light jie textfm1  "
+                        class="font-weight-thin-light jie  textfm1  "
                      ></v-text-field>
+                     
                   </v-flex>
                <!-- </v-menu> -->
                <!-- <v-divider vertical inset ></v-divider> -->
-                  <v-btn @click="homeReload" v-scroll-to="'#scrollTopjie'" flat small  class=" textDefault textfm1 " style="font-size:12px;margin-right:1px;margin-left:10px !important;" >
-                        <v-avatar tile size="17"
+                  <v-btn @click="homeReload" v-scroll-to="'#scrollTopjie'" flat   class="font-weight-medium textDefault textfm1 " style="font-size:13px;margin-right:1px;margin-left:10px !important;" >
+                        <v-avatar tile size="19"
                         color="transparent red--after"
                         >
                         <img src="https://png.icons8.com/ios/50/ffffff/birdhouse-filled.png">
                         </v-avatar>
-                        Home
+                        Home 
                   </v-btn>
 
                   <v-tooltip color="tooltipColor" bottom >
@@ -704,7 +718,7 @@
                      <v-avatar class="mr-1 " color="red--after" size="25px">
                         <img :src="userFData.photoUrl" alt="">
                      </v-avatar>
-                     <div class="font-weight-thin mr-2  text--darken-2 caption  textDefault textfm1"> Hello, {{firstname}}</div> 
+                     <div style="font-size:13px;" class="font-weight-medium mr-2  text--darken-2   textDefault textfm1"> Hello, {{firstname}}</div> 
                      <v-spacer></v-spacer>
                         <v-icon style="font-size:15px !important" color="primary">mdi-menu</v-icon>
                   </v-btn>
@@ -864,11 +878,11 @@
                            </v-form>
                            <v-flex xs12 style="width:100%;position:absolute; bottom:0">
                               <v-flex class=" mb-2 mx-1">
-                                 <v-avatar class="mr-1 " tile size="19">
-                                    <img src="https://png.icons8.com/linen/50/757575/stack-of-photos.png">
+                                 <v-avatar class="mr-2" tile size="17">
+                                    <img src="https://png.icons8.com/ios/50/757575/stack-of-photos.png">
                                  </v-avatar>
 
-                                 <v-avatar class="mr-2" tile size="16">
+                                 <v-avatar class="mr-2" tile size="17">
                                     <img src="https://img.icons8.com/ios/50/424242/happy.png">
                                  </v-avatar>
 
@@ -911,7 +925,8 @@
          <v-card class="grey lighten-5 jieWhatBg2" style="height:100%">
             <v-layout align-center fill-height justify-center>
                <v-flex xs3>
-                 <v-progress-linear color="primary darken-1" style="margin-top:200px !important" height="3" :indeterminate="true"></v-progress-linear>
+                 <span style="display:none"> {{userData}} </span>
+                 <v-progress-linear color="primary darken-1" style="margin-top:200px !important" height="6" :indeterminate="true"></v-progress-linear>
                </v-flex>
             </v-layout>
          </v-card>
@@ -1147,6 +1162,7 @@ export default {
       // }
    },
    mounted() {
+      
       this.$store.dispatch("refreshPage")
       // 
       this.listofid = JSON.parse(localStorage.getItem('ListOfChats'));
@@ -1156,6 +1172,8 @@ export default {
       
    },
    created() {
+      console.log(this.$store.getters.accountLoginData.user)
+
       this.$store.commit("homeReloadFalse")
       if(!this.stateLoading) {
          this.$Progress.finish()

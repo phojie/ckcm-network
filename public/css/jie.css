@@ -3,7 +3,163 @@
 @import url('https://fonts.googleapis.com/css?family=Nanum+Pen+Script');
 @import url('https://fonts.googleapis.com/css?family=Courgette');
 @import url('fonts/style.css');
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i');
 
+.jieCtk .time-picker {
+   height:100px !important;
+}
+
+.testwer .v-label{
+   background-color:transparent !important;
+}
+.cursorOn{
+   cursor: pointer !important;
+}
+.yawa2 .v-input__slot{
+   border-radius: 10px !important;
+}
+.yawa2.v-textarea textarea {
+   margin-left: -12px !important;
+   margin-top: 7px !important;
+   max-width: 99% !important;
+   border-radius: 20px !important;
+   padding-top: 7px !important;
+   padding-left: 12px !important;
+   padding-right: 28px !important;
+   background: #F5F5F5;
+   font-size:13px;
+   border: 1px solid #E0E0E0;
+}
+.yawa2 .v-input__control{
+   padding: 0 !important
+}
+
+
+
+/* new data */
+.abt-cstmr-stripe {
+   width: 100%;
+   height: 170px;
+   background-image: url(//www.cloudways.com/wp-content/themes/cw_multilingual/template/assets/css/pages/../../img/about_us/abt-cstmr-stripe1.png);
+   background-repeat: repeat;
+   background-position: left top;
+   background-size: cover;
+   position: absolute;
+   left: 0;
+   top: 0;
+}
+
+.abt-cstmr-stripe2 {
+   background-image: url(//www.cloudways.com/wp-content/themes/cw_multilingual/template/assets/css/pages/../../img/about_us/abt-cstmr-stripe2.png);
+   height: 205px;
+   top: 135px !important;
+}
+.gradient {
+   background-color: rgba(8,0,103,1);
+   background-image: linear-gradient(0deg,rgba(0,7,88,.8),rgba(8,0,103,1));
+   overflow: hidden;
+   text-shadow: 0 2px 20px rgba(0,0,0,.16);
+}
+
+.gradientDesign .dontstop {
+   z-index: 1;
+}
+
+.dontstop{
+   position: relative !important;
+}
+
+.gradient::before {
+   background: radial-gradient(rgba(101,0,117,1) 12.18%,rgba(85,15,100,0) 73.53%);
+   height: 200%;
+   right: -30%;
+   top: 0;
+   width: 100%;
+
+}
+
+.gradient::after {
+   background: radial-gradient(rgba(0,133,93,1) 2.94%,rgba(0,173,159,0) 69.33%);
+}
+
+.gradient::after, .gradient::before {
+   content: "";
+   display: block;
+   position: absolute;
+   z-index: 0;
+}
+
+.wave {
+   color: #fff ;
+   overflow: hidden !important;
+   position: absolute !important;
+   transform: translateY(-50%) !important;
+   width: 100% !important;
+}
+
+.v-window.v-carousel.jieCaro  {
+   box-shadow: none !important;
+   -webkit-box-shadow: none !important;
+}
+
+.bgsvg1 {
+   background-image: url(/imgs/ckcm/bgsvg.svg);
+   background-repeat: no-repeat; /* Do not repeat the image */
+   background-size: 320px;
+   background-position: 50% 50%; 
+}
+
+.bgsvg2 {
+   background-image: url(/imgs/ckcm/bgsvg2.svg);
+   background-repeat: no-repeat; /* Do not repeat the image */
+   background-size: 320px;
+   background-position: 50% 50%; 
+}
+
+.bgsvg3 {
+   background-image: url(/imgs/ckcm/bgsvg3.svg);
+   background-repeat: no-repeat; /* Do not repeat the image */
+   background-size: 320px;
+   background-position: 50% 50%; 
+}
+
+.portalBg{
+         background-image: url(/imgs/ckcm/1.jpg);
+         background-position: 100% 80%; 
+         background-repeat: no-repeat; /* Do not repeat the image */
+         background-size: cover;
+}
+
+.netsvg {
+   background-image:url(/imgs/ckcm/ckcm.svg);
+   background-position: 52% 50%; /* Center the image */
+   background-repeat: no-repeat; /* Do not repeat the image */
+   background-size: 380rem;
+  /* background-size: ; Resize the background image to cover the entire container */
+}
+
+.netsvg2 {
+   background-image:url(/imgs/ckcm/ckcm.svg);
+   background-position: 50% 40%; /* Center the image */
+   background-repeat: no-repeat; /* Do not repeat the image */
+   background-size: 380rem;
+  /* background-size: ; Resize the background image to cover the entire container */
+}
+
+.portalSvg {
+   background-image: url(https://ssl.gstatic.com/support/content/images/static/homepage_header_background.svg);
+   /* background-position: 50% 10px; */
+   background-position: 50% 50%; /* Center the image */
+   background-size: 120rem;
+   background-repeat: no-repeat;
+   /* height: 105px; */
+}
+
+/* end data */
+
+.titleFont {
+   font-family: 'Noto Serif', serif;
+ }
 
 .material-icons  {
    font-size: 20px !important;
@@ -140,7 +296,7 @@
 /* Upper toolbar Search Input */
 .jie .v-input__control   {
    margin-top:8px;
-   min-height:0px !important;
+   min-height: 0px !important;
    padding: 10px !important;
 }
 
@@ -160,28 +316,63 @@
    font-size: 17px !important;
 }
 
-.jie3 .v-input__control   {
-   margin-left:-8px;
+.jielarge .v-input__control   {
    margin-top:8px;
-   min-height:0px !important;
+   font-size: 15px;
+   min-height:40px !important;
    padding: 10px !important;
 }
 
-.jie3 .v-input__slot   {
-   border:1px solid #E0E0E0 !important;
-   border-radius:20px !important;
+.jielarge .v-input__slot   {
+   /* border:solid #E0E0E0 1px; */
+   /* border-radius:4px !important; */
    -webkit-transition: width 2s; /* Safari */
    transition: width .2;
 }
 
-.jie3 .v-text-field__details   {
-   margin-bottom: -18px !important;
+.jielarge .v-label {
+   /* color: rgba(0,0,0,0.54) !important; */
+   font-size: 12px !important;
 }
+.jielarge .v-icon {
+   color: rgba(0,0,0,0.54) !important;
+   font-size: 20px !important;
+}
+
+
+.jie3 .v-input__control   {
+   margin-left:-8px;
+   margin-top:8px;
+   padding: 10px !important;
+}
+
+
+.jie3 .v-input__slot   {
+   border:1px solid #E0E0E0 !important;
+   border-radius:16px !important;
+   -webkit-transition: width 2s; /* Safari */
+   transition: width .2;
+
+}
+
+.jie3.v-textarea.v-text-field--enclosed.v-text-field--single-line textarea {
+   margin-top: 5px !important;
+}
+
+/* .v-textarea.v-text-field--box.v-text-field--single-line .v-text-field__prefix, .v-textarea.v-text-field--enclosed.v-text-field--single-line .v-text-field__prefix, .v-textarea.v-text-field--box.v-text-field--single-line textarea, .v-textarea.v-text-field--enclosed.v-text-field--single-line textarea {
+    margin-top: 3px;
+} */
+
+/* .jie3 .v-text-field__details   {
+   margin-bottom: 18px !important;
+} */
 
 .jie3 .v-messages__message   {
    font-family: 'Source Sans Pro', sans-serif;
    font-size:10px !important;
    margin-top:-1px !important;
+
+
 }
 
 
@@ -412,13 +603,12 @@ background-color: #2BBBAD; }
 }
 .rightPromoteEnroll {
    background-image: url("/imgs/ckcm/1.jpg");
-   background: #DA22FF;  /* fallback for old browsers */
-   background: -webkit-linear-gradient(to right, #9733EE, #DA22FF);  /* Chrome 10-25, Safari 5.1-6 */
-   background: linear-gradient(to right, #9733EE, #DA22FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   /* background: #DA22FF;  fallback for old browsers */
+   /* background: -webkit-linear-gradient(to right, #9733EE, #DA22FF);  */
+   /* background: linear-gradient(to right, #9733EE, #DA22FF); */
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover;
-
 }
 .jiew.v-text-field--solo .v-input__slot  {
    background: transparent !important;
@@ -770,4 +960,8 @@ background-color: #2BBBAD; }
 .firstName {
    margin-top:-5px !important;
    margin-left:162px
+}
+
+.jietextFieldmid {
+   border-radius: 20px;
 }

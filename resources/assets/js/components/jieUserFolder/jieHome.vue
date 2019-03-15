@@ -162,7 +162,7 @@
                   <v-flex xs12 class="mx-2" v-if="whatisFunction" >
                      <v-layout row wrap>
                         <v-spacer></v-spacer>
-                        <emoji-picker @emoji="insert" :search="search">
+                        <!-- <emoji-picker @emoji="insert" :search="search">
                            <div slot="emoji-invoker" slot-scope="{ events }" v-on="events">
                               <v-tooltip content-class="jieToolHeart" color="grey darken-4"  top>
                                  <span style="margin:3px;font-size:11px" class="text-xs-center"> Insert Emoji </span>
@@ -205,7 +205,7 @@
                                     </v-layout>
                               </div>
                            </div>
-                        </emoji-picker>
+                        </emoji-picker> -->
                         <v-btn small   :disabled="postedDataNews"  depressed color="blue" @click="makePost(userData)" class="white--text font-weight-black caption textDefault"> Post </v-btn>
                      </v-layout>
                   </v-flex>
@@ -495,11 +495,12 @@
                            <v-divider class="grey lighten-3"></v-divider>
                         </v-flex>
 
-                        <v-flex xs12 class="mx-2 ">
-                           <v-flex xs12 v-for="commented in newsfeed.commentedLimit" :key="commented['.key']">
+                        <v-flex v-chat-scroll="{always: false, smooth: true}" xs12 style="max-height:300px !important; overflow:auto"  class="scrollbar-primary  mx-2 ">
+                           <v-flex  xs12 v-for="commented in newsfeed.commentedLimit" :key="commented['.key']">
                               <v-layout v-if="commented.userId == userData['ckcm-network_token_id']">
                                  <div  class=" mt-3">
-                                    <v-btn @click="profileMenu" color="" icon style="height:34px !important; width:34px !important;margin-top:-5px" class=" jieleftNav"  flat>
+                                    <v-btn @click="profileMenu" color="" icon style="height:34px !important; width:
+                                    34px !important;margin-top:-5px" class=" jieleftNav"  flat>
                                        <v-badge color="white"  overlap class="jieBadgeNews">
                                           <v-avatar class="mr-2 " color="grey lighten-3" size="32">
                                              <img :src="commented.photoUrl" alt="">
@@ -509,18 +510,18 @@
                                  </div>
                               
                                  <v-flex xs11  style="margin-top:12px;margin-left:-4px" >
-                                    <p style="word-wrap:break-word !important;max-width:98%;bwidth: auto !important;background-color:#e6ecf078 !important" class="jie3Commented">
+                                    <p style="word-wrap:break-word !important;max-width:98%;width: auto !important;background-color:#e6ecf078 !important" class="jie3Commented">
                                        <router-link :class="`${userFData.themeColor}--text text--darken-1`" class="caption font-weight-bold aJie" to="/profile/jiecel.marianne">{{commented.displayName}}</router-link>
                                        {{commented.data}}
                                     </p>
                                     <div class="caption ml-3" style="margin-top:-13px; ">
                                        <span>
                                        <a style="font-size:12px;" class="aJie grey--text mt-2  textfm1" @click="test"> Like </a> 
-                                          <v-icon size="2px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
+                                          <v-icon size="2px" class="ml-1" style="margin-top:9px;position:relative">mdi-asterisk</v-icon>
                                        </span>
                                        <span class="ml-3">
                                        <a style="font-size:12px;" class=" aJie grey--text mt-2  textfm1" @click="test"> Dislike </a> 
-                                          <v-icon size="2px" class="ml-1" style="margin-top:9px;position:absolute">mdi-asterisk</v-icon>
+                                          <v-icon size="2px" class="ml-1" style="margin-top:9px;position:relative">mdi-asterisk</v-icon>
                                        </span>
                                        <span class="ml-3">
                                           <a style="font-size:12px;" class=" aJie grey--text mt-2  textfm1" @click="test"> Reply </a> 
@@ -593,56 +594,38 @@
                                     </v-badge>
                                  </v-btn> 
                               </v-card>
-                              <v-flex  xs11 style="margin-top:-7px;margin-left:-5px">
-                                 <v-form @submit.prevent="commentPost(newsfeed,newsfeed.keyIndex, userData, newsfeed.commentText)">
-                                    <v-text-field  
-                                       color="blue lighten-2"
-                                       background-color="white lighten-3"
-                                       single-line
-                                       solo
-                                       hint="Press Enter to comment"
-                                       flat
-                                       :ref="newsfeed.keyIndex"
-                                       height="32"
-                                       full-width
-                                       v-model="newsfeed.commentText"
-                                       :loading="false"
-                                       placeholder="Write a comment .. . "
-                                       @blur="blurPost(newsfeed.keyIndex, userData, newsfeed.commentText)"
-                                       @input="inputPost(newsfeed.keyIndex, userData, newsfeed.commentText)"
-                                       @click:append="commentPost(newsfeed,newsfeed.keyIndex, userData, newsfeed.commentText)"
-                                       append-icon="mdi-send"
-                                       style="font-size:12px"
-                                       class="font-weight-thin-light jie3 "
-                                    ></v-text-field>
-                                    <!-- <v-textarea  
-                                       color="blue lighten-2"
-                                       background-color="grey lighten-5"
-                                       solo
-                                       auto-grow
-                                       rows="1"
-                                       flat
-                                       hint="Press Enter to comment"
-                                       v-model="newsfeed.commentText"
-                                       :loading="false"
-                                       placeholder="Write a comment .. . "
-                                       @blur="blurPost(newsfeed.keyIndex, userData, newsfeed.commentText)"
-                                       @input="inputPost(newsfeed.keyIndex, userData, newsfeed.commentText)"
-                                       @click:append="commentPost(newsfeed.keyIndex, userData, newsfeed.commentText)"
-                                       append-icon="mdi-send"
-                                       style="font-size:12px"
-                                       class="font-weight-thin-light  writeComment  "
-                                    ></v-textarea> -->
-                                 </v-form>
+                              <!-- margin-top:-7px; -->
+                               <!-- style="margin-left:-5px" -->
+                              <v-flex   xs11>
+                                 <v-textarea
+                                    laasdbel="label"
+                                    name="name"
+                                    solo
+                                    background-color="transparent"
+                                    auto-grow
+                                    rows="1"
+                                    placeholder="Write a comment"
+                                    class="yawa2 font-weight-regular"
+                                    flat
+                                    :color="`${userFData.themeColor}`"   
+                                    :loading="false"
+                                    hide-details
+                                    :ref="newsfeed.keyIndex"
+                                    v-model="newsfeed.commentText"
+                                    @blur="blurPost(newsfeed.keyIndex, userData, newsfeed.commentText)"
+                                    @input="inputPost(newsfeed.keyIndex, userData, newsfeed.commentText)"
+                                    @keydown.enter.exact.prevent
+                                    @keyup.enter.exact="commentPost(newsfeed,newsfeed.keyIndex, userData, newsfeed.commentText)"
+                                    @keydown.enter.shift.exact="newline(newsfeed,newsfeed.keyIndex, userData, newsfeed.commentText)"
+                                 ></v-textarea>
                               </v-flex>
-                           
                            </v-layout>
                         </v-flex>
                      </v-layout>
                   </v-layout>
                </v-card>
 
-               <infinite-loading class="red" style="height:0px;margin-left:-46px" spinner="waveDots" @infinite="infiniteHandler" v-if="availableNews"></infinite-loading>
+            <infinite-loading class="red" style="height:0px;margin-left:-46px" spinner="waveDots" @infinite="infiniteHandler" v-if="availableNews"></infinite-loading>
             <v-card class="mt-1" v-if="doneLoadNews" flat v-for="loadnumbers in 2" :key="loadnumbers.index" style="margin-bottom:2px;"   >
                <v-layout wrap class="newscard py-2" >
                   <v-flex xs12 class="mx-2">
@@ -878,6 +861,10 @@ export default {
       },
    },
    methods: {
+
+      newline(newsfeed, id,user,commentText) {
+         newsfeed.comments = `${newsfeed.comments}\n`;
+      },
       insert(emoji) {
          this.postedData.message += emoji
       },
@@ -991,7 +978,9 @@ export default {
                vm.newsFeedsValueRef = gotData.val()
                keys.forEach( function (key) {
                   vm.newsFeedsValueRef[key].keyIndex = key
-                  var commentedValue = db.ref(`Newsfeed/${key}/commented`).limitToLast(4);
+                  // var commentedValue = db.ref(`Newsfeed/${key}/commented`).limitToLast(4);
+                  var commentedValue = db.ref(`Newsfeed/${key}/commented`)
+
                   commentedValue.on('value', function (commentedData) {
                      vm.newsFeedsValueRef[key].commentedLimit = commentedData.val()
                      // console.log(commentedData.val())
@@ -1025,7 +1014,8 @@ export default {
                vm.newsFeedsValueRef = gotData.val()
                keys.forEach( function (key) {
                   vm.newsFeedsValueRef[key].keyIndex = key
-                  var commentedValue = db.ref(`Newsfeed/${key}/commented`).limitToLast(4);
+                  var commentedValue = db.ref(`Newsfeed/${key}/commented`)
+                  // var commentedValue = db.ref(`Newsfeed/${key}/commented`).limitToLast(4);
                   commentedValue.on('value', function (commentedData) {
                      vm.newsFeedsValueRef[key].commentedLimit = commentedData.val()
                      // console.log(commentedData.val())
@@ -1080,31 +1070,34 @@ export default {
          let vm = this
          let countRecent = newsfeed.comments
          let myId = _.filter(newsfeed.commented, { userId : vm.userData['ckcm-network_token_id']})
-         if (myId.length == 0 ){
-            db.ref(`Newsfeed/${id}`).update({
-               comments: countRecent + 1
-            })
-            db.ref(`Newsfeed/${id}/whoComments/${user['ckcm-network_token_id']}`).set({
-               userId: user['ckcm-network_token_id']
-            })
-         }
-         db.ref(`Newsfeed/${id}/commented`).push().set({
+         
+            if (myId.length == 0 ){
+               db.ref(`Newsfeed/${id}`).update({
+                  comments: countRecent + 1
+               })
+               db.ref(`Newsfeed/${id}/whoComments/${user['ckcm-network_token_id']}`).set({
+                  userId: user['ckcm-network_token_id']
+               })
+            }
+
+            db.ref(`Newsfeed/${id}/commented`).push().set({
             userId: user['ckcm-network_token_id'],
             displayName: user.displayName,
             data: commentText,
             photoUrl: user.photoUrl,
             timestamp: "",
-         }, function(error) {
-         if (error) {
-            console.log(error)
-            // The write failed...r
-         } else {
-            db.ref(`Newsfeed/${id}/`).child('someoneComment').set({
-               someone:false
-            }) 
-            // Data saved successfully!
-         }
-         });
+            }, function(error) {
+            if (error) {
+               console.log(error)
+               // The write failed...r
+            } else {
+               db.ref(`Newsfeed/${id}/`).child('someoneComment').set({
+                  someone:false
+               }) 
+               // Data saved successfully!
+            }
+            });
+        
       },
       makePost(user) {
          this.postedData.image = this.newsImgsUrl
@@ -1181,6 +1174,8 @@ export default {
    mounted: function() {
 
       this.$store.commit("leftnavDrawerOn");
+      this.$store.commit("rightnavDrawerOn");
+
 
       var date = new Date();
       let vm = this;

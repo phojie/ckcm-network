@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 168" width="168" height="168" aria-hidden="true">
+  <path d="M168 2v15.51H0V2a2 2 0 0 1 2-2h164a2 2 0 0 1 2 2z" fill="#00aea0"></path>
+  <path d="M168 17.51V167a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V17.51z" fill="#c9f5f2"></path>
+  <circle cx="13.07" cy="8.76" r="2.57" fill="#a8009c"></circle>
+  <circle cx="24.52" cy="8.76" r="2.57" fill="#6f0084"></circle>
+  <circle cx="35.98" cy="8.76" r="2.57" fill="#005d70"></circle>
+  <circle cx="84.05" cy="91.09" r="50.57" fill="#a8009c"></circle>
+  <path d="M111 91.09c-.7 42.93-26.91 50.57-26.91 50.57S57.85 134 57.15 91.09c.7-42.94 26.91-50.58 26.91-50.58s26.21 7.64 26.94 50.58zM84.05 40.52v101.14M33.48 91.09h101.14M39.24 67.65h89.63m-89.63 46.87h89.63M22.57 87.63A61.58 61.58 0 0 1 132.42 53" fill="none" stroke="#6f0084" stroke-miterlimit="10" stroke-width="1.5"></path>
+  <path fill="none" stroke="#6f0084" stroke-miterlimit="10" stroke-width="1.5" d="M124.27 52.73l8.15.24.25-8.15m12.57 39.25a62.45 62.45 0 0 1 .39 7 61.23 61.23 0 0 1-8.54 31.3"></path>
+  <path fill="none" stroke="#6f0084" stroke-miterlimit="10" stroke-width="1.5" d="M134.77 114.57l2.32 7.82 7.82-2.32m-60.86 32.59a61.56 61.56 0 0 1-55-33.93"></path>
+  <path fill="none" stroke="#6f0084" stroke-miterlimit="10" stroke-width="1.5" d="M36.87 120.93l-7.85-2.2-2.2 7.86"></path>
+  <rect x="93.09" y="60.75" width="50.74" height="15.55" rx="1" ry="1" fill="#00aea0"></rect>
+  <circle cx="100.99" cy="68.52" r="2.75" fill="#005d70"></circle>
+  <path fill="none" stroke="#005d70" stroke-miterlimit="10" stroke-width="1.5" d="M106.77 68.52h31.9"></path>
+  <rect x="93.09" y="130.17" width="50.74" height="15.55" rx="1" ry="1" fill="#00aea0"></rect>
+  <circle cx="100.99" cy="137.94" r="2.75" fill="#005d70"></circle>
+  <path fill="none" stroke="#005d70" stroke-miterlimit="10" stroke-width="1.5" d="M106.77 137.94h31.9"></path>
+  <rect x="22.55" y="95.41" width="50.74" height="15.55" rx="1" ry="1" fill="#00aea0"></rect>
+  <circle cx="30.45" cy="103.18" r="2.75" fill="#005d70"></circle>
+  <path fill="none" stroke="#005d70" stroke-miterlimit="10" stroke-width="1.5" d="M36.23 103.18h31.9"></path>
+</svg>

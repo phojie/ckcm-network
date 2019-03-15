@@ -5,7 +5,7 @@ use App\User;
 
 
 Route::get('{any}', function () {
-    return view('jie network.application');
+    return view('e.application');
 })->where('any', '.*');
 
 

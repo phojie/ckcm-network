@@ -22,6 +22,17 @@ import {Textra} from 'vue-textra';
 Vue.use(require('vue-chat-scroll'))
 Vue.use(Textra);
 Vue.use(EmojiPickerPlugin);
+import Autoscroll from 'vue-autoscroll'
+Vue.use(Autoscroll)
+import VueChatScroll from 'vue-chat-scroll'
+Vue.use(VueChatScroll)
+
+import VueCtkDateTimePicker from 'vue-ctk-date-time-picker';
+import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css';
+ 
+Vue.component('VueCtkDateTimePicker', VueCtkDateTimePicker);
+
+import "vue-swatches/dist/vue-swatches.min.css"
 
 // You can also pass in the default options
 const VueScrollTo = require('vue-scrollto')
@@ -86,9 +97,9 @@ Vue.use(Vuelidate)
 Vue.use(VueRouter);
 Vue.use(Vuex);
 Vue.use(VueProgressBar, {
-   color: '#fd9800',
+   color: '#00695C',
    failedColor: '#820333',
-   thickness: '1px',
+   thickness: '4px',
    transition: {
       speed: '3.5s',
       opacity: '0.6s',

@@ -6,7 +6,6 @@ const user = getLocalUser();
 const fdetails = getLocalfdetails();
 export default {
    state: {
-      accountLoginData: user,
       fdetails: fdetails,
       AccountFdetails: [],
       isIn: !!user,
@@ -20,7 +19,15 @@ export default {
       friendList: [], //Object,
       scrollLimitNews: 2,
       homeReload: false,
-      resultInfoState : []
+      resultInfoState : [],
+      accountLoginData: user,
+      mysubjects: [],
+      myprograms: [],
+      myfaculties: [],
+      allUsers: [],
+      myrooms: [],
+      mystudents: []
+
    },
    getters: {
       scrollLimitNews(state) {
@@ -61,7 +68,26 @@ export default {
       },
       homeReload(state) {
          return state.homeReload
-      }
+      },
+      mysubjects(state) {
+         return state.mysubjects
+      },
+      myprograms(state) {
+         return state.myprograms
+      },
+      myfaculties(state){
+         return state.myfaculties
+      },
+      allUsers(state) {
+         return state.allUsers
+      },
+      myrooms(state) {
+         return state.myrooms
+      },
+      mystudents(state) {
+         return state.mystudents
+      },
+      
       
    },
    mutations: {
@@ -83,7 +109,7 @@ export default {
          state.auth_error = null;
          state.isIn = true;
          state.loading = false
-         state.accountLoginData = Object.assign({}, payload, {token: payload.access_token});
+         state.accountLoginData = Object.assign({}, {user: payload}, {token: payload['ckcm-network_token_id']} );
          localStorage.setItem("user", JSON.stringify(state.accountLoginData));
          // localStorage.user = JSON.stringify(state.accountLoginData);
          // console.log(state.accountLoginData)
@@ -93,45 +119,20 @@ export default {
          // type :   1 : not enrolled 
          //          2 : enrolled
          //          3 : andmin
-         if(state.resultInfoState.additionalUserInfo.isNewUser == false) {
-            db.ref('users/' + id).update({
-               status: "online"
-               // displayName: state.accountLoginData.user.displayName ,
-               // photoUrl: state.accountLoginData.user.photoUrl,
-               // timestamp: "",
-             }, function(error) {
-               if (error) {
-                  console.log(error)
-                 // The write failed...r
-               } else {
-                 // Data saved successfully!
-               }
-             });
-         } else {
-            db.ref('users/' + id).set({
-               status: "online",
-               themeColor: 'deep-purple',
-               first: firstname[0],
-               lastname: firstname[1],
-               guest: true,
-               roles: '',
-               type: 1,
-               status: false,
-               firsttime: true,
-               coverUrl: '',
-               displayName: state.accountLoginData.user.displayName ,
-               photoUrl: state.accountLoginData.user.photoUrl,
-               timestamp: "",
-
+         
+         db.ref('users/' + id).update({
+            status: "online"
+            // displayName: state.accountLoginData.user.displayName ,
+            // photoUrl: state.accountLoginData.user.photoUrl,
+            // timestamp: "",
             }, function(error) {
-               if (error) {
-                  console.log(error)
+            if (error) {
+               console.log(error)
                // The write failed...r
-               } else {
+            } else {
                // Data saved successfully!
-               }
+            }
             });
-         }
       },
       logout(state) {
          const id = state.accountLoginData.user["ckcm-network_token_id"]
@@ -196,7 +197,57 @@ export default {
          }, function (errorObject) {
             console.log("The read failed: " + errorObject.code);
          });
-      }
+      },
+
+      getSubjects(state) {
+         var get = db.ref('CKCMDATA/subject');
+         get.on("value", function(data) {
+            state.mysubjects = data.val()
+         }, function (errorObject) {
+            console.log("The read failed: " + errorObject.code);
+         });
+      },
+      getPrograms(state) {
+         var get = db.ref('CKCMDATA/programs');
+         get.on("value", function(data) {
+            state.myprograms = data.val()
+         }, function (errorObject) {
+            console.log("The read failed: " + errorObject.code);
+         });
+      },
+      getFaculties(state) {
+         var get = db.ref('CKCMDATA/faculty');
+         get.on("value", function(data) {
+            state.myfaculties = data.val()
+         }, function (errorObject) {
+            console.log("The read failed: " + errorObject.code);
+         });
+      },
+      getUsers(state) {
+         var get = db.ref('users');
+         get.on("value", function(data) {
+            state.allUsers = data.val()
+         }, function (errorObject) {
+            console.log("The read failed: " + errorObject.code);
+         });
+      },
+      getRooms(state) {
+         var get = db.ref('CKCMDATA/room');
+         get.on("value", function(data) {
+            state.myrooms = data.val()
+         }, function (errorObject) {
+            console.log("The read failed: " + errorObject.code);
+         });
+      },
+      getStudents(state) {
+         var get = db.ref('CKCMDATA/students');
+         get.on("value", function(data) {
+            state.mystudents = data.val()
+         }, function (errorObject) {
+            console.log("The read failed: " + errorObject.code);
+         });
+      },
+      
    },
    actions: {
       refreshPage(context) {

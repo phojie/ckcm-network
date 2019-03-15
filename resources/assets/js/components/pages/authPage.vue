@@ -1,262 +1,276 @@
 <template>
 <v-app style="overflow:auto" class="scrollbar-primary" >
-   <!-- jieLandingBg -->
-   <!-- mycolor3 -->
-   <!--  -->
-   <!-- jieLandingBg2 -->
-   <v-layout v-scroll="onScroll" column align-center justify-center>
-   </v-layout>
-   <v-card  class="" style="background-color:#794bc4;min-height: 700px; border-radius: 0" >
-   <v-toolbar :dense="fixed" :fixed="fixed"   flat dark style="background-color:#794bc4;" color="">
-      <v-toolbar-side-icon class="hidden-md-and-up"></v-toolbar-side-icon>
-      <v-toolbar-title  class="mr-5">
-         <v-avatar class="" tile size="35">
-            <img src="jieIcons/apple-touch-icon.png">
-         </v-avatar>
-         <span style="font-size:13px" class="jieSvgBg1 textfm6">Christ the king Network</span> 
-         <div style="margin-top:-13px;margin-left:60px;font-size:8px;position:absolute" class="textfm6">Developed for Ckcmians</div>
-      </v-toolbar-title>
-      <!-- <v-spacer></v-spacer> -->
-      <v-flex class="ml-3 hidden-sm-and-down" md7 lg6 >
-         <v-tabs show-arrows color="transparent" v-model="landingTabs" next-icon :hide-slider="sliderToogle"   slider-color="deep-purple lighten-3" >
-            <v-tab href="#login"  @click="() => (sliderToogle =! true, loginToogle =! false)" class="textNone textfm13 txt13"  :ripple="false" >
-               Use cases
-            </v-tab>
-            <v-tab  href="#cases" @click="() => (sliderToogle =! true, loginToogle =! false)"  class="textNone textfm13  txt13"  :ripple="false" >
-               Join us today
-            </v-tab>
-            <v-tab  href="#about" @click="() => (sliderToogle =! true, loginToogle =! false)" class="textNone textfm13 txt13" :ripple="false" >
-               About
-            </v-tab>
-            <v-tab  href="#features" @click="() => (sliderToogle =! true, loginToogle =! false)" class="textNone textfm13 txt13" :ripple="false" >
-               Features
-            </v-tab>
-            <v-tab  @click="() => (sliderToogle =! true, loginToogle =! false)" class="mr-5 textNone textfm13  txt13" :ripple="false" >
-               More
-               <v-icon>arrow_drop_down</v-icon>
-            </v-tab>
-         </v-tabs>
-      </v-flex>
-      <!-- <v-btn color="red darken-4" small round  class="textDefault  textfm1 text-xs-center"> -->
-      <v-btn icon="" class="enrollBtn" small>
-         <img  height="20" width="20" src="https://img.icons8.com/ios/50/ffffff/search-filled.png">
-      </v-btn>
-      <v-btn style="font-size:13px !important"  color="white" flat small  round  class="enrollBtn textNone textfm13 text-xs-center">
-         Apply
-      </v-btn>
-      <v-btn color="red darken-4" small  round  class="enrollBtn hidden-sm-and-down textNone textfm13 text-xs-center">
+   <!-- <v-layout v-scroll="onScroll" column align-center justify-center>
+   </v-layout> -->
+   
+   <v-card class="" style="border-top: 3px solid #00aea0;background-color:#ffffff;border-radius:0" >
+      <!-- class="portalSvg" -->
+   <v-toolbar class="portalSvg" :fixed="fixed"   flat dark  color="white">
+      <span class="hidden-md-and-down px-5"></span>
+      <v-avatar
+        size="40"
+      >
+         <img src="jieIcons/apple-touch-icon.png">
+      </v-avatar>
+      <v-toolbar-title class=" titleFont font-weight-bold teal--text text--darken-2" style="font-size:15px;margin-top:-10px;margin-left:5px;">Christ the King College de Maranding</v-toolbar-title>
+      <div class="titleFont  teal--text" style="font-size:12px;margin-top:22px;margin-left:-275px;">A Social network built for Ckcmians</div>
+      
+      <v-spacer></v-spacer>
+      <v-toolbar-items style="height:30px" class=" hidden-sm-and-down">
+         <v-btn to="/" class="caption font-weight-bold textNone teal--text text--darken-2" flat >
+            Home
+         </v-btn>
+         <v-btn to="/about" class="caption font-weight-bold  textNone teal--text text--darken-2"  flat >
+            About
+         </v-btn>
+         <v-btn to="/events"  class="caption font-weight-bold  textNone teal--text text--darken-2" flat >
+            Events
+         </v-btn>
+         <v-btn to="/courses"   class="caption font-weight-bold  textNone teal--text text--darken-2" flat >
+            Courses
+         </v-btn>
+         <v-btn to="/schedule"   class="caption font-weight-bold  textNone teal--text text--darken-2 " flat >
+            Schedule
+         </v-btn>
+         <v-btn @click="dialog = true"  class="ml-3 caption font-weight-bold  textNone teal"  >
+          My CKCM
+         </v-btn>
+
+        <!-- <v-btn href="#" fab white small flat>
+           <v-avatar
+             size="25"
+           >
+           <img src="https://img.icons8.com/color/48/000000/facebook.png">
+           </v-avatar>
+        </v-btn> -->
+    
+      </v-toolbar-items>
          <!-- @click="loginTab"  -->
-         Enroll now
-      </v-btn>
-      <!-- <v-btn color="red darken-4" small round  class="hidden-md-and-up textDefault  textfm1 text-xs-center">
+      <!-- <v-btn color="red darken-4" small  round  class="enrollBtn hidden-sm-and-down textNone textfm13 text-xs-center">
          Enroll now
       </v-btn> -->
    </v-toolbar>
-      <!-- <v-layout class=" mt-4" row wrap justify-center align-center align-content-center >
-         <v-flex class="" xs12 lg7 md8 sm12>
-               <img src="/imgs/ckcm-network-homepage-illustration.png" alt="">
-         </v-flex>
-         <v-flex  class="px-2 mt-2" xs12 lg4 md10 sm12>
-            <v-card v-show="passwordReset" class=" jieSvgBg1" >
-               <v-card-text class="" >
-                  <div class="headline">Password Reset</div>
-                  unya ra
-                  <v-btn @click="passwordReset = false">Return</v-btn>
+    
+      <router-view></router-view>
+
+      <section style="background-color:#f4f7f8;position:relative" class="mt-4 pb-5" >
+         <v-container grid-list-lg >
+            <h5 style="font-size:35px" class="  text-xs-center "> Meet Our Developers </h5>
+            <div class="subheading text-xs-center mt-2"> Just a word is enough to describe. </div>
+
+           
+            <v-layout row wrap justify-center style="margin-top:100px">
+               <v-flex  md2 xs12 class="ma-4 mt-5">
+                  <v-layout column wrap align-center justify-center >
+                     <v-avatar
+                        class="elevation-5"
+                        size="130"
+                        color="white"
+                     >
+                        <img class="pa-1" src="https://scontent.fcgy1-1.fna.fbcdn.net/v/t1.0-1/p160x160/49259712_1951029871613033_4417205024476626944_n.jpg?_nc_cat=105&_nc_ht=scontent.fcgy1-1.fna&oh=bad71781df4177d394c70a61fced0ad0&oe=5CEBD4D3" alt="alt">
+                     </v-avatar>
+                     <div class="subheading font-weight-bold txt-xs-center mt-3">Phojie Rengel</div>
+                     <div class="caption txt-xs-center"> Lead Programmer </div>
+                  </v-layout>
+               </v-flex>
+
+               <v-flex  md2 xs12 class="ma-4 mt-5">
+                  <v-layout column wrap align-center justify-center >
+                     <v-avatar
+                        class="elevation-5"
+                        size="120"
+                        color="white"
+                     >
+                        <img class="pa-1" src="https://scontent.fcgy1-1.fna.fbcdn.net/v/t1.0-1/c0.0.160.160a/p160x160/49764869_2001370643490756_4066816219464859648_n.jpg?_nc_cat=108&_nc_ht=scontent.fcgy1-1.fna&oh=8a4c1686a4304667ca8c51065c3038dc&oe=5CE284FA" alt="alt">
+                     </v-avatar>
+                     <div class="subheading font-weight-bold txt-xs-center mt-3"> Jiecel Canino</div>
+                     <div class="caption txt-xs-center"> Analyst </div>
+                  </v-layout>
+               </v-flex>
+
+               <v-flex  md2 xs12 class="ma-4">
+                  <v-layout column wrap align-center justify-center >
+                     <v-avatar
+                        class="elevation-5"
+                        size="140"
+                        color="white"
+                     >
+                        <img class="pa-1" src="https://scontent.fcgy1-1.fna.fbcdn.net/v/t1.0-1/p160x160/44898629_2386948294655261_6037831334993330176_n.jpg?_nc_cat=104&_nc_ht=scontent.fcgy1-1.fna&oh=34cccc9ba3a88fe82caef80a3722169f&oe=5CE15879" alt="alt">
+                     </v-avatar>
+                     <div class="subheading font-weight-bold txt-xs-center mt-3">Dominador Ocampos</div>
+                     <div class="caption txt-xs-center"> Co Programmer </div>
+                  </v-layout>
+               </v-flex>
+
+               <v-flex  md2 xs12 class="ma-4 mt-5">
+                  <v-layout column wrap align-center justify-center >
+                     <v-avatar
+                        class="elevation-5"
+                        size="150"
+                        color="white"
+                     >
+                        <img class="pa-1" src="https://scontent.fcgy1-1.fna.fbcdn.net/v/t1.0-1/p160x160/43047653_2168930393323304_1007395166371184640_n.jpg?_nc_cat=104&_nc_ht=scontent.fcgy1-1.fna&oh=585d44345f8e7c5449eb6fc2954e52e2&oe=5CF7AD19" alt="alt">
+                     </v-avatar>
+                     <div class="subheading font-weight-bold txt-xs-center mt-3">Kisha Cajes</div>
+                     <div class="caption txt-xs-center"> Analyst </div>
+                  </v-layout>
+               </v-flex> 
+
+               <v-flex  md2 xs12 class="ma-4 ">
+                  <v-layout column wrap align-center justify-center >
+                     <v-avatar
+                        class="elevation-5"
+                        size="150"
+                        color="white"
+                     >
+                        <img class="pa-1" src="https://scontent.fcgy1-1.fna.fbcdn.net/v/t1.0-9/10653758_525944790869019_4223330387068867121_n.jpg?_nc_cat=102&_nc_ht=scontent.fcgy1-1.fna&oh=636e3faa7a722f43537ef883dda6303e&oe=5CF148E1" alt="alt">
+                     </v-avatar>
+                     <div class="subheading font-weight-bold txt-xs-center mt-3">Jezzboy Camingawan</div>
+                     <div class="caption txt-xs-center"> Analyst </div>
+                  </v-layout>
+               </v-flex>
+
+               <v-flex  md2 xs12 class="ma-4 ">
+                  <v-layout column wrap align-center justify-center >
+                     <v-avatar
+                        class="elevation-5"
+                        size="120"
+                        color="white"
+                     >
+                        <img class="pa-1" src="https://scontent.fcgy1-1.fna.fbcdn.net/v/t1.0-1/p160x160/45887824_2239741409604183_6576039777118715904_n.jpg?_nc_cat=108&_nc_ht=scontent.fcgy1-1.fna&oh=3c4ed48f0fe21b8dda4baf3d76778472&oe=5CEE330A" alt="alt">
+                     </v-avatar>
+                     <div class="subheading font-weight-bold txt-xs-center mt-3">Zai Jusayan</div>
+                     <div class="caption txt-xs-center"> Analyst </div>
+                  </v-layout>
+               </v-flex>
+
+               
+            </v-layout>
+            <!-- <div class="abt-cstmr-stripe abt-cstmr-stripe1"></div> -->
+            <!-- <div class="abt-cstmr-stripe abt-cstmr-stripe2"></div> -->
+         </v-container>
+      </section>
+  
+
+      <div style="background-image: linear-gradient(-90deg,rgba(14,30,37,0) 0,#0e1e25 5%,#0e1e25 90%,rgba(14,30,37,0) 100%);content: '';
+            display: block;
+            height: 2px;
+            opacity: .08;
+            position: absolute;width: 100%;"
+      ></div>
+
+
+      <v-footer
+         dark
+         height="auto"
+         style="background-color:#f4f7f8"
+         >
+         <v-container grid-list-xs>
+            <v-card
+               flat
+               tile
+               style="background-color:#f4f7f8"
+               class="white--text text-xs-center"
+            >
+               <v-card-text>
+               <v-btn
+                  v-for="icon in icons"
+                  :key="icon"
+                  class="mx-3 grey--text "
+                  icon
+               >
+                  <v-icon size="24px">{{ icon }}</v-icon>
+               </v-btn>
+               </v-card-text>
+
+               <v-card-text class="grey--text pt-0">
+               Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+               </v-card-text>
+
+               <v-divider></v-divider>
+
+               <v-card-text class="teal--text">
+               &copy;2019 — <strong> Computer Science</strong>
                </v-card-text>
             </v-card>
-            <v-card v-show="!passwordReset" class="jieSvgBg1" >
+         </v-container>
+      </v-footer>
+
+
+      <v-dialog
+         v-model="dialog"
+         width="400"
+      >
+
+         <v-card flat class="transparent ">
+            <v-card  light class=" px-4 py-4 jieSvgBg1" >
                <v-card-title class="headline" >
                   Sign in to continue
                </v-card-title>
-               <v-container style="margin-top:-10px">
-                  <v-form @submit.prevent="AuthCodeID">
-                     <v-text-field
-                        type="text" prepend-icon="person" clearable
-                        v-model="username" label="Enter your username"
-                        :disabled="jieLoading" class="textfm1"
-                        @change="$v.username.$touch()" 
-                        :error-messages="usernameErrors" 
-                        autofocus
-                     > 
-                     </v-text-field>
-                     <v-text-field
-                        :type="jieVisibility ? 'text' : 'password'" :prepend-icon="jieVisibility ? 'visibility' : 'visibility_off'" 
-                        :prepend-icon-cb="() => ( jieVisibility = !jieVisibility)"
-                        v-model="password" label="Enter your password"
-                        clearable :disabled="jieLoading" class="textfm1"
-                        @input="$v.password.$touch()"  @blur="$v.password.$touch()"
-                        :error-messages="passwordErrors" ref="password"
-                        
-                     >
-                     </v-text-field>
-                     <v-layout row >
-                        <v-checkbox 
-                           :disabled="jieLoading"
-                           v-model="checkbox" :ripple="false"
-                           label="Stay signed in"
-                           color="grey" class=" textfm1 alwaysSignCHECK"
-                        ></v-checkbox>
-                        <v-spacer></v-spacer>
-                        <a v-show="!jieLoading" class="blue--text mt-2 mr-4 textfm1" @click="passwordReset = true" > Forgot password?</a>
+               <!-- <div style="margin-top:260px;margin-left:50px;position:absolute;width:15px;height:15px;border-radius:50%" class="teal lighten-3"></div> -->
+               <div style="margin-top:-10px;margin-left:250px;position:absolute;width:10px;height:10px;border-radius:50%" class="teal lighten-3"></div>
+               <div style="margin-top:-50px;margin-left:250px;position:absolute;width:30px;height:30px;border-radius:50%" class="teal lighten-3"></div>
+               <v-form @submit.prevent="AuthCodeID">
+                  <v-text-field
+                     color="teal"
+                     type="text" prepend-icon="person" clearable
+                     v-model="username" label="Enter your username"
+                     :disabled="jieLoading" class="textfm1 authPlace"
+                     @change="$v.username.$touch()" 
+                     :error-messages="usernameErrors" 
+                     autofocus
+                  > 
+                  </v-text-field>
+                  <v-text-field
+                     color="teal"
+                     :type="jieVisibility ? 'text' : 'password'" :prepend-icon="jieVisibility ? 'visibility' : 'visibility_off'" 
+                     :prepend-icon-cb="() => ( jieVisibility = !jieVisibility)"
+                     v-model="password" label="Enter your password"
+                     clearable :disabled="jieLoading" class="textfm1 authPlace"
+                     @input="$v.password.$touch()"  @blur="$v.password.$touch()"
+                     :error-messages="passwordErrors" ref="password"
+                     
+                  >
+                  </v-text-field>
+                  <v-layout row >
+                     <v-checkbox 
+                        :disabled="jieLoading"
+                        v-model="checkbox" :ripple="false"
+                        label="Stay signed in"
+                        color="grey" class=" textfm1 alwaysSignCHECK"
+                     ></v-checkbox>
+                     <v-spacer></v-spacer>
                   </v-layout>
-                  <v-btn 
-                     block class="textfm1 mb-3 "
+                  <!-- <v-btn 
+                     outline
+                     block class="textfm1 mb-3 white--text "
                      :loading="jieLoading" type="submit"
-                     :ripple="false" color="primary" 
+                     :ripple="false" color="teal lighten-2" 
                      style="margin-top:-10px"
                   >
                      Submit
+                  </v-btn> -->
+                  <v-btn 
+                     block class="textNone font-weight-bold mb-3 white--text "
+                     :loading="jieLoading" type="submit" 
+                     :ripple="false" color="teal" 
+                     style="margin-top:-10px;"
+                  >
+                     Submit
                   </v-btn>
-                        <v-progress-linear  class="deep-purple lighten-5" height="1" :indeterminate="jieLoading"></v-progress-linear>
-                     <v-layout row wrap>
+                  <v-progress-linear color="teal " height="2" :indeterminate="jieLoading"></v-progress-linear>
+                     <a v-show="!jieLoading" class="blue--text mt-2 textfm1" @click="passwordReset = true" > Forgot password?</a>
+                     <a v-show="!jieLoading" class="teal--text mt-2 textfm1" @click="guest = true" > Sign in as a guest </a>
+                     <v-layout v-if="guest" row wrap>
                         <v-btn :disabled="jieLoading" block @click="loginWithGoogle" style="font-size:11px !important; font-weight:bold; font-family: 'Roboto', sans-serif;"  class=" white grey--text  textDefault" > <v-avatar size="14px" class="mr-2" >  <img src="/imgs/google.svg" alt=""></v-avatar>Sign in with Google</v-btn>
-                           <v-divider vertical class="mx-1"></v-divider>
+                           <v-divider vertical class="mx-1 transparent"></v-divider>
                         <v-btn :disabled="jieLoading" block @click="loginWithFacebook" style="background-color:#3b5998;font-size:11px !important; font-weight:bold; font-family: 'Roboto', sans-serif;" class=" white--text textDefault" > <v-avatar tile size="14px" class="mr-2" >  <img src="/imgs/facebook.svg" alt=""></v-avatar>Sign in with Facebook</v-btn>
                      </v-layout>
-                  </v-form>
-               </v-container>
+               </v-form>
             </v-card>
-         </v-flex>
-      </v-layout> -->
-      <div class=" mt-5">
-            <!-- <v-container fluid light> -->
-               
-               <v-tabs-items v-model="landingTabs">
-                  <v-tab-item id="login">
-                        <!-- jieLandingBg2 -->
-                        <v-jumbotron  class="jieLandingBg2" height="auto"  dark>
-                           <v-container class="" fill-height>
-                              <v-layout  row wrap align-center>
-                              <v-flex lg8 md7 sm12>
-                                 <div style="margin-top:-20px;margin-left:530px;position:absolute;width:130px;height:130px;border-radius:50%" class="white"></div>
-                                 <!-- <div style="margin-top:-50px;margin-left:350px;position:absolute;width:50px;height:50px;border-radius:50%" class="white"></div> -->
-                                 <h1 style="font-size:25px;" class="mb-4 deep-purple--text text--lighten-4 textfm7">Developers</h1>
-                                 <h1 style="margin-top:-100px;margin-left:240px;position:absolute;font-size:170px;color:#4f02993b;" class=" textfm9" >Ckcm</h1>
-                                 <h1 style="font-size:55px;" class="textfm9" >
-                                    <textra :data='words' :timer="2" infinite filter="top-bottom" />
-                                    <span style="margin-top:-20px;">what's happening.</span>
-                                 </h1>
-                                 <span style="font-size:20px;" class="textfm7">Publish and analyze posts, be updated, and create unique friend experiences.</span>
-                                 <!-- <v-divider class="my-3"></v-divider> -->
-                                 <!-- <v-btn
-                                    class="mx-0"
-                                    color="deep-purple "
-                                 >
-                                    Enroll
-                                 </v-btn> -->
-                              </v-flex>
-                              <v-flex lg4 md5 sm12> 
-                                 <v-card flat class="transparent pa-4">
-                                    <v-card  light class=" pa-3 jieSvgBg1" >
-                                       <v-card-title class="headline" >
-                                          Sign in to continue
-                                       </v-card-title>
-                                       <!-- <div style="margin-top:260px;margin-left:50px;position:absolute;width:15px;height:15px;border-radius:50%" class="deep-purple lighten-3"></div> -->
-                                       <div style="margin-top:-10px;margin-left:250px;position:absolute;width:10px;height:10px;border-radius:50%" class="deep-purple lighten-3"></div>
-                                       <div style="margin-top:-50px;margin-left:250px;position:absolute;width:30px;height:30px;border-radius:50%" class="deep-purple lighten-3"></div>
-                                       <v-form @submit.prevent="AuthCodeID">
-                                          <v-text-field
-                                             color="deep-purple"
-                                             type="text" prepend-icon="person" clearable
-                                             v-model="username" label="Enter your username"
-                                             :disabled="jieLoading" class="textfm1 authPlace"
-                                             @change="$v.username.$touch()" 
-                                             :error-messages="usernameErrors" 
-                                             autofocus
-                                          > 
-                                          </v-text-field>
-                                          <v-text-field
-                                             color="deep-purple"
-                                             :type="jieVisibility ? 'text' : 'password'" :prepend-icon="jieVisibility ? 'visibility' : 'visibility_off'" 
-                                             :prepend-icon-cb="() => ( jieVisibility = !jieVisibility)"
-                                             v-model="password" label="Enter your password"
-                                             clearable :disabled="jieLoading" class="textfm1 authPlace"
-                                             @input="$v.password.$touch()"  @blur="$v.password.$touch()"
-                                             :error-messages="passwordErrors" ref="password"
-                                             
-                                          >
-                                          </v-text-field>
-                                          <v-layout row >
-                                             <v-checkbox 
-                                                :disabled="jieLoading"
-                                                v-model="checkbox" :ripple="false"
-                                                label="Stay signed in"
-                                                color="grey" class=" textfm1 alwaysSignCHECK"
-                                             ></v-checkbox>
-                                             <v-spacer></v-spacer>
-                                          </v-layout>
-                                          <!-- <v-btn 
-                                             outline
-                                             block class="textfm1 mb-3 white--text "
-                                             :loading="jieLoading" type="submit"
-                                             :ripple="false" color="deep-purple lighten-2" 
-                                             style="margin-top:-10px"
-                                          >
-                                             Submit
-                                          </v-btn> -->
-                                          <v-btn 
-                                             block class="textNone mb-3 white--text "
-                                             :loading="jieLoading" type="submit" 
-                                             :ripple="false" color="deep-purple lighten-2" 
-                                             style="margin-top:-10px;"
-                                          >
-                                             Submit
-                                          </v-btn>
-                                          <v-progress-linear color="deep-purple " height="2" :indeterminate="jieLoading"></v-progress-linear>
-                                             <a v-show="!jieLoading" class="blue--text mt-2 textfm1" @click="passwordReset = true" > Forgot password?</a>
-                                             <a v-show="!jieLoading" class="deep-purple--text mt-2 textfm1" @click="guest = true" > Sign in as a guest </a>
-                                             <v-layout v-if="guest" row wrap>
-                                                <v-btn :disabled="jieLoading" block @click="loginWithGoogle" style="font-size:11px !important; font-weight:bold; font-family: 'Roboto', sans-serif;"  class=" white grey--text  textDefault" > <v-avatar size="14px" class="mr-2" >  <img src="/imgs/google.svg" alt=""></v-avatar>Sign in with Google</v-btn>
-                                                   <v-divider vertical class="mx-1 transparent"></v-divider>
-                                                <v-btn :disabled="jieLoading" block @click="loginWithFacebook" style="background-color:#3b5998;font-size:11px !important; font-weight:bold; font-family: 'Roboto', sans-serif;" class=" white--text textDefault" > <v-avatar tile size="14px" class="mr-2" >  <img src="/imgs/facebook.svg" alt=""></v-avatar>Sign in with Facebook</v-btn>
-                                             </v-layout>
-                                       </v-form>
-                                    </v-card>
-                                 </v-card>
-                              </v-flex>
-                              </v-layout>
-                           </v-container>
-                        </v-jumbotron>
-                        <v-layout justify-center class="my-0">
-                           <v-avatar v-scroll-to="'#infoDeveloper'" style="cursor:pointer" tile size="40">
-                              <img class="arrowDownjie" src="https://img.icons8.com/material-rounded/50/c7b4fa/expand-arrow.png">
-                           </v-avatar>
-                        </v-layout>
-                        <v-card id="infoDeveloper" class="mt-2" dark style="background-color:#4f0299;" height="70">
-                           <v-container  class="textfm10" fill-height>
-                              <v-layout justify-center align-center>
-                              <span style="font-size:12px">Stay informed about updates to the Ckcmnetwork developer platform Learn more </span>
-                              </v-layout>
-                           </v-container>
-                        </v-card>
-                        <v-card   class="white" dark height="1070">
-                           <v-container  class="textfm10" fill-height>
-                              <v-layout justify-center>
-                              </v-layout>
-                           </v-container>
-                        </v-card>
-                  </v-tab-item>
-                  <v-tab-item id="signup">
-                     <v-card class="jieLandingBg2 white" height="500">
-                        <v-container>
-
-                        </v-container>
-                     </v-card>
-                  </v-tab-item>
-                  <v-tab-item id="cases">
-                        <v-card-text > page 3</v-card-text>
-                  </v-tab-item>
-                  <v-tab-item id="about">
-                        <v-card-text > page 4</v-card-text>
-                  </v-tab-item>
-                  <v-tab-item id="features">
-                        <v-card-text > page 5</v-card-text>
-                  </v-tab-item>
-
-               </v-tabs-items>
-            <!-- </v-container> -->
-       
-      </div>
+         </v-card>
+         
+      </v-dialog>
       
       <!-- snackbar alert area-->
       <v-snackbar
@@ -329,6 +343,8 @@
 import { validationMixin } from 'vuelidate';
 import { email, required } from 'vuelidate/lib/validators';
 import { login, signUp } from '../../ckcmHelpers/auth';
+import { db } from '../../firebase'
+
 export default {
    mixins: [validationMixin],
    validations: {
@@ -346,6 +362,16 @@ export default {
       }
    },
    data: () => ({
+      dialog: false, 
+
+      icons: [
+        'mdi-facebook',
+        'mdi-twitter',
+        'mdi-google-plus',
+        'mdi-linkedin',
+        'mdi-instagram'
+      ],
+
       loginToogle: false, staySignIn: false,sliderToogle: false,errorFocusE: false,
       errorFocusP: false,AuthView: false,landingTabs: 'login',login: true,
 		jieDark: false,jieVisibility: false,codeid: null,username: '', email: '',
@@ -512,33 +538,44 @@ export default {
          this.$Progress.start()
          this.$store.dispatch("jieLoaderOn");
          let vm = this;
-         login(this.$data.form) 
-            .then((res) => {
-               vm.$Progress.finish();
-               vm.$store.commit("loginSuccess", res);
-               vm.$router.push({ path: '/'});
-               auth.signInWithEmailAndPassword(vm.form.email, vm.form.password)
-                  .then((response) =>{
-                     vm.$store.dispatch("jieLoaderOff")
-                     vm.$store.dispatch("loginFirebase")
-                  })
-                  .catch((error) =>{
-                     vm.$Progress.fail()
-                     // console.log(error)
-                     vm.$store.dispatch("jieLoaderOff")
-                     vm.accountError=true
-                     vm.$nextTick(() => this.$refs.password.focus());
-                  })
-            })
-            .catch((error) => {
-               this.$Progress.fail()
-               vm.accountError=true
-               this.password=""
-               vm.$store.dispatch("jieLoaderOff")
-               this.$nextTick(() => this.$refs.password.focus());
-               // this.$refs.password.focus()
 
-            });
+         let getdata = db.ref('CKCMDATA/accountUser')
+         getdata.on('value', function(snapshot) {
+            let filterdata = _.filter(snapshot.val(), {'email': _.capitalize(vm.form.email), 'password': vm.form.password})
+            console.log(filterdata.length )
+            if(filterdata.length == 1) {
+               vm.$Progress.finish();
+               vm.$store.commit("loginSuccess", filterdata[0]);
+               vm.$store.commit("firebaseSuccess", filterdata[0])
+               vm.$store.dispatch("jieLoaderOff")
+
+               vm.$router.push({ path: '/'});
+
+
+               
+            } else {
+               vm.$Progress.fail()
+               vm.accountError=true
+               vm.password=""
+               vm.$store.dispatch("jieLoaderOff")
+               vm.$nextTick(() => this.$refs.password.focus());
+               // this.$refs.password.focus()
+            }
+         })
+
+        
+               // auth.signInWithEmailAndPassword(vm.form.email, vm.form.password)
+               //    .then((response) =>{
+               //       vm.$store.dispatch("jieLoaderOff")
+               //       vm.$store.dispatch("loginFirebase")
+               //    })
+               //    .catch((error) =>{
+               //       vm.$Progress.fail()
+               //       // console.log(error)
+               //       vm.$store.dispatch("jieLoaderOff")
+               //       vm.accountError=true
+               //       vm.$nextTick(() => this.$refs.password.focus());
+               //    })
       }
    },
    computed: {
@@ -584,9 +621,13 @@ export default {
    
    },
    mounted() {
-      console.clear()
+      // console.clear()
+
+
    },
    created() {
+   
+
    }
    
 }

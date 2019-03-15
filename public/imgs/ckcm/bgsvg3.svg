@@ -1,0 +1,18 @@
+<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="294" height="270" viewBox="0 0 294 270">
+  <defs>
+    <rect id="core-3-rect" width="200" height="168" rx="8"></rect>
+    <mask id="core-3-mask" fill="#fff">
+      <use xlink:href="#core-3-rect"></use>
+    </mask>
+    <linearGradient id="core-3-gradient" x1="96.45346%" x2="73.037245%" y1="50%" y2="50%">
+      <stop offset="0%" stop-color="#E9EBEB"></stop>
+      <stop offset="100%" stop-color="#E9EBEB" stop-opacity="0"></stop>
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <path fill="#0051C1" fill-opacity=".08" fill-rule="nonzero" d="M263 244c14-10 27-23 30-40 7-37-18-67-28-77-24-25-60-38-80-67-5-9-9-18-15-26A77 77 0 0 0 70 11C52 22 34 36 23 55 6 84-2 123 0 137c7 47 11 81 116 124 45 19 106 10 147-17" opacity=".640342"></path>
+    <g transform="translate(33 40)">
+      
+    </g>
+  </g>
+</svg>

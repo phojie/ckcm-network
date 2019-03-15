@@ -7,11 +7,11 @@
                   <span style="font-size:16px" class="font-weight-bold"> You've just arrive to <span  style="font-size:18px" class="red--text">Ckcm Network</span>, <span class="textDefault">{{userFData.first}} </span></span>
                   <v-divider class="grey lighten-2 mt-3"></v-divider>
                </div>
-               <v-stepper-step  editable color="deep-purple" :complete="e6 > 1" step="1">
+               <v-stepper-step  editable color="primary" :complete="e6 > 1" step="1">
                   Basic profile
                   <!-- <small>Summarize if needed</small> -->
                </v-stepper-step>  
-               <v-stepper-content color="deep-purple"  step="1">
+               <v-stepper-content color="primary"  step="1">
                   <v-card color="" class="mb-5" height="">
                      <v-hover open-delay="500">
                         <v-card
@@ -85,48 +85,57 @@
                         </div>
                   </div>
                   </v-card>
-                  <v-btn color="deep-purple lighten-2" class="right textNone white--text"   @click="e6 = 2">Continue</v-btn>
+                  <v-btn color="primary " class="right textNone white--text"   @click="e6 = 2">Continue</v-btn>
                </v-stepper-content>
 
-               <v-stepper-step editable color="deep-purple"  :complete="e6 > 2" step="2">Configure your account</v-stepper-step>
+               <v-stepper-step editable color="primary"  :complete="e6 > 2" step="2">Configure your account</v-stepper-step>
 
                <v-stepper-content  step="2">
-                  <v-card color="grey lighten-1" class="mb-5" height="200px">
-                     <v-avatar>
-                        <img src="/jieIcons/frontLogo.png">
-                     </v-avatar>
-                     <v-img
-                        v-if="configureEnrollbtn"
-                        class="my-1"
-                        :gradient="gradient"
-                        dark
-                        height="100%"
-                        src="imgs/ckcm/1.jpg"
-                     >
-                        <v-container >
-                           <v-layout align-center>
-                              <v-flex>
-                                 <p class="textfm13"><span class="textfm7 ">CKCM</span> – all you need for a successful career.</p>
-                              </v-flex>
-                              <v-flex text-xs-right>
-                                 <!-- style="background-color: #fab364"  -->
-                                 <v-btn  class="orange caption enrollBtn hidden-sm-and-down textNone textfm13 text-xs-center">
-                                    Enroll now
-                                 </v-btn>
-                              </v-flex>
-                           </v-layout>
-                        </v-container>
-                     </v-img>
-
-                  </v-card>
-                  <v-btn color="deep-purple lighten-2"  class="right textNone white--text"   @click="e6 = 3">Continue</v-btn>
+                  <!-- grey lighten-1 -->
+                  <v-img 
+                     class="  mb-5" height="200px"
+                     :gradient="gradient"
+                     src="imgs/ckcm/1.jpg"
+                  >
+                 
+                        <!-- v-if="configureEnrollbtn" -->
+                     <v-layout justify-center align-center fill-height>
+                        <!-- style="background-color:#d4af793d" -->
+                           <v-card  class="transparent" flat height="60%" width="400">
+                              <v-layout justify-center fill-height>
+                                 <v-flex  md8 lg7 sm10>
+                                    <v-text-field  
+                                       single-line
+                                       solo
+                                       mask="n  n  n  n  n  n "
+                                       full-width
+                                       color="green"
+                                       :loading="false"
+                                       placeholder="Enter your account code"
+                                       append-icon="mdi-qrcode"
+                                       class="font-weight-bold jielarge textfm1  "
+                                    ></v-text-field>
+                                 </v-flex>
+                                 <!-- <v-flex xs10>
+                                    <v-text-field
+                                       placeholder="Account Code"
+                                       dark
+                                       class="jietextFieldmid"
+                                       background-color="deep-purple lighten-4"
+                                    ></v-text-field>
+                                 </v-flex> -->
+                                 </v-layout>
+                           </v-card>
+                     </v-layout>
+                  </v-img>
+                  <v-btn color="primary "  class="right textNone white--text"   @click="e6 = 3">Skip for now</v-btn>
                </v-stepper-content>
 
-               <v-stepper-step color="deep-purple" :complete="e6 > 3" step="3">Select theme color</v-stepper-step>
+               <v-stepper-step color="primary" :complete="e6 > 3" step="3">Select theme color</v-stepper-step>
 
                <v-stepper-content step="3">
                   <v-card color="grey lighten-1" class="mb-5" height="200px"></v-card>
-                  <v-btn color="deep-purple lighten-2"  class="right textNone white--text"   @click="e6 = 4">Continue</v-btn>
+                  <v-btn color="primary"  class="right textNone white--text"   @click="e6 = 4">Continue</v-btn>
                </v-stepper-content>
             </v-stepper>
          </v-flex>  
@@ -191,7 +200,7 @@ export default {
       show: false,
       showCover: false,
       imgDataUrl: '',
-      gradient: 'to top right, #d67d0000, #382102',
+      gradient: 'to right top, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.39)',
       configureEnrollbtn: false,
       
    }),
@@ -325,6 +334,8 @@ export default {
    mounted () {
       document.title = "(3)   Welcome";
       this.$store.commit("leftnavDrawerOff");
+      this.$store.commit("rightnavDrawerOff");
+
    },
 }
 </script>

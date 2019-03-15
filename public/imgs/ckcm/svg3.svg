@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 168" width="168" height="168" aria-hidden="true">
+  <path d="M0 17.5V167a1 1 0 0 0 1 1h166a1 1 0 0 0 1-1V17.5z" fill="#c9f5f2"></path>
+  <path d="M168 2v15.5H0V2a2 2 0 0 1 2-2h164a2 2 0 0 1 2 2z" fill="#00aea0"></path>
+  <circle cx="13.07" cy="8.75" r="2.57" fill="#a8009c"></circle>
+  <circle cx="24.52" cy="8.75" r="2.57" fill="#6f0084"></circle>
+  <circle cx="35.97" cy="8.75" r="2.57" fill="#005d70"></circle>
+  <path fill="#005d70" d="M43.89 32.78h17.39v106.41H43.89z"></path>
+  <path fill="none" stroke="#003f5e" stroke-miterlimit="10" d="M52.58 59.83h-8.69m4.35-9.01h-4.35m4.35-9.02h-4.35m8.69 45.08h-8.69m4.35-9.02h-4.35m4.35-9.01h-4.35m8.69 45.08h-8.69m4.35-9.02h-4.35m4.35-9.02h-4.35"></path>
+  <path fill="none" stroke="#000" stroke-miterlimit="10" d="M48.24 131.96h-4.35"></path>
+  <path fill="none" stroke="#003f5e" stroke-miterlimit="10" d="M48.24 122.94h-4.35m8.69-63.11h-8.69m4.35-9.01h-4.35m4.35-9.02h-4.35m8.69 45.08h-8.69m4.35-9.02h-4.35m4.35-9.01h-4.35m8.69 45.08h-8.69m4.35-9.02h-4.35m4.35-9.02h-4.35m4.35 36.07h-4.35m4.35-9.02h-4.35"></path>
+  <path fill="#00aea0" d="M124.1 32.78v34.29H93.79V32.78h13.58l3.18 3.28 3.19-3.28h3.01l2.22 2.29 2.24-2.29h2.89z"></path>
+  <path d="M93.8 67.08h30.3v11a2 2 0 0 1-2 2H95.8a2 2 0 0 1-2-2v-11z" fill="#005d70"></path>
+  <path fill="none" stroke="#003f5e" stroke-miterlimit="10" d="M93.8 74.94h30.3"></path>
+  <path fill="none" stroke="#005d70" stroke-miterlimit="10" d="M110.55 42.53v24.55m8.43-15.5v15.5"></path>
+  <path d="M114.18 104.91a5.24 5.24 0 0 1-10.47 0l.13-1.13 2.66-23.66h4.89l2.66 23.67z" fill="#005d70"></path>
+  <circle cx="108.95" cy="104.91" r="1.61" fill="none" stroke="#000" stroke-miterlimit="10"></circle>
+  <path fill="#a8009c" d="M83.91 44.86l-3.19 3.28-3.18-3.28-3.19 3.28-3.18-3.28 3.95-8.1h4.83l3.96 8.1z"></path>
+  <path d="M80 36.76h-4.87l1.73-3.55a.75.75 0 0 1 1.35 0z" fill="#6f0084"></path>
+  <path d="M83.91 129.44V138a2 2 0 0 1-2 2h-8.74a2 2 0 0 1-2-2v-8.57z" fill="#005d70"></path>
+  <path fill="#6f0084" d="M83.91 44.86v79.39H71.17V44.86l3.18 3.28 3.19-3.28 3.18 3.28 3.19-3.28z"></path>
+  <path fill="none" stroke="#3c0059" stroke-miterlimit="10" d="M74.35 50.62v73.69m6.34-73.8v73.69"></path>
+  <path fill="none" stroke="#000" stroke-miterlimit="10" d="M71.17 124.25h12.74v5.19H71.17z"></path>
+  <path d="M32.8 140.48h102.39V79.77zm87.39-15H87.51l32.68-19.38z" fill="#00aea0"></path>
+  <circle cx="125.34" cy="132.42" r="20.23" fill="#a8009c"></circle>
+  <path fill="none" stroke="#3c0059" stroke-miterlimit="10" stroke-width="1.5" d="M125.34 121.93v20.98m10.49-10.49h-20.98"></path>
+</svg>
