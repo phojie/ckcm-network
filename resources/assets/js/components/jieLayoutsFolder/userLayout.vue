@@ -364,7 +364,7 @@
 
                      <v-divider></v-divider>
                      <div class="ml-2 mt-1 caption font-weight-black grey--text" ><span :class="`${userFData.themeColor}--text`">My</span>Apps</div>
-                     <v-btn to="" style="padding-left:10px"  :ripple="{ class: 'white--text' }"  :color="`${userFData.themeColor} lighten-1`"  class=" jieleftNav" flat depressed block >
+                     <v-btn to="registrarOffice" style="padding-left:10px"  :ripple="{ class: 'white--text' }"  :color="`${userFData.themeColor} lighten-1`"  class=" jieleftNav" flat depressed block >
                         <v-avatar tile class="mr-2" color="grey--after" size="20px">
                            <img src="https://png.icons8.com/ios/50/000000/check-in-desk.png">
                         </v-avatar>

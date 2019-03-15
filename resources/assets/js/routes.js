@@ -29,6 +29,17 @@ import jieVpaaOfficeRooms from './components/jieMyApps/vpaaOffice/rooms.vue';
 import jieVpaaOfficeFaculties from './components/jieMyApps/vpaaOffice/faculties.vue';
 import jieVpaaOfficeStudents from './components/jieMyApps/vpaaOffice/students.vue';
 
+
+import jieVpaaOffice2 from './components/jieMyApps/jieRegistrarOffice.vue';
+import jieVpaaOfficeDash2 from './components/jieMyApps/registrarOffice/dashboard.vue';
+import jieVpaaOfficeSched2 from './components/jieMyApps/registrarOffice/schedule.vue';
+import jieVpaaOfficeSubjects2 from './components/jieMyApps/registrarOffice/subjects.vue';
+import jieVpaaOfficePrograms2 from './components/jieMyApps/registrarOffice/programs.vue';
+import jieVpaaOfficeRooms2 from './components/jieMyApps/registrarOffice/rooms.vue';
+import jieVpaaOfficeFaculties2 from './components/jieMyApps/registrarOffice/faculties.vue';
+import jieVpaaOfficeStudents2 from './components/jieMyApps/registrarOffice/students.vue';
+import jieVpaaOfficeRequest2 from './components/jieMyApps/registrarOffice/request.vue';
+
 //test
 
 import PleaseClickMe from './components/pages/PleaseClickMe.vue';
@@ -121,6 +132,44 @@ export const routes = [
                {
                   path:'students',
                   component: jieVpaaOfficeStudents
+               },
+            ]
+         },
+         {
+            path: 'registrarOffice',
+            component: jieVpaaOffice2,
+            children:[ 
+               {
+                  path:'/',
+                  component: jieVpaaOfficeDash2
+               },
+               {
+                  path:'schedule',
+                  component: jieVpaaOfficeSched2
+               },
+               {
+                  path:'subjects',
+                  component: jieVpaaOfficeSubjects2
+               },
+               {
+                  path:'programs',
+                  component: jieVpaaOfficePrograms2
+               },
+               {
+                  path:'rooms',
+                  component: jieVpaaOfficeRooms2
+               },
+               {
+                  path:'faculties',
+                  component: jieVpaaOfficeFaculties2
+               },
+               {
+                  path:'students',
+                  component: jieVpaaOfficeStudents2
+               },
+               {
+                  path:'request',
+                  component: jieVpaaOfficeRequest2
                },
             ]
          }
