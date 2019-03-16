@@ -2,7 +2,7 @@
    <v-app>
       <v-container grid-list-md fluid>
          <v-layout row wrap class="mx-4 mb-2">
-            <span style="font-size:16px" class="font-weight-bold"><span  style="font-size:18px" :class="`${userFData.themeColor}--text`" >Academic Affairs Office</span> </span>
+            <span style="font-size:16px" class="font-weight-bold"><span  style="font-size:18px" :class="`${userFData.themeColor}--text`" >Registrar Office</span> </span>
             <v-spacer></v-spacer> 
             <v-dialog
                v-model="dialog99"
@@ -453,7 +453,7 @@
                      <div class="textfm1 caption" ></div>
                   </v-btn>
                   <v-btn to="/registrarOffice/faculties" style="padding-left:10px;margin-top:-6px"  :ripple="{ class: 'white--text' }" :color="`${userFData.themeColor} lighten-1`" class=" jieleftNav" flat depressed block >
-                     <v-avatar tile class="mr-2" color="grey--after" size="20px">
+                     <v-avatar tile class="mr-2" color="grey--after" size="22px">
                         <img src="https://img.icons8.com/ios/50/000000/knowledge-sharing.png">
                      </v-avatar>
                      <div style="font-size:12px;margin-left:1px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault "> Faculties </div> 
@@ -461,7 +461,7 @@
                      <div class="textfm1 caption" ></div>
                   </v-btn>
                   <v-btn to="/registrarOffice/students" style="padding-left:10px;margin-top:-6px"  :ripple="{ class: 'white--text' }" :color="`${userFData.themeColor} lighten-1`" class=" jieleftNav" flat depressed block >
-                     <v-avatar tile class="mr-2" color="grey--after" size="20px">
+                     <v-avatar tile class="mr-2" color="grey--after" size="22px">
                         <img src="https://img.icons8.com/ios/50/000000/identification-documents.png">
                      </v-avatar>
                      <div style="font-size:12px;margin-left:1px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault "> Students </div> 
@@ -469,8 +469,8 @@
                      <div class="textfm1 caption" ></div>
                   </v-btn>
                   <v-btn to="/registrarOffice/request" style="padding-left:10px;margin-top:-6px"  :ripple="{ class: 'white--text' }" :color="`${userFData.themeColor} lighten-1`" class=" jieleftNav" flat depressed block >
-                     <v-avatar tile class="mr-2" color="grey--after" size="20px">
-                        <img src="https://img.icons8.com/ios/50/000000/identification-documents.png">
+                     <v-avatar tile class="mr-2" color="grey--after" size="19px">
+                        <img src="https://img.icons8.com/ios/50/000000/invite.png">
                      </v-avatar>
                      <div style="font-size:12px;margin-left:1px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault "> Request </div> 
                      <v-spacer></v-spacer>
@@ -928,7 +928,8 @@
                name: _.capitalize(vm.program.name),
                description: _.upperFirst(vm.program.description),
                description2: _.upperFirst(vm.program.description2),
-               color: vm.program.color
+               color: vm.program.color,
+               searchBar: ''
             }, function (error) {
                if(!error) {
                   vm.$v.program.$reset()

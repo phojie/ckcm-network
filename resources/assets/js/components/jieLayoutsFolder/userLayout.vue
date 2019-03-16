@@ -290,26 +290,26 @@
                         </div>
                      </div>
                      <div style="font-size:10px  !important;margin-top:40px" :class="`${userFData.themeColor}--text`" class="ml-3 font-weight-black  text--darken-1">
-                        ROLES 
+                        ROLE
                         <!-- | ROLE -->
                      </div>
                      <v-layout class="mt-1 mx-2" row wrap>
                         <v-flex>
-                           <v-chip small :class="userFData.themeColor" color=" caption lighten-5" text-color="green">
-                              Registrar
+                           <v-chip v-if="userFData.type == 2" small :class="userFData.themeColor" color=" caption lighten-5" text-color="green">
+                              Registrar 
                            </v-chip>
-                           <v-chip small :class="userFData.themeColor"  color=" caption lighten-5" text-color="indigo">
+                           <v-chip v-else-if="userFData.type == 4" small :class="userFData.themeColor"  color=" caption lighten-5" text-color="indigo">
                               Vice-President
                            </v-chip>
-                           <v-chip small :class="userFData.themeColor"  color=" caption lighten-5" text-color="orange">
+                           <v-chip v-else-if="userFData.type == 1"  small :class="userFData.themeColor"  color=" caption lighten-5" text-color="orange">
                               Instructor
                            </v-chip>
-                           <v-chip small :class="userFData.themeColor"  color=" caption lighten-5" text-color="teal">
+                           <v-chip v-else-if="userFData.type == 0"   small :class="userFData.themeColor"  color=" caption lighten-5" text-color="teal">
                               Student
                            </v-chip>
-                           <v-chip small :class="userFData.themeColor" color=" caption lighten-5" text-color="purple">
+                           <!-- <v-chip small :class="userFData.themeColor" color=" caption lighten-5" text-color="purple">
                               Club Moderator
-                           </v-chip>
+                           </v-chip> -->
                         </v-flex>
                      </v-layout>
                   </v-card>
@@ -363,8 +363,8 @@
                      </v-btn>
 
                      <v-divider></v-divider>
-                     <div class="ml-2 mt-1 caption font-weight-black grey--text" ><span :class="`${userFData.themeColor}--text`">My</span>Apps</div>
-                     <v-btn to="registrarOffice" style="padding-left:10px"  :ripple="{ class: 'white--text' }"  :color="`${userFData.themeColor} lighten-1`"  class=" jieleftNav" flat depressed block >
+                     <div class="ml-2 mb-2 mt-1 caption font-weight-black grey--text" ><span :class="`${userFData.themeColor}--text`">My</span>Apps</div>
+                     <v-btn v-if="userFData.type == 2" to="registrarOffice" style="padding-left:10px"  :ripple="{ class: 'white--text' }"  :color="`${userFData.themeColor} lighten-1`"  class=" jieleftNav" flat depressed block >
                         <v-avatar tile class="mr-2" color="grey--after" size="20px">
                            <img src="https://png.icons8.com/ios/50/000000/check-in-desk.png">
                         </v-avatar>
@@ -372,7 +372,7 @@
                         <v-spacer></v-spacer>
                         <div class="textfm1 caption" ></div>
                      </v-btn>
-                     <v-btn to="vpaaoffice" style="padding-left:10px"  :ripple="{ class: 'white--text' }"  :color="`${userFData.themeColor} lighten-1`"  class=" jieleftNav" flat depressed block >
+                     <v-btn v-else-if="userFData.type == 3" to="vpaaoffice" style="padding-left:10px"  :ripple="{ class: 'white--text' }"  :color="`${userFData.themeColor} lighten-1`"  class=" jieleftNav" flat depressed block >
                         <v-avatar tile class="mr-2" color="grey--after" size="20px">
                            <img src="https://img.icons8.com/ios/50/000000/saving-book.png">
                         </v-avatar>
@@ -380,7 +380,7 @@
                         <v-spacer></v-spacer>
                         <div class="textfm1 caption" ></div>
                      </v-btn>
-                     <v-btn to="vpoffice" style="padding-left:10px"  :ripple="{ class: 'white--text' }"  :color="`${userFData.themeColor} lighten-1`" class=" jieleftNav" flat depressed block >
+                     <v-btn v-else-if="userFData.type == 4" to="vpoffice" style="padding-left:10px"  :ripple="{ class: 'white--text' }"  :color="`${userFData.themeColor} lighten-1`" class=" jieleftNav" flat depressed block >
                         <v-avatar tile class="mr-2" color="grey--after" size="20px">
                            <img src="https://png.icons8.com/ios/50/000000/interior-accesories.png">
                         </v-avatar>
@@ -388,15 +388,15 @@
                         <v-spacer></v-spacer>
                         <div class="textfm1 caption" ></div>
                      </v-btn>
-                     <v-btn :to="code" style="padding-left:10px;margin-top:-6px"  :ripple="{ class: 'white--text' }" :color="`${userFData.themeColor} lighten-1`"  class=" jieleftNav" flat depressed block >
+                     <v-btn v-else-if="userFData.type == 1" to="classList" style="padding-left:10px;margin-top:-6px"  :ripple="{ class: 'white--text' }" :color="`${userFData.themeColor} lighten-1`"  class=" jieleftNav" flat depressed block >
                         <v-avatar tile class="mr-2" color="grey--after" size="20px">
                            <img src="https://png.icons8.com/ios/50/000000/home-automation.png">
                         </v-avatar>
-                        <div style="font-size:12px;margin-left:1px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault "> Club-Office </div> 
+                        <div style="font-size:12px;margin-left:1px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault "> Instructor-Office </div> 
                         <v-spacer></v-spacer>
                         <div class="textfm1 caption" ></div>
                      </v-btn>
-                     <v-btn :to="code" style="padding-left:10px;margin-top:-6px"  :ripple="{ class: 'white--text' }" :color="`${userFData.themeColor} lighten-1`" class=" jieleftNav" flat depressed block >
+                     <v-btn v-else-if="userFData.type == 0" to="mySubjects" style="padding-left:10px;margin-top:-6px"  :ripple="{ class: 'white--text' }" :color="`${userFData.themeColor} lighten-1`" class=" jieleftNav" flat depressed block >
                         <v-avatar tile class="mr-2" color="grey--after" size="20px">
                            <img src="https://png.icons8.com/ios/50/000000/book-shelf.png">
                         </v-avatar>
@@ -404,14 +404,31 @@
                         <v-spacer></v-spacer>
                         <div class="textfm1 caption" ></div>
                      </v-btn>
-                     <v-btn :to="code" style="padding-left:10px;margin-top:-6px"  :ripple="{ class: 'white--text' }" :color="`${userFData.themeColor} lighten-1`" class=" jieleftNav" flat depressed block >
+                     <!-- <v-btn :to="code" style="padding-left:10px;margin-top:-6px"  :ripple="{ class: 'white--text' }" :color="`${userFData.themeColor} lighten-1`" class=" jieleftNav" flat depressed block >
                         <v-avatar tile class="mr-2" color="grey--after" size="20px">
                            <img src="https://png.icons8.com/ios/50/000000/report-card.png">
                         </v-avatar>
                         <div style="font-size:12px;margin-left:1px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault "> Results Card </div> 
                         <v-spacer></v-spacer>
                         <div class="textfm1 caption" ></div>
-                     </v-btn>
+                     </v-btn> -->
+                  </v-card>
+
+                  <v-card flat  class="pa-3 white lighten-4 my-2" >
+                     <p  style="font-size:11px">
+                     <span class="mr-2  blue-grey--text text--lighten-1"  > &copy; {{ new Date().getFullYear() }} Ckcm Network</span>
+                     <span class="mr-2"> <router-link  class="font-weight-thin aJie blue-grey--text text--lighten-3 " to=""> About </router-link> </span>
+                     <span class="mr-2"> <router-link  class="font-weight-thin aJie blue-grey--text text--lighten-3" to=""> Help Center </router-link> </span>
+                     <span class="mr-2"> <router-link  class="font-weight-thin aJie blue-grey--text text--lighten-3" to=""> Terms </router-link> </span>
+                     <span class="mr-2"> <router-link  class="font-weight-thin aJie blue-grey--text text--lighten-3" to=""> Privacy policy </router-link> </span>
+                     <span class="mr-2"> <router-link  class="font-weight-thin aJie blue-grey--text text--lighten-3" to=""> Cookies </router-link> </span>
+                     <span class="mr-2"> <router-link  class="font-weight-thin aJie blue-grey--text text--lighten-3" to=""> Status </router-link> </span>
+                     <span class="mr-2"> <router-link  class="font-weight-thin aJie blue-grey--text text--lighten-3" to=""> Apps </router-link> </span>
+                     <span class="mr-2"> <router-link  class="font-weight-thin aJie blue-grey--text text--lighten-3" to=""> Info </router-link> </span>
+                     <span class="mr-2"> <router-link  class="font-weight-thin aJie blue-grey--text text--lighten-3" to=""> Cloud </router-link> </span>
+                     <span class="mr-2"> <router-link  class="font-weight-thin aJie blue-grey--text text--lighten-3" to=""> Developers </router-link> </span>
+                     </p>
+                     <v-divider class=" grey lighten-4"></v-divider>
                   </v-card>
                   <!-- <v-card flat class="transparent">
                      <v-list class="mx-2">
@@ -1180,6 +1197,8 @@ export default {
       } else {
          this.$Progress.start()
       }
+
+      
    }
 }
 </script>

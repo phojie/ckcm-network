@@ -326,6 +326,117 @@
          </v-card>
       </v-dialog>
 
+      <v-dialog
+         v-model="viewItemDialog"
+         width="auto"
+         persistent=""
+         >
+         <v-card>
+         <v-card-title
+            class="headline grey lighten-2"
+            primary-title
+         >
+            {{faculty.title+ ' ' +faculty.fn + ' '+faculty.ln}} Schedule
+         </v-card-title>
+
+             <v-card-text>
+               <v-card-title>
+                  <!-- <span class="title">Total Units: {{subjects.totalUnits}} </span> -->
+                  <v-spacer></v-spacer>
+                  <v-text-field
+                  v-model="search"
+                  append-icon="search"
+                  label="Search"
+                  single-line
+                  hide-details
+                  ></v-text-field>
+               </v-card-title>
+               <v-data-table
+                  :items="subject"
+                  class="elevation-1"
+                  item-key="keyIndex"
+                  :search="search"
+                  :expand="expand"
+                  :headers="headers2"
+                  >
+
+                  <!-- <template v-slot:headers="props">
+                  </template>
+                  -->
+                  <template  v-slot:items="props">
+                     <tr @click="{props.expanded = !props.expanded,viewStudents(props.item)}">
+                        <td>{{ props.item.code }}</td>
+                        <td>{{ props.item.description }}</td>
+                        <td>{{ props.item.units }}</td>
+                        <td>{{ props.item.sched1 +' / '+ props.item.sched2 +' / '+ props.item.sched3  }}</td>
+                        <td>{{ props.item.time1 +' - '+ props.item.time2 }}</td>
+                        <!-- <td v-if="props.item.sched3 != ''">{{ props.item.sched1 +' / '+ props.item.sched2 +' / '+ props.item.sched3  }}</td>
+                        <td v-else>{{ props.item.sched1 +' / '+ props.item.sched2  }}</td> -->
+                        <td>{{ props.item.room }}</td>
+                        <!-- <td>
+                           <v-icon
+                              small
+                              class="mr-2"
+                              @click="viewStudents(props.item)"
+                           >
+                              mdi-eye
+                           </v-icon>
+                        </td> -->
+
+                     </tr>
+                  </template>
+
+                  <template v-slot:expand="props">
+                     <v-card flat>
+                        <!-- {{students}} -->
+                        <v-data-table
+                           class="mt-3"
+                           :headers="headers3"
+                           :items="students"
+                           item-key="keyIndex"
+                           >
+                           <template slot="items" slot-scope="props">
+                           <td><v-avatar
+                              size="35"
+                              :color="`${props.item.color}`"
+                           >
+                              <img class="pa-1" :src="props.item.photoUrl" alt="prof">
+                           </v-avatar></td>
+                           <td class="text-capitalize">{{ props.item.firstname + ' '+ props.item.middlename +' ' + props.item.surname}}</td>
+                           <td class="text-capitalize">{{ props.item.sex }}</td>
+                           <td class="text-capitalize">{{ props.item.email }}</td>
+                           <td class="text-capitalize">{{ props.item.cn }}</td>
+                           <td class="text-capitalize">{{ props.item.year }}</td>
+                           </template>
+                           <v-alert slot="no-results" :value="true" color="error darken-2" icon="warning">
+                           </v-alert>
+                        </v-data-table>
+                     </v-card>
+                  </template>
+                  <v-alert v-slot:no-results :value="true" color="error" icon="warning">
+                     Your search for "{{ search }}" found no results.
+                  </v-alert>
+               </v-data-table>
+            </v-card-text>
+        
+
+        
+
+         <v-divider></v-divider>
+
+         <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn
+               color="primary"
+               flat
+               @click="viewItemDialog = false"
+            >
+               Close
+            </v-btn>
+         </v-card-actions>
+         </v-card>
+      </v-dialog>
+
        <v-dialog
          v-model="deleteItemDialog"
          width="500"
@@ -497,10 +608,13 @@
    components: {Swatches},
    data: () => ({
       emailList: [],
+      expand: false,
 
       editItemDialog: false,
       deleteItemDialog: false,
       dataDialog: false,
+      viewItemDialog: false,
+      viewStudentDialog: false,
 
       search: '',
       search2: '',
@@ -514,6 +628,32 @@
          { text: 'Full name', sortable: false, value: 'fn' },
          { text: 'Email', sortable: false, value: 'email' },
          { text: 'Actions', sortable: false, value: 'ln' }
+      ],
+      headers2: [
+         {
+         text: 'Subject Code',
+         align: 'left',
+         sortable: false,
+         value: 'code'
+         },
+         { text: 'Subject Description', value: 'description' },
+         { text: 'Units', value: 'units' },
+         { text: 'Day', value: 'sched1' },
+         { text: 'Time', value: 'time1' },
+         { text: 'Room', value: 'room' },
+      ],
+       headers3: [
+         {
+            text: 'Profile',
+            align: 'left',
+            sortable: false,
+            value: 'code'
+         },
+         { text: 'Full name', sortable: false, value: 'firstname' },
+         { text: 'Gender', sortable: false, value: 'sex' },
+         { text: 'Email', sortable: false, value: 'email' },
+         { text: 'Contact#', sortable: false, value: 'cn' },
+         { text: 'Year level', sortable: false, value: 'year' },
       ],
 
       program: {
@@ -533,10 +673,28 @@
          keyIndex: '',
       },
 
+      subject: [],
+      students: [],
+
       snackbarDetails: '',
       textalert: null,y: 'bottom', x: 'right', mode: '', timeout: 6000, snackbar2: false,
    }),
    methods: {
+      viewStudents(data) {
+         this.students = []
+         let vm = this
+         this.viewStudentDialog = true
+         var filter = _.filter(this.$store.getters.acceptStudents, 'subjects')
+         _.forEach(filter, function(value,key) {
+            var filter2 = _.filter(value.subjects, {'instructor': vm.faculty.title + ' ' +vm.faculty.fn+ ' '+vm.faculty.ln, 'keyIndex': data.keyIndex})
+            if(filter2.length != 0) {
+               vm.students.push(value)
+            }
+         })
+
+         console.log(vm.students)
+         
+      },
       viewDialog(data) {
          this.dataDialog = true
          this.program = {
@@ -546,6 +704,45 @@
             color: data.color,
             keyIndex: data.keyIndex
          }
+         
+     
+         // this.subject = {
+         //    program:'',
+         //    yearlvl:'',
+         //    semester:'',
+         //    units: '',
+         //    code: '',
+         //    description: '',
+         //    preReq: '',
+         //    sched1: '',
+         //    sched2: '',
+         //    sched3: '',
+         //    time1: null,
+         //    time2: null,
+         //    instructor:'',
+         //    room:'',
+         //    keyIndex: '',
+         // }
+      },
+      viewItem(data) {
+         let vm = this
+         this.viewItemDialog = true
+         this.faculty = {
+            title:data.title,
+            fn:data.fn,
+            mn: data.mn,
+            ln: data.ln,
+            email: data.email,
+            confirm: data.email,
+            designation: data.designation,
+            keyIndex: data.keyIndex
+         }
+
+         var filter = _.filter(this.$store.getters.mysubjects, ['instructor', data.title + ' ' +data.fn+ ' '+data.ln])
+         var filter2 = _.filter(filter, 'keyIndex')
+         vm.subject = filter
+         console.log(filter)
+
       },
       editItem(data) {
          this.editItemDialog = true

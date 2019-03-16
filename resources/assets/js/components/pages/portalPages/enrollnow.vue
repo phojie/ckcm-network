@@ -397,7 +397,6 @@
                                        <td>{{ props.item.units }}</td>
                                        <td>{{ props.item.time1 +' - '+ props.item.time2 }}</td>
                                        <td>{{ props.item.sched1 +' / '+ props.item.sched2 }}</td>
-                                       <td>{{ props.item.room }}</td>
                                        <td>{{ props.item.instructor }}</td>
                                        <td v-if="props.item.preReq == ''"> None </td>
                                        <td else>{{ props.item.preReq }}</td>
@@ -580,8 +579,8 @@
             { text: 'Units', value: 'units' },
             { text: 'Time', value: 'time1' },
             { text: 'Day', value: 'sched1' },
-            { text: 'Room', value: 'room' },
             { text: 'Instructor', value: 'instructor' },
+            { text: 'Prerequesites', value: 'room' },
          ],
 
          radios: 'new',
@@ -763,8 +762,8 @@
                keyIndex: newPostKeyst,
                firstname:  _.capitalize(vm.fillupDetails.firstname),
                niddlename:  _.capitalize(vm.fillupDetails.middlename),
-               displayName: _.capitalize(vm.fillupDetails.firstname) + ' ' + _.capitalize(vm.fillupDetails.lastname),
-               lastname:  _.capitalize(vm.fillupDetails.lastname),
+               displayName: _.capitalize(vm.fillupDetails.firstname) + ' ' + _.capitalize(vm.fillupDetails.surname),
+               lastname:  _.capitalize(vm.fillupDetails.surname),
                email: _.capitalize(vm.fillupDetails.email),
                status:'offline',
                type: 0,
@@ -775,7 +774,7 @@
 
             newAccount.set({
                'ckcm-network_token_id': newPostKeyst,
-               displayName: _.capitalize(vm.fillupDetails.firstname) + ' ' + _.capitalize(vm.fillupDetails.lastname),
+               displayName: _.capitalize(vm.fillupDetails.firstname) + ' ' + _.capitalize(vm.fillupDetails.surname),
                email: _.capitalize(vm.fillupDetails.email),
                password: vm.fillupDetails.firstname+'@ckcm',
                firsttime: 0,

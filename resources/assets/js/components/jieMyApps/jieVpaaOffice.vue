@@ -928,7 +928,8 @@
                name: _.capitalize(vm.program.name),
                description: _.upperFirst(vm.program.description),
                description2: _.upperFirst(vm.program.description2),
-               color: vm.program.color
+               color: vm.program.color,
+               searchBar: ''
             }, function (error) {
                if(!error) {
                   vm.$v.program.$reset()

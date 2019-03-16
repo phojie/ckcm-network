@@ -29,6 +29,7 @@ export default {
        this.$store.commit('getUsers')
        this.$store.commit('getRooms')
        this.$store.commit('getStudents')
+       this.$store.commit('getAcceptstudents')
 	 }
 }
 </script>

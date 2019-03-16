@@ -125,7 +125,8 @@ export default {
    computed: {
       userData() {
          return this.$store.getters.accountLoginData.user
-      }
+      },
+      
    },
    methods: {
       

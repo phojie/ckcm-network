@@ -29,7 +29,6 @@ import jieVpaaOfficeRooms from './components/jieMyApps/vpaaOffice/rooms.vue';
 import jieVpaaOfficeFaculties from './components/jieMyApps/vpaaOffice/faculties.vue';
 import jieVpaaOfficeStudents from './components/jieMyApps/vpaaOffice/students.vue';
 
-
 import jieVpaaOffice2 from './components/jieMyApps/jieRegistrarOffice.vue';
 import jieVpaaOfficeDash2 from './components/jieMyApps/registrarOffice/dashboard.vue';
 import jieVpaaOfficeSched2 from './components/jieMyApps/registrarOffice/schedule.vue';
@@ -39,6 +38,13 @@ import jieVpaaOfficeRooms2 from './components/jieMyApps/registrarOffice/rooms.vu
 import jieVpaaOfficeFaculties2 from './components/jieMyApps/registrarOffice/faculties.vue';
 import jieVpaaOfficeStudents2 from './components/jieMyApps/registrarOffice/students.vue';
 import jieVpaaOfficeRequest2 from './components/jieMyApps/registrarOffice/request.vue';
+
+import jieVpaaOffice3 from './components/jieMyApps/jieStudentsOffice.vue';
+import jieVpaaOfficeDash3 from './components/jieMyApps/registrarOffice/dashboard.vue';
+import jieVpaaOfficeSched3 from './components/jieMyApps/registrarOffice/schedule.vue';
+import jieVpaaOfficeSubjects3 from './components/jieMyApps/registrarOffice/subjects.vue';
+
+import jieClasslist from './components/jieMyApps/jieInstructorOffice.vue';
 
 //test
 
@@ -172,6 +178,28 @@ export const routes = [
                   component: jieVpaaOfficeRequest2
                },
             ]
+         },
+         {
+            path: 'mySubjects',
+            component: jieVpaaOffice3,
+            children:[ 
+               {
+                  path:'/',
+                  component: jieVpaaOfficeDash3
+               },
+               {
+                  path:'schedule',
+                  component: jieVpaaOfficeSched3
+               },
+               {
+                  path:'subjects',
+                  component: jieVpaaOfficeSubjects3
+               },
+            ]
+         },
+         {
+            path: 'classList',
+            component: jieClasslist,
          }
       ]
    },

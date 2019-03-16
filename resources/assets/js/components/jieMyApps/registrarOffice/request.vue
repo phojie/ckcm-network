@@ -355,8 +355,8 @@
             
          <v-spacer></v-spacer>
             <v-btn   :class="`${userFData.themeColor}--text`"   class="textDefault" > Message </v-btn>
-            <v-btn  :class="`${userFData.themeColor}--text`"   class="textDefault" > Accept </v-btn>
-            <v-btn class="error--text textDefault" > Decline</v-btn>
+            <v-btn @click="acceptStudent"   :class="`${userFData.themeColor}--text`"   class="textDefault" > Accept </v-btn>
+            <v-btn @click="declineStudent" class="error--text textDefault" > Decline</v-btn>
          </v-card-title>
             <v-card-text v-if="viewProfile">
                <v-card-title>
@@ -395,7 +395,7 @@
                         <td>{{ props.item.description }}</td>
                         <td>{{ props.item.units }}</td>
                         <td>{{ props.item.time1 +' - '+ props.item.time2 }}</td>
-                        <td>{{ props.item.sched1 +' / '+ props.item.sched2 }}</td>
+                        <td>{{ props.item.sched1 +' / '+ props.item.sched2 +' / '+ props.item.sched3  }}</td>
                         <td>{{ props.item.room }}</td>
                         <td>{{ props.item.instructor }}</td>
                         <td> <v-btn small outline color="error">DROP</v-btn> </td>
@@ -1062,6 +1062,7 @@
          },
          sex: '',
          term: '',
+         keyIndex: '',
       },
 
       
@@ -1070,6 +1071,73 @@
       textalert: null,y: 'bottom', x: 'right', mode: '', timeout: 6000, snackbar2: false,
    }),
    methods: {
+      declineStudent() {
+         let vm = this 
+         var newPostKeyst = vm.fillupDetails.keyIndex;
+         let stu = db.ref().child('CKCMDATA/students/'+newPostKeyst)
+         stu.remove()
+
+         vm.snackbarDetails = 'Successfully declined enroly student'
+         vm.snackbar2 = true
+         vm.dataDialog = false
+      },
+      acceptStudent() {
+            let vm = this
+
+            var newPostKeyst = vm.fillupDetails.keyIndex;
+            var newPostacceptStudents = db.ref().child('CKCMDATA/acceptStudents').push().key;
+            let newAccount = db.ref().child('CKCMDATA/accountUser/'+newPostKeyst)
+            let stu = db.ref().child('CKCMDATA/students/'+newPostKeyst)
+            let acceptStu = db.ref().child('CKCMDATA/acceptStudents/'+newPostacceptStudents)
+            let users = db.ref().child('users/'+newPostKeyst)
+
+            newAccount.update({
+               firsttime: 1,
+            })
+
+            acceptStu.set({
+               photoUrl: "https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png",
+               keyIndex: newPostacceptStudents,
+               not: vm.fillupDetails.not,
+               totalUnits: vm.fillupDetails.totalUnits,
+               color:   vm.fillupDetails.color,
+               course: vm.fillupDetails.course,
+               majorIn:  vm.fillupDetails.majorIn,
+               sy: vm.fillupDetails.sy,
+               surname:  vm.fillupDetails.surname,
+               firstname:  vm.fillupDetails.firstname,
+               middlename:  vm.fillupDetails.middlename,
+               id: vm.fillupDetails.id,
+               year: vm.fillupDetails.year,
+               cn:  vm.fillupDetails.cn,
+               email:  vm.fillupDetails.email,
+               pob:  vm.fillupDetails.pob,
+               dob: vm.fillupDetails.dob,
+               hoa:  vm.fillupDetails.hoa,
+               poa:  vm.fillupDetails.poa,
+               father:  vm.fillupDetails.father,
+               mother:  vm.fillupDetails.mother,
+               lastschoolDetails: {
+                  SLA: vm.fillupDetails.lastschoolDetails.SLA,
+                  address:  vm.fillupDetails.lastschoolDetails.address,
+                  sy:  vm.fillupDetails.lastschoolDetails.sy,
+               },
+               sex:  vm.fillupDetails.sex,
+               term:  vm.fillupDetails.term,
+               subjects: vm.fillupDetails.subjects,
+               status: 'Active',
+            }, function (error) {
+             
+            })
+
+            stu.remove()
+            
+
+            vm.snackbarDetails = 'Successfully added students'
+            vm.snackbar2 = true
+            vm.dataDialog = false
+
+         },
       viewItem(data) {
          let vm = this
          this.dataDialog = true
@@ -1081,7 +1149,7 @@
             keyIndex: data.keyIndex,
             not: data.not,
             totalUnits: data.totalUnits,
-
+            color:   data.color,
             firstname:data.firstname,
             middlename: data.middlename,
             surname: data.surname,
@@ -1188,7 +1256,7 @@
             course:data.course ,
             majorIn:data.majorIn ,
             sy: data.sy ,
-            
+            not: data.not,
 
             firstname:data.firstname,
             middlename: data.middlename,

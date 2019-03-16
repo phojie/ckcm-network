@@ -26,8 +26,8 @@ export default {
       myfaculties: [],
       allUsers: [],
       myrooms: [],
-      mystudents: []
-
+      mystudents: [],
+      acceptStudents: [],
    },
    getters: {
       scrollLimitNews(state) {
@@ -87,8 +87,9 @@ export default {
       mystudents(state) {
          return state.mystudents
       },
-      
-      
+      acceptStudents(state) {
+         return state.acceptStudents
+      },
    },
    mutations: {
       homeReload(state) {
@@ -243,6 +244,14 @@ export default {
          var get = db.ref('CKCMDATA/students');
          get.on("value", function(data) {
             state.mystudents = data.val()
+         }, function (errorObject) {
+            console.log("The read failed: " + errorObject.code);
+         });
+      },
+      getAcceptstudents(state) {
+         var get = db.ref('CKCMDATA/acceptStudents');
+         get.on("value", function(data) {
+            state.acceptStudents = data.val()
          }, function (errorObject) {
             console.log("The read failed: " + errorObject.code);
          });
