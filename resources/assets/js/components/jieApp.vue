@@ -30,6 +30,8 @@ export default {
        this.$store.commit('getRooms')
        this.$store.commit('getStudents')
        this.$store.commit('getAcceptstudents')
+       this.$store.commit('getConvoList')
+
 	 }
 }
 </script>

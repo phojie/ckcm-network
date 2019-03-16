@@ -26,7 +26,7 @@
 
              
                   <!-- @click="profileMenuFriend(friendList.displayName)"  -->
-                  <v-btn  @click="addToChat(friendList['.key'], friendList.displayName)" slot="activator" style="margin-top:-6px"    color="grey" class=" jieleftNav" block flat>
+                  <v-btn  @click="addToChat(friendList, friendList.displayName)" slot="activator" style="margin-top:-6px"    color="grey" class=" jieleftNav" block flat>
                      <v-badge color="white"  overlap class="jieBadgeFriend">
                         <span v-if="friendList.status == 'online'" :key="friendList['.key']" slot="badge" style="font-size:16px; border-radius: 50%; border: 4px solid #7CB342 ;"></span>
                         <span  v-if="friendList.status != 'online'" :key="friendList['.key']" slot="badge" style="font-size:16px; border-radius: 50%; border: 4px solid #E57373 ;"></span>
@@ -298,6 +298,9 @@
                            <v-chip v-if="userFData.type == 2" small :class="userFData.themeColor" color=" caption lighten-5" text-color="green">
                               Registrar 
                            </v-chip>
+                           <v-chip v-else-if="userFData.type == 3" small :class="userFData.themeColor"  color=" caption lighten-5" text-color="indigo">
+                              Academic Affairs
+                           </v-chip>
                            <v-chip v-else-if="userFData.type == 4" small :class="userFData.themeColor"  color=" caption lighten-5" text-color="indigo">
                               Vice-President
                            </v-chip>
@@ -335,7 +338,8 @@
                         <v-spacer></v-spacer>
                         <div class="textfm1 caption" >24</div>
                      </v-btn>
-                     <v-btn  to="/messages" style="padding-left:9px;margin-top:-6px"  :ripple="{ class: 'white--text' }"  :color="`${userFData.themeColor} lighten-1`"   class=" jieleftNav" flat depressed block >
+                     <!-- messages -->
+                     <v-btn  to="#" style="padding-left:9px;margin-top:-6px"  :ripple="{ class: 'white--text' }"  :color="`${userFData.themeColor} lighten-1`"   class=" jieleftNav" flat depressed block >
                            <v-avatar tile class="mr-2" color="transparent" size="20px">
                            <img src="https://png.icons8.com/ios/50/000000/speech-bubble-with-dots.png">
                         </v-avatar>
@@ -384,7 +388,7 @@
                         <v-avatar tile class="mr-2" color="grey--after" size="20px">
                            <img src="https://png.icons8.com/ios/50/000000/interior-accesories.png">
                         </v-avatar>
-                        <div style="font-size:12px;margin-left:1px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault "> VP-Office </div> 
+                        <div style="font-size:12px;margin-left:1px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault "> Executive Vp </div> 
                         <v-spacer></v-spacer>
                         <div class="textfm1 caption" ></div>
                      </v-btn>
@@ -796,18 +800,18 @@
                            </v-icon>
                         </v-btn> -->
 
-                        <v-btn v-if="chattActiveID == index" :class="[ `${userFData.themeColor} lighten-2`] " style="border-bottom:.5px solid #E0E0E0;background-color:#f5f6f7"     class=" px-2  mssngerRadius  jieMessnger "  @click="changeChatToogle(listofChat, index)"  flat small block  >
+                        <v-btn v-if="chattActiveID == index" :class="[ `${userFData.themeColor} lighten-2`] " style="border-bottom:.5px solid #E0E0E0;background-color:#f5f6f7"     class=" px-2  mssngerRadius  jieMessnger "  @click="changeChatToogle(listofChat, index)"  flat  block  >
                            <v-toolbar-title  v-if="listofChat.toogle == false" style="max-width:130px !important"  class="white--text text--darken-3 caption textDefault " >
                               <v-icon  style="vertical-align: middle;" color="light-green  darken-4" size="8">
                                  mdi-circle
                               </v-icon>
-                              <span style="letter-spacing:.5px" > {{listofChat.name}} </span>
+                              <span style="letter-spacing:.5px" > {{listofChat.data.displayName}} </span>
                            </v-toolbar-title>
                            <v-toolbar-title v-else style="max-width:1230px !important"  class="white--text text--darken-3 caption textDefault " >
                               <v-icon  style="vertical-align: middle;" color="light-green  darken-4" size="8">
                                  mdi-circle
                               </v-icon>
-                              <span style="letter-spacing:.5px" > {{listofChat.name}} </span>
+                              <span style="letter-spacing:.5px" > {{listofChat.data.displayName}} </span>
                            </v-toolbar-title>
                            <v-spacer></v-spacer>
                            <v-tooltip top>
@@ -824,19 +828,18 @@
                            </v-tooltip>
 
                         </v-btn>
-                        <v-btn  v-else style=" border-bottom:.5px solid #E0E0E0;background-color:#f5f6f7"     class="minbtn px-2  mssngerRadius  jieMessnger "  @click="changeChatToogle(listofChat, index)"  flat small block  >
+                        <v-btn  v-else style=" border-bottom:.5px solid #E0E0E0;background-color:#f5f6f7"     class="minbtn px-2  mssngerRadius  jieMessnger "  @click="changeChatToogle(listofChat, index)"  flat  block  >
                            <v-toolbar-title  v-if="listofChat.toogle == false" style="max-width:130px !important"  class="black--text text--darken-3 caption textDefault " >
                               <v-icon  style="vertical-align: middle;" color="light-green  darken-4" size="8">
                                  mdi-circle
                               </v-icon>
-                              <span style="lette
-                              r-spacing:.5px" > {{listofChat.name}} </span>
+                              <span style="letter-spacing:.5px" > {{listofChat.data.displayName}} </span>
                            </v-toolbar-title>
                            <v-toolbar-title  v-else style="max-width:230px !important"  class="black--text text--darken-3 caption textDefault " >
                               <v-icon  style="vertical-align: middle;" color="light-green  darken-4" size="8">
                                  mdi-circle
                               </v-icon>
-                              <span style="letter-spacing:.5px" > {{listofChat.name}} </span>
+                              <span style="letter-spacing:.5px" > {{listofChat.data.displayName}} </span>
                            </v-toolbar-title>
                            <v-spacer></v-spacer>
                            <v-tooltip top>
@@ -856,29 +859,46 @@
                         </v-btn>
                         <v-card  v-if="listofChat.toogle" flat class=" maxChat"  >
                            <v-card v-chat-scroll="{always: false, smooth: true}" height="80%" style="position:relative !important;overflow-y:auto" class="scrollbar-primary px-2" flat>
-                          
-                              <!-- <v-layout  class="mb-1" fill-height align-end justify-start >
-                                 <v-avatar size="28" class="mr-1">
-                                    <img src="https://lh6.googleusercontent.com/-032Q-BfAjw4/AAAAAAAAAAI/AAAAAAAAAAA/APUIFaNBu7CiSH3g_6CAZckrWUAaKLLSVw/mo/photo.jpg">
-                                 </v-avatar>
-                                 <p style="margin-bottom:-0px !important; word-wrap:break-word !important;max-width:68%;width: auto !important;background-color:#EEEEEE !important" class="caption jie1Messge">
-                                    Anim nostrud amet ostrud
-                                 </p>
+                              <v-layout v-for="convoget in convoGet(listofChat)" :key="convoget.id" row wrap class="pt-2">
+                                 <!-- {{convoget}} -->
+                                 <v-layout v-if="convoGet.keyIndex == listofChat.data.keyIndex"   class="mb-1" fill-height align-end justify-start >
+                                    <v-avatar size="28" class="mr-1">
+                                       <img :src="listofChat.data.photoUrl">
+                                    </v-avatar>
+                                    <p style="margin-bottom:-0px !important; word-wrap:break-word !important;max-width:68%;width: auto !important;background-color:#EEEEEE !important" class="caption jie1Messge">
+                                       {{dataText}}
+                                    </p>
+                                 </v-layout>
+                                 <v-layout v-else class="" justify-end >
+                                    <p style="word-wrap:break-word !important;max-width:68%;width: auto !important;" :class="`${userFData.themeColor}`" class=" lighten-2 white--text caption jie3Messge">
+                                       {{dataText}}
+                                    </p>
+                                 </v-layout>
+
+                                 
+                                 <!-- <v-layout  class="mb-1" align-end justify-start >
+                                    <v-avatar size="28" class="mr-1">
+                                       <img :src="listofChat.data.photoUrl">
+                                    </v-avatar>
+                                    <p style="margin-bottom:-0px !important; word-wrap:break-word !important;max-width:68%;width: auto !important;background-color:#EEEEEE !important" class="caption jie2Messge">
+                                       Anim nostrud amet ostrud ametostrud ametds sdqwe 23Esse ad ut et consequat duis laboris irure aliquip ullamco. Deserunt sit qui sunt aute. Voluptate cillum incididunt officia nostrud. Culpa aute laborum adipisicing ex aliqua qui aute ut nostrud minim sunt consectetur. Deserunt ullamco ipsum duis duis aliquip voluptate do minim. Enim ex tempor tempor aliqua cupidatat consequat dolore qui sint aliquip ipsum enim et.
+                                    </p>
+                                 </v-layout>
+
+                                 <infinite-loading class="red" style="height:0px;margin-left:-46px" spinner="waveDots" @infinite="infiniteHandler" v-if="availableNews"></infinite-loading>
+                                 
+                                 <v-layout class="" justify-end >
+                                    <p style="word-wrap:break-word !important;max-width:68%;width: auto !important;" :class="`${userFData.themeColor}`" class=" lighten-2 white--text caption jie3Messge">
+                                    co. Deserunt sit qui sunt aute. Voluptate cillum incididunt officia nostrud. Culpa aute laborum adipisicing ex aliqua qui aute ut nostrud minim sunt consectetur. Deserunt ullamco ipsum duis duis aliquip voluptate do minim. Enim ex tempor tempor aliqua cupidatat consequat dolore qui sint aliquip ipsum enim et.
+                                    </p>
+                                 </v-layout> -->
+                                 <!-- <v-layout  v-for="messg in listofChat" :key="messg['.key']" class="" justify-end >
+                                    <p style="word-wrap:break-word !important;max-width:68%;width: auto !important;" class="blue lighten-2 white--text caption jie3Messge">
+                                       {{messg.convor}}
+                                    </p>
+                                 </v-layout> -->
+
                               </v-layout>
-                              <v-layout  class="mb-1" align-end justify-start >
-                                 <v-avatar size="28" class="mr-1">
-                                    <img src="https://lh6.googleusercontent.com/-032Q-BfAjw4/AAAAAAAAAAI/AAAAAAAAAAA/APUIFaNBu7CiSH3g_6CAZckrWUAaKLLSVw/mo/photo.jpg">
-                                 </v-avatar>
-                                 <p style="margin-bottom:-0px !important; word-wrap:break-word !important;max-width:68%;width: auto !important;background-color:#EEEEEE !important" class="caption jie2Messge">
-                                    Anim nostrud amet ostrud ametostrud ametds sdqwe 23Esse ad ut et consequat duis laboris irure aliquip ullamco. Deserunt sit qui sunt aute. Voluptate cillum incididunt officia nostrud. Culpa aute laborum adipisicing ex aliqua qui aute ut nostrud minim sunt consectetur. Deserunt ullamco ipsum duis duis aliquip voluptate do minim. Enim ex tempor tempor aliqua cupidatat consequat dolore qui sint aliquip ipsum enim et.
-                                 </p>
-                              </v-layout> -->
-                              <infinite-loading class="red" style="height:0px;margin-left:-46px" spinner="waveDots" @infinite="infiniteHandler" v-if="availableNews"></infinite-loading>
-                              <!-- <v-layout  v-for="messg in listofChat" :key="messg['.key']" class="" justify-end >
-                                 <p style="word-wrap:break-word !important;max-width:68%;width: auto !important;" class="blue lighten-2 white--text caption jie3Messge">
-                                    {{messg.convor}}
-                                 </p>
-                              </v-layout> -->
                            </v-card>
                            <v-form @submit.prevent="sendMessnger(listofChat)">
                               <v-textarea 
@@ -989,6 +1009,43 @@ export default {
       navBar : true
    }),
    methods: {
+      convoGet(data) {
+         // let vm = this
+         var convoData = []
+         // // var getConvo = db.ref('ConversationList/-La3AHzhdOFM0O4xYDop__-La3CO4WcaWnL5HnWMbB')
+         // var convoList =  this.$store.getters.convoList
+         // // var filter = _.findKey(convoList, '-La3AHzhdOFM0O4xYDop__-La3CO4WcaWnL5HnWMbB')
+         // _.forEach(convoList, function(value, key) {
+         //    if(vm.userFData.keyIndex+'__'+data.keyIndex == key) {
+         //       var getConvo = db.ref('ConversationList/'+vm.userFData.keyIndex+'__'+data.keyIndex)
+         //       getConvo.on('value', function(data){
+         //          convoData = data.val()
+         //       })
+         //    } else if(data.keyIndex+'__'+vm.userFData.keyIndex == key) {
+         //       var getConvo = db.ref('ConversationList/'+data.keyIndex+'__'+vm.userFData.keyIndex)
+         //       getConvo.on('value', function(data){
+         //          convoData = data.val()
+         //       })
+         //    } else {
+         //       var newPostKey = db.ref().child('ConversationList/'+data.keyIndex+'__'+vm.userFData.keyIndex).push().key;
+         //       var getConvo = db.ref('ConversationList/'+data.keyIndex+'__'+vm.userFData.keyIndex+'/'+newPostKey)
+         //       getConvo.set({
+         //          dataText: 'No convo yet'
+         //       })
+         //    }
+         // })
+
+         // console.log(filter)
+        
+         // _.forEach(data.val, function(value, key) {
+         //    convoData.push({
+         //       keyIndex: value.keyIndex,
+         //    }) = data.val()
+         // })
+          
+         // console.log(convoData)
+         return convoData
+      },
       home() {
          this.$router.push({
             path: `/`,
@@ -1051,52 +1108,62 @@ export default {
          console.log(localStorage.getItem('ListOfChats'));
          this.listofid = [];
       },
-      addToChat(id,displayName) {
+      addToChat(data,displayName) {
+         var id = data.id
+         console.log(data)
          let vm = this;
          let idListed = _.filter(this.listofid, ['id', id]);
          let idIndex = _.findIndex(this.listofid, ['id', id])
         
          if(idListed.length != 0) {
-            window.localStorage.removeItem('ListOfChats');
+            // alert('test')
+            // window.localStorage.removeItem('ListOfChats');
             this.listofid[idIndex].toogle == true
-            localStorage.setItem("ListOfChats",JSON.stringify(this.listofid));
+            // if(this.listofid.length < 4) {
+            //    this.listofid.push(data)
+            //    localStorage.setItem("ListOfChats",JSON.stringify(this.listofid));
+            // }
             // changeChatToogle(idListed, idIndex)
          } else {
             // firebase module
             // 1. id between yours and your friend _find
+            vm.listofid.push({
+               data,
+               toogle: true
+            });
             let convo = db.ref("ConversationList");
             convo.on("value", function(getConvo) {
-               if(getConvo.val()[vm.userData['ckcm-network_token_id']+id] != null) {
-                  db.ref(`ConversationList/${vm.userData['ckcm-network_token_id']}${id}`).on("value", function(getConver) {
-                     vm.listofid.push({
-                        id: id,
-                        name: displayName,
-                        toogle: true,
-                        convor: getConver.val()
-                     });
-                  })
-               } else if(getConvo.val()[id+vm.userData['ckcm-network_token_id']] != null){
-                  db.ref(`ConversationList/${id}${vm.userData['ckcm-network_token_id']}`).on("value", function(getConver) {
-                     vm.listofid.push({
-                        id: id,
-                        name: displayName,
-                        toogle: true,
-                        convor: getConver.val()
-                     });
-                  })
-               } else {
-                  convo.child(vm.userData['ckcm-network_token_id']+id).set({
-                     first : vm.userData['ckcm-network_token_id']
-                  })
-                  db.ref(`ConversationList/${vm.userData['ckcm-network_token_id']}${id}`).on("value", function(getConver) {
-                     vm.listofid.push({
-                        id: id,
-                        name: displayName,
-                        toogle: true,
-                        convor: getConver.val()
-                     });
-                  })
-               }
+               // if(getConvo.val()[vm.userData['ckcm-network_token_id']+id] != null) {
+               //    db.ref(`ConversationList/${vm.userData['ckcm-network_token_id']}${id}`).on("value", function(getConver) {
+               //       vm.listofid.push({
+               //          id: id,
+               //          name: displayName,
+               //          toogle: true,
+               //          convor: getConver.val()
+               //       });
+               //    })
+               // } else if(getConvo.val()[id+vm.userData['ckcm-network_token_id']] != null){
+               //    db.ref(`ConversationList/${id}${vm.userData['ckcm-network_token_id']}`).on("value", function(getConver) {
+               //       vm.listofid.push({
+               //          id: id,
+               //          name: displayName,
+               //          toogle: true,
+               //          convor: getConver.val()
+               //       });
+               //    })
+               // } else {
+               //    convo.child(vm.userData['ckcm-network_token_id']+id).set({
+               //       first : vm.userData['ckcm-network_token_id']
+               //    })
+               //    db.ref(`ConversationList/${vm.userData['ckcm-network_token_id']}${id}`).on("value", function(getConver) {
+               //       vm.listofid.push({
+               //          id: id,
+               //          name: displayName,
+               //          toogle: true,
+               //          convor: getConver.val()
+               //       });
+               //    })
+               // }
             })
             // exit
             console.log(vm.listofid)

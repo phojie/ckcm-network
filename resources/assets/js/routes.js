@@ -45,6 +45,7 @@ import jieVpaaOfficeSched3 from './components/jieMyApps/registrarOffice/schedule
 import jieVpaaOfficeSubjects3 from './components/jieMyApps/registrarOffice/subjects.vue';
 
 import jieClasslist from './components/jieMyApps/jieInstructorOffice.vue';
+import jieAnnouncement from './components/jieMyApps/announcement.vue';
 
 //test
 
@@ -200,6 +201,10 @@ export const routes = [
          {
             path: 'classList',
             component: jieClasslist,
+         },
+         {
+            path: 'announcement',
+            component: jieAnnouncement,
          }
       ]
    },

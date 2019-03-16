@@ -28,6 +28,7 @@ export default {
       myrooms: [],
       mystudents: [],
       acceptStudents: [],
+      convoList: [],
    },
    getters: {
       scrollLimitNews(state) {
@@ -90,6 +91,9 @@ export default {
       acceptStudents(state) {
          return state.acceptStudents
       },
+      convoList(state) {
+         return state.convoList
+      }
    },
    mutations: {
       homeReload(state) {
@@ -256,6 +260,14 @@ export default {
             console.log("The read failed: " + errorObject.code);
          });
       },
+      getConvoList(state) {
+         var get = db.ref('ConversationList');
+         get.on("value", function(data) {
+            state.convoList = data.val()
+         }, function (errorObject) {
+            console.log("The read failed: " + errorObject.code);
+         });
+      }
       
    },
    actions: {

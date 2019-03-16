@@ -303,28 +303,29 @@
                </v-card-actions>
                </v-card>
             </v-dialog>
-            <v-dialog
-               persistent
-               v-model="dialog1"
-               width="600"
-               >
-               <v-btn    slot="activator" outline :class="`${userFData.themeColor}--text`"  class="textDefault" small>Announce</v-btn>
-               <v-card>
-               <v-card-title
-                  class="headline grey lighten-2"
-                  primary-title
-               >
-                  Announcement
-               </v-card-title>
+            
+            
+               <v-dialog
+                  persistent
+                  v-model="dialog1"
+                  width="800"
+                  >
+                 <v-btn    slot="activator" outline :class="`${userFData.themeColor}--text`"  class="textDefault" small> Announce</v-btn>
+                  <v-card>
+                  <v-card-title
+                     class="headline grey lighten-2"
+                     primary-title
+                  >
+                     Announcement
+                  </v-card-title>
 
-               <!-- <v-card-text>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-               </v-card-text> -->
-               <v-card-text>
-                  <v-flex style="margin-top:-3px" >
-                  <!-- jiew -->
-                  <!-- @blur="whatisFunctionMethodFalse" -->
-                  <input style="display:none" ref="newsFile" @input="addFile" accept="image/*" type="file" multiple>
+                  <!-- <v-card-text>
+                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </v-card-text> -->
+
+                   <v-flex style="margin-top:-3px" >
+                     <!-- jiew -->
+                     <!-- @blur="whatisFunctionMethodFalse" -->
                      <v-textarea 
                         background-color="transparent"
                         hide-details color="blue"
@@ -333,69 +334,170 @@
                         append-icon="mdi-image-outline"
                         style="" placeholder="Announce something"
                         flat solo
-                        @click:append="photoBtn"
                         v-model="announceMesesage"
                         auto-grow
                      ></v-textarea>
+                    
                   </v-flex>
+                  
+                  <v-divider></v-divider>
 
-                  <v-flex v-if="newsImgsUrl.length > 1 && newsImgsUrl.length < 4 " class="" xs12>
-                     <v-card depressed flat class="ml-5 mx-2 ">
-                        <span v-for="(thisUrl, index) in newsImgsUrl" :key="index" class="mr-1" >
-                           <img
-                              style="width:35%;border-radius:5px !important;border:1px solid #E0E0E0"  
-                              :src="thisUrl.imgUrl"
-                           >
-                        </span>
-                     <v-progress-linear v-if="imgsPercentage != 100" color="blue" height="3" :value="imgsPercentage"></v-progress-linear>
-                     </v-card>
-                  </v-flex>
-                  <v-flex  v-else-if="newsImgsUrl.length == 1" class="" xs12>
-                     <v-card depressed flat class="ml-5 mx-2 ">
-                        <span style="min-width:100% !important" v-for="(thisUrl, index) in newsImgsUrl" :key="index" class="mr-1" >
-                           <!-- <v-progress-linear></v-progress-linear> -->
-                           <img
-                              style="width:100%;border-radius:5px !important;border:1px solid #E0E0E0"  
-                              :src="thisUrl.imgUrl"
-                           >
-                        </span>
-                     <v-progress-linear color="blue" height="3" v-if="imgsPercentage != 100" :value="imgsPercentage"></v-progress-linear>
-                     </v-card>
-                  </v-flex>
-               </v-card-text>
+                  <v-card-actions>
+                     <!-- : ${checkbox.toString()} -->
+                     <!-- : ${switch1.toString()} -->
+                     <v-checkbox
+                        :label="`Newsfeed `"
+                        v-model="checkbox"
+                     ></v-checkbox>
+                     <v-switch
+                        :label="`SMS`"
+                        v-model="switch1"
+                     ></v-switch>
+                     <v-switch
+                        :label="`All Campus`"
+                        v-model="switch2"
+                     ></v-switch>
 
-               <v-divider></v-divider>
+                     <v-spacer></v-spacer>
+                     <v-btn
+                        color="primary"
+                        flat
+                        @click="dialog1 = false"
+                     >
+                        Cancel
+                     </v-btn>
+                     <v-btn
+                        color="primary"
+                        flat
+                        :loading="sendLoading"
+                        @click="sendAnnouncement"
+                     >
+                        Send
+                     </v-btn>
+                  </v-card-actions>
+                  </v-card>
+               </v-dialog>
 
-               <v-card-actions>
-                  <!-- : ${checkbox.toString()} -->
-                  <!-- : ${switch1.toString()} -->
-                  <v-checkbox
-                     :label="`Newsfeed `"
-                     v-model="checkbox"
-                  ></v-checkbox>
-                  <v-switch
-                     :label="`SMS`"
-                     v-model="switch1"
-                  ></v-switch>
-                  <v-spacer></v-spacer>
-                  <v-btn
-                     color="primary"
-                     flat
-                     @click="dialog1 = false"
+               <v-dialog
+                  v-model="dialog"
+                  width="800"
                   >
-                     Cancel
-                  </v-btn>
-                  <v-btn
-                     color="primary"
-                     flat
-                     :loading="sendLoading"
-                     @click="sendAnnouncement"
+                 <v-btn    slot="activator" outline :class="`${userFData.themeColor}--text`"  class="textDefault" small> Send sms</v-btn>
+                  <v-card>
+                  <v-card-title
+                     class="headline grey lighten-2"
+                     primary-title
                   >
-                     Send
-                  </v-btn>
-               </v-card-actions>
-               </v-card>
-            </v-dialog>
+                     Enter number
+                  </v-card-title>
+
+                  <v-card-text>
+                     <v-flex style="margin-top:-3px" >
+                     <!-- jiew -->
+                     <!-- @blur="whatisFunctionMethodFalse" -->
+                       <v-combobox
+                           v-model="model"
+                           :filter="filter"
+                           :hide-no-data="!search"
+                           :items="items"
+                           :search-input.sync="search"
+                           hide-selected
+                           label="Search for an option"
+                           multiple
+                           small-chips
+                           solo
+                        >
+                           <template v-slot:no-data>
+                              <v-list-tile>
+                              <span class="subheading">Number: </span>
+                              <v-chip
+                                 :color="`${colors[nonce - 1]} lighten-3`"
+                                 label
+                                 small
+                              >
+                                 {{ search }}
+                              </v-chip>
+                              </v-list-tile>
+                           </template>
+                           <template v-slot:selection="{ item, parent, selected }">
+                              <v-chip
+                              v-if="item === Object(item)"
+                              :color="`${item.color} lighten-3`"
+                              :selected="selected"
+                              label
+                              small
+                              >
+                              <span class="pr-2">
+                                 {{ item.text }}
+                              </span>
+                              <v-icon
+                                 small
+                                 @click="parent.selectItem(item)"
+                              >close</v-icon>
+                              </v-chip>
+                           </template>
+                           <template v-slot:item="{ index, item }">
+                              <v-list-tile-content>
+                              <v-text-field
+                                 v-if="editing === item"
+                                 v-model="editing.text"
+                                 autofocus
+                                 flat
+                                 background-color="transparent"
+                                 hide-details
+                                 solo
+                                 @keyup.enter="edit(index, item)"
+                              ></v-text-field>
+                              <v-chip
+                                 v-else
+                                 :color="`${item.color} lighten-3`"
+                                 dark
+                                 label
+                                 small
+                              >
+                                 {{ item.text }}
+                              </v-chip>
+                              </v-list-tile-content>
+                              <v-spacer></v-spacer>
+                              <v-list-tile-action @click.stop>
+                              <v-btn
+                                 icon
+                                 @click.stop.prevent="edit(index, item)"
+                              >
+                                 <v-icon>{{ editing !== item ? 'edit' : 'check' }}</v-icon>
+                              </v-btn>
+                              </v-list-tile-action>
+                           </template>
+                        </v-combobox>
+                     <v-textarea 
+                        background-color="transparent"
+                        hide-details color="blue"
+                        class="whatIs  subheading" row-height="20"
+                        ref="newP"
+                        style="" placeholder="Say something"
+                        flat solo
+                        v-model="announceMesesage"
+                        auto-grow
+                     ></v-textarea>
+                    
+                  </v-flex>
+                     <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. -->
+                  </v-card-text>
+
+                  <v-divider></v-divider>
+
+                  <v-card-actions>
+                     <v-spacer></v-spacer>
+                     <v-btn
+                        color="primary"
+                        flat
+                        @click="sendSms"
+                     >
+                        Send
+                     </v-btn>
+                  </v-card-actions>
+                  </v-card>
+               </v-dialog>
 
             
          </v-layout>
@@ -586,6 +688,31 @@
    components: { Swatches },
    data: () => ({
       
+      activator: null,
+      attach: null,
+      colors: ['green', 'purple', 'indigo', 'cyan', 'teal', 'orange'],
+      editing: null,
+      index: -1,
+      items: [
+      //   { header: 'Select an option or create one' },
+      //   {
+      //     text: 'Foo',
+      //     color: 'blue'
+      //   },
+      //   {
+      //     text: 'Bar',
+      //     color: 'red'
+      //   }
+      ],
+      nonce: 1,
+      menu: false,
+      model: [
+      ],
+      x: 0,
+      search: null,
+      y: 0,
+      switch2: true,
+
       imgsPercentage: 0,
       newsImgsUrl: [],
       postedData: { 
@@ -757,7 +884,48 @@
          return this.$store.getters.AccountFdetails
       },
    },
+   watch: {
+      model (val, prev) {
+        if (val.length === prev.length) return
+
+        this.model = val.map(v => {
+          if (typeof v === 'string') {
+            v = {
+              text: v,
+              color: this.colors[this.nonce - 1]
+            }
+
+            this.items.push(v)
+
+            this.nonce++
+          }
+
+          return v
+        })
+      }
+    },
    methods: {
+      edit (index, item) {
+        if (!this.editing) {
+          this.editing = item
+          this.index = index
+        } else {
+          this.editing = null
+          this.index = -1
+        }
+      },
+      filter (item, queryText, itemText) {
+        if (item.header) return false
+
+        const hasValue = val => val != null ? val : ''
+
+        const text = hasValue(itemText)
+        const query = hasValue(queryText)
+
+        return text.toString()
+          .toLowerCase()
+          .indexOf(query.toString().toLowerCase()) > -1
+      },
       addFile(event) {
          let vm = this;
          var idCode =  Math.random().toString(36).substring(2, 15)  + Math.random().toString(36).substring(2, 15)  + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
@@ -944,7 +1112,40 @@
             })
          }
       },
-
+      sendSms() {
+         let vm = this
+         this.sendLoading = true
+            _.forEach(this.model, function(value,key){
+                 var sendingNumber = value.text
+                 console.log(value)
+                  axios.post(`https://api.txtlocal.com/send/?apikey=VSciXXo/7iU-qhcXlIMRE5n9Qh5RmDCILpobIh7qkY&numbers=${sendingNumber}&sender=CkcmVPAA&message=${vm.announceMesesage}`)
+                     // .then((response) =>{
+                     //    console.log(response)
+                     // })
+                     // .catch((error) => {
+                     //    console.log(error)
+                     // })
+                     
+                  axios.get('https://api.ipgeolocation.io/ipgeo?apiKey=90a83c7326cc475f8048cf81362e1df0')
+                     .then((response) =>{
+                     // var now= moment(response.data.time_zone.current_time).tz(response.data.time_zone.name).format('MMMM D YYYY, kk:mm:ss');
+                     var now= response.data.time_zone.current_time
+                     db.ref(`Announcement/${vm.userData['ckcm-network_token_id']}` ).push().set({
+                        userId: vm.userData['ckcm-network_token_id'],
+                        announcement: vm.announceMesesage,
+                        timestamp:  now,
+                     })
+                 
+                  })
+               })
+         vm.dialog2 = false
+         vm.sendLoading=false
+         vm.postedData.message =  ''
+         vm.announceMesesage = ''
+         vm.snackbar = true
+         vm.model=[]
+          
+      },
       sendAnnouncement() {
          let vm = this
          vm.sendLoading=true
@@ -989,17 +1190,17 @@
          }
          if(vm.switch1){
             var test = [{
-               apikey: 'PK5J+HcAL3c-VQGS8ixOd8AEvoIjjzRnKivZCviJ1Y',
+               apikey: 'VSciXXo/7iU-qhcXlIMRE5n9Qh5RmDCILpobIh7qkY',
                numbers:'09463582440',sender: 'jie', message: vm.announceMesesage
             }]
-            var sendingNumber = '+639061262389'
-            axios.post(`https://api.txtlocal.com/send/?apikey=wckbqSSCC0k-ImFk31JYM0YIAZlFG0ObL22iEf1jeW&numbers=${sendingNumber}&sender=CkcmNetwork&message=${vm.announceMesesage}`)
+            var sendingNumber = '+639664155944'
+            axios.post(`https://api.txtlocal.com/send/?apikey=VSciXXo/7iU-qhcXlIMRE5n9Qh5RmDCILpobIh7qkY&numbers=${sendingNumber}&sender=CkcmNetwork&message=${vm.announceMesesage}`)
                .then((response) =>{
                   console.log(response)
                })
-               .catch((error) => {
-                  console.log(error)
-               })
+               // .catch((error) => {
+               //    console.log(error)
+               // })
                
             axios.get('https://api.ipgeolocation.io/ipgeo?apiKey=90a83c7326cc475f8048cf81362e1df0')
                .then((response) =>{
