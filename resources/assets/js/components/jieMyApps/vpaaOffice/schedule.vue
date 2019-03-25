@@ -32,13 +32,13 @@
                      <v-btn block :color="`${program.color}`"   flat   @click="viewDialog(program, 'Second Year')"  class="grey--text mt-1 textNone font-weight-bold">  Second Year Schedule </v-btn>
                   </v-flex>
                   <v-flex xs12>
-                     <v-btn block :color="`${program.color}`"   flat  @click="viewDialog(program), 'Third Year'" class="grey--text mt-1 textNone font-weight-bold">  Third Year Schedule </v-btn>
+                     <v-btn block :color="`${program.color}`"   flat  @click="viewDialog(program, 'Third Year')" class="grey--text mt-1 textNone font-weight-bold">  Third Year Schedule </v-btn>
                   </v-flex>
                   <v-flex xs12>
-                     <v-btn block :color="`${program.color}`"   flat  @click="viewDialog(program), 'Fourth Year'" class="grey--text mt-1 textNone font-weight-bold">  Fourth Year Schedule </v-btn>
+                     <v-btn block :color="`${program.color}`"   flat  @click="viewDialog(program, 'Fourth Year')" class="grey--text mt-1 textNone font-weight-bold">  Fourth Year Schedule </v-btn>
                   </v-flex>
                   <v-flex xs12>
-                     <v-btn block :color="`${program.color}`"   flat  @click="viewDialog(program), 'Fifth Year'" class="grey--text mt-1 textNone font-weight-bold">  Fifth Year Schedule </v-btn>
+                     <v-btn block :color="`${program.color}`"   flat  @click="viewDialog(program, 'Fifth Year')" class="grey--text mt-1 textNone font-weight-bold">  Fifth Year Schedule </v-btn>
                   </v-flex>
                </v-layout>
             </v-card>
@@ -255,6 +255,7 @@
                                     <td>{{ props.item.value.code }}</td>
                                     <td>{{ props.item.value.description }}</td>
                                     <td>{{ props.item.value.units }}</td>
+                                    <td>{{props.item.value.sched1 + ' / '+props.item.value.sched2 + ' / '+ props.item.value.sched3}}</td>
                                     <td>{{ changeTime(props.item.value.time1) +' - '+ changeTime(props.item.value.time2) }}</td>
                                     <td>{{ props.item.value.room }}</td>
                                     <td>{{ props.item.value.instructor }}</td>
@@ -311,6 +312,7 @@
                                     <td>{{ props.item.value.code }}</td>
                                     <td>{{ props.item.value.description }}</td>
                                     <td>{{ props.item.value.units }}</td>
+                                    <td>{{props.item.value.sched1 + ' / '+props.item.value.sched2 + ' / '+ props.item.value.sched3}}</td>
                                     <td>{{ changeTime(props.item.value.time1) +' - '+ changeTime(props.item.value.time2) }}</td>
                                     <td>{{ props.item.value.room }}</td>
                                     <td>{{ props.item.value.instructor }}</td>
@@ -366,6 +368,7 @@
                                     <td>{{ props.item.value.code }}</td>
                                     <td>{{ props.item.value.description }}</td>
                                     <td>{{ props.item.value.units }}</td>
+                                    <td>{{props.item.value.sched1 + ' / '+props.item.value.sched2 + ' / '+ props.item.value.sched3}}</td>
                                     <td>{{ changeTime(props.item.value.time1) +' - '+ changeTime(props.item.value.time2) }}</td>
                                     <td>{{ props.item.value.room }}</td>
                                     <td>{{ props.item.value.instructor }}</td>
@@ -850,6 +853,7 @@
          },
          { text: 'Subject Description', value: 'description' },
          { text: 'Units', value: 'units' },
+         { text: 'Day', value: 'sched1' },
          { text: 'Time', value: 'time1' },
          { text: 'Room', value: 'room' },
          { text: 'Instructor', value: 'instructor' },
@@ -930,6 +934,7 @@
                semester: vm.subject.semester,
                sched1: vm.subject.sched1,
                sched2: vm.subject.sched2,
+               sched3: vm.subject.sched3,
                time1: vm.subject.time1,
                time2: vm.subject.time2,
                instructor: vm.subject.instructor,
@@ -960,6 +965,7 @@
             preReq: data.value.preReq,
             sched1:data.value.sched1,
             sched2: data.value.sched2,
+            sched3: data.value.sched3,
             time1:data.value.time1,
             time2: data.value.time2,
             program:data.program.keyIndex,
@@ -1017,6 +1023,7 @@
                semester: vm.subject.semester,
                sched1: vm.subject.sched1,
                sched2: vm.subject.sched2,
+               sched3: vm.subject.sched3,
                time1: vm.subject.time1,
                time2: vm.subject.time2,
                instructor: vm.subject.instructor,

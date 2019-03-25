@@ -514,7 +514,7 @@
             <v-flex xs12 md3>
                <v-card class="pa-4" width="100%" height="auto" >
                   <div class="ml-2 caption font-weight-black grey--text" ><span :class="`${userFData.themeColor}--text`">My</span>Office</div>
-                  <v-btn to="/vpaaoffice" exact style="padding-left:10px"  :ripple="{ class: 'white--text' }"  :color="`${userFData.themeColor} lighten-1`"  class=" jieleftNav" flat depressed block >
+                  <v-btn to="/registrarOffice" exact style="padding-left:10px"  :ripple="{ class: 'white--text' }"  :color="`${userFData.themeColor} lighten-1`"  class=" jieleftNav" flat depressed block >
                      <v-avatar tile class="mr-2" color="grey--after" size="20px">
                         <img src="https://img.icons8.com/ios/50/000000/view-shedule.png">
                      </v-avatar>
@@ -522,7 +522,7 @@
                      <v-spacer></v-spacer>
                      <div class="textfm1 caption" ></div>
                   </v-btn>
-                  <v-btn to="/vpaaoffice/schedule"  style="padding-left:10px"  :ripple="{ class: 'white--text' }"  :color="`${userFData.themeColor} lighten-1`"  class=" jieleftNav" flat depressed block >
+                  <v-btn to="/registrarOffice/schedule"  style="padding-left:10px"  :ripple="{ class: 'white--text' }"  :color="`${userFData.themeColor} lighten-1`"  class=" jieleftNav" flat depressed block >
                      <v-avatar tile class="mr-2" color="grey--after" size="20px">
                         <img src="https://img.icons8.com/ios/50/000000/overtime.png">
                      </v-avatar>
@@ -530,7 +530,7 @@
                      <v-spacer></v-spacer>
                      <div class="textfm1 caption" ></div>
                   </v-btn>
-                  <v-btn to="/vpaaoffice/subjects"  style="padding-left:10px"  :ripple="{ class: 'white--text' }"  :color="`${userFData.themeColor} lighten-1`"  class=" jieleftNav" flat depressed block >
+                  <v-btn to="/registrarOffice/subjects"  style="padding-left:10px"  :ripple="{ class: 'white--text' }"  :color="`${userFData.themeColor} lighten-1`"  class=" jieleftNav" flat depressed block >
                      <v-avatar tile class="mr-2" color="grey--after" size="20px">
                         <img src="https://img.icons8.com/ios/50/000000/book.png">
                      </v-avatar>
@@ -538,7 +538,7 @@
                      <v-spacer></v-spacer>
                      <div class="textfm1 caption" ></div>
                   </v-btn>
-                  <v-btn to="/vpaaoffice/programs" style="padding-left:10px"  :ripple="{ class: 'white--text' }"  :color="`${userFData.themeColor} lighten-1`" class=" jieleftNav" flat depressed block >
+                  <v-btn to="/registrarOffice/programs" style="padding-left:10px"  :ripple="{ class: 'white--text' }"  :color="`${userFData.themeColor} lighten-1`" class=" jieleftNav" flat depressed block >
                      <v-avatar tile class="mr-2" color="grey--after" size="20px">
                         <img src="https://img.icons8.com/ios/50/000000/important-property.png">
                      </v-avatar>
@@ -546,7 +546,7 @@
                      <v-spacer></v-spacer>
                      <div class="textfm1 caption" ></div>
                   </v-btn>
-                  <v-btn to="/vpaaoffice/rooms" style="padding-left:10px;margin-top:-6px"  :ripple="{ class: 'white--text' }" :color="`${userFData.themeColor} lighten-1`"  class=" jieleftNav" flat depressed block >
+                  <v-btn to="/registrarOffice/rooms" style="padding-left:10px;margin-top:-6px"  :ripple="{ class: 'white--text' }" :color="`${userFData.themeColor} lighten-1`"  class=" jieleftNav" flat depressed block >
                      <v-avatar tile class="mr-2" color="grey--after" size="20px">
                         <img src="https://img.icons8.com/ios/50/000000/room-finder.png">
                      </v-avatar>
@@ -554,7 +554,7 @@
                      <v-spacer></v-spacer>
                      <div class="textfm1 caption" ></div>
                   </v-btn>
-                  <v-btn to="/vpaaoffice/faculties" style="padding-left:10px;margin-top:-6px"  :ripple="{ class: 'white--text' }" :color="`${userFData.themeColor} lighten-1`" class=" jieleftNav" flat depressed block >
+                  <v-btn to="/registrarOffice/faculties" style="padding-left:10px;margin-top:-6px"  :ripple="{ class: 'white--text' }" :color="`${userFData.themeColor} lighten-1`" class=" jieleftNav" flat depressed block >
                      <v-avatar tile class="mr-2" color="grey--after" size="20px">
                         <img src="https://img.icons8.com/ios/50/000000/knowledge-sharing.png">
                      </v-avatar>
@@ -562,7 +562,7 @@
                      <v-spacer></v-spacer>
                      <div class="textfm1 caption" ></div>
                   </v-btn>
-                  <v-btn to="/vpaaoffice/students" style="padding-left:10px;margin-top:-6px"  :ripple="{ class: 'white--text' }" :color="`${userFData.themeColor} lighten-1`" class=" jieleftNav" flat depressed block >
+                  <v-btn to="/registrarOffice/students" style="padding-left:10px;margin-top:-6px"  :ripple="{ class: 'white--text' }" :color="`${userFData.themeColor} lighten-1`" class=" jieleftNav" flat depressed block >
                      <v-avatar tile class="mr-2" color="grey--after" size="20px">
                         <img src="https://img.icons8.com/ios/50/000000/identification-documents.png">
                      </v-avatar>

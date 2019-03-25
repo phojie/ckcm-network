@@ -442,7 +442,9 @@
                      </v-tabs>
 
                      
-
+                     <v-alert type="error" :value="totalUnitsError">
+                        Maximum of 30 units is allowed per semester in order to get enrolled
+                     </v-alert>
 
                      <v-btn color="primary" @click="doneConfig">Continue</v-btn>
                      <v-btn flat @click="e6 = 1">Return</v-btn>
@@ -588,7 +590,7 @@
          menu: false,
          CorLoading: false,
 
-         e6: 1,
+         e6: 2,
          items: ['Foo', 'Bar', 'Fizz', 'Buzz'],
          fillUp: false,
          fillupDetails: {
@@ -620,6 +622,13 @@
          }
       }),
       computed: {
+         totalUnitsError () {
+            if(this.totalUnit > 30) {
+               return true
+            } else {
+               return false
+            }
+         },
          totalUnit() {
             let units = 0 
             _.forEach(this.selected, function(value, key) {
@@ -752,69 +761,71 @@
       methods: {
          doneConfig() {
             let vm = this
-            this.e6 = 3
+            if(vm.totalUnitsError == true) {
+            } else {
+               this.e6 = 3
+               var newPostKeyst = db.ref().child('CKCMDATA/users').push().key;
+               let newAccount = db.ref().child('CKCMDATA/accountUser/'+newPostKeyst)
+               let stu = db.ref().child('CKCMDATA/students/'+newPostKeyst)
+               let users = db.ref().child('users/'+newPostKeyst)
+               users.set({
+                  keyIndex: newPostKeyst,
+                  firstname:  _.capitalize(vm.fillupDetails.firstname),
+                  niddlename:  _.capitalize(vm.fillupDetails.middlename),
+                  displayName: _.capitalize(vm.fillupDetails.firstname) + ' ' + _.capitalize(vm.fillupDetails.surname),
+                  lastname:  _.capitalize(vm.fillupDetails.surname),
+                  email: _.capitalize(vm.fillupDetails.email),
+                  status:'offline',
+                  type: 0,
+                  themeColor: 'teal',
+                  coverUrl: "",
+                  photoUrl: "https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png"
+               })
 
-            var newPostKeyst = db.ref().child('CKCMDATA/users').push().key;
-            let newAccount = db.ref().child('CKCMDATA/accountUser/'+newPostKeyst)
-            let stu = db.ref().child('CKCMDATA/students/'+newPostKeyst)
-            let users = db.ref().child('users/'+newPostKeyst)
-            users.set({
-               keyIndex: newPostKeyst,
-               firstname:  _.capitalize(vm.fillupDetails.firstname),
-               niddlename:  _.capitalize(vm.fillupDetails.middlename),
-               displayName: _.capitalize(vm.fillupDetails.firstname) + ' ' + _.capitalize(vm.fillupDetails.surname),
-               lastname:  _.capitalize(vm.fillupDetails.surname),
-               email: _.capitalize(vm.fillupDetails.email),
-               status:'offline',
-               type: 0,
-               themeColor: 'teal',
-               coverUrl: "",
-               photoUrl: "https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png"
-            })
+               newAccount.set({
+                  'ckcm-network_token_id': newPostKeyst,
+                  displayName: _.capitalize(vm.fillupDetails.firstname) + ' ' + _.capitalize(vm.fillupDetails.surname),
+                  email: _.capitalize(vm.fillupDetails.email),
+                  password: vm.fillupDetails.firstname+'@ckcm',
+                  firsttime: 0,
+                  photoUrl: "https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png"
+               })
 
-            newAccount.set({
-               'ckcm-network_token_id': newPostKeyst,
-               displayName: _.capitalize(vm.fillupDetails.firstname) + ' ' + _.capitalize(vm.fillupDetails.surname),
-               email: _.capitalize(vm.fillupDetails.email),
-               password: vm.fillupDetails.firstname+'@ckcm',
-               firsttime: 0,
-               photoUrl: "https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png"
-            })
-
-            stu.set({
-               photoUrl: "https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png",
-               keyIndex: newPostKeyst,
-               not: vm.radios,
-               totalUnits: vm.totalUnit,
-               color:   vm.fillupDetails.color,
-               course: vm.fillupDetails.course,
-               majorIn:  vm.fillupDetails.majorIn,
-               sy: vm.fillupDetails.sy,
-               surname:  vm.fillupDetails.surname,
-               firstname:  vm.fillupDetails.firstname,
-               middlename:  vm.fillupDetails.middlename,
-               id: vm.fillupDetails.id,
-               year: vm.fillupDetails.year,
-               cn:  vm.fillupDetails.cn,
-               email:  vm.fillupDetails.email,
-               pob:  vm.fillupDetails.pob,
-               dob: vm.fillupDetails.dob,
-               hoa:  vm.fillupDetails.hoa,
-               poa:  vm.fillupDetails.poa,
-               father:  vm.fillupDetails.father,
-               mother:  vm.fillupDetails.mother,
-               lastschoolDetails: {
-                  SLA: vm.fillupDetails.lastschoolDetails.SLA,
-                  address:  vm.fillupDetails.lastschoolDetails.address,
-                  sy:  vm.fillupDetails.lastschoolDetails.sy,
-               },
-               sex:  vm.fillupDetails.sex,
-               term:  vm.fillupDetails.term,
-               subjects: vm.selected,
-               status: 'Pending',
-            }, function (error) {
-             
-            })
+               stu.set({
+                  photoUrl: "https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png",
+                  keyIndex: newPostKeyst,
+                  not: vm.radios,
+                  totalUnits: vm.totalUnit,
+                  color:   vm.fillupDetails.color,
+                  course: vm.fillupDetails.course,
+                  majorIn:  vm.fillupDetails.majorIn,
+                  sy: vm.fillupDetails.sy,
+                  surname:  vm.fillupDetails.surname,
+                  firstname:  vm.fillupDetails.firstname,
+                  middlename:  vm.fillupDetails.middlename,
+                  id: vm.fillupDetails.id,
+                  year: vm.fillupDetails.year,
+                  cn:  vm.fillupDetails.cn,
+                  email:  vm.fillupDetails.email,
+                  pob:  vm.fillupDetails.pob,
+                  dob: vm.fillupDetails.dob,
+                  hoa:  vm.fillupDetails.hoa,
+                  poa:  vm.fillupDetails.poa,
+                  father:  vm.fillupDetails.father,
+                  mother:  vm.fillupDetails.mother,
+                  lastschoolDetails: {
+                     SLA: vm.fillupDetails.lastschoolDetails.SLA,
+                     address:  vm.fillupDetails.lastschoolDetails.address,
+                     sy:  vm.fillupDetails.lastschoolDetails.sy,
+                  },
+                  sex:  vm.fillupDetails.sex,
+                  term:  vm.fillupDetails.term,
+                  subjects: vm.selected,
+                  status: 'Pending',
+               }, function (error) {
+               
+               })
+            }
 
          },
          toggleAll () {

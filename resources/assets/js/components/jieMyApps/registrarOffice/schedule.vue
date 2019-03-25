@@ -85,7 +85,7 @@
                   ></v-textarea>
                </v-flex>
          
-               
+              
                
                </v-layout>
             </v-container>
@@ -446,6 +446,24 @@
                   ></v-text-field>
                </v-flex>
 
+                 <v-flex xs6>
+                   <vue-ctk-date-time-picker 
+                     @input="timeStartError"
+                     overlay class="jieCtk" :error="errorTime1.start" :label="errorTime1.label"  color="grey"  id="TimePicker" only-time inputSize="sm" format="hh:mm a" formatted="hh:mm a" minuteInterval="30" v-model="subject.time1" ></vue-ctk-date-time-picker>
+               </v-flex>
+               <v-flex xs6>
+                   <vue-ctk-date-time-picker 
+                     @input="timeEndError"  
+                     overlay class="jieCtk" :error="errorTime2.end" :label="errorTime2.label" color="grey"  id="TimePicker" only-time inputSize="sm" format="hh:mm a" formatted="hh:mm a" minuteInterval="30" v-model="subject.time2" ></vue-ctk-date-time-picker>
+               </v-flex>
+
+                <!-- <v-flex xs6>
+                   <vue-ctk-date-time-picker overlay class="jieCtk"  color="grey"  id="TimePicker" only-time inputSize="sm" format="hh:mm a" formatted="hh:mm a" minuteInterval="30" label="Start" v-model="subject.time1" ></vue-ctk-date-time-picker>
+               </v-flex>
+               <v-flex xs6>
+                   <vue-ctk-date-time-picker overlay class="jieCtk" color="grey"  id="TimePicker" only-time inputSize="sm" format="hh:mm a" formatted="hh:mm a" minuteInterval="30" label="End" v-model="subject.time2" ></vue-ctk-date-time-picker>
+               </v-flex> -->
+
                <v-flex xs4>
                   <v-select
                      :items="listofRm"
@@ -463,7 +481,7 @@
              
                <v-flex xs4>
                   <v-select
-                     :items="['Monday', 'Tuesday', 'Wednesday', 'Thursday','Friday', 'Saturday' ,'Sunday']"
+                     :items="['None','Monday', 'Tuesday', 'Wednesday', 'Thursday','Friday', 'Saturday' ,'Sunday']"
                      label="Schedule 1"
                      v-model="subject.sched1"
                   ></v-select>
@@ -471,7 +489,7 @@
 
                <v-flex xs4 >
                   <v-select
-                     :items="['Monday', 'Tuesday', 'Wednesday', 'Thursday','Friday', 'Saturday' ,'Sunday']"
+                     :items="['None','Monday', 'Tuesday', 'Wednesday', 'Thursday','Friday', 'Saturday' ,'Sunday']"
                      label="Schedule 2"
                      v-model="subject.sched2"
                   ></v-select>
@@ -479,26 +497,22 @@
 
                 <v-flex xs4 >
                   <v-select
-                     :items="['Monday', 'Tuesday', 'Wednesday', 'Thursday','Friday', 'Saturday' ,'Sunday']"
+                     :items="['None','Monday', 'Tuesday', 'Wednesday', 'Thursday','Friday', 'Saturday' ,'Sunday']"
                      label="Schedule 3"
                      v-model="subject.sched3"
                   ></v-select>
                </v-flex>
 
-               <v-flex xs6>
-                   <!-- @blur="timeStartError"  -->
-                   <vue-ctk-date-time-picker 
-                     @input="timeStartError"
-                     overlay class="jieCtk" no-button :error="errorTime1.start" :label="errorTime1.label"  color="grey"  id="TimePicker" only-time inputSize="sm" format="hh:mm a" formatted="hh:mm a" minuteInterval="30" v-model="subject.time1" ></vue-ctk-date-time-picker>
-               </v-flex>
-               <v-flex xs6>
-                  <!-- @blur="timeEndError" -->
-                   <vue-ctk-date-time-picker 
-                     @input="timeEndError"  
-                     overlay class="jieCtk" no-button :error="errorTime2.end" :label="errorTime2.label" color="grey"  id="TimePicker" only-time inputSize="sm" format="hh:mm a" formatted="hh:mm a" minuteInterval="30" v-model="subject.time2" ></vue-ctk-date-time-picker>
-               </v-flex>
+             
 
-               
+               <v-flex xs12>
+                  <v-alert v-if="instructorError.length > 0 || roomError.length  > 0" type="error" :value="true">
+                     <!-- {{roomError}} {{roomError}} -->
+                     <span v-if="instructorError.length > 0 && roomError.length == 0">Schedule is already conflict due to {{subject.instructor}}</span>
+                     <span v-else-if="roomError.length > 0 && instructorError.length == 0">Schedule is already conflict due to room availability</span>
+                     <span v-else-if="instructorError.length > 0 && roomError.length > 0">Schedule is already conflict due to {{subject.instructor}} and room availability</span>
+                  </v-alert>
+               </v-flex>
                </v-layout>
             </v-container>
             <small>*indicates required field</small>
@@ -577,9 +591,9 @@
                <v-flex xs6>
                    <vue-ctk-date-time-picker overlay class="jieCtk" color="grey"  id="TimePicker" only-time inputSize="sm" format="hh:mm a" formatted="hh:mm a" minuteInterval="30" label="End" v-model="subject.time2" ></vue-ctk-date-time-picker>
                </v-flex>
-               <v-flex xs4>
+                <v-flex xs4>
                   <v-select
-                     :items="['Monday', 'Tuesday', 'Wednesday', 'Thursday','Friday', 'Saturday' ,'Sunday']"
+                     :items="['None','Monday', 'Tuesday', 'Wednesday', 'Thursday','Friday', 'Saturday' ,'Sunday']"
                      label="Schedule 1"
                      v-model="subject.sched1"
                   ></v-select>
@@ -587,7 +601,7 @@
 
                <v-flex xs4 >
                   <v-select
-                     :items="['Monday', 'Tuesday', 'Wednesday', 'Thursday','Friday', 'Saturday' ,'Sunday']"
+                     :items="['None','Monday', 'Tuesday', 'Wednesday', 'Thursday','Friday', 'Saturday' ,'Sunday']"
                      label="Schedule 2"
                      v-model="subject.sched2"
                   ></v-select>
@@ -595,7 +609,7 @@
 
                 <v-flex xs4 >
                   <v-select
-                     :items="['Monday', 'Tuesday', 'Wednesday', 'Thursday','Friday', 'Saturday' ,'Sunday']"
+                     :items="['None','Monday', 'Tuesday', 'Wednesday', 'Thursday','Friday', 'Saturday' ,'Sunday']"
                      label="Schedule 3"
                      v-model="subject.sched3"
                   ></v-select>
@@ -616,6 +630,16 @@
                   ></v-select>
                </v-flex>
                
+               <v-flex v-if="instructorError.length > 0 || roomError.length > 0" xs12>
+                  <!-- {{idKEYINDEX}} {{subject.keyIndex}} -->
+                   <!-- && instructorError.length > 0 || roomError.length > 0  -->
+                  <v-alert v-if="idKEYINDEX != subject.keyIndex " type="error" :value="true">
+                     {{roomError}} {{instructorError}}
+                     <span v-if="instructorError.length > 0 && roomError.length == 0">Schedule is already conflict due to {{subject.instructor}}</span>
+                     <span v-else-if="roomError.length > 0 && instructorError.length == 0">Schedule is already conflict due to room availability</span>
+                     <span v-else-if="instructorError.length > 0 && roomError.length > 0">Schedule is already conflict due to {{subject.instructor}} and room availability</span>
+                  </v-alert>
+               </v-flex>
                </v-layout>
             </v-container>
             <small>*indicates required field</small>
@@ -812,6 +836,7 @@
    },
    components: {Swatches},
    data: () => ({
+      idKEYINDEX: '',
       errorTime1: {
          start: false,
          label: 'Start',
@@ -918,7 +943,7 @@
       updateSubject() {
          var vm = this
          console.log(vm.subject.sched1)
-         if(vm.$v.subject.$invalid) {
+         if(vm.$v.subject.$invalid || vm.idKEYINDEX != '' && vm.idKEYINDEX != vm.subject.keyIndex) {
             vm.$v.subject.$touch()
          } else {
             var newPostKey = vm.subject.keyIndex
@@ -992,8 +1017,9 @@
             code: '',
             description: '',
             preReq: '',
-            sched1: '',
-            sched2: '',
+            sched1: 'None',
+            sched2: 'None',
+            sched3: 'None',
             time1: '',
             time2: '',
             instructor: '',
@@ -1006,7 +1032,7 @@
       saveSubject() {
          var vm = this
          console.log(vm.subject.sched1)
-         if(vm.$v.subject.$invalid) {
+         if(vm.$v.subject.$invalid || vm.idKEYINDEX != '') {
             vm.$v.subject.$touch()
          } else {
             var newPostKey = db.ref().child('CKCMDATA/subject').push().key;
@@ -1140,6 +1166,56 @@
 
    },
    computed: {
+      roomError() {
+         // conflict in day 
+         var err = []
+         let vm = this
+         let mySubjects = this.$store.getters.mysubjects
+         console.log('subjects', mySubjects)
+         _.forEach(mySubjects, function(value, key) {
+            console.log('subjects', value)
+            // console.log(value.room, vm.subjects.room)
+            if(value.room == vm.subject.room && value.sched1 == vm.subject.sched1 && value.time1 == vm.subject.time1 &&  value.time2 == vm.subject.time2) {
+               err.push(key)
+               vm.idKEYINDEX = key
+            } else if (value.room == vm.subject.room && value.sched2 == vm.subject.sched2 && value.time1 == vm.subject.time1 &&  value.time2 == vm.subject.time2){
+               err.push(key)
+               vm.idKEYINDEX = key
+            } else if (value.room == vm.subject.room && value.sched3 == vm.subject.sched3 && value.time1 == vm.subject.time1 &&  value.time2 == vm.subject.time2){
+               vm.idKEYINDEX = key
+               err.push(key)
+            } else {
+
+            }
+         })
+         console.log('TEST',err)
+         return err
+      },
+      instructorError() {
+         // conflict in day 
+         var err = []
+         let vm = this
+         let mySubjects = this.$store.getters.mysubjects
+         console.log('subjects', mySubjects)
+         _.forEach(mySubjects, function(value, key) {
+            console.log('subjects', value)
+            // console.log(value.room, vm.subjects.room)
+            if(value.instructor == vm.subject.instructor && value.sched1 == vm.subject.sched1 && value.time1 == vm.subject.time1 &&  value.time2 == vm.subject.time2) {
+               vm.idKEYINDEX = key
+               err.push(key)
+            } else if (value.instructor == vm.subject.instructor && value.sched2 == vm.subject.sched2 && value.time1 == vm.subject.time1 &&  value.time2 == vm.subject.time2){
+               vm.idKEYINDEX = key
+               err.push(key)
+            } else if (value.instructor == vm.subject.instructor && value.sched3 == vm.subject.sched3 && value.time1 == vm.subject.time1 &&  value.time2 == vm.subject.time2){
+               vm.idKEYINDEX = key
+               err.push(key)
+            } else {
+               
+            }
+         })
+         console.log('TEST',err)
+         return err
+      },
       timeStartError(){
          let vm = this
          var testError = 0
