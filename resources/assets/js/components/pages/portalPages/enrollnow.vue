@@ -691,6 +691,7 @@
          propsClick(data) {
             console.log(this.totalUnit)
             if( this.totalUnit * 1 >= 30 ){
+               data.selected = false
             } else {
               data.selected = !data.selected
             }
