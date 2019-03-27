@@ -85,7 +85,7 @@
                   ></v-textarea>
                </v-flex>
          
-               
+              
                
                </v-layout>
             </v-container>
@@ -446,6 +446,24 @@
                   ></v-text-field>
                </v-flex>
 
+                 <v-flex xs6>
+                   <vue-ctk-date-time-picker 
+                     @input="timeStartError"
+                     overlay class="jieCtk" :error="errorTime1.start" :label="errorTime1.label"  color="grey"  id="TimePicker" only-time inputSize="sm" format="hh:mm a" formatted="hh:mm a" minuteInterval="30" v-model="subject.time1" ></vue-ctk-date-time-picker>
+               </v-flex>
+               <v-flex xs6>
+                   <vue-ctk-date-time-picker 
+                     @input="timeEndError"  
+                     overlay class="jieCtk" :error="errorTime2.end" :label="errorTime2.label" color="grey"  id="TimePicker" only-time inputSize="sm" format="hh:mm a" formatted="hh:mm a" minuteInterval="30" v-model="subject.time2" ></vue-ctk-date-time-picker>
+               </v-flex>
+
+                <!-- <v-flex xs6>
+                   <vue-ctk-date-time-picker overlay class="jieCtk"  color="grey"  id="TimePicker" only-time inputSize="sm" format="hh:mm a" formatted="hh:mm a" minuteInterval="30" label="Start" v-model="subject.time1" ></vue-ctk-date-time-picker>
+               </v-flex>
+               <v-flex xs6>
+                   <vue-ctk-date-time-picker overlay class="jieCtk" color="grey"  id="TimePicker" only-time inputSize="sm" format="hh:mm a" formatted="hh:mm a" minuteInterval="30" label="End" v-model="subject.time2" ></vue-ctk-date-time-picker>
+               </v-flex> -->
+
                <v-flex xs4>
                   <v-select
                      :items="listofRm"
@@ -463,7 +481,7 @@
              
                <v-flex xs4>
                   <v-select
-                     :items="['Monday', 'Tuesday', 'Wednesday', 'Thursday','Friday', 'Saturday' ,'Sunday']"
+                     :items="['None','Monday', 'Tuesday', 'Wednesday', 'Thursday','Friday', 'Saturday' ,'Sunday']"
                      label="Schedule 1"
                      v-model="subject.sched1"
                   ></v-select>
@@ -471,7 +489,7 @@
 
                <v-flex xs4 >
                   <v-select
-                     :items="['Monday', 'Tuesday', 'Wednesday', 'Thursday','Friday', 'Saturday' ,'Sunday']"
+                     :items="['None','Monday', 'Tuesday', 'Wednesday', 'Thursday','Friday', 'Saturday' ,'Sunday']"
                      label="Schedule 2"
                      v-model="subject.sched2"
                   ></v-select>
@@ -479,26 +497,22 @@
 
                 <v-flex xs4 >
                   <v-select
-                     :items="['Monday', 'Tuesday', 'Wednesday', 'Thursday','Friday', 'Saturday' ,'Sunday']"
+                     :items="['None','Monday', 'Tuesday', 'Wednesday', 'Thursday','Friday', 'Saturday' ,'Sunday']"
                      label="Schedule 3"
                      v-model="subject.sched3"
                   ></v-select>
                </v-flex>
 
-               <v-flex xs6>
-                   <!-- @blur="timeStartError"  -->
-                   <vue-ctk-date-time-picker 
-                     @input="timeStartError"
-                     overlay class="jieCtk" no-button :error="errorTime1.start" :label="errorTime1.label"  color="grey"  id="TimePicker" only-time inputSize="sm" format="hh:mm a" formatted="hh:mm a" minuteInterval="30" v-model="subject.time1" ></vue-ctk-date-time-picker>
-               </v-flex>
-               <v-flex xs6>
-                  <!-- @blur="timeEndError" -->
-                   <vue-ctk-date-time-picker 
-                     @input="timeEndError"  
-                     overlay class="jieCtk" no-button :error="errorTime2.end" :label="errorTime2.label" color="grey"  id="TimePicker" only-time inputSize="sm" format="hh:mm a" formatted="hh:mm a" minuteInterval="30" v-model="subject.time2" ></vue-ctk-date-time-picker>
-               </v-flex>
+             
 
-               
+               <v-flex xs12>
+                  <v-alert v-if="instructorError.length > 0 || roomError.length  > 0" type="error" :value="true">
+                     <!-- {{roomError}} {{roomError}} -->
+                     <span v-if="instructorError.length > 0 && roomError.length == 0">Conflict due to {{subject.instructor}} Schedule</span>
+                     <span v-else-if="roomError.length > 0 && instructorError.length == 0">Conflict due to room availability</span>
+                     <span v-else-if="instructorError.length > 0 && roomError.length > 0">Conflict due to {{subject.instructor}} Schedule and room availability</span>
+                  </v-alert>
+               </v-flex>
                </v-layout>
             </v-container>
             <small>*indicates required field</small>
@@ -577,9 +591,9 @@
                <v-flex xs6>
                    <vue-ctk-date-time-picker overlay class="jieCtk" color="grey"  id="TimePicker" only-time inputSize="sm" format="hh:mm a" formatted="hh:mm a" minuteInterval="30" label="End" v-model="subject.time2" ></vue-ctk-date-time-picker>
                </v-flex>
-               <v-flex xs4>
+                <v-flex xs4>
                   <v-select
-                     :items="['Monday', 'Tuesday', 'Wednesday', 'Thursday','Friday', 'Saturday' ,'Sunday']"
+                     :items="['None','Monday', 'Tuesday', 'Wednesday', 'Thursday','Friday', 'Saturday' ,'Sunday']"
                      label="Schedule 1"
                      v-model="subject.sched1"
                   ></v-select>
@@ -587,7 +601,7 @@
 
                <v-flex xs4 >
                   <v-select
-                     :items="['Monday', 'Tuesday', 'Wednesday', 'Thursday','Friday', 'Saturday' ,'Sunday']"
+                     :items="['None','Monday', 'Tuesday', 'Wednesday', 'Thursday','Friday', 'Saturday' ,'Sunday']"
                      label="Schedule 2"
                      v-model="subject.sched2"
                   ></v-select>
@@ -595,7 +609,7 @@
 
                 <v-flex xs4 >
                   <v-select
-                     :items="['Monday', 'Tuesday', 'Wednesday', 'Thursday','Friday', 'Saturday' ,'Sunday']"
+                     :items="['None','Monday', 'Tuesday', 'Wednesday', 'Thursday','Friday', 'Saturday' ,'Sunday']"
                      label="Schedule 3"
                      v-model="subject.sched3"
                   ></v-select>
@@ -616,6 +630,16 @@
                   ></v-select>
                </v-flex>
                
+               <v-flex v-if="instructorError.length > 0 || roomError.length > 0" xs12>
+                  <!-- {{idKEYINDEX}} {{subject.keyIndex}} -->
+                   <!-- && instructorError.length > 0 || roomError.length > 0  -->
+                  <v-alert v-if="idKEYINDEX != subject.keyIndex " type="error" :value="true">
+                     {{roomError}} {{instructorError}}
+                     <span v-if="instructorError.length > 0 && roomError.length == 0">Conflict due to {{subject.instructor}} Schedule</span>
+                     <span v-else-if="roomError.length > 0 && instructorError.length == 0">Conflict due to room availability</span>
+                     <span v-else-if="instructorError.length > 0 && roomError.length > 0">Conflict due to {{subject.instructor}} Schedule and room availability</span>
+                  </v-alert>
+               </v-flex>
                </v-layout>
             </v-container>
             <small>*indicates required field</small>
@@ -812,6 +836,7 @@
    },
    components: {Swatches},
    data: () => ({
+      idKEYINDEX: '',
       errorTime1: {
          start: false,
          label: 'Start',
@@ -918,7 +943,7 @@
       updateSubject() {
          var vm = this
          console.log(vm.subject.sched1)
-         if(vm.$v.subject.$invalid) {
+         if(vm.$v.subject.$invalid || vm.idKEYINDEX != '' && vm.idKEYINDEX != vm.subject.keyIndex) {
             vm.$v.subject.$touch()
          } else {
             var newPostKey = vm.subject.keyIndex
@@ -992,8 +1017,9 @@
             code: '',
             description: '',
             preReq: '',
-            sched1: '',
-            sched2: '',
+            sched1: 'None',
+            sched2: 'None',
+            sched3: 'None',
             time1: '',
             time2: '',
             instructor: '',
@@ -1006,7 +1032,7 @@
       saveSubject() {
          var vm = this
          console.log(vm.subject.sched1)
-         if(vm.$v.subject.$invalid) {
+         if(vm.$v.subject.$invalid || vm.idKEYINDEX != '' ) {
             vm.$v.subject.$touch()
          } else {
             var newPostKey = db.ref().child('CKCMDATA/subject').push().key;
@@ -1140,6 +1166,209 @@
 
    },
    computed: {
+      roomError() {
+         // conflict in day 
+         var err = []
+         let vm = this
+            vm.idKEYINDEX = ''
+         let mySubjects = this.$store.getters.mysubjects
+         // console.log('subjects', mySubjects)
+         var filterSched1 = _.find(mySubjects, {'room': vm.subject.room,'sched1': vm.subject.sched1,'time1': vm.subject.time1,'time2': vm.subject.time2 } )
+         var filterSched2 = _.find(mySubjects, {'room': vm.subject.room,'sched2': vm.subject.sched2,'time1': vm.subject.time1,'time2': vm.subject.time2 } )
+         var filterSched3 = _.find(mySubjects, {'room': vm.subject.room,'sched3': vm.subject.sched3,'time1': vm.subject.time1,'time2': vm.subject.time2 } )
+       
+         var filterSched4 = _.find(mySubjects, {'room': vm.subject.room,'sched1': vm.subject.sched2,'time1': vm.subject.time1,'time2': vm.subject.time2 } )
+         var filterSched5 = _.find(mySubjects, {'room': vm.subject.room,'sched2': vm.subject.sched3,'time1': vm.subject.time1,'time2': vm.subject.time2 } )
+         var filterSched6 = _.find(mySubjects, {'room': vm.subject.room,'sched3': vm.subject.sched1,'time1': vm.subject.time1,'time2': vm.subject.time2 } )
+        
+         var filterSched7 = _.find(mySubjects, {'room': vm.subject.room,'sched1': vm.subject.sched3,'time1': vm.subject.time1,'time2': vm.subject.time2 } )
+         var filterSched8 = _.find(mySubjects, {'room': vm.subject.room,'sched2': vm.subject.sched1,'time1': vm.subject.time1,'time2': vm.subject.time2 } )
+         var filterSched9 = _.find(mySubjects, {'room': vm.subject.room,'sched3': vm.subject.sched2,'time1': vm.subject.time1,'time2': vm.subject.time2 } )
+         
+         if(filterSched1 || filterSched4 || filterSched7) {
+            // alert('test')
+            if(filterSched1) {
+               if(filterSched1.sched1 != 'None'){
+                  err.push(filterSched1.keyIndex)
+                  vm.idKEYINDEX = filterSched1.keyIndex
+               }
+            } else if (filterSched4){
+               if(filterSched4.sched1 != 'None'){
+                  err.push(filterSched4.keyIndex)
+                  vm.idKEYINDEX = filterSched4.keyIndex
+               }
+            } else if (filterSched7) {
+               if(filterSched7.sched1 != 'None'){
+                  err.push(filterSched7.keyIndex)
+                  vm.idKEYINDEX = filterSched7.keyIndex
+               }
+            }
+             
+         } else if(filterSched2 || filterSched5 || filterSched8) {
+            // alert('test')
+            if(filterSched2) {
+               if(filterSched2.sched2 != 'None'){
+                  err.push(filterSched2.keyIndex)
+                  vm.idKEYINDEX = filterSched2.keyIndex
+               }
+            } else if (filterSched5){
+               if(filterSched5.sched2 != 'None'){
+                  err.push(filterSched5.keyIndex)
+                  vm.idKEYINDEX = filterSched5.keyIndex
+               }
+            } else if (filterSched8) {
+               if(filterSched8.sched2 != 'None'){
+                  err.push(filterSched8.keyIndex)
+                  vm.idKEYINDEX = filterSched8.keyIndex
+               }
+            }
+             
+         } else if(filterSched3 || filterSched6 || filterSched9) {
+            // alert('test')
+            if(filterSched3) {
+               if(filterSched3.sched3 != 'None'){
+                  err.push(filterSched3.keyIndex)
+                  vm.idKEYINDEX = filterSched3.keyIndex
+               }
+            } else if (filterSched6){
+               if(filterSched6.sched3 != 'None'){
+                  err.push(filterSched6.keyIndex)
+                  vm.idKEYINDEX = filterSched6.keyIndex
+               }
+            } else if (filterSched9) {
+               if(filterSched9.sched3 != 'None'){
+                  err.push(filterSched9.keyIndex)
+                  vm.idKEYINDEX = filterSched9.keyIndex
+               }
+            }
+             
+         }
+         // console.log(filterSched1,filterSched2,filterSched3)
+         // _.forEach(mySubjects, function(value, key) {
+         //    console.log('subjects', value)
+         //    console.log('model', vm.subject)
+         //    // console.log(value.room, vm.subjects.room)
+
+         //    // if(value.room === vm.subject.room && value.sched1 === vm.subject.sched1 && value.time1 === vm.subject.time1 &&  value.time2 === vm.subject.time2) {
+         //    //    err.push(key)
+         //    //    alert('1')
+         //    //    vm.idKEYINDEX = key
+         //    // } else if (value.room === vm.subject.room && value.sched2 === vm.subject.sched2 && value.time1 === vm.subject.time1 &&  value.time2 === vm.subject.time2){
+         //    //    alert('2')
+         //    //    err.push(key)
+         //    //    vm.idKEYINDEX = key
+         //    // } else if (value.room === vm.subject.room && value.sched3 === vm.subject.sched3 && value.time1 === vm.subject.time1 &&  value.time2 === vm.subject.time2){
+         //    //    vm.idKEYINDEX = key
+         //    //    alert('3')
+         //    //    err.push(key)
+         //    // } else {
+         //    //    alert('4')
+         //    // }
+         // })
+         // console.log('TEST',err)
+         return err
+      },
+      instructorError() {
+         // conflict in day 
+         
+           var err = []
+         let vm = this
+            vm.idKEYINDEX = ''
+         let mySubjects = this.$store.getters.mysubjects
+         // console.log('subjects', mySubjects)
+         var filterSched1 = _.find(mySubjects, {'instructor': vm.subject.instructor,'sched1': vm.subject.sched1,'time1': vm.subject.time1,'time2': vm.subject.time2 } )
+         var filterSched2 = _.find(mySubjects, {'instructor': vm.subject.instructor,'sched2': vm.subject.sched2,'time1': vm.subject.time1,'time2': vm.subject.time2 } )
+         var filterSched3 = _.find(mySubjects, {'instructor': vm.subject.instructor,'sched3': vm.subject.sched3,'time1': vm.subject.time1,'time2': vm.subject.time2 } )
+         
+         var filterSched4 = _.find(mySubjects, {'instructor': vm.subject.instructor,'sched1': vm.subject.sched2,'time1': vm.subject.time1,'time2': vm.subject.time2 } )
+         var filterSched5 = _.find(mySubjects, {'instructor': vm.subject.instructor,'sched2': vm.subject.sched3,'time1': vm.subject.time1,'time2': vm.subject.time2 } )
+         var filterSched6 = _.find(mySubjects, {'instructor': vm.subject.instructor,'sched3': vm.subject.sched1,'time1': vm.subject.time1,'time2': vm.subject.time2 } )
+         
+         var filterSched7 = _.find(mySubjects, {'instructor': vm.subject.instructor,'sched1': vm.subject.sched3,'time1': vm.subject.time1,'time2': vm.subject.time2 } )
+         var filterSched8 = _.find(mySubjects, {'instructor': vm.subject.instructor,'sched2': vm.subject.sched1,'time1': vm.subject.time1,'time2': vm.subject.time2 } )
+         var filterSched9 = _.find(mySubjects, {'instructor': vm.subject.instructor,'sched3': vm.subject.sched2,'time1': vm.subject.time1,'time2': vm.subject.time2 } )
+         
+         if(filterSched1 || filterSched4 || filterSched7) {
+            // alert('test')
+            if(filterSched1) {
+               if(filterSched1.sched1 != 'None'){
+                  err.push(filterSched1.keyIndex)
+                  vm.idKEYINDEX = filterSched1.keyIndex
+               }
+            } else if (filterSched4){
+               if(filterSched4.sched1 != 'None'){
+                  err.push(filterSched4.keyIndex)
+                  vm.idKEYINDEX = filterSched4.keyIndex
+               }
+            } else if (filterSched7) {
+               if(filterSched7.sched1 != 'None'){
+                  err.push(filterSched7.keyIndex)
+                  vm.idKEYINDEX = filterSched7.keyIndex
+               }
+            }
+             
+         } else if(filterSched2 || filterSched5 || filterSched8) {
+            // alert('test')
+            if(filterSched2) {
+               if(filterSched2.sched2 != 'None'){
+                  err.push(filterSched2.keyIndex)
+                  vm.idKEYINDEX = filterSched2.keyIndex
+               }
+            } else if (filterSched5){
+               if(filterSched5.sched2 != 'None'){
+                  err.push(filterSched5.keyIndex)
+                  vm.idKEYINDEX = filterSched5.keyIndex
+               }
+            } else if (filterSched8) {
+               if(filterSched8.sched2 != 'None'){
+                  err.push(filterSched8.keyIndex)
+                  vm.idKEYINDEX = filterSched8.keyIndex
+               }
+            }
+             
+         } else if(filterSched3 || filterSched6 || filterSched9) {
+            // alert('test')
+            if(filterSched3) {
+               if(filterSched3.sched3 != 'None'){
+                  err.push(filterSched3.keyIndex)
+                  vm.idKEYINDEX = filterSched3.keyIndex
+               }
+            } else if (filterSched6){
+               if(filterSched6.sched3 != 'None'){
+                  err.push(filterSched6.keyIndex)
+                  vm.idKEYINDEX = filterSched6.keyIndex
+               }
+            } else if (filterSched9) {
+               if(filterSched9.sched3 != 'None'){
+                  err.push(filterSched9.keyIndex)
+                  vm.idKEYINDEX = filterSched9.keyIndex
+               }
+            }
+             
+         }
+
+         // _.forEach(mySubjects, function(value, key) {
+         //    console.log('subjects', value)
+         //    // console.log(value.room, vm.subjects.room)
+         //    if(value.instructor === vm.subject.instructor && value.sched1 === vm.subject.sched1 && value.time1 === vm.subject.time1 &&  value.time2 === vm.subject.time2) {
+         //       vm.idKEYINDEX = key
+         //       alert('1')
+         //       err.push(key)
+         //    } else if (value.instructor === vm.subject.instructor && value.sched2 === vm.subject.sched2 && value.time1 === vm.subject.time1 &&  value.time2 === vm.subject.time2){
+         //       vm.idKEYINDEX = key
+         //       alert('2')
+         //       err.push(key)
+         //    } else if (value.instructor === vm.subject.instructor && value.sched3 === vm.subject.sched3 && value.time1 === vm.subject.time1 &&  value.time2 === vm.subject.time2){
+         //       vm.idKEYINDEX = key
+         //       alert('3')
+         //       err.push(key)
+         //    } else {
+               
+         //    }
+         // })
+         console.log('TEST',vm.idKEYINDEX)
+         return err
+      },
       timeStartError(){
          let vm = this
          var testError = 0

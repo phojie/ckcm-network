@@ -253,80 +253,6 @@
                         dark
                         slider-color="primary"
                      >
-                        <!-- <v-tab
-                        :key="1"
-                        ripple
-                        >
-                           <div class="textNone font-weight-bold"> Subject Offer </div>
-                        </v-tab>
-                        <v-tab-item
-                        :key="1"
-                        >
-                        <v-card flat>
-                           <v-card color="grey" class="mb-5">
-                              <v-data-table
-                                 :items="courseSub"
-                                 v-model="selected"
-                                 class="elevation-1"
-                                 hide-actions
-                                 :pagination.sync="pagination"
-                                 select-all
-                                 item-key="keyIndex"
-                                 :headers="headers"
-                                 >
-
-                                 <template v-slot:headers="props">
-                                    <tr>
-                                    <th>
-                                       <v-checkbox
-                                          :input-value="props.all"
-                                          :indeterminate="props.indeterminate"
-                                          primary
-                                          hide-details
-                                          @click.stop="toggleAll"
-                                       ></v-checkbox>
-                                    </th>
-                                    <th
-                                       v-for="header in props.headers"
-                                       :key="header.text"
-                                       :class="['column sortable', pagination.descending ? 'desc' : 'asc', header.value === pagination.sortBy ? 'active' : '']"
-                                       @click="changeSort(header.value)"
-                                    >
-                                       <v-icon small>arrow_upward</v-icon>
-                                       {{ header.text }}
-                                    </th>
-                                    </tr>
-                                 </template>
-                                 
-                                 <template  v-slot:items="props">
-                                    <tr  v-if="props.item.semester == fillupdetails.term && props.item.program == fillupDetails.course && props.item.yearlvl == fillupDetails.year" :active="props.selected" @click="props.selected = !props.selected">
-                                       <td>
-                                          <v-checkbox
-                                             :input-value="props.selected"
-                                             primray
-                                             hide-details
-                                          ></v-checkbox>
-                                       </td>
-                                       <td>{{ props.item.code }}</td>
-                                       <td>{{ props.item.description }}</td>
-                                       <td>{{ props.item.units }}</td>
-                                       <td>{{ props.item.time1 +' - '+ props.item.time2 }}</td>
-                                       <td>{{ props.item.room }}</td>
-                                       <td>{{ props.item.instructor }}</td>
-                                       <td v-if="props.item.preReq == ''"> None </td>
-                                       <td else>{{ props.item.preReq }}</td>
-
-                                    </tr>
-                                 </template>
-
-                               
- 
-                              </v-data-table>
-
-                           </v-card>
-                        </v-card>
-                        </v-tab-item> -->
-
                         <v-tab
                            :key="2"
                            ripple
@@ -383,9 +309,8 @@
                                  </template>
                                  
                                  <template  v-slot:items="props">
-                                    <tr v-if="totalUnit > 30" :active="props.selected">
+                                    <!-- <tr v-if="totalUnit * 1 > 30" :active="props.selected">
                                        <td>
-                                          
                                           <v-checkbox
                                              :input-value="props.selected"
                                              primray
@@ -401,26 +326,27 @@
                                        <td v-if="props.item.preReq == ''"> None </td>
                                        <td else>{{ props.item.preReq }}</td>
 
-                                    </tr>
-                                    <tr v-else :active="props.selected" @click="props.selected = !props.selected">
+                                    </tr> -->
+                                    <tr :active="props.selected" @click="propsClick(props)">
                                     <!-- <tr v-if="props.item.semester == fillupdetails.term && props.item.program == fillupDetails.course && props.item.yearlvl == fillupDetails.year"> -->
                                        <td>
-                                          
                                           <v-checkbox
+                                             disabled
                                              :input-value="props.selected"
-                                             primray
+                                             primary
                                              hide-details
                                           ></v-checkbox>
                                        </td>
-                                       <td>{{ props.item.code }}</td>
-                                       <td>{{ props.item.description }}</td>
-                                       <td>{{ props.item.units }}</td>
-                                       <td>{{ props.item.time1 +' - '+ props.item.time2 }}</td>
-                                       <td>{{ props.item.sched1 +' / '+ props.item.sched2 }}</td>
-                                       <td>{{ props.item.room }}</td>
-                                       <td>{{ props.item.instructor }}</td>
-                                       <td v-if="props.item.preReq == ''"> None </td>
-                                       <td else>{{ props.item.preReq }}</td>
+                                       <td class="text-xs-right">{{ props.item.code }}</td>
+                                       <td class="text-xs-right">{{ props.item.description }}</td>
+                                       <td class="text-xs-right">{{ props.item.units }}</td>
+                                       <td class="text-xs-right " >{{ props.item.time1 +' - '+ props.item.time2 }}</td>
+                                       <td class="text-xs-right px-3" v-if="props.item.sched3 != null">{{ props.item.sched1 +' / '+ props.item.sched2 +' / '+ props.item.sched3 }}</td>
+                                       <td class="text-xs-right px-3" v-else>{{ props.item.sched1 +' / '+ props.item.sched2  }}</td>
+                                       <td class="text-xs-right">{{ props.item.room }}</td>
+                                       <td class="text-xs-right">{{ props.item.instructor }}</td>
+                                       <td class="text-xs-right" v-if="props.item.preReq == ''"> None </td>
+                                       <td class="text-xs-right" else>{{ props.item.preReq }}</td>
 
                                     </tr>
                                  </template>
@@ -570,6 +496,9 @@
          search: '',
          active: null,
          selected: [],
+         pagination: {
+            sortBy: 'code'
+         },
          headers: [
             {
             text: 'Subject Code',
@@ -579,8 +508,9 @@
             },
             { text: 'Subject Description', value: 'description' },
             { text: 'Units', value: 'units' },
-            { text: 'Time', value: 'time1' },
-            { text: 'Day', value: 'sched1' },
+            { text: 'T i m e  S c h e d u l e', value: 'time1', },
+            { text: 'D a y  S c h e d u l e', value: 'sched1' },
+            { text: 'Room', value: 'room' },
             { text: 'Instructor', value: 'instructor' },
             { text: 'Prerequesites', value: 'room' },
          ],
@@ -589,8 +519,7 @@
          date: new Date().toISOString().substr(0, 10),
          menu: false,
          CorLoading: false,
-
-         e6: 2,
+         e6: 1,
          items: ['Foo', 'Bar', 'Fizz', 'Buzz'],
          fillUp: false,
          fillupDetails: {
@@ -623,7 +552,7 @@
       }),
       computed: {
          totalUnitsError () {
-            if(this.totalUnit > 30) {
+            if(this.totalUnit * 1 > 30) {
                return true
             } else {
                return false
@@ -759,6 +688,13 @@
          }
       },
       methods: {
+         propsClick(data) {
+            console.log(this.totalUnit)
+            if( this.totalUnit * 1 >= 30 ){
+            } else {
+              data.selected = !data.selected
+            }
+         },
          doneConfig() {
             let vm = this
             if(vm.totalUnitsError == true) {
