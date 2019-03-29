@@ -29,6 +29,7 @@ export default {
       mystudents: [],
       acceptStudents: [],
       convoList: [],
+      events: [],
    },
    getters: {
       scrollLimitNews(state) {
@@ -93,6 +94,9 @@ export default {
       },
       convoList(state) {
          return state.convoList
+      },
+      events(state) {
+         return state.events
       }
    },
    mutations: {
@@ -264,6 +268,14 @@ export default {
          var get = db.ref('ConversationList');
          get.on("value", function(data) {
             state.convoList = data.val()
+         }, function (errorObject) {
+            console.log("The read failed: " + errorObject.code);
+         });
+      },
+      getEvents(state) {
+         var get = db.ref('CKCMDATA/events');
+         get.on("value", function(data) {
+            state.events = data.val()
          }, function (errorObject) {
             console.log("The read failed: " + errorObject.code);
          });

@@ -31,7 +31,7 @@ export default {
        this.$store.commit('getStudents')
        this.$store.commit('getAcceptstudents')
        this.$store.commit('getConvoList')
-
+       this.$store.commit('getEvents')
 	 }
 }
 </script>

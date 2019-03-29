@@ -352,7 +352,7 @@
                            <v-avatar tile class="mr-2" color="transparent" size="20px">
                            <img src="https://png.icons8.com/ios/50/000000/billboard.png">
                         </v-avatar>
-                        <div style="font-size:12px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault "> Announcement </div> 
+                        <div style="font-size:12px; letter-spacing:.5px" class="font-weight-thin mr-2 black--text textDefault "> Ck Calendar </div> 
                         <v-spacer></v-spacer>
                         <div class="textfm1 caption" >2</div>
                      </v-btn>
